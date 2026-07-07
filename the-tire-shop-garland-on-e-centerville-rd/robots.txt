@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lithacker6458.github.io/demos/the-tire-shop-garland-on-e-centerville-rd/sitemap.xml

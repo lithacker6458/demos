@@ -2,19 +2,17 @@
   "template": "agency-local-business",
   "templateVersion": "1.0.0",
   "business": {
-    "name": "Garland Nut & Bolt",
-    "legalName": "Garland Nut and Screw LLC",
-    "category": "Fastener & hardware store",
-    "tagline": "If it threads, we probably stock it.",
-    "phone": "(214) 555-0199",
-    "email": "hello@garlandnutandbolt.com",
-    "address": "1901 S Jupiter Rd #105",
-    "city": "Garland, TX 75042",
-    "domain": "lithacker6458.github.io/demos/garland-nut-bolt"
+    "name": "The Tire Shop",
+    "tagline": "New & used tires and honest auto repair on E Centerville Rd in Garland, TX.",
+    "phone": "(214) 892-9194",
+    "email": "thetireshopgarland@gmail.com",
+    "address": "646 E Centerville Rd, Ste A",
+    "city": "Garland, TX",
+    "domain": "lithacker6458.github.io/demos/the-tire-shop-garland-on-e-centerville-rd"
   },
   "brand": {
-    "primaryColor": "#2b4a6f",
-    "accentColor": "#e8621d",
+    "primaryColor": "#1c2733",
+    "accentColor": "#f26522",
     "displayFont": "Fraunces",
     "bodyFont": "Archivo"
   },

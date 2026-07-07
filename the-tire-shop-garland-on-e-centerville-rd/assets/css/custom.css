@@ -4,8 +4,8 @@
    ================================================================ */
 :root {
   /* client brand */
-  --brand:  #6d213c;
-  --accent: #c98a5e;
+  --brand:  #1c2733;
+  --accent: #f26522;
 
   /* typefaces (loaded via Google Fonts <link> in each page head) */
   --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
@@ -323,43 +323,6 @@ select:focus-visible, textarea:focus-visible {
   border-bottom: 2px solid var(--accent);
 }
 .card-link:hover { color: var(--accent); }
-
-/* ================================================================
-   Price menu (services page)
-   ================================================================ */
-.menu { border-top: 2px solid var(--ink); }
-.menu-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1.25rem;
-  padding: 1.15rem 0.25rem 1rem;
-  border-bottom: 2px dotted var(--line);
-}
-.menu-row h3 {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 700;
-  line-height: 1.15;
-}
-.menu-row p {
-  margin-top: 0.2rem;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: var(--ink-soft);
-  max-width: 46ch;
-}
-.menu-row .price {
-  flex: none;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.15rem;
-  color: var(--brand);
-  white-space: nowrap;
-  font-variant-numeric: tabular-nums;
-  position: relative;
-  top: 0.05rem;
-}
 
 /* ================================================================
    Testimonials
