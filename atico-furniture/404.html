@@ -6,11 +6,12 @@
   <title>Page Not Found — Atico Furniture</title>
   <meta name="description" content="That page wandered off. Head back to Atico Furniture — custom steel-and-timber furniture, forged in Texas.">
   <meta name="robots" content="noindex">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://lithacker6458.github.io/demos/atico-furniture/assets/img/og-atico.png">
+  <meta property="og:image" content="https://lithacker6458.github.io/demos/atico-furniture/assets/img/og-atico.png">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314110e'/%3E%3Ctext x='32' y='46' font-size='38' text-anchor='middle' fill='%23C6512A' font-family='Georgia,serif' font-weight='700'%3EA%3C/text%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preload" href="assets/fonts/fraunces-roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/custom.css">
 </head>
 <body>
@@ -23,7 +24,7 @@
       <h1 class="mt-6" style="font-family: var(--font-display); font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700; color: var(--bone);">This page wandered off the shop floor.</h1>
       <p class="mt-5 text-lg" style="color: var(--bone); opacity: 0.85;">
         No worries — everything Atico builds is one click away, and the phone still works:
-        <a href="tel:(469) 620-2047" style="color: var(--oak); text-decoration: underline; text-underline-offset: 3px;">(469) 620-2047</a>.
+        <a href="tel:+14696202047" style="color: var(--oak); text-decoration: underline; text-underline-offset: 3px;">(469) 620-2047</a>.
       </p>
       <div class="mt-10 flex flex-wrap justify-center gap-4">
         <a class="btn btn-brand pulse-ember" href="index.html"><span>Back to home</span></a>
@@ -32,6 +33,12 @@
       <p class="footer-fine mt-16" style="color: var(--bone); opacity: 0.6;">&copy; 2026 Atico Furniture &middot; Dallas &amp; Houston, TX &middot; Concept preview — not affiliated</p>
     </div>
   </main>
+
+  <!-- Mobile-only sticky action bar: keeps the primary ask + tap-to-call always in reach on phones -->
+  <nav class="mobile-cta" aria-label="Quick actions">
+    <a class="btn btn-brand" href="contact.html"><span>Request a Consultation</span></a>
+    <a class="btn btn-ghost mc-call" href="tel:+14696202047">Call</a>
+  </nav>
 
   <script src="assets/js/main.js"></script>
 </body>

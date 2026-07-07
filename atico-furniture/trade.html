@@ -11,11 +11,15 @@
   <meta property="og:title" content="Trade &amp; Wholesale — Atico Furniture">
   <meta property="og:description" content="Trade pricing, COM/COL, and dedicated support for designers, architects, and commercial buyers. Built in Texas.">
   <meta property="og:url" content="https://lithacker6458.github.io/demos/atico-furniture/trade.html">
+  <meta property="og:image" content="https://lithacker6458.github.io/demos/atico-furniture/assets/img/og-atico.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Atico Furniture — custom steel and timber furniture, forged in Texas">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://lithacker6458.github.io/demos/atico-furniture/assets/img/og-atico.png">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314110e'/%3E%3Ctext x='32' y='46' font-size='38' text-anchor='middle' fill='%23C6512A' font-family='Georgia,serif' font-weight='700'%3EA%3C/text%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preload" href="assets/fonts/fraunces-roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/custom.css">
 </head>
 <!-- This page replaces Daniel's broken "Trade Log-In" dead link with a real,
@@ -26,7 +30,7 @@
   <div class="topbar">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-2 flex items-center justify-between gap-4">
       <p class="truncate">Commissioned in Texas &middot; Dallas &amp; Houston</p>
-      <p class="hidden sm:block"><a href="tel:(469) 620-2047">(469)&nbsp;620-2047</a> &middot; Designer &amp; Trade welcome</p>
+      <p class="hidden sm:block"><a href="tel:+14696202047">(469)&nbsp;620-2047</a> &middot; Designer &amp; Trade welcome</p>
     </div>
   </div>
 
@@ -53,7 +57,7 @@
       <a href="about.html">How a Commission Works</a>
       <a href="trade.html">Trade &amp; Wholesale</a>
       <a href="contact.html">Request a Consultation</a>
-      <a href="tel:(469) 620-2047">Call (469) 620-2047</a>
+      <a href="tel:+14696202047">Call (469) 620-2047</a>
     </nav>
   </header>
 
@@ -70,7 +74,7 @@
           fabrication to your spec, COM/COL, and a real person who answers. We build it — you get the credit.
         </p>
         <div class="mt-9 flex flex-wrap gap-4">
-          <a class="btn btn-brand pulse-ember" href="mailto:info@aticofurniture.com?subject=Trade%20%26%20Designer%20Program%20Inquiry"><span>Apply for a Trade Account</span></a>
+          <a class="btn btn-brand pulse-ember" href="#apply"><span>Apply for a Trade Account</span></a>
           <a class="btn btn-ghost" href="contact.html">Start a project brief</a>
         </div>
       </div>
@@ -147,22 +151,82 @@
       </div>
     </section>
 
-    <!-- Apply CTA -->
+    <!-- Apply CTA — real trade form (captured reliably via FormSubmit, tagged distinctly) -->
     <section class="band-forge" id="apply">
       <span class="ember-glow" aria-hidden="true" style="left:-10rem; right:auto;"></span>
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 section-pad content grid lg:grid-cols-2 gap-10 items-center">
-        <div>
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 section-pad content grid lg:grid-cols-12 gap-12 items-start">
+        <div class="lg:col-span-5">
           <p class="section-index">Open an account</p>
           <h2 class="display-xl mt-4">Let's set up<br>your trade account.</h2>
           <p class="mt-5 text-lg" style="color: var(--bone); opacity: 0.85;">
-            Email us your firm, the kind of work you do, and a project you have in mind. We'll set up your account
+            Tell us your firm, the kind of work you do, and a project you have in mind. We'll set up your account
             and reply within one business day with trade pricing and next steps.
           </p>
+          <p class="mt-6 text-base" style="color: var(--bone); opacity: 0.85;">
+            Prefer to talk? <a href="tel:+14696202047" style="color: var(--oak); text-decoration: underline; text-underline-offset: 3px;">(469) 620-2047</a>
+            &middot; <a href="mailto:info@aticofurniture.com?subject=Trade%20%26%20Designer%20Program%20Inquiry" style="color: var(--oak); text-decoration: underline; text-underline-offset: 3px;">info@aticofurniture.com</a>
+          </p>
         </div>
-        <div class="flex flex-col gap-4">
-          <a class="btn btn-brand pulse-ember" href="mailto:info@aticofurniture.com?subject=Trade%20%26%20Designer%20Program%20Inquiry"><span>Email the Trade Desk</span></a>
-          <a class="btn btn-ghost" href="tel:(469) 620-2047">Call (469) 620-2047</a>
-          <a class="btn btn-ghost" href="contact.html">Send a project brief instead</a>
+
+        <div class="lg:col-span-7">
+          <div class="form-plate p-6 sm:p-9">
+            <!-- FormSubmit: activates on first submission. No backend, works on GitHub Pages.
+                 Distinct _subject so trade leads are tagged separately from consumer consults. -->
+            <form action="https://formsubmit.co/info@aticofurniture.com" method="POST" class="space-y-5">
+              <input type="hidden" name="_subject" value="New TRADE inquiry — Atico Furniture">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="lead_type" value="Trade / Designer">
+              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div class="field">
+                  <label for="t-name">Name</label>
+                  <input id="t-name" name="name" type="text" required autocomplete="name" placeholder="Jane Doe">
+                </div>
+                <div class="field">
+                  <label for="t-company">Firm / company</label>
+                  <input id="t-company" name="company" type="text" required autocomplete="organization" placeholder="Studio or firm name">
+                </div>
+              </div>
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div class="field">
+                  <label for="t-email">Email</label>
+                  <input id="t-email" name="email" type="email" required autocomplete="email" placeholder="you@studio.com">
+                </div>
+                <div class="field">
+                  <label for="t-phone">Phone</label>
+                  <input id="t-phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 555-5555">
+                </div>
+              </div>
+              <div class="field">
+                <label for="t-role">Trade role</label>
+                <select id="t-role" name="trade_role">
+                  <option value="">Select your role…</option>
+                  <option>Interior designer</option>
+                  <option>Architect</option>
+                  <option>General contractor</option>
+                  <option>Procurement / facilities</option>
+                  <option>Retail / hospitality buyer</option>
+                  <option>Reseller / wholesale</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="t-resale">Resale / tax-ID on file?</label>
+                <select id="t-resale" name="resale_tax_id">
+                  <option value="">Select…</option>
+                  <option>Yes — I have a resale / tax-exempt certificate</option>
+                  <option>No — please advise</option>
+                  <option>Not sure</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="t-scope">Project scope</label>
+                <textarea id="t-scope" name="project_scope" rows="5" required placeholder="The project(s), rooms or pieces, rough quantities, materials/finishes, and any install timeline that matters."></textarea>
+              </div>
+              <button type="submit" class="btn btn-brand w-full pulse-ember"><span>Apply for a Trade Account</span></button>
+              <p class="text-center" style="font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft);">We reply within one business day.</p>
+            </form>
+          </div>
         </div>
       </div>
     </section>
@@ -180,9 +244,9 @@
             imagine it, we can build it — just for you.
           </p>
           <p class="mt-5 flex gap-4" style="opacity: 0.85;">
-            <a href="https://www.instagram.com/aticofurniture" rel="noopener">Instagram</a>
-            <a href="https://www.facebook.com/aticofurniture" rel="noopener">Facebook</a>
-            <a href="https://www.linkedin.com/company/aticofurniture" rel="noopener">LinkedIn</a>
+            <a href="index.html" rel="noopener" title="Instagram — real profile wired at launch">Instagram</a>
+            <a href="index.html" rel="noopener" title="Facebook — real profile wired at launch">Facebook</a>
+            <a href="index.html" rel="noopener" title="LinkedIn — real profile wired at launch">LinkedIn</a>
           </p>
         </div>
         <div>
@@ -199,7 +263,7 @@
         <div>
           <p class="eyebrow">Two Texas shops</p>
           <div class="footer-links mt-4">
-            <a href="tel:(469) 620-2047">(469) 620-2047</a>
+            <a href="tel:+14696202047">(469) 620-2047</a>
             <a href="mailto:info@aticofurniture.com">info@aticofurniture.com</a>
             <p class="text-sm mt-3" style="opacity: 0.7;">Dallas / Farmers Branch HQ<br>3505 Garden Brook Dr</p>
             <p class="text-sm mt-2" style="opacity: 0.7;">Houston<br>16830 Barker Springs Rd</p>
@@ -215,6 +279,12 @@
       </div>
     </div>
   </footer>
+
+  <!-- Mobile-only sticky action bar: keeps the primary ask + tap-to-call always in reach on phones -->
+  <nav class="mobile-cta" aria-label="Quick actions">
+    <a class="btn btn-brand" href="contact.html"><span>Request a Consultation</span></a>
+    <a class="btn btn-ghost mc-call" href="tel:+14696202047">Call</a>
+  </nav>
 
   <script src="assets/js/main.js"></script>
 </body>
