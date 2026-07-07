@@ -3,30 +3,33 @@
   "templateVersion": "1.0.0",
   "business": {
     "name": "Atico Furniture",
-    "tagline": "Quality work, fair prices, and a crew that shows up.",
-    "category": "",
+    "tagline": "If you can imagine it, we can build it. Just for you.",
+    "category": "Custom furniture maker & commercial fit-outs",
     "phone": "(469) 620-2047",
     "email": "info@aticofurniture.com",
-    "address": "123 Main St",
+    "address": "3505 Garden Brook Dr, Farmers Branch, TX",
+    "addressSecondary": "16830 Barker Springs Rd, Houston, TX",
     "city": "Dallas, TX",
     "domain": "lithacker6458.github.io/demos/atico-furniture"
   },
   "brand": {
-    "primaryColor": "#1a5fb4",
-    "accentColor": "#e8590c",
+    "primaryColor": "#C6512A",
+    "accentColor": "#B0894F",
     "displayFont": "Fraunces",
-    "bodyFont": "Archivo"
+    "bodyFont": "Archivo",
+    "monoFont": "IBM Plex Mono"
   },
   "payments": {
-    "provider": "stripe-payment-links",
+    "provider": "none",
     "depositUrl": "#",
     "bookUrl": "#",
     "buyUrls": ["#", "#", "#"],
-    "notes": "Client-owned Stripe Payment Links ONLY (https://buy.stripe.com/...). Card data flows to Stripe, never to this site or the agency. Empty tokens are stripped in client builds and forced to '#' in demo builds. See docs/STRIPE_SETUP.md."
+    "notes": "Lead-gen site (custom/bespoke — no e-commerce). Single committed CTA is 'Request a Consultation', posting via FormSubmit to info@aticofurniture.com. No Stripe payments on this site."
   },
   "meta": {
     "generatedYear": "2026",
     "brandingSource": "assets/css/custom.css",
-    "notes": "All branding (colors, fonts) lives in assets/css/custom.css as CSS custom properties."
+    "concept": "The Commission — Atelier of Steel & Timber (warm paper + dark forge bands)",
+    "notes": "All branding (colors, fonts) lives in assets/css/custom.css as CSS custom properties. Imagery is CSS/SVG placeholders the client swaps 1:1 with real photos at launch."
   }
 }
