@@ -1,0 +1,32 @@
+{
+  "template": "agency-local-business",
+  "templateVersion": "1.0.0",
+  "business": {
+    "name": "Panaderia La Reina Imperial",
+    "tagline": "Fresh pan dulce daily and custom cakes for the moments that matter.",
+    "phone": "(972) 000-0000",
+    "email": "hola@lareinaimperial.com",
+    "address": "2380 E Park Blvd, Ste 316",
+    "city": "Plano, TX 75074",
+    "domain": "lithacker6458.github.io/demos/panaderia-la-reina-imperial"
+  },
+  "brand": {
+    "primaryColor": "#a4161a",
+    "accentColor": "#e0a106",
+    "displayFont": "Fraunces",
+    "bodyFont": "Archivo"
+  },
+  "payments": {
+    "provider": "stripe-payment-links",
+    "depositUrl": "#",
+    "bookUrl": "#",
+    "buyUrls": ["#", "#", "#"],
+    "notes": "Client-owned Stripe Payment Links ONLY (https://buy.stripe.com/...). Card data flows to Stripe, never to this site or the agency. Empty tokens are stripped in client builds and forced to '#' in demo builds. See docs/STRIPE_SETUP.md."
+  },
+  "meta": {
+    "generatedYear": "2026",
+    "brandingSource": "assets/css/custom.css",
+    "notes": "All branding (colors, fonts) lives in assets/css/custom.css as CSS custom properties.",
+    "prelaunchTODO": "Phone (972) 000-0000, email hola@lareinaimperial.com, and hours are PLACEHOLDERS. Drop in the real verified phone (cross-source primary: 972-424-9425, fallback 972-876-8879 — confirm by phone/Google before launch) and real hours before going live."
+  }
+}

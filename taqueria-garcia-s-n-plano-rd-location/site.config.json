@@ -1,0 +1,31 @@
+{
+  "template": "agency-local-business",
+  "templateVersion": "1.0.0",
+  "business": {
+    "name": "Taqueria Garcia's (N Plano Rd location)",
+    "tagline": "Real tacos, made from scratch, the way abuela taught.",
+    "phone": "(469) 000-0000",
+    "email": "hola@taqueriagarcias-garland.com",
+    "address": "1921 N Plano Rd, Garland, TX 75042",
+    "city": "Garland, TX",
+    "domain": "lithacker6458.github.io/demos/taqueria-garcia-s-n-plano-rd-location"
+  },
+  "brand": {
+    "primaryColor": "#a01f1a",
+    "accentColor": "#e0912f",
+    "displayFont": "Fraunces",
+    "bodyFont": "Archivo"
+  },
+  "payments": {
+    "provider": "stripe-payment-links",
+    "depositUrl": "#",
+    "bookUrl": "#",
+    "buyUrls": ["#", "#", "#"],
+    "notes": "Client-owned Stripe Payment Links ONLY (https://buy.stripe.com/...). Card data flows to Stripe, never to this site or the agency. Empty tokens are stripped in client builds and forced to '#' in demo builds. See docs/STRIPE_SETUP.md."
+  },
+  "meta": {
+    "generatedYear": "2026",
+    "brandingSource": "assets/css/custom.css",
+    "notes": "All branding (colors, fonts) lives in assets/css/custom.css as CSS custom properties."
+  }
+}

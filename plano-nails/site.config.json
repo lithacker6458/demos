@@ -1,0 +1,31 @@
+{
+  "template": "agency-local-business",
+  "templateVersion": "1.0.0",
+  "business": {
+    "name": "Plano Nails",
+    "tagline": "Family-run nails in Plano — meticulous care, twenty years of regulars.",
+    "phone": "(972) 578-1300",
+    "email": "hello@planonails.com",
+    "address": "2380 E Park Blvd, Ste 402, Plano, TX 75074",
+    "city": "Plano, TX",
+    "domain": "lithacker6458.github.io/demos/plano-nails"
+  },
+  "brand": {
+    "primaryColor": "#6d213c",
+    "accentColor": "#c98a5e",
+    "displayFont": "Fraunces",
+    "bodyFont": "Archivo"
+  },
+  "payments": {
+    "provider": "stripe-payment-links",
+    "depositUrl": "#",
+    "bookUrl": "#",
+    "buyUrls": ["#", "#", "#"],
+    "notes": "Client-owned Stripe Payment Links ONLY (https://buy.stripe.com/...). Card data flows to Stripe, never to this site or the agency. Empty tokens are stripped in client builds and forced to '#' in demo builds. See docs/STRIPE_SETUP.md."
+  },
+  "meta": {
+    "generatedYear": "2026",
+    "brandingSource": "assets/css/custom.css",
+    "notes": "All branding (colors, fonts) lives in assets/css/custom.css as CSS custom properties."
+  }
+}

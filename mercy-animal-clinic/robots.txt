@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lithacker6458.github.io/demos/mercy-animal-clinic/sitemap.xml

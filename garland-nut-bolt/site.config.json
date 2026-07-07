@@ -1,0 +1,31 @@
+{
+  "template": "agency-local-business",
+  "templateVersion": "1.0.0",
+  "business": {
+    "name": "Garland Nut &amp; Bolt",
+    "tagline": "Every fastener, every size, in stock and ready to grab.",
+    "phone": "(214) 555-0199",
+    "email": "hello@garlandnutandbolt.com",
+    "address": "1901 S Jupiter Rd #105",
+    "city": "Garland, TX 75042",
+    "domain": "lithacker6458.github.io/demos/garland-nut-bolt"
+  },
+  "brand": {
+    "primaryColor": "#2b4a6f",
+    "accentColor": "#e8621d",
+    "displayFont": "Fraunces",
+    "bodyFont": "Archivo"
+  },
+  "payments": {
+    "provider": "stripe-payment-links",
+    "depositUrl": "#",
+    "bookUrl": "#",
+    "buyUrls": ["#", "#", "#"],
+    "notes": "Client-owned Stripe Payment Links ONLY (https://buy.stripe.com/...). Card data flows to Stripe, never to this site or the agency. Empty tokens are stripped in client builds and forced to '#' in demo builds. See docs/STRIPE_SETUP.md."
+  },
+  "meta": {
+    "generatedYear": "2026",
+    "brandingSource": "assets/css/custom.css",
+    "notes": "All branding (colors, fonts) lives in assets/css/custom.css as CSS custom properties."
+  }
+}

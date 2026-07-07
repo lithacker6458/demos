@@ -1,0 +1,31 @@
+{
+  "template": "agency-local-business",
+  "templateVersion": "1.0.0",
+  "business": {
+    "name": "Kim A Tailor",
+    "tagline": "Expert alterations and custom tailoring in the heart of downtown Richardson.",
+    "phone": "(972) 234-8943",
+    "email": "hello@kimatailor.com",
+    "address": "202 E Main St",
+    "city": "Richardson, TX",
+    "domain": "lithacker6458.github.io/demos/kim-a-tailor"
+  },
+  "brand": {
+    "primaryColor": "#6d2932",
+    "accentColor": "#b0894f",
+    "displayFont": "Fraunces",
+    "bodyFont": "Archivo"
+  },
+  "payments": {
+    "provider": "stripe-payment-links",
+    "depositUrl": "#",
+    "bookUrl": "#",
+    "buyUrls": ["#", "#", "#"],
+    "notes": "Client-owned Stripe Payment Links ONLY (https://buy.stripe.com/...). Card data flows to Stripe, never to this site or the agency. Empty tokens are stripped in client builds and forced to '#' in demo builds. See docs/STRIPE_SETUP.md."
+  },
+  "meta": {
+    "generatedYear": "2026",
+    "brandingSource": "assets/css/custom.css",
+    "notes": "All branding (colors, fonts) lives in assets/css/custom.css as CSS custom properties."
+  }
+}

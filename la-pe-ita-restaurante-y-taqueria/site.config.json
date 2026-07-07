@@ -1,0 +1,33 @@
+{
+  "template": "agency-local-business",
+  "templateVersion": "1.0.0",
+  "business": {
+    "name": "La Peñita Restaurante y Taquería",
+    "tagline": "Family-owned Plano taquería serving real Mexican street food since 2003.",
+    "phone": "(469) 000-0000",
+    "email": "hello@la-pe-ita-restaurante-y-taqueria.com",
+    "address": "Jupiter Rd (inside Plano Bazaar)",
+    "city": "Plano, TX 75074",
+    "domain": "lithacker6458.github.io/demos/la-pe-ita-restaurante-y-taqueria"
+  },
+  "brand": {
+    "primaryColor": "#8a1c1c",
+    "accentColor": "#e8850c",
+    "displayFont": "Fraunces",
+    "bodyFont": "Archivo"
+  },
+  "payments": {
+    "provider": "stripe-payment-links",
+    "depositUrl": "#",
+    "bookUrl": "#",
+    "buyUrls": ["#", "#", "#"],
+    "notes": "Client-owned Stripe Payment Links ONLY (https://buy.stripe.com/...). Card data flows to Stripe, never to this site or the agency. Empty tokens are stripped in client builds and forced to '#' in demo builds. See docs/STRIPE_SETUP.md."
+  },
+  "meta": {
+    "generatedYear": "2026",
+    "brandingSource": "assets/css/custom.css",
+    "notes": "All branding (colors, fonts) lives in assets/css/custom.css as CSS custom properties.",
+    "placeholderPhone": "(469) 000-0000 is a PLACEHOLDER. The real number is unverified — cross-listed as (469) 467-6595 but do a live Google check before dialing/launch, then replace every (469) 000-0000 across the HTML + this config.",
+    "addressNote": "Located inside Plano Bazaar on Jupiter Rd, Plano TX 75074; exact suite unconfirmed (listings show 1424 Jupiter Rd Ste 203 vs 1409 Jupiter Rd Ste 220). Confirm suite before launch."
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "template": "agency-local-business",
+  "templateVersion": "1.0.0",
+  "business": {
+    "name": "Lisa's Soul Food Cafe",
+    "tagline": "Southern soul food, made from scratch, served like family.",
+    "phone": "(214) 372-3309",
+    "email": "hello@lisassoulfoodcafe.com",
+    "address": "2550 W Red Bird Ln, Ste 404",
+    "city": "Dallas",
+    "domain": "lithacker6458.github.io/demos/lisa-s-soul-food-cafe"
+  },
+  "brand": {
+    "primaryColor": "#a3352a",
+    "accentColor": "#e0a11c",
+    "displayFont": "Fraunces",
+    "bodyFont": "Archivo"
+  },
+  "payments": {
+    "provider": "stripe-payment-links",
+    "depositUrl": "#",
+    "bookUrl": "#",
+    "buyUrls": ["#", "#", "#"],
+    "notes": "Client-owned Stripe Payment Links ONLY (https://buy.stripe.com/...). Card data flows to Stripe, never to this site or the agency. Empty tokens are stripped in client builds and forced to '#' in demo builds. See docs/STRIPE_SETUP.md."
+  },
+  "meta": {
+    "generatedYear": "2026",
+    "brandingSource": "assets/css/custom.css",
+    "notes": "All branding (colors, fonts) lives in assets/css/custom.css as CSS custom properties."
+  }
+}

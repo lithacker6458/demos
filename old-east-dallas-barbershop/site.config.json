@@ -1,0 +1,31 @@
+{
+  "template": "agency-local-business",
+  "templateVersion": "1.0.0",
+  "business": {
+    "name": "Old East Dallas Barbershop",
+    "tagline": "Sharp cuts, straight-razor fades, and hot-towel shaves in Old East Dallas since 2012.",
+    "phone": "(214) 560-7327",
+    "email": "hello@oedbarbershop.com",
+    "address": "515 N Carroll Ave, Ste D",
+    "city": "Dallas, TX",
+    "domain": "lithacker6458.github.io/demos/old-east-dallas-barbershop"
+  },
+  "brand": {
+    "primaryColor": "#14181f",
+    "accentColor": "#c8963e",
+    "displayFont": "Fraunces",
+    "bodyFont": "Archivo"
+  },
+  "payments": {
+    "provider": "stripe-payment-links",
+    "depositUrl": "#",
+    "bookUrl": "#",
+    "buyUrls": ["#", "#", "#"],
+    "notes": "Client-owned Stripe Payment Links ONLY (https://buy.stripe.com/...). Card data flows to Stripe, never to this site or the agency. Empty tokens are stripped in client builds and forced to '#' in demo builds. See docs/STRIPE_SETUP.md."
+  },
+  "meta": {
+    "generatedYear": "2026",
+    "brandingSource": "assets/css/custom.css",
+    "notes": "All branding (colors, fonts) lives in assets/css/custom.css as CSS custom properties."
+  }
+}

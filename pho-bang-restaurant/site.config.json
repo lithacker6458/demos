@@ -1,0 +1,33 @@
+{
+  "template": "agency-local-business",
+  "templateVersion": "1.0.0",
+  "business": {
+    "name": "Pho Bang Restaurant",
+    "category": "Vietnamese restaurant",
+    "tagline": "Family-run Vietnamese kitchen — pho, bún, banh mi, and rice plates.",
+    "phone": "(972) 555-0100",
+    "phoneNote": "DEMO PLACEHOLDER. Real verified number is (972) 487-6666 — re-confirm on Google Maps (hours/listing vary) before it goes live, then swap it into every tel: link and the JSON-LD.",
+    "email": "phobanggarland@gmail.com",
+    "address": "3565 W Walnut St, Ste A",
+    "city": "Garland, TX 75042",
+    "domain": "lithacker6458.github.io/demos/pho-bang-restaurant"
+  },
+  "brand": {
+    "primaryColor": "#a51d24",
+    "accentColor": "#e0a03c",
+    "displayFont": "Fraunces",
+    "bodyFont": "Archivo"
+  },
+  "payments": {
+    "provider": "none",
+    "depositUrl": "#",
+    "bookUrl": "#",
+    "buyUrls": ["#", "#", "#"],
+    "notes": "No online payment for this demo — a walk-in / call-ahead restaurant. If online ordering is added later, use client-owned Stripe Payment Links ONLY (https://buy.stripe.com/...). See docs/STRIPE_SETUP.md."
+  },
+  "meta": {
+    "generatedYear": "2026",
+    "brandingSource": "assets/css/custom.css",
+    "notes": "Spec demo. Public facts only — no scraped logo or photos; placeholder illustration and sample menu/prices/hours. Concept preview, not affiliated. All branding (colors, fonts) lives in assets/css/custom.css as CSS custom properties."
+  }
+}
