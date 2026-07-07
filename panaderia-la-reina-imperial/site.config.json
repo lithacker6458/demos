@@ -3,16 +3,17 @@
   "templateVersion": "1.0.0",
   "business": {
     "name": "Panaderia La Reina Imperial",
-    "tagline": "Fresh pan dulce daily and custom cakes for the moments that matter.",
-    "phone": "(972) 000-0000",
-    "email": "hola@lareinaimperial.com",
-    "address": "2380 E Park Blvd, Ste 316",
-    "city": "Plano, TX 75074",
+    "tagline": "Quality work, fair prices, and a crew that shows up.",
+    "category": "",
+    "phone": "(555) 555-5555",
+    "email": "hello@panaderia-la-reina-imperial.com",
+    "address": "123 Main St",
+    "city": "Plano, TX",
     "domain": "lithacker6458.github.io/demos/panaderia-la-reina-imperial"
   },
   "brand": {
-    "primaryColor": "#a4161a",
-    "accentColor": "#e0a106",
+    "primaryColor": "#1a5fb4",
+    "accentColor": "#e8590c",
     "displayFont": "Fraunces",
     "bodyFont": "Archivo"
   },
@@ -26,7 +27,6 @@
   "meta": {
     "generatedYear": "2026",
     "brandingSource": "assets/css/custom.css",
-    "notes": "All branding (colors, fonts) lives in assets/css/custom.css as CSS custom properties.",
-    "prelaunchTODO": "Phone (972) 000-0000, email hola@lareinaimperial.com, and hours are PLACEHOLDERS. Drop in the real verified phone (cross-source primary: 972-424-9425, fallback 972-876-8879 — confirm by phone/Google before launch) and real hours before going live."
+    "notes": "All branding (colors, fonts) lives in assets/css/custom.css as CSS custom properties."
   }
 }
