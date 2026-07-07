@@ -1,0 +1,710 @@
+/* ================================================================
+   CUTS & STYLES BY DURAN — Variation A "Heritage"
+   Classic old-school barbershop: oxblood + bone + aged brass.
+   Vintage, since-1994, letterpress + barber-pole motifs.
+
+   BRAND TOKENS — the ONLY place branding lives.
+   ================================================================ */
+:root {
+  /* client brand */
+  --brand:  #8f1d1d;   /* deep oxblood barber red */
+  --accent: #caa24a;   /* aged brass / vintage gold */
+
+  --brand-deep: #6d1414;   /* darker oxblood for shadows/fields */
+  --brand-glow: #b5322b;   /* lifted red for gradients */
+
+  /* typefaces (loaded via Google Fonts <link> in each page head) */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+
+  /* fixed heritage palette — warm bone paper & near-black ink */
+  --ink: #1c1714;
+  --ink-soft: #5a5049;
+  --paper: #efe6d4;      /* warmer, deeper bone than the template */
+  --paper-deep: #e3d6bd;
+  --line: #cbb99b;
+  --white: #fbf6ea;
+
+  --cream: #f4ecda;
+}
+
+/* ================================================================
+   Base
+   ================================================================ */
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* paper grain over everything, very subtle */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+h1, h2, h3, .display {
+  font-family: var(--font-display);
+  font-variation-settings: 'SOFT' 30, 'WONK' 0;
+  letter-spacing: -0.02em;
+}
+
+::selection { background: var(--brand); color: var(--white); }
+
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+/* ================================================================
+   Small heritage atoms
+   ================================================================ */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+.eyebrow::before {
+  content: "";
+  width: 1.6rem;
+  height: 2px;
+  background: var(--accent);
+  box-shadow: 0 3px 0 var(--accent);
+}
+
+.section-num {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(3rem, 7vw, 5rem);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--line);
+  user-select: none;
+}
+
+/* vintage double rule */
+.rule-dotted {
+  border: none;
+  border-top: 3px double var(--line);
+}
+
+/* ================================================================
+   Buttons — pressed brass / oxblood, heavier vintage stroke
+   ================================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 0.9rem 1.7rem;
+  border: 2px solid var(--ink);
+  border-radius: 2px;
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease, color 120ms ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-brand {
+  background: var(--brand);
+  color: var(--white);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.btn-brand:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); background: var(--brand-glow); }
+.btn-brand:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  box-shadow: 4px 4px 0 rgba(28, 23, 20, 0.18);
+}
+.btn-ghost:hover { background: var(--paper-deep); transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(28, 23, 20, 0.22); }
+.btn-accent {
+  background: var(--accent);
+  color: var(--ink);
+  border-color: var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.btn-accent:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); }
+.btn-sm { padding: 0.6rem 1.15rem; font-size: 0.72rem; }
+
+/* ================================================================
+   Header / nav — barber-pole topbar
+   ================================================================ */
+.topbar {
+  color: var(--white);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  background: var(--brand-deep);
+  position: relative;
+}
+/* diagonal barber-pole candy on the utility bar */
+.topbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  background-image: repeating-linear-gradient(
+    -55deg,
+    var(--brand) 0 12px,
+    var(--white) 12px 20px,
+    var(--brand-deep) 20px 24px,
+    var(--white) 24px 32px
+  );
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+.topbar > div { position: relative; }
+.topbar a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; font-weight: 700; }
+.topbar a:hover { color: var(--white); }
+
+.site-header {
+  background: var(--cream);
+  border-bottom: 3px double var(--ink);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.35rem;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+/* replace the generic spark with a barber-pole glyph */
+.wordmark .spark {
+  font-size: 0;
+  width: 0.7rem;
+  height: 1.5rem;
+  border-radius: 2px;
+  border: 1.5px solid var(--ink);
+  background-image: repeating-linear-gradient(-45deg, var(--brand) 0 4px, var(--white) 4px 8px);
+  display: inline-block;
+  flex: none;
+}
+
+.navlink {
+  position: relative;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding: 0.25rem 0;
+}
+.navlink::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 100%; bottom: -3px;
+  height: 2px;
+  background: var(--brand);
+  transition: right 160ms ease;
+}
+.navlink:hover { color: var(--ink); }
+.navlink:hover::after { right: 0; }
+.navlink.active { color: var(--brand); }
+.navlink.active::after { right: 0; background: var(--accent); }
+
+/* mobile panel */
+.nav-panel {
+  display: none;
+  border-top: 2px solid var(--ink);
+  background: var(--cream);
+}
+.nav-panel.open { display: block; }
+.nav-panel a {
+  display: block;
+  padding: 0.9rem 1.5rem;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+}
+.nav-panel a:hover { background: var(--paper-deep); }
+
+.hamburger { border: 2px solid var(--ink); border-radius: 2px; padding: 0.45rem 0.6rem; background: transparent; color: var(--ink); }
+.hamburger:hover { background: var(--paper-deep); }
+
+/* ================================================================
+   Hero — DARK oxblood field (distinct from the light sibling)
+   ================================================================ */
+.hero-wrap {
+  position: relative;
+  background: var(--brand-deep);
+  color: var(--cream);
+  border-bottom: 3px double var(--ink);
+  overflow: hidden;
+}
+.hero-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.10;
+  background-image:
+    radial-gradient(circle at 78% 22%, rgba(202,162,74,0.55), transparent 42%),
+    repeating-linear-gradient(-45deg, rgba(0,0,0,0.22) 0 2px, transparent 2px 26px);
+  pointer-events: none;
+}
+.hero-wrap .eyebrow { color: var(--accent); }
+.hero-wrap .eyebrow::before { background: var(--accent); box-shadow: 0 3px 0 var(--accent); }
+
+.hero-display {
+  font-size: clamp(2.7rem, 6.6vw, 5rem);
+  line-height: 0.98;
+  font-weight: 800;
+  color: var(--cream);
+}
+.hero-display em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--accent);
+  font-variation-settings: 'SOFT' 80, 'WONK' 1;
+}
+.hero-lede { color: rgba(244,236,218,0.82); }
+
+/* the framed emblem panel inside the hero */
+.hero-panel {
+  position: relative;
+  border: 2px solid var(--accent);
+  border-radius: 3px;
+  background:
+    linear-gradient(165deg, var(--brand-deep) 0%, var(--brand) 55%, var(--brand-glow) 100%);
+  box-shadow: 0 0 0 6px var(--brand-deep), 10px 10px 0 rgba(0,0,0,0.35);
+  overflow: hidden;
+}
+.hero-panel .rays { position: absolute; inset: 0; opacity: 0.18; }
+
+/* big rotating barber pole inside the emblem */
+.pole {
+  width: 74px;
+  border: 2px solid var(--cream);
+  border-radius: 40px;
+  background-image: repeating-linear-gradient(-52deg,
+    var(--brand) 0 12px,
+    var(--white) 12px 20px,
+    #2f4a8a 20px 28px,   /* the classic blue stripe */
+    var(--white) 28px 36px);
+  background-size: 100% 200%;
+  animation: pole-spin 3.4s linear infinite;
+  box-shadow: inset 0 0 12px rgba(0,0,0,0.4), 4px 4px 0 rgba(0,0,0,0.35);
+}
+.pole-cap {
+  width: 90px; height: 20px;
+  margin: 0 auto;
+  border: 2px solid var(--cream);
+  border-radius: 6px;
+  background: linear-gradient(var(--accent), #a8842f);
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.3);
+}
+@keyframes pole-spin { to { background-position: 0 -200%; } }
+
+.stamp {
+  animation: spin 26s linear infinite;
+  transform-origin: center;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  padding: 0.32rem 0.85rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.chip .dot { width: 0.45rem; height: 0.45rem; border-radius: 999px; background: var(--accent); }
+/* chips on the dark hero */
+.hero-wrap .chip { color: var(--cream); border-color: rgba(244,236,218,0.5); }
+/* chips on light sections */
+.chip.chip-light { color: var(--ink); background: var(--white); border-color: var(--ink); }
+
+/* small star rating badge for the hero */
+.hero-quote {
+  border: 2px solid var(--accent);
+  background: var(--cream);
+  color: var(--ink);
+  border-radius: 3px;
+  box-shadow: 6px 6px 0 rgba(0,0,0,0.35);
+}
+
+/* ================================================================
+   Marquee strip — brass on ink
+   ================================================================ */
+.marquee {
+  overflow: hidden;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  background: var(--ink);
+  color: var(--accent);
+}
+.marquee-track {
+  display: flex;
+  gap: 3rem;
+  white-space: nowrap;
+  padding: 0.7rem 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  animation: marquee 30s linear infinite;
+  width: max-content;
+}
+.marquee-track .sep { color: var(--brand-glow); font-style: normal; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* ================================================================
+   Price list (chair menu) — the barbershop centerpiece
+   ================================================================ */
+.menu-card {
+  background: var(--cream);
+  border: 2px solid var(--ink);
+  border-radius: 3px;
+  box-shadow: 0 0 0 5px var(--paper-deep), 8px 8px 0 rgba(28,23,20,0.18);
+  padding: 1.9rem 1.75rem 1.6rem;
+}
+.menu-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px double var(--line);
+}
+.menu-card h3 .tag {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand);
+  border: 1.5px solid var(--brand);
+  border-radius: 999px;
+  padding: 0.12rem 0.55rem;
+  font-weight: 700;
+}
+.price-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px dotted var(--line);
+}
+.price-row:last-child { border-bottom: none; }
+.price-row .pname { font-weight: 600; font-size: 0.95rem; }
+.price-row .pdesc { display: block; font-size: 0.78rem; color: var(--ink-soft); font-weight: 400; margin-top: 0.1rem; }
+.price-row .pprice {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--brand);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* ================================================================
+   Service cards — vintage framed
+   ================================================================ */
+.card-service {
+  position: relative;
+  background: var(--cream);
+  border: 2px solid var(--ink);
+  border-radius: 3px;
+  padding: 1.75rem 1.5rem 1.5rem;
+  transition: transform 140ms ease, box-shadow 140ms ease;
+  box-shadow: 0 0 0 4px var(--paper-deep), 4px 4px 0 rgba(28,23,20,0.12);
+}
+.card-service:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 0 0 0 4px var(--paper-deep), 8px 8px 0 var(--ink);
+}
+.card-service .num {
+  position: absolute;
+  top: 0.9rem;
+  right: 1.1rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+.card-service .icon {
+  width: 2.9rem;
+  height: 2.9rem;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--brand);
+  color: var(--white);
+  margin-bottom: 1rem;
+  box-shadow: 3px 3px 0 rgba(28,23,20,0.2);
+}
+.card-service h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.4rem; }
+.card-service p { color: var(--ink-soft); font-size: 0.92rem; line-height: 1.55; }
+.card-link {
+  display: inline-block;
+  margin-top: 0.9rem;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand);
+  text-decoration: none;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 1px;
+}
+.card-link:hover { color: var(--accent); border-color: var(--brand); }
+
+/* ================================================================
+   Testimonials
+   ================================================================ */
+.quote-card {
+  position: relative;
+  background: var(--cream);
+  border: 2px solid var(--ink);
+  border-radius: 3px;
+  padding: 2.6rem 1.6rem 1.5rem;
+  box-shadow: 0 0 0 4px var(--paper-deep), 5px 5px 0 rgba(28,23,20,0.15);
+}
+.quote-card::before {
+  content: "\201C";
+  position: absolute;
+  top: 0.2rem;
+  left: 1rem;
+  font-family: var(--font-display);
+  font-size: 4.5rem;
+  line-height: 1;
+  color: var(--accent);
+}
+.quote-card blockquote { font-family: var(--font-display); font-size: 1.05rem; line-height: 1.5; font-style: italic; }
+.quote-card figcaption { margin-top: 1rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); }
+.quote-card figcaption::before { content: "— "; color: var(--brand); }
+
+.stars { color: var(--accent); letter-spacing: 0.15em; font-size: 0.9rem; }
+
+/* ================================================================
+   CTA band
+   ================================================================ */
+.cta-band {
+  background: var(--ink);
+  color: var(--cream);
+  border-top: 3px double var(--accent);
+  border-bottom: 3px double var(--accent);
+  position: relative;
+  overflow: hidden;
+}
+.cta-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  background-image: repeating-linear-gradient(-45deg, rgba(202,162,74,0.10) 0 12px, transparent 12px 24px);
+}
+.cta-band .eyebrow { color: var(--accent); }
+.cta-band .display { font-size: clamp(2rem, 5vw, 3.4rem); color: var(--cream); }
+
+/* ================================================================
+   Hours table & map placeholder
+   ================================================================ */
+.hours-table { width: 100%; border-collapse: collapse; }
+.hours-table th, .hours-table td {
+  text-align: left;
+  padding: 0.6rem 0.25rem;
+  border-bottom: 1px dotted var(--line);
+  font-size: 0.95rem;
+}
+.hours-table th { font-weight: 600; }
+.hours-table td { text-align: right; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.hours-table tr.closed th, .hours-table tr.closed td { color: var(--ink-soft); opacity: 0.6; }
+.hours-table tr.today th { color: var(--brand); font-weight: 800; }
+.hours-table tr.today td { color: var(--brand); font-weight: 700; }
+
+.map-ph {
+  position: relative;
+  border: 2px solid var(--ink);
+  border-radius: 3px;
+  min-height: 260px;
+  overflow: hidden;
+  background-color: var(--paper-deep);
+  background-image:
+    repeating-linear-gradient(0deg, rgba(28,23,20,0.09) 0 2px, transparent 2px 44px),
+    repeating-linear-gradient(90deg, rgba(28,23,20,0.09) 0 2px, transparent 2px 56px),
+    repeating-linear-gradient(45deg, rgba(28,23,20,0.05) 0 1px, transparent 1px 90px);
+  box-shadow: 0 0 0 4px var(--paper-deep), 5px 5px 0 rgba(28,23,20,0.12);
+}
+.map-pin {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -90%);
+  color: var(--brand);
+  filter: drop-shadow(2px 3px 0 rgba(28,23,20,0.35));
+  animation: bob 2.4s ease-in-out infinite;
+}
+@keyframes bob { 0%, 100% { transform: translate(-50%, -90%); } 50% { transform: translate(-50%, -110%); } }
+.map-label {
+  position: absolute;
+  left: 0.9rem; bottom: 0.9rem;
+  background: var(--cream);
+  border: 2px solid var(--ink);
+  border-radius: 2px;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  box-shadow: 3px 3px 0 rgba(28,23,20,0.25);
+}
+
+/* ================================================================
+   Forms
+   ================================================================ */
+.field label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+.field input, .field select, .field textarea {
+  width: 100%;
+  background: var(--white);
+  border: 2px solid var(--ink);
+  border-radius: 2px;
+  padding: 0.75rem 0.9rem;
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  color: var(--ink);
+  transition: box-shadow 120ms ease;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  box-shadow: 3px 3px 0 var(--accent);
+}
+
+/* ================================================================
+   Numbered process / about lists
+   ================================================================ */
+.step {
+  display: flex;
+  gap: 1.1rem;
+  align-items: flex-start;
+}
+.step .step-num {
+  flex: none;
+  width: 2.7rem;
+  height: 2.7rem;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--brand);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 800;
+  box-shadow: 3px 3px 0 rgba(28,23,20,0.25);
+}
+
+details.faq {
+  border: 2px solid var(--ink);
+  border-radius: 3px;
+  background: var(--cream);
+  padding: 0;
+  box-shadow: 3px 3px 0 rgba(28,23,20,0.12);
+}
+details.faq summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 1rem 1.25rem;
+  font-weight: 800;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+details.faq summary::after { content: "+"; font-family: var(--font-display); font-size: 1.5rem; color: var(--brand); }
+details.faq[open] summary::after { content: "\2212"; }
+details.faq .faq-body { padding: 0 1.25rem 1.1rem; color: var(--ink-soft); font-size: 0.94rem; line-height: 1.6; }
+
+/* ================================================================
+   Footer
+   ================================================================ */
+.site-footer {
+  background: var(--ink);
+  color: var(--paper);
+  border-top: 3px double var(--accent);
+}
+.site-footer .wordmark { color: var(--paper); }
+.site-footer .wordmark .spark { border-color: var(--paper); }
+.site-footer a { color: var(--paper); text-decoration: none; }
+.site-footer a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.footer-links a { display: block; padding: 0.2rem 0; font-size: 0.9rem; opacity: 0.85; }
+.footer-fine { font-size: 0.76rem; opacity: 0.6; }
+
+/* big ghost wordmark at the very bottom */
+.footer-ghost {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  font-size: clamp(3rem, 11vw, 8rem);
+  line-height: 0.9;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(202, 162, 74, 0.22);
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ================================================================
+   Misc
+   ================================================================ */
+.tick { color: var(--brand); font-weight: 800; }
+
+.reveal { animation: rise 640ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+.reveal-1 { animation-delay: 80ms; }
+.reveal-2 { animation-delay: 180ms; }
+.reveal-3 { animation-delay: 300ms; }
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stamp, .marquee-track, .map-pin, .pole, .reveal { animation: none !important; }
+  html { scroll-behavior: auto; }
+}

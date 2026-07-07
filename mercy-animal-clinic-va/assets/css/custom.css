@@ -1,0 +1,629 @@
+/* ================================================================
+   MERCY ANIMAL CLINIC — Variation A ("Calm Clinical Trust")
+   Aesthetic: soft clinical blue + fresh sage green on cool near-white.
+   Generous whitespace, rounded soft cards, gentle shadows, no letterpress.
+   Reassuring, professional-medical, and warm. Brand tokens up top.
+   ================================================================ */
+:root {
+  /* client brand */
+  --brand:  #2f6fb0;          /* calm clinical blue */
+  --accent: #4fae86;          /* fresh sage / mint green */
+
+  --brand-deep: #235887;      /* darker blue for headings/hovers */
+  --brand-tint: #eaf2fa;      /* airy blue wash for section fills */
+  --accent-tint: #e6f4ee;     /* airy green wash */
+
+  /* typefaces (loaded via Google Fonts <link> in each page head) */
+  --font-display: 'Libre Franklin', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
+
+  /* cool clinical paper & ink (NOT warm cream) */
+  --ink: #1c2b39;            /* deep slate-navy */
+  --ink-soft: #566573;       /* muted slate */
+  --paper: #f6f9fc;          /* cool near-white */
+  --paper-deep: #edf3f9;     /* faint blue-grey panel */
+  --line: #dbe6f0;           /* soft blue-grey hairline */
+  --white: #ffffff;
+
+  --shadow-soft: 0 10px 30px -12px rgba(29, 62, 97, 0.22);
+  --shadow-lift: 0 18px 40px -14px rgba(29, 62, 97, 0.30);
+  --radius: 18px;
+  --radius-lg: 26px;
+}
+
+/* ================================================================
+   Base
+   ================================================================ */
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* soft atmospheric wash behind the page — very subtle, cool */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60rem 40rem at 85% -10%, rgba(79, 174, 134, 0.10), transparent 60%),
+    radial-gradient(55rem 38rem at -5% 8%, rgba(47, 111, 176, 0.10), transparent 55%);
+}
+
+h1, h2, h3, .display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+::selection { background: var(--accent); color: var(--white); }
+
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--brand) 45%, white);
+  outline-offset: 2px;
+}
+
+/* ================================================================
+   Small atoms
+   ================================================================ */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+.eyebrow::before {
+  content: "";
+  width: 1.6rem;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+/* soft ghost section index number */
+.section-num {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  line-height: 1;
+  color: var(--brand);
+  opacity: 0.16;
+  letter-spacing: -0.03em;
+  user-select: none;
+}
+
+.rule-dotted { border: none; border-top: 1px solid var(--line); }
+
+/* ================================================================
+   Buttons — soft, rounded, pill-friendly (no offset shadow)
+   ================================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.7rem;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  transition: transform 160ms ease, box-shadow 200ms ease, background 160ms ease, color 160ms ease;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 0.005em;
+}
+.btn-brand {
+  background: var(--brand);
+  color: var(--white);
+  box-shadow: 0 12px 24px -10px rgba(47, 111, 176, 0.65);
+}
+.btn-brand:hover { background: var(--brand-deep); transform: translateY(-2px); box-shadow: 0 18px 30px -10px rgba(47, 111, 176, 0.7); }
+.btn-brand:active { transform: translateY(0); }
+.btn-ghost {
+  background: var(--white);
+  color: var(--brand-deep);
+  border-color: var(--line);
+  box-shadow: var(--shadow-soft);
+}
+.btn-ghost:hover { border-color: color-mix(in srgb, var(--brand) 45%, white); transform: translateY(-2px); box-shadow: var(--shadow-lift); }
+.btn-accent {
+  background: var(--accent);
+  color: var(--white);
+  box-shadow: 0 12px 24px -10px rgba(79, 174, 134, 0.7);
+}
+.btn-accent:hover { background: color-mix(in srgb, var(--accent) 82%, black); transform: translateY(-2px); }
+.btn-sm { padding: 0.6rem 1.25rem; font-size: 0.85rem; }
+
+/* ================================================================
+   Header / nav
+   ================================================================ */
+.topbar {
+  background: var(--brand-deep);
+  color: #dbeafb;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+}
+.topbar a { color: #ffffff; text-decoration: none; font-weight: 600; }
+.topbar a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.site-header {
+  background: rgba(246, 249, 252, 0.86);
+  backdrop-filter: saturate(140%) blur(10px);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.3rem;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  text-decoration: none;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+/* the "spark" span becomes a soft round medical badge with a cross */
+.wordmark .spark {
+  font-size: 0;
+  width: 2.1rem;
+  height: 2.1rem;
+  flex: none;
+  border-radius: 50%;
+  background: linear-gradient(150deg, var(--brand) 0%, var(--accent) 130%);
+  position: relative;
+  box-shadow: 0 6px 14px -6px rgba(47, 111, 176, 0.7);
+}
+/* medical cross carved into the badge */
+.wordmark .spark::before,
+.wordmark .spark::after {
+  content: "";
+  position: absolute;
+  background: var(--white);
+  border-radius: 2px;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+.wordmark .spark::before { width: 0.9rem; height: 0.28rem; }
+.wordmark .spark::after  { width: 0.28rem; height: 0.9rem; }
+
+.navlink {
+  position: relative;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding: 0.25rem 0;
+}
+.navlink::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 100%; bottom: -3px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
+  transition: right 200ms ease;
+}
+.navlink:hover { color: var(--brand-deep); }
+.navlink:hover::after { right: 0; }
+.navlink.active { color: var(--brand-deep); }
+.navlink.active::after { right: 0; background: var(--brand); }
+
+/* mobile panel */
+.nav-panel {
+  display: none;
+  border-top: 1px solid var(--line);
+  background: var(--white);
+}
+.nav-panel.open { display: block; }
+.nav-panel a {
+  display: block;
+  padding: 0.9rem 1.5rem;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+}
+.nav-panel a:hover { background: var(--brand-tint); color: var(--brand-deep); }
+
+.hamburger { border: 1.5px solid var(--line); border-radius: 12px; padding: 0.5rem 0.62rem; background: var(--white); color: var(--brand-deep); }
+.hamburger:hover { background: var(--brand-tint); }
+
+/* ================================================================
+   Hero
+   ================================================================ */
+.hero-display {
+  font-size: clamp(2.5rem, 6vw, 4.4rem);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.hero-display em {
+  font-style: normal;
+  color: var(--brand);
+  position: relative;
+  white-space: nowrap;
+}
+/* soft green underline stroke beneath emphasized words */
+.hero-display em::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0.06em;
+  height: 0.32em;
+  background: var(--accent-tint);
+  border-radius: 6px;
+  z-index: -1;
+}
+
+.hero-panel {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(120% 120% at 20% 0%, color-mix(in srgb, var(--brand) 90%, white) 0%, var(--brand) 45%, var(--brand-deep) 100%);
+  box-shadow: var(--shadow-lift);
+  overflow: hidden;
+}
+/* gentle concentric "wellness" rings instead of harsh rays */
+.hero-panel .rays { position: absolute; inset: 0; opacity: 0.35; }
+
+/* the rotating stamp -> calm, slow floating badge (no spin) */
+.stamp { animation: floaty 6s ease-in-out infinite; transform-origin: center; }
+@keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.42rem 0.95rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--white);
+  box-shadow: var(--shadow-soft);
+}
+.chip .dot { width: 0.5rem; height: 0.5rem; border-radius: 999px; background: var(--accent); }
+
+/* ================================================================
+   "Marquee" strip -> calm trust ribbon (soft, no harsh scroll bg)
+   ================================================================ */
+.marquee {
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--white);
+  color: var(--brand-deep);
+}
+.marquee-track {
+  display: flex;
+  gap: 2.6rem;
+  white-space: nowrap;
+  padding: 0.85rem 0;
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 600;
+  animation: marquee 34s linear infinite;
+  width: max-content;
+}
+.marquee-track span:nth-child(even) { color: var(--accent); }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* ================================================================
+   Service cards — soft rounded, gentle lift
+   ================================================================ */
+.card-service {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.9rem 1.6rem 1.6rem;
+  transition: transform 200ms ease, box-shadow 240ms ease, border-color 200ms ease;
+  box-shadow: var(--shadow-soft);
+}
+.card-service:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lift);
+  border-color: color-mix(in srgb, var(--brand) 30%, white);
+}
+.card-service .num {
+  position: absolute;
+  top: 1.3rem;
+  right: 1.4rem;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: color-mix(in srgb, var(--brand) 45%, white);
+  letter-spacing: 0.02em;
+}
+.card-service .icon {
+  width: 3rem;
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 14px;
+  background: var(--brand-tint);
+  color: var(--brand);
+  margin-bottom: 1.05rem;
+}
+.card-service:hover .icon { background: var(--accent-tint); color: color-mix(in srgb, var(--accent) 80%, black); }
+.card-service h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 0.45rem; letter-spacing: -0.01em; }
+.card-service p { color: var(--ink-soft); font-size: 0.94rem; line-height: 1.6; }
+.card-link {
+  display: inline-block;
+  margin-top: 0.95rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--brand);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 160ms ease, color 160ms ease;
+}
+.card-link:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* ================================================================
+   Testimonials
+   ================================================================ */
+.quote-card {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 2.6rem 1.7rem 1.6rem;
+  box-shadow: var(--shadow-soft);
+}
+.quote-card::before {
+  content: "\201C";
+  position: absolute;
+  top: 0.4rem;
+  left: 1.2rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 3.6rem;
+  line-height: 1;
+  color: color-mix(in srgb, var(--accent) 55%, white);
+}
+.quote-card blockquote { font-family: var(--font-body); font-size: 1.02rem; line-height: 1.6; color: var(--ink); }
+.quote-card figcaption { margin-top: 1rem; font-family: var(--font-display); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.02em; color: var(--brand-deep); }
+.quote-card figcaption::before { content: ""; }
+
+.stars { color: #f4b740; letter-spacing: 0.12em; font-size: 0.92rem; }
+
+/* ================================================================
+   CTA band
+   ================================================================ */
+.cta-band {
+  background: linear-gradient(135deg, var(--brand-deep) 0%, var(--brand) 55%, color-mix(in srgb, var(--accent) 60%, var(--brand)) 130%);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.cta-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(40rem 24rem at 90% -30%, rgba(255,255,255,0.14), transparent 60%),
+    radial-gradient(30rem 20rem at 0% 130%, rgba(255,255,255,0.08), transparent 60%);
+}
+.cta-band h2, .cta-band .display { color: var(--white); }
+.cta-band .display { font-size: clamp(2rem, 5vw, 3.4rem); }
+
+/* ================================================================
+   Hours table & map placeholder
+   ================================================================ */
+.hours-table { width: 100%; border-collapse: collapse; }
+.hours-table th, .hours-table td {
+  text-align: left;
+  padding: 0.7rem 0.25rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.96rem;
+}
+.hours-table th { font-weight: 600; font-family: var(--font-display); }
+.hours-table td { text-align: right; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.hours-table tr.today th, .hours-table tr.today td { color: var(--brand-deep); font-weight: 700; }
+.hours-table tr.closed td { color: color-mix(in srgb, var(--ink-soft) 70%, white); }
+
+.map-ph {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  min-height: 280px;
+  overflow: hidden;
+  background-color: var(--brand-tint);
+  background-image:
+    repeating-linear-gradient(0deg, rgba(47,111,176,0.08) 0 1px, transparent 1px 46px),
+    repeating-linear-gradient(90deg, rgba(47,111,176,0.08) 0 1px, transparent 1px 58px);
+  box-shadow: var(--shadow-soft);
+}
+.map-pin {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -90%);
+  color: var(--brand);
+  filter: drop-shadow(0 8px 10px rgba(29, 62, 97, 0.35));
+  animation: bob 2.6s ease-in-out infinite;
+}
+@keyframes bob { 0%, 100% { transform: translate(-50%, -90%); } 50% { transform: translate(-50%, -108%); } }
+.map-label {
+  position: absolute;
+  left: 1rem; bottom: 1rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.5rem 0.85rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--brand-deep);
+  box-shadow: var(--shadow-soft);
+}
+
+/* ================================================================
+   Forms
+   ================================================================ */
+.field label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brand-deep);
+  margin-bottom: 0.45rem;
+}
+.field input, .field select, .field textarea {
+  width: 100%;
+  background: var(--white);
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  padding: 0.8rem 0.95rem;
+  font-size: 0.96rem;
+  font-family: var(--font-body);
+  color: var(--ink);
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+.field input::placeholder, .field textarea::placeholder { color: color-mix(in srgb, var(--ink-soft) 70%, white); }
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand) 18%, transparent);
+  outline: none;
+}
+
+/* ================================================================
+   Numbered process / about lists
+   ================================================================ */
+.step {
+  display: flex;
+  gap: 1.15rem;
+  align-items: flex-start;
+}
+.step .step-num {
+  flex: none;
+  width: 2.8rem;
+  height: 2.8rem;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 50%;
+  background: var(--brand-tint);
+  color: var(--brand-deep);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+details.faq {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--white);
+  padding: 0;
+  box-shadow: var(--shadow-soft);
+}
+details.faq summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 1.05rem 1.3rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--ink);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+details.faq summary::after { content: "+"; font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; color: var(--accent); transition: transform 200ms ease; }
+details.faq[open] summary::after { content: "\2212"; }
+details.faq .faq-body { padding: 0 1.3rem 1.15rem; color: var(--ink-soft); font-size: 0.95rem; line-height: 1.65; }
+
+/* ================================================================
+   Footer
+   ================================================================ */
+.site-footer {
+  background: var(--ink);
+  color: #cfdcea;
+  border-top: 4px solid var(--accent);
+}
+.site-footer .wordmark { color: var(--white); }
+.site-footer a { color: #cfdcea; text-decoration: none; }
+.site-footer a:hover { color: var(--white); text-decoration: underline; text-underline-offset: 3px; }
+.footer-links a { display: block; padding: 0.22rem 0; font-size: 0.92rem; }
+.footer-fine { font-size: 0.78rem; opacity: 0.62; }
+
+/* big soft ghost wordmark at the very bottom */
+.footer-ghost {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.6rem, 10vw, 7rem);
+  line-height: 0.9;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(207, 220, 234, 0.14);
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+  letter-spacing: -0.03em;
+}
+
+/* ================================================================
+   Misc
+   ================================================================ */
+.tick { color: var(--accent); font-weight: 800; }
+
+/* soft callout panels used on interior pages */
+.panel-soft {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+.panel-tint {
+  background: var(--brand-tint);
+  border: 1px solid color-mix(in srgb, var(--brand) 16%, white);
+  border-radius: var(--radius);
+}
+.panel-accent {
+  background: var(--accent-tint);
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, white);
+  border-radius: var(--radius);
+}
+
+.reveal { animation: rise 700ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+.reveal-1 { animation-delay: 90ms; }
+.reveal-2 { animation-delay: 200ms; }
+.reveal-3 { animation-delay: 320ms; }
+@keyframes rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stamp, .marquee-track, .map-pin, .reveal { animation: none !important; }
+  html { scroll-behavior: auto; }
+}

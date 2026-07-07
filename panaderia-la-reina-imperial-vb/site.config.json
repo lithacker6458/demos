@@ -1,0 +1,32 @@
+{
+  "template": "agency-local-business",
+  "templateVersion": "1.0.0",
+  "business": {
+    "name": "Panadería La Reina Imperial",
+    "tagline": "Conchas warm from the oven, every day.",
+    "category": "Mexican bakery (panadería)",
+    "phone": "(972) 424-9425",
+    "email": "hello@panaderia-la-reina-imperial.com",
+    "address": "2380 E Park Blvd, Ste 316",
+    "city": "Plano, TX 75074",
+    "domain": "lithacker6458.github.io/demos/panaderia-la-reina-imperial-vb"
+  },
+  "brand": {
+    "primaryColor": "#c05621",
+    "accentColor": "#b3123a",
+    "displayFont": "Bricolage Grotesque",
+    "bodyFont": "DM Sans"
+  },
+  "payments": {
+    "provider": "stripe-payment-links",
+    "depositUrl": "#",
+    "bookUrl": "#",
+    "buyUrls": ["#", "#", "#"],
+    "notes": "Client-owned Stripe Payment Links ONLY (https://buy.stripe.com/...). Card data flows to Stripe, never to this site or the agency. Empty tokens are stripped in client builds and forced to '#' in demo builds. See docs/STRIPE_SETUP.md."
+  },
+  "meta": {
+    "generatedYear": "2026",
+    "brandingSource": "assets/css/custom.css",
+    "notes": "Variation B (modern panadería-café). All branding (colors, fonts) lives in assets/css/custom.css as CSS custom properties. Demo only — concept preview, not affiliated with the business."
+  }
+}

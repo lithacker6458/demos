@@ -1,0 +1,33 @@
+{
+  "template": "agency-local-business",
+  "templateVersion": "1.0.0",
+  "variation": "a-classic-tailoring-house",
+  "business": {
+    "name": "Kim A Tailor",
+    "tagline": "Expert alterations in downtown Richardson — often the same day.",
+    "category": "Tailor & Alterations",
+    "phone": "(972) 234-8943",
+    "email": "hello@kimatailor.com",
+    "address": "202 E Main St",
+    "city": "Richardson, TX",
+    "domain": "lithacker6458.github.io/demos/kim-a-tailor-va"
+  },
+  "brand": {
+    "primaryColor": "#152a4e",
+    "accentColor": "#b0894f",
+    "displayFont": "Cormorant Garamond",
+    "bodyFont": "Karla"
+  },
+  "payments": {
+    "provider": "stripe-payment-links",
+    "depositUrl": "#",
+    "bookUrl": "#",
+    "buyUrls": ["#", "#", "#"],
+    "notes": "Demo build — every payment link forced to '#'. On the live client site these become client-owned Stripe Payment Links ONLY (https://buy.stripe.com/...). Card data flows to Stripe, never to this site or the agency. See docs/STRIPE_SETUP.md."
+  },
+  "meta": {
+    "generatedYear": "2026",
+    "brandingSource": "assets/css/custom.css",
+    "notes": "Concept preview — not affiliated. All branding (colors, fonts) lives in assets/css/custom.css as CSS custom properties. Variation A: classic heritage tailoring house — navy, ivory, antique gold, Cormorant Garamond display."
+  }
+}

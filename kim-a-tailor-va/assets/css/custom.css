@@ -1,0 +1,672 @@
+/* ================================================================
+   KIM A TAILOR — Variation A · "House of Alterations"
+   Classic heritage tailoring house. Deep navy + ivory + antique gold.
+   High-contrast Garamond display, humanist body. Hand-basted stitch
+   details, measuring-tape rules, a chalk-mark tailor's plate.
+   All branding lives here as CSS custom properties.
+   ================================================================ */
+:root {
+  /* client brand — navy house colour + antique gold thread */
+  --brand:  #152a4e;   /* midnight navy — the cloth */
+  --accent: #b0894f;   /* antique gold — the thread & pins */
+
+  /* typefaces (loaded via Google Fonts <link> in each page head) */
+  --font-display: 'Cormorant Garamond', 'Hoefler Text', Georgia, serif;
+  --font-body: 'Karla', 'Helvetica Neue', Arial, sans-serif;
+
+  /* fixed heritage palette — ivory paper & navy ink */
+  --ink: #14213a;         /* near-navy ink for body copy */
+  --ink-soft: #4a5468;    /* muted slate */
+  --paper: #f5f0e4;       /* warm ivory / calico */
+  --paper-deep: #ece4d2;  /* deeper calico */
+  --line: #d8ccb3;        /* faint pattern-paper line */
+  --white: #fbf7ec;       /* pressed linen white */
+  --navy-deep: #0e1c34;   /* deepest navy for footer/plates */
+  --gold-soft: #cbab74;   /* lighter gold for text on navy */
+}
+
+/* ================================================================
+   Base
+   ================================================================ */
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* faint calico weave over the ivory — the pattern paper on a cutting table */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+  background-image:
+    repeating-linear-gradient(0deg,   rgba(20,33,58,0.030) 0 1px, transparent 1px 26px),
+    repeating-linear-gradient(90deg,  rgba(20,33,58,0.030) 0 1px, transparent 1px 26px);
+}
+/* very fine linen grain */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+main, header, footer, .topbar { position: relative; z-index: 1; }
+
+h1, h2, h3, .display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  color: var(--ink);
+}
+
+::selection { background: var(--brand); color: var(--paper); }
+
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ================================================================
+   Editorial atoms — labels set like a tailor's ticket
+   ================================================================ */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.eyebrow::before {
+  content: "";
+  width: 2.4rem;
+  height: 1px;
+  background: var(--accent);
+}
+
+/* measuring-tape section numeral */
+.section-num {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(3rem, 7vw, 5.2rem);
+  line-height: 1;
+  font-weight: 500;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--accent);
+  opacity: 0.55;
+  user-select: none;
+}
+
+/* measuring-tape hairline rule with tick marks */
+.tape-rule {
+  height: 20px;
+  border: none;
+  background:
+    linear-gradient(var(--accent), var(--accent)) left top / 100% 1px no-repeat,
+    repeating-linear-gradient(90deg, var(--accent) 0 1px, transparent 1px 14px) left top / 100% 8px no-repeat;
+  opacity: 0.5;
+}
+
+/* ================================================================
+   Buttons — pressed brass plate, subtle
+   ================================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.95rem 1.7rem;
+  border: 1px solid var(--ink);
+  border-radius: 1px;
+  transition: transform 200ms cubic-bezier(.2,.7,.2,1), background 200ms ease, color 200ms ease, box-shadow 200ms ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-brand {
+  background: var(--brand);
+  color: var(--paper);
+  border-color: var(--brand);
+  box-shadow: inset 0 0 0 1px rgba(203,171,116,0.35), 0 1px 0 rgba(0,0,0,0.15);
+}
+.btn-brand:hover { background: var(--navy-deep); transform: translateY(-2px); box-shadow: inset 0 0 0 1px rgba(203,171,116,0.6), 0 8px 22px -12px rgba(14,28,52,0.7); }
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: rgba(20,33,58,0.4);
+}
+.btn-ghost:hover { border-color: var(--ink); background: rgba(20,42,78,0.04); transform: translateY(-2px); }
+.btn-accent {
+  background: var(--accent);
+  color: var(--navy-deep);
+  border-color: var(--accent);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.15);
+}
+.btn-accent:hover { background: #9c7940; transform: translateY(-2px); box-shadow: 0 8px 22px -12px rgba(120,90,40,0.8); }
+.btn-sm { padding: 0.7rem 1.25rem; font-size: 0.7rem; }
+
+/* ================================================================
+   Header / nav — a discreet brass nameplate
+   ================================================================ */
+.topbar {
+  background: var(--navy-deep);
+  color: var(--gold-soft);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(203,171,116,0.25);
+}
+.topbar a { color: var(--gold-soft); text-decoration: none; border-bottom: 1px solid rgba(203,171,116,0.4); }
+.topbar a:hover { color: var(--white); }
+
+.site-header {
+  background: color-mix(in srgb, var(--paper) 92%, white);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(1.1);
+}
+
+/* monogram + wordmark, centred-serif house style */
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.wordmark .spark {
+  font-family: var(--font-display);
+  font-style: normal;
+  color: var(--paper);
+  background: var(--brand);
+  font-size: 0.95rem;
+  font-weight: 600;
+  width: 2rem; height: 2rem;
+  display: inline-grid; place-items: center;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  letter-spacing: 0;
+}
+.wordmark .wm-text { display: inline-flex; flex-direction: column; }
+.wordmark .sub {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.54rem;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: 2px;
+}
+
+.navlink {
+  position: relative;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding: 0.3rem 0;
+}
+.navlink::after {
+  content: "";
+  position: absolute;
+  left: 50%; right: 50%; bottom: -3px;
+  height: 1px;
+  background: var(--accent);
+  transition: left 220ms ease, right 220ms ease;
+}
+.navlink:hover { color: var(--ink); }
+.navlink:hover::after { left: 0; right: 0; }
+.navlink.active { color: var(--brand); }
+.navlink.active::after { left: 0; right: 0; }
+
+/* mobile panel */
+.nav-panel {
+  display: none;
+  border-top: 1px solid var(--line);
+  background: var(--paper);
+}
+.nav-panel.open { display: block; }
+.nav-panel a {
+  display: block;
+  padding: 0.95rem 1.5rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+}
+.nav-panel a:hover { background: var(--paper-deep); color: var(--brand); }
+
+.hamburger { border: 1px solid var(--ink); border-radius: 1px; padding: 0.5rem 0.65rem; background: transparent; color: var(--ink); }
+.hamburger:hover { background: var(--paper-deep); }
+
+/* ================================================================
+   Hero — the tailor's plate
+   ================================================================ */
+.hero-display {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6.4rem);
+  line-height: 0.98;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.hero-display em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--brand);
+}
+
+/* the framed navy tailoring plate in the hero */
+.hero-panel {
+  position: relative;
+  border: 1px solid var(--navy-deep);
+  border-radius: 2px;
+  background:
+    radial-gradient(120% 90% at 30% 15%, #233a63 0%, var(--brand) 45%, var(--navy-deep) 100%);
+  box-shadow: 0 30px 60px -30px rgba(14,28,52,0.75);
+  overflow: hidden;
+}
+/* double hand-basted stitch frame inside the plate */
+.hero-panel::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px dashed rgba(203,171,116,0.55);
+  border-radius: 1px;
+  pointer-events: none;
+}
+.hero-panel .rays { position: absolute; inset: 0; opacity: 0.16; }
+
+/* rotating wax-seal / house stamp */
+.stamp { animation: spin 40s linear infinite; transform-origin: center; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* small trust chips — pins on a lapel */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(20,33,58,0.35);
+  border-radius: 999px;
+  padding: 0.4rem 0.95rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--white);
+  color: var(--ink-soft);
+}
+.chip .dot { width: 0.42rem; height: 0.42rem; transform: rotate(45deg); background: var(--accent); }
+
+/* ================================================================
+   Marquee strip — a running measuring tape
+   ================================================================ */
+.marquee {
+  overflow: hidden;
+  border-top: 1px solid var(--navy-deep);
+  border-bottom: 1px solid var(--navy-deep);
+  background: var(--brand);
+  color: var(--gold-soft);
+}
+.marquee-track {
+  display: flex;
+  gap: 2.6rem;
+  white-space: nowrap;
+  padding: 0.7rem 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  animation: marquee 34s linear infinite;
+  width: max-content;
+}
+.marquee-track span:nth-child(even) { color: var(--accent); font-style: normal; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* ================================================================
+   Service cards — a tailor's price ticket
+   ================================================================ */
+.card-service {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 1.9rem 1.6rem 1.6rem;
+  transition: transform 220ms cubic-bezier(.2,.7,.2,1), box-shadow 220ms ease, border-color 220ms ease;
+  box-shadow: 0 1px 0 rgba(20,33,58,0.05);
+}
+.card-service::after {
+  /* hand-basted inner stitch line */
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px dashed rgba(176,137,79,0.35);
+  border-radius: 1px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+.card-service:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 40px -26px rgba(20,33,58,0.55);
+  border-color: var(--accent);
+}
+.card-service:hover::after { opacity: 1; }
+.card-service .num {
+  position: absolute;
+  top: 1.05rem;
+  right: 1.2rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+.card-service .icon {
+  width: 3rem;
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--brand);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--brand);
+  margin-bottom: 1.1rem;
+}
+.card-service h3 { font-family: var(--font-display); font-size: 1.6rem; font-weight: 600; margin-bottom: 0.4rem; line-height: 1.1; }
+.card-service p { color: var(--ink-soft); font-size: 0.94rem; line-height: 1.62; }
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 1rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
+}
+.card-link:hover { color: var(--accent); }
+
+/* a small pricing/turnaround tag used on service tickets */
+.ticket-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid rgba(176,137,79,0.5);
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+}
+
+/* ================================================================
+   Testimonials — a swatch card
+   ================================================================ */
+.quote-card {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 2.6rem 1.7rem 1.6rem;
+  box-shadow: 0 14px 30px -28px rgba(20,33,58,0.5);
+}
+.quote-card::before {
+  content: "\201C";
+  position: absolute;
+  top: 0.4rem;
+  left: 1.1rem;
+  font-family: var(--font-display);
+  font-size: 4.4rem;
+  line-height: 1;
+  color: var(--accent);
+  opacity: 0.65;
+}
+.quote-card blockquote { font-family: var(--font-display); font-size: 1.3rem; line-height: 1.42; font-style: italic; font-weight: 500; color: var(--ink); }
+.quote-card figcaption { margin-top: 1.1rem; font-family: var(--font-body); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); }
+.quote-card figcaption::before { content: ""; display: inline-block; width: 1.6rem; height: 1px; background: var(--accent); vertical-align: middle; margin-right: 0.55rem; }
+
+.stars { color: var(--accent); letter-spacing: 0.25em; font-size: 0.8rem; }
+
+/* ================================================================
+   CTA band — a navy bolt of cloth
+   ================================================================ */
+.cta-band {
+  background: var(--brand);
+  color: var(--paper);
+  border-top: 1px solid var(--navy-deep);
+  border-bottom: 1px solid var(--navy-deep);
+  position: relative;
+  overflow: hidden;
+}
+.cta-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(203,171,116,0.05) 0 1px, transparent 1px 22px),
+    repeating-linear-gradient(-45deg, rgba(203,171,116,0.05) 0 1px, transparent 1px 22px);
+}
+.cta-band .display { font-family: var(--font-display); color: var(--paper); }
+.cta-band .eyebrow { color: var(--gold-soft); }
+.cta-band .eyebrow::before { background: var(--gold-soft); }
+
+/* ================================================================
+   Hours table & map — a fitting-room card
+   ================================================================ */
+.hours-table { width: 100%; border-collapse: collapse; }
+.hours-table th, .hours-table td {
+  text-align: left;
+  padding: 0.7rem 0.25rem;
+  border-bottom: 1px dotted var(--line);
+  font-size: 0.95rem;
+}
+.hours-table th { font-weight: 600; font-family: var(--font-body); }
+.hours-table td { text-align: right; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.hours-table tr.today th { color: var(--brand); font-weight: 700; }
+.hours-table tr.today td { color: var(--brand); font-weight: 700; }
+.hours-table tr.closed td { color: #9a927f; font-style: italic; }
+
+.map-ph {
+  position: relative;
+  border: 1px solid var(--navy-deep);
+  border-radius: 2px;
+  min-height: 260px;
+  overflow: hidden;
+  background-color: var(--navy-deep);
+  background-image:
+    repeating-linear-gradient(0deg,  rgba(203,171,116,0.12) 0 1px, transparent 1px 40px),
+    repeating-linear-gradient(90deg, rgba(203,171,116,0.12) 0 1px, transparent 1px 52px),
+    repeating-linear-gradient(45deg, rgba(203,171,116,0.06) 0 1px, transparent 1px 84px);
+  box-shadow: inset 0 0 60px rgba(0,0,0,0.4);
+}
+.map-pin {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -90%);
+  color: var(--accent);
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));
+  animation: bob 3s ease-in-out infinite;
+}
+@keyframes bob { 0%, 100% { transform: translate(-50%, -90%); } 50% { transform: translate(-50%, -108%); } }
+.map-label {
+  position: absolute;
+  left: 0.9rem; bottom: 0.9rem;
+  background: var(--paper);
+  border: 1px solid var(--accent);
+  border-radius: 1px;
+  padding: 0.5rem 0.85rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+}
+
+/* ================================================================
+   Forms
+   ================================================================ */
+.field label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 0.45rem;
+}
+.field input, .field select, .field textarea {
+  width: 100%;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 1px;
+  padding: 0.8rem 0.95rem;
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  color: var(--ink);
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(176,137,79,0.16);
+  outline: none;
+}
+
+/* ================================================================
+   Numbered process / about — basted steps
+   ================================================================ */
+.step {
+  display: flex;
+  gap: 1.15rem;
+  align-items: flex-start;
+}
+.step .step-num {
+  flex: none;
+  width: 2.8rem;
+  height: 2.8rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: var(--brand);
+  color: var(--gold-soft);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+details.faq {
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: var(--white);
+  padding: 0;
+  transition: border-color 180ms ease;
+}
+details.faq[open] { border-color: var(--accent); }
+details.faq summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 1.1rem 1.35rem;
+  font-family: var(--font-display);
+  font-size: 1.28rem;
+  font-weight: 600;
+  color: var(--ink);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+details.faq summary::after { content: "+"; font-family: var(--font-body); font-size: 1.5rem; color: var(--accent); line-height: 1; }
+details.faq[open] summary::after { content: "\2212"; }
+details.faq .faq-body { padding: 0 1.35rem 1.2rem; color: var(--ink-soft); font-size: 0.95rem; line-height: 1.65; }
+
+/* ================================================================
+   Footer — the shop's brass plate
+   ================================================================ */
+.site-footer {
+  background: var(--navy-deep);
+  color: var(--paper);
+  border-top: 2px solid var(--accent);
+}
+.site-footer .wordmark { color: var(--paper); }
+.site-footer .wordmark .spark { background: var(--accent); color: var(--navy-deep); border-color: var(--gold-soft); }
+.site-footer .wordmark .sub { color: var(--gold-soft); }
+.site-footer a { color: var(--paper); text-decoration: none; }
+.site-footer a:hover { color: var(--gold-soft); }
+.footer-links a { display: block; padding: 0.25rem 0; font-size: 0.9rem; opacity: 0.85; }
+.site-footer .eyebrow { color: var(--gold-soft); }
+.site-footer .eyebrow::before { background: var(--gold-soft); }
+.footer-fine { font-size: 0.74rem; opacity: 0.6; letter-spacing: 0.04em; }
+
+.footer-ghost {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(2.6rem, 10vw, 7rem);
+  line-height: 0.9;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(203,171,116,0.28);
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ================================================================
+   Misc
+   ================================================================ */
+.tick { color: var(--accent); font-weight: 800; }
+
+.reveal { animation: rise 720ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+.reveal-1 { animation-delay: 90ms; }
+.reveal-2 { animation-delay: 200ms; }
+.reveal-3 { animation-delay: 320ms; }
+@keyframes rise {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stamp, .marquee-track, .map-pin, .reveal { animation: none !important; }
+  html { scroll-behavior: auto; }
+}

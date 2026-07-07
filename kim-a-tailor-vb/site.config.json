@@ -1,0 +1,36 @@
+{
+  "template": "agency-local-business",
+  "templateVersion": "1.0.0",
+  "variation": "b",
+  "business": {
+    "name": "Kim A Tailor",
+    "tagline": "A better fit, while you wait.",
+    "category": "Tailor / Alterations",
+    "phone": "(972) 234-8943",
+    "email": "hello@kimatailor.com",
+    "address": "202 E Main St",
+    "city": "Richardson, TX 75081",
+    "domain": "kimatailor.com"
+  },
+  "brand": {
+    "primaryColor": "#21262b",
+    "accentColor": "#3f6b73",
+    "displayFont": "Cormorant",
+    "bodyFont": "Manrope",
+    "monoFont": "Space Mono"
+  },
+  "payments": {
+    "provider": "stripe-payment-links",
+    "depositUrl": "#",
+    "bookUrl": "#",
+    "buyUrls": ["#", "#", "#"],
+    "notes": "Demo build — every payment link is a disabled '#'. A live client site would use client-owned Stripe Payment Links (https://buy.stripe.com/...). Card data flows to Stripe, never to this site or the agency."
+  },
+  "meta": {
+    "generatedYear": "2026",
+    "brandingSource": "assets/css/custom.css",
+    "demo": true,
+    "disclaimer": "Concept preview — not affiliated with Kim A Tailor.",
+    "notes": "All branding (colors, fonts) lives in assets/css/custom.css as CSS custom properties. Variation B: modern alterations studio — charcoal + warm stone + slate-teal."
+  }
+}
