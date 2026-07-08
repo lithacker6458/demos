@@ -1,0 +1,32 @@
+{
+  "template": "agency-local-business",
+  "templateVersion": "1.0.0",
+  "business": {
+    "name": "XEGR LLC",
+    "tagline": "Concrete reinforcing done right — rebar, post-tension, and detailing across DFW",
+    "category": "Concrete Reinforcing Subcontractor",
+    "phone": "469-589-0899",
+    "email": "info@xegrllc.com",
+    "address": "123 Main St",
+    "city": "Dallas, TX",
+    "domain": "lithacker6458.github.io/demos/xegr-llc"
+  },
+  "brand": {
+    "primaryColor": "#0b1f3a",
+    "accentColor": "#ff5a1f",
+    "displayFont": "Fraunces",
+    "bodyFont": "Archivo"
+  },
+  "payments": {
+    "provider": "stripe-payment-links",
+    "depositUrl": "#",
+    "bookUrl": "#",
+    "buyUrls": ["#", "#", "#"],
+    "notes": "Client-owned Stripe Payment Links ONLY (https://buy.stripe.com/...). Card data flows to Stripe, never to this site or the agency. Empty tokens are stripped in client builds and forced to '#' in demo builds. See docs/STRIPE_SETUP.md."
+  },
+  "meta": {
+    "generatedYear": "2026",
+    "brandingSource": "assets/css/custom.css",
+    "notes": "All branding (colors, fonts) lives in assets/css/custom.css as CSS custom properties."
+  }
+}
