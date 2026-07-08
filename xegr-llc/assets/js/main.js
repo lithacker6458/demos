@@ -1,5 +1,5 @@
 /* XEGR LLC — site JS.
-   Scope: mobile nav toggle + smooth scroll for same-page anchors. Nothing else. */
+   Scope: mobile nav toggle + sticky-header scroll state + smooth anchor scroll. */
 (function () {
   'use strict';
 
@@ -17,6 +17,17 @@
         btn.setAttribute('aria-expanded', 'false');
       }
     });
+  }
+
+  // Sticky-header shadow on scroll
+  var header = document.querySelector('.site-header');
+  if (header) {
+    var onScroll = function () {
+      if (window.scrollY > 12) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
   }
 
   // Smooth scroll for same-page anchor links
