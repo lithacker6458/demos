@@ -77,9 +77,12 @@ p{ margin:0 0 1rem; color:var(--muted); }
 
 /* ============================================================
    HERO — CSS-animated construction background (no video file, so
-   the live GitHub-Pages page is fully self-contained). Under
-   prefers-reduced-motion the drifting layers hold still (below).
-   For a real client, swap .hero__css for a <video> per
+   the live GitHub-Pages page is fully self-contained). These are
+   BESPOKE per-site keyframes (grid/beam/spark/cue) — motion.css's
+   reduced-motion block only covers the mo-* system classes, so this
+   page ships its OWN prefers-reduced-motion kill-switch (bottom of
+   file) that freezes every one of them. For a real client, swap
+   .hero__css for a <video> per
    premium/video-hero.md; the .mo-hero scaffold is identical.
    ============================================================ */
 .hero{ position:relative; min-height:92vh; display:flex; align-items:center;
@@ -94,7 +97,12 @@ p{ margin:0 0 1rem; color:var(--muted); }
     radial-gradient(900px 500px at 12% 88%, rgba(30,64,140,.55), transparent 60%),
     linear-gradient(180deg,var(--navy-900),var(--navy-950));
 }
-/* slow-drifting "site survey" grid — GPU transform, motion.css-style */
+/* slow-drifting "site survey" grid — GPU transform ONLY (no paint).
+   The layer is oversized (inset:-20% + an extra 64px of grid below the
+   mask window) so we can drift it with translateY instead of animating
+   background-position (which triggers a full-viewport repaint each
+   frame). transform/opacity keeps this on the compositor → 60fps,
+   no per-frame paint, honest to the system's GPU-only claim. */
 .hero__grid{
   position:absolute; inset:-20%; z-index:1; opacity:.5;
   background-image:
@@ -105,7 +113,10 @@ p{ margin:0 0 1rem; color:var(--muted); }
   animation:gridDrift 24s linear infinite;
   mask-image:linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent);
 }
-@keyframes gridDrift{ to{ background-position:0 64px; } }
+@keyframes gridDrift{
+  from{ transform:perspective(600px) rotateX(58deg) translateZ(0) translateY(0); }
+  to{   transform:perspective(600px) rotateX(58deg) translateZ(0) translateY(64px); }
+}
 
 /* animated crane/beam silhouettes drifting in parallax bands */
 .hero__beam{
@@ -219,4 +230,23 @@ footer a{ color:var(--accent); text-decoration:none; }
   .stats{ grid-template-columns:repeat(2,1fr); }
   .cards,.kb-grid{ grid-template-columns:1fr; }
   .band{ padding:80px 0; }
+}
+
+/* ============================================================
+   REDUCED MOTION — site-level kill-switch for this page's BESPOKE
+   hero keyframes. motion.css disables only the mo-*/data-* system
+   classes; the animations below (gridDrift, beam, rise, cue) are
+   defined HERE, so they must be frozen HERE too. Without this block
+   a vestibular-sensitive user with prefers-reduced-motion set would
+   still get a sweeping, sparking, pulsing hero — the whole point of
+   the system is that that never happens. Layers stay VISIBLE (static
+   grid + still overlay), motion stops.
+   ============================================================ */
+@media (prefers-reduced-motion: reduce){
+  .hero__grid,
+  .hero__beam,
+  .hero__spark,
+  .scrollcue::after{
+    animation:none !important;
+  }
 }
