@@ -267,7 +267,7 @@ select:focus-visible, textarea:focus-visible {
 }
 
 .nav { display: none; align-items: center; gap: 1.9rem; }
-@media (min-width: 940px) { .nav { display: flex; } }
+@media (min-width: 880px) { .nav { display: flex; } }
 .navlink {
   position: relative;
   font-family: var(--font-display);
@@ -293,7 +293,7 @@ select:focus-visible, textarea:focus-visible {
 .navlink.active::after { width: 100%; }
 
 .header-cta { display: none; align-items: center; gap: 1rem; }
-@media (min-width: 940px) { .header-cta { display: flex; } }
+@media (min-width: 880px) { .header-cta { display: flex; } }
 
 .hamburger {
   display: inline-flex;
@@ -306,7 +306,7 @@ select:focus-visible, textarea:focus-visible {
   color: #fff;
   cursor: pointer;
 }
-@media (min-width: 940px) { .hamburger { display: none; } }
+@media (min-width: 880px) { .hamburger { display: none; } }
 
 .nav-panel { display: none; background: var(--navy-deep); border-top: 1px solid var(--navy-line); }
 .nav-panel.open { display: block; }
@@ -369,7 +369,7 @@ select:focus-visible, textarea:focus-visible {
   gap: clamp(2.5rem, 5vw, 4rem);
   width: 100%;
 }
-@media (min-width: 900px) {
+@media (min-width: 880px) {
   .hero-inner { grid-template-columns: 1.05fr 0.9fr; align-items: center; }
 }
 .hero h1 { margin: 1.2rem 0 0; }
