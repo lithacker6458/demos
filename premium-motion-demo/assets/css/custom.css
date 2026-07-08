@@ -1,0 +1,222 @@
+/* ============================================================
+   DNA Agency — Premium Motion System PROOF page (custom.css)
+   Site-specific styling ONLY. All MOTION lives in motion.css.
+   Theme: deep navy + molten-amber accent, construction contractor.
+   Pure CSS/SVG imagery — zero scraped assets, zero external deps.
+   ============================================================ */
+
+/* ---- design tokens ------------------------------------------------ */
+:root{
+  --navy-950:#070b16;
+  --navy-900:#0b1224;
+  --navy-800:#111a33;
+  --navy-700:#1a2647;
+  --line:rgba(255,255,255,.10);
+  --ink:#eef2fb;         /* primary text on dark            */
+  --muted:#9aa8c7;       /* secondary text                 */
+  --accent:#f5a623;      /* molten amber — the ONE accent  */
+  --accent-2:#ff7a1a;
+  --maxw:1120px;
+
+  /* premium-motion knob overrides (proves :root override works) */
+  --mo-dur:760ms;
+  --mo-dist:30px;
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  background:var(--navy-950);
+  color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; }
+
+.wrap{ max-width:var(--maxw); margin:0 auto; padding:0 24px; }
+.eyebrow{
+  font-size:.72rem; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--accent); font-weight:700; margin:0 0 14px;
+}
+
+/* strong, premium type scale (fluid) */
+h1,h2,h3{ line-height:1.05; margin:0 0 .4em; font-weight:800; letter-spacing:-.02em; }
+h1{ font-size:clamp(2.6rem,6vw,4.6rem); }
+h2{ font-size:clamp(1.9rem,4vw,3rem); }
+h3{ font-size:1.25rem; letter-spacing:-.01em; }
+p{ margin:0 0 1rem; color:var(--muted); }
+.lead{ font-size:clamp(1.05rem,1.6vw,1.25rem); color:#cdd7ee; max-width:56ch; }
+
+/* ---- demo banner -------------------------------------------------- */
+.demo-flag{
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  color:#241500; text-align:center; font-weight:700;
+  font-size:.85rem; letter-spacing:.02em; padding:9px 16px;
+}
+.demo-flag span{ opacity:.8; font-weight:600; }
+
+/* ---- buttons ------------------------------------------------------ */
+.btn{
+  display:inline-flex; align-items:center; gap:.55em;
+  font-weight:700; font-size:.98rem; text-decoration:none;
+  padding:15px 26px; border-radius:12px; border:1px solid transparent;
+  cursor:pointer; transition:transform .18s cubic-bezier(.22,1,.36,1),
+    box-shadow .18s ease, background .18s ease;
+}
+.btn-primary{
+  background:linear-gradient(180deg,var(--accent),var(--accent-2));
+  color:#241500; box-shadow:0 10px 30px -8px rgba(245,166,35,.55);
+}
+.btn-primary:hover{ transform:translateY(-3px); box-shadow:0 18px 40px -10px rgba(245,166,35,.7); }
+.btn-ghost{ border-color:var(--line); color:var(--ink); background:rgba(255,255,255,.02); }
+.btn-ghost:hover{ border-color:var(--accent); color:var(--accent); }
+.btn svg{ width:16px; height:16px; }
+
+/* ============================================================
+   HERO — CSS-animated construction background (no video file, so
+   the live GitHub-Pages page is fully self-contained). Under
+   prefers-reduced-motion the drifting layers hold still (below).
+   For a real client, swap .hero__css for a <video> per
+   premium/video-hero.md; the .mo-hero scaffold is identical.
+   ============================================================ */
+.hero{ position:relative; min-height:92vh; display:flex; align-items:center;
+  overflow:hidden; background:var(--navy-950); }
+.hero__css{ position:absolute; inset:0; z-index:0; }
+
+/* base wash */
+.hero__css::before{
+  content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(1200px 600px at 78% 18%, rgba(245,166,35,.20), transparent 60%),
+    radial-gradient(900px 500px at 12% 88%, rgba(30,64,140,.55), transparent 60%),
+    linear-gradient(180deg,var(--navy-900),var(--navy-950));
+}
+/* slow-drifting "site survey" grid — GPU transform, motion.css-style */
+.hero__grid{
+  position:absolute; inset:-20%; z-index:1; opacity:.5;
+  background-image:
+    linear-gradient(rgba(120,150,220,.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120,150,220,.10) 1px, transparent 1px);
+  background-size:64px 64px;
+  transform:perspective(600px) rotateX(58deg) translateZ(0);
+  animation:gridDrift 24s linear infinite;
+  mask-image:linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent);
+}
+@keyframes gridDrift{ to{ background-position:0 64px; } }
+
+/* animated crane/beam silhouettes drifting in parallax bands */
+.hero__beam{
+  position:absolute; z-index:1; height:14px; border-radius:8px;
+  background:linear-gradient(90deg, rgba(245,166,35,.0), rgba(245,166,35,.35), rgba(245,166,35,0));
+  animation:beam 9s ease-in-out infinite;
+}
+.hero__beam.b1{ top:26%; left:-30%; width:60%; animation-delay:0s; }
+.hero__beam.b2{ top:62%; left:-40%; width:80%; height:10px; animation-delay:2.5s; opacity:.7; }
+.hero__beam.b3{ top:44%; left:-25%; width:50%; height:8px; animation-delay:4.5s; opacity:.5; }
+@keyframes beam{
+  0%{ transform:translateX(0); }
+  50%{ transform:translateX(180%); }
+  100%{ transform:translateX(0); }
+}
+/* rising "spark" motes */
+.hero__spark{ position:absolute; z-index:1; width:4px; height:4px; border-radius:50%;
+  background:var(--accent); box-shadow:0 0 8px 2px rgba(245,166,35,.7);
+  animation:rise 7s linear infinite; }
+.hero__spark:nth-child(4){ left:20%; bottom:-10px; animation-delay:0s; }
+.hero__spark:nth-child(5){ left:47%; bottom:-10px; animation-delay:2.2s; }
+.hero__spark:nth-child(6){ left:70%; bottom:-10px; animation-delay:3.8s; }
+.hero__spark:nth-child(7){ left:86%; bottom:-10px; animation-delay:5.1s; }
+@keyframes rise{
+  0%{ transform:translateY(0) scale(1); opacity:0; }
+  15%{ opacity:1; }
+  100%{ transform:translateY(-70vh) scale(.4); opacity:0; }
+}
+
+.hero__overlay{
+  position:absolute; inset:0; z-index:2;
+  background:linear-gradient(180deg, rgba(7,11,22,.30) 0%, rgba(7,11,22,.72) 100%);
+}
+.hero__content{ position:relative; z-index:3; padding:120px 0; width:100%; }
+.hero h1 span{ color:var(--accent); }
+.hero__cta{ display:flex; flex-wrap:wrap; gap:14px; margin-top:34px; }
+
+/* scroll cue */
+.scrollcue{ position:absolute; z-index:3; bottom:26px; left:50%; transform:translateX(-50%);
+  color:var(--muted); font-size:.72rem; letter-spacing:.2em; text-transform:uppercase;
+  display:flex; flex-direction:column; align-items:center; gap:8px; }
+.scrollcue::after{ content:""; width:1px; height:34px;
+  background:linear-gradient(var(--accent),transparent); animation:cue 1.8s ease-in-out infinite; }
+@keyframes cue{ 0%,100%{ opacity:.3; transform:scaleY(.6); } 50%{ opacity:1; transform:scaleY(1); } }
+
+/* ---- sections ----------------------------------------------------- */
+section{ position:relative; }
+.band{ padding:110px 0; }
+.band--alt{ background:linear-gradient(180deg,var(--navy-950),var(--navy-900)); }
+.band--deep{ background:var(--navy-900); }
+.section-head{ max-width:64ch; margin-bottom:56px; }
+
+/* ---- stat counters ------------------------------------------------ */
+.stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+.stat{ text-align:center; padding:36px 18px; border:1px solid var(--line);
+  border-radius:18px; background:linear-gradient(180deg,rgba(255,255,255,.03),transparent); }
+.stat__num{ font-size:clamp(2.4rem,5vw,3.4rem); font-weight:800; color:var(--accent);
+  letter-spacing:-.03em; line-height:1; }
+.stat__label{ margin:12px 0 0; font-size:.85rem; letter-spacing:.05em;
+  text-transform:uppercase; color:var(--muted); }
+
+/* ---- service cards (stagger + hover) ------------------------------ */
+.cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.card{ padding:30px; border:1px solid var(--line); border-radius:18px;
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01)); }
+.card h3{ color:var(--ink); }
+.card p{ margin-bottom:0; font-size:.95rem; }
+.card__ic{ width:52px; height:52px; border-radius:13px; margin-bottom:18px;
+  display:grid; place-items:center; color:#241500;
+  background:linear-gradient(180deg,var(--accent),var(--accent-2)); }
+.card__ic svg{ width:26px; height:26px; }
+
+/* ---- parallax showcase ------------------------------------------- */
+.showcase{ position:relative; min-height:520px; overflow:hidden;
+  border-radius:22px; border:1px solid var(--line);
+  background:radial-gradient(900px 500px at 30% 20%, rgba(30,64,140,.5), var(--navy-950)); }
+.showcase__layer{ position:absolute; inset:0; display:grid; place-items:center; }
+.px-badge{ font-weight:800; letter-spacing:-.02em;
+  color:rgba(255,255,255,.06); font-size:clamp(4rem,14vw,11rem); white-space:nowrap; }
+.showcase__fore{ position:relative; z-index:2; padding:80px 40px; max-width:52ch; }
+.showcase__fore h2{ color:var(--ink); }
+
+/* ---- Ken Burns showcase (CSS/SVG "photo") ------------------------ */
+.kb-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.kb-card{ border-radius:18px; overflow:hidden; border:1px solid var(--line); }
+.kb-card__frame{ aspect-ratio:4/3; }
+.kb-card__cap{ padding:16px 20px; background:var(--navy-800);
+  font-size:.9rem; color:var(--ink); font-weight:600; }
+/* SVG-as-background "photo" so there is NO raster asset to compress */
+.kbphoto{ width:100%; height:100%; }
+
+/* ---- marquee ------------------------------------------------------ */
+.trust{ padding:44px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  background:var(--navy-900); }
+.trust__item{ font-weight:700; letter-spacing:.02em; color:var(--muted);
+  font-size:1.05rem; display:inline-flex; align-items:center; gap:.5em; }
+.trust__item::before{ content:""; width:7px; height:7px; border-radius:50%;
+  background:var(--accent); display:inline-block; }
+
+/* ---- footer ------------------------------------------------------- */
+footer{ padding:64px 0 48px; border-top:1px solid var(--line);
+  background:var(--navy-950); }
+.foot-grid{ display:flex; flex-wrap:wrap; justify-content:space-between;
+  gap:28px; align-items:flex-start; }
+footer a{ color:var(--accent); text-decoration:none; }
+.foot-note{ margin-top:36px; padding-top:22px; border-top:1px solid var(--line);
+  font-size:.82rem; color:var(--muted); }
+
+/* ---- responsive --------------------------------------------------- */
+@media (max-width:860px){
+  .stats{ grid-template-columns:repeat(2,1fr); }
+  .cards,.kb-grid{ grid-template-columns:1fr; }
+  .band{ padding:80px 0; }
+}

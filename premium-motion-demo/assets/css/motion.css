@@ -1,0 +1,196 @@
+/* ============================================================
+   DNA Agency — PREMIUM MOTION LAYER (motion.css)
+   ------------------------------------------------------------
+   Drop-in companion to motion.js. Lifts a static build to the
+   "Lithko bar" (lithko.com / lutzconcreteconstruction.com) using
+   scroll-reveal, Ken Burns, parallax, animated underlines, hover
+   micro-interactions and a marquee — all GPU-only (transform/opacity),
+   so it stays at 60fps.
+
+   NAMESPACING: everything is prefixed .mo-* or driven by the
+   [data-reveal] attribute, and the revealed state is .in-view.
+   This deliberately does NOT touch the base template's own .reveal
+   (which is an on-LOAD animation) / .marquee / .stamp — the two
+   systems coexist: template does the hero on-load flourish, this
+   layer does scroll-paced reveals for every section below the fold.
+
+   NO-JS SAFE (progressive enhancement): reveal elements are hidden
+   ONLY under <html class="mo-js">, a class motion.js adds as its
+   first act. If JS never runs, nothing is ever hidden and all
+   content stays visible. Counters carry their final number in the
+   HTML; video heroes fall back to a real <img> poster.
+
+   ACCESSIBILITY: a single prefers-reduced-motion block at the bottom
+   kills ALL motion while keeping everything visible.
+
+   INSTALL: copy this file into the site's assets/css/ (keep it local,
+   never a CDN — GitHub-Pages / zero-external-dependency). In <head>,
+   after custom.css:
+     <link rel="stylesheet" href="assets/css/motion.css">
+   ============================================================ */
+
+/* ---- Tunable knobs (override per-site in :root if you like) --- */
+:root{
+  --mo-dur: 720ms;                        /* reveal duration          */
+  --mo-ease: cubic-bezier(.22,1,.36,1);   /* expressive ease-out      */
+  --mo-dist: 26px;                         /* reveal travel distance   */
+  --mo-stagger: 90ms;                      /* per-child stagger step   */
+}
+
+/* ============================================================
+   1. SCROLL-REVEAL
+   Elements start hidden ONLY when JS is present, then motion.js
+   adds .in-view when they scroll into the viewport.
+   Variants via the attribute value: fade / left / right / zoom.
+   Default (bare [data-reveal]) = fade-up.
+   ============================================================ */
+html.mo-js [data-reveal]{
+  opacity: 0;
+  transform: translateY(var(--mo-dist));
+  transition: opacity var(--mo-dur) var(--mo-ease),
+              transform var(--mo-dur) var(--mo-ease);
+  will-change: opacity, transform;
+}
+html.mo-js [data-reveal="fade"]{ transform: none; }                              /* opacity only          */
+html.mo-js [data-reveal="left"]{ transform: translateX(calc(var(--mo-dist) * -1)); } /* slide in from left  */
+html.mo-js [data-reveal="right"]{ transform: translateX(var(--mo-dist)); }        /* slide in from right   */
+html.mo-js [data-reveal="zoom"]{ transform: scale(.94); }                         /* scale up into view    */
+
+/* revealed state (motion.js adds .in-view) */
+html.mo-js [data-reveal].in-view{
+  opacity: 1;
+  transform: none;
+  will-change: auto;   /* release the compositor once settled */
+}
+
+/* ---- Stagger: children of a [data-reveal-group] cascade in ----
+   motion.js sets --mo-i (0,1,2,...) on each child; delay scales it. */
+html.mo-js [data-reveal-group] > *{
+  opacity: 0;
+  transform: translateY(var(--mo-dist));
+  transition: opacity var(--mo-dur) var(--mo-ease),
+              transform var(--mo-dur) var(--mo-ease);
+}
+html.mo-js [data-reveal-group].in-view > *{
+  opacity: 1;
+  transform: none;
+  transition-delay: calc(var(--mo-i, 0) * var(--mo-stagger));
+}
+
+/* ============================================================
+   2. KEN BURNS / SLOW-ZOOM
+   Wrap an <img> (or <video>) in .mo-kenburns (which clips overflow).
+   Pure CSS keyframe scale drift — continuous subtle life, zero JS.
+   ============================================================ */
+.mo-kenburns{ overflow: hidden; }
+.mo-kenburns > img,
+.mo-kenburns > video{
+  display: block;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transform-origin: center;
+  animation: mo-kb 20s ease-in-out infinite alternate;
+}
+@keyframes mo-kb{
+  from{ transform: scale(1); }
+  to  { transform: scale(1.08); }
+}
+
+/* ============================================================
+   3. PARALLAX
+   motion.js writes --mo-y (in px) on [data-parallax] elements on
+   scroll (rAF-throttled). transform-only, and auto-disabled on
+   mobile + reduced-motion by the JS. Optional garnish.
+   ============================================================ */
+[data-parallax]{
+  will-change: transform;
+  transform: translate3d(0, var(--mo-y, 0), 0);
+}
+
+/* ============================================================
+   4. ANIMATED UNDERLINE
+   .mo-underline wipes an underline in from left on hover / focus.
+   Uses currentColor so it inherits the link color automatically.
+   ============================================================ */
+.mo-underline{ position: relative; text-decoration: none; }
+.mo-underline::after{
+  content: "";
+  position: absolute; left: 0; right: 100%; bottom: -2px;
+  height: 2px; background: currentColor;
+  transition: right .28s var(--mo-ease);
+}
+.mo-underline:hover::after,
+.mo-underline:focus-visible::after{ right: 0; }
+
+/* ============================================================
+   5. HOVER RAISE
+   .mo-hover-raise lifts ANY element on hover (not just cards).
+   ============================================================ */
+.mo-hover-raise{
+  transition: transform .18s var(--mo-ease), box-shadow .18s var(--mo-ease);
+}
+.mo-hover-raise:hover{ transform: translateY(-4px); }
+
+/* ============================================================
+   6. MARQUEE (generic, reusable logo/word strip)
+   Structure:
+     <div class="mo-marquee"><div class="mo-marquee__track">…×2…</div></div>
+   Duplicate the track contents so the -50% translate loops seamlessly.
+   ============================================================ */
+.mo-marquee{ overflow: hidden; }
+.mo-marquee__track{
+  display: inline-flex; gap: 3rem;
+  white-space: nowrap; width: max-content;
+  animation: mo-marquee 26s linear infinite;
+}
+.mo-marquee:hover .mo-marquee__track{ animation-play-state: paused; }
+@keyframes mo-marquee{ to{ transform: translateX(-50%); } }
+
+/* ============================================================
+   7. SECTION TRANSITION HELPER
+   .mo-fade-edge-top softly fades a section's top edge into the one
+   above it — a subtle "authored" seam between bands.
+   ============================================================ */
+.mo-fade-edge-top{
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 8%);
+          mask-image: linear-gradient(to bottom, transparent, #000 8%);
+}
+
+/* ============================================================
+   8. HERO SCAFFOLD (video / image background + legible text)
+   .mo-hero            positioning + clipping context
+   .mo-hero__media     the <video>/<img> layer, cover-filled
+   .mo-hero__overlay   dark gradient for WCAG text contrast
+   .mo-hero__content   the headline/CTA, above the overlay
+   Full recipe: premium/video-hero.md
+   ============================================================ */
+.mo-hero{ position: relative; overflow: hidden; }
+.mo-hero__media{
+  position: absolute; inset: 0; z-index: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.mo-hero__overlay{
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.55) 100%);
+}
+.mo-hero__content{ position: relative; z-index: 2; }
+
+/* ============================================================
+   REDUCED MOTION — kill ALL motion, keep everything visible.
+   This is mandatory and must never be removed from a build.
+   ============================================================ */
+@media (prefers-reduced-motion: reduce){
+  html.mo-js [data-reveal],
+  html.mo-js [data-reveal-group] > *{
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .mo-kenburns > img,
+  .mo-kenburns > video,
+  .mo-marquee__track{ animation: none !important; }
+  [data-parallax]{ transform: none !important; }
+  .mo-underline::after,
+  .mo-hover-raise{ transition: none !important; }
+}

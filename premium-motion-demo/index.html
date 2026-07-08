@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DNA Agency — Premium Motion System (live proof demo)</title>
+  <meta name="description" content="Live proof of DNA Agency's premium motion system: scroll-reveal, stagger, animated stat counters, parallax depth, Ken Burns image drift, marquee and hover micro-interactions — all GPU-friendly, accessible, and zero-dependency on a construction-contractor theme.">
+  <link rel="canonical" href="https://lithacker6458.github.io/demos/premium-motion-demo/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DNA Agency — Premium Motion System">
+  <meta property="og:title" content="DNA Agency — Premium Motion System (live proof)">
+  <meta property="og:description" content="Every premium motion effect on one page: reveals, counters, parallax, Ken Burns, marquee. Zero-dep, accessible, mobile-safe.">
+  <meta property="og:url" content="https://lithacker6458.github.io/demos/premium-motion-demo/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070b16'/%3E%3Ctext x='32' y='46' font-size='40' text-anchor='middle' fill='%23f5a623' font-family='Helvetica,Arial,sans-serif' font-weight='bold'%3E%E2%96%B2%3C/text%3E%3C/svg%3E">
+
+  <!-- site styling, then the premium motion layer (order matters) -->
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel="stylesheet" href="assets/css/motion.css">
+</head>
+<body>
+
+  <!-- ===== Demo banner (this is a demo OF the system, not a client) ===== -->
+  <div class="demo-flag">
+    DNA Agency — Premium Motion System demo &nbsp;<span>· every effect below is driven by motion.css + motion.js · scroll to see them fire</span>
+  </div>
+
+  <!-- ============================================================
+       HERO — CSS-animated construction background (self-contained;
+       no video file so the live page works offline on GitHub Pages).
+       Uses the .mo-hero legibility pattern: media → overlay → content.
+       For a paid client, swap .hero__css for an autoplay <video>
+       exactly per premium/video-hero.md.
+       ============================================================ -->
+  <header class="hero mo-hero">
+    <div class="hero__css" aria-hidden="true">
+      <div class="hero__grid"></div>
+      <span class="hero__beam b1"></span>
+      <span class="hero__beam b2"></span>
+      <span class="hero__beam b3"></span>
+      <span class="hero__spark"></span>
+      <span class="hero__spark"></span>
+      <span class="hero__spark"></span>
+      <span class="hero__spark"></span>
+    </div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <div class="hero__content">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal="fade">Commercial Concrete · Structural · Site Work</p>
+        <h1 data-reveal>We pour the <span>foundations</span><br>the skyline stands on.</h1>
+        <p class="lead" data-reveal data-reveal-delay="1">
+          A proof page for DNA Agency's premium motion system — the same
+          scroll-reveal, parallax and counter engine we drop onto final client
+          builds to hit the Lithko bar. Animated hero, live below.
+        </p>
+        <div class="hero__cta" data-reveal>
+          <a class="btn btn-primary" href="#work">
+            See every effect
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn-ghost mo-underline" href="tel:214-555-0100">Call (214) 555-0100</a>
+        </div>
+      </div>
+    </div>
+    <div class="scrollcue" aria-hidden="true">Scroll</div>
+  </header>
+
+  <!-- ============================================================
+       TRUST MARQUEE — .mo-marquee (track duplicated ×2 to loop).
+       Hover pauses it (motion.css). Pure CSS, infinite, GPU.
+       ============================================================ -->
+  <div class="trust">
+    <div class="mo-marquee wrap">
+      <div class="mo-marquee__track">
+        <!-- set 1 -->
+        <span class="trust__item">OSHA-Compliant Crews</span>
+        <span class="trust__item">38 Years In Business</span>
+        <span class="trust__item">Bonded &amp; Insured</span>
+        <span class="trust__item">DFW Metroplex</span>
+        <span class="trust__item">Self-Perform</span>
+        <!-- set 2 (identical — makes the -50% loop seamless) -->
+        <span class="trust__item">OSHA-Compliant Crews</span>
+        <span class="trust__item">38 Years In Business</span>
+        <span class="trust__item">Bonded &amp; Insured</span>
+        <span class="trust__item">DFW Metroplex</span>
+        <span class="trust__item">Self-Perform</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       STAT COUNTERS — [data-count] animates 0→target on reveal.
+       The final number sits in the HTML as the no-JS fallback.
+       ============================================================ -->
+  <section class="band band--alt">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">By the numbers</p>
+        <h2>Counters that count up as they enter the viewport.</h2>
+        <p class="lead">Each figure animates from zero on reveal via <code>data-count</code>. With JS off, the final value is already printed — nothing is ever blank.</p>
+      </div>
+      <div class="stats" data-reveal-group>
+        <div class="stat">
+          <div class="stat__num" data-count="1200" data-count-suf="+">1,200+</div>
+          <p class="stat__label">Projects Poured</p>
+        </div>
+        <div class="stat">
+          <div class="stat__num" data-count="38">38</div>
+          <p class="stat__label">Years In Business</p>
+        </div>
+        <div class="stat">
+          <div class="stat__num" data-count="4.9" data-count-dec="1">4.9</div>
+          <p class="stat__label">Avg. Client Rating</p>
+        </div>
+        <div class="stat">
+          <div class="stat__num" data-count="100" data-count-suf="%">100%</div>
+          <p class="stat__label">Self-Perform Crews</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SERVICE CARDS — [data-reveal-group] staggers the children in
+       one after another; .mo-hover-raise lifts each on hover.
+       ============================================================ -->
+  <section class="band" id="work">
+    <div class="wrap">
+      <div class="section-head" data-reveal="left">
+        <p class="eyebrow">Capabilities</p>
+        <h2>A staggered reveal — cards cascade in, then lift on hover.</h2>
+      </div>
+      <div class="cards" data-reveal-group>
+        <article class="card mo-hover-raise">
+          <div class="card__ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Structural Concrete</h3>
+          <p>Foundations, tilt-wall, elevated decks and grade beams poured to spec — self-performed start to finish.</p>
+        </article>
+        <article class="card mo-hover-raise">
+          <div class="card__ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 20l6-6M14 4l6 6M9 15l6-6M12 3l9 9-4 4-9-9z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Site Work &amp; Paving</h3>
+          <p>Excavation, utilities, curbs and heavy-duty paving — one crew, one schedule, one point of accountability.</p>
+        </article>
+        <article class="card mo-hover-raise">
+          <div class="card__ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Polished &amp; Finished</h3>
+          <p>Diamond-ground polished floors and decorative finishes for warehouses, retail and corporate campuses.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PARALLAX SHOWCASE — [data-parallax] layers drift at different
+       speeds on scroll (rAF-throttled JS). Auto-disabled on mobile
+       + reduced-motion. Desktop only, transform-only.
+       ============================================================ -->
+  <section class="band band--deep">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Depth</p>
+        <h2>Parallax layers that drift at different speeds.</h2>
+        <p class="lead">Scroll this band on desktop: the background word moves slower than the foreground card — real depth, GPU transforms only, and it holds perfectly still under reduced-motion.</p>
+      </div>
+      <div class="showcase" data-reveal="zoom">
+        <div class="showcase__layer" data-parallax="0.25" aria-hidden="true">
+          <span class="px-badge">POURED&nbsp;RIGHT</span>
+        </div>
+        <div class="showcase__layer" data-parallax="0.08" aria-hidden="true">
+          <span class="px-badge" style="color:rgba(245,166,35,.05)">ON&nbsp;GRADE</span>
+        </div>
+        <div class="showcase__fore">
+          <h2>“They hit every pour window, rain or shine.”</h2>
+          <p class="lead">— Project Executive, 640k sq-ft distribution center</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       KEN BURNS — slow-zoom drift on "images". Here the images are
+       inline SVG scenes (zero raster assets to compress), each
+       wrapped in .mo-kenburns so the CSS keyframe pans/zooms them.
+       ============================================================ -->
+  <section class="band">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Recent work</p>
+        <h2>Ken Burns drift — stills that never sit still.</h2>
+        <p class="lead">Each frame slow-zooms inside its crop via <code>.mo-kenburns</code>. On a real build these are the client's project photos; here they're pure SVG so the page ships with no image weight.</p>
+      </div>
+      <div class="kb-grid" data-reveal-group>
+
+        <figure class="kb-card">
+          <div class="kb-card__frame mo-kenburns">
+            <svg class="kbphoto" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a concrete foundation pour at a job site">
+              <defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a2647"/><stop offset="1" stop-color="#0b1224"/></linearGradient></defs>
+              <rect width="400" height="300" fill="url(#g1)"/>
+              <rect y="210" width="400" height="90" fill="#141d38"/>
+              <rect x="30" y="150" width="140" height="70" fill="#20305a"/>
+              <rect x="200" y="120" width="170" height="100" fill="#26386a"/>
+              <path d="M0 210 L400 210" stroke="#f5a623" stroke-width="3" opacity=".6"/>
+              <circle cx="330" cy="70" r="30" fill="#f5a623" opacity=".25"/>
+              <rect x="60" y="170" width="80" height="8" fill="#f5a623" opacity=".5"/>
+            </svg>
+          </div>
+          <figcaption class="kb-card__cap">Distribution Center · Slab-on-Grade</figcaption>
+        </figure>
+
+        <figure class="kb-card">
+          <div class="kb-card__frame mo-kenburns">
+            <svg class="kbphoto" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a tilt-wall panel being craned into place">
+              <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#20305a"/><stop offset="1" stop-color="#070b16"/></linearGradient></defs>
+              <rect width="400" height="300" fill="url(#g2)"/>
+              <rect x="120" y="40" width="120" height="230" fill="#26386a"/>
+              <line x1="300" y1="0" x2="300" y2="300" stroke="#f5a623" stroke-width="4" opacity=".7"/>
+              <line x1="300" y1="60" x2="180" y2="60" stroke="#f5a623" stroke-width="3" opacity=".7"/>
+              <rect x="150" y="60" width="70" height="10" fill="#f5a623" opacity=".5"/>
+              <circle cx="300" cy="60" r="6" fill="#f5a623"/>
+            </svg>
+          </div>
+          <figcaption class="kb-card__cap">Corporate Campus · Tilt-Wall</figcaption>
+        </figure>
+
+        <figure class="kb-card">
+          <div class="kb-card__frame mo-kenburns">
+            <svg class="kbphoto" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a polished concrete warehouse floor">
+              <defs><linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a3d70"/><stop offset="1" stop-color="#0b1224"/></linearGradient></defs>
+              <rect width="400" height="300" fill="url(#g3)"/>
+              <polygon points="0,300 400,300 260,150 140,150" fill="#18234310"/>
+              <polygon points="140,150 260,150 230,120 170,120" fill="#22335f"/>
+              <line x1="200" y1="120" x2="200" y2="300" stroke="#f5a623" stroke-width="2" opacity=".4"/>
+              <line x1="100" y1="300" x2="170" y2="120" stroke="#ffffff" stroke-width="1" opacity=".15"/>
+              <line x1="300" y1="300" x2="230" y2="120" stroke="#ffffff" stroke-width="1" opacity=".15"/>
+            </svg>
+          </div>
+          <figcaption class="kb-card__cap">Retail Big-Box · Polished Floor</figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA — animated underline (.mo-underline) + hover-raise button.
+       ============================================================ -->
+  <section class="band band--alt">
+    <div class="wrap" style="text-align:center">
+      <div data-reveal>
+        <p class="eyebrow">The takeaway</p>
+        <h2>Drop in two files. Add classes. Get Lithko-level motion.</h2>
+        <p class="lead" style="margin:0 auto 30px">
+          Everything you just scrolled through is <code>motion.css</code> +
+          <code>motion.js</code> (&lt;3&nbsp;KB) plus a handful of attributes.
+          60fps, reduced-motion-safe, mobile-safe, no libraries.
+        </p>
+        <a class="btn btn-primary mo-hover-raise" href="tel:214-555-0100">
+          Start a premium build
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div data-reveal="left">
+          <h3 style="color:var(--ink)">DNA Agency — Premium Motion System</h3>
+          <p style="max-width:44ch">A reusable, zero-dependency motion layer for premium static builds. Source lives in <code>Agency/premium/</code>.</p>
+        </div>
+        <div data-reveal="right">
+          <p style="margin:0"><a class="mo-underline" href="tel:214-555-0100">(214) 555-0100</a></p>
+          <p style="margin:.3rem 0 0"><a class="mo-underline" href="#work">Effects showcase</a></p>
+        </div>
+      </div>
+      <p class="foot-note">
+        Concept preview — not affiliated. This is an internal demo of DNA Agency's motion system,
+        not a real business. Imagery is CSS/SVG only; no scraped assets. Respects
+        <code>prefers-reduced-motion</code>; degrades gracefully with JavaScript disabled.
+      </p>
+    </div>
+  </footer>
+
+  <!-- premium motion engine, deferred, local (never a CDN) -->
+  <script src="assets/js/motion.js" defer></script>
+</body>
+</html>
