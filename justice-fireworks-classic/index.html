@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Justice Fireworks — Rockwall, TX | Family-Owned Fireworks Stand</title>
+<meta name="description" content="Justice Fireworks — a family-owned fireworks stand in Rockwall, TX. A wide selection of safe, high-quality fireworks at prices that beat the big box guys. Stop by, say hi, and put on a show.">
+<style>
+  /* ============ RESET & TOKENS ============ */
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --ink:#0b1220;          /* near-black navy */
+    --night:#101b33;        /* deep night sky */
+    --night-2:#16244a;      /* lighter navy panel */
+    --cream:#fbf6ec;        /* warm paper */
+    --cream-2:#f3ead6;
+    --ember:#e8622c;        /* burnt orange ember */
+    --ember-deep:#c0441a;
+    --gold:#f2b544;         /* sparkler gold */
+    --gold-soft:#f7d488;
+    --red:#c8342f;          /* firecracker red */
+    --sky-blue:#5aa6e0;
+    --line:rgba(255,255,255,.10);
+    --line-dk:rgba(11,18,32,.12);
+    --shadow:0 24px 60px -22px rgba(4,9,20,.65);
+    --shadow-sm:0 10px 30px -14px rgba(4,9,20,.55);
+    --maxw:1160px;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,sans-serif;
+  }
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.05;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:22px}
+  .eyebrow{
+    font-family:var(--sans);font-weight:800;font-size:.72rem;letter-spacing:.22em;
+    text-transform:uppercase;display:inline-flex;align-items:center;gap:.55em;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:currentColor;opacity:.6;display:inline-block}
+
+  /* ============ TOP CALL BAR ============ */
+  .topbar{
+    background:var(--ink);color:var(--cream);position:sticky;top:0;z-index:60;
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:56px}
+  .brandmark{display:flex;align-items:center;gap:11px;font-family:var(--serif);font-weight:700;font-size:1.06rem;letter-spacing:.01em}
+  .brandmark .spark{
+    width:26px;height:26px;flex:none;display:grid;place-items:center;color:var(--gold);
+  }
+  .topcall{
+    display:inline-flex;align-items:center;gap:9px;
+    background:var(--ember);color:#fff;font-weight:800;font-size:.9rem;
+    padding:9px 16px;border-radius:999px;letter-spacing:.01em;white-space:nowrap;
+    box-shadow:0 8px 20px -8px rgba(232,98,44,.8);transition:transform .18s ease,background .18s ease;
+  }
+  .topcall:hover{background:var(--ember-deep);transform:translateY(-1px)}
+  .topcall svg{width:15px;height:15px}
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;color:var(--cream);
+    background:
+      radial-gradient(1100px 600px at 78% -8%, rgba(242,181,68,.16), transparent 60%),
+      radial-gradient(900px 520px at 12% 12%, rgba(90,166,224,.14), transparent 62%),
+      linear-gradient(180deg,#0d1731 0%, #101b33 45%, #0b1424 100%);
+    overflow:hidden;isolation:isolate;
+  }
+  .hero::after{ /* faint grain/vignette */
+    content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+    background:radial-gradient(120% 90% at 50% 0%, transparent 55%, rgba(4,8,18,.55) 100%);
+  }
+  .hero-fx{position:absolute;inset:0;z-index:-2;pointer-events:none;overflow:hidden}
+  .burst{position:absolute;transform-origin:center;opacity:0;animation:pop 6.5s ease-out infinite}
+  .burst svg{display:block}
+  .burst.b1{top:14%;left:70%;animation-delay:.2s}
+  .burst.b2{top:30%;left:18%;transform:scale(.72);animation-delay:2.4s}
+  .burst.b3{top:8%;left:44%;transform:scale(.55);animation-delay:4.1s}
+  .burst.b4{top:52%;left:82%;transform:scale(.6);animation-delay:3.3s}
+  @keyframes pop{
+    0%{opacity:0;transform:scale(.15)}
+    8%{opacity:1}
+    26%{opacity:.9}
+    46%{opacity:0;transform:scale(1.25)}
+    100%{opacity:0}
+  }
+  /* twinkle stars */
+  .stars{position:absolute;inset:0;z-index:-2}
+  .stars i{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;opacity:.5;animation:tw 3.4s ease-in-out infinite}
+  .stars i:nth-child(2n){width:3px;height:3px;opacity:.35}
+  @keyframes tw{0%,100%{opacity:.15}50%{opacity:.75}}
+
+  .hero .wrap{position:relative;z-index:2;padding-top:64px;padding-bottom:78px}
+  .hero-grid{display:grid;grid-template-columns:1fr;gap:34px;align-items:center}
+  .season-pill{
+    display:inline-flex;align-items:center;gap:10px;
+    background:rgba(242,181,68,.14);border:1px solid rgba(242,181,68,.4);
+    color:var(--gold-soft);font-weight:800;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;
+    padding:8px 15px;border-radius:999px;margin-bottom:22px;
+  }
+  .season-pill .dot{width:8px;height:8px;border-radius:50%;background:#54d38a;box-shadow:0 0 0 0 rgba(84,211,138,.7);animation:pulse 2.1s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(84,211,138,.6)}70%{box-shadow:0 0 0 9px rgba(84,211,138,0)}100%{box-shadow:0 0 0 0 rgba(84,211,138,0)}}
+  .hero h1{
+    font-size:clamp(2.8rem,10vw,5.2rem);line-height:.96;margin-bottom:8px;
+    text-shadow:0 2px 30px rgba(0,0,0,.35);
+  }
+  .hero h1 .amp{color:var(--gold);font-style:italic;font-weight:700}
+  .hero .city{
+    display:block;font-family:var(--sans);font-weight:800;letter-spacing:.32em;text-transform:uppercase;
+    font-size:clamp(.8rem,2.6vw,1rem);color:var(--ember);margin-top:18px;
+  }
+  .hero p.lede{
+    font-size:clamp(1.05rem,2.4vw,1.28rem);color:#dfe6f2;max-width:36ch;margin:22px 0 30px;
+  }
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .btn-call{
+    display:inline-flex;align-items:center;gap:13px;
+    background:linear-gradient(180deg,var(--ember),var(--ember-deep));color:#fff;
+    font-weight:800;font-size:1.18rem;letter-spacing:.01em;
+    padding:18px 26px;border-radius:16px;
+    box-shadow:0 18px 36px -14px rgba(232,98,44,.85),inset 0 1px 0 rgba(255,255,255,.25);
+    transition:transform .18s ease,box-shadow .18s ease;
+  }
+  .btn-call:hover{transform:translateY(-2px);box-shadow:0 24px 44px -14px rgba(232,98,44,.95),inset 0 1px 0 rgba(255,255,255,.3)}
+  .btn-call .ring{width:40px;height:40px;flex:none;border-radius:50%;background:rgba(255,255,255,.16);display:grid;place-items:center}
+  .btn-call .ring svg{width:20px;height:20px}
+  .btn-call small{display:block;font-weight:600;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;opacity:.85;margin-bottom:1px}
+  .btn-call b{display:block;font-size:1.24rem;letter-spacing:.02em;line-height:1}
+  .btn-ghost{
+    display:inline-flex;align-items:center;gap:8px;color:var(--cream);font-weight:700;font-size:.98rem;
+    padding:16px 20px;border-radius:14px;border:1px solid rgba(255,255,255,.22);
+    background:rgba(255,255,255,.03);transition:background .18s ease,border-color .18s ease;
+  }
+  .btn-ghost:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.4)}
+  .trust-row{display:flex;flex-wrap:wrap;gap:20px 26px;margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
+  .trust-row .ti{display:flex;align-items:center;gap:10px;font-size:.86rem;color:#cdd6e6}
+  .trust-row .ti svg{width:18px;height:18px;color:var(--gold);flex:none}
+
+  /* ============ MARQUEE STRIP ============ */
+  .marquee{background:var(--ember);color:#fff;overflow:hidden;border-block:1px solid rgba(0,0,0,.15)}
+  .marquee .track{display:flex;gap:40px;white-space:nowrap;padding:11px 0;animation:scroll 26s linear infinite;font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem}
+  .marquee .track span{display:inline-flex;align-items:center;gap:40px}
+  .marquee .track span::after{content:"✦";color:var(--gold-soft)}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ============ SECTION SHELL ============ */
+  section{position:relative}
+  .sec-head{max-width:56ch;margin-bottom:40px}
+  .sec-head .eyebrow{color:var(--ember-deep);margin-bottom:14px}
+  .sec-head h2{font-size:clamp(1.9rem,5vw,2.9rem);color:var(--ink);margin-bottom:12px}
+  .sec-head p{color:#4a5464;font-size:1.05rem;max-width:52ch}
+
+  /* ============ PRODUCTS ============ */
+  .products{padding:78px 0;background:
+    radial-gradient(700px 400px at 100% 0,rgba(232,98,44,.06),transparent 60%),
+    var(--cream);}
+  .prod-grid{display:grid;grid-template-columns:1fr;gap:18px}
+  .card{
+    position:relative;background:#fff;border:1px solid var(--line-dk);border-radius:18px;
+    padding:26px 24px;box-shadow:var(--shadow-sm);overflow:hidden;
+    transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:rgba(232,98,44,.35)}
+  .card .ic{
+    width:56px;height:56px;border-radius:14px;display:grid;place-items:center;margin-bottom:18px;
+    background:linear-gradient(150deg,#fff3e2,#ffe4c4);border:1px solid rgba(232,98,44,.18);
+  }
+  .card .ic svg{width:30px;height:30px;color:var(--ember-deep)}
+  .card h3{font-size:1.28rem;color:var(--ink);margin-bottom:7px}
+  .card p{color:#5a6474;font-size:.95rem}
+  .card .tag{
+    position:absolute;top:18px;right:18px;font-size:.62rem;font-weight:800;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--ember-deep);background:#ffece0;padding:4px 9px;border-radius:999px;
+  }
+  .card::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),var(--ember));transition:width .3s ease}
+  .card:hover::after{width:100%}
+
+  /* ============ STORY / WHY US ============ */
+  .story{
+    color:var(--cream);position:relative;overflow:hidden;
+    background:linear-gradient(180deg,#0b1424,#101b33 60%,#0d1731);
+    padding:82px 0;
+  }
+  .story::before{content:"";position:absolute;inset:0;opacity:.5;
+    background:radial-gradient(600px 340px at 85% 20%,rgba(242,181,68,.14),transparent 60%),
+              radial-gradient(560px 320px at 8% 80%,rgba(90,166,224,.12),transparent 62%);}
+  .story .wrap{position:relative;z-index:2}
+  .story-grid{display:grid;grid-template-columns:1fr;gap:44px;align-items:center}
+  .story .eyebrow{color:var(--gold)}
+  .story h2{font-size:clamp(2rem,5.4vw,3.1rem);margin:16px 0 20px}
+  .story h2 em{color:var(--gold);font-style:italic}
+  .story p{color:#d3dced;font-size:1.08rem;margin-bottom:18px;max-width:54ch}
+  .story .sig{font-family:var(--serif);font-style:italic;font-size:1.24rem;color:var(--gold-soft);margin-top:26px}
+  .why-list{display:grid;gap:16px;margin-top:6px}
+  .why{display:flex;gap:16px;align-items:flex-start;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:15px;padding:18px 18px}
+  .why .wic{width:44px;height:44px;flex:none;border-radius:11px;display:grid;place-items:center;background:rgba(242,181,68,.14);border:1px solid rgba(242,181,68,.3)}
+  .why .wic svg{width:23px;height:23px;color:var(--gold)}
+  .why h4{font-family:var(--sans);font-weight:800;font-size:1rem;margin-bottom:3px;color:#fff}
+  .why p{font-size:.9rem;color:#b9c4d6;margin:0}
+
+  /* ============ HOURS + LOCATION ============ */
+  .visit{padding:78px 0;background:var(--cream)}
+  .visit-grid{display:grid;grid-template-columns:1fr;gap:22px}
+  .panel{background:#fff;border:1px solid var(--line-dk);border-radius:20px;padding:30px 26px;box-shadow:var(--shadow-sm)}
+  .panel h3{font-size:1.5rem;color:var(--ink);margin-bottom:6px;display:flex;align-items:center;gap:11px}
+  .panel h3 svg{width:22px;height:22px;color:var(--ember)}
+  .hours-list{list-style:none;margin-top:18px}
+  .hours-list li{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:12px 2px;border-bottom:1px dashed var(--line-dk);font-size:.98rem}
+  .hours-list li:last-child{border-bottom:0}
+  .hours-list .day{font-weight:700;color:var(--ink)}
+  .hours-list .time{color:#5a6474;font-variant-numeric:tabular-nums}
+  .hours-list li.today{background:linear-gradient(90deg,#fff6ea,transparent);border-radius:10px;padding-inline:12px;margin-inline:-10px}
+  .hours-list li.today .day::after{content:"Today";font-family:var(--sans);font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--ember);padding:3px 8px;border-radius:999px;margin-left:10px;vertical-align:middle}
+  .addr{font-size:1.05rem;color:var(--ink);margin:18px 0 6px;line-height:1.5}
+  .addr b{display:block;font-family:var(--serif);font-size:1.15rem}
+  .map-note{color:#5a6474;font-size:.92rem;margin-bottom:20px}
+  .dir-btns{display:flex;flex-wrap:wrap;gap:12px}
+  .dir-btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:.95rem;padding:13px 18px;border-radius:12px;background:var(--ink);color:var(--cream);transition:transform .16s ease,background .16s ease}
+  .dir-btn:hover{transform:translateY(-1px);background:#1a2740}
+  .dir-btn.alt{background:#fff;color:var(--ink);border:1px solid var(--line-dk)}
+  .dir-btn.alt:hover{background:var(--cream-2)}
+  .dir-btn svg{width:17px;height:17px}
+  .mini-map{margin-top:22px;border-radius:14px;overflow:hidden;border:1px solid var(--line-dk);background:
+    linear-gradient(135deg,#dfe9f0,#eef3f6);position:relative;height:170px}
+  .mini-map .roads{position:absolute;inset:0}
+  .mini-map .pin{position:absolute;top:50%;left:50%;transform:translate(-50%,-100%);color:var(--ember-deep)}
+  .mini-map .pin svg{width:38px;height:38px;filter:drop-shadow(0 6px 8px rgba(0,0,0,.28))}
+  .mini-map .lbl{position:absolute;bottom:12px;left:14px;font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#3a4656;background:rgba(255,255,255,.82);padding:5px 10px;border-radius:8px}
+
+  /* ============ REVIEWS ============ */
+  .reviews{padding:80px 0;position:relative;overflow:hidden;
+    background:linear-gradient(180deg,#12203f,#0d1731);color:var(--cream)}
+  .reviews::before{content:"";position:absolute;inset:0;opacity:.45;
+    background:radial-gradient(600px 300px at 20% 0,rgba(242,181,68,.14),transparent 60%)}
+  .reviews .wrap{position:relative;z-index:2}
+  .reviews .sec-head{margin-inline:auto;text-align:center;max-width:60ch}
+  .reviews .sec-head .eyebrow{color:var(--gold);justify-content:center}
+  .reviews .sec-head .eyebrow::before{display:none}
+  .reviews .sec-head h2{color:#fff}
+  .stars-row{display:flex;justify-content:center;gap:5px;margin:14px 0 4px;color:var(--gold)}
+  .stars-row svg{width:22px;height:22px}
+  .rev-sub{color:#c2cde0;font-size:.95rem}
+  .rev-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:42px}
+  .quote{background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:18px;padding:26px 24px;position:relative}
+  .quote .mark{font-family:var(--serif);font-size:3.4rem;line-height:0;color:var(--gold);opacity:.55;position:absolute;top:26px;left:20px}
+  .quote .rs{display:flex;gap:3px;color:var(--gold);margin-bottom:12px}
+  .quote .rs svg{width:16px;height:16px}
+  .quote p{color:#e3e9f4;font-size:1.02rem;font-style:italic;margin-bottom:18px}
+  .quote .who{display:flex;align-items:center;gap:12px}
+  .quote .av{width:40px;height:40px;border-radius:50%;flex:none;display:grid;place-items:center;font-family:var(--serif);font-weight:700;color:var(--ink);background:linear-gradient(150deg,var(--gold-soft),var(--gold))}
+  .quote .who b{display:block;font-family:var(--sans);font-weight:800;font-size:.92rem;color:#fff}
+  .quote .who span{font-size:.78rem;color:#9fabc2}
+  .rev-disclaimer{text-align:center;margin-top:30px;font-size:.78rem;color:#8b97ad;font-style:italic}
+
+  /* ============ RESERVE / CTA BAND ============ */
+  .band{padding:74px 0;background:
+    radial-gradient(600px 320px at 50% 0,rgba(232,98,44,.1),transparent 60%),var(--cream)}
+  .band-card{
+    background:linear-gradient(160deg,#101b33,#0b1424);color:var(--cream);border-radius:26px;
+    padding:clamp(34px,6vw,58px);text-align:center;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+  .band-card::before{content:"";position:absolute;inset:0;opacity:.6;
+    background:radial-gradient(400px 220px at 15% 15%,rgba(242,181,68,.16),transparent 60%),
+              radial-gradient(420px 240px at 90% 90%,rgba(90,166,224,.12),transparent 60%)}
+  .band-card>*{position:relative;z-index:2}
+  .band-card h2{font-size:clamp(1.8rem,5vw,2.8rem);margin-bottom:12px}
+  .band-card h2 em{color:var(--gold);font-style:italic}
+  .band-card p{color:#d3dced;max-width:46ch;margin:0 auto 30px;font-size:1.05rem}
+  .band-ctas{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;align-items:center}
+  .btn-reserve{
+    display:inline-flex;flex-direction:column;align-items:center;gap:2px;
+    background:rgba(255,255,255,.07);border:1px dashed rgba(255,255,255,.3);color:#aeb9cd;
+    font-weight:800;font-size:1rem;padding:16px 26px;border-radius:15px;cursor:not-allowed;position:relative}
+  .btn-reserve small{font-weight:700;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft)}
+  .btn-reserve[disabled]{opacity:.85}
+
+  /* ============ FOOTER ============ */
+  footer{background:var(--ink);color:#aeb9cd;padding:52px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1fr;gap:28px;margin-bottom:30px}
+  .foot-brand .brandmark{color:var(--cream);font-size:1.2rem;margin-bottom:12px}
+  .foot-brand p{font-size:.92rem;max-width:42ch;color:#9aa6bd}
+  .foot-col h5{font-family:var(--sans);font-weight:800;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+  .foot-col a,.foot-col p{display:block;font-size:.95rem;color:#c2cde0;margin-bottom:9px}
+  .foot-col a:hover{color:#fff}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center}
+  .foot-bottom small{font-size:.8rem;color:#7e8aa1}
+  .disclaimer{font-size:.78rem;color:#6f7b93;line-height:1.5;max-width:60ch;margin-top:16px;font-style:italic}
+  .safety{background:rgba(200,52,47,.14);border:1px solid rgba(200,52,47,.35);color:#f0b7b4;border-radius:12px;padding:12px 16px;font-size:.82rem;margin-top:18px;display:flex;gap:10px;align-items:flex-start}
+  .safety svg{width:18px;height:18px;flex:none;color:#e88}
+
+  /* ============ MOBILE STICKY CALL ============ */
+  .sticky-call{
+    position:fixed;left:14px;right:14px;bottom:14px;z-index:70;
+    display:flex;align-items:center;justify-content:center;gap:11px;
+    background:linear-gradient(180deg,var(--ember),var(--ember-deep));color:#fff;font-weight:800;font-size:1.06rem;
+    padding:15px;border-radius:16px;box-shadow:0 16px 34px -10px rgba(232,98,44,.9);
+    transition:transform .16s ease}
+  .sticky-call:active{transform:scale(.98)}
+  .sticky-call svg{width:19px;height:19px}
+
+  /* ============ RESPONSIVE ============ */
+  @media(min-width:720px){
+    .prod-grid{grid-template-columns:repeat(2,1fr)}
+    .rev-grid{grid-template-columns:repeat(2,1fr)}
+    .visit-grid{grid-template-columns:1fr 1fr}
+    .foot-grid{grid-template-columns:1.6fr 1fr 1fr}
+  }
+  @media(min-width:960px){
+    .prod-grid{grid-template-columns:repeat(3,1fr)}
+    .story-grid{grid-template-columns:1.05fr .95fr}
+    .rev-grid{grid-template-columns:repeat(3,1fr)}
+    .sticky-call{display:none}
+  }
+  @media(max-width:520px){
+    .topbar .brandmark span.long{display:none}
+  }
+
+  /* ============ REDUCED MOTION ============ */
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+    .burst{opacity:.85}
+    .stars i{opacity:.4}
+  }
+</style>
+</head>
+<body>
+
+  <!-- ===== TOP BAR ===== -->
+  <div class="topbar">
+    <div class="wrap">
+      <a class="brandmark" href="#top" aria-label="Justice Fireworks home">
+        <span class="spark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v5M12 17v5M2 12h5M17 12h5M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg>
+        </span>
+        Justice <span class="long">Fireworks</span>
+      </a>
+      <a class="topcall" href="tel:8173827355">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.24 1z"/></svg>
+        Call (817) 382-7355
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="top">
+    <div class="hero-fx" aria-hidden="true">
+      <div class="stars">
+        <i style="top:12%;left:8%"></i><i style="top:22%;left:26%"></i><i style="top:9%;left:55%"></i>
+        <i style="top:34%;left:88%"></i><i style="top:48%;left:14%"></i><i style="top:18%;left:70%"></i>
+        <i style="top:60%;left:40%"></i><i style="top:40%;left:60%"></i><i style="top:70%;left:78%"></i>
+        <i style="top:15%;left:38%"></i><i style="top:52%;left:92%"></i><i style="top:28%;left:6%"></i>
+      </div>
+      <div class="burst b1">
+        <svg width="220" height="220" viewBox="0 0 200 200" fill="none" stroke="#f2b544" stroke-width="1.4" stroke-linecap="round">
+          <g opacity=".9"><path d="M100 100 L100 22M100 100 L100 178M100 100 L22 100M100 100 L178 100M100 100 L45 45M100 100 L155 155M100 100 L155 45M100 100 L45 155M100 100 L100 40M100 100 L138 62M100 100 L62 138"/></g>
+          <g fill="#f7d488" stroke="none"><circle cx="100" cy="22" r="2.4"/><circle cx="100" cy="178" r="2.4"/><circle cx="22" cy="100" r="2.4"/><circle cx="178" cy="100" r="2.4"/><circle cx="45" cy="45" r="2"/><circle cx="155" cy="155" r="2"/><circle cx="155" cy="45" r="2"/><circle cx="45" cy="155" r="2"/></g>
+        </svg>
+      </div>
+      <div class="burst b2">
+        <svg width="200" height="200" viewBox="0 0 200 200" fill="none" stroke="#e8622c" stroke-width="1.5" stroke-linecap="round">
+          <g><path d="M100 100 L100 30M100 100 L100 170M100 100 L30 100M100 100 L170 100M100 100 L50 50M100 100 L150 150M100 100 L150 50M100 100 L50 150"/></g>
+        </svg>
+      </div>
+      <div class="burst b3">
+        <svg width="200" height="200" viewBox="0 0 200 200" fill="none" stroke="#5aa6e0" stroke-width="1.6" stroke-linecap="round">
+          <path d="M100 100 L100 34M100 100 L166 100M100 100 L100 166M100 100 L34 100M100 100 L146 54M100 100 L54 146M100 100 L146 146M100 100 L54 54"/>
+        </svg>
+      </div>
+      <div class="burst b4">
+        <svg width="200" height="200" viewBox="0 0 200 200" fill="none" stroke="#f2b544" stroke-width="1.5" stroke-linecap="round">
+          <path d="M100 100 L100 40M100 100 L160 100M100 100 L100 160M100 100 L40 100M100 100 L142 58M100 100 L58 142M100 100 L142 142M100 100 L58 58"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="season-pill"><span class="dot"></span> Open for the Season</div>
+          <h1>Justice <span class="amp">&amp;</span><br>Fireworks</h1>
+          <span class="city">Rockwall, Texas</span>
+          <p class="lede">A family-owned stand built on one simple idea: make celebrating easy, affordable, and fun for everyone.</p>
+
+          <div class="cta-row">
+            <a class="btn-call" href="tel:8173827355" aria-label="Call Justice Fireworks at 817-382-7355">
+              <span class="ring" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.24 1z"/></svg>
+              </span>
+              <span><small>Tap to Call</small><b>(817) 382-7355</b></span>
+            </a>
+            <a class="btn-ghost" href="#visit">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Hours &amp; Directions
+            </a>
+          </div>
+
+          <div class="trust-row">
+            <div class="ti"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6l-9-4Zm-1 13-3-3 1.4-1.4L11 12.2l4.6-4.6L17 9l-6 6Z"/></svg> Family owned &amp; local</div>
+            <div class="ti"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1 3 5v6c0 5.6 3.8 10.7 9 12 5.2-1.3 9-6.4 9-12V5l-9-4Z"/></svg> Safe, high-quality stock</div>
+            <div class="ti"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 15h-2v-2h2v2Zm1.9-7.6-.9.9c-.7.7-1 1.2-1 2.2h-2v-.5c0-1 .4-1.9 1-2.6l1.2-1.3a1.5 1.5 0 1 0-2.6-1H8.5A3.5 3.5 0 1 1 15 8.3c0 .5-.2 1-.6 1.5Z"/></svg> Prices that beat big box</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== MARQUEE ===== -->
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>Aerial Cakes</span><span>Roman Candles</span><span>Fountains</span><span>Sparklers</span><span>Assortment Packs</span><span>Rockets &amp; Missiles</span><span>Ground Spinners</span><span>Family Bundles</span>
+      <span>Aerial Cakes</span><span>Roman Candles</span><span>Fountains</span><span>Sparklers</span><span>Assortment Packs</span><span>Rockets &amp; Missiles</span><span>Ground Spinners</span><span>Family Bundles</span>
+    </div>
+  </div>
+
+  <!-- ===== PRODUCTS ===== -->
+  <section class="products" id="shop">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">What We Sell</span>
+        <h2>A wide selection, one great stand.</h2>
+        <p>From backyard sparklers to sky-filling finale cakes — safe, high-quality fireworks at prices that beat the big box guys.</p>
+      </div>
+
+      <div class="prod-grid">
+        <article class="card">
+          <span class="tag">Crowd Favorite</span>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 2v4M4.9 4.9l2.8 2.8M2 12h4M4.9 19.1l2.8-2.8M12 22v-4M19.1 19.1l-2.8-2.8M22 12h-4M19.1 4.9l-2.8 2.8"/></svg></div>
+          <h3>Aerial Cakes</h3>
+          <p>Multi-shot repeaters that fill the sky with color. One fuse, a full show — the backbone of any July display.</p>
+        </article>
+
+        <article class="card">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V9M12 9l-3-6h6l-3 6Z"/><path d="M9 13h6M8 17h8"/></svg></div>
+          <h3>Roman Candles &amp; Rockets</h3>
+          <p>Classic candles, bottle rockets, and missiles for that big-boom, high-launch backyard thrill.</p>
+        </article>
+
+        <article class="card">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c4-3 5-6 5-9a5 5 0 0 0-10 0c0 3 1 6 5 9Z"/><path d="M12 3v3M9 6l2 2M15 6l-2 2"/></svg></div>
+          <h3>Fountains &amp; Ground</h3>
+          <p>Fountains, spinners, and snappers that keep the little ones smiling and the driveway glowing.</p>
+        </article>
+
+        <article class="card">
+          <span class="tag">Great Value</span>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M3 11h18M8 7V5a4 4 0 0 1 8 0v2"/></svg></div>
+          <h3>Assortment Packs</h3>
+          <p>Ready-to-go boxes that mix cakes, fountains, and novelties — the easiest way to put on a full show.</p>
+        </article>
+
+        <article class="card">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M5 19 19 5M8 4l1 2M4 8l2 1M16 20l-1-2M20 16l-2-1M12 12l1.5 1.5"/></svg></div>
+          <h3>Sparklers &amp; Novelties</h3>
+          <p>Sparklers, poppers, and smoke balls — the kid-safe classics for cookouts, birthdays, and driveways.</p>
+        </article>
+
+        <article class="card">
+          <span class="tag">Ask Us</span>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v7a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-7"/><rect x="2" y="7" width="20" height="5" rx="1"/><path d="M12 22V7M12 7S12 2 8.5 2 5 5 5 5s2.5.5 3.5 1 3.5 1 3.5 1ZM12 7s0-5 3.5-5S19 5 19 5s-2.5.5-3.5 1-3.5 1-3.5 1Z"/></svg></div>
+          <h3>Family Bundles</h3>
+          <p>Not sure where to start? Stop by and we'll build a bundle to fit your yard and your budget.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STORY / WHY US ===== -->
+  <section class="story" id="story">
+    <div class="wrap">
+      <div class="story-grid">
+        <div>
+          <span class="eyebrow">Our Story</span>
+          <h2>A small business that <em>truly cares</em> about the community.</h2>
+          <p>Justice Fireworks is a family-owned stand built on one simple idea: make celebrating easy, affordable, and fun for everyone.</p>
+          <p>We carry a wide selection of safe, high-quality fireworks — and we price them to beat the big box guys, because a great Fourth of July shouldn't cost a fortune.</p>
+          <p class="sig">"Stop by, say hi, and let us help you put on a show your family and friends won't forget."</p>
+        </div>
+
+        <div class="why-list">
+          <div class="why">
+            <div class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 8v6M23 11h-6"/><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg></div>
+            <div><h4>Family owned &amp; operated</h4><p>Real people from Rockwall who'll remember your name next year.</p></div>
+          </div>
+          <div class="why">
+            <div class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6l-9-4Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+            <div><h4>Safe &amp; high-quality</h4><p>We stock product we'd light in our own backyard — nothing less.</p></div>
+          </div>
+          <div class="why">
+            <div class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+            <div><h4>Prices that beat big box</h4><p>Affordable by design — a full show without the full-price sticker shock.</p></div>
+          </div>
+          <div class="why">
+            <div class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg></div>
+            <div><h4>Friendly help, every time</h4><p>New to fireworks? We'll walk you through it and build the perfect setup.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VISIT: HOURS + LOCATION ===== -->
+  <section class="visit" id="visit">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Come See Us</span>
+        <h2>Hours &amp; directions.</h2>
+        <p>We're a seasonal stand — here for the big holidays. Swing by, say hi, and stock up before the show.</p>
+      </div>
+
+      <div class="visit-grid">
+        <div class="panel">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            Seasonal Hours
+          </h3>
+          <p style="color:#5a6474;font-size:.94rem">Extended hours the final week before the holiday.</p>
+          <ul class="hours-list">
+            <li><span class="day">Monday – Thursday</span><span class="time">10:00 AM – 9:00 PM</span></li>
+            <li class="today"><span class="day">Friday</span><span class="time">9:00 AM – 11:00 PM</span></li>
+            <li><span class="day">Saturday</span><span class="time">9:00 AM – 11:00 PM</span></li>
+            <li><span class="day">Sunday</span><span class="time">10:00 AM – 10:00 PM</span></li>
+            <li><span class="day">Holiday (Jul 4)</span><span class="time">8:00 AM – Midnight</span></li>
+          </ul>
+          <a class="topcall" style="margin-top:20px" href="tel:8173827355">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.24 1z"/></svg>
+            Call to confirm today's hours
+          </a>
+        </div>
+
+        <div class="panel">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Find the Stand
+          </h3>
+          <div class="addr">
+            <b>Justice Fireworks</b>
+            10575 South State Hwy 205<br>Rockwall, TX 75032
+          </div>
+          <p class="map-note">Look for the tent right off Hwy 205 — you can't miss the flags.</p>
+          <div class="dir-btns">
+            <a class="dir-btn" href="https://maps.google.com/?q=10575+South+State+Hwy+205,+Rockwall,+TX+75032" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 20 3 17V4l6 3 6-3 6 3v13l-6-3-6 3Z"/><path d="M9 7v13M15 4v13"/></svg>
+              Google Maps
+            </a>
+            <a class="dir-btn alt" href="https://maps.apple.com/?address=10575+South+State+Hwy+205,+Rockwall,+TX+75032" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              Apple Maps
+            </a>
+          </div>
+
+          <div class="mini-map" role="img" aria-label="Map showing the Justice Fireworks stand location on South State Highway 205 in Rockwall, Texas">
+            <svg class="roads" viewBox="0 0 400 170" preserveAspectRatio="none" aria-hidden="true">
+              <rect width="400" height="170" fill="none"/>
+              <path d="M-10 40 L410 66" stroke="#c3d2dc" stroke-width="12" fill="none"/>
+              <path d="M120 -10 L150 180" stroke="#d5e0e8" stroke-width="20" fill="none"/>
+              <path d="M-10 130 L410 118" stroke="#cdd9e2" stroke-width="8" fill="none"/>
+              <path d="M280 -10 L300 180" stroke="#d5e0e8" stroke-width="7" fill="none"/>
+              <path d="M120 -10 L150 180" stroke="#eef3f6" stroke-width="2" stroke-dasharray="8 8" fill="none"/>
+            </svg>
+            <div class="pin" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/></svg>
+            </div>
+            <span class="lbl">Hwy 205 · Rockwall</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS ===== -->
+  <section class="reviews" id="reviews">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Neighbors Love Us</span>
+        <h2>Where Rockwall stocks up for the Fourth.</h2>
+        <div class="stars-row" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.6 5.9 20.8 7.1 14 2 9.2l6.9-.9L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.6 5.9 20.8 7.1 14 2 9.2l6.9-.9L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.6 5.9 20.8 7.1 14 2 9.2l6.9-.9L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.6 5.9 20.8 7.1 14 2 9.2l6.9-.9L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.6 5.9 20.8 7.1 14 2 9.2l6.9-.9L12 2Z"/></svg>
+        </div>
+        <p class="rev-sub">Loved by families up and down Highway 205.</p>
+      </div>
+
+      <div class="rev-grid">
+        <figure class="quote">
+          <span class="mark" aria-hidden="true">&ldquo;</span>
+          <div class="rs" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.6 5.9 20.8 7.1 14 2 9.2l6.9-.9L12 2Z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.6 5.9 20.8 7.1 14 2 9.2l6.9-.9L12 2Z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.6 5.9 20.8 7.1 14 2 9.2l6.9-.9L12 2Z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.6 5.9 20.8 7.1 14 2 9.2l6.9-.9L12 2Z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.6 5.9 20.8 7.1 14 2 9.2l6.9-.9L12 2Z"/></svg></div>
+          <blockquote><p>The folks here helped us pick out a full show for way less than we'd have paid anywhere else. Friendly, patient, and they know their stuff.</p></blockquote>
+          <figcaption class="who"><span class="av" aria-hidden="true">M</span><span><b>Marcus T.</b><span>Rockwall, TX</span></span></figcaption>
+        </figure>
+
+        <figure class="quote">
+          <span class="mark" aria-hidden="true">&ldquo;</span>
+          <div class="rs" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.6 5.9 20.8 7.1 14 2 9.2l6.9-.9L12 2Z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.6 5.9 20.8 7.1 14 2 9.2l6.9-.9L12 2Z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.6 5.9 20.8 7.1 14 2 9.2l6.9-.9L12 2Z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.6 5.9 20.8 7.1 14 2 9.2l6.9-.9L12 2Z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.6 5.9 20.8 7.1 14 2 9.2l6.9-.9L12 2Z"/></svg></div>
+          <blockquote><p>Our go-to every summer. Great selection, honest prices, and it feels like buying from neighbors — because you are. The kids love the sparklers.</p></blockquote>
+          <figcaption class="who"><span class="av" aria-hidden="true">D</span><span><b>Dana R.</b><span>Heath, TX</span></span></figcaption>
+        </figure>
+
+        <figure class="quote">
+          <span class="mark" aria-hidden="true">&ldquo;</span>
+          <div class="rs" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.6 5.9 20.8 7.1 14 2 9.2l6.9-.9L12 2Z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.6 5.9 20.8 7.1 14 2 9.2l6.9-.9L12 2Z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.6 5.9 20.8 7.1 14 2 9.2l6.9-.9L12 2Z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.6 5.9 20.8 7.1 14 2 9.2l6.9-.9L12 2Z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.6 5.9 20.8 7.1 14 2 9.2l6.9-.9L12 2Z"/></svg></div>
+          <blockquote><p>Put on the best backyard show our street has ever seen and didn't break the bank. Told me exactly what to grab for a big finale. Can't recommend enough.</p></blockquote>
+          <figcaption class="who"><span class="av" aria-hidden="true">S</span><span><b>Sofia G.</b><span>Rowlett, TX</span></span></figcaption>
+        </figure>
+      </div>
+
+      <p class="rev-disclaimer">Testimonials shown are illustrative placeholders for this concept preview.</p>
+    </div>
+  </section>
+
+  <!-- ===== RESERVE / CTA BAND ===== -->
+  <section class="band">
+    <div class="wrap">
+      <div class="band-card">
+        <h2>Ready to <em>put on a show</em>?</h2>
+        <p>Give us a call or stop by the stand on Hwy 205. We'll help you build the perfect setup for your family and friends.</p>
+        <div class="band-ctas">
+          <a class="btn-call" href="tel:8173827355" aria-label="Call Justice Fireworks at 817-382-7355">
+            <span class="ring" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.24 1z"/></svg>
+            </span>
+            <span><small>Tap to Call</small><b>(817) 382-7355</b></span>
+          </a>
+          <button class="btn-reserve" disabled aria-disabled="true" title="Online reservations & payment are coming soon">
+            <small>Coming Soon</small>
+            Reserve &amp; Pay Online
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <div class="brandmark">
+            <span class="spark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v5M12 17v5M2 12h5M17 12h5M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg>
+            </span>
+            Justice Fireworks
+          </div>
+          <p>A family-owned fireworks stand in Rockwall, TX — making celebrating easy, affordable, and fun for everyone.</p>
+          <div class="safety">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+            <span>Always follow local laws and light responsibly. Keep water nearby and adults in charge.</span>
+          </div>
+        </div>
+
+        <div class="foot-col">
+          <h5>Visit</h5>
+          <p>10575 South State Hwy 205<br>Rockwall, TX 75032</p>
+          <a href="https://maps.google.com/?q=10575+South+State+Hwy+205,+Rockwall,+TX+75032" target="_blank" rel="noopener">Get directions →</a>
+        </div>
+
+        <div class="foot-col">
+          <h5>Get In Touch</h5>
+          <a href="tel:8173827355">(817) 382-7355</a>
+          <a href="#shop">What we sell</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#visit">Hours &amp; directions</a>
+        </div>
+      </div>
+
+      <div class="foot-bottom">
+        <small>&copy; 2026 Justice Fireworks · Rockwall, Texas</small>
+        <small>Open seasonally for the holidays</small>
+      </div>
+      <p class="disclaimer">Concept preview built by DNA Agency — not affiliated with Justice Fireworks. Imagery, testimonials, and hours shown are placeholders for demonstration only.</p>
+    </div>
+  </footer>
+
+  <!-- ===== MOBILE STICKY CALL ===== -->
+  <a class="sticky-call" href="tel:8173827355" aria-label="Call Justice Fireworks at 817-382-7355">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.24 1z"/></svg>
+    Tap to Call · (817) 382-7355
+  </a>
+
+</body>
+</html>

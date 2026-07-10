@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Big Mama's Discount Fireworks &mdash; Terrell, TX</title>
+<meta name="description" content="Family-owned discount fireworks stand in Terrell, TX. Great selection, honest prices, friendly staff who know exactly how every package performs. Military &amp; law-enforcement discounts.">
+<style>
+  /* ============ TOKENS ============ */
+  :root{
+    --midnight:#0b1026;
+    --midnight-2:#121a3a;
+    --ink:#060814;
+    --paper:#fdf6ec;
+    --paper-dim:#efe3d2;
+    --ember:#ff5722;
+    --ember-lt:#ff8a4c;
+    --gold:#ffce54;
+    --gold-deep:#e0a72e;
+    --rose:#ff3b6b;
+    --sky:#5ad1ff;
+    --green:#2fbf71;
+    --line:rgba(255,206,84,.22);
+    --shadow:0 22px 60px -24px rgba(0,0,0,.7);
+    --maxw:1140px;
+    --serif:Georgia,'Times New Roman',serif;
+    --sans:'Trebuchet MS','Segoe UI',system-ui,sans-serif;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--sans);
+    background:var(--midnight);
+    color:var(--paper);
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 22px}
+
+  /* ============ DISPLAY TYPE ============ */
+  .display{
+    font-family:var(--serif);
+    font-weight:700;
+    line-height:.98;
+    letter-spacing:-.01em;
+  }
+  .eyebrow{
+    font-family:var(--sans);
+    text-transform:uppercase;
+    letter-spacing:.34em;
+    font-size:.72rem;
+    font-weight:700;
+    color:var(--gold);
+  }
+
+  /* ============ TOP SEASONAL BANNER ============ */
+  .season{
+    position:relative;
+    z-index:40;
+    background:linear-gradient(90deg,var(--ember) 0%,var(--rose) 55%,var(--gold-deep) 100%);
+    color:#fff;
+    text-align:center;
+    font-weight:700;
+    font-size:.82rem;
+    letter-spacing:.06em;
+    padding:9px 14px;
+    box-shadow:0 2px 20px rgba(255,87,34,.35);
+  }
+  .season .dot{
+    display:inline-block;width:8px;height:8px;border-radius:50%;
+    background:#fff;margin-right:8px;vertical-align:middle;
+    box-shadow:0 0 0 0 rgba(255,255,255,.8);
+    animation:pulse 1.8s ease-out infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(255,255,255,.7)}
+    70%{box-shadow:0 0 0 9px rgba(255,255,255,0)}
+    100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}
+  }
+
+  /* ============ NAV ============ */
+  header.nav{
+    position:sticky;top:0;z-index:35;
+    background:rgba(11,16,38,.82);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:var(--serif);font-weight:700;font-size:1.16rem}
+  .brand .spark{
+    width:34px;height:34px;border-radius:9px;flex:none;
+    background:radial-gradient(circle at 40% 30%,var(--gold),var(--ember) 70%);
+    display:grid;place-items:center;font-size:1.05rem;
+    box-shadow:0 6px 18px -6px var(--ember);
+  }
+  .brand b{color:var(--gold)}
+  .nav-links{display:flex;gap:26px;font-size:.9rem;font-weight:600}
+  .nav-links a{color:var(--paper-dim);transition:color .2s}
+  .nav-links a:hover{color:var(--gold)}
+  .nav-call{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--ember);color:#fff;font-weight:700;
+    padding:9px 16px;border-radius:999px;font-size:.86rem;
+    box-shadow:0 8px 22px -8px var(--ember);
+    transition:transform .16s ease;
+  }
+  .nav-call:hover{transform:translateY(-1px)}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;
+    padding:82px 0 96px;
+    background:
+      radial-gradient(120% 90% at 78% -8%,rgba(255,87,34,.16),transparent 55%),
+      radial-gradient(90% 80% at 8% 4%,rgba(90,209,255,.12),transparent 50%),
+      linear-gradient(180deg,var(--midnight) 0%,var(--midnight-2) 60%,var(--midnight) 100%);
+    overflow:hidden;
+  }
+  /* starfield */
+  .hero::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:
+      radial-gradient(1.4px 1.4px at 12% 22%,rgba(255,255,255,.7),transparent),
+      radial-gradient(1.2px 1.2px at 32% 12%,rgba(255,255,255,.5),transparent),
+      radial-gradient(1.6px 1.6px at 58% 30%,rgba(255,255,255,.6),transparent),
+      radial-gradient(1.1px 1.1px at 74% 16%,rgba(255,255,255,.45),transparent),
+      radial-gradient(1.5px 1.5px at 88% 34%,rgba(255,255,255,.55),transparent),
+      radial-gradient(1.2px 1.2px at 22% 46%,rgba(255,255,255,.4),transparent),
+      radial-gradient(1.3px 1.3px at 46% 8%,rgba(255,255,255,.5),transparent);
+    opacity:.9;
+  }
+  /* firework bursts (CSS-drawn) */
+  .burst{position:absolute;width:2px;height:2px;pointer-events:none;z-index:1}
+  .burst::before,.burst::after{
+    content:"";position:absolute;left:0;top:0;width:2px;height:2px;border-radius:50%;
+    box-shadow:
+      0 -46px 0 0 var(--c1), 33px -33px 0 0 var(--c1), 46px 0 0 0 var(--c1),
+      33px 33px 0 0 var(--c1), 0 46px 0 0 var(--c1), -33px 33px 0 0 var(--c1),
+      -46px 0 0 0 var(--c1), -33px -33px 0 0 var(--c1),
+      0 -30px 0 0 var(--c2), 21px -21px 0 0 var(--c2), 30px 0 0 0 var(--c2),
+      21px 21px 0 0 var(--c2), 0 30px 0 0 var(--c2), -21px 21px 0 0 var(--c2),
+      -30px 0 0 0 var(--c2), -21px -21px 0 0 var(--c2);
+    animation:boom 4.5s ease-out infinite;
+  }
+  .burst::after{animation-delay:2.25s;transform:rotate(22deg)}
+  .b1{top:16%;left:20%;--c1:var(--gold);--c2:var(--ember);animation-delay:0s}
+  .b2{top:24%;left:80%;--c1:var(--sky);--c2:#fff;}
+  .b2::before{animation-delay:1.4s}.b2::after{animation-delay:3.6s}
+  .b3{top:12%;left:56%;--c1:var(--rose);--c2:var(--gold);}
+  .b3::before{animation-delay:2.6s}.b3::after{animation-delay:.6s}
+  @keyframes boom{
+    0%{transform:scale(.1);opacity:0}
+    8%{opacity:1}
+    45%{transform:scale(1);opacity:.85}
+    70%{opacity:0}
+    100%{transform:scale(1.05);opacity:0}
+  }
+
+  .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:center}
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:36px}}
+
+  .hero .eyebrow{margin-bottom:18px}
+  .hero h1{
+    font-size:clamp(3rem,8.5vw,5.6rem);
+    margin-bottom:10px;
+  }
+  .hero h1 .line2{color:var(--gold);display:block}
+  .hero .city{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:var(--sans);font-weight:700;letter-spacing:.14em;
+    text-transform:uppercase;font-size:.82rem;color:var(--paper-dim);
+    margin:6px 0 22px;
+  }
+  .hero .city svg{width:15px;height:15px;fill:var(--ember)}
+  .hero p.lede{
+    font-size:1.12rem;color:var(--paper-dim);max-width:34ch;margin-bottom:30px;
+  }
+  .hero p.lede b{color:var(--paper)}
+
+  /* CALL BUTTON */
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .btn-call{
+    display:inline-flex;align-items:center;gap:13px;
+    background:linear-gradient(135deg,var(--ember),var(--rose));
+    color:#fff;font-weight:800;font-size:1.24rem;letter-spacing:.01em;
+    padding:18px 30px;border-radius:16px;
+    box-shadow:0 18px 40px -14px rgba(255,59,107,.75),inset 0 1px 0 rgba(255,255,255,.25);
+    transition:transform .16s ease,box-shadow .16s ease;
+  }
+  .btn-call:hover{transform:translateY(-2px);box-shadow:0 24px 50px -14px rgba(255,59,107,.85)}
+  .btn-call:active{transform:translateY(0)}
+  .btn-call .ico{
+    width:40px;height:40px;border-radius:11px;flex:none;
+    background:rgba(255,255,255,.16);display:grid;place-items:center;
+  }
+  .btn-call .ico svg{width:21px;height:21px;fill:#fff}
+  .btn-call .lbl{display:flex;flex-direction:column;line-height:1.1}
+  .btn-call .lbl small{font-weight:600;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;opacity:.85}
+  .verify-tag{
+    font-size:.68rem;color:var(--gold-deep);font-weight:700;letter-spacing:.1em;
+    text-transform:uppercase;
+  }
+
+  /* hero card / poster */
+  .poster{
+    position:relative;border-radius:22px;overflow:hidden;
+    border:1px solid var(--line);
+    background:
+      radial-gradient(90% 70% at 50% 0%,rgba(255,87,34,.35),transparent 60%),
+      linear-gradient(180deg,#1a1230,#0d0a1e);
+    box-shadow:var(--shadow);
+    padding:34px 30px 30px;
+    min-height:340px;display:flex;flex-direction:column;justify-content:space-between;
+  }
+  .poster .tag{
+    align-self:flex-start;background:var(--gold);color:var(--ink);
+    font-weight:800;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+    padding:6px 12px;border-radius:999px;
+  }
+  .poster .big{
+    font-family:var(--serif);font-weight:700;font-size:2.5rem;line-height:1;color:#fff;
+    margin:auto 0 6px;
+    text-shadow:0 4px 30px rgba(255,87,34,.5);
+  }
+  .poster .big em{font-style:normal;color:var(--gold);display:block}
+  .poster .sub{color:var(--paper-dim);font-size:.92rem}
+  .poster .glow{
+    position:absolute;width:220px;height:220px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,206,84,.5),transparent 65%);
+    top:-60px;right:-50px;filter:blur(6px);pointer-events:none;
+  }
+  .ph-note{
+    position:absolute;bottom:10px;right:12px;font-size:.6rem;letter-spacing:.08em;
+    text-transform:uppercase;color:rgba(255,255,255,.35);font-weight:600;
+  }
+
+  /* trust strip under hero */
+  .trust{
+    position:relative;z-index:2;margin-top:52px;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+  }
+  @media(max-width:760px){.trust{grid-template-columns:repeat(2,1fr)}}
+  .trust .cell{
+    background:rgba(255,255,255,.04);border:1px solid var(--line);
+    border-radius:14px;padding:16px 18px;text-align:center;
+  }
+  .trust .num{font-family:var(--serif);font-weight:700;font-size:1.7rem;color:var(--gold);line-height:1}
+  .trust .cap{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--paper-dim);margin-top:6px}
+
+  /* ============ SECTION SHELL ============ */
+  section.block{padding:78px 0;position:relative}
+  .sec-head{max-width:640px;margin-bottom:44px}
+  .sec-head h2{font-size:clamp(2.1rem,5vw,3rem);margin:12px 0 12px}
+  .sec-head p{color:var(--paper-dim);font-size:1.05rem}
+  .rule{display:inline-flex;align-items:center;gap:10px}
+  .rule::before{content:"";width:34px;height:2px;background:var(--ember);border-radius:2px}
+
+  /* ============ PRODUCTS ============ */
+  .prod-band{background:linear-gradient(180deg,var(--midnight-2),var(--midnight))}
+  .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:880px){.prod-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:540px){.prod-grid{grid-template-columns:1fr}}
+  .card{
+    position:relative;border-radius:18px;overflow:hidden;
+    border:1px solid var(--line);
+    background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));
+    transition:transform .2s ease,border-color .2s ease;
+  }
+  .card:hover{transform:translateY(-4px);border-color:rgba(255,206,84,.5)}
+  .card .swatch{
+    height:132px;position:relative;overflow:hidden;
+    display:grid;place-items:center;
+  }
+  .card .swatch .emoji{font-size:3.1rem;filter:drop-shadow(0 6px 14px rgba(0,0,0,.5));position:relative;z-index:2}
+  .card .swatch::after{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(70% 80% at 50% 120%,var(--sw,rgba(255,87,34,.55)),transparent 70%);
+  }
+  .card .swatch.s1{background:linear-gradient(135deg,#2a1250,#120a24);--sw:rgba(255,59,107,.6)}
+  .card .swatch.s2{background:linear-gradient(135deg,#0d2540,#0a1226);--sw:rgba(90,209,255,.55)}
+  .card .swatch.s3{background:linear-gradient(135deg,#3a1810,#1a0c08);--sw:rgba(255,138,76,.65)}
+  .card .swatch.s4{background:linear-gradient(135deg,#1a2a12,#0c1608);--sw:rgba(47,191,113,.55)}
+  .card .swatch.s5{background:linear-gradient(135deg,#2a1a3a,#140c1e);--sw:rgba(255,206,84,.6)}
+  .card .swatch.s6{background:linear-gradient(135deg,#301028,#160a14);--sw:rgba(255,59,107,.6)}
+  .card .body{padding:18px 20px 22px}
+  .card h3{font-family:var(--serif);font-size:1.25rem;margin-bottom:6px}
+  .card p{font-size:.9rem;color:var(--paper-dim)}
+  .card .pill{
+    position:absolute;top:12px;left:12px;z-index:3;
+    background:rgba(11,16,38,.72);border:1px solid var(--line);
+    color:var(--gold);font-size:.64rem;font-weight:700;letter-spacing:.1em;
+    text-transform:uppercase;padding:5px 10px;border-radius:999px;
+  }
+
+  /* ============ STORY / WHY US ============ */
+  .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  @media(max-width:860px){.story-grid{grid-template-columns:1fr;gap:40px}}
+  .story-copy h2{font-size:clamp(2.1rem,5vw,3rem);margin:12px 0 18px}
+  .story-copy p{color:var(--paper-dim);margin-bottom:16px;font-size:1.04rem}
+  .story-copy p b{color:var(--paper)}
+  .why-list{display:grid;gap:14px;margin-top:26px}
+  .why{
+    display:flex;gap:14px;align-items:flex-start;
+    background:rgba(255,255,255,.03);border:1px solid var(--line);
+    border-radius:13px;padding:15px 16px;
+  }
+  .why .ic{
+    width:38px;height:38px;border-radius:10px;flex:none;display:grid;place-items:center;
+    background:radial-gradient(circle at 35% 30%,var(--gold),var(--ember) 75%);
+    font-size:1.1rem;
+  }
+  .why h4{font-size:.98rem;margin-bottom:2px}
+  .why p{font-size:.85rem;color:var(--paper-dim);margin:0}
+
+  .story-visual{
+    position:relative;border-radius:22px;overflow:hidden;min-height:420px;
+    border:1px solid var(--line);box-shadow:var(--shadow);
+    background:
+      radial-gradient(80% 60% at 30% 15%,rgba(255,206,84,.35),transparent 55%),
+      radial-gradient(70% 70% at 85% 85%,rgba(255,59,107,.35),transparent 55%),
+      linear-gradient(160deg,#1a1030,#0a0818);
+    display:flex;flex-direction:column;justify-content:flex-end;padding:28px;
+  }
+  .story-visual .est{
+    position:absolute;top:26px;left:26px;
+    font-family:var(--serif);font-weight:700;color:var(--gold);
+    font-size:1.05rem;letter-spacing:.04em;
+  }
+  .story-visual .est span{display:block;font-family:var(--sans);font-weight:600;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--paper-dim);margin-top:2px}
+  .story-visual blockquote{
+    font-family:var(--serif);font-size:1.5rem;line-height:1.35;color:#fff;font-style:italic;
+    text-shadow:0 4px 24px rgba(0,0,0,.5);
+  }
+  .story-visual cite{display:block;margin-top:14px;font-style:normal;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+
+  /* ============ HOURS + LOCATION ============ */
+  .info-band{background:linear-gradient(180deg,var(--midnight),var(--midnight-2))}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:820px){.info-grid{grid-template-columns:1fr}}
+  .panel{
+    border:1px solid var(--line);border-radius:18px;
+    background:rgba(255,255,255,.035);padding:30px 28px;
+  }
+  .panel h3{font-family:var(--serif);font-size:1.55rem;margin-bottom:6px;display:flex;align-items:center;gap:11px}
+  .panel h3 .badge{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:rgba(255,206,84,.14);border:1px solid var(--line);font-size:1rem}
+  .panel .season-note{font-size:.78rem;color:var(--gold-deep);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px}
+  .hours-row{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed var(--line);font-size:.95rem}
+  .hours-row:last-child{border-bottom:none}
+  .hours-row .d{color:var(--paper-dim)}
+  .hours-row .t{font-weight:700}
+  .hours-row.now{color:var(--gold)}
+  .hours-row.now .t{color:var(--gold)}
+  .addr{font-size:1.02rem;line-height:1.7;margin-bottom:8px}
+  .addr .name{font-weight:700;color:var(--gold)}
+  .loc2{font-size:.86rem;color:var(--paper-dim);margin-bottom:20px;padding-top:14px;border-top:1px dashed var(--line)}
+  .loc2 b{color:var(--paper)}
+  .btn-map{
+    display:inline-flex;align-items:center;gap:9px;
+    background:var(--midnight);border:1px solid var(--gold);color:var(--gold);
+    font-weight:700;padding:12px 20px;border-radius:11px;font-size:.92rem;
+    transition:background .18s ease,color .18s ease;
+  }
+  .btn-map:hover{background:var(--gold);color:var(--ink)}
+  .btn-map svg{width:17px;height:17px;fill:currentColor}
+
+  /* ============ REVIEWS ============ */
+  .rev-head{text-align:center;max-width:600px;margin:0 auto 46px}
+  .rev-head h2{font-size:clamp(2.1rem,5vw,3rem);margin:12px 0}
+  .stars{color:var(--gold);font-size:1.3rem;letter-spacing:.15em}
+  .rev-head p{color:var(--paper-dim);margin-top:8px}
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:880px){.rev-grid{grid-template-columns:1fr}}
+  .rev{
+    border:1px solid var(--line);border-radius:16px;padding:24px 22px;
+    background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));
+    position:relative;
+  }
+  .rev .q{font-family:var(--serif);font-size:3rem;line-height:.6;color:var(--ember);opacity:.55;height:26px}
+  .rev p{font-size:1rem;color:var(--paper);margin:8px 0 18px}
+  .rev .s{color:var(--gold);letter-spacing:.12em;font-size:.95rem;margin-bottom:10px}
+  .rev .who{display:flex;align-items:center;gap:11px}
+  .rev .av{width:36px;height:36px;border-radius:50%;flex:none;display:grid;place-items:center;font-weight:800;color:var(--ink);font-size:.9rem;background:linear-gradient(135deg,var(--gold),var(--ember))}
+  .rev .who b{font-size:.9rem}
+  .rev .who small{display:block;font-size:.72rem;color:var(--paper-dim)}
+
+  /* ============ RESERVE CTA ============ */
+  .reserve{
+    position:relative;overflow:hidden;
+    background:
+      radial-gradient(80% 120% at 50% -20%,rgba(255,87,34,.28),transparent 55%),
+      linear-gradient(180deg,var(--midnight-2),var(--midnight));
+    text-align:center;padding:86px 0;
+  }
+  .reserve h2{font-size:clamp(2.2rem,6vw,3.6rem);margin-bottom:14px}
+  .reserve h2 span{color:var(--gold)}
+  .reserve p{color:var(--paper-dim);max-width:44ch;margin:0 auto 32px;font-size:1.08rem}
+  .reserve-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;align-items:center}
+  .btn-soon{
+    display:inline-flex;align-items:center;gap:10px;
+    background:rgba(255,255,255,.06);border:1px dashed var(--line);
+    color:var(--paper-dim);font-weight:700;padding:17px 28px;border-radius:14px;
+    font-size:1rem;cursor:not-allowed;position:relative;
+  }
+  .btn-soon .soon{
+    background:var(--gold);color:var(--ink);font-size:.6rem;font-weight:800;
+    letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:999px;
+  }
+
+  /* ============ FOOTER ============ */
+  footer{background:var(--ink);border-top:1px solid var(--line);padding:52px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px;margin-bottom:34px}
+  @media(max-width:760px){.foot-grid{grid-template-columns:1fr;gap:26px}}
+  .foot-brand{display:flex;align-items:center;gap:11px;font-family:var(--serif);font-weight:700;font-size:1.2rem;margin-bottom:12px}
+  .foot-brand b{color:var(--gold)}
+  footer p{color:var(--paper-dim);font-size:.9rem;max-width:36ch}
+  .foot-col h5{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+  .foot-col a,.foot-col span{display:block;color:var(--paper-dim);font-size:.9rem;margin-bottom:9px}
+  .foot-col a:hover{color:var(--gold)}
+  .disclaimer{
+    border-top:1px solid var(--line);padding-top:22px;
+    display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;
+    font-size:.78rem;color:rgba(253,246,236,.55);
+  }
+  .disclaimer .made{color:var(--gold-deep);font-weight:700}
+
+  /* ============ REDUCED MOTION ============ */
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+  <!-- SEASONAL BANNER -->
+  <div class="season" role="status">
+    <span class="dot" aria-hidden="true"></span>
+    NOW OPEN FOR THE SEASON &mdash; Stocked up &amp; ready for the 4th. Come see us in Terrell!
+  </div>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a class="brand" href="#top" aria-label="Big Mama's Discount Fireworks home">
+        <span class="spark" aria-hidden="true">🎆</span>
+        Big Mama's <b>Fireworks</b>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#shop">What We Sell</a>
+        <a href="#story">Our Story</a>
+        <a href="#visit">Hours &amp; Location</a>
+        <a href="#reviews">Reviews</a>
+      </nav>
+      <a class="nav-call" href="tel:+10000000000">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+        Call Now
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="top">
+  <section class="hero">
+    <span class="burst b1" aria-hidden="true"></span>
+    <span class="burst b2" aria-hidden="true"></span>
+    <span class="burst b3" aria-hidden="true"></span>
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">Family-Owned &bull; Terrell, Texas &bull; Since 2009</p>
+          <h1 class="display">Big Mama's<span class="line2">Discount Fireworks</span></h1>
+          <p class="city">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+            15882 State Hwy 205 &bull; Terrell, TX
+          </p>
+          <p class="lede">The stand locals actually recommend. <b>Great selection, honest prices, and staff who know exactly how every package performs</b> before you light it.</p>
+
+          <div class="cta-row">
+            <a class="btn-call" href="tel:+10000000000" aria-label="Call Big Mama's Discount Fireworks">
+              <span class="ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+              </span>
+              <span class="lbl">
+                <small>Tap to call</small>
+                (000) 000-0000
+              </span>
+            </a>
+            <span class="verify-tag">&larr; Placeholder &mdash; VERIFY number</span>
+          </div>
+
+          <!-- TRUST STRIP -->
+          <div class="trust">
+            <div class="cell"><div class="num">100%</div><div class="cap">Recommend</div></div>
+            <div class="cell"><div class="num">2</div><div class="cap">TX Locations</div></div>
+            <div class="cell"><div class="num">15+</div><div class="cap">Years Local</div></div>
+            <div class="cell"><div class="num">$$</div><div class="cap">Beats the Chains</div></div>
+          </div>
+        </div>
+
+        <!-- POSTER CARD -->
+        <div class="poster" aria-hidden="true">
+          <span class="glow"></span>
+          <span class="tag">Military &amp; First-Responder Discount</span>
+          <div class="big">Light Up<em>the Night.</em></div>
+          <p class="sub">Cakes, assortments, roman candles, sparklers &amp; the big finale shells &mdash; all under one tent.</p>
+          <span class="ph-note">Placeholder art &mdash; concept preview</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE SELL -->
+  <section class="block prod-band" id="shop">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="rule eyebrow">What We Sell</span>
+        <h2 class="display">Everything for the show</h2>
+        <p>One stop for the whole cookout &mdash; from the kids' sparklers to the grand-finale cakes. Ask our crew what performs best; they'll steer you right.</p>
+      </div>
+      <div class="prod-grid">
+        <article class="card">
+          <span class="pill">Crowd Favorite</span>
+          <div class="swatch s1"><span class="emoji" aria-hidden="true">🎆</span></div>
+          <div class="body"><h3>500-Gram Cakes</h3><p>Big multi-shot finale cakes for a backyard show that turns heads &mdash; the most bang for your dollar.</p></div>
+        </article>
+        <article class="card">
+          <div class="swatch s2"><span class="emoji" aria-hidden="true">🎇</span></div>
+          <div class="body"><h3>Assortment Packs</h3><p>Pre-built variety boxes that cover the whole night, sized for families or a full block party.</p></div>
+        </article>
+        <article class="card">
+          <div class="swatch s3"><span class="emoji" aria-hidden="true">🚀</span></div>
+          <div class="body"><h3>Artillery Shells</h3><p>Reloadable tube kits with heavy break shells &mdash; that pro-show thump without the pro price.</p></div>
+        </article>
+        <article class="card">
+          <div class="swatch s4"><span class="emoji" aria-hidden="true">✨</span></div>
+          <div class="body"><h3>Roman Candles &amp; Fountains</h3><p>Ground fountains, candles and cones &mdash; easy, dependable color for the driveway crowd.</p></div>
+        </article>
+        <article class="card">
+          <span class="pill">Kid-Safe</span>
+          <div class="swatch s5"><span class="emoji" aria-hidden="true">🎉</span></div>
+          <div class="body"><h3>Sparklers &amp; Novelties</h3><p>Sparklers, snaps, tanks and party poppers &mdash; the fun little stuff the little ones love.</p></div>
+        </article>
+        <article class="card">
+          <span class="pill">Best Value</span>
+          <div class="swatch s6"><span class="emoji" aria-hidden="true">💥</span></div>
+          <div class="body"><h3>Bulk Deals &amp; Discounts</h3><p>Better prices than the local chains, plus discounts for military and law enforcement &mdash; every time.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY / WHY US -->
+  <section class="block" id="story">
+    <div class="wrap">
+      <div class="story-grid">
+        <div class="story-copy">
+          <span class="rule eyebrow">Our Story</span>
+          <h2 class="display">A family stand you can trust</h2>
+          <p>Big Mama's has been a <b>family-owned discount fireworks stand in Terrell</b> for years &mdash; long enough that folks come back every season and bring the neighbors with them.</p>
+          <p>We keep it simple: <b>a great selection, honest prices, and friendly people</b> who actually know the product. Tell us the show you want and the budget you've got, and we'll build it &mdash; because our crew knows exactly how every package performs.</p>
+
+          <div class="why-list">
+            <div class="why">
+              <span class="ic" aria-hidden="true">🏷️</span>
+              <div><h4>Discount prices, honestly</h4><p>Very reasonable pricing that beats the local chains &mdash; no gimmicks.</p></div>
+            </div>
+            <div class="why">
+              <span class="ic" aria-hidden="true">🤝</span>
+              <div><h4>Staff who know their stuff</h4><p>Friendly folks who know exactly how each package performs before you buy.</p></div>
+            </div>
+            <div class="why">
+              <span class="ic" aria-hidden="true">🎖️</span>
+              <div><h4>Military &amp; law-enforcement discounts</h4><p>A little thank-you to those who serve &mdash; every season.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="story-visual">
+          <span class="est">Serving Terrell<span>Family-Owned Since 2009</span></span>
+          <blockquote>&ldquo;They know exactly how each package performs &mdash; and the prices can't be beat.&rdquo;</blockquote>
+          <cite>&mdash; What locals keep saying</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOURS + LOCATION -->
+  <section class="block info-band" id="visit">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="rule eyebrow">Plan Your Visit</span>
+        <h2 class="display">Hours &amp; directions</h2>
+        <p>Fireworks stands run on the season &mdash; hours stretch late around the big holidays. Call ahead to confirm before you head out.</p>
+      </div>
+      <div class="info-grid">
+        <!-- HOURS -->
+        <div class="panel">
+          <h3><span class="badge" aria-hidden="true">🕒</span> Seasonal Hours</h3>
+          <p class="season-note">Sample hours &mdash; VERIFY current-season times</p>
+          <div class="hours-row"><span class="d">Monday &ndash; Thursday</span><span class="t">10:00a &ndash; 9:00p</span></div>
+          <div class="hours-row"><span class="d">Friday &ndash; Saturday</span><span class="t">9:00a &ndash; 11:00p</span></div>
+          <div class="hours-row"><span class="d">Sunday</span><span class="t">10:00a &ndash; 10:00p</span></div>
+          <div class="hours-row now"><span class="d">July 3rd &amp; 4th</span><span class="t">Open Late 🎆</span></div>
+        </div>
+
+        <!-- LOCATION -->
+        <div class="panel">
+          <h3><span class="badge" aria-hidden="true">📍</span> Find the Stand</h3>
+          <p class="season-note">Two Texas locations</p>
+          <p class="addr">
+            <span class="name">Big Mama's Discount Fireworks</span><br>
+            15882 State Hwy 205<br>
+            Terrell, TX 75160
+          </p>
+          <a class="btn-map" href="https://maps.google.com/?q=15882+State+Hwy+205+Terrell+TX+75160" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+            Get Directions
+          </a>
+          <p class="loc2"><b>Also find us in Quinlan, TX</b> &mdash; second stand serving the Hunt County crowd. Call for the Quinlan address &amp; hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="block" id="reviews">
+    <div class="wrap">
+      <div class="rev-head">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <h2 class="display">Locals love this stand</h2>
+        <p>Roughly 100% of reviewers say they'd recommend Big Mama's. Here's what they're saying.</p>
+      </div>
+      <div class="rev-grid">
+        <div class="rev">
+          <div class="q" aria-hidden="true">&rdquo;</div>
+          <div class="s" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>Great selection and very reasonable prices. The staff knew exactly how every package would perform &mdash; huge help.</p>
+          <div class="who"><span class="av" aria-hidden="true">M</span><div><b>Local Customer</b><small>Terrell, TX</small></div></div>
+        </div>
+        <div class="rev">
+          <div class="q" aria-hidden="true">&rdquo;</div>
+          <div class="s" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>Friendly staff and better prices than the chains down the road. We'll be back every year &mdash; highly recommend.</p>
+          <div class="who"><span class="av" aria-hidden="true">J</span><div><b>Returning Family</b><small>Kaufman County</small></div></div>
+        </div>
+        <div class="rev">
+          <div class="q" aria-hidden="true">&rdquo;</div>
+          <div class="s" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>Loved the military discount and the honest advice. They set us up with the perfect finale on a budget.</p>
+          <div class="who"><span class="av" aria-hidden="true">R</span><div><b>Verified Reviewer</b><small>Quinlan, TX</small></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVE CTA -->
+  <section class="reserve">
+    <div class="wrap">
+      <span class="eyebrow">Ready for the 4th?</span>
+      <h2 class="display">Call &amp; we'll have it <span>ready to grab.</span></h2>
+      <p>Tell us your budget and we'll build the perfect show. Online ordering &amp; pickup are on the way &mdash; for now, a quick call is the fastest way in.</p>
+      <div class="reserve-actions">
+        <a class="btn-call" href="tel:+10000000000" aria-label="Call to reserve">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+          </span>
+          <span class="lbl"><small>Tap to call</small>(000) 000-0000</span>
+        </a>
+        <button class="btn-soon" type="button" disabled aria-disabled="true">
+          Reserve / Pay Online <span class="soon">Coming Soon</span>
+        </button>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <div class="foot-brand"><span aria-hidden="true">🎆</span> Big Mama's <b>Discount Fireworks</b></div>
+          <p>Family-owned discount fireworks &mdash; Terrell &amp; Quinlan, Texas. Great selection, honest prices, and staff who know the show.</p>
+        </div>
+        <div class="foot-col">
+          <h5>Visit</h5>
+          <span>15882 State Hwy 205</span>
+          <span>Terrell, TX 75160</span>
+          <span>Second stand in Quinlan, TX</span>
+          <a href="https://maps.google.com/?q=15882+State+Hwy+205+Terrell+TX+75160" target="_blank" rel="noopener">Get directions &rarr;</a>
+        </div>
+        <div class="foot-col">
+          <h5>Contact</h5>
+          <a href="tel:+10000000000">(000) 000-0000 &mdash; VERIFY</a>
+          <span>Military &amp; law-enforcement discounts</span>
+          <a href="#shop">What we sell</a>
+          <a href="#reviews">Reviews</a>
+        </div>
+      </div>
+      <div class="disclaimer">
+        <span>&copy; <span id="yr">2026</span> Big Mama's Discount Fireworks &bull; Terrell, TX. All rights reserved.</span>
+        <span class="made">Concept preview built by DNA Agency &mdash; not affiliated with Big Mama's Discount Fireworks.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // year stamp (self-contained, no external calls)
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

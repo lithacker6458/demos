@@ -1,0 +1,768 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eagle Fireworks — Waxahachie, TX | Family-Owned 15+ Years</title>
+<meta name="description" content="Eagle Fireworks of Waxahachie, TX. Largest Black Cat dealer in Ellis County. 500g & 200g cakes, assortments, roman candles, rockets & more. Family-owned 15+ years. Call (469) 732-6770.">
+<style>
+  /* ============ THEME TOKENS ============ */
+  :root{
+    --night-0:#04060f;      /* deepest sky */
+    --night-1:#0a1024;
+    --night-2:#131b3a;
+    --ink:#e8ecff;
+    --ink-dim:#a7afd4;
+    --ink-faint:#6d76a3;
+    --gold:#ffca3a;
+    --gold-deep:#f0a500;
+    --ember:#ff5a3c;
+    --ember-deep:#e02f1a;
+    --electric:#4cc9ff;
+    --violet:#b06bff;
+    --line:rgba(255,255,255,.10);
+    --line-strong:rgba(255,255,255,.18);
+    --card:rgba(255,255,255,.035);
+    --card-hi:rgba(255,255,255,.06);
+    --shadow:0 24px 60px -20px rgba(0,0,0,.7);
+    --serif:"Hoefler Text","Baskerville","Big Caslon","Palatino Linotype",Palatino,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
+    --mono:"SF Mono",ui-monospace,"Roboto Mono",Menlo,Consolas,monospace;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--night-0);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  a{color:inherit}
+  img{max-width:100%}
+
+  /* ============ ATMOSPHERE: layered night sky ============ */
+  .sky{
+    position:fixed; inset:0; z-index:-3;
+    background:
+      radial-gradient(1200px 700px at 78% -8%, rgba(76,201,255,.14), transparent 60%),
+      radial-gradient(900px 600px at 12% 8%, rgba(176,107,255,.13), transparent 62%),
+      radial-gradient(1000px 800px at 50% 118%, rgba(240,165,0,.10), transparent 58%),
+      linear-gradient(180deg, var(--night-1) 0%, var(--night-0) 55%, #02030a 100%);
+  }
+  /* star field via layered radial dots */
+  .stars{
+    position:fixed; inset:0; z-index:-2; opacity:.55;
+    background-image:
+      radial-gradient(1.4px 1.4px at 20% 30%, #fff, transparent),
+      radial-gradient(1.2px 1.2px at 70% 20%, #cfe0ff, transparent),
+      radial-gradient(1px 1px at 40% 70%, #fff, transparent),
+      radial-gradient(1.6px 1.6px at 88% 60%, #fff, transparent),
+      radial-gradient(1px 1px at 12% 82%, #dfe8ff, transparent),
+      radial-gradient(1.3px 1.3px at 58% 44%, #fff, transparent),
+      radial-gradient(1px 1px at 32% 12%, #cfe0ff, transparent),
+      radial-gradient(1.1px 1.1px at 82% 84%, #fff, transparent);
+    background-repeat:repeat;
+    background-size:520px 520px;
+    animation:twinkle 6s ease-in-out infinite alternate;
+  }
+  @keyframes twinkle{from{opacity:.4}to{opacity:.7}}
+
+  /* grain overlay */
+  .grain{
+    position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.05;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/></svg>");
+  }
+
+  /* ============ FIREWORK BURSTS ============ */
+  .fireworks{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+  .burst{position:absolute;width:6px;height:6px;border-radius:50%}
+  .burst::before,.burst::after{
+    content:"";position:absolute;left:50%;top:50%;width:2px;height:2px;border-radius:50%;
+    box-shadow:
+      0 0 0 var(--c),   40px 0 var(--c),  -40px 0 var(--c),  0 40px var(--c),  0 -40px var(--c),
+      28px 28px var(--c), -28px 28px var(--c), 28px -28px var(--c), -28px -28px var(--c),
+      55px 12px var(--c), -55px 12px var(--c), 12px 55px var(--c), 12px -55px var(--c),
+      -12px 55px var(--c), -12px -55px var(--c), 55px -12px var(--c), -55px -12px var(--c);
+    transform:translate(-50%,-50%);
+    animation:explode 2.6s ease-out infinite;
+    opacity:0;
+  }
+  .burst::after{animation-delay:1.3s;transform:translate(-50%,-50%) rotate(22deg)}
+  @keyframes explode{
+    0%{transform:translate(-50%,-50%) scale(.1);opacity:1}
+    28%{opacity:1}
+    70%{opacity:.35}
+    100%{transform:translate(-50%,-50%) scale(1.5);opacity:0}
+  }
+  .b1{top:16%;left:16%;--c:var(--gold);animation:none}
+  .b1::before{animation-delay:.2s}
+  .b2{top:24%;left:80%;--c:var(--ember)}
+  .b2::before{animation-delay:1.1s}
+  .b3{top:60%;left:88%;--c:var(--electric)}
+  .b3::before{animation-delay:2.0s}
+  .b4{top:74%;left:10%;--c:var(--violet)}
+  .b4::before{animation-delay:.7s}
+  .b5{top:44%;left:50%;--c:var(--gold)}
+  .b5::before{animation-delay:1.6s}
+
+  /* ============ LAYOUT ============ */
+  .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+  section{position:relative}
+
+  /* ============ TOP BAR / SEASONAL BANNER ============ */
+  .banner{
+    position:relative;z-index:5;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    padding:9px 16px;
+    font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:#1a1204;font-weight:700;
+    background:linear-gradient(90deg,var(--gold-deep),var(--gold),var(--gold-deep));
+    background-size:200% 100%;
+    animation:shift 6s linear infinite;
+    text-align:center;
+  }
+  @keyframes shift{to{background-position:200% 0}}
+  .banner .pulse{
+    width:8px;height:8px;border-radius:50%;background:#1a1204;
+    box-shadow:0 0 0 0 rgba(26,18,4,.6);animation:beat 1.8s ease-out infinite;flex:none;
+  }
+  @keyframes beat{0%{box-shadow:0 0 0 0 rgba(26,18,4,.55)}70%{box-shadow:0 0 0 9px rgba(26,18,4,0)}100%{box-shadow:0 0 0 0 rgba(26,18,4,0)}}
+
+  /* ============ NAV ============ */
+  nav{
+    position:sticky;top:0;z-index:20;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 22px;
+    background:rgba(6,9,20,.72);
+    backdrop-filter:saturate(140%) blur(14px);
+    -webkit-backdrop-filter:saturate(140%) blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .brand{display:flex;align-items:center;gap:11px;font-family:var(--serif);font-weight:600;font-size:19px;letter-spacing:.01em}
+  .brand .spark{
+    width:30px;height:30px;flex:none;border-radius:8px;position:relative;
+    background:radial-gradient(circle at 50% 40%,var(--gold),var(--ember-deep));
+    box-shadow:0 0 18px -2px var(--gold-deep);
+  }
+  .brand .spark::after{
+    content:"";position:absolute;inset:0;border-radius:8px;
+    background:
+      linear-gradient(transparent 46%, rgba(0,0,0,.25) 46%, rgba(0,0,0,.25) 54%, transparent 54%),
+      linear-gradient(90deg,transparent 46%, rgba(0,0,0,.25) 46%, rgba(0,0,0,.25) 54%, transparent 54%);
+  }
+  .brand small{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.22em;color:var(--ink-faint);text-transform:uppercase;font-weight:400;margin-top:1px}
+  .nav-links{display:flex;align-items:center;gap:26px;font-size:14px;color:var(--ink-dim)}
+  .nav-links a{text-decoration:none;transition:color .2s}
+  .nav-links a:hover{color:var(--gold)}
+  .nav-call{
+    display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+    padding:9px 16px;border-radius:999px;font-weight:700;font-size:13.5px;color:#1a1204;
+    background:linear-gradient(135deg,var(--gold),var(--gold-deep));
+    box-shadow:0 8px 22px -8px var(--gold-deep);
+  }
+  @media(max-width:820px){.nav-links{display:none}}
+
+  /* ============ HERO ============ */
+  .hero{padding:78px 0 66px;text-align:center}
+  .hero .eyebrow{
+    font-family:var(--mono);font-size:12.5px;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:22px;
+  }
+  .hero h1{
+    font-family:var(--serif);font-weight:600;
+    font-size:clamp(3.1rem,10.5vw,7.4rem);
+    line-height:.94;margin:0 0 4px;letter-spacing:-.015em;
+  }
+  .hero h1 .line1{display:block;color:var(--ink)}
+  .hero h1 .line2{
+    display:block;
+    background:linear-gradient(100deg,var(--gold) 0%,#fff 30%,var(--ember) 62%,var(--gold-deep) 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+    text-shadow:0 0 60px rgba(255,202,58,.25);
+  }
+  .hero .place{
+    margin:26px auto 0;max-width:600px;
+    font-size:clamp(1.05rem,2.6vw,1.28rem);color:var(--ink-dim);line-height:1.55;
+  }
+  .hero .place b{color:var(--ink);font-weight:600}
+  .cta-row{margin-top:38px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn-call{
+    display:inline-flex;align-items:center;gap:12px;text-decoration:none;
+    padding:18px 30px;border-radius:16px;font-size:18px;font-weight:800;color:#1a1204;
+    background:linear-gradient(135deg,var(--gold) 0%,var(--gold-deep) 100%);
+    box-shadow:0 16px 40px -12px var(--gold-deep),inset 0 1px 0 rgba(255,255,255,.4);
+    transition:transform .18s ease, box-shadow .18s ease;
+    position:relative;
+  }
+  .btn-call:hover{transform:translateY(-2px);box-shadow:0 22px 50px -12px var(--gold-deep),inset 0 1px 0 rgba(255,255,255,.5)}
+  .btn-call .ic{font-size:20px}
+  .btn-call small{display:block;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.72;margin-bottom:1px}
+  .btn-call .num{font-size:19px;line-height:1;letter-spacing:.01em}
+  .btn-ghost{
+    display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+    padding:18px 26px;border-radius:16px;font-size:15px;font-weight:600;color:var(--ink);
+    background:var(--card-hi);border:1px solid var(--line-strong);
+    transition:border-color .2s,background .2s;
+  }
+  .btn-ghost:hover{border-color:var(--gold);background:var(--card-hi)}
+
+  /* trust strip */
+  .trust{
+    margin-top:52px;display:flex;flex-wrap:wrap;justify-content:center;gap:14px;
+  }
+  .trust .chip{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:11px 18px;border-radius:999px;font-size:13.5px;color:var(--ink-dim);
+    background:var(--card);border:1px solid var(--line);
+  }
+  .trust .chip b{color:var(--gold);font-weight:700}
+
+  /* ============ COUNTDOWN ============ */
+  .count{
+    margin:70px auto 0;max-width:760px;
+    padding:26px;border-radius:22px;text-align:center;
+    background:linear-gradient(180deg,var(--card-hi),var(--card));
+    border:1px solid var(--line-strong);box-shadow:var(--shadow);
+  }
+  .count h3{
+    margin:0 0 4px;font-family:var(--mono);font-size:11.5px;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--ember);font-weight:700;
+  }
+  .count .lead{margin:0 0 18px;font-family:var(--serif);font-size:1.35rem;color:var(--ink)}
+  .clock{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+  .unit{
+    min-width:78px;padding:14px 8px;border-radius:14px;
+    background:var(--night-0);border:1px solid var(--line);
+  }
+  .unit .n{font-family:var(--serif);font-size:clamp(1.8rem,7vw,2.6rem);line-height:1;color:var(--gold);font-variant-numeric:tabular-nums}
+  .unit .l{margin-top:7px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint)}
+
+  /* ============ SECTION HEADINGS ============ */
+  .sec{padding:88px 0}
+  .sec-head{max-width:640px;margin-bottom:44px}
+  .sec-head .kick{font-family:var(--mono);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--electric);margin-bottom:14px}
+  .sec-head h2{font-family:var(--serif);font-weight:600;font-size:clamp(2.1rem,5.5vw,3.3rem);line-height:1.04;margin:0 0 14px;letter-spacing:-.01em}
+  .sec-head p{margin:0;color:var(--ink-dim);font-size:1.05rem;line-height:1.6}
+  .center{margin-left:auto;margin-right:auto;text-align:center}
+
+  /* ============ PRODUCTS GRID ============ */
+  .products{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:18px}
+  .card{
+    position:relative;padding:24px 22px 22px;border-radius:20px;overflow:hidden;
+    background:linear-gradient(180deg,var(--card-hi),var(--card));
+    border:1px solid var(--line);box-shadow:var(--shadow);
+    transition:transform .22s ease,border-color .22s ease;
+  }
+  .card:hover{transform:translateY(-4px);border-color:var(--line-strong)}
+  .card .thumb{
+    height:120px;border-radius:14px;margin-bottom:18px;position:relative;overflow:hidden;
+    border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .card .thumb::after{content:"placeholder";position:absolute;bottom:7px;right:9px;font-family:var(--mono);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.42)}
+  /* distinct placeholder art per card, pure CSS, no images */
+  .t-cake{background:radial-gradient(circle at 50% 118%,var(--ember) 0%,var(--ember-deep) 30%,transparent 62%),linear-gradient(180deg,#1a1130,#0c0a1e)}
+  .t-cake .glyph{width:54px;height:44px;border-radius:6px 6px 3px 3px;background:linear-gradient(180deg,#f5f0e6,#d8cfbb);position:relative;box-shadow:0 6px 14px rgba(0,0,0,.5)}
+  .t-cake .glyph::before{content:"";position:absolute;left:50%;top:-16px;width:2px;height:16px;background:var(--gold);transform:translateX(-50%)}
+  .t-cake .glyph::after{content:"";position:absolute;left:50%;top:-20px;width:6px;height:6px;border-radius:50%;background:var(--gold);transform:translateX(-50%);box-shadow:0 0 10px var(--gold)}
+  .t-candle{background:radial-gradient(circle at 50% 20%,rgba(76,201,255,.35),transparent 60%),linear-gradient(180deg,#0e1430,#0a0c1e)}
+  .t-candle .glyph{display:flex;gap:6px;align-items:flex-end}
+  .t-candle .glyph i{display:block;width:8px;background:linear-gradient(180deg,var(--ember),#7a1e12);border-radius:3px}
+  .t-candle .glyph i:nth-child(1){height:34px}.t-candle .glyph i:nth-child(2){height:48px}.t-candle .glyph i:nth-child(3){height:40px}.t-candle .glyph i:nth-child(4){height:52px}.t-candle .glyph i:nth-child(5){height:38px}
+  .t-rocket{background:radial-gradient(circle at 70% 15%,rgba(176,107,255,.4),transparent 55%),linear-gradient(180deg,#161033,#0b0a1e)}
+  .t-rocket .glyph{width:16px;height:60px;background:linear-gradient(180deg,#eef,#b7c0e6);border-radius:50% 50% 4px 4px;position:relative}
+  .t-rocket .glyph::before{content:"";position:absolute;top:10px;left:50%;width:9px;height:9px;border-radius:50%;background:var(--ember);transform:translateX(-50%)}
+  .t-rocket .glyph::after{content:"";position:absolute;bottom:-10px;left:50%;width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-top:12px solid var(--gold);transform:translateX(-50%);opacity:.9}
+  .t-multi{background:conic-gradient(from 210deg at 50% 60%,var(--gold),var(--ember),var(--violet),var(--electric),var(--gold));filter:saturate(.9)}
+  .t-multi .glyph{width:60px;height:60px;border-radius:50%;background:radial-gradient(circle,rgba(4,6,15,.85),rgba(4,6,15,.4));box-shadow:inset 0 0 0 2px rgba(255,255,255,.25)}
+  .t-nov{background:radial-gradient(circle at 30% 30%,rgba(255,202,58,.35),transparent 55%),linear-gradient(180deg,#141026,#0a0a1c)}
+  .t-nov .glyph{display:flex;gap:8px}
+  .t-nov .glyph span{width:14px;height:14px;border-radius:50%;box-shadow:0 0 10px currentColor}
+  .t-nov .glyph span:nth-child(1){background:var(--gold);color:var(--gold)}.t-nov .glyph span:nth-child(2){background:var(--electric);color:var(--electric)}.t-nov .glyph span:nth-child(3){background:var(--ember);color:var(--ember)}
+  .t-smoke{background:linear-gradient(180deg,#1a2138,#0a0e1e)}
+  .t-smoke .glyph{width:46px;height:46px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#cbd6ff,#5a6690);filter:blur(.4px);box-shadow:0 0 26px rgba(160,180,255,.5)}
+  .card h4{margin:0 0 7px;font-family:var(--serif);font-size:1.28rem;font-weight:600}
+  .card p{margin:0 0 12px;color:var(--ink-dim);font-size:14px;line-height:1.5}
+  .card .tags{display:flex;flex-wrap:wrap;gap:6px}
+  .card .tag{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:5px 9px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--ink-faint)}
+
+  /* brands ticker */
+  .brands{margin-top:34px;padding:22px;border-radius:18px;background:var(--card);border:1px solid var(--line);text-align:center}
+  .brands .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:14px}
+  .brands .row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 26px}
+  .brands .row span{font-family:var(--serif);font-size:1.15rem;color:var(--ink-dim);opacity:.85;letter-spacing:.02em}
+  .brands .row span b{color:var(--gold);font-weight:600}
+
+  /* ============ STORY ============ */
+  .story{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+  @media(max-width:880px){.story{grid-template-columns:1fr;gap:34px}}
+  .story .body p{color:var(--ink-dim);font-size:1.07rem;line-height:1.72;margin:0 0 16px}
+  .story .body p b{color:var(--ink);font-weight:600}
+  .story .body .signature{font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--gold);margin-top:22px}
+  .fam{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .fam .p{
+    padding:18px;border-radius:16px;background:linear-gradient(180deg,var(--card-hi),var(--card));border:1px solid var(--line);
+  }
+  .fam .p .av{width:44px;height:44px;border-radius:50%;margin-bottom:12px;background:radial-gradient(circle at 40% 35%,var(--gold),var(--ember-deep));box-shadow:0 0 16px -2px var(--gold-deep)}
+  .fam .p.two .av{background:radial-gradient(circle at 40% 35%,var(--electric),var(--violet))}
+  .fam .p .nm{font-family:var(--serif);font-size:1.05rem;font-weight:600}
+  .fam .p .rl{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-top:3px}
+
+  /* mission ribbon */
+  .mission{
+    margin-top:40px;padding:22px 26px;border-radius:18px;display:flex;gap:16px;align-items:center;
+    background:linear-gradient(100deg,rgba(255,90,60,.10),rgba(255,202,58,.08));
+    border:1px solid rgba(255,202,58,.25);
+  }
+  .mission .star{font-size:26px;flex:none}
+  .mission p{margin:0;color:var(--ink);font-size:1.02rem;line-height:1.55}
+  .mission p b{color:var(--gold)}
+
+  /* ============ HOURS + LOCATION ============ */
+  .info{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media(max-width:820px){.info{grid-template-columns:1fr}}
+  .panel{
+    padding:28px;border-radius:22px;
+    background:linear-gradient(180deg,var(--card-hi),var(--card));border:1px solid var(--line);box-shadow:var(--shadow);
+  }
+  .panel h3{margin:0 0 20px;font-family:var(--serif);font-size:1.5rem;font-weight:600;display:flex;align-items:center;gap:11px}
+  .panel h3 .dot{width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold)}
+  .hours-row{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-bottom:1px dashed var(--line)}
+  .hours-row:last-child{border-bottom:0}
+  .hours-row .d{color:var(--ink-dim);font-size:15px}
+  .hours-row .h{color:var(--ink);font-weight:600;font-size:15px;font-variant-numeric:tabular-nums}
+  .hours-row.peak{color:var(--gold)}
+  .hours-row.peak .d,.hours-row.peak .h{color:var(--gold)}
+  .hours-note{margin-top:16px;font-size:13px;color:var(--ink-faint);line-height:1.5}
+
+  .addr{font-size:1.15rem;line-height:1.55;color:var(--ink);margin:0 0 6px;font-family:var(--serif)}
+  .addr-sub{color:var(--ink-dim);font-size:14px;margin:0 0 20px}
+  .map{
+    height:190px;border-radius:16px;position:relative;overflow:hidden;margin-bottom:18px;
+    border:1px solid var(--line);
+    background:
+      linear-gradient(115deg,rgba(76,201,255,.10),transparent 60%),
+      repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 1px,transparent 1px 42px),
+      repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 1px,transparent 1px 42px),
+      var(--night-0);
+  }
+  .map .road{position:absolute;background:rgba(255,255,255,.14)}
+  .map .road.r1{top:0;bottom:0;left:38%;width:8px;transform:skewX(-8deg)}
+  .map .road.r2{left:0;right:0;top:56%;height:8px}
+  .map .pin{
+    position:absolute;left:38%;top:56%;transform:translate(-50%,-100%);
+    width:26px;height:26px;border-radius:50% 50% 50% 0;rotate:-45deg;
+    background:linear-gradient(135deg,var(--ember),var(--ember-deep));
+    box-shadow:0 0 0 6px rgba(255,90,60,.18),0 8px 18px rgba(0,0,0,.5);
+  }
+  .map .pin::after{content:"";position:absolute;inset:8px;background:var(--night-0);border-radius:50%}
+  .map .ping{position:absolute;left:38%;top:56%;width:26px;height:26px;transform:translate(-50%,-50%);border-radius:50%;border:2px solid var(--ember);animation:ping 2.2s ease-out infinite}
+  @keyframes ping{0%{transform:translate(-50%,-50%) scale(.6);opacity:.9}100%{transform:translate(-50%,-50%) scale(3);opacity:0}}
+  .map .tag{position:absolute;bottom:8px;left:10px;font-family:var(--mono);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.42)}
+  .dir-btn{
+    display:inline-flex;align-items:center;gap:9px;text-decoration:none;width:100%;justify-content:center;
+    padding:15px 20px;border-radius:14px;font-weight:700;font-size:15px;color:var(--night-0);
+    background:linear-gradient(135deg,var(--electric),#2b9fd6);
+    box-shadow:0 12px 30px -12px rgba(76,201,255,.6);
+  }
+
+  /* ============ REVIEWS ============ */
+  .reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+  .quote{
+    padding:26px 24px;border-radius:20px;position:relative;
+    background:linear-gradient(180deg,var(--card-hi),var(--card));border:1px solid var(--line);box-shadow:var(--shadow);
+  }
+  .quote .stars-r{color:var(--gold);letter-spacing:3px;font-size:16px;margin-bottom:14px}
+  .quote p{margin:0 0 18px;font-family:var(--serif);font-size:1.12rem;line-height:1.55;color:var(--ink)}
+  .quote .by{display:flex;align-items:center;gap:11px}
+  .quote .by .av{width:36px;height:36px;border-radius:50%;flex:none;background:linear-gradient(135deg,var(--violet),var(--electric))}
+  .quote .by .av.g{background:linear-gradient(135deg,var(--gold),var(--ember))}
+  .quote .by .nm{font-size:14px;font-weight:600;color:var(--ink)}
+  .quote .by .mt{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint)}
+  .rev-note{margin-top:20px;text-align:center;font-size:12px;color:var(--ink-faint);font-family:var(--mono);letter-spacing:.06em}
+
+  /* ============ RESERVE (coming soon) ============ */
+  .reserve{
+    margin-top:20px;padding:46px 30px;border-radius:26px;text-align:center;position:relative;overflow:hidden;
+    background:
+      radial-gradient(600px 300px at 50% -20%,rgba(255,202,58,.16),transparent 60%),
+      linear-gradient(180deg,var(--card-hi),var(--card));
+    border:1px solid var(--line-strong);box-shadow:var(--shadow);
+  }
+  .reserve h2{font-family:var(--serif);font-size:clamp(1.9rem,5vw,2.8rem);font-weight:600;margin:0 0 12px}
+  .reserve p{max-width:520px;margin:0 auto 26px;color:var(--ink-dim);font-size:1.05rem;line-height:1.6}
+  .soon-btn{
+    display:inline-flex;align-items:center;gap:11px;
+    padding:17px 34px;border-radius:15px;font-size:16px;font-weight:700;
+    color:var(--ink-faint);background:rgba(255,255,255,.04);
+    border:1px dashed var(--line-strong);cursor:not-allowed;position:relative;
+  }
+  .soon-btn .badge{
+    font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+    padding:4px 9px;border-radius:999px;background:var(--gold);color:#1a1204;font-weight:800;
+  }
+  .reserve .alt{margin-top:20px;font-size:14px;color:var(--ink-dim)}
+  .reserve .alt a{color:var(--gold);text-decoration:none;font-weight:700;border-bottom:1px solid rgba(255,202,58,.4)}
+
+  /* ============ FINAL CTA ============ */
+  .final{padding:96px 0 40px;text-align:center}
+  .final h2{font-family:var(--serif);font-size:clamp(2.4rem,7vw,4.4rem);font-weight:600;line-height:1;margin:0 0 16px}
+  .final h2 em{font-style:italic;background:linear-gradient(100deg,var(--gold),var(--ember));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .final p{color:var(--ink-dim);font-size:1.1rem;margin:0 auto 34px;max-width:480px;line-height:1.6}
+
+  /* ============ FOOTER ============ */
+  footer{border-top:1px solid var(--line);padding:40px 0 60px;margin-top:60px}
+  .foot-grid{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start}
+  .foot-brand{display:flex;align-items:center;gap:11px;font-family:var(--serif);font-size:18px;font-weight:600}
+  .foot-links{display:flex;gap:22px;flex-wrap:wrap;font-size:14px}
+  .foot-links a{color:var(--ink-dim);text-decoration:none;transition:color .2s}
+  .foot-links a:hover{color:var(--gold)}
+  .disclaimer{
+    margin-top:32px;padding-top:22px;border-top:1px solid var(--line);
+    font-size:12.5px;color:var(--ink-faint);line-height:1.6;text-align:center;
+  }
+  .disclaimer b{color:var(--ink-dim)}
+
+  /* ============ REVEAL ANIMATION ============ */
+  .reveal{opacity:0;transform:translateY(22px);animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.28s}
+  .d4{animation-delay:.42s}.d5{animation-delay:.56s}.d6{animation-delay:.7s}
+
+  /* scroll-in for sections */
+  .in-view{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+  .in-view.shown{opacity:1;transform:none}
+
+  /* ============ REDUCED MOTION ============ */
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .reveal,.in-view{opacity:1!important;transform:none!important}
+    .stars,.banner{animation:none!important}
+  }
+</style>
+
+<div class="sky"></div>
+<div class="stars"></div>
+<div class="fireworks" aria-hidden="true">
+  <span class="burst b1"></span>
+  <span class="burst b2"></span>
+  <span class="burst b3"></span>
+  <span class="burst b4"></span>
+  <span class="burst b5"></span>
+</div>
+<div class="grain"></div>
+
+<!-- SEASONAL BANNER -->
+<div class="banner">
+  <span class="pulse"></span>
+  Open for the season · Stocked &amp; ready for the 4th · Ellis County's largest Black Cat dealer
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="brand">
+    <span class="spark" aria-hidden="true"></span>
+    <span>Eagle Fireworks<small>Waxahachie · Midlothian, TX</small></span>
+  </div>
+  <div class="nav-links">
+    <a href="#products">Fireworks</a>
+    <a href="#story">Our Family</a>
+    <a href="#visit">Hours &amp; Location</a>
+    <a href="#reviews">Reviews</a>
+  </div>
+  <a class="nav-call" href="tel:+14697326770">📞 (469) 732-6770</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero wrap">
+  <div class="eyebrow reveal d1">Family-Owned · 15+ Years</div>
+  <h1>
+    <span class="line1 reveal d1">Light Up</span>
+    <span class="line2 reveal d2">The Night Sky</span>
+  </h1>
+  <p class="place reveal d3">
+    Ellis County's home for real fireworks. <b>500g &amp; 200g cakes</b>, roman candles, rockets and
+    show-stopping assortments — from the <b>largest Black&nbsp;Cat dealer</b> around.
+    Waxahachie &amp; Midlothian, Texas.
+  </p>
+  <div class="cta-row reveal d4">
+    <a class="btn-call" href="tel:+14697326770">
+      <span class="ic" aria-hidden="true">📞</span>
+      <span><small>Tap to call the stand</small><span class="num">(469) 732-6770</span></span>
+    </a>
+    <a class="btn-ghost" href="#products">Browse the lineup →</a>
+  </div>
+
+  <div class="trust reveal d5">
+    <span class="chip"><b>★★★★★</b> Loved by locals</span>
+    <span class="chip"><b>15+</b> years family-run</span>
+    <span class="chip"><b>#1</b> Black Cat dealer in Ellis County</span>
+    <span class="chip"><b>2</b> Texas locations</span>
+  </div>
+
+  <!-- COUNTDOWN -->
+  <div class="count reveal d6">
+    <h3>🎆 Season Countdown</h3>
+    <p class="lead">Days until the 4th of July</p>
+    <div class="clock" id="clock" role="timer" aria-live="polite">
+      <div class="unit"><div class="n" id="cd-d">--</div><div class="l">Days</div></div>
+      <div class="unit"><div class="n" id="cd-h">--</div><div class="l">Hours</div></div>
+      <div class="unit"><div class="n" id="cd-m">--</div><div class="l">Minutes</div></div>
+      <div class="unit"><div class="n" id="cd-s">--</div><div class="l">Seconds</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- PRODUCTS -->
+<section class="sec wrap" id="products">
+  <div class="sec-head in-view">
+    <div class="kick">Everything that goes boom</div>
+    <h2>Pick your show</h2>
+    <p>From backyard sparkle to a full finale. Every category stocked, big-brand product on the shelf,
+      staff who'll help you build the perfect display.</p>
+  </div>
+
+  <div class="products">
+    <article class="card in-view">
+      <div class="thumb t-cake"><div class="glyph"></div></div>
+      <h4>500g &amp; 200g Cakes</h4>
+      <p>Multi-shot repeaters — the backbone of any show. Big canopy breaks, long finales, one fuse.</p>
+      <div class="tags"><span class="tag">Repeaters</span><span class="tag">Finale</span><span class="tag">Best Seller</span></div>
+    </article>
+
+    <article class="card in-view">
+      <div class="thumb t-candle"><div class="glyph"><i></i><i></i><i></i><i></i><i></i></div></div>
+      <h4>Roman Candles</h4>
+      <p>Rapid volleys of colored stars. Singles, multi-shot, and crackling variety packs.</p>
+      <div class="tags"><span class="tag">Handheld</span><span class="tag">Color</span></div>
+    </article>
+
+    <article class="card in-view">
+      <div class="thumb t-rocket"><div class="glyph"></div></div>
+      <h4>Rockets &amp; Missiles</h4>
+      <p>Bottle rockets to whistling missiles — height, noise, and a satisfying break up top.</p>
+      <div class="tags"><span class="tag">Aerial</span><span class="tag">Whistle</span></div>
+    </article>
+
+    <article class="card in-view">
+      <div class="thumb t-multi"><div class="glyph"></div></div>
+      <h4>Multi-Effect &amp; Assortments</h4>
+      <p>Pre-built family packs and multi-effect boxes — the easy "grab one and go" show.</p>
+      <div class="tags"><span class="tag">Value</span><span class="tag">Family Pack</span></div>
+    </article>
+
+    <article class="card in-view">
+      <div class="thumb t-nov"><div class="glyph"><span></span><span></span><span></span></div></div>
+      <h4>Novelties &amp; Spinners</h4>
+      <p>Ground spinners, fountains, tanks, and kid-safe favorites for the little ones.</p>
+      <div class="tags"><span class="tag">Ground</span><span class="tag">Spinners</span><span class="tag">Kids</span></div>
+    </article>
+
+    <article class="card in-view">
+      <div class="thumb t-smoke"><div class="glyph"></div></div>
+      <h4>Smoke &amp; Daytime</h4>
+      <p>Colored smoke bombs and daytime effects — perfect for reveals and afternoon fun.</p>
+      <div class="tags"><span class="tag">Daytime</span><span class="tag">Color Smoke</span></div>
+    </article>
+  </div>
+
+  <div class="brands in-view">
+    <div class="lbl">The brands on our shelves</div>
+    <div class="row">
+      <span><b>Black&nbsp;Cat</b></span>
+      <span>Brothers</span>
+      <span>Winda</span>
+      <span>Great&nbsp;Grizzly</span>
+      <span>Pyro&nbsp;King</span>
+      <span>Fox</span>
+      <span>Legend</span>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="sec wrap" id="story">
+  <div class="story">
+    <div class="body in-view">
+      <div class="kick" style="font-family:var(--mono);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--electric);margin-bottom:14px">Our family &amp; yours</div>
+      <h2 style="font-family:var(--serif);font-weight:600;font-size:clamp(2.1rem,5.5vw,3.2rem);line-height:1.05;margin:0 0 20px;letter-spacing:-.01em">Fifteen years of<br>lighting up July.</h2>
+      <p>Eagle Fireworks has been a <b>family-owned</b> stand for more than <b>15 years</b>, run by folks
+        who genuinely love this holiday. Down in Waxahachie you'll find <b>Tim &amp; Iris Rodgers</b> with
+        their daughter <b>Lelia-Grace</b>, and over in Midlothian it's <b>Brock &amp; Mariah</b> holding
+        down the counter.</p>
+      <p>We've grown into the <b>largest Black&nbsp;Cat dealer in Ellis County</b> — but we're still the
+        same family that'll help you pick the right cake, talk you through a safe setup, and send you home
+        ready to give your neighborhood something to remember.</p>
+      <p class="signature">— The Rodgers family &amp; crew</p>
+    </div>
+
+    <div class="in-view">
+      <div class="fam">
+        <div class="p one"><div class="av"></div><div class="nm">Tim &amp; Iris</div><div class="rl">Waxahachie · Owners</div></div>
+        <div class="p two"><div class="av"></div><div class="nm">Lelia-Grace</div><div class="rl">Waxahachie</div></div>
+        <div class="p one"><div class="av"></div><div class="nm">Brock &amp; Mariah</div><div class="rl">Midlothian</div></div>
+        <div class="p two"><div class="av"></div><div class="nm">The Crew</div><div class="rl">Here to help</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mission in-view">
+    <span class="star" aria-hidden="true">✨</span>
+    <p>A portion of every sale helps fund <b>Life Change Ministry in Belize</b> — so your Fourth of July
+      keeps giving long after the last spark fades.</p>
+  </div>
+</section>
+
+<!-- HOURS + LOCATION -->
+<section class="sec wrap" id="visit">
+  <div class="sec-head center in-view">
+    <div class="kick">Come see us</div>
+    <h2>Hours &amp; directions</h2>
+    <p style="margin-left:auto;margin-right:auto">Fireworks stands run on the season. Here's when we're open and how to find the stand.</p>
+  </div>
+
+  <div class="info">
+    <div class="panel in-view">
+      <h3><span class="dot"></span>Seasonal Hours</h3>
+      <div class="hours-row peak"><span class="d">Jul 1 – Jul 4 (Peak)</span><span class="h">9 AM – 11 PM</span></div>
+      <div class="hours-row"><span class="d">Jun 24 – Jun 30</span><span class="h">10 AM – 10 PM</span></div>
+      <div class="hours-row"><span class="d">Dec 20 – Jan 1</span><span class="h">10 AM – 10 PM</span></div>
+      <div class="hours-row"><span class="d">Off-season</span><span class="h">Call ahead</span></div>
+      <p class="hours-note">Texas sells fireworks during set seasonal windows (late June–July 4 and the New Year run). Hours shown are representative for this concept preview — <b>call the stand to confirm before you drive out.</b></p>
+    </div>
+
+    <div class="panel in-view">
+      <h3><span class="dot"></span>Find the Stand</h3>
+      <div class="map" aria-hidden="true">
+        <span class="road r1"></span>
+        <span class="road r2"></span>
+        <span class="ping"></span>
+        <span class="pin"></span>
+        <span class="tag">placeholder map</span>
+      </div>
+      <p class="addr">Waxahachie, Texas</p>
+      <p class="addr-sub">Serving Ellis County — Waxahachie &amp; Midlothian. Tap directions below or call for the exact stand address.</p>
+      <a class="dir-btn" href="https://maps.google.com/?q=Eagle+Fireworks+Waxahachie+TX" target="_blank" rel="noopener">🧭 Get directions</a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec wrap" id="reviews">
+  <div class="sec-head center in-view">
+    <div class="kick">Word around town</div>
+    <h2>Neighbors love it here</h2>
+    <p style="margin-left:auto;margin-right:auto">What folks around Ellis County have to say when the smoke clears.</p>
+  </div>
+
+  <div class="reviews">
+    <figure class="quote in-view" style="margin:0">
+      <div class="stars-r" aria-label="5 out of 5 stars">★★★★★</div>
+      <p>"Best selection in Ellis County, hands down. They actually help you pick instead of just ringing you up. We've come back every year."</p>
+      <figcaption class="by"><span class="av g"></span><span><span class="nm">A local family</span><span class="mt">Waxahachie</span></span></figcaption>
+    </figure>
+
+    <figure class="quote in-view" style="margin:0">
+      <div class="stars-r" aria-label="5 out of 5 stars">★★★★★</div>
+      <p>"The Black Cat cakes here are the real deal. Prices were fair and the finale we put on had the whole cul-de-sac cheering."</p>
+      <figcaption class="by"><span class="av"></span><span><span class="nm">A repeat customer</span><span class="mt">Midlothian</span></span></figcaption>
+    </figure>
+
+    <figure class="quote in-view" style="margin:0">
+      <div class="stars-r" aria-label="5 out of 5 stars">★★★★★</div>
+      <p>"Family-run and it shows. Friendly, knowledgeable, and they love what they do. Our go-to stand for the Fourth."</p>
+      <figcaption class="by"><span class="av g"></span><span><span class="nm">A neighbor</span><span class="mt">Ellis County</span></span></figcaption>
+    </figure>
+  </div>
+  <p class="rev-note">Placeholder testimonials for this concept preview — real reviews would be featured here.</p>
+</section>
+
+<!-- RESERVE / PAY ONLINE (coming soon) -->
+<section class="sec wrap">
+  <div class="reserve in-view">
+    <h2>Reserve &amp; pay online</h2>
+    <p>Skip the line this July — build your show, reserve your cakes, and pay ahead so it's boxed and
+      ready when you pull up. Online ordering is on the way.</p>
+    <button class="soon-btn" type="button" disabled aria-disabled="true">
+      🛒 Reserve / Pay Online <span class="badge">Coming Soon</span>
+    </button>
+    <p class="alt">Want to lock something in now? <a href="tel:+14697326770">Call the stand — (469) 732-6770</a></p>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final wrap">
+  <div class="in-view">
+    <h2>Ready to <em>light it up?</em></h2>
+    <p>Tap to call the stand. We'll help you build a show your street won't forget.</p>
+    <a class="btn-call" href="tel:+14697326770" style="margin:0 auto">
+      <span class="ic" aria-hidden="true">📞</span>
+      <span><small>Tap to call</small><span class="num">(469) 732-6770</span></span>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand"><span class="spark" aria-hidden="true"></span> Eagle Fireworks</div>
+      <div class="foot-links">
+        <a href="#products">Fireworks</a>
+        <a href="#story">Our Family</a>
+        <a href="#visit">Hours &amp; Location</a>
+        <a href="#reviews">Reviews</a>
+        <a href="tel:+14697326770">Call (469) 732-6770</a>
+      </div>
+    </div>
+    <div class="disclaimer">
+      <b>Concept preview built by DNA Agency — not affiliated with Eagle Fireworks.</b><br>
+      This is an unofficial design demonstration created from public information only. All imagery is placeholder
+      artwork; no logos, photos, pricing, or content were taken from the business's real website. Hours, testimonials,
+      and product details shown are representative and for demonstration purposes only.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Season countdown — next July 4th
+  (function(){
+    var d=document.getElementById('cd-d'),h=document.getElementById('cd-h'),
+        m=document.getElementById('cd-m'),s=document.getElementById('cd-s');
+    if(!d) return;
+    function target(){
+      var now=new Date(), y=now.getFullYear();
+      var t=new Date(y,6,4,9,0,0); // July 4, 9am
+      if(now>t){ t=new Date(y+1,6,4,9,0,0); }
+      return t;
+    }
+    function pad(n){return String(n).padStart(2,'0');}
+    function tick(){
+      var diff=target()-new Date();
+      if(diff<0) diff=0;
+      var sec=Math.floor(diff/1000);
+      d.textContent=Math.floor(sec/86400);
+      h.textContent=pad(Math.floor(sec%86400/3600));
+      m.textContent=pad(Math.floor(sec%3600/60));
+      s.textContent=pad(sec%60);
+    }
+    tick(); setInterval(tick,1000);
+  })();
+
+  // Scroll reveal
+  (function(){
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els=document.querySelectorAll('.in-view');
+    if(reduce || !('IntersectionObserver' in window)){
+      els.forEach(function(e){e.classList.add('shown');});
+      return;
+    }
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('shown'); io.unobserve(en.target); }
+      });
+    },{threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(e){io.observe(e);});
+  })();
+</script>

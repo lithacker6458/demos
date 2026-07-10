@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Big Mama's Discount Fireworks — Terrell, TX</title>
+<meta name="description" content="Family-owned discount fireworks stand in Terrell, TX. Great selection, unbeatable prices, friendly staff. Military & law enforcement discounts.">
+<style>
+  /* ============ RESET ============ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; cursor: pointer; }
+
+  /* ============ TOKENS ============ */
+  :root {
+    --ink:        #05060f;   /* near-black night */
+    --ink-2:      #0a0d1e;   /* panel navy */
+    --ink-3:      #10142b;   /* raised navy */
+    --midnight:   #161c3d;
+    --gold:       #ffcb3d;
+    --gold-hot:   #ffb100;
+    --red:        #ff3d54;
+    --red-deep:   #e11d38;
+    --electric:   #46e0ff;
+    --violet:     #9b6bff;
+    --cream:      #fff6e6;
+    --muted:      #9aa2c7;
+    --line:       rgba(255,255,255,.10);
+    --line-2:     rgba(255,255,255,.06);
+
+    --display: "Oswald", "Bebas Neue", "Franklin Gothic Medium", "Arial Narrow", system-ui, sans-serif;
+    --serif:   "Georgia", "Times New Roman", serif;
+    --body:    ui-sans-serif, "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
+
+    --shadow-lift: 0 20px 60px -20px rgba(0,0,0,.8);
+    --glow-gold:  0 0 0 1px rgba(255,203,61,.35), 0 12px 40px -8px rgba(255,177,0,.5);
+    --glow-red:   0 0 0 1px rgba(255,61,84,.4), 0 12px 40px -8px rgba(255,61,84,.55);
+  }
+
+  body {
+    font-family: var(--body);
+    color: var(--cream);
+    background: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ============ NIGHT SKY ATMOSPHERE ============ */
+  .sky {
+    position: fixed; inset: 0; z-index: -2; pointer-events: none;
+    background:
+      radial-gradient(1200px 700px at 78% -8%, rgba(155,107,255,.20), transparent 60%),
+      radial-gradient(1000px 600px at 12% 4%,  rgba(70,224,255,.14),  transparent 58%),
+      radial-gradient(900px 900px at 50% 118%, rgba(225,29,56,.16),   transparent 62%),
+      linear-gradient(180deg, #070917 0%, #05060f 45%, #04040b 100%);
+  }
+  /* starfield via layered radial dots */
+  .stars {
+    position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .9;
+    background-image:
+      radial-gradient(1.4px 1.4px at 20% 30%, rgba(255,255,255,.9), transparent),
+      radial-gradient(1.2px 1.2px at 70% 12%, rgba(255,255,255,.7), transparent),
+      radial-gradient(1px 1px   at 40% 62%, rgba(255,255,255,.6), transparent),
+      radial-gradient(1.6px 1.6px at 88% 44%, rgba(255,246,230,.9), transparent),
+      radial-gradient(1px 1px   at 12% 78%, rgba(255,255,255,.5), transparent),
+      radial-gradient(1.3px 1.3px at 58% 88%, rgba(255,255,255,.7), transparent),
+      radial-gradient(1px 1px   at 92% 74%, rgba(255,255,255,.5), transparent),
+      radial-gradient(1.1px 1.1px at 33% 8%, rgba(255,255,255,.6), transparent);
+    background-repeat: no-repeat;
+    animation: twinkle 6s ease-in-out infinite alternate;
+  }
+  @keyframes twinkle { from { opacity: .55; } to { opacity: 1; } }
+
+  /* grain overlay for texture */
+  .grain {
+    position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .05; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  /* ============ FIREWORK BURSTS (CSS only) ============ */
+  .fw-field { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+  .burst {
+    position: absolute; width: 6px; height: 6px; border-radius: 50%;
+    top: var(--y); left: var(--x);
+    animation: rise 4.6s ease-in infinite;
+    animation-delay: var(--d);
+    opacity: 0;
+  }
+  .burst::before, .burst::after {
+    content: ""; position: absolute; inset: 0; border-radius: 50%;
+  }
+  /* particle explosion drawn with radial box-shadows */
+  .burst .spark {
+    position: absolute; top: 50%; left: 50%; width: 3px; height: 3px; border-radius: 50%;
+    background: var(--c);
+    box-shadow:
+      0 0 0 var(--c);
+    animation: explode 4.6s ease-out infinite;
+    animation-delay: var(--d);
+    opacity: 0;
+  }
+  @keyframes rise {
+    0%   { transform: translateY(38vh) scale(.3); opacity: 0; }
+    16%  { transform: translateY(0)    scale(.5); opacity: 1; }
+    18%  { opacity: 0; }
+    100% { opacity: 0; }
+  }
+  @keyframes explode {
+    0%, 16% { opacity: 0; transform: translate(-50%,-50%) scale(.2); }
+    20% { opacity: 1; }
+    45%, 100% {
+      opacity: 0;
+      transform: translate(-50%,-50%) scale(1);
+      box-shadow:
+        24px 0 0 var(--c), -24px 0 0 var(--c), 0 24px 0 var(--c), 0 -24px 0 var(--c),
+        17px 17px 0 var(--c), -17px 17px 0 var(--c), 17px -17px 0 var(--c), -17px -17px 0 var(--c),
+        40px 0 0 var(--c2), -40px 0 0 var(--c2), 0 40px 0 var(--c2), 0 -40px 0 var(--c2),
+        28px 28px 0 var(--c2), -28px 28px 0 var(--c2), 28px -28px 0 var(--c2), -28px -28px 0 var(--c2);
+    }
+  }
+
+  /* ============ LAYOUT ============ */
+  .wrap { width: min(1120px, 92vw); margin-inline: auto; }
+  section { position: relative; }
+
+  /* ============ TOP BANNER ============ */
+  .season-banner {
+    position: sticky; top: 0; z-index: 40;
+    background: linear-gradient(90deg, var(--red-deep), var(--red) 40%, var(--gold-hot) 100%);
+    color: #1a0a02;
+    font-family: var(--display);
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    font-size: clamp(.66rem, 1.7vw, .82rem);
+    text-align: center;
+    padding: .55rem 1rem;
+    box-shadow: 0 4px 24px -6px rgba(255,61,84,.6);
+    display: flex; align-items: center; justify-content: center; gap: .6rem; flex-wrap: wrap;
+  }
+  .season-banner .dot {
+    width: .5rem; height: .5rem; border-radius: 50%; background: #1a0a02;
+    box-shadow: 0 0 0 4px rgba(26,10,2,.25);
+    animation: pulse 1.4s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100% { transform: scale(1); opacity:1;} 50%{ transform: scale(.55); opacity:.5;} }
+  .count { font-variant-numeric: tabular-nums; }
+
+  /* ============ NAV ============ */
+  nav {
+    position: relative; z-index: 30;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem 0;
+  }
+  .brand-mark {
+    display: flex; align-items: center; gap: .6rem;
+    font-family: var(--display); font-weight: 700; letter-spacing: .05em;
+    text-transform: uppercase; font-size: 1.02rem;
+  }
+  .brand-mark .spark-ico {
+    width: 1.6rem; height: 1.6rem; flex: none;
+    background: radial-gradient(circle at 50% 50%, var(--gold) 0 22%, transparent 24%),
+                conic-gradient(from 0deg, transparent 0 8%, var(--gold-hot) 9% 11%, transparent 12% 20%,
+                var(--red) 21% 23%, transparent 24% 33%, var(--electric) 34% 36%, transparent 37% 45%,
+                var(--gold) 46% 48%, transparent 49% 58%, var(--red) 59% 61%, transparent 62% 70%,
+                var(--electric) 71% 73%, transparent 74% 83%, var(--gold-hot) 84% 86%, transparent 87%);
+    border-radius: 50%;
+    filter: drop-shadow(0 0 6px rgba(255,177,0,.6));
+  }
+  .nav-links { display: none; gap: 1.7rem; font-size: .82rem; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); }
+  .nav-links a { transition: color .2s; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-call {
+    font-family: var(--display); letter-spacing: .08em; text-transform: uppercase;
+    background: var(--gold); color: #1a0a02; padding: .5rem .9rem; border-radius: 999px;
+    font-weight: 700; font-size: .8rem; box-shadow: var(--glow-gold);
+    transition: transform .15s ease, box-shadow .2s;
+  }
+  .nav-call:hover { transform: translateY(-1px) scale(1.02); }
+  @media (min-width: 860px) { .nav-links { display: flex; } }
+
+  /* ============ HERO ============ */
+  .hero { padding: clamp(2.6rem, 7vw, 5.5rem) 0 clamp(2rem, 5vw, 3.5rem); text-align: center; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: .55rem;
+    font-family: var(--display); text-transform: uppercase; letter-spacing: .32em;
+    font-size: clamp(.68rem, 1.7vw, .82rem); color: var(--gold);
+    border: 1px solid rgba(255,203,61,.35); border-radius: 999px;
+    padding: .4rem 1rem; margin-bottom: 1.6rem;
+    background: rgba(255,203,61,.05);
+  }
+  .eyebrow::before { content: "★"; color: var(--red); }
+  .hero h1 {
+    font-family: var(--display); font-weight: 700; text-transform: uppercase;
+    line-height: .92; letter-spacing: -.005em;
+    font-size: clamp(3rem, 13.5vw, 8.4rem);
+    margin: 0;
+  }
+  .hero h1 .line-1 { display: block; color: var(--cream); }
+  .hero h1 .big {
+    display: block;
+    background: linear-gradient(180deg, #fff3c9 0%, var(--gold) 42%, var(--gold-hot) 70%, var(--red) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    filter: drop-shadow(0 4px 30px rgba(255,177,0,.45));
+    letter-spacing: -.01em;
+  }
+  .hero h1 .line-3 {
+    display: block; font-size: .34em; letter-spacing: .12em; color: var(--electric);
+    -webkit-text-fill-color: var(--electric); margin-top: .35em; font-weight: 500;
+  }
+  .hero .sub {
+    max-width: 46ch; margin: 1.4rem auto 0; color: var(--muted);
+    font-size: clamp(1rem, 2.4vw, 1.18rem);
+  }
+  .locpill {
+    display: inline-flex; align-items: center; gap: .5rem; margin-top: 1.1rem;
+    font-family: var(--display); text-transform: uppercase; letter-spacing: .16em; font-size: .8rem;
+    color: var(--cream);
+  }
+  .locpill svg { width: 1rem; height: 1rem; fill: var(--red); }
+
+  .cta-row { display: flex; flex-direction: column; gap: .85rem; align-items: center; margin-top: 2.1rem; }
+  @media (min-width: 560px){ .cta-row { flex-direction: row; justify-content: center; } }
+
+  .btn-call {
+    display: inline-flex; align-items: center; gap: .7rem;
+    font-family: var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+    font-size: clamp(1.1rem, 3.6vw, 1.4rem);
+    background: linear-gradient(180deg, var(--gold) 0%, var(--gold-hot) 100%);
+    color: #1a0a02;
+    padding: 1rem 1.8rem; border-radius: 999px;
+    box-shadow: var(--glow-gold);
+    transition: transform .15s ease, box-shadow .25s;
+    position: relative; overflow: hidden;
+  }
+  .btn-call::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.55) 50%, transparent 70%);
+    transform: translateX(-120%);
+    animation: shine 3.4s ease-in-out infinite;
+  }
+  @keyframes shine { 0%,60% { transform: translateX(-120%);} 80%,100%{ transform: translateX(120%);} }
+  .btn-call:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 0 0 1px rgba(255,203,61,.5), 0 18px 50px -8px rgba(255,177,0,.75); }
+  .btn-call svg { width: 1.3rem; height: 1.3rem; fill: currentColor; }
+
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: .55rem;
+    font-family: var(--display); text-transform: uppercase; letter-spacing: .1em; font-weight: 600;
+    font-size: 1rem;
+    border: 1.5px solid var(--line); color: var(--cream);
+    padding: 1rem 1.5rem; border-radius: 999px; background: rgba(255,255,255,.02);
+    transition: border-color .2s, color .2s, background .2s;
+  }
+  .btn-ghost:hover { border-color: var(--electric); color: var(--electric); }
+
+  .phone-note { margin-top: .9rem; font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
+  .phone-note b { color: var(--gold); }
+
+  /* trust strip */
+  .trust {
+    display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; justify-content: center;
+    margin-top: 2.4rem; padding-top: 1.6rem; border-top: 1px solid var(--line-2);
+    font-family: var(--display); text-transform: uppercase; letter-spacing: .12em; font-size: .74rem; color: var(--muted);
+  }
+  .trust span { display: inline-flex; align-items: center; gap: .45rem; }
+  .trust b { color: var(--gold); }
+
+  /* ============ SECTION HEADINGS ============ */
+  .sec-head { text-align: center; margin-bottom: 2.6rem; }
+  .sec-head .kicker {
+    font-family: var(--display); text-transform: uppercase; letter-spacing: .3em;
+    color: var(--red); font-size: .78rem; display: block; margin-bottom: .7rem;
+  }
+  .sec-head h2 {
+    font-family: var(--display); font-weight: 700; text-transform: uppercase;
+    font-size: clamp(2rem, 6.5vw, 3.4rem); line-height: 1; letter-spacing: -.01em;
+    color: var(--cream);
+  }
+  .sec-head p { color: var(--muted); max-width: 52ch; margin: .9rem auto 0; }
+
+  .pad { padding: clamp(3.2rem, 8vw, 5.5rem) 0; }
+  .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--line), transparent); }
+
+  /* ============ PRODUCTS ============ */
+  .prod-grid {
+    display: grid; gap: 1.1rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 620px){ .prod-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 960px){ .prod-grid { grid-template-columns: repeat(3, 1fr); } }
+  .card {
+    position: relative; border-radius: 20px; padding: 1.5rem 1.4rem 1.6rem;
+    background: linear-gradient(180deg, var(--ink-3), var(--ink-2));
+    border: 1px solid var(--line);
+    overflow: hidden;
+    transition: transform .2s ease, border-color .2s, box-shadow .3s;
+  }
+  .card::before {
+    content: ""; position: absolute; inset: 0; border-radius: inherit;
+    background: radial-gradient(300px 120px at 80% -10%, var(--glowcol, rgba(255,203,61,.16)), transparent 70%);
+    opacity: .9; pointer-events: none;
+  }
+  .card:hover { transform: translateY(-4px); border-color: var(--edgecol, rgba(255,203,61,.4)); box-shadow: var(--shadow-lift); }
+  .card .ico {
+    width: 3rem; height: 3rem; border-radius: 14px; display: grid; place-items: center;
+    font-size: 1.5rem; margin-bottom: 1rem;
+    background: var(--ink); border: 1px solid var(--line);
+    box-shadow: inset 0 0 20px -8px var(--glowcol, rgba(255,203,61,.4));
+  }
+  .card h3 {
+    font-family: var(--display); text-transform: uppercase; letter-spacing: .04em;
+    font-size: 1.25rem; margin-bottom: .4rem; color: var(--cream);
+  }
+  .card p { color: var(--muted); font-size: .92rem; }
+  .card .tag {
+    display: inline-block; margin-top: .9rem; font-family: var(--display);
+    font-size: .68rem; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--gold); border: 1px solid rgba(255,203,61,.3); border-radius: 999px; padding: .2rem .6rem;
+  }
+
+  /* ============ STORY ============ */
+  .story-grid { display: grid; gap: 2.4rem; align-items: center; }
+  @media (min-width: 860px){ .story-grid { grid-template-columns: 1.05fr .95fr; gap: 3.2rem; } }
+  .story-copy .kicker {
+    font-family: var(--display); text-transform: uppercase; letter-spacing: .3em; color: var(--red); font-size: .78rem;
+  }
+  .story-copy h2 {
+    font-family: var(--display); font-weight: 700; text-transform: uppercase;
+    font-size: clamp(2rem, 6vw, 3.2rem); line-height: 1; margin: .7rem 0 1.2rem; color: var(--cream);
+  }
+  .story-copy p { color: var(--muted); margin-bottom: 1rem; font-size: 1.02rem; }
+  .story-copy p .hl { color: var(--gold); font-style: italic; font-family: var(--serif); }
+  .story-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: .8rem; margin-top: 1.8rem; }
+  .stat {
+    text-align: center; padding: 1.1rem .5rem; border-radius: 16px;
+    background: var(--ink-2); border: 1px solid var(--line);
+  }
+  .stat b {
+    display: block; font-family: var(--display); font-size: clamp(1.6rem, 5vw, 2.2rem);
+    background: linear-gradient(180deg, var(--gold), var(--gold-hot));
+    -webkit-background-clip: text; background-clip: text; color: transparent; line-height: 1;
+  }
+  .stat span { font-size: .68rem; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); }
+
+  /* framed "photo" placeholder — no real image, all CSS */
+  .story-art {
+    position: relative; aspect-ratio: 4/5; border-radius: 22px; overflow: hidden;
+    border: 1px solid var(--line);
+    background:
+      radial-gradient(120% 80% at 50% 120%, rgba(255,61,84,.35), transparent 60%),
+      radial-gradient(90% 60% at 20% -10%, rgba(70,224,255,.28), transparent 55%),
+      radial-gradient(90% 60% at 85% 10%, rgba(255,177,0,.32), transparent 55%),
+      linear-gradient(180deg, #0c1024, #070a17);
+    box-shadow: var(--shadow-lift);
+    display: grid; place-items: center; text-align: center;
+  }
+  .story-art .art-fw {
+    position: absolute; width: 3px; height: 3px; border-radius: 50%;
+  }
+  .story-art .placeholder-label {
+    position: relative; z-index: 2; font-family: var(--display); text-transform: uppercase;
+    letter-spacing: .2em; color: rgba(255,246,230,.55); font-size: .72rem;
+    border: 1px dashed rgba(255,255,255,.25); border-radius: 10px; padding: .5rem .8rem;
+  }
+  .story-art .big-emoji { font-size: clamp(3rem, 12vw, 5.5rem); filter: drop-shadow(0 8px 30px rgba(255,177,0,.5)); }
+
+  /* ============ HOURS + DIRECTIONS ============ */
+  .info-grid { display: grid; gap: 1.2rem; }
+  @media (min-width: 820px){ .info-grid { grid-template-columns: 1fr 1fr; } }
+  .panel {
+    border-radius: 20px; padding: 1.8rem 1.7rem;
+    background: linear-gradient(180deg, var(--ink-3), var(--ink-2));
+    border: 1px solid var(--line);
+  }
+  .panel h3 {
+    font-family: var(--display); text-transform: uppercase; letter-spacing: .06em;
+    font-size: 1.4rem; margin-bottom: 1.2rem; color: var(--cream);
+    display: flex; align-items: center; gap: .6rem;
+  }
+  .panel h3 .badge { font-size: 1.2rem; }
+  .hours-row {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
+    padding: .6rem 0; border-bottom: 1px dashed var(--line-2); font-size: .95rem;
+  }
+  .hours-row:last-child { border-bottom: 0; }
+  .hours-row .day { color: var(--cream); font-family: var(--display); letter-spacing: .04em; text-transform: uppercase; font-size: .92rem; }
+  .hours-row .time { color: var(--gold); font-variant-numeric: tabular-nums; }
+  .hours-row.peak .time { color: var(--red); font-weight: 700; }
+  .hours-note { margin-top: 1rem; font-size: .76rem; color: var(--muted); letter-spacing: .02em; }
+
+  .addr { font-size: 1.05rem; color: var(--cream); line-height: 1.55; margin-bottom: .3rem; }
+  .addr .verify { color: var(--muted); font-size: .74rem; letter-spacing: .06em; text-transform: uppercase; }
+  .loc-tag { display:inline-block; margin: .2rem 0 1rem; font-family: var(--display); letter-spacing:.14em; text-transform:uppercase; font-size:.7rem; color: var(--electric); }
+  .map-links { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.1rem; }
+  .map-btn {
+    display: inline-flex; align-items: center; gap: .45rem;
+    font-family: var(--display); letter-spacing: .08em; text-transform: uppercase; font-size: .82rem; font-weight: 600;
+    padding: .65rem 1.05rem; border-radius: 999px; border: 1.5px solid var(--line);
+    color: var(--cream); transition: border-color .2s, color .2s;
+  }
+  .map-btn:hover { border-color: var(--electric); color: var(--electric); }
+  .map-btn svg { width: 1rem; height: 1rem; fill: currentColor; }
+  .second-loc {
+    margin-top: 1.4rem; padding-top: 1.1rem; border-top: 1px solid var(--line-2);
+    font-size: .9rem; color: var(--muted);
+  }
+  .second-loc b { color: var(--gold); font-family: var(--display); letter-spacing: .04em; }
+
+  /* ============ REVIEWS ============ */
+  .rev-grid { display: grid; gap: 1.1rem; }
+  @media (min-width: 720px){ .rev-grid { grid-template-columns: repeat(2,1fr); } }
+  @media (min-width: 1000px){ .rev-grid { grid-template-columns: repeat(3,1fr); } }
+  .review {
+    border-radius: 20px; padding: 1.6rem 1.5rem;
+    background: linear-gradient(180deg, var(--ink-3), var(--ink-2));
+    border: 1px solid var(--line); position: relative;
+  }
+  .review .stars { color: var(--gold); letter-spacing: .15em; font-size: 1rem; margin-bottom: .8rem; }
+  .review blockquote { font-family: var(--serif); font-size: 1.06rem; line-height: 1.55; color: var(--cream); font-style: italic; }
+  .review .who { margin-top: 1.1rem; font-family: var(--display); text-transform: uppercase; letter-spacing: .1em; font-size: .76rem; color: var(--muted); }
+  .review .who b { color: var(--gold); }
+  .rev-badge {
+    text-align: center; margin-top: 2.2rem;
+    font-family: var(--display); text-transform: uppercase; letter-spacing: .18em; color: var(--muted); font-size: .82rem;
+  }
+  .rev-badge b { color: var(--gold); }
+
+  /* ============ RESERVE CTA ============ */
+  .reserve { text-align: center; }
+  .reserve-card {
+    border-radius: 26px; padding: clamp(2.2rem, 6vw, 3.6rem) 1.6rem;
+    background:
+      radial-gradient(600px 200px at 50% -20%, rgba(255,177,0,.22), transparent 70%),
+      linear-gradient(180deg, var(--ink-3), var(--ink-2));
+    border: 1px solid rgba(255,203,61,.25);
+    box-shadow: var(--shadow-lift);
+  }
+  .reserve h2 {
+    font-family: var(--display); font-weight: 700; text-transform: uppercase;
+    font-size: clamp(1.9rem, 6vw, 3rem); line-height: 1; color: var(--cream);
+  }
+  .reserve p { color: var(--muted); max-width: 44ch; margin: 1rem auto 1.8rem; }
+  .btn-soon {
+    display: inline-flex; align-items: center; gap: .6rem;
+    font-family: var(--display); text-transform: uppercase; letter-spacing: .08em; font-weight: 700;
+    font-size: 1.05rem;
+    background: rgba(255,255,255,.04); color: var(--muted);
+    border: 1.5px dashed var(--line); border-radius: 999px;
+    padding: .95rem 1.7rem; cursor: not-allowed; opacity: .8;
+  }
+  .btn-soon .soon { font-size: .64rem; background: var(--red); color: #fff; padding: .18rem .5rem; border-radius: 999px; letter-spacing: .12em; }
+  .reserve .or {
+    margin-top: 1.4rem; font-size: .84rem; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; font-family: var(--display);
+  }
+  .reserve .call-inline { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+
+  /* ============ FOOTER ============ */
+  footer {
+    padding: 3rem 0 2.4rem; border-top: 1px solid var(--line); margin-top: 1rem;
+    text-align: center;
+  }
+  .foot-brand {
+    font-family: var(--display); text-transform: uppercase; letter-spacing: .08em;
+    font-size: 1.5rem; color: var(--cream); margin-bottom: .5rem;
+  }
+  .foot-line { color: var(--muted); font-size: .9rem; margin-bottom: .4rem; }
+  .foot-line a { color: var(--gold); }
+  .disclaimer {
+    margin-top: 1.6rem; padding-top: 1.4rem; border-top: 1px solid var(--line-2);
+    color: var(--muted); font-size: .74rem; letter-spacing: .03em; max-width: 60ch; margin-inline: auto;
+    line-height: 1.6;
+  }
+  .disclaimer b { color: var(--cream); }
+
+  /* ============ MOBILE STICKY CALL BAR ============ */
+  .sticky-call {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+    padding: .7rem .9rem calc(.7rem + env(safe-area-inset-bottom));
+    background: linear-gradient(180deg, rgba(5,6,15,.4), rgba(5,6,15,.96));
+    backdrop-filter: blur(8px);
+    border-top: 1px solid var(--line);
+    display: flex;
+  }
+  .sticky-call a {
+    flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
+    font-family: var(--display); text-transform: uppercase; letter-spacing: .06em; font-weight: 700;
+    font-size: 1.1rem;
+    background: linear-gradient(180deg, var(--gold), var(--gold-hot)); color: #1a0a02;
+    padding: .9rem; border-radius: 14px; box-shadow: var(--glow-gold);
+  }
+  .sticky-call svg { width: 1.15rem; height: 1.15rem; fill: currentColor; }
+  body { padding-bottom: 5rem; }
+  @media (min-width: 860px){ .sticky-call { display: none; } body { padding-bottom: 0; } }
+
+  /* ============ REVEAL ANIMATIONS ============ */
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* staggered hero load */
+  .hero > * { animation: heroIn .9s cubic-bezier(.2,.7,.2,1) both; }
+  .hero .eyebrow { animation-delay: .05s; }
+  .hero h1 { animation-delay: .15s; }
+  .hero .sub { animation-delay: .3s; }
+  .hero .locpill { animation-delay: .4s; }
+  .hero .cta-row { animation-delay: .5s; }
+  .hero .phone-note { animation-delay: .58s; }
+  .hero .trust { animation-delay: .66s; }
+  @keyframes heroIn { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+
+  /* ============ REDUCED MOTION ============ */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .reveal { opacity: 1; transform: none; }
+    html { scroll-behavior: auto; }
+    .stars, .burst, .btn-call::after { animation: none !important; }
+    .burst { display: none; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ATMOSPHERE LAYERS -->
+  <div class="sky" aria-hidden="true"></div>
+  <div class="stars" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="fw-field" aria-hidden="true">
+    <span class="burst" style="--x:18%;--y:26%;--d:0s;">   <span class="spark" style="--c:var(--gold);--c2:var(--red);"></span></span>
+    <span class="burst" style="--x:74%;--y:20%;--d:1.4s;"> <span class="spark" style="--c:var(--electric);--c2:var(--violet);"></span></span>
+    <span class="burst" style="--x:46%;--y:14%;--d:2.6s;"> <span class="spark" style="--c:var(--red);--c2:var(--gold);"></span></span>
+    <span class="burst" style="--x:88%;--y:32%;--d:3.4s;"> <span class="spark" style="--c:var(--gold-hot);--c2:var(--electric);"></span></span>
+    <span class="burst" style="--x:8%;--y:34%;--d:4.1s;">  <span class="spark" style="--c:var(--violet);--c2:var(--gold);"></span></span>
+  </div>
+
+  <!-- SEASONAL BANNER -->
+  <div class="season-banner" role="status">
+    <span class="dot" aria-hidden="true"></span>
+    Now Open for the Season — 4th of July Blowout Prices
+    <span class="count" id="daysCount"></span>
+  </div>
+
+  <div class="wrap">
+
+    <!-- NAV -->
+    <nav>
+      <div class="brand-mark">
+        <span class="spark-ico" aria-hidden="true"></span>
+        Big Mama's
+      </div>
+      <div class="nav-links">
+        <a href="#products">Fireworks</a>
+        <a href="#story">Our Story</a>
+        <a href="#visit">Hours &amp; Location</a>
+        <a href="#reviews">Reviews</a>
+      </div>
+      <a class="nav-call" href="tel:+10000000000">Call Now</a>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Family-Owned Since 2009 · Terrell, TX</span>
+      <h1>
+        <span class="line-1">Big Mama's</span>
+        <span class="big">Fireworks</span>
+        <span class="line-3">Light Up the Sky for Less</span>
+      </h1>
+      <p class="sub">The discount fireworks stand Terrell trusts — huge selection, seriously reasonable prices, and staff who know exactly how every package performs.</p>
+
+      <span class="locpill">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+        15882 State Hwy 205, Terrell, TX
+      </span>
+
+      <div class="cta-row">
+        <a class="btn-call" href="tel:+10000000000" aria-label="Tap to call Big Mama's Discount Fireworks">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1z"/></svg>
+          Tap to Call
+        </a>
+        <a class="btn-ghost" href="#products">See What's In Stock</a>
+      </div>
+      <p class="phone-note"><b>PLACEHOLDER NUMBER — VERIFY</b> before launch · currently links to tel:(000) 000-0000</p>
+
+      <div class="trust">
+        <span><b>★ 100%</b> Recommend</span>
+        <span><b>◆</b> Military &amp; Law Enforcement Discounts</span>
+        <span><b>▸</b> Beats Local Chain Prices</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- PRODUCTS -->
+  <section id="products" class="pad">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">The Arsenal</span>
+        <h2>What We Light Up</h2>
+        <p>From backyard sparkle to grand-finale cakes — packages picked and priced for every crew. Ask our staff which one hits hardest for your budget.</p>
+      </div>
+
+      <div class="prod-grid">
+        <article class="card reveal" style="--glowcol:rgba(255,177,0,.2);--edgecol:rgba(255,203,61,.45);">
+          <div class="ico">🎆</div>
+          <h3>Grand-Finale Cakes</h3>
+          <p>Multi-shot repeaters that do all the work — one fuse, a full show. Big Mama's favorite for the last light of the night.</p>
+          <span class="tag">Best Seller</span>
+        </article>
+
+        <article class="card reveal" style="--glowcol:rgba(255,61,84,.2);--edgecol:rgba(255,61,84,.45);">
+          <div class="ico">🧨</div>
+          <h3>Assortment Packs</h3>
+          <p>A little of everything, bundled to save. Great starter selection when you want variety without overthinking it.</p>
+          <span class="tag">Best Value</span>
+        </article>
+
+        <article class="card reveal" style="--glowcol:rgba(70,224,255,.2);--edgecol:rgba(70,224,255,.45);">
+          <div class="ico">🚀</div>
+          <h3>Artillery Shells</h3>
+          <p>Load, launch, boom. Reloadable canister kits that put real height and color in the sky.</p>
+          <span class="tag">Crowd Pleaser</span>
+        </article>
+
+        <article class="card reveal" style="--glowcol:rgba(155,107,255,.2);--edgecol:rgba(155,107,255,.45);">
+          <div class="ico">🌈</div>
+          <h3>Roman Candles &amp; Fountains</h3>
+          <p>Ground spectacle with color you can stand close to — the kind the whole block gathers around.</p>
+          <span class="tag">Family Friendly</span>
+        </article>
+
+        <article class="card reveal" style="--glowcol:rgba(255,203,61,.2);--edgecol:rgba(255,203,61,.45);">
+          <div class="ico">✨</div>
+          <h3>Sparklers &amp; Novelties</h3>
+          <p>Snaps, poppers, sparklers and the little stuff the kids love. The finishing touch on any set.</p>
+          <span class="tag">Under Budget</span>
+        </article>
+
+        <article class="card reveal" style="--glowcol:rgba(255,177,0,.2);--edgecol:rgba(255,203,61,.45);">
+          <div class="ico">💥</div>
+          <h3>Build-Your-Own Show</h3>
+          <p>Tell us your budget and your yard — our staff builds a package that performs. That's the Big Mama's difference.</p>
+          <span class="tag">Ask Us</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- STORY -->
+  <section id="story" class="pad">
+    <div class="wrap">
+      <div class="story-grid">
+        <div class="story-copy reveal">
+          <span class="kicker">Our Story</span>
+          <h2>A Family Stand, Not a Big Box</h2>
+          <p>Big Mama's has been Terrell's discount fireworks spot since at least 2009 — family-owned, locally run, and here every season with the same promise: <span class="hl">great selection at prices that actually make sense.</span></p>
+          <p>Our folks don't just ring you up. They <span class="hl">know exactly how each package performs</span> — so you walk away with the right show for your yard and your budget, not whatever's stacked highest on the shelf.</p>
+          <p>We say thank you to those who serve with <span class="hl">military and law-enforcement discounts</span>, and we keep our prices under the local chains. Come see why folks keep coming back.</p>
+
+          <div class="story-stats">
+            <div class="stat"><b>2009</b><span>Serving Since</span></div>
+            <div class="stat"><b>2</b><span>Locations</span></div>
+            <div class="stat"><b>100%</b><span>Recommend</span></div>
+          </div>
+        </div>
+
+        <div class="story-art reveal" role="img" aria-label="Placeholder illustration — night sky fireworks over the stand">
+          <span class="big-emoji" aria-hidden="true">🎇</span>
+          <span class="placeholder-label">Placeholder · your stand photo here</span>
+          <span class="art-fw" style="top:22%;left:26%;box-shadow:0 0 12px 3px var(--gold), 14px 0 0 var(--gold),-14px 0 0 var(--gold),0 14px 0 var(--gold),0 -14px 0 var(--gold);"></span>
+          <span class="art-fw" style="top:34%;left:72%;box-shadow:0 0 12px 3px var(--electric), 12px 12px 0 var(--electric),-12px 12px 0 var(--electric),12px -12px 0 var(--electric),-12px -12px 0 var(--electric);"></span>
+          <span class="art-fw" style="top:60%;left:40%;box-shadow:0 0 12px 3px var(--red), 16px 0 0 var(--red),-16px 0 0 var(--red),0 16px 0 var(--red),0 -16px 0 var(--red);"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- HOURS + DIRECTIONS -->
+  <section id="visit" class="pad">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Plan Your Trip</span>
+        <h2>Hours &amp; Directions</h2>
+        <p>Fireworks stands run on the season — call ahead to confirm hours during your holiday. Sample seasonal hours shown below.</p>
+      </div>
+
+      <div class="info-grid">
+        <div class="panel reveal">
+          <h3><span class="badge" aria-hidden="true">🕒</span> Seasonal Hours</h3>
+          <div class="hours-row"><span class="day">Mon – Thu</span><span class="time">10:00 AM – 9:00 PM</span></div>
+          <div class="hours-row"><span class="day">Friday</span><span class="time">10:00 AM – 10:00 PM</span></div>
+          <div class="hours-row"><span class="day">Saturday</span><span class="time">9:00 AM – 10:00 PM</span></div>
+          <div class="hours-row"><span class="day">Sunday</span><span class="time">10:00 AM – 9:00 PM</span></div>
+          <div class="hours-row peak"><span class="day">July 3 – 4</span><span class="time">Extended — Call!</span></div>
+          <p class="hours-note">Sample hours for the demo — <b>VERIFY</b> real seasonal hours before launch. Hours vary by holiday and are longest around July 4th and New Year's.</p>
+        </div>
+
+        <div class="panel reveal">
+          <h3><span class="badge" aria-hidden="true">📍</span> Find the Stand</h3>
+          <p class="addr">15882 State Hwy 205<br>Terrell, TX 75160</p>
+          <span class="loc-tag">Main Location</span>
+          <div class="map-links">
+            <a class="map-btn" href="https://maps.google.com/?q=15882+State+Hwy+205+Terrell+TX+75160" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+              Google Maps
+            </a>
+            <a class="map-btn" href="https://maps.apple.com/?q=15882+State+Hwy+205+Terrell+TX+75160" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4 3 11l7 2 2 7 8-16z"/></svg>
+              Apple Maps
+            </a>
+          </div>
+          <div class="second-loc">
+            <b>Second Location:</b> also serving Quinlan, TX — call for that stand's address &amp; hours.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="pad">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Word on the Block</span>
+        <h2>What Locals Say</h2>
+        <p>Real themes pulled from Big Mama's reviews — friendly staff, honest prices, and a selection that keeps folks coming back.</p>
+      </div>
+
+      <div class="rev-grid">
+        <article class="review reveal">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>"Great selection and very reasonable prices — beats the chains every time."</blockquote>
+          <div class="who">— Repeat Customer · <b>Terrell, TX</b></div>
+        </article>
+
+        <article class="review reveal">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>"Friendly staff who know exactly how each package performs. They set us up perfectly."</blockquote>
+          <div class="who">— Local Family · <b>Kaufman County</b></div>
+        </article>
+
+        <article class="review reveal">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>"Best prices around and they took care of our military discount. We'll be back next year."</blockquote>
+          <div class="who">— Veteran Customer · <b>Terrell, TX</b></div>
+        </article>
+      </div>
+
+      <p class="rev-badge">Themes drawn from public reviews · <b>~100% recommend</b> · Quotes representative — swap in verified Google reviews at launch</p>
+    </div>
+  </section>
+
+  <!-- RESERVE / PAY (COMING SOON) -->
+  <section class="pad reserve">
+    <div class="wrap">
+      <div class="reserve-card reveal">
+        <h2>Reserve Your Show</h2>
+        <p>Online reserve &amp; pay is on the way — lock in your package and skip the line during the July rush.</p>
+        <button class="btn-soon" disabled aria-disabled="true">
+          Reserve &amp; Pay Online <span class="soon">Coming Soon</span>
+        </button>
+        <p class="or">Ready now? Just <a class="call-inline" href="tel:+10000000000">give us a call</a> — we'll build your show today.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-brand">Big Mama's Discount Fireworks</div>
+      <p class="foot-line">15882 State Hwy 205, Terrell, TX 75160 · Second location in Quinlan, TX</p>
+      <p class="foot-line">Call: <a href="tel:+10000000000">(000) 000-0000</a> — <b style="color:var(--gold)">PLACEHOLDER · VERIFY</b></p>
+      <p class="disclaimer">
+        <b>Concept preview built by DNA Agency — not affiliated with Big Mama's Discount Fireworks.</b>
+        This is an unofficial design mock-up created from publicly available information for demonstration purposes only.
+        Imagery is placeholder, the phone number is a placeholder, and hours/prices shown are illustrative and must be verified.
+        No checkout or payment is functional on this page.
+      </p>
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY CALL BAR -->
+  <div class="sticky-call">
+    <a href="tel:+10000000000" aria-label="Tap to call Big Mama's Discount Fireworks">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1z"/></svg>
+      Tap to Call Big Mama's
+    </a>
+  </div>
+
+  <script>
+    // Scroll reveal — progressive enhancement, no external deps
+    (function () {
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var els = document.querySelectorAll('.reveal');
+      if (reduce || !('IntersectionObserver' in window)) {
+        els.forEach(function (el) { el.classList.add('in'); });
+      } else {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+        els.forEach(function (el) { io.observe(el); });
+      }
+
+      // Days-till-July-4 seasonal counter (illustrative)
+      try {
+        var el = document.getElementById('daysCount');
+        if (el) {
+          var now = new Date();
+          var year = now.getFullYear();
+          var july4 = new Date(year, 6, 4);
+          if (now > july4) { july4 = new Date(year + 1, 6, 4); }
+          var days = Math.ceil((july4 - now) / 86400000);
+          el.textContent = days > 0 && days <= 60 ? '· ' + days + ' days to go' : '';
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+</body>
+</html>
