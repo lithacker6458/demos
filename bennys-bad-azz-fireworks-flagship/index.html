@@ -1,0 +1,1161 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Benny's Bad Azz Fireworks | Azle & Whitney, TX - You've Got a Friend in the Firework Business</title>
+<meta name="description" content="Family-owned Texas fireworks since 1999. Big booms, bright colors, Texas-sized fireworks for every budget. 100% guaranteed. Military, police & firefighter discount. Azle & Whitney, TX.">
+<style>
+/* ============================================================
+   BENNY'S BAD AZZ FIREWORKS - flagship concept
+   Aesthetic: midnight Texas sky + warm kraft-paper stand.
+   Palette: flag red, cream, deep navy, brass gold accent.
+   Type: heavy condensed display (CSS-tuned) + humanist body.
+   All visuals CSS/SVG. Zero external requests.
+   ============================================================ */
+
+:root{
+  --red:#c8102e;         /* flag red */
+  --red-deep:#8f0a20;
+  --red-glow:#ff2d4b;
+  --navy:#0a1230;        /* midnight */
+  --navy-2:#111a45;
+  --ink:#141118;
+  --cream:#fbf3e3;       /* kraft-paper cream */
+  --cream-2:#f3e6cd;
+  --paper-line:#e6d3ac;
+  --gold:#e8b84b;        /* brass accent */
+  --gold-deep:#b6892a;
+  --blue:#1e3a8a;
+  --blue-bright:#2f6fed;
+  --star:#fff7e6;
+  --shadow: 0 24px 60px -24px rgba(10,8,20,.55);
+  --font-display: "Arial Black","Helvetica Neue",Impact,system-ui,sans-serif;
+  --font-body: ui-sans-serif,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:var(--cream);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  line-height:1.55;
+}
+img{max-width:100%}
+a{color:inherit}
+
+/* condensed display look, tuned from a heavy system stack */
+.display{
+  font-family:var(--font-display);
+  font-weight:900;
+  letter-spacing:-.02em;
+  line-height:.92;
+  text-transform:uppercase;
+  transform:scaleY(1.08);
+  transform-origin:bottom;
+}
+
+/* ---------- top utility bar ---------- */
+.util{
+  background:var(--ink);
+  color:var(--cream);
+  font-size:.72rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  padding:7px 20px;
+  display:flex;
+  gap:22px;
+  justify-content:center;
+  flex-wrap:wrap;
+  align-items:center;
+}
+.util b{color:var(--gold)}
+.util .dot{width:5px;height:5px;border-radius:50%;background:var(--red-glow);box-shadow:0 0 10px var(--red-glow);animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+/* ---------- nav ---------- */
+nav{
+  position:sticky;top:0;z-index:60;
+  background:rgba(10,18,48,.86);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(232,184,75,.28);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 22px;
+  color:var(--cream);
+}
+.brandmark{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brandmark .seal{
+  width:44px;height:44px;flex:0 0 44px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#ffe08a,var(--gold) 45%,var(--gold-deep));
+  display:grid;place-items:center;color:var(--navy);font-weight:900;font-size:1.1rem;
+  border:2px solid #fff2cc;box-shadow:0 0 0 3px rgba(200,16,46,.9),0 6px 18px rgba(0,0,0,.4);
+  font-family:var(--font-display);
+}
+.brandmark .bn{line-height:1;display:flex;flex-direction:column}
+.brandmark .bn .t{font-family:var(--font-display);font-size:1.02rem;letter-spacing:-.01em}
+.brandmark .bn .s{font-size:.6rem;letter-spacing:.24em;color:var(--gold);text-transform:uppercase;margin-top:3px}
+.navlinks{display:flex;gap:26px;align-items:center}
+.navlinks a{text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.03em;color:var(--cream);opacity:.85;transition:.2s}
+.navlinks a:hover{opacity:1;color:var(--gold)}
+.nav-call{
+  background:var(--red);color:#fff;padding:9px 16px;border-radius:999px;
+  font-weight:800;font-size:.82rem;text-decoration:none;letter-spacing:.02em;
+  box-shadow:0 6px 18px rgba(200,16,46,.5);white-space:nowrap;transition:.2s;
+}
+.nav-call:hover{background:var(--red-glow);transform:translateY(-1px)}
+@media(max-width:820px){.navlinks a:not(.nav-call){display:none}}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  position:relative;
+  background:
+    radial-gradient(1200px 600px at 50% -10%, #1c2c66 0%, transparent 60%),
+    radial-gradient(900px 500px at 15% 110%, #2a1140 0%, transparent 55%),
+    linear-gradient(180deg,#0a1230 0%, #0c1638 55%, #0a1024 100%);
+  color:var(--cream);
+  overflow:hidden;
+  padding:70px 20px 96px;
+  isolation:isolate;
+}
+/* star field */
+.stars{position:absolute;inset:0;z-index:0;pointer-events:none}
+.stars i{position:absolute;width:2px;height:2px;border-radius:50%;background:var(--star);opacity:.7;animation:twinkle 4s infinite ease-in-out}
+@keyframes twinkle{0%,100%{opacity:.2;transform:scale(.7)}50%{opacity:.9;transform:scale(1.2)}}
+
+/* CSS firework bursts */
+.fw{position:absolute;z-index:1;width:6px;height:6px;pointer-events:none}
+.fw span{
+  position:absolute;left:0;top:0;width:4px;height:4px;border-radius:50%;
+  transform-origin:0 0;
+  animation:burst 2.6s infinite ease-out;
+  opacity:0;
+}
+@keyframes burst{
+  0%{opacity:0;transform:rotate(var(--a)) translateX(0) scale(1)}
+  8%{opacity:1}
+  60%{opacity:1}
+  100%{opacity:0;transform:rotate(var(--a)) translateX(var(--d)) scale(.2)}
+}
+/* thin launch trail */
+.launch{position:absolute;z-index:1;bottom:0;width:2px;height:0;
+  background:linear-gradient(180deg,transparent,var(--gold));
+  animation:launch 2.6s infinite ease-in;pointer-events:none;border-radius:2px}
+@keyframes launch{0%{height:0;opacity:0}10%{opacity:.9}40%{height:46vh;opacity:.5}45%{height:46vh;opacity:0}100%{opacity:0}}
+
+.hero-inner{position:relative;z-index:3;max-width:1080px;margin:0 auto;text-align:center}
+
+.season-banner{
+  display:inline-flex;align-items:center;gap:12px;
+  background:linear-gradient(90deg,var(--red-deep),var(--red));
+  border:1px solid rgba(255,220,150,.5);
+  color:#fff;padding:9px 20px;border-radius:999px;
+  font-weight:800;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;
+  box-shadow:0 10px 30px -8px rgba(200,16,46,.7);
+  margin-bottom:26px;
+}
+.season-banner .spark{width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 14px var(--gold);animation:pulse 1.3s infinite}
+
+.hero h1{margin:0;font-size:clamp(3.1rem,10vw,7.4rem)}
+.hero h1 .l1{display:block;color:var(--cream);text-shadow:0 4px 0 rgba(0,0,0,.25)}
+.hero h1 .l2{
+  display:block;
+  color:transparent;
+  background:linear-gradient(180deg,#ff5b73 0%,var(--red) 40%,var(--red-deep) 100%);
+  -webkit-background-clip:text;background-clip:text;
+  text-shadow:0 0 40px rgba(255,45,75,.35);
+  position:relative;
+}
+.hero h1 .l3{display:block;color:var(--gold);
+  text-shadow:0 0 30px rgba(232,184,75,.4),0 3px 0 rgba(0,0,0,.3)}
+
+.tagline{
+  margin:22px auto 6px;max-width:640px;font-size:clamp(1.05rem,2.4vw,1.35rem);
+  color:#f0e4cd;font-weight:500;
+}
+.tagline b{color:var(--gold)}
+.subtag{font-size:.86rem;letter-spacing:.18em;text-transform:uppercase;color:#b9c4e6;margin-bottom:34px}
+
+.hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;align-items:center}
+.btn-call{
+  display:inline-flex;flex-direction:column;align-items:center;
+  background:linear-gradient(180deg,#ff3653,var(--red) 55%,var(--red-deep));
+  color:#fff;text-decoration:none;
+  padding:16px 34px;border-radius:16px;
+  box-shadow:0 16px 40px -12px rgba(255,45,75,.75),inset 0 1px 0 rgba(255,255,255,.35);
+  border:1px solid rgba(255,200,190,.5);
+  transition:transform .18s ease, box-shadow .18s ease;
+  animation:callpulse 2.6s infinite;
+}
+.btn-call:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 22px 52px -12px rgba(255,45,75,.9)}
+.btn-call .cta-k{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;opacity:.9}
+.btn-call .cta-n{font-family:var(--font-display);font-size:1.5rem;letter-spacing:0;margin-top:2px}
+@keyframes callpulse{0%,100%{box-shadow:0 16px 40px -12px rgba(255,45,75,.6),inset 0 1px 0 rgba(255,255,255,.35),0 0 0 0 rgba(255,45,75,.45)}50%{box-shadow:0 16px 40px -12px rgba(255,45,75,.85),inset 0 1px 0 rgba(255,255,255,.35),0 0 0 14px rgba(255,45,75,0)}}
+
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:9px;
+  background:rgba(255,255,255,.06);color:var(--cream);
+  border:1.5px solid rgba(232,184,75,.5);
+  padding:15px 26px;border-radius:16px;text-decoration:none;font-weight:700;font-size:.95rem;
+  transition:.2s;cursor:not-allowed;opacity:.72;
+}
+.btn-ghost .soon{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;background:var(--gold);color:var(--navy);padding:3px 7px;border-radius:6px;font-weight:900}
+
+/* hero rating strip */
+.hero-trust{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;margin-top:44px;color:#d9e0f5;font-size:.82rem}
+.hero-trust .ht{display:flex;align-items:center;gap:8px}
+.hero-trust .stars5{color:var(--gold);letter-spacing:2px;font-size:.95rem}
+.hero-trust b{color:#fff}
+
+/* bunting divider */
+.bunting{position:relative;height:34px;background:transparent;margin-top:-1px}
+.bunting svg{display:block;width:100%;height:34px}
+
+/* ============================================================
+   BENEFIT STRIP
+   ============================================================ */
+.benefits{background:var(--cream);padding:0}
+.benefit-grid{
+  max-width:1180px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  border-bottom:3px solid var(--paper-line);
+}
+.benefit{
+  padding:34px 22px;text-align:center;border-right:1px dashed var(--paper-line);
+  position:relative;
+}
+.benefit:last-child{border-right:none}
+.benefit .ic{width:54px;height:54px;margin:0 auto 14px;display:grid;place-items:center;
+  border-radius:14px;background:linear-gradient(180deg,#fff,var(--cream-2));
+  box-shadow:0 6px 16px -8px rgba(140,90,20,.4);border:1px solid var(--paper-line)}
+.benefit h3{margin:0 0 4px;font-family:var(--font-display);font-size:1.02rem;letter-spacing:.01em;color:var(--navy);text-transform:uppercase}
+.benefit p{margin:0;font-size:.82rem;color:#6a5a3f;line-height:1.4}
+@media(max-width:860px){.benefit-grid{grid-template-columns:repeat(2,1fr)}.benefit:nth-child(2){border-right:none}}
+@media(max-width:480px){.benefit-grid{grid-template-columns:1fr}.benefit{border-right:none;border-bottom:1px dashed var(--paper-line)}}
+
+/* ============================================================
+   SECTION SHELL
+   ============================================================ */
+section{position:relative}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;font-weight:800;
+  color:var(--red);margin-bottom:14px;
+}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--red);display:inline-block}
+.h2{font-family:var(--font-display);font-size:clamp(2rem,5vw,3.3rem);color:var(--navy);text-transform:uppercase;letter-spacing:-.01em;line-height:.98;margin:0 0 10px}
+.lede{font-size:1.05rem;color:#5c5140;max-width:640px}
+
+/* reveal system */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}.reveal.d5{transition-delay:.40s}
+
+/* ============================================================
+   PRODUCT / CATEGORY GRID
+   ============================================================ */
+.products{background:linear-gradient(180deg,var(--cream) 0%, #f6ecd7 100%);padding:78px 0 84px}
+.prod-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:38px}
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:920px){.cat-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.cat-grid{grid-template-columns:1fr}}
+
+.card{
+  background:#fff;border-radius:18px;overflow:hidden;
+  border:1px solid var(--paper-line);
+  box-shadow:0 14px 34px -20px rgba(120,80,20,.55);
+  display:flex;flex-direction:column;
+  transition:transform .28s cubic-bezier(.2,.7,.2,1),box-shadow .28s;
+  position:relative;
+}
+.card:hover{transform:translateY(-8px);box-shadow:0 30px 55px -22px rgba(120,40,20,.55)}
+.card-art{
+  height:186px;position:relative;overflow:hidden;
+  background:radial-gradient(circle at 50% 120%,#22306e,#0a1230 70%);
+  display:grid;place-items:center;
+}
+.card-art .glow{position:absolute;inset:0;opacity:.7;transition:.4s}
+.card:hover .card-art .glow{opacity:1}
+.card-badge{
+  position:absolute;top:12px;left:12px;z-index:4;
+  background:var(--red);color:#fff;font-size:.64rem;font-weight:900;letter-spacing:.1em;
+  text-transform:uppercase;padding:5px 10px;border-radius:7px;
+  box-shadow:0 4px 12px rgba(0,0,0,.3);
+}
+.card-badge.gold{background:var(--gold);color:var(--navy)}
+.card-body{padding:20px 20px 22px;display:flex;flex-direction:column;flex:1}
+.card-body h3{margin:0 0 6px;font-family:var(--font-display);font-size:1.28rem;color:var(--navy);text-transform:uppercase;letter-spacing:-.01em}
+.card-body .sub{font-size:.82rem;color:#8a765a;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.chip{font-size:.7rem;font-weight:700;color:var(--red-deep);background:#fbe7d6;border:1px solid #f2cdb2;
+  padding:4px 9px;border-radius:999px;letter-spacing:.01em}
+.chip.b{color:var(--blue);background:#e5edff;border-color:#c6d6ff}
+.chip.k{color:var(--gold-deep);background:#fbf1d6;border-color:#eeddb0}
+
+/* custom show CTA card spans */
+.card.feature{grid-column:span 3;flex-direction:row;background:linear-gradient(120deg,var(--navy),var(--navy-2));color:var(--cream);border:1px solid rgba(232,184,75,.3)}
+.card.feature .fa{flex:0 0 42%;position:relative;overflow:hidden;background:radial-gradient(circle at 60% 120%,#3a1b5e,#0a1230 70%);min-height:230px}
+.card.feature .fb{padding:34px 34px 34px 30px;display:flex;flex-direction:column;justify-content:center}
+.card.feature h3{color:#fff;font-size:1.9rem;margin-bottom:8px}
+.card.feature p{color:#cdd6f0;font-size:.98rem;margin:0 0 18px;max-width:460px}
+.card.feature .price-line{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:20px}
+.card.feature .pill{background:rgba(232,184,75,.16);border:1px solid rgba(232,184,75,.5);color:var(--gold);
+  padding:6px 14px;border-radius:999px;font-weight:800;font-size:.86rem}
+.card.feature:hover{transform:translateY(-8px)}
+.feature-cta{align-self:flex-start;background:var(--red);color:#fff;text-decoration:none;font-weight:800;
+  padding:13px 26px;border-radius:12px;box-shadow:0 12px 28px -10px rgba(200,16,46,.7);transition:.2s}
+.feature-cta:hover{background:var(--red-glow);transform:translateY(-2px)}
+@media(max-width:920px){.card.feature{grid-column:span 2}}
+@media(max-width:760px){.card.feature{flex-direction:column}.card.feature .fa{flex:none;width:100%;min-height:150px}}
+@media(max-width:600px){.card.feature{grid-column:span 1}}
+
+/* ============================================================
+   STORY / TIMELINE
+   ============================================================ */
+.story{
+  background:
+    radial-gradient(900px 500px at 90% -10%, rgba(200,16,46,.10), transparent 60%),
+    linear-gradient(180deg,#0a1230,#0c1533);
+  color:var(--cream);padding:86px 0 92px;overflow:hidden;
+}
+.story .h2{color:#fff}
+.story .lede{color:#c9d2ee}
+.story-top{display:grid;grid-template-columns:1.1fr .9fr;gap:46px;align-items:center;margin-bottom:56px}
+@media(max-width:900px){.story-top{grid-template-columns:1fr}}
+.benny-quote{
+  font-size:clamp(1.2rem,2.6vw,1.55rem);line-height:1.5;color:#f4ecda;font-weight:500;
+  border-left:4px solid var(--gold);padding-left:22px;font-style:italic;
+}
+.benny-quote .who{display:block;font-style:normal;margin-top:16px;font-size:.86rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:800}
+
+/* team portrait card (CSS/SVG) */
+.team-card{
+  background:linear-gradient(180deg,#12204f,#0b1436);
+  border:1px solid rgba(232,184,75,.28);border-radius:20px;padding:24px;
+  box-shadow:var(--shadow);
+}
+.team-portrait{display:flex;justify-content:center;gap:-10px;margin-bottom:14px}
+.team-portrait svg{filter:drop-shadow(0 8px 16px rgba(0,0,0,.5))}
+.team-cap{text-align:center;font-family:var(--font-display);font-size:1.1rem;color:#fff;letter-spacing:.02em}
+.team-sub{text-align:center;font-size:.8rem;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;margin-top:4px}
+
+/* timeline */
+.timeline{position:relative;max-width:900px;margin:0 auto;padding-left:8px}
+.timeline::before{content:"";position:absolute;left:20px;top:8px;bottom:8px;width:3px;
+  background:linear-gradient(180deg,var(--gold),var(--red),transparent);border-radius:3px}
+.tl-item{position:relative;padding:0 0 34px 60px}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{position:absolute;left:9px;top:2px;width:26px;height:26px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#ffe08a,var(--gold));border:3px solid var(--navy);
+  box-shadow:0 0 0 3px rgba(200,16,46,.8),0 0 18px rgba(232,184,75,.6);
+  display:grid;place-items:center;font-size:.7rem;color:var(--navy);font-weight:900}
+.tl-year{font-family:var(--font-display);font-size:1.5rem;color:var(--gold);letter-spacing:0;line-height:1}
+.tl-item h4{margin:6px 0 6px;font-size:1.08rem;color:#fff}
+.tl-item p{margin:0;color:#c4cde8;font-size:.94rem;line-height:1.55;max-width:640px}
+
+/* values row */
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:56px}
+@media(max-width:760px){.values{grid-template-columns:1fr}}
+.value{background:rgba(255,255,255,.04);border:1px solid rgba(232,184,75,.22);border-radius:14px;padding:22px}
+.value .vk{font-family:var(--font-display);color:var(--gold);font-size:1.15rem;text-transform:uppercase;margin-bottom:6px}
+.value p{margin:0;color:#c9d2ee;font-size:.9rem}
+
+/* ============================================================
+   REVIEWS
+   ============================================================ */
+.reviews{background:linear-gradient(180deg,#f6ecd7,var(--cream));padding:80px 0 86px}
+.rev-head{text-align:center;margin-bottom:14px}
+.rev-stats{display:flex;gap:30px;justify-content:center;flex-wrap:wrap;margin:20px 0 44px}
+.rev-stat{display:flex;flex-direction:column;align-items:center}
+.rev-stat .num{font-family:var(--font-display);font-size:2.2rem;color:var(--red);line-height:1}
+.rev-stat .lab{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:#8a765a;margin-top:6px}
+.rev-stat .st{color:var(--gold);letter-spacing:2px}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:920px){.rev-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.rev-grid{grid-template-columns:1fr}}
+.review{
+  background:#fff;border:1px solid var(--paper-line);border-radius:16px;padding:24px 22px 20px;
+  box-shadow:0 12px 30px -20px rgba(120,80,20,.5);position:relative;
+  display:flex;flex-direction:column;
+}
+.review .mark{font-family:var(--font-display);font-size:3rem;color:var(--red);opacity:.16;line-height:.6;height:26px}
+.review .stars5{color:var(--gold);letter-spacing:2px;font-size:.95rem;margin-bottom:10px}
+.review p{margin:0 0 16px;color:#3d3628;font-size:.96rem;line-height:1.55;flex:1}
+.review .by{font-size:.8rem;color:#8a765a;font-weight:700;display:flex;align-items:center;gap:8px}
+.review .by .av{width:30px;height:30px;border-radius:50%;background:linear-gradient(180deg,var(--red),var(--red-deep));
+  color:#fff;display:grid;place-items:center;font-weight:900;font-size:.8rem;flex:0 0 30px}
+
+/* ============================================================
+   LOCATIONS
+   ============================================================ */
+.locations{background:linear-gradient(180deg,#0c1533,#0a1024);color:var(--cream);padding:82px 0 40px}
+.locations .h2{color:#fff}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+@media(max-width:820px){.loc-grid{grid-template-columns:1fr}}
+.loc{
+  background:linear-gradient(180deg,#12204f,#0b1436);
+  border:1px solid rgba(232,184,75,.28);border-radius:20px;overflow:hidden;
+  box-shadow:var(--shadow);display:flex;flex-direction:column;
+}
+.loc-map{height:150px;position:relative;overflow:hidden;background:#0a1230;border-bottom:1px solid rgba(232,184,75,.2)}
+.loc-map svg{position:absolute;inset:0;width:100%;height:100%}
+.loc-flag{position:absolute;top:12px;left:12px;background:var(--red);color:#fff;font-size:.66rem;
+  font-weight:900;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border-radius:7px;z-index:3}
+.loc-body{padding:22px 24px 24px}
+.loc-body h3{margin:0 0 3px;font-family:var(--font-display);font-size:1.4rem;color:#fff;text-transform:uppercase}
+.loc-body .lbrand{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.loc-row{display:flex;gap:10px;align-items:flex-start;margin-bottom:9px;font-size:.9rem;color:#cdd6f0}
+.loc-row svg{flex:0 0 18px;margin-top:2px;color:var(--gold)}
+.loc-row a{color:#cdd6f0;text-decoration:none;border-bottom:1px dotted rgba(232,184,75,.5)}
+.loc-row a:hover{color:#fff}
+.loc-actions{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.loc-actions a{flex:1;min-width:130px;text-align:center;text-decoration:none;font-weight:800;font-size:.86rem;
+  padding:11px 14px;border-radius:11px;transition:.2s}
+.loc-call{background:var(--red);color:#fff;box-shadow:0 10px 24px -10px rgba(200,16,46,.7)}
+.loc-call:hover{background:var(--red-glow);transform:translateY(-2px)}
+.loc-dir{background:rgba(255,255,255,.07);color:var(--cream);border:1.5px solid rgba(232,184,75,.4)}
+.loc-dir:hover{background:rgba(255,255,255,.14)}
+.loc-note{font-size:.78rem;color:#96a2c8;margin-top:14px;font-style:italic}
+
+/* hours + season ribbon */
+.hours-ribbon{margin-top:34px;background:linear-gradient(90deg,var(--red-deep),var(--red));
+  border-radius:18px;padding:26px 28px;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:22px;
+  border:1px solid rgba(255,220,150,.4);box-shadow:0 18px 40px -18px rgba(200,16,46,.7)}
+@media(max-width:760px){.hours-ribbon{grid-template-columns:1fr}}
+.hours-ribbon .hr-block h4{margin:0 0 8px;font-family:var(--font-display);font-size:1rem;color:#ffe;letter-spacing:.06em;text-transform:uppercase}
+.hours-ribbon .hr-block p{margin:0;color:#ffe6e9;font-size:.9rem;line-height:1.5}
+.hours-ribbon .hr-block b{color:var(--gold)}
+.service-area{margin-top:26px;text-align:center;color:#9aa6cd;font-size:.86rem}
+.service-area b{color:var(--gold)}
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.finale{
+  position:relative;overflow:hidden;text-align:center;
+  background:radial-gradient(1000px 500px at 50% -20%, #23306e, transparent 60%),linear-gradient(180deg,#0a1024,#0a1230);
+  color:var(--cream);padding:90px 20px 96px;
+}
+.finale .fw2{position:absolute;inset:0;z-index:0;pointer-events:none}
+.finale-inner{position:relative;z-index:3;max-width:760px;margin:0 auto}
+.finale h2{font-family:var(--font-display);font-size:clamp(2.3rem,7vw,4.6rem);text-transform:uppercase;
+  line-height:.95;margin:0 0 16px;color:#fff}
+.finale h2 span{color:var(--gold);text-shadow:0 0 30px rgba(232,184,75,.5)}
+.finale p{font-size:1.1rem;color:#cdd6f0;max-width:540px;margin:0 auto 30px}
+.finale .btn-call{margin:0 auto}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{background:#070b1c;color:#aeb7d6;padding:54px 20px 30px;font-size:.9rem}
+.foot-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}
+@media(max-width:760px){.foot-grid{grid-template-columns:1fr}}
+.foot-brand .seal2{width:52px;height:52px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#ffe08a,var(--gold) 45%,var(--gold-deep));
+  display:grid;place-items:center;color:var(--navy);font-weight:900;font-size:1.3rem;font-family:var(--font-display);
+  border:2px solid #fff2cc;box-shadow:0 0 0 3px rgba(200,16,46,.9);margin-bottom:14px}
+.foot-brand h4{margin:0 0 6px;font-family:var(--font-display);font-size:1.3rem;color:#fff;text-transform:uppercase}
+.foot-brand p{margin:0;color:#8f9abf;max-width:320px;line-height:1.55}
+.foot-brand .slogan{color:var(--gold);font-style:italic;margin-top:12px;font-size:.95rem}
+footer h5{font-family:var(--font-display);text-transform:uppercase;color:#fff;font-size:.9rem;letter-spacing:.08em;margin:0 0 12px}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin-bottom:8px}
+footer a{color:#aeb7d6;text-decoration:none}
+footer a:hover{color:var(--gold)}
+.foot-bottom{max-width:1180px;margin:38px auto 0;padding-top:22px;border-top:1px solid rgba(174,183,214,.18);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.78rem;color:#7d87a8}
+.disclaimer{color:#6b74a0;font-size:.78rem;max-width:640px;line-height:1.5}
+.disclaimer b{color:#9aa4c7}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1!important;transform:none!important}
+}
+</style>
+
+<!-- ============ UTILITY BAR ============ -->
+<div class="util">
+  <span><span class="dot"></span> <b>OPEN JUNE 24TH</b> FOR THE 4TH OF JULY</span>
+  <span>100% GUARANTEED</span>
+  <span>MILITARY &bull; POLICE &bull; FIRE DISCOUNT</span>
+  <span>SINCE <b>1999</b></span>
+</div>
+
+<!-- ============ NAV ============ -->
+<nav>
+  <a class="brandmark" href="#top">
+    <span class="seal">B</span>
+    <span class="bn">
+      <span class="t">Benny's Bad Azz</span>
+      <span class="s">Fireworks &middot; Est. 1999</span>
+    </span>
+  </a>
+  <div class="navlinks">
+    <a href="#products">Fireworks</a>
+    <a href="#story">Our Story</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#locations">Locations</a>
+    <a class="nav-call" href="tel:+18178850802">Call (817) 885-0802</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="stars" id="stars" aria-hidden="true"></div>
+  <div id="fwfield" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="season-banner"><span class="spark"></span> 2026 Season Now Open &bull; Big Booms Ahead</div>
+    <h1 class="display">
+      <span class="l1">Big Booms.</span>
+      <span class="l2">Bad Azz</span>
+      <span class="l3">Fireworks.</span>
+    </h1>
+    <p class="tagline">Bright colors, Texas-sized fireworks for <b>every budget</b>. No stress. All boom. Hand-picked by a family that&rsquo;s been doing this since &rsquo;99.</p>
+    <p class="subtag">You&rsquo;ve Got A Friend In The Firework Business</p>
+    <div class="hero-cta">
+      <a class="btn-call" href="tel:+18178850802">
+        <span class="cta-k">Tap To Call The Azle Stand</span>
+        <span class="cta-n">(817) 885-0802</span>
+      </a>
+      <span class="btn-ghost" aria-disabled="true" title="Online ordering is on the way">
+        Reserve / Shop Online <span class="soon">Coming Soon</span>
+      </span>
+    </div>
+    <div class="hero-trust">
+      <div class="ht"><span class="stars5">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <b>5.0</b> on Yelp</div>
+      <div class="ht">&#128077; <b>92%</b> recommend on Facebook</div>
+      <div class="ht"><span class="stars5">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <b>25+ years</b> in business</div>
+    </div>
+  </div>
+</header>
+
+<!-- bunting divider -->
+<div class="bunting" aria-hidden="true">
+  <svg viewBox="0 0 1200 34" preserveAspectRatio="none">
+    <defs>
+      <pattern id="bunt" width="120" height="34" patternUnits="userSpaceOnUse">
+        <path d="M0 0 H40 L20 30 Z" fill="#c8102e"/>
+        <path d="M40 0 H80 L60 30 Z" fill="#fbf3e3"/>
+        <path d="M80 0 H120 L100 30 Z" fill="#1e3a8a"/>
+      </pattern>
+    </defs>
+    <rect width="1200" height="34" fill="url(#bunt)"/>
+  </svg>
+</div>
+
+<!-- ============ BENEFIT STRIP ============ -->
+<section class="benefits">
+  <div class="benefit-grid">
+    <div class="benefit reveal">
+      <div class="ic">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c8102e" stroke-width="2"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+      </div>
+      <h3>Two Texas Stores</h3>
+      <p>The massive six-flap stand in Azle &amp; our full-service Whitney warehouse.</p>
+    </div>
+    <div class="benefit reveal d1">
+      <div class="ic">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c8102e" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      </div>
+      <h3>Most Affordable</h3>
+      <p>Better prices than the other stands &amp; the big-box stores. Every budget wins.</p>
+    </div>
+    <div class="benefit reveal d2">
+      <div class="ic">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c8102e" stroke-width="2"><path d="M12 2l2.6 5.5 6 .9-4.3 4.2 1 6-5.3-2.8L6.4 18.6l1-6L3 8.4l6-.9z"/></svg>
+      </div>
+      <h3>100% Guaranteed</h3>
+      <p>A full guarantee on every firework, start to finish. We stand behind the boom.</p>
+    </div>
+    <div class="benefit reveal d3">
+      <div class="ic">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c8102e" stroke-width="2"><path d="M12 2l7 3v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V5z"/><path d="M9 12l2 2 4-4"/></svg>
+      </div>
+      <h3>Hero Discount</h3>
+      <p>Military, police &amp; firefighter discount. Thank you for what you do.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTS ============ -->
+<section class="products" id="products">
+  <div class="wrap">
+    <div class="prod-head">
+      <div>
+        <span class="eyebrow reveal">Shop The Stand</span>
+        <h2 class="h2 reveal">Pick Your Boom</h2>
+        <p class="lede reveal d1">From backyard poppers to $10,000 finales. We never buy anything we wouldn&rsquo;t shoot off ourselves, so every cake on the shelf is hand-picked and demo-tested out back.</p>
+      </div>
+    </div>
+
+    <div class="cat-grid">
+
+      <!-- 200g cakes -->
+      <article class="card reveal">
+        <div class="card-art">
+          <span class="card-badge">200g Cakes</span>
+          <svg class="glow" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid slice">
+            <g stroke-linecap="round">
+              <g transform="translate(150 95)">
+                <g stroke="#ff4d6d" stroke-width="2.4">
+                  <line x1="0" y1="0" x2="0" y2="-58"/><line x1="0" y1="0" x2="41" y2="-41"/><line x1="0" y1="0" x2="58" y2="0"/><line x1="0" y1="0" x2="41" y2="41"/><line x1="0" y1="0" x2="0" y2="58"/><line x1="0" y1="0" x2="-41" y2="41"/><line x1="0" y1="0" x2="-58" y2="0"/><line x1="0" y1="0" x2="-41" y2="-41"/>
+                </g>
+                <g stroke="#ffd36b" stroke-width="2">
+                  <line x1="0" y1="0" x2="22" y2="-52"/><line x1="0" y1="0" x2="52" y2="-22"/><line x1="0" y1="0" x2="52" y2="22"/><line x1="0" y1="0" x2="22" y2="52"/><line x1="0" y1="0" x2="-22" y2="52"/><line x1="0" y1="0" x2="-52" y2="22"/><line x1="0" y1="0" x2="-52" y2="-22"/><line x1="0" y1="0" x2="-22" y2="-52"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>200-Gram Finale Cakes</h3>
+          <div class="sub">Rapid-fire aerial repeaters</div>
+          <div class="chips">
+            <span class="chip">Angry Wife</span><span class="chip">Second Amendment</span><span class="chip">Trash Panda</span><span class="chip">Zombie Dust</span><span class="chip">Complete Chaos</span><span class="chip">King Cobra</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 500g cakes -->
+      <article class="card reveal d1">
+        <div class="card-art">
+          <span class="card-badge gold">Biggest Aerials</span>
+          <svg class="glow" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid slice">
+            <g transform="translate(150 95)" stroke-linecap="round">
+              <g stroke="#5b8bff" stroke-width="2.6">
+                <line x1="0" y1="0" x2="0" y2="-70"/><line x1="0" y1="0" x2="49" y2="-49"/><line x1="0" y1="0" x2="70" y2="0"/><line x1="0" y1="0" x2="49" y2="49"/><line x1="0" y1="0" x2="0" y2="70"/><line x1="0" y1="0" x2="-49" y2="49"/><line x1="0" y1="0" x2="-70" y2="0"/><line x1="0" y1="0" x2="-49" y2="-49"/>
+              </g>
+              <g stroke="#fff2d6" stroke-width="1.8">
+                <line x1="0" y1="0" x2="27" y2="-63"/><line x1="0" y1="0" x2="63" y2="-27"/><line x1="0" y1="0" x2="63" y2="27"/><line x1="0" y1="0" x2="27" y2="63"/><line x1="0" y1="0" x2="-27" y2="63"/><line x1="0" y1="0" x2="-63" y2="27"/><line x1="0" y1="0" x2="-63" y2="-27"/><line x1="0" y1="0" x2="-27" y2="-63"/>
+              </g>
+              <circle r="4" fill="#fff2d6"/>
+            </g>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>500-Gram Finale Cakes</h3>
+          <div class="sub">Bigger, badder aerial repeaters</div>
+          <div class="chips">
+            <span class="chip b">Grave Digger</span><span class="chip b">Blaze of Glory</span><span class="chip b">Hell Raiser</span><span class="chip b">Alien Assault</span><span class="chip b">Tribal Chief</span><span class="chip b">Honk for Freedom</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- artillery -->
+      <article class="card reveal d2">
+        <div class="card-art">
+          <span class="card-badge">#1 Seller</span>
+          <svg class="glow" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid slice">
+            <g transform="translate(150 100)">
+              <rect x="-58" y="20" width="116" height="46" rx="6" fill="#1b2a5e" stroke="#e8b84b" stroke-width="1.5"/>
+              <g fill="#c8102e">
+                <rect x="-48" y="-4" width="14" height="34" rx="3"/><rect x="-27" y="-14" width="14" height="44" rx="3"/><rect x="-6" y="-20" width="14" height="50" rx="3"/><rect x="15" y="-14" width="14" height="44" rx="3"/><rect x="34" y="-4" width="14" height="34" rx="3"/>
+              </g>
+              <g stroke="#ffd36b" stroke-width="1.6" stroke-linecap="round">
+                <line x1="-41" y1="-4" x2="-41" y2="-16"/><line x1="-20" y1="-14" x2="-20" y2="-26"/><line x1="1" y1="-20" x2="1" y2="-34"/><line x1="22" y1="-14" x2="22" y2="-26"/><line x1="41" y1="-4" x2="41" y2="-16"/>
+              </g>
+              <circle cx="1" cy="-42" r="3" fill="#fff2d6"/>
+            </g>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>Canister Shells &amp; Artillery</h3>
+          <div class="sub">60-gram kits &bull; heavy thump</div>
+          <div class="chips">
+            <span class="chip k">Excalibur 24pk</span><span class="chip k">King Arthur</span><span class="chip k">Sir Lancelot</span><span class="chip k">Double Dragon</span><span class="chip k">Ultimate Force</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- fountains -->
+      <article class="card reveal">
+        <div class="card-art">
+          <span class="card-badge gold">Family Favorite</span>
+          <svg class="glow" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid slice">
+            <g transform="translate(150 150)">
+              <path d="M-22 0 h44 l-8 24 h-28 z" fill="#8f0a20"/>
+              <g stroke-linecap="round" stroke-width="2.2">
+                <line x1="0" y1="0" x2="0" y2="-90" stroke="#ffd36b"/>
+                <line x1="0" y1="0" x2="-26" y2="-78" stroke="#ff6b8a"/>
+                <line x1="0" y1="0" x2="26" y2="-78" stroke="#ff6b8a"/>
+                <line x1="0" y1="0" x2="-48" y2="-58" stroke="#7db0ff"/>
+                <line x1="0" y1="0" x2="48" y2="-58" stroke="#7db0ff"/>
+                <line x1="0" y1="0" x2="-64" y2="-34" stroke="#8fe0b0"/>
+                <line x1="0" y1="0" x2="64" y2="-34" stroke="#8fe0b0"/>
+              </g>
+              <circle cx="-26" cy="-78" r="2.5" fill="#fff2d6"/><circle cx="26" cy="-78" r="2.5" fill="#fff2d6"/><circle cx="0" cy="-90" r="3" fill="#fff2d6"/>
+            </g>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>Fountains</h3>
+          <div class="sub">Long-lasting ground effects</div>
+          <div class="chips">
+            <span class="chip">Angel&rsquo;s Kiss</span><span class="chip">Purple Haze</span><span class="chip">Dog Bless America</span><span class="chip">The Swarm</span><span class="chip">Unicorn</span><span class="chip">Space Disco</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- assortments -->
+      <article class="card reveal d1">
+        <div class="card-art">
+          <span class="card-badge">Over 50 Fuses</span>
+          <svg class="glow" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid slice">
+            <g transform="translate(150 118)">
+              <rect x="-64" y="-30" width="128" height="70" rx="8" fill="#1b2a5e" stroke="#e8b84b" stroke-width="1.6"/>
+              <path d="M-64 -8 H64" stroke="#e8b84b" stroke-width="1" opacity=".5"/>
+              <g fill="#c8102e"><rect x="-54" y="-22" width="20" height="22" rx="2"/><rect x="-28" y="-22" width="20" height="22" rx="2"/></g>
+              <g fill="#1e3a8a"><rect x="-2" y="-22" width="20" height="22" rx="2"/><rect x="24" y="-22" width="20" height="22" rx="2"/></g>
+              <rect x="-40" y="6" width="80" height="10" rx="3" fill="#e8b84b"/>
+              <text x="0" y="14" font-family="Arial Black" font-size="8" fill="#1b2a5e" text-anchor="middle" font-weight="900">U S A</text>
+            </g>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>Assortment &amp; Family Packs</h3>
+          <div class="sub">Grab one box, light all night</div>
+          <div class="chips">
+            <span class="chip">Loaded for Fun</span><span class="chip">Family Truckster</span><span class="chip">U S A</span><span class="chip">What a Girl Wants</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- novelties -->
+      <article class="card reveal d2">
+        <div class="card-art">
+          <span class="card-badge gold">Kid Safe</span>
+          <svg class="glow" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid slice">
+            <g transform="translate(150 100)">
+              <line x1="-40" y1="40" x2="-40" y2="-30" stroke="#c8102e" stroke-width="3" stroke-linecap="round"/>
+              <g stroke="#ffd36b" stroke-width="1.6" stroke-linecap="round"><line x1="-40" y1="-30" x2="-46" y2="-44"/><line x1="-40" y1="-30" x2="-40" y2="-48"/><line x1="-40" y1="-30" x2="-34" y2="-44"/><line x1="-40" y1="-30" x2="-30" y2="-40"/><line x1="-40" y1="-30" x2="-50" y2="-40"/></g>
+              <line x1="0" y1="40" x2="0" y2="-38" stroke="#1e3a8a" stroke-width="3" stroke-linecap="round"/>
+              <g stroke="#7db0ff" stroke-width="1.6" stroke-linecap="round"><line x1="0" y1="-38" x2="-6" y2="-52"/><line x1="0" y1="-38" x2="0" y2="-56"/><line x1="0" y1="-38" x2="6" y2="-52"/><line x1="0" y1="-38" x2="10" y2="-48"/><line x1="0" y1="-38" x2="-10" y2="-48"/></g>
+              <line x1="40" y1="40" x2="40" y2="-30" stroke="#8f0a20" stroke-width="3" stroke-linecap="round"/>
+              <g stroke="#ff8fa8" stroke-width="1.6" stroke-linecap="round"><line x1="40" y1="-30" x2="34" y2="-44"/><line x1="40" y1="-30" x2="40" y2="-48"/><line x1="40" y1="-30" x2="46" y2="-44"/><line x1="40" y1="-30" x2="50" y2="-40"/><line x1="40" y1="-30" x2="30" y2="-40"/></g>
+            </g>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>Novelties &amp; Sparklers</h3>
+          <div class="sub">For the little ones &amp; the young at heart</div>
+          <div class="chips">
+            <span class="chip">Roman Candles</span><span class="chip">Sparklers</span><span class="chip">Saturn Missiles</span><span class="chip">Smoke &amp; Poppers</span><span class="chip">Parachutes</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- CUSTOM SHOW FEATURE -->
+      <article class="card feature reveal">
+        <div class="fa">
+          <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%">
+            <g stroke-linecap="round">
+              <g transform="translate(120 90)" stroke="#ff4d6d" stroke-width="2.4" opacity=".9">
+                <line x1="0" y1="0" x2="0" y2="-46"/><line x1="0" y1="0" x2="32" y2="-32"/><line x1="0" y1="0" x2="46" y2="0"/><line x1="0" y1="0" x2="32" y2="32"/><line x1="0" y1="0" x2="0" y2="46"/><line x1="0" y1="0" x2="-32" y2="32"/><line x1="0" y1="0" x2="-46" y2="0"/><line x1="0" y1="0" x2="-32" y2="-32"/>
+              </g>
+              <g transform="translate(270 70)" stroke="#ffd36b" stroke-width="2.2" opacity=".9">
+                <line x1="0" y1="0" x2="0" y2="-56"/><line x1="0" y1="0" x2="40" y2="-40"/><line x1="0" y1="0" x2="56" y2="0"/><line x1="0" y1="0" x2="40" y2="40"/><line x1="0" y1="0" x2="0" y2="56"/><line x1="0" y1="0" x2="-40" y2="40"/><line x1="0" y1="0" x2="-56" y2="0"/><line x1="0" y1="0" x2="-40" y2="-40"/>
+              </g>
+              <g transform="translate(210 170)" stroke="#5b8bff" stroke-width="2" opacity=".8">
+                <line x1="0" y1="0" x2="0" y2="-38"/><line x1="0" y1="0" x2="27" y2="-27"/><line x1="0" y1="0" x2="38" y2="0"/><line x1="0" y1="0" x2="27" y2="27"/><line x1="0" y1="0" x2="0" y2="38"/><line x1="0" y1="0" x2="-27" y2="27"/><line x1="0" y1="0" x2="-38" y2="0"/><line x1="0" y1="0" x2="-27" y2="-27"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div class="fb">
+          <h3 class="display">Build A Custom Show</h3>
+          <p>Tell us your budget and we&rsquo;ll pack your show with the loudest, baddest fireworks we&rsquo;ve got. Real one-on-one advice, cakes put in firing order, no guesswork.</p>
+          <div class="price-line">
+            <span class="pill">$50 backyard kit</span>
+            <span class="pill">up to $10,000 finale</span>
+          </div>
+          <a class="feature-cta" href="tel:+18178850802">Call &amp; Build My Show</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY ============ -->
+<section class="story" id="story">
+  <div class="wrap">
+    <span class="eyebrow reveal" style="color:var(--gold)">Since 1999</span>
+    <h2 class="h2 reveal">One Flap Turned Into Two</h2>
+
+    <div class="story-top">
+      <blockquote class="benny-quote reveal d1">
+        &ldquo;Back in 1999, I put up a little two-flap fireworks stand on the corner. It wasn&rsquo;t big or fancy &ndash; just a retirement hobby to keep me busy and give folks a place to get great fireworks at a fair price. But one flap turned into two, two turned into four&hellip; and before long, that little hobby started turning into something real.&rdquo;
+        <span class="who">&ndash; Benny (and Shari &amp; Sam)</span>
+      </blockquote>
+
+      <div class="team-card reveal d2">
+        <div class="team-portrait" aria-hidden="true">
+          <svg width="230" height="130" viewBox="0 0 230 130">
+            <!-- Sam -->
+            <g transform="translate(38 20)">
+              <circle cx="20" cy="18" r="16" fill="#e9c9a8"/>
+              <path d="M4 18a16 16 0 0 1 32 0z" fill="#3a2b1c"/>
+              <path d="M2 70c0-18 10-28 18-28s18 10 18 28z" fill="#1e3a8a"/>
+              <rect x="12" y="42" width="16" height="10" fill="#e9c9a8"/>
+            </g>
+            <!-- Benny (center, taller, hat) -->
+            <g transform="translate(96 8)">
+              <ellipse cx="20" cy="14" rx="26" ry="7" fill="#4a2f1a"/>
+              <path d="M6 14a14 14 0 0 1 28 0z" fill="#4a2f1a"/>
+              <circle cx="20" cy="26" r="16" fill="#e9c9a8"/>
+              <path d="M6 30 h28 v-2 a14 14 0 0 0 -28 0z" fill="#d9d9d9"/>
+              <path d="M2 84c0-20 10-30 18-30s18 10 18 30z" fill="#c8102e"/>
+              <rect x="12" y="52" width="16" height="10" fill="#e9c9a8"/>
+            </g>
+            <!-- Shari -->
+            <g transform="translate(160 22)">
+              <circle cx="20" cy="18" r="15" fill="#eccdb0"/>
+              <path d="M5 20c0-12 8-18 15-18s15 6 15 18c0 6-4 10-4 10l-2-8-4 4-5-6-5 6-4-4-2 8s-4-4-4-10z" fill="#8a5a3a"/>
+              <path d="M2 68c0-16 10-26 18-26s18 10 18 26z" fill="#8f0a20"/>
+              <rect x="12" y="40" width="16" height="10" fill="#eccdb0"/>
+            </g>
+          </svg>
+        </div>
+        <div class="team-cap">Sam &bull; Benny &bull; Shari</div>
+        <div class="team-sub">The family behind the boom</div>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-dot">&#9733;</div>
+        <div class="tl-year">1999</div>
+        <h4>A two-flap corner stand</h4>
+        <p>Benny puts up a little wooden fireworks stand as a retirement hobby &ndash; a place for folks to get great fireworks at a fair price. Shari&rsquo;s there from the early days, helping customers, picking products, and keeping the whole thing running smoother than Benny ever could&rsquo;ve alone.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot">&#9733;</div>
+        <div class="tl-year">2008</div>
+        <h4>Sam joins the family</h4>
+        <p>&ldquo;Hard-working kid, sharp as a tack, and he fit right in from day one.&rdquo; Now the three of them travel to demos to hand-select fireworks, living by one rule: we never buy anything we wouldn&rsquo;t shoot off ourselves.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot">&#9733;</div>
+        <div class="tl-year">2017</div>
+        <h4>Termites won the old stand &ndash; so we rebuilt bigger</h4>
+        <p>&ldquo;The termites finally decided they wanted it more than we did!&rdquo; So they did what Texans do &ndash; they rebuilt. When the new, massive six-flap stand went up, it got a name they were proud to put out front: <b>Benny&rsquo;s Bad Azz Fireworks</b>.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot">&#9733;</div>
+        <div class="tl-year">2025</div>
+        <h4>A second home in Whitney</h4>
+        <p>A brand-new store opens in Whitney, Texas, branded <b>Bad Azz Fireworks</b>. &ldquo;Same heart. Same family. Same values. Just dressed up a bit to match the beauty of the location.&rdquo;</p>
+      </div>
+    </div>
+
+    <div class="values">
+      <div class="value reveal">
+        <div class="vk">Integrity</div>
+        <p>A full 100% guarantee on every firework, start to finish. We stand behind what we sell.</p>
+      </div>
+      <div class="value reveal d1">
+        <div class="vk">Friendship</div>
+        <p>Around here, customers aren&rsquo;t just customers &ndash; you&rsquo;re friends. Kids sit on the counter and go home with little free gifts.</p>
+      </div>
+      <div class="value reveal d2">
+        <div class="vk">Most Bang For Your Buck</div>
+        <p>Better prices than the other stands and the big-box stores. Texas-sized fireworks for every budget.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="rev-head">
+      <span class="eyebrow reveal" style="justify-content:center">The Neighbors Talk</span>
+      <h2 class="h2 reveal">Friends Who Keep Coming Back</h2>
+    </div>
+    <div class="rev-stats reveal d1">
+      <div class="rev-stat"><span class="num">5.0</span><span class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="lab">Yelp Rating</span></div>
+      <div class="rev-stat"><span class="num">92%</span><span class="lab">Facebook Recommend</span></div>
+      <div class="rev-stat"><span class="num">5.0</span><span class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="lab">Yahoo Local</span></div>
+      <div class="rev-stat"><span class="num">25+</span><span class="lab">Years of Booms</span></div>
+    </div>
+
+    <div class="rev-grid">
+      <div class="review reveal">
+        <div class="mark">&ldquo;</div>
+        <div class="stars5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>Friendly, knowledgeable, have great product at better prices than all the other stands around.</p>
+        <div class="by"><span class="av">J</span> Justin H. &bull; Yahoo Local</div>
+      </div>
+      <div class="review reveal d1">
+        <div class="mark">&ldquo;</div>
+        <div class="stars5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>First time in a fireworks stand and it was the best experience ever! Customer service is outstanding!</p>
+        <div class="by"><span class="av">Y</span> Yon G. &bull; Yahoo Local</div>
+      </div>
+      <div class="review reveal d2">
+        <div class="mark">&ldquo;</div>
+        <div class="stars5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>These guys are THE BEST. They have great prices and are very knowledgeable in what they are selling.</p>
+        <div class="by"><span class="av">H</span> Hope M. &bull; Yahoo Local</div>
+      </div>
+      <div class="review reveal">
+        <div class="mark">&ldquo;</div>
+        <div class="stars5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>My 4 year old &amp; almost 2 year old love fireworks &ndash; we came to the perfect place!! Bad Azz Fireworks has the best &amp; most perfect selection for my little ones!</p>
+        <div class="by"><span class="av">A</span> Alyssa V. &bull; Yahoo Local</div>
+      </div>
+      <div class="review reveal d1">
+        <div class="mark">&ldquo;</div>
+        <div class="stars5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>These folks spent a lot of time explaining to me what was what, even put them in firing order for me.</p>
+        <div class="by"><span class="av">T</span> Tom M. &bull; Yahoo Local &amp; Yelp</div>
+      </div>
+      <div class="review reveal d2">
+        <div class="mark">&ldquo;</div>
+        <div class="stars5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>They let my kids sit on the counter and gave them little free gifts to make them feel special &ndash; even shot one off out back to show me how cool it was.</p>
+        <div class="by"><span class="av">Y</span> Yelp Reviewer</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCATIONS ============ -->
+<section class="locations" id="locations">
+  <div class="wrap">
+    <span class="eyebrow reveal" style="color:var(--gold)">Come See Us</span>
+    <h2 class="h2 reveal">Two Stores. Same Family.</h2>
+    <p class="lede reveal d1" style="color:#c9d2ee">Scan every multi-shot cake and watch the demo before you buy. Cold AC, great tunes, and a crew that&rsquo;ll walk you through it all.</p>
+
+    <div class="loc-grid">
+      <!-- Azle -->
+      <div class="loc reveal">
+        <div class="loc-map" aria-hidden="true">
+          <span class="loc-flag">Original Stand</span>
+          <svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="150" fill="#0a1230"/>
+            <path d="M0 96 H400" stroke="#26356e" stroke-width="10"/>
+            <path d="M150 0 V150" stroke="#26356e" stroke-width="10"/>
+            <path d="M0 40 H400" stroke="#1a2857" stroke-width="4"/>
+            <path d="M280 0 V150" stroke="#1a2857" stroke-width="4"/>
+            <text x="20" y="30" fill="#5a6aa0" font-size="11" font-family="Arial">FM 730</text>
+            <text x="158" y="130" fill="#5a6aa0" font-size="11" font-family="Arial">Knob Hill Rd</text>
+            <circle cx="150" cy="96" r="9" fill="#c8102e" stroke="#fff" stroke-width="2"/>
+            <circle cx="150" cy="96" r="16" fill="none" stroke="#c8102e" stroke-width="2" opacity=".5"/>
+          </svg>
+        </div>
+        <div class="loc-body">
+          <h3>Azle</h3>
+          <div class="lbrand">Benny&rsquo;s Bad Azz Fireworks &bull; The Six-Flap Stand</div>
+          <div class="loc-row"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> 5050 Knob Hill Rd, Azle, TX 76020 &ndash; corner of FM 730 &amp; Knob Hill Rd</div>
+          <div class="loc-row"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7A2 2 0 0 1 22 16.9z"/></svg> <a href="tel:+18178850802">(817) 885-0802</a> &bull; ask for Sam</div>
+          <div class="loc-actions">
+            <a class="loc-call" href="tel:+18178850802">Call Azle</a>
+            <a class="loc-dir" href="https://maps.google.com/?q=5050+Knob+Hill+Rd+Azle+TX+76020" target="_blank" rel="noopener">Get Directions</a>
+          </div>
+          <p class="loc-note">Scan every multi-shot cake and pick your favorites before you buy. Fireworks are legal in the unincorporated areas around Azle, not inside city limits.</p>
+        </div>
+      </div>
+
+      <!-- Whitney -->
+      <div class="loc reveal d1">
+        <div class="loc-map" aria-hidden="true">
+          <span class="loc-flag">New 2025 Warehouse</span>
+          <svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="150" fill="#0a1230"/>
+            <path d="M0 70 H400" stroke="#26356e" stroke-width="12"/>
+            <path d="M0 60 Q200 30 400 90" stroke="#1a2857" stroke-width="5" fill="none"/>
+            <path d="M240 0 V150" stroke="#1a2857" stroke-width="4"/>
+            <text x="20" y="60" fill="#5a6aa0" font-size="11" font-family="Arial">FM 1713</text>
+            <text x="248" y="130" fill="#5a6aa0" font-size="11" font-family="Arial">Hill County</text>
+            <circle cx="240" cy="70" r="9" fill="#c8102e" stroke="#fff" stroke-width="2"/>
+            <circle cx="240" cy="70" r="16" fill="none" stroke="#c8102e" stroke-width="2" opacity=".5"/>
+          </svg>
+        </div>
+        <div class="loc-body">
+          <h3>Whitney</h3>
+          <div class="lbrand">Bad Azz Fireworks &bull; Fireworks Worth Fighting Over</div>
+          <div class="loc-row"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> 977 FM 1713, Whitney, TX 76692</div>
+          <div class="loc-row"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7A2 2 0 0 1 22 16.9z"/></svg> <a href="tel:+18173005903">(817) 300-5903</a> &bull; ask for Shari</div>
+          <div class="loc-actions">
+            <a class="loc-call" href="tel:+18173005903">Call Whitney</a>
+            <a class="loc-dir" href="https://maps.google.com/?q=977+FM+1713+Whitney+TX+76692" target="_blank" rel="noopener">Get Directions</a>
+          </div>
+          <p class="loc-note">Massive in-store selection, demo stations to preview products, cold AC, great tunes, and bundles from $50 to $10,000.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- hours ribbon -->
+    <div class="hours-ribbon reveal d1">
+      <div class="hr-block">
+        <h4>Regular Hours</h4>
+        <p><b>10:00 AM &ndash; 9:00 PM</b> daily during season.<br>Open until <b>midnight</b> on July 3, July 4 &amp; December 31.</p>
+      </div>
+      <div class="hr-block">
+        <h4>2026 Season</h4>
+        <p>Memorial Day &bull; May 20&ndash;25<br>USA Independence &bull; June 24&ndash;July 4<br>New Year &bull; Dec 20&ndash;Jan 1</p>
+      </div>
+      <div class="hr-block">
+        <h4>Good To Know</h4>
+        <p>All major cards accepted. Must be 16+ to purchase. 100% guaranteed &ndash; all sales final.</p>
+      </div>
+    </div>
+
+    <p class="service-area reveal">Some of the most affordable fireworks in <b>Aurora &bull; Azle &bull; Boyd &bull; Briar &bull; Eagle Mountain &bull; Haslet &bull; Newark &bull; Pelican Bay &bull; Reno &bull; Rhome</b></p>
+  </div>
+</section>
+
+<!-- ============ FINALE CTA ============ -->
+<section class="finale">
+  <div class="fw2" id="fwfield2" aria-hidden="true"></div>
+  <div class="finale-inner">
+    <h2 class="display">No Stress.<br><span>All Boom.</span></h2>
+    <p>Tell us your budget and we&rsquo;ll build a show that lights up your whole street. Call the Azle stand and talk to a real Texan who actually shoots this stuff off out back.</p>
+    <a class="btn-call" href="tel:+18178850802">
+      <span class="cta-k">You&rsquo;ve Got A Friend In The Firework Business</span>
+      <span class="cta-n">(817) 885-0802</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="seal2">B</div>
+      <h4>Benny&rsquo;s Bad Azz Fireworks</h4>
+      <p>Family-owned Texas fireworks since 1999. Big booms, bright colors, and a whole lotta heart. Integrity, friendship, and the most bang for your buck.</p>
+      <p class="slogan">&ldquo;They&rsquo;re memories. They&rsquo;re family. They&rsquo;re Texas.&rdquo;</p>
+    </div>
+    <div>
+      <h5>Fireworks</h5>
+      <ul>
+        <li><a href="#products">200g &amp; 500g Cakes</a></li>
+        <li><a href="#products">Artillery &amp; Shells</a></li>
+        <li><a href="#products">Fountains</a></li>
+        <li><a href="#products">Family Packs</a></li>
+        <li><a href="#products">Custom Shows</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Visit &amp; Call</h5>
+      <ul>
+        <li><a href="tel:+18178850802">Azle &bull; (817) 885-0802</a></li>
+        <li><a href="tel:+18173005903">Whitney &bull; (817) 300-5903</a></li>
+        <li><a href="mailto:BadAzzFireworks@gmail.com">BadAzzFireworks@gmail.com</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>&copy; 1999&ndash;2026 Benny&rsquo;s Bad Azz Fireworks &bull; Azle &amp; Whitney, TX</span>
+    <span class="disclaimer"><b>Concept preview built by DNA Agency</b> &ndash; not affiliated with Benny&rsquo;s Bad Azz Fireworks. Product names, reviews and story shown are the business&rsquo;s own, used here to demonstrate a website concept.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- star field ---- */
+  var stars = document.getElementById('stars');
+  if(stars && !reduce){
+    var frag = document.createDocumentFragment();
+    for(var i=0;i<70;i++){
+      var s=document.createElement('i');
+      s.style.left=(Math.random()*100)+'%';
+      s.style.top=(Math.random()*72)+'%';
+      s.style.animationDelay=(Math.random()*4)+'s';
+      s.style.opacity=(0.3+Math.random()*0.6);
+      var sc=0.6+Math.random()*1.4;
+      s.style.width=(sc)+'px';s.style.height=(sc)+'px';
+      frag.appendChild(s);
+    }
+    stars.appendChild(frag);
+  } else if(stars){
+    /* static stars for reduced motion */
+    for(var j=0;j<40;j++){var st=document.createElement('i');st.style.left=(Math.random()*100)+'%';st.style.top=(Math.random()*72)+'%';st.style.animation='none';stars.appendChild(st);}
+  }
+
+  /* ---- firework bursts ---- */
+  var palette=['#ff2d4b','#ffd36b','#5b8bff','#ff6b8a','#8fe0b0','#fff2d6','#ff8a3d'];
+  function makeBurst(container, x, yTopPct, delay, particles, radius){
+    // launch trail
+    var trail=document.createElement('div');
+    trail.className='launch';
+    trail.style.left=x+'%';
+    trail.style.animationDelay=delay+'s';
+    container.appendChild(trail);
+
+    var fw=document.createElement('div');
+    fw.className='fw';
+    fw.style.left=x+'%';
+    fw.style.top=yTopPct+'%';
+    var color=palette[Math.floor(Math.random()*palette.length)];
+    var color2=palette[Math.floor(Math.random()*palette.length)];
+    for(var k=0;k<particles;k++){
+      var p=document.createElement('span');
+      var ang=(360/particles)*k;
+      p.style.setProperty('--a',ang+'deg');
+      p.style.setProperty('--d',radius+'px');
+      p.style.background=(k%2===0?color:color2);
+      p.style.boxShadow='0 0 6px '+(k%2===0?color:color2);
+      p.style.animationDelay=delay+'s';
+      fw.appendChild(p);
+    }
+    container.appendChild(fw);
+  }
+
+  function seedField(id, count){
+    var f=document.getElementById(id);
+    if(!f) return;
+    if(reduce){
+      // one static, gentle burst so it doesn't look empty
+      makeBurst(f, 50, 26, 0, 16, 60);
+      var only=f.querySelector('.fw');
+      if(only){[].forEach.call(only.children,function(c){c.style.animation='none';c.style.opacity='.55';c.style.transform='rotate('+c.style.getPropertyValue('--a')+') translateX('+c.style.getPropertyValue('--d')+')';});}
+      var tr=f.querySelector('.launch'); if(tr) tr.style.display='none';
+      return;
+    }
+    var positions=[[18,22],[38,14],[58,26],[78,18],[30,34],[68,36],[48,20],[86,30],[10,32]];
+    for(var i=0;i<count;i++){
+      var pos=positions[i%positions.length];
+      var x=pos[0]+(Math.random()*8-4);
+      var y=pos[1]+(Math.random()*8-4);
+      var delay=(Math.random()*2.6);
+      var parts=[16,18,20,24][Math.floor(Math.random()*4)];
+      var rad=48+Math.random()*40;
+      makeBurst(f,x,y,delay,parts,rad);
+    }
+  }
+  seedField('fwfield', 7);
+  seedField('fwfield2', 6);
+
+  /* ---- scroll reveal ---- */
+  var revs=[].slice.call(document.querySelectorAll('.reveal'));
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+      });
+    },{threshold:0.14,rootMargin:'0px 0px -8% 0px'});
+    revs.forEach(function(el){io.observe(el);});
+  } else {
+    revs.forEach(function(el){el.classList.add('in');});
+  }
+
+  /* ---- subtle hero parallax on the star field ---- */
+  if(!reduce){
+    var hero=document.querySelector('.hero');
+    window.addEventListener('scroll',function(){
+      var y=window.scrollY;
+      if(y<800 && stars){ stars.style.transform='translateY('+(y*0.18)+'px)'; }
+    },{passive:true});
+  }
+})();
+</script>
