@@ -3,7 +3,7 @@
   "templateVersion": "1.0.0",
   "business": {
     "name": "St. Joseph Tree Trimming LLC",
-    "tagline": "Quality work, fair prices, and a crew that shows up.",
+    "tagline": "Careful cuts, straight prices, and a yard left cleaner than we found it.",
     "category": "Tree Service",
     "phone": "(555) 555-5555",
     "email": "hello@st-joseph-tree-trimming-llc.com",
@@ -12,8 +12,8 @@
     "domain": "lithacker6458.github.io/demos/st-joseph-tree-trimming-llc-classic"
   },
   "brand": {
-    "primaryColor": "#1a5fb4",
-    "accentColor": "#e8590c",
+    "primaryColor": "#2f5d3a",
+    "accentColor": "#b45309",
     "displayFont": "Fraunces",
     "bodyFont": "Archivo"
   },

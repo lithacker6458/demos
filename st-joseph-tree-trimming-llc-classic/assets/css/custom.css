@@ -4,8 +4,8 @@
    ================================================================ */
 :root {
   /* client brand */
-  --brand:  #1a5fb4;
-  --accent: #e8590c;
+  --brand:  #2f5d3a;
+  --accent: #b45309;
 
   /* typefaces (loaded via Google Fonts <link> in each page head) */
   --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;

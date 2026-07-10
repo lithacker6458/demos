@@ -1,14 +1,22 @@
 /* ================================================================
    BRAND TOKENS — the ONLY place branding lives.
    Rebrand the entire site by editing the custom properties below.
+
+   Southern Home Remodeling and Handyman — design intent:
+   competitor (Georgia Remodel Kitchen & Bath) is a generic white
+   Wix template in default Wix blue. We go the opposite way:
+   warm craftsman "walnut & brass" — deep walnut brown (--brand)
+   + brass/gold CTA (--accent) on warm paper, per
+   reference/industries/home-services.md ("premium differentiator:
+   black-and-gold" adapted to this editorial template).
    ================================================================ */
 :root {
   /* client brand */
-  --brand:  #0E3A5D;
-  --accent: #E25A1B;
+  --brand:  #46331f;
+  --accent: #a4691f;
 
   /* typefaces (loaded via Google Fonts <link> in each page head) */
-  --font-display: 'Big Shoulders Display', 'Archivo', 'Helvetica Neue', sans-serif;
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
   --font-body: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
 
   /* fixed editorial palette — paper & ink, not client branding */
@@ -46,8 +54,8 @@ body::after {
 
 h1, h2, h3, .display {
   font-family: var(--font-display);
-  letter-spacing: 0.01em;
-  font-weight: 700;
+  font-variation-settings: 'SOFT' 40, 'WONK' 1;
+  letter-spacing: -0.015em;
 }
 
 ::selection { background: var(--accent); color: var(--white); }
@@ -533,60 +541,3 @@ details.faq .faq-body { padding: 0 1.25rem 1.1rem; color: var(--ink-soft); font-
   .stamp, .marquee-track, .map-pin, .reveal { animation: none !important; }
   html { scroll-behavior: auto; }
 }
-
-/* ================================================================
-   Absolute Comfort HVAC — demo-specific brand layer
-   Desert-dusk trust: deep canyon-night navy (--brand) + one hot
-   desert-heat terracotta CTA (--accent). Condensed trade display
-   type (Big Shoulders Display) per home-services design intent.
-   ================================================================ */
-
-/* condensed display type reads best a touch larger and tighter-leaded */
-.hero-display {
-  font-size: clamp(3rem, 7.5vw, 5.6rem);
-  line-height: 0.96;
-  font-weight: 800;
-  text-transform: none;
-}
-
-/* Big Shoulders has no italic — mark <em> with the heat accent instead */
-.hero-display em {
-  font-style: normal;
-  font-weight: 800;
-  color: var(--accent);
-}
-
-/* heat -> cool gradient on the hero panel: the HVAC story in one surface */
-.hero-panel {
-  background:
-    linear-gradient(155deg,
-      #E25A1B 0%,
-      #B84413 24%,
-      #5C3A33 46%,
-      #274A66 68%,
-      #0E3A5D 100%);
-}
-
-/* wordmark: condensed + tracked, like a truck-door decal */
-.wordmark {
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  font-size: 1.25rem;
-}
-
-/* section ghost numerals pick up a faint desert warmth */
-.section-num { -webkit-text-stroke: 1.5px #cbb89a; }
-
-/* marquee gets the heat treatment with condensed caps */
-.marquee-track {
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-weight: 700;
-}
-
-/* footer ghost wordmark in condensed caps */
-.footer-ghost { text-transform: uppercase; letter-spacing: 0.03em; }
-
-/* phone numbers align cleanly */
-.topbar, .hours-table td { font-variant-numeric: tabular-nums; }

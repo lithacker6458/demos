@@ -1,23 +1,26 @@
 /* ================================================================
    BRAND TOKENS — the ONLY place branding lives.
-   Rebrand the entire site by editing the custom properties below.
+   Chilson's Automotive · Lincoln, NE — "trust tier" auto repair:
+   deep navy authority + action-red CTAs + certified-green ticks,
+   condensed mechanical display type over a cool shop-white paper.
    ================================================================ */
 :root {
   /* client brand */
   --brand:  #12325C;
   --accent: #D62828;
+  --cert:   #1E7F4F;
 
   /* typefaces (loaded via Google Fonts <link> in each page head) */
-  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
-  --font-body: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-body: 'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
 
-  /* fixed editorial palette — paper & ink, not client branding */
-  --ink: #221d18;
-  --ink-soft: #5b544c;
-  --paper: #f7f1e6;
-  --paper-deep: #eee5d3;
-  --line: #d8cdba;
-  --white: #fffdf8;
+  /* fixed shop palette — cool steel & white, not client branding */
+  --ink: #16202e;
+  --ink-soft: #4a5568;
+  --paper: #f4f6f9;
+  --paper-deep: #e7ecf3;
+  --line: #c9d3df;
+  --white: #ffffff;
 }
 
 /* ================================================================
@@ -33,21 +36,20 @@ body {
   position: relative;
 }
 
-/* paper grain over everything, very subtle */
+/* faint shop-floor grain over everything, very subtle */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 60;
-  opacity: 0.05;
+  opacity: 0.04;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 h1, h2, h3, .display {
   font-family: var(--font-display);
-  font-variation-settings: 'SOFT' 40, 'WONK' 1;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.005em;
 }
 
 ::selection { background: var(--accent); color: var(--white); }
@@ -65,21 +67,22 @@ select:focus-visible, textarea:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--brand);
 }
 .eyebrow::before {
   content: "";
   width: 2.2rem;
-  height: 2px;
+  height: 3px;
   background: var(--accent);
 }
 
 .section-num {
   font-family: var(--font-display);
+  font-weight: 700;
   font-size: clamp(3.5rem, 8vw, 6rem);
   line-height: 1;
   color: transparent;
@@ -93,7 +96,7 @@ select:focus-visible, textarea:focus-visible {
 }
 
 /* ================================================================
-   Buttons — letterpress offset shadow
+   Buttons — pressed-steel offset shadow
    ================================================================ */
 .btn {
   display: inline-flex;
@@ -102,6 +105,7 @@ select:focus-visible, textarea:focus-visible {
   gap: 0.5rem;
   font-weight: 700;
   font-size: 0.95rem;
+  letter-spacing: 0.02em;
   padding: 0.85rem 1.6rem;
   border: 2px solid var(--ink);
   border-radius: 0.25rem;
@@ -119,9 +123,9 @@ select:focus-visible, textarea:focus-visible {
 .btn-ghost {
   background: transparent;
   color: var(--ink);
-  box-shadow: 4px 4px 0 rgba(34, 29, 24, 0.15);
+  box-shadow: 4px 4px 0 rgba(22, 32, 46, 0.15);
 }
-.btn-ghost:hover { background: var(--paper-deep); transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(34, 29, 24, 0.2); }
+.btn-ghost:hover { background: var(--paper-deep); transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(22, 32, 46, 0.2); }
 .btn-accent {
   background: var(--accent);
   color: var(--white);
@@ -152,17 +156,18 @@ select:focus-visible, textarea:focus-visible {
 
 .wordmark {
   font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.35rem;
+  font-weight: 700;
+  font-size: 1.5rem;
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
   text-decoration: none;
   color: var(--ink);
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
 }
-.wordmark .spark { color: var(--accent); font-size: 1.5rem; line-height: 0; }
+.wordmark .spark { color: var(--accent); font-size: 1.35rem; line-height: 0; }
 
 .navlink {
   position: relative;
@@ -211,15 +216,15 @@ select:focus-visible, textarea:focus-visible {
    Hero
    ================================================================ */
 .hero-display {
-  font-size: clamp(2.6rem, 6.5vw, 4.8rem);
-  line-height: 1.02;
+  font-size: clamp(3rem, 7.5vw, 5.6rem);
+  line-height: 0.98;
   font-weight: 700;
+  text-transform: uppercase;
 }
 .hero-display em {
   font-style: italic;
-  font-weight: 500;
-  color: var(--brand);
-  font-variation-settings: 'SOFT' 100, 'WONK' 1;
+  font-weight: 600;
+  color: var(--accent);
 }
 
 .hero-panel {
@@ -250,7 +255,7 @@ select:focus-visible, textarea:focus-visible {
   font-weight: 600;
   background: var(--white);
 }
-.chip .dot { width: 0.5rem; height: 0.5rem; border-radius: 999px; background: var(--accent); }
+.chip .dot { width: 0.5rem; height: 0.5rem; border-radius: 999px; background: var(--cert); }
 
 /* ================================================================
    Marquee strip
@@ -268,8 +273,10 @@ select:focus-visible, textarea:focus-visible {
   white-space: nowrap;
   padding: 0.7rem 0;
   font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   animation: marquee 26s linear infinite;
   width: max-content;
 }
@@ -285,7 +292,7 @@ select:focus-visible, textarea:focus-visible {
   border-radius: 0.5rem;
   padding: 1.75rem 1.5rem 1.5rem;
   transition: transform 140ms ease, box-shadow 140ms ease;
-  box-shadow: 3px 3px 0 rgba(34, 29, 24, 0.12);
+  box-shadow: 3px 3px 0 rgba(22, 32, 46, 0.12);
 }
 .card-service:hover {
   transform: translate(-3px, -3px);
@@ -296,7 +303,7 @@ select:focus-visible, textarea:focus-visible {
   top: 0.9rem;
   right: 1.1rem;
   font-family: var(--font-display);
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--accent);
 }
@@ -311,7 +318,7 @@ select:focus-visible, textarea:focus-visible {
   color: var(--brand);
   margin-bottom: 1rem;
 }
-.card-service h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.4rem; }
+.card-service h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.4rem; }
 .card-service p { color: var(--ink-soft); font-size: 0.92rem; line-height: 1.55; }
 .card-link {
   display: inline-block;
@@ -333,7 +340,7 @@ select:focus-visible, textarea:focus-visible {
   border: 2px solid var(--ink);
   border-radius: 0.5rem;
   padding: 2.4rem 1.6rem 1.5rem;
-  box-shadow: 5px 5px 0 rgba(34, 29, 24, 0.12);
+  box-shadow: 5px 5px 0 rgba(22, 32, 46, 0.12);
 }
 .quote-card::before {
   content: "\201C";
@@ -345,11 +352,11 @@ select:focus-visible, textarea:focus-visible {
   line-height: 1;
   color: var(--accent);
 }
-.quote-card blockquote { font-family: var(--font-display); font-size: 1.06rem; line-height: 1.5; font-style: italic; }
+.quote-card blockquote { font-family: var(--font-body); font-size: 1.02rem; line-height: 1.55; font-style: italic; }
 .quote-card figcaption { margin-top: 1rem; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
 .quote-card figcaption::before { content: "— "; color: var(--accent); }
 
-.stars { color: var(--accent); letter-spacing: 0.15em; font-size: 0.9rem; }
+.stars { color: #E8A13C; letter-spacing: 0.15em; font-size: 0.9rem; }
 
 /* ================================================================
    CTA band
@@ -368,7 +375,7 @@ select:focus-visible, textarea:focus-visible {
   inset: 0;
   background-image: repeating-linear-gradient(-45deg, rgba(255,255,255,0.06) 0 14px, transparent 14px 28px);
 }
-.cta-band .display { font-size: clamp(2rem, 5vw, 3.4rem); }
+.cta-band .display { font-size: clamp(2rem, 5vw, 3.4rem); text-transform: uppercase; }
 
 /* ================================================================
    Hours table & map placeholder
@@ -392,17 +399,17 @@ select:focus-visible, textarea:focus-visible {
   overflow: hidden;
   background-color: var(--paper-deep);
   background-image:
-    repeating-linear-gradient(0deg, rgba(34,29,24,0.09) 0 2px, transparent 2px 44px),
-    repeating-linear-gradient(90deg, rgba(34,29,24,0.09) 0 2px, transparent 2px 56px),
-    repeating-linear-gradient(45deg, rgba(34,29,24,0.05) 0 1px, transparent 1px 90px);
-  box-shadow: 5px 5px 0 rgba(34, 29, 24, 0.12);
+    repeating-linear-gradient(0deg, rgba(22,32,46,0.09) 0 2px, transparent 2px 44px),
+    repeating-linear-gradient(90deg, rgba(22,32,46,0.09) 0 2px, transparent 2px 56px),
+    repeating-linear-gradient(45deg, rgba(22,32,46,0.05) 0 1px, transparent 1px 90px);
+  box-shadow: 5px 5px 0 rgba(22, 32, 46, 0.12);
 }
 .map-pin {
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -90%);
   color: var(--accent);
-  filter: drop-shadow(2px 3px 0 rgba(34,29,24,0.35));
+  filter: drop-shadow(2px 3px 0 rgba(22,32,46,0.35));
   animation: bob 2.4s ease-in-out infinite;
 }
 @keyframes bob { 0%, 100% { transform: translate(-50%, -90%); } 50% { transform: translate(-50%, -110%); } }
@@ -415,7 +422,7 @@ select:focus-visible, textarea:focus-visible {
   padding: 0.45rem 0.8rem;
   font-size: 0.8rem;
   font-weight: 700;
-  box-shadow: 3px 3px 0 rgba(34,29,24,0.25);
+  box-shadow: 3px 3px 0 rgba(22,32,46,0.25);
 }
 
 /* ================================================================
@@ -464,7 +471,7 @@ select:focus-visible, textarea:focus-visible {
   color: var(--white);
   font-family: var(--font-display);
   font-weight: 700;
-  box-shadow: 3px 3px 0 rgba(34,29,24,0.25);
+  box-shadow: 3px 3px 0 rgba(22,32,46,0.25);
 }
 
 details.faq {
@@ -472,7 +479,7 @@ details.faq {
   border-radius: 0.4rem;
   background: var(--white);
   padding: 0;
-  box-shadow: 3px 3px 0 rgba(34,29,24,0.12);
+  box-shadow: 3px 3px 0 rgba(22,32,46,0.12);
 }
 details.faq summary {
   cursor: pointer;
@@ -505,11 +512,12 @@ details.faq .faq-body { padding: 0 1.25rem 1.1rem; color: var(--ink-soft); font-
 /* big ghost wordmark at the very bottom */
 .footer-ghost {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 700;
+  text-transform: uppercase;
   font-size: clamp(3rem, 11vw, 8rem);
   line-height: 0.9;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(247, 241, 230, 0.18);
+  -webkit-text-stroke: 1px rgba(244, 246, 249, 0.18);
   white-space: nowrap;
   user-select: none;
   pointer-events: none;
@@ -518,7 +526,7 @@ details.faq .faq-body { padding: 0 1.25rem 1.1rem; color: var(--ink-soft); font-
 /* ================================================================
    Misc
    ================================================================ */
-.tick { color: var(--brand); font-weight: 800; }
+.tick { color: var(--cert); font-weight: 800; }
 
 .reveal { animation: rise 640ms cubic-bezier(0.22, 1, 0.36, 1) both; }
 .reveal-1 { animation-delay: 80ms; }

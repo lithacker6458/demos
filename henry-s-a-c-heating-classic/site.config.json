@@ -3,7 +3,7 @@
   "templateVersion": "1.0.0",
   "business": {
     "name": "Henry's A/C & Heating",
-    "tagline": "Fair prices, excellent service — cooling Palestine since 2005.",
+    "tagline": "Quality work at competitive rates \u2014 cooling Palestine, TX since 2005.",
     "category": "HVAC",
     "phone": "903-391-2305",
     "email": "henryac.heating@gmail.com",
@@ -12,16 +12,20 @@
     "domain": "lithacker6458.github.io/demos/henry-s-a-c-heating-classic"
   },
   "brand": {
-    "primaryColor": "#0F2A4A",
+    "primaryColor": "#17548F",
     "accentColor": "#F59E0B",
-    "displayFont": "Fraunces",
-    "bodyFont": "Archivo"
+    "displayFont": "Barlow Condensed",
+    "bodyFont": "Barlow"
   },
   "payments": {
     "provider": "stripe-payment-links",
     "depositUrl": "#",
     "bookUrl": "#",
-    "buyUrls": ["#", "#", "#"],
+    "buyUrls": [
+      "#",
+      "#",
+      "#"
+    ],
     "notes": "Client-owned Stripe Payment Links ONLY (https://buy.stripe.com/...). Card data flows to Stripe, never to this site or the agency. Empty tokens are stripped in client builds and forced to '#' in demo builds. See docs/STRIPE_SETUP.md."
   },
   "meta": {

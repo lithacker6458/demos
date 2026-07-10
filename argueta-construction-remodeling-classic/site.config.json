@@ -3,17 +3,17 @@
   "templateVersion": "1.0.0",
   "business": {
     "name": "Argueta Construction & Remodeling",
-    "tagline": "Quality work, fair prices, and a crew that shows up.",
+    "tagline": "One crew, owner on the job, from demo day to final walkthrough.",
     "category": "remodel",
     "phone": "(555) 555-5555",
-    "email": "hello@argueta-construction-remodeling.com",
-    "address": "123 Main St",
-    "city": "Longview, TX",
-    "domain": "lithacker6458.github.io/demos/argueta-construction-remodeling"
+    "email": "arguetacostructionremodeling@gmail.com",
+    "address": "302 Rocket St",
+    "city": "Longview, TX 75603",
+    "domain": "lithacker6458.github.io/demos/argueta-construction-remodeling-classic"
   },
   "brand": {
-    "primaryColor": "#1a5fb4",
-    "accentColor": "#e8590c",
+    "primaryColor": "#33523e",
+    "accentColor": "#c2551f",
     "displayFont": "Fraunces",
     "bodyFont": "Archivo"
   },

@@ -1,21 +1,26 @@
 /* ================================================================
    BRAND TOKENS — the ONLY place branding lives.
-   Rebrand the entire site by editing the custom properties below.
+   Argueta Construction & Remodeling — East Texas craftsman:
+   Piney-Woods green (brand) + Longview red-clay (accent) on warm
+   plaster paper. Deliberately the OPPOSITE of the corporate-franchise
+   remodeler look: owner-led warmth, Fraunces craftsman serif, one
+   Free Estimate CTA. (reference/industries/construction-trades.md,
+   archetype B — regional contractor.)
    ================================================================ */
 :root {
   /* client brand */
-  --brand:  #1a5fb4;
-  --accent: #e8590c;
+  --brand:  #33523e;              /* piney-woods green — Longview sits in the Piney Woods */
+  --accent: #c2551f;              /* East Texas red clay — rules, marks, stat numbers */
 
   /* typefaces (loaded via Google Fonts <link> in each page head) */
   --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
   --font-body: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
 
-  /* fixed editorial palette — paper & ink, not client branding */
-  --ink: #221d18;
+  /* fixed editorial palette — warm plaster & umber ink */
+  --ink: #241f19;
   --ink-soft: #5b544c;
-  --paper: #f7f1e6;
-  --paper-deep: #eee5d3;
+  --paper: #f6f1e6;
+  --paper-deep: #ede4d2;
   --line: #d8cdba;
   --white: #fffdf8;
 }

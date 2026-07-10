@@ -1,4 +1,4 @@
-/* Cole Fence LLC — site JS.
+/* Southern Home Remodeling and Handyman — site JS.
    Scope: mobile nav toggle + smooth scroll for same-page anchors. Nothing else. */
 (function () {
   'use strict';
@@ -32,23 +32,3 @@
     }
   });
 })();
-
-  // Scroll reveal: adds .in to [data-reveal] elements as they enter the viewport.
-  (function () {
-    var els = document.querySelectorAll('[data-reveal]');
-    if (!els.length) return;
-    if (!('IntersectionObserver' in window)) {
-      els.forEach ? els.forEach(function (el) { el.classList.add('in'); })
-                  : Array.prototype.forEach.call(els, function (el) { el.classList.add('in'); });
-      return;
-    }
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-    Array.prototype.forEach.call(els, function (el) { io.observe(el); });
-  })();

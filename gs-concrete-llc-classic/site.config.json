@@ -3,25 +3,29 @@
   "templateVersion": "1.0.0",
   "business": {
     "name": "GS Concrete LLC",
-    "tagline": "Quality work, fair prices, and a crew that shows up.",
+    "tagline": "Build strong. Make it concrete.",
     "category": "Concrete contractor",
-    "phone": "(555) 555-5555",
-    "email": "hello@gs-concrete-llc-classic.com",
-    "address": "123 Main St",
-    "city": "Augusta, GA",
+    "phone": "(706) 251-2602",
+    "email": "Chavagonzalez75.sg@gmail.com",
+    "address": "1802 Karian Dr",
+    "city": "Augusta, GA 30906",
     "domain": "lithacker6458.github.io/demos/gs-concrete-llc-classic"
   },
   "brand": {
-    "primaryColor": "#1a5fb4",
-    "accentColor": "#e8590c",
-    "displayFont": "Fraunces",
+    "primaryColor": "#f1651f",
+    "accentColor": "#d9530f",
+    "displayFont": "Barlow Condensed",
     "bodyFont": "Archivo"
   },
   "payments": {
     "provider": "stripe-payment-links",
     "depositUrl": "#",
     "bookUrl": "#",
-    "buyUrls": ["#", "#", "#"],
+    "buyUrls": [
+      "#",
+      "#",
+      "#"
+    ],
     "notes": "Client-owned Stripe Payment Links ONLY (https://buy.stripe.com/...). Card data flows to Stripe, never to this site or the agency. Empty tokens are stripped in client builds and forced to '#' in demo builds. See docs/STRIPE_SETUP.md."
   },
   "meta": {

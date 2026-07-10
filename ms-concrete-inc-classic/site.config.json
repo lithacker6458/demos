@@ -14,8 +14,8 @@
   "brand": {
     "primaryColor": "#1A1D21",
     "accentColor": "#F26522",
-    "displayFont": "Fraunces",
-    "bodyFont": "Archivo"
+    "displayFont": "Barlow Condensed",
+    "bodyFont": "Barlow"
   },
   "payments": {
     "provider": "stripe-payment-links",

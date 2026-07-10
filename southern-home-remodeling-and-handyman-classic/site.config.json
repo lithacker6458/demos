@@ -2,30 +2,26 @@
   "template": "agency-local-business",
   "templateVersion": "1.0.0",
   "business": {
-    "name": "Cole Fence LLC",
-    "tagline": "Wood, vinyl, chain link, and farm fencing built to last in the Upstate.",
-    "category": "Fencing contractor",
-    "phone": "(864) 205-7246",
-    "email": "hello@cole-fence-llc-classic.com",
-    "address": "180 James Road",
-    "city": "Roebuck, SC",
-    "domain": "lithacker6458.github.io/demos/cole-fence-llc-classic"
+    "name": "Southern Home Remodeling and Handyman",
+    "tagline": "Remodels done right, repairs done fast — one crew for both.",
+    "category": "Remodeling / handyman contractor",
+    "phone": "(678) 876-0596",
+    "email": "southernhome1982@gmail.com",
+    "address": "Mobile crew — serving Fayette & Coweta counties",
+    "city": "Fayetteville, GA",
+    "domain": "lithacker6458.github.io/demos/southern-home-remodeling-and-handyman-classic"
   },
   "brand": {
-    "primaryColor": "#15181c",
-    "accentColor": "#f26522",
-    "displayFont": "Barlow Condensed",
-    "bodyFont": "Barlow"
+    "primaryColor": "#46331f",
+    "accentColor": "#a4691f",
+    "displayFont": "Fraunces",
+    "bodyFont": "Archivo"
   },
   "payments": {
     "provider": "stripe-payment-links",
     "depositUrl": "#",
     "bookUrl": "#",
-    "buyUrls": [
-      "#",
-      "#",
-      "#"
-    ],
+    "buyUrls": ["#", "#", "#"],
     "notes": "Client-owned Stripe Payment Links ONLY (https://buy.stripe.com/...). Card data flows to Stripe, never to this site or the agency. Empty tokens are stripped in client builds and forced to '#' in demo builds. See docs/STRIPE_SETUP.md."
   },
   "meta": {
