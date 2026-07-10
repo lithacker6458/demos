@@ -3,21 +3,21 @@
    Rebrand the entire site by editing the custom properties below.
    ================================================================ */
 :root {
-  /* client brand */
-  --brand:  #1a5fb4;
-  --accent: #e8590c;
+  /* client brand — deep Wyoming-sky navy + action red (garage-sign americana) */
+  --brand:  #12325c;
+  --accent: #d62828;
 
   /* typefaces (loaded via Google Fonts <link> in each page head) */
-  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
-  --font-body: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+  --font-body: 'Barlow', 'Helvetica Neue', Arial, sans-serif;
 
-  /* fixed editorial palette — paper & ink, not client branding */
-  --ink: #221d18;
-  --ink-soft: #5b544c;
-  --paper: #f7f1e6;
-  --paper-deep: #eee5d3;
-  --line: #d8cdba;
-  --white: #fffdf8;
+  /* shop-floor palette — cool concrete & steel, not cream */
+  --ink: #1a222e;
+  --ink-soft: #4a5568;
+  --paper: #f4f5f2;
+  --paper-deep: #e6e9e4;
+  --line: #c9d0ca;
+  --white: #ffffff;
 }
 
 /* ================================================================
@@ -46,8 +46,8 @@ body::after {
 
 h1, h2, h3, .display {
   font-family: var(--font-display);
-  font-variation-settings: 'SOFT' 40, 'WONK' 1;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.005em;
+  font-weight: 700;
 }
 
 ::selection { background: var(--accent); color: var(--white); }
@@ -153,9 +153,10 @@ select:focus-visible, textarea:focus-visible {
 .wordmark {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   line-height: 1;
-  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
   text-decoration: none;
   color: var(--ink);
   display: inline-flex;
@@ -211,16 +212,18 @@ select:focus-visible, textarea:focus-visible {
    Hero
    ================================================================ */
 .hero-display {
-  font-size: clamp(2.6rem, 6.5vw, 4.8rem);
-  line-height: 1.02;
-  font-weight: 700;
+  font-size: clamp(2.9rem, 7vw, 5.4rem);
+  line-height: 0.96;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
 }
 .hero-display em {
   font-style: italic;
-  font-weight: 500;
+  font-weight: 700;
   color: var(--brand);
-  font-variation-settings: 'SOFT' 100, 'WONK' 1;
 }
+.cta-band .display { text-transform: uppercase; letter-spacing: 0.015em; }
 
 .hero-panel {
   position: relative;

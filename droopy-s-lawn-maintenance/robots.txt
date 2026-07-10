@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://lithacker6458.github.io/demos/droopy-s-lawn-maintenance/sitemap.xml

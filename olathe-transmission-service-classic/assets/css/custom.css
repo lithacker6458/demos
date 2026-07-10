@@ -3,21 +3,21 @@
    Rebrand the entire site by editing the custom properties below.
    ================================================================ */
 :root {
-  /* client brand */
-  --brand:  #1a5fb4;
-  --accent: #e8590c;
+  /* client brand — deep workshop navy + safety orange (trust/repair tier) */
+  --brand:  #12325c;
+  --accent: #f26522;
 
   /* typefaces (loaded via Google Fonts <link> in each page head) */
-  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
   --font-body: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
 
-  /* fixed editorial palette — paper & ink, not client branding */
-  --ink: #221d18;
-  --ink-soft: #5b544c;
-  --paper: #f7f1e6;
-  --paper-deep: #eee5d3;
-  --line: #d8cdba;
-  --white: #fffdf8;
+  /* fixed industrial palette — cool steel & near-black, garage-sign energy */
+  --ink: #151a22;
+  --ink-soft: #4a5568;
+  --paper: #f2f4f8;
+  --paper-deep: #e3e8ef;
+  --line: #c4ccd8;
+  --white: #fcfdfe;
 }
 
 /* ================================================================
@@ -46,8 +46,9 @@ body::after {
 
 h1, h2, h3, .display {
   font-family: var(--font-display);
-  font-variation-settings: 'SOFT' 40, 'WONK' 1;
-  letter-spacing: -0.015em;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
 }
 
 ::selection { background: var(--accent); color: var(--white); }
@@ -152,8 +153,9 @@ select:focus-visible, textarea:focus-visible {
 
 .wordmark {
   font-family: var(--font-display);
+  text-transform: uppercase;
   font-weight: 800;
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   line-height: 1;
   letter-spacing: -0.02em;
   text-decoration: none;
@@ -211,15 +213,14 @@ select:focus-visible, textarea:focus-visible {
    Hero
    ================================================================ */
 .hero-display {
-  font-size: clamp(2.6rem, 6.5vw, 4.8rem);
-  line-height: 1.02;
-  font-weight: 700;
+  font-size: clamp(3.1rem, 8vw, 6rem);
+  line-height: 0.94;
+  font-weight: 800;
 }
 .hero-display em {
-  font-style: italic;
+  font-style: normal;
   font-weight: 500;
-  color: var(--brand);
-  font-variation-settings: 'SOFT' 100, 'WONK' 1;
+  color: var(--accent);
 }
 
 .hero-panel {
@@ -268,8 +269,10 @@ select:focus-visible, textarea:focus-visible {
   white-space: nowrap;
   padding: 0.7rem 0;
   font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   animation: marquee 26s linear infinite;
   width: max-content;
 }
@@ -345,7 +348,7 @@ select:focus-visible, textarea:focus-visible {
   line-height: 1;
   color: var(--accent);
 }
-.quote-card blockquote { font-family: var(--font-display); font-size: 1.06rem; line-height: 1.5; font-style: italic; }
+.quote-card blockquote { font-family: var(--font-body); font-size: 1rem; line-height: 1.55; font-style: italic; }
 .quote-card figcaption { margin-top: 1rem; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
 .quote-card figcaption::before { content: "— "; color: var(--accent); }
 

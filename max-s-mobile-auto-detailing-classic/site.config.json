@@ -1,0 +1,32 @@
+{
+  "template": "agency-local-business",
+  "templateVersion": "1.0.0",
+  "business": {
+    "name": "Max's Mobile Auto Detailing",
+    "tagline": "Quality work, fair prices, and a crew that shows up.",
+    "category": "auto detailing",
+    "phone": "(555) 555-5555",
+    "email": "hello@max-s-mobile-auto-detailing.com",
+    "address": "123 Main St",
+    "city": "Colorado Springs, CO",
+    "domain": "lithacker6458.github.io/demos/max-s-mobile-auto-detailing-classic"
+  },
+  "brand": {
+    "primaryColor": "#1a5fb4",
+    "accentColor": "#e8590c",
+    "displayFont": "Fraunces",
+    "bodyFont": "Archivo"
+  },
+  "payments": {
+    "provider": "stripe-payment-links",
+    "depositUrl": "#",
+    "bookUrl": "#",
+    "buyUrls": ["#", "#", "#"],
+    "notes": "Client-owned Stripe Payment Links ONLY (https://buy.stripe.com/...). Card data flows to Stripe, never to this site or the agency. Empty tokens are stripped in client builds and forced to '#' in demo builds. See docs/STRIPE_SETUP.md."
+  },
+  "meta": {
+    "generatedYear": "2026",
+    "brandingSource": "assets/css/custom.css",
+    "notes": "All branding (colors, fonts) lives in assets/css/custom.css as CSS custom properties."
+  }
+}

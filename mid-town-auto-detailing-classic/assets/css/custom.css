@@ -1,23 +1,27 @@
 /* ================================================================
    BRAND TOKENS — the ONLY place branding lives.
-   Rebrand the entire site by editing the custom properties below.
+   Mid-Town Auto Detailing — "midnight showroom" theme:
+   near-black canvas, charcoal cards, chalk ink, ONE gold accent.
+   (Premium-detail palette per reference/industries/auto-repair-detail.md;
+   deliberately more transparent-feeling than the quote-only ceramic
+   shops nearby.)
    ================================================================ */
 :root {
   /* client brand */
-  --brand:  #1a5fb4;
-  --accent: #e8590c;
+  --brand:  #D9A62E;   /* showroom gold */
+  --accent: #E7BB45;   /* polished gold highlight */
 
   /* typefaces (loaded via Google Fonts <link> in each page head) */
-  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
   --font-body: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
 
-  /* fixed editorial palette — paper & ink, not client branding */
-  --ink: #221d18;
-  --ink-soft: #5b544c;
-  --paper: #f7f1e6;
-  --paper-deep: #eee5d3;
-  --line: #d8cdba;
-  --white: #fffdf8;
+  /* fixed dark-garage palette — canvas & chalk, not client branding */
+  --ink: #EDE6D4;        /* chalk — text + hairline borders */
+  --ink-soft: #A9A290;   /* muted chalk */
+  --paper: #101114;      /* near-black canvas */
+  --paper-deep: #17181D; /* charcoal band */
+  --line: #34363E;       /* subtle rules */
+  --white: #1B1D22;      /* card surface (kept as --white so structure is untouched) */
 }
 
 /* ================================================================
@@ -33,24 +37,24 @@ body {
   position: relative;
 }
 
-/* paper grain over everything, very subtle */
+/* fine garage-floor grain over everything, very subtle */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 60;
-  opacity: 0.05;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' fill='%23ffffff'/%3E%3C/svg%3E");
 }
 
 h1, h2, h3, .display {
   font-family: var(--font-display);
-  font-variation-settings: 'SOFT' 40, 'WONK' 1;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.01em;
 }
+h1, h2 { text-transform: uppercase; }
 
-::selection { background: var(--accent); color: var(--white); }
+::selection { background: var(--accent); color: #101114; }
 
 a:focus-visible, button:focus-visible, input:focus-visible,
 select:focus-visible, textarea:focus-visible {
@@ -67,7 +71,7 @@ select:focus-visible, textarea:focus-visible {
   gap: 0.6rem;
   font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--brand);
 }
@@ -93,7 +97,7 @@ select:focus-visible, textarea:focus-visible {
 }
 
 /* ================================================================
-   Buttons — letterpress offset shadow
+   Buttons — letterpress offset shadow (gold on black)
    ================================================================ */
 .btn {
   display: inline-flex;
@@ -111,40 +115,41 @@ select:focus-visible, textarea:focus-visible {
 }
 .btn-brand {
   background: var(--brand);
-  color: var(--white);
-  box-shadow: 4px 4px 0 var(--ink);
+  color: #14120a;
+  box-shadow: 4px 4px 0 rgba(237, 230, 212, 0.28);
 }
-.btn-brand:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); }
-.btn-brand:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+.btn-brand:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(237, 230, 212, 0.4); }
+.btn-brand:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 rgba(237, 230, 212, 0.28); }
 .btn-ghost {
   background: transparent;
   color: var(--ink);
-  box-shadow: 4px 4px 0 rgba(34, 29, 24, 0.15);
+  box-shadow: 4px 4px 0 rgba(237, 230, 212, 0.12);
 }
-.btn-ghost:hover { background: var(--paper-deep); transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(34, 29, 24, 0.2); }
+.btn-ghost:hover { background: var(--paper-deep); transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(237, 230, 212, 0.18); }
 .btn-accent {
   background: var(--accent);
-  color: var(--white);
-  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.35);
+  color: #14120a;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.55);
 }
-.btn-accent:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.35); }
+.btn-accent:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.55); }
 .btn-sm { padding: 0.6rem 1.15rem; font-size: 0.85rem; }
 
 /* ================================================================
    Header / nav
    ================================================================ */
 .topbar {
-  background: var(--ink);
-  color: var(--paper);
+  background: #0a0b0d;
+  color: var(--ink-soft);
   font-size: 0.75rem;
   letter-spacing: 0.08em;
+  border-bottom: 1px solid var(--line);
 }
-.topbar a { color: var(--paper); text-decoration: underline; text-underline-offset: 3px; }
-.topbar a:hover { color: var(--white); }
+.topbar a { color: var(--brand); text-decoration: underline; text-underline-offset: 3px; }
+.topbar a:hover { color: var(--accent); }
 
 .site-header {
-  background: var(--paper);
-  border-bottom: 2px solid var(--ink);
+  background: rgba(16, 17, 20, 0.96);
+  border-bottom: 2px solid var(--brand);
   position: sticky;
   top: 0;
   z-index: 50;
@@ -152,17 +157,18 @@ select:focus-visible, textarea:focus-visible {
 
 .wordmark {
   font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.35rem;
+  font-weight: 700;
+  font-size: 1.45rem;
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   text-decoration: none;
   color: var(--ink);
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
 }
-.wordmark .spark { color: var(--accent); font-size: 1.5rem; line-height: 0; }
+.wordmark .spark { color: var(--brand); font-size: 1.5rem; line-height: 0; }
 
 .navlink {
   position: relative;
@@ -188,7 +194,7 @@ select:focus-visible, textarea:focus-visible {
 /* mobile panel */
 .nav-panel {
   display: none;
-  border-top: 2px solid var(--ink);
+  border-top: 2px solid var(--brand);
   background: var(--paper);
 }
 .nav-panel.open { display: block; }
@@ -198,40 +204,41 @@ select:focus-visible, textarea:focus-visible {
   font-family: var(--font-display);
   font-size: 1.3rem;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
   color: var(--ink);
   text-decoration: none;
   border-bottom: 1px solid var(--line);
 }
 .nav-panel a:hover { background: var(--paper-deep); }
 
-.hamburger { border: 2px solid var(--ink); border-radius: 0.25rem; padding: 0.45rem 0.6rem; background: transparent; }
+.hamburger { border: 2px solid var(--ink); border-radius: 0.25rem; padding: 0.45rem 0.6rem; background: transparent; color: var(--ink); }
 .hamburger:hover { background: var(--paper-deep); }
 
 /* ================================================================
    Hero
    ================================================================ */
 .hero-display {
-  font-size: clamp(2.6rem, 6.5vw, 4.8rem);
-  line-height: 1.02;
+  font-size: clamp(2.9rem, 7vw, 5.4rem);
+  line-height: 0.98;
   font-weight: 700;
 }
 .hero-display em {
   font-style: italic;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--brand);
-  font-variation-settings: 'SOFT' 100, 'WONK' 1;
 }
 
 .hero-panel {
   position: relative;
-  border: 2px solid var(--ink);
+  border: 2px solid var(--brand);
   border-radius: 0.5rem;
   background:
-    linear-gradient(160deg, color-mix(in srgb, var(--brand) 88%, black) 0%, var(--brand) 55%, color-mix(in srgb, var(--brand) 70%, white) 100%);
-  box-shadow: 8px 8px 0 var(--ink);
+    linear-gradient(160deg, color-mix(in srgb, var(--brand) 70%, black) 0%, color-mix(in srgb, var(--brand) 88%, black) 55%, var(--brand) 100%);
+  box-shadow: 8px 8px 0 rgba(217, 166, 46, 0.22);
   overflow: hidden;
 }
-.hero-panel .rays { position: absolute; inset: 0; opacity: 0.25; }
+.hero-panel .rays { position: absolute; inset: 0; opacity: 0.22; }
 
 .stamp {
   animation: spin 22s linear infinite;
@@ -243,7 +250,7 @@ select:focus-visible, textarea:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  border: 1.5px solid var(--ink);
+  border: 1.5px solid var(--line);
   border-radius: 999px;
   padding: 0.3rem 0.8rem;
   font-size: 0.78rem;
@@ -253,14 +260,14 @@ select:focus-visible, textarea:focus-visible {
 .chip .dot { width: 0.5rem; height: 0.5rem; border-radius: 999px; background: var(--accent); }
 
 /* ================================================================
-   Marquee strip
+   Marquee strip — gold garage-sign band
    ================================================================ */
 .marquee {
   overflow: hidden;
-  border-top: 2px solid var(--ink);
-  border-bottom: 2px solid var(--ink);
-  background: var(--accent);
-  color: var(--white);
+  border-top: 2px solid var(--brand);
+  border-bottom: 2px solid var(--brand);
+  background: var(--brand);
+  color: #14120a;
 }
 .marquee-track {
   display: flex;
@@ -268,8 +275,10 @@ select:focus-visible, textarea:focus-visible {
   white-space: nowrap;
   padding: 0.7rem 0;
   font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   animation: marquee 26s linear infinite;
   width: max-content;
 }
@@ -281,22 +290,23 @@ select:focus-visible, textarea:focus-visible {
 .card-service {
   position: relative;
   background: var(--white);
-  border: 2px solid var(--ink);
+  border: 1.5px solid var(--line);
   border-radius: 0.5rem;
   padding: 1.75rem 1.5rem 1.5rem;
-  transition: transform 140ms ease, box-shadow 140ms ease;
-  box-shadow: 3px 3px 0 rgba(34, 29, 24, 0.12);
+  transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.45);
 }
 .card-service:hover {
   transform: translate(-3px, -3px);
-  box-shadow: 7px 7px 0 var(--ink);
+  border-color: var(--brand);
+  box-shadow: 7px 7px 0 rgba(217, 166, 46, 0.35);
 }
 .card-service .num {
   position: absolute;
   top: 0.9rem;
   right: 1.1rem;
   font-family: var(--font-display);
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--accent);
 }
@@ -305,13 +315,13 @@ select:focus-visible, textarea:focus-visible {
   height: 2.75rem;
   display: grid;
   place-items: center;
-  border: 2px solid var(--ink);
+  border: 2px solid var(--brand);
   border-radius: 0.4rem;
   background: var(--paper);
   color: var(--brand);
   margin-bottom: 1rem;
 }
-.card-service h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.4rem; }
+.card-service h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.4rem; letter-spacing: 0.02em; }
 .card-service p { color: var(--ink-soft); font-size: 0.92rem; line-height: 1.55; }
 .card-link {
   display: inline-block;
@@ -330,10 +340,10 @@ select:focus-visible, textarea:focus-visible {
 .quote-card {
   position: relative;
   background: var(--white);
-  border: 2px solid var(--ink);
+  border: 1.5px solid var(--line);
   border-radius: 0.5rem;
   padding: 2.4rem 1.6rem 1.5rem;
-  box-shadow: 5px 5px 0 rgba(34, 29, 24, 0.12);
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.45);
 }
 .quote-card::before {
   content: "\201C";
@@ -345,20 +355,20 @@ select:focus-visible, textarea:focus-visible {
   line-height: 1;
   color: var(--accent);
 }
-.quote-card blockquote { font-family: var(--font-display); font-size: 1.06rem; line-height: 1.5; font-style: italic; }
+.quote-card blockquote { font-family: var(--font-display); font-size: 1.2rem; line-height: 1.4; font-style: italic; }
 .quote-card figcaption { margin-top: 1rem; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
 .quote-card figcaption::before { content: "— "; color: var(--accent); }
 
 .stars { color: var(--accent); letter-spacing: 0.15em; font-size: 0.9rem; }
 
 /* ================================================================
-   CTA band
+   CTA band — gold plate
    ================================================================ */
 .cta-band {
-  background: var(--brand);
-  color: var(--white);
-  border-top: 2px solid var(--ink);
-  border-bottom: 2px solid var(--ink);
+  background: linear-gradient(120deg, color-mix(in srgb, var(--brand) 82%, black), var(--brand));
+  color: #14120a;
+  border-top: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
   position: relative;
   overflow: hidden;
 }
@@ -366,9 +376,11 @@ select:focus-visible, textarea:focus-visible {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: repeating-linear-gradient(-45deg, rgba(255,255,255,0.06) 0 14px, transparent 14px 28px);
+  background-image: repeating-linear-gradient(-45deg, rgba(0,0,0,0.06) 0 14px, transparent 14px 28px);
 }
 .cta-band .display { font-size: clamp(2rem, 5vw, 3.4rem); }
+.cta-band .btn-accent { background: #14120a; color: var(--accent); border-color: #14120a; box-shadow: 4px 4px 0 rgba(0,0,0,0.3); }
+.cta-band .btn-accent:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(0,0,0,0.35); }
 
 /* ================================================================
    Hours table & map placeholder
@@ -386,23 +398,23 @@ select:focus-visible, textarea:focus-visible {
 
 .map-ph {
   position: relative;
-  border: 2px solid var(--ink);
+  border: 1.5px solid var(--line);
   border-radius: 0.5rem;
   min-height: 260px;
   overflow: hidden;
   background-color: var(--paper-deep);
   background-image:
-    repeating-linear-gradient(0deg, rgba(34,29,24,0.09) 0 2px, transparent 2px 44px),
-    repeating-linear-gradient(90deg, rgba(34,29,24,0.09) 0 2px, transparent 2px 56px),
-    repeating-linear-gradient(45deg, rgba(34,29,24,0.05) 0 1px, transparent 1px 90px);
-  box-shadow: 5px 5px 0 rgba(34, 29, 24, 0.12);
+    repeating-linear-gradient(0deg, rgba(237,230,212,0.07) 0 2px, transparent 2px 44px),
+    repeating-linear-gradient(90deg, rgba(237,230,212,0.07) 0 2px, transparent 2px 56px),
+    repeating-linear-gradient(45deg, rgba(237,230,212,0.04) 0 1px, transparent 1px 90px);
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.45);
 }
 .map-pin {
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -90%);
   color: var(--accent);
-  filter: drop-shadow(2px 3px 0 rgba(34,29,24,0.35));
+  filter: drop-shadow(2px 3px 0 rgba(0,0,0,0.5));
   animation: bob 2.4s ease-in-out infinite;
 }
 @keyframes bob { 0%, 100% { transform: translate(-50%, -90%); } 50% { transform: translate(-50%, -110%); } }
@@ -410,12 +422,12 @@ select:focus-visible, textarea:focus-visible {
   position: absolute;
   left: 0.9rem; bottom: 0.9rem;
   background: var(--white);
-  border: 2px solid var(--ink);
+  border: 1.5px solid var(--brand);
   border-radius: 0.3rem;
   padding: 0.45rem 0.8rem;
   font-size: 0.8rem;
   font-weight: 700;
-  box-shadow: 3px 3px 0 rgba(34,29,24,0.25);
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.5);
 }
 
 /* ================================================================
@@ -431,17 +443,19 @@ select:focus-visible, textarea:focus-visible {
 }
 .field input, .field select, .field textarea {
   width: 100%;
-  background: var(--white);
-  border: 2px solid var(--ink);
+  background: var(--paper);
+  border: 1.5px solid var(--line);
   border-radius: 0.3rem;
   padding: 0.75rem 0.9rem;
   font-size: 0.95rem;
   font-family: var(--font-body);
   color: var(--ink);
-  transition: box-shadow 120ms ease;
+  transition: box-shadow 120ms ease, border-color 120ms ease;
 }
+.field input::placeholder, .field textarea::placeholder { color: rgba(169, 162, 144, 0.55); }
 .field input:focus, .field select:focus, .field textarea:focus {
-  box-shadow: 3px 3px 0 var(--accent);
+  border-color: var(--brand);
+  box-shadow: 3px 3px 0 rgba(217, 166, 46, 0.35);
 }
 
 /* ================================================================
@@ -460,19 +474,19 @@ select:focus-visible, textarea:focus-visible {
   place-items: center;
   border: 2px solid var(--ink);
   border-radius: 999px;
-  background: var(--accent);
-  color: var(--white);
+  background: var(--brand);
+  color: #14120a;
   font-family: var(--font-display);
   font-weight: 700;
-  box-shadow: 3px 3px 0 rgba(34,29,24,0.25);
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.45);
 }
 
 details.faq {
-  border: 2px solid var(--ink);
+  border: 1.5px solid var(--line);
   border-radius: 0.4rem;
   background: var(--white);
   padding: 0;
-  box-shadow: 3px 3px 0 rgba(34,29,24,0.12);
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.45);
 }
 details.faq summary {
   cursor: pointer;
@@ -492,24 +506,25 @@ details.faq .faq-body { padding: 0 1.25rem 1.1rem; color: var(--ink-soft); font-
    Footer
    ================================================================ */
 .site-footer {
-  background: var(--ink);
-  color: var(--paper);
-  border-top: 2px solid var(--accent);
+  background: #0a0b0d;
+  color: var(--ink);
+  border-top: 2px solid var(--brand);
 }
-.site-footer .wordmark { color: var(--paper); }
-.site-footer a { color: var(--paper); text-decoration: none; }
-.site-footer a:hover { color: var(--white); text-decoration: underline; text-underline-offset: 3px; }
+.site-footer .wordmark { color: var(--ink); }
+.site-footer a { color: var(--ink); text-decoration: none; }
+.site-footer a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 .footer-links a { display: block; padding: 0.2rem 0; font-size: 0.92rem; opacity: 0.85; }
 .footer-fine { font-size: 0.78rem; opacity: 0.6; }
 
 /* big ghost wordmark at the very bottom */
 .footer-ghost {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 700;
+  text-transform: uppercase;
   font-size: clamp(3rem, 11vw, 8rem);
   line-height: 0.9;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(247, 241, 230, 0.18);
+  -webkit-text-stroke: 1px rgba(217, 166, 46, 0.22);
   white-space: nowrap;
   user-select: none;
   pointer-events: none;

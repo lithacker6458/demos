@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lithacker6458.github.io/demos/mid-town-auto-detailing/sitemap.xml
+Sitemap: https://lithacker6458.github.io/demos/mid-town-auto-detailing-classic/sitemap.xml
