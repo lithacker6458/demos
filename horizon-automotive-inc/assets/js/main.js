@@ -1,4 +1,4 @@
-/* Mid-Town Auto Detailing — site JS.
+/* Horizon Automotive, Inc. — site JS.
    Scope: mobile nav toggle + smooth scroll for same-page anchors. Nothing else. */
 (function () {
   'use strict';

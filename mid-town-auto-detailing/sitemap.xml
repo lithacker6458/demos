@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://{{DOMAIN}}/</loc>
+    <loc>https://lithacker6458.github.io/demos/mid-town-auto-detailing/</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://{{DOMAIN}}/services.html</loc>
+    <loc>https://lithacker6458.github.io/demos/mid-town-auto-detailing/services.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://{{DOMAIN}}/about.html</loc>
+    <loc>https://lithacker6458.github.io/demos/mid-town-auto-detailing/about.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://{{DOMAIN}}/contact.html</loc>
+    <loc>https://lithacker6458.github.io/demos/mid-town-auto-detailing/contact.html</loc>
     <priority>0.9</priority>
   </url>
 </urlset>

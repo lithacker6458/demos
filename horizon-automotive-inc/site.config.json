@@ -2,14 +2,14 @@
   "template": "agency-local-business",
   "templateVersion": "1.0.0",
   "business": {
-    "name": "Mid-Town Auto Detailing",
+    "name": "Horizon Automotive, Inc.",
     "tagline": "Quality work, fair prices, and a crew that shows up.",
-    "category": "auto detailing",
+    "category": "auto repair",
     "phone": "(555) 555-5555",
-    "email": "hello@mid-town-auto-detailing.com",
+    "email": "hello@horizon-automotive-inc.com",
     "address": "123 Main St",
-    "city": "Killeen, TX",
-    "domain": "lithacker6458.github.io/demos/mid-town-auto-detailing"
+    "city": "Casper, WY",
+    "domain": "lithacker6458.github.io/demos/horizon-automotive-inc"
   },
   "brand": {
     "primaryColor": "#1a5fb4",
