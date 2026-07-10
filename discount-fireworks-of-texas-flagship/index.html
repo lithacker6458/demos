@@ -1,0 +1,1206 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Discount Fireworks of Texas | DFW's Low Price Leader | Burleson, TX</title>
+<meta name="description" content="Family-owned fireworks stands in Burleson, TX. DFW's Low Price Leader. Prices include tax, no gimmicks, every product tested with a money-back guarantee. Two stands at 13045 Rendon Rd.">
+
+<style>
+  /* ============================================================
+     Discount Fireworks of Texas, flagship concept
+     Festive bold Americana. Midnight sky, powder-keg red,
+     rocket-glare gold. Everything CSS/SVG drawn.
+     ============================================================ */
+
+  :root{
+    --navy-900:#0a0e2a;
+    --navy-800:#0f1533;
+    --navy-700:#161d47;
+    --navy-600:#1e2757;
+    --ink:#070a1e;
+    --red:#e01b2e;
+    --red-deep:#b3111f;
+    --blue:#2e6cf6;
+    --blue-bright:#4d8bff;
+    --gold-1:#ffd447;
+    --gold-2:#ffb020;
+    --paper:#fdf8ef;
+    --paper-2:#f6edda;
+    --white:#ffffff;
+    --smoke:#c9cfe6;
+    --smoke-dim:#8f97bd;
+    --line:rgba(255,255,255,.12);
+    --line-dark:rgba(10,14,42,.12);
+
+    --font-display:"Archivo Black","Arial Black",system-ui,sans-serif;
+    --font-serif:"Playfair Display",Georgia,"Times New Roman",serif;
+    --font-body:"Trebuchet MS","Segoe UI",Helvetica,Arial,sans-serif;
+
+    --shadow-lift:0 22px 60px -24px rgba(0,0,0,.65);
+    --maxw:1180px;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--paper);
+    background:var(--navy-900);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{margin:0;line-height:1.02;letter-spacing:-.01em}
+  p{margin:0}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+  ::selection{background:var(--gold-1);color:var(--ink)}
+
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 22px}
+
+  /* ---------- header ---------- */
+  header.site{
+    position:sticky;top:0;z-index:60;
+    background:rgba(8,10,30,.82);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .bar{display:flex;align-items:center;gap:14px;height:66px}
+  .brand{display:flex;align-items:center;gap:11px;min-width:0}
+  .brand .mark{width:38px;height:38px;flex:0 0 auto}
+  .brand .name{display:flex;flex-direction:column;line-height:1;min-width:0}
+  .brand .name b{
+    font-family:var(--font-display);
+    font-size:.94rem;letter-spacing:.02em;color:var(--white);
+    text-transform:uppercase;white-space:nowrap;
+  }
+  .brand .name span{
+    font-size:.62rem;letter-spacing:.28em;color:var(--gold-1);
+    text-transform:uppercase;margin-top:3px;font-weight:700;
+  }
+  .nav-links{display:none;gap:26px;margin-left:auto;align-items:center}
+  .nav-links a{
+    font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--smoke);font-weight:700;transition:color .2s;
+  }
+  .nav-links a:hover{color:var(--gold-1)}
+  .call-top{
+    margin-left:auto;display:inline-flex;align-items:center;gap:8px;
+    background:var(--red);color:#fff;font-family:var(--font-display);
+    font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    padding:10px 15px;border-radius:100px;
+    box-shadow:0 8px 22px -8px rgba(224,27,46,.8);
+    transition:transform .15s,box-shadow .2s;white-space:nowrap;
+  }
+  .call-top:hover{transform:translateY(-1px);box-shadow:0 12px 26px -8px rgba(224,27,46,.9)}
+  @media(min-width:900px){
+    .nav-links{display:flex}
+    .call-top{margin-left:0}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;overflow:hidden;
+    background:
+      radial-gradient(1200px 700px at 78% -10%, rgba(46,108,246,.30), transparent 60%),
+      radial-gradient(900px 620px at 8% 12%, rgba(224,27,46,.24), transparent 62%),
+      linear-gradient(180deg,#0a0e2a 0%, #0c1130 46%, #0a0e28 100%);
+    padding:52px 0 66px;
+    isolation:isolate;
+  }
+  .sky-stars{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.9}
+  .hero-grid{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.5}
+
+  /* firework bursts */
+  .fx{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+  .burst{
+    position:absolute;width:6px;height:6px;border-radius:50%;
+    opacity:0;
+    animation:launchBurst var(--dur,4.2s) ease-out infinite;
+    animation-delay:var(--delay,0s);
+  }
+  .burst::before,.burst::after{
+    content:"";position:absolute;left:50%;top:50%;width:2px;height:2px;border-radius:50%;
+    box-shadow:
+      0 -46px 0 var(--c),0 46px 0 var(--c),46px 0 0 var(--c),-46px 0 0 var(--c),
+      33px -33px 0 var(--c),-33px 33px 0 var(--c),33px 33px 0 var(--c),-33px -33px 0 var(--c),
+      0 -30px 0 var(--c2),0 30px 0 var(--c2),30px 0 0 var(--c2),-30px 0 0 var(--c2),
+      21px -21px 0 var(--c2),-21px 21px 0 var(--c2),21px 21px 0 var(--c2),-21px -21px 0 var(--c2);
+    transform:translate(-50%,-50%) scale(.1);
+    opacity:0;
+    animation:sparkle var(--dur,4.2s) ease-out infinite;
+    animation-delay:var(--delay,0s);
+  }
+  .burst::after{
+    transform:translate(-50%,-50%) scale(.1) rotate(22.5deg);
+    box-shadow:
+      0 -40px 0 var(--c3),0 40px 0 var(--c3),40px 0 0 var(--c3),-40px 0 0 var(--c3),
+      28px -28px 0 var(--c3),-28px 28px 0 var(--c3),28px 28px 0 var(--c3),-28px -28px 0 var(--c3);
+  }
+  @keyframes launchBurst{
+    0%{transform:translateY(60vh) scale(.4);opacity:0}
+    14%{transform:translateY(0) scale(.6);opacity:1}
+    16%{opacity:0}
+    100%{opacity:0}
+  }
+  @keyframes sparkle{
+    0%,13%{opacity:0;transform:translate(-50%,-50%) scale(.1)}
+    18%{opacity:1;transform:translate(-50%,-50%) scale(.55)}
+    34%{opacity:.95;transform:translate(-50%,-50%) scale(1)}
+    50%{opacity:0;transform:translate(-50%,-50%) scale(1.25)}
+    100%{opacity:0}
+  }
+  .b1{left:16%;top:26%;--c:#ffd447;--c2:#e01b2e;--c3:#fff;--dur:4.6s;--delay:.2s}
+  .b2{left:70%;top:20%;--c:#4d8bff;--c2:#fff;--c3:#ffd447;--dur:5.2s;--delay:1.5s}
+  .b3{left:44%;top:12%;--c:#e01b2e;--c2:#ffd447;--c3:#4d8bff;--dur:4.9s;--delay:2.9s}
+  .b4{left:85%;top:40%;--c:#ffd447;--c2:#4d8bff;--c3:#fff;--dur:5.6s;--delay:3.7s}
+  .b5{left:28%;top:44%;--c:#fff;--c2:#e01b2e;--c3:#ffd447;--dur:5.0s;--delay:2.1s}
+
+  .season-banner{
+    display:inline-flex;align-items:center;gap:10px;
+    background:linear-gradient(90deg,var(--red-deep),var(--red));
+    border:1px solid rgba(255,212,71,.5);
+    color:#fff;font-weight:800;font-size:.72rem;letter-spacing:.16em;
+    text-transform:uppercase;padding:8px 16px;border-radius:100px;
+    box-shadow:0 10px 30px -12px rgba(224,27,46,.8);
+    position:relative;z-index:2;
+  }
+  .season-banner .dot{
+    width:8px;height:8px;border-radius:50%;background:var(--gold-1);
+    box-shadow:0 0 0 0 rgba(255,212,71,.7);
+    animation:pulse 2.4s infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(255,212,71,.7)}
+    70%{box-shadow:0 0 0 12px rgba(255,212,71,0)}
+    100%{box-shadow:0 0 0 0 rgba(255,212,71,0)}
+  }
+
+  .hero-inner{position:relative;z-index:2;text-align:center;padding-top:30px}
+  .kicker{
+    font-family:var(--font-body);font-weight:800;
+    color:var(--gold-1);letter-spacing:.34em;text-transform:uppercase;
+    font-size:.72rem;margin:22px 0 14px;
+  }
+  .hero h1{
+    font-family:var(--font-display);
+    font-size:clamp(2.7rem,10vw,6.2rem);
+    color:var(--white);
+    text-transform:uppercase;
+    line-height:.92;
+    text-shadow:0 4px 0 rgba(0,0,0,.35),0 22px 46px rgba(0,0,0,.5);
+  }
+  .hero h1 .glow{
+    display:block;
+    background:linear-gradient(180deg,#fff 0%,#ffe58a 46%,var(--gold-2) 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    filter:drop-shadow(0 0 22px rgba(255,196,32,.35));
+  }
+  .hero .stripe{
+    width:132px;height:6px;margin:22px auto 20px;border-radius:6px;
+    background:linear-gradient(90deg,var(--red) 0 33.3%,#fff 33.3% 66.6%,var(--blue) 66.6% 100%);
+    box-shadow:0 6px 18px -6px rgba(0,0,0,.6);
+  }
+  .hero .tag{
+    font-family:var(--font-serif);font-style:italic;
+    font-size:clamp(1.05rem,3.4vw,1.55rem);
+    color:var(--smoke);max-width:640px;margin:0 auto;line-height:1.4;
+  }
+  .hero .tag b{color:var(--gold-1);font-style:normal;font-weight:700}
+
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:34px}
+  .btn{
+    display:inline-flex;align-items:center;gap:11px;
+    font-family:var(--font-display);text-transform:uppercase;
+    font-size:.92rem;letter-spacing:.03em;
+    padding:17px 30px;border-radius:100px;border:0;cursor:pointer;
+    transition:transform .16s,box-shadow .2s,filter .2s;
+  }
+  .btn-call{
+    background:linear-gradient(180deg,#ff3145,var(--red-deep));
+    color:#fff;box-shadow:0 16px 40px -14px rgba(224,27,46,.95),inset 0 1px 0 rgba(255,255,255,.25);
+  }
+  .btn-call:hover{transform:translateY(-2px);box-shadow:0 22px 48px -14px rgba(224,27,46,1)}
+  .btn-call small{display:block;font-family:var(--font-body);font-size:.62rem;letter-spacing:.14em;opacity:.85;font-weight:700}
+  .btn-ghost{
+    background:rgba(255,255,255,.06);color:var(--smoke);
+    border:1.5px solid var(--line);cursor:not-allowed;
+    position:relative;
+  }
+  .btn-ghost .soon{
+    position:absolute;top:-11px;right:-8px;
+    background:var(--gold-1);color:var(--ink);
+    font-family:var(--font-body);font-weight:800;font-size:.56rem;
+    letter-spacing:.1em;padding:3px 8px;border-radius:100px;text-transform:uppercase;
+    box-shadow:0 6px 14px -6px rgba(0,0,0,.6);
+  }
+
+  .hero-note{
+    margin-top:22px;font-size:.82rem;color:var(--smoke-dim);
+    display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap;
+  }
+  .hero-note b{color:var(--gold-1)}
+
+  /* ---------- benefit strip ---------- */
+  .strip{background:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .strip .wrap{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+    background:var(--line);
+  }
+  @media(min-width:820px){.strip .wrap{grid-template-columns:repeat(4,1fr)}}
+  .stat{
+    background:var(--navy-900);padding:26px 20px;text-align:center;
+    display:flex;flex-direction:column;align-items:center;gap:7px;
+  }
+  .stat .ic{width:34px;height:34px;color:var(--gold-1)}
+  .stat b{font-family:var(--font-display);font-size:1.5rem;color:var(--white)}
+  .stat span{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--smoke-dim);font-weight:700;line-height:1.4}
+
+  /* ---------- section shell ---------- */
+  section{position:relative}
+  .band{padding:78px 0}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-weight:800;letter-spacing:.28em;text-transform:uppercase;
+    font-size:.7rem;color:var(--red);
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--red)}
+  .h-serif{
+    font-family:var(--font-serif);font-weight:800;
+    font-size:clamp(2rem,5.4vw,3.2rem);color:var(--white);line-height:1.04;
+    margin:16px 0 0;
+  }
+  .lead{color:var(--smoke);font-size:1.02rem;line-height:1.62;margin-top:16px;max-width:60ch}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}
+  .reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- promise / differentiators ---------- */
+  .promise{
+    background:
+      radial-gradient(700px 400px at 90% 0%, rgba(46,108,246,.14), transparent 60%),
+      var(--navy-800);
+    border-top:1px solid var(--line);
+  }
+  .promise-grid{display:grid;gap:16px;margin-top:38px}
+  @media(min-width:720px){.promise-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1000px){.promise-grid{grid-template-columns:repeat(3,1fr)}}
+  .pcard{
+    background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
+    border:1px solid var(--line);border-radius:18px;padding:24px;
+    transition:transform .25s,border-color .25s,background .25s;
+    position:relative;overflow:hidden;
+  }
+  .pcard:hover{transform:translateY(-4px);border-color:rgba(255,212,71,.4);background:linear-gradient(180deg,rgba(255,212,71,.08),rgba(255,255,255,.02))}
+  .pcard .pic{
+    width:46px;height:46px;border-radius:12px;display:grid;place-items:center;
+    background:linear-gradient(180deg,var(--red),var(--red-deep));
+    color:#fff;margin-bottom:15px;box-shadow:0 10px 24px -12px rgba(224,27,46,.9);
+  }
+  .pcard.blue .pic{background:linear-gradient(180deg,var(--blue-bright),var(--blue))}
+  .pcard.gold .pic{background:linear-gradient(180deg,var(--gold-1),var(--gold-2));color:var(--ink)}
+  .pcard h3{font-family:var(--font-display);font-size:1.02rem;color:var(--white);text-transform:uppercase;letter-spacing:.01em}
+  .pcard p{margin-top:10px;color:var(--smoke);font-size:.92rem;line-height:1.6}
+
+  /* ---------- products ---------- */
+  .products{background:var(--paper);color:var(--ink)}
+  .products .eyebrow{color:var(--red)}
+  .products .h-serif{color:var(--ink)}
+  .products .lead{color:#4a4f6b}
+  .prod-grid{display:grid;gap:18px;margin-top:40px}
+  @media(min-width:640px){.prod-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:980px){.prod-grid{grid-template-columns:repeat(3,1fr)}}
+  .pc{
+    background:var(--white);border:1px solid var(--line-dark);border-radius:20px;
+    overflow:hidden;transition:transform .28s,box-shadow .28s;
+    display:flex;flex-direction:column;
+    box-shadow:0 2px 0 rgba(10,14,42,.04);
+  }
+  .pc:hover{transform:translateY(-6px);box-shadow:var(--shadow-lift)}
+  .pc .art{
+    height:158px;position:relative;overflow:hidden;
+    background:radial-gradient(120% 120% at 50% 120%, #10163a, #070a1e 70%);
+    display:grid;place-items:center;
+  }
+  .pc .art svg{width:100%;height:100%}
+  .pc .tagpill{
+    position:absolute;top:12px;left:12px;z-index:3;
+    font-family:var(--font-body);font-weight:800;font-size:.62rem;letter-spacing:.1em;
+    text-transform:uppercase;padding:5px 11px;border-radius:100px;color:#fff;
+    background:rgba(224,27,46,.92);border:1px solid rgba(255,255,255,.28);
+    backdrop-filter:blur(4px);
+  }
+  .pc .tagpill.best{background:rgba(46,108,246,.95)}
+  .pc .tagpill.value{background:rgba(255,176,32,.96);color:var(--ink)}
+  .pc .body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .pc .body h3{font-family:var(--font-display);font-size:.98rem;text-transform:uppercase;color:var(--ink);letter-spacing:.01em}
+  .pc .body p{font-size:.86rem;color:#5b6076;line-height:1.55}
+  .pc .foot{margin-top:auto;display:flex;align-items:baseline;justify-content:space-between;padding-top:8px;border-top:1px dashed var(--line-dark)}
+  .pc .price{font-family:var(--font-display);font-size:1.15rem;color:var(--red-deep)}
+  .pc .price small{font-family:var(--font-body);font-size:.62rem;letter-spacing:.08em;color:#8a8fa6;text-transform:uppercase;display:block;font-weight:700}
+  .pc .price.free{color:var(--blue)}
+  .pc .cs{font-size:.66rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#9096ad}
+
+  .cat-cloud{display:flex;flex-wrap:wrap;gap:9px;margin-top:34px;justify-content:center}
+  .chip{
+    font-family:var(--font-body);font-weight:800;font-size:.76rem;letter-spacing:.04em;
+    color:var(--ink);background:var(--white);border:1px solid var(--line-dark);
+    padding:9px 15px;border-radius:100px;transition:transform .18s,background .18s,color .18s,border-color .18s;
+  }
+  .chip:hover{transform:translateY(-2px);background:var(--red);color:#fff;border-color:var(--red)}
+
+  .case-note{
+    margin-top:30px;background:linear-gradient(120deg,#0f1533,#161d47);
+    border:1px solid rgba(255,212,71,.34);border-radius:18px;
+    padding:22px 24px;display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap;
+    box-shadow:var(--shadow-lift);
+  }
+  .case-note .ci{width:42px;height:42px;flex:0 0 auto;color:var(--gold-1)}
+  .case-note h3{font-family:var(--font-display);color:#fff;text-transform:uppercase;font-size:1.02rem}
+  .case-note p{color:var(--smoke);font-size:.9rem;line-height:1.6;margin-top:6px}
+  .case-note .cases{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .case-note .cases span{
+    font-weight:800;font-size:.72rem;letter-spacing:.03em;color:var(--gold-1);
+    background:rgba(255,212,71,.1);border:1px solid rgba(255,212,71,.28);
+    padding:6px 11px;border-radius:100px;
+  }
+  .case-note .cases span b{color:#fff;font-weight:800}
+
+  /* ---------- story ---------- */
+  .story{
+    background:
+      radial-gradient(800px 500px at 10% 0%, rgba(224,27,46,.14), transparent 60%),
+      linear-gradient(180deg,#0a0e28,#0d1234);
+    border-top:1px solid var(--line);
+  }
+  .story-wrap{display:grid;gap:44px;align-items:center}
+  @media(min-width:940px){.story-wrap{grid-template-columns:.92fr 1.08fr}}
+  .story-visual{position:relative}
+  .story-card{
+    background:linear-gradient(160deg,#12183c,#0a0e28);
+    border:1px solid var(--line);border-radius:22px;padding:30px;
+    box-shadow:var(--shadow-lift);position:relative;overflow:hidden;
+  }
+  .story-card .badge-30{
+    display:flex;align-items:center;gap:16px;margin-bottom:22px;
+    padding-bottom:22px;border-bottom:1px solid var(--line);
+  }
+  .story-card .seal{width:82px;height:82px;flex:0 0 auto}
+  .story-card .badge-30 div b{font-family:var(--font-display);font-size:1.6rem;color:#fff;display:block;line-height:1}
+  .story-card .badge-30 div span{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-1);font-weight:800}
+  .quote{
+    font-family:var(--font-serif);font-style:italic;font-size:1.14rem;line-height:1.55;
+    color:#fff;position:relative;padding-left:20px;border-left:3px solid var(--red);
+  }
+  .quote-by{margin-top:14px;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--smoke-dim);font-weight:800}
+  .journey{display:flex;gap:0;margin-top:24px}
+  .journey .leg{flex:1;text-align:center;position:relative}
+  .journey .leg b{font-family:var(--font-display);font-size:.86rem;color:#fff;display:block}
+  .journey .leg span{font-size:.66rem;color:var(--smoke-dim);letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+  .journey .arrow{align-self:center;color:var(--gold-1);padding:0 4px}
+
+  .story-copy .h-serif{margin-bottom:4px}
+  .story-copy p+p{margin-top:16px}
+  .story-copy .lead{max-width:none}
+  .guar{
+    margin-top:24px;display:flex;gap:14px;align-items:center;
+    background:rgba(46,108,246,.1);border:1px solid rgba(77,139,255,.34);
+    border-radius:16px;padding:18px 20px;
+  }
+  .guar svg{width:40px;height:40px;flex:0 0 auto;color:var(--blue-bright)}
+  .guar b{color:#fff;font-family:var(--font-display);text-transform:uppercase;font-size:.9rem;display:block;margin-bottom:4px}
+  .guar span{color:var(--smoke);font-size:.88rem;line-height:1.55}
+
+  /* ---------- reviews ---------- */
+  .reviews{background:var(--paper-2);color:var(--ink)}
+  .reviews .eyebrow{color:var(--red)}
+  .reviews .h-serif{color:var(--ink)}
+  .reviews .lead{color:#4a4f6b}
+  .rv-grid{display:grid;gap:18px;margin-top:38px}
+  @media(min-width:760px){.rv-grid{grid-template-columns:repeat(3,1fr)}}
+  .rv{
+    background:var(--white);border:1px solid var(--line-dark);border-radius:18px;
+    padding:24px;position:relative;
+    box-shadow:0 10px 30px -20px rgba(10,14,42,.4);
+    display:flex;flex-direction:column;
+  }
+  .rv .stars{display:flex;gap:3px;color:var(--gold-2);margin-bottom:12px}
+  .rv .stars svg{width:17px;height:17px}
+  .rv .rq{font-family:var(--font-serif);font-size:1.02rem;line-height:1.55;color:var(--ink);flex:1}
+  .rv .rby{margin-top:16px;display:flex;align-items:center;gap:11px}
+  .rv .av{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:#fff;font-family:var(--font-display);font-size:.9rem}
+  .rv .rby b{font-size:.86rem;color:var(--ink);display:block;font-family:var(--font-body);font-weight:800}
+  .rv .rby span{font-size:.72rem;color:#8a8fa6}
+  .rv-disclaimer{
+    margin-top:26px;text-align:center;font-size:.78rem;color:#7a7f96;line-height:1.6;
+    max-width:70ch;margin-left:auto;margin-right:auto;
+  }
+  .rv-disclaimer b{color:#4a4f6b}
+
+  /* ---------- locations ---------- */
+  .locations{
+    background:
+      radial-gradient(700px 500px at 82% 100%, rgba(46,108,246,.16), transparent 62%),
+      linear-gradient(180deg,#0d1234,#0a0e28);
+    border-top:1px solid var(--line);
+  }
+  .loc-wrap{display:grid;gap:24px;margin-top:40px}
+  @media(min-width:900px){.loc-wrap{grid-template-columns:1.1fr .9fr}}
+  .map-card{
+    background:#0a0e28;border:1px solid var(--line);border-radius:22px;overflow:hidden;
+    box-shadow:var(--shadow-lift);position:relative;min-height:320px;display:flex;flex-direction:column;
+  }
+  .map-art{flex:1;position:relative;background:#0b1030;min-height:220px}
+  .map-art svg{position:absolute;inset:0;width:100%;height:100%}
+  .map-pin{
+    position:absolute;left:50%;top:46%;transform:translate(-50%,-100%);z-index:3;
+    filter:drop-shadow(0 8px 12px rgba(0,0,0,.6));
+    animation:bob 3s ease-in-out infinite;
+  }
+  @keyframes bob{0%,100%{transform:translate(-50%,-100%)}50%{transform:translate(-50%,-114%)}}
+  .map-foot{
+    padding:18px 20px;border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;
+    background:rgba(255,255,255,.02);
+  }
+  .map-foot .addr b{color:#fff;font-family:var(--font-display);font-size:.9rem;text-transform:uppercase;display:block}
+  .map-foot .addr span{color:var(--smoke);font-size:.84rem}
+  .dirbtn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--blue);color:#fff;font-family:var(--font-display);
+    text-transform:uppercase;font-size:.72rem;letter-spacing:.05em;
+    padding:11px 17px;border-radius:100px;transition:transform .15s,filter .2s;
+    box-shadow:0 12px 28px -12px rgba(46,108,246,.9);
+  }
+  .dirbtn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+
+  .hours-card{
+    background:linear-gradient(160deg,#12183c,#0a0e28);
+    border:1px solid var(--line);border-radius:22px;padding:28px;
+    box-shadow:var(--shadow-lift);
+  }
+  .hours-card h3{font-family:var(--font-display);color:#fff;text-transform:uppercase;font-size:1.1rem;letter-spacing:.02em}
+  .season-tag{
+    display:inline-flex;align-items:center;gap:8px;margin-top:12px;margin-bottom:20px;
+    font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--gold-1);background:rgba(255,212,71,.1);
+    border:1px solid rgba(255,212,71,.3);padding:6px 12px;border-radius:100px;
+  }
+  .hrow{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}
+  .hrow:last-of-type{border-bottom:0}
+  .hrow .d{color:var(--smoke);font-size:.88rem;font-weight:700}
+  .hrow .t{color:#fff;font-size:.9rem;font-family:var(--font-body);font-weight:800}
+  .hrow .t.closed{color:var(--smoke-dim);font-weight:700}
+  .season-list{margin-top:18px;border-top:1px dashed var(--line);padding-top:16px}
+  .season-list .sl{display:flex;justify-content:space-between;gap:14px;padding:7px 0;font-size:.84rem}
+  .season-list .sl b{color:var(--gold-1);font-weight:800}
+  .season-list .sl span{color:var(--smoke);text-align:right}
+
+  /* ---------- final CTA ---------- */
+  .final{
+    position:relative;overflow:hidden;text-align:center;
+    background:
+      radial-gradient(900px 500px at 50% -10%, rgba(224,27,46,.3), transparent 60%),
+      linear-gradient(180deg,#0a0e28,#0c1130);
+    border-top:1px solid var(--line);
+    padding:86px 0 92px;
+  }
+  .final .fx{opacity:.7}
+  .final h2{
+    font-family:var(--font-display);text-transform:uppercase;
+    font-size:clamp(2.2rem,7vw,4rem);color:#fff;line-height:.96;position:relative;z-index:2;
+    text-shadow:0 4px 0 rgba(0,0,0,.3),0 18px 40px rgba(0,0,0,.5);
+  }
+  .final h2 .glow{
+    background:linear-gradient(180deg,#fff,#ffe58a,var(--gold-2));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .final p{position:relative;z-index:2;color:var(--smoke);font-size:1.06rem;margin:20px auto 0;max-width:58ch;line-height:1.6}
+  .final .cta-row{margin-top:34px}
+  .final-tel{
+    position:relative;z-index:2;margin-top:26px;
+    font-family:var(--font-display);font-size:clamp(1.5rem,5vw,2.3rem);color:#fff;letter-spacing:.02em;
+  }
+  .final-tel a{background:linear-gradient(180deg,#fff,#ffe58a,var(--gold-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* ---------- footer ---------- */
+  footer.site{background:var(--ink);border-top:1px solid var(--line);padding:52px 0 30px}
+  .foot-grid{display:grid;gap:30px}
+  @media(min-width:760px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr}}
+  .foot-brand .brand .name b{font-size:1rem}
+  .foot-brand p{color:var(--smoke-dim);font-size:.88rem;line-height:1.6;margin-top:16px;max-width:38ch}
+  .foot-col h4{color:#fff;font-family:var(--font-display);text-transform:uppercase;font-size:.82rem;letter-spacing:.08em;margin-bottom:14px}
+  .foot-col a,.foot-col p{display:block;color:var(--smoke);font-size:.88rem;margin-bottom:9px;transition:color .2s}
+  .foot-col a:hover{color:var(--gold-1)}
+  .foot-bottom{
+    margin-top:38px;padding-top:22px;border-top:1px solid var(--line);
+    display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;
+  }
+  .foot-bottom p{color:var(--smoke-dim);font-size:.76rem;line-height:1.5}
+  .disclaimer{
+    color:var(--smoke-dim);font-size:.74rem;background:rgba(255,255,255,.04);
+    border:1px solid var(--line);border-radius:10px;padding:10px 14px;max-width:52ch;line-height:1.5;
+  }
+  .flag-line{display:flex;gap:0;height:4px;width:100%;margin-bottom:0}
+  .flag-line i{flex:1;display:block}
+  .flag-line i:nth-child(3n+1){background:var(--red)}
+  .flag-line i:nth-child(3n+2){background:#fff}
+  .flag-line i:nth-child(3n){background:var(--blue)}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+    .reveal{opacity:1;transform:none}
+    .burst,.burst::before,.burst::after{opacity:0 !important}
+    .b1,.b3,.b5{opacity:0}
+  }
+</style>
+
+<!-- ============ HEADER ============ -->
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Discount Fireworks of Texas home">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="#0a0e2a" stroke="#ffd447" stroke-width="1.5"/>
+        <g stroke="#e01b2e" stroke-width="2" stroke-linecap="round">
+          <path d="M20 6v6M20 28v6M6 20h6M28 20h6M10 10l4 4M26 26l4 4M30 10l-4 4M14 26l-4 4"/>
+        </g>
+        <circle cx="20" cy="20" r="4.2" fill="#ffd447"/>
+      </svg>
+      <span class="name">
+        <b>Discount Fireworks</b>
+        <span>of Texas &middot; Burleson</span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#products">Fireworks</a>
+      <a href="#story">Our Story</a>
+      <a href="#reviews">Why Us</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a class="call-top" href="tel:+12812167247">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.9 15.9 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.57 3.6 1 1 0 01-.24 1l-2.23 2.2z"/></svg>
+      (281) 216-7247
+    </a>
+  </div>
+</header>
+
+<div id="top"></div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <!-- stars -->
+  <svg class="sky-stars" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="#fff">
+      <circle cx="90" cy="70" r="1.3" opacity=".7"/><circle cx="220" cy="140" r="1" opacity=".5"/>
+      <circle cx="360" cy="60" r="1.6" opacity=".8"/><circle cx="520" cy="120" r="1" opacity=".4"/>
+      <circle cx="680" cy="80" r="1.3" opacity=".6"/><circle cx="820" cy="150" r="1" opacity=".5"/>
+      <circle cx="960" cy="60" r="1.6" opacity=".8"/><circle cx="1100" cy="120" r="1.1" opacity=".6"/>
+      <circle cx="150" cy="240" r="1" opacity=".5"/><circle cx="430" cy="220" r="1.2" opacity=".6"/>
+      <circle cx="740" cy="240" r="1" opacity=".45"/><circle cx="1040" cy="210" r="1.3" opacity=".6"/>
+      <circle cx="60" cy="360" r="1.1" opacity=".5"/><circle cx="300" cy="330" r="1" opacity=".4"/>
+      <circle cx="900" cy="340" r="1.2" opacity=".55"/><circle cx="1150" cy="300" r="1" opacity=".45"/>
+    </g>
+  </svg>
+
+  <!-- firework bursts -->
+  <div class="fx" aria-hidden="true">
+    <div class="burst b1"></div><div class="burst b2"></div><div class="burst b3"></div>
+    <div class="burst b4"></div><div class="burst b5"></div>
+  </div>
+
+  <div class="wrap hero-inner">
+    <span class="season-banner"><span class="dot"></span>Ordering now &middot; Stands reopen June 24 for the 4th</span>
+    <p class="kicker">Family-Owned &middot; Burleson, Texas &middot; Est. Over 20 Years</p>
+    <h1>Light Up<br><span class="glow">The Sky</span></h1>
+    <div class="stripe"></div>
+    <p class="tag">DFW's <b>Low Price Leader</b>. Every price includes tax, every product is tested, and nothing here is a gimmick. Just real fireworks at real family prices.</p>
+
+    <div class="cta-row">
+      <a class="btn btn-call" href="tel:+12812167247">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.9 15.9 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.57 3.6 1 1 0 01-.24 1l-2.23 2.2z"/></svg>
+        <span>Call to Order<small>(281) 216-7247</small></span>
+      </a>
+      <button class="btn btn-ghost" type="button" disabled aria-disabled="true">
+        <span class="soon">Coming Soon</span>
+        Shop Online &middot; Car Pickup
+      </button>
+    </div>
+
+    <p class="hero-note">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true" style="color:var(--gold-1)"><path d="M20 6L9 17l-5-5"/></svg>
+      Prices include <b>10.25% tax</b> up front &middot; Tested product, money back or replaced &middot; Two stands at 13045 Rendon Rd
+    </p>
+  </div>
+</section>
+
+<!-- ============ BENEFIT STRIP ============ -->
+<div class="strip">
+  <div class="wrap">
+    <div class="stat">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21h18M6 21V9l6-5 6 5v12M10 21v-5h4v5"/></svg>
+      <b>2</b><span>Family-Owned Stands</span>
+    </div>
+    <div class="stat">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5z"/></svg>
+      <b>20+</b><span>Years in Fireworks</span>
+    </div>
+    <div class="stat">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      <b>Tax In</b><span>No Surprises at Checkout</span>
+    </div>
+    <div class="stat">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+      <b>Guaranteed</b><span>Money Back or Replaced</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PROMISE / DIFFERENTIATORS ============ -->
+<section class="band promise" id="why">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">The Honest Difference</span>
+      <h2 class="h-serif">No tricks. No fake freebies.<br>Just the lowest real price.</h2>
+      <p class="lead">We are the only retail fireworks outlet in Texas that offers Case Pricing, a Brown Bag Special, and Friends &amp; Family Discounts. Here is what that honesty looks like.</p>
+    </div>
+
+    <div class="promise-grid">
+      <div class="pcard reveal d1">
+        <div class="pic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <h3>Tax Included, Always</h3>
+        <p>The prices on this site are the exact same prices at our stands, with the 10.25% sales tax already built in. What you see is what you pay.</p>
+      </div>
+      <div class="pcard blue reveal d2">
+        <div class="pic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Tested &amp; Guaranteed</h3>
+        <p>We test our products rigorously. If a firework does not meet expectations, we will either refund your money or replace it with another product.</p>
+      </div>
+      <div class="pcard gold reveal d3">
+        <div class="pic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2l3 6 6 1-4 4 1 6-6-3-6 3 1-6-4-4 6-1z"/></svg></div>
+        <h3>Only in Texas</h3>
+        <p>The only retail outlet in the state offering true Case Pricing, our exclusive Brown Bag Special, and a Friends &amp; Family loyalty program.</p>
+      </div>
+      <div class="pcard blue reveal d1">
+        <div class="pic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5z"/></svg></div>
+        <h3>10% Military &amp; First Responder</h3>
+        <p>We respect the folks who serve. Show a valid ID and take 10% off, our small thank you to the men and women who protect our community.</p>
+      </div>
+      <div class="pcard reveal d2">
+        <div class="pic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <h3>Friends &amp; Family Credit</h3>
+        <p>When you and the friends you refer collectively spend $500, you earn a $50 credit plus 10% off future purchases. Loyalty that pays you back.</p>
+      </div>
+      <div class="pcard gold reveal d3">
+        <div class="pic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg></div>
+        <h3>Case Pricing &amp; Bulk</h3>
+        <p>Order by the case with locked-in pricing and inventory secured the moment you order. Great for big backyard shows and neighborhood celebrations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTS ============ -->
+<section class="band products" id="products">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">The Lineup</span>
+      <h2 class="h-serif">Real fireworks, real names,<br>real family prices.</h2>
+      <p class="lead">From the crowd-pleasing Texas Express to the Ammo Crate finale, every assortment on the table is the same one we would set off in our own backyard. Prices shown include tax.</p>
+    </div>
+
+    <div class="prod-grid">
+
+      <!-- Texas Express -->
+      <article class="pc reveal d1">
+        <div class="art">
+          <span class="tagpill best">Best Seller</span>
+          <svg viewBox="0 0 300 158" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><radialGradient id="g1" cx="50%" cy="70%" r="75%"><stop offset="0%" stop-color="#1a2350"/><stop offset="100%" stop-color="#070a1e"/></radialGradient></defs>
+            <rect width="300" height="158" fill="url(#g1)"/>
+            <g stroke="#ffd447" stroke-width="1.4" opacity=".95">
+              <line x1="150" y1="70" x2="150" y2="28"/><line x1="150" y1="70" x2="118" y2="42"/><line x1="150" y1="70" x2="182" y2="42"/>
+              <line x1="150" y1="70" x2="104" y2="70"/><line x1="150" y1="70" x2="196" y2="70"/><line x1="150" y1="70" x2="122" y2="102"/><line x1="150" y1="70" x2="178" y2="102"/>
+            </g>
+            <g fill="#e01b2e"><circle cx="150" cy="26" r="3"/><circle cx="115" cy="40" r="3"/><circle cx="185" cy="40" r="3"/><circle cx="100" cy="70" r="3"/><circle cx="200" cy="70" r="3"/><circle cx="120" cy="104" r="3"/><circle cx="180" cy="104" r="3"/></g>
+            <g fill="#4d8bff" opacity=".8"><circle cx="60" cy="120" r="2"/><circle cx="240" cy="118" r="2"/><circle cx="40" cy="50" r="1.6"/><circle cx="262" cy="46" r="1.6"/></g>
+            <circle cx="150" cy="70" r="5" fill="#fff"/>
+          </svg>
+        </div>
+        <div class="body">
+          <h3>Texas Express</h3>
+          <p>Our best seller. Roman candles, sparklers, fountains, multi-shot cakes, and small items for the kids. One box, the whole night handled.</p>
+          <div class="foot"><span class="price">Family Assortment<small>Ask for today's price</small></span></div>
+        </div>
+      </article>
+
+      <!-- Ammo Crate -->
+      <article class="pc reveal d2">
+        <div class="art">
+          <span class="tagpill">8.5 Min Finale</span>
+          <svg viewBox="0 0 300 158" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><radialGradient id="g2" cx="50%" cy="80%" r="80%"><stop offset="0%" stop-color="#241533"/><stop offset="100%" stop-color="#070a1e"/></radialGradient></defs>
+            <rect width="300" height="158" fill="url(#g2)"/>
+            <g opacity=".9">
+              <g stroke="#ffd447" stroke-width="1.2"><line x1="95" y1="60" x2="95" y2="30"/><line x1="95" y1="60" x2="72" y2="42"/><line x1="95" y1="60" x2="118" y2="42"/><line x1="95" y1="60" x2="70" y2="72"/><line x1="95" y1="60" x2="120" y2="72"/></g>
+              <g stroke="#e01b2e" stroke-width="1.2"><line x1="205" y1="52" x2="205" y2="24"/><line x1="205" y1="52" x2="184" y2="36"/><line x1="205" y1="52" x2="226" y2="36"/><line x1="205" y1="52" x2="182" y2="64"/><line x1="205" y1="52" x2="228" y2="64"/></g>
+              <g stroke="#4d8bff" stroke-width="1.2"><line x1="150" y1="108" x2="150" y2="84"/><line x1="150" y1="108" x2="132" y2="94"/><line x1="150" y1="108" x2="168" y2="94"/><line x1="150" y1="108" x2="130" y2="118"/><line x1="150" y1="108" x2="170" y2="118"/></g>
+            </g>
+            <circle cx="95" cy="60" r="4" fill="#fff"/><circle cx="205" cy="52" r="4" fill="#fff"/><circle cx="150" cy="108" r="3.5" fill="#fff"/>
+          </svg>
+        </div>
+        <div class="body">
+          <h3>Ammo Crate</h3>
+          <p>A special-order family assortment that runs about 8 and a half minutes of nonstop sky. The centerpiece show when you want to end the night big.</p>
+          <div class="foot"><span class="price">$238.50<small>Retail, tax included</small></span></div>
+        </div>
+      </article>
+
+      <!-- Brown Bag Special -->
+      <article class="pc reveal d3">
+        <div class="art">
+          <span class="tagpill value">Exclusive</span>
+          <svg viewBox="0 0 300 158" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><linearGradient id="bag" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#caa06a"/><stop offset="100%" stop-color="#9a7440"/></linearGradient>
+            <radialGradient id="g3" cx="50%" cy="60%" r="80%"><stop offset="0%" stop-color="#17204a"/><stop offset="100%" stop-color="#070a1e"/></radialGradient></defs>
+            <rect width="300" height="158" fill="url(#g3)"/>
+            <path d="M112 54h76l6 78a6 6 0 01-6 6h-76a6 6 0 01-6-6z" fill="url(#bag)"/>
+            <path d="M112 54l6-14h64l6 14z" fill="#b3894f"/>
+            <rect x="126" y="76" width="48" height="30" rx="3" fill="#0a0e2a" opacity=".85"/>
+            <text x="150" y="96" font-family="Arial" font-size="10" font-weight="bold" fill="#ffd447" text-anchor="middle">$12</text>
+            <g fill="#e01b2e"><circle cx="70" cy="40" r="3"/><circle cx="232" cy="46" r="3"/></g>
+            <g fill="#ffd447"><circle cx="52" cy="70" r="2"/><circle cx="250" cy="80" r="2"/></g>
+          </svg>
+        </div>
+        <div class="body">
+          <h3>Brown Bag Special</h3>
+          <p>Exclusive to Discount Fireworks. A little of everything for the kids: Hen Laying Eggs, firecrackers, ground blooms, snappers, smoke balls, sparklers, roman candles, snakes, and more.</p>
+          <div class="foot"><span class="price">$12.00<small>Exclusive to us</small></span></div>
+        </div>
+      </article>
+
+      <!-- Excalibur Platinum -->
+      <article class="pc reveal d1">
+        <div class="art">
+          <span class="tagpill">Premium Shells</span>
+          <svg viewBox="0 0 300 158" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><radialGradient id="g4" cx="50%" cy="65%" r="80%"><stop offset="0%" stop-color="#101a44"/><stop offset="100%" stop-color="#070a1e"/></radialGradient></defs>
+            <rect width="300" height="158" fill="url(#g4)"/>
+            <g stroke="#dfe6ff" stroke-width="1.5" opacity=".95">
+              <line x1="150" y1="72" x2="150" y2="24"/><line x1="150" y1="72" x2="114" y2="36"/><line x1="150" y1="72" x2="186" y2="36"/><line x1="150" y1="72" x2="96" y2="72"/><line x1="150" y1="72" x2="204" y2="72"/><line x1="150" y1="72" x2="114" y2="108"/><line x1="150" y1="72" x2="186" y2="108"/><line x1="150" y1="72" x2="132" y2="28"/><line x1="150" y1="72" x2="168" y2="28"/>
+            </g>
+            <g fill="#4d8bff"><circle cx="150" cy="22" r="3"/><circle cx="112" cy="34" r="3"/><circle cx="188" cy="34" r="3"/><circle cx="94" cy="72" r="3"/><circle cx="206" cy="72" r="3"/><circle cx="112" cy="110" r="3"/><circle cx="188" cy="110" r="3"/></g>
+            <circle cx="150" cy="72" r="5" fill="#ffd447"/>
+          </svg>
+        </div>
+        <div class="body">
+          <h3>Excalibur Platinum</h3>
+          <p>Heavy-hitting reloadable artillery shells with a premium platinum break. When you want the loud, high, professional-grade burst overhead.</p>
+          <div class="foot"><span class="price">$154.00<small>Tax included</small></span></div>
+        </div>
+      </article>
+
+      <!-- Pure Venom -->
+      <article class="pc reveal d2">
+        <div class="art">
+          <span class="tagpill">500g Cake</span>
+          <svg viewBox="0 0 300 158" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><radialGradient id="g5" cx="50%" cy="70%" r="80%"><stop offset="0%" stop-color="#0f2a1c"/><stop offset="100%" stop-color="#070a1e"/></radialGradient></defs>
+            <rect width="300" height="158" fill="url(#g5)"/>
+            <g stroke="#5cf08a" stroke-width="1.4" opacity=".95">
+              <line x1="150" y1="70" x2="150" y2="26"/><line x1="150" y1="70" x2="116" y2="40"/><line x1="150" y1="70" x2="184" y2="40"/><line x1="150" y1="70" x2="102" y2="70"/><line x1="150" y1="70" x2="198" y2="70"/><line x1="150" y1="70" x2="120" y2="102"/><line x1="150" y1="70" x2="180" y2="102"/>
+            </g>
+            <g fill="#ffd447"><circle cx="150" cy="24" r="2.6"/><circle cx="114" cy="38" r="2.6"/><circle cx="186" cy="38" r="2.6"/><circle cx="100" cy="70" r="2.6"/><circle cx="200" cy="70" r="2.6"/><circle cx="118" cy="104" r="2.6"/><circle cx="182" cy="104" r="2.6"/></g>
+            <circle cx="150" cy="70" r="5" fill="#e01b2e"/>
+          </svg>
+        </div>
+        <div class="body">
+          <h3>Pure Venom</h3>
+          <p>A loaded 500 gram cake that bites. Layered breaks and color changes that keep the whole street watching until the last shot.</p>
+          <div class="foot"><span class="price">$170.50<small>Tax included</small></span></div>
+        </div>
+      </article>
+
+      <!-- Backpack (kids) -->
+      <article class="pc reveal d3">
+        <div class="art">
+          <span class="tagpill value">For the Kids</span>
+          <svg viewBox="0 0 300 158" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><radialGradient id="g6" cx="50%" cy="60%" r="80%"><stop offset="0%" stop-color="#2a1638"/><stop offset="100%" stop-color="#070a1e"/></radialGradient></defs>
+            <rect width="300" height="158" fill="url(#g6)"/>
+            <rect x="118" y="52" width="64" height="72" rx="12" fill="#e01b2e"/>
+            <rect x="132" y="66" width="36" height="26" rx="6" fill="#ffd447"/>
+            <path d="M132 52c0-14 36-14 36 0" fill="none" stroke="#b3111f" stroke-width="6" stroke-linecap="round"/>
+            <g fill="#4d8bff"><circle cx="70" cy="46" r="3"/><circle cx="232" cy="52" r="3"/></g>
+            <g fill="#fff"><circle cx="56" cy="86" r="2"/><circle cx="246" cy="90" r="2"/><circle cx="150" cy="30" r="2.4"/></g>
+          </svg>
+        </div>
+        <div class="body">
+          <h3>Backpack Kids Assortment</h3>
+          <p>A safe, fun starter pack sized for the little ones. Ground blooms, snappers, sparklers, and small novelties they can enjoy up close.</p>
+          <div class="foot"><span class="price">$25.00<small>Tax included</small></span></div>
+        </div>
+      </article>
+
+      <!-- Texas Crush -->
+      <article class="pc reveal d1">
+        <div class="art">
+          <span class="tagpill">Fan Favorite</span>
+          <svg viewBox="0 0 300 158" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><radialGradient id="g7" cx="50%" cy="70%" r="80%"><stop offset="0%" stop-color="#3a1220"/><stop offset="100%" stop-color="#070a1e"/></radialGradient></defs>
+            <rect width="300" height="158" fill="url(#g7)"/>
+            <g stroke="#ff5a72" stroke-width="1.4" opacity=".95">
+              <line x1="150" y1="70" x2="150" y2="26"/><line x1="150" y1="70" x2="116" y2="40"/><line x1="150" y1="70" x2="184" y2="40"/><line x1="150" y1="70" x2="102" y2="70"/><line x1="150" y1="70" x2="198" y2="70"/><line x1="150" y1="70" x2="120" y2="102"/><line x1="150" y1="70" x2="180" y2="102"/>
+            </g>
+            <g fill="#fff"><circle cx="150" cy="24" r="2.6"/><circle cx="114" cy="38" r="2.6"/><circle cx="186" cy="38" r="2.6"/><circle cx="100" cy="70" r="2.6"/><circle cx="200" cy="70" r="2.6"/><circle cx="118" cy="104" r="2.6"/><circle cx="182" cy="104" r="2.6"/></g>
+            <circle cx="150" cy="70" r="5" fill="#ffd447"/>
+          </svg>
+        </div>
+        <div class="body">
+          <h3>Texas Crush</h3>
+          <p>A big, bold Lone Star favorite built to crush the block. Deep reds and gold willows that finish the show with real Texas swagger.</p>
+          <div class="foot"><span class="price">$101.00<small>Tax included</small></span></div>
+        </div>
+      </article>
+
+      <!-- Growler -->
+      <article class="pc reveal d2">
+        <div class="art">
+          <span class="tagpill">Big Show</span>
+          <svg viewBox="0 0 300 158" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><radialGradient id="g8" cx="50%" cy="72%" r="82%"><stop offset="0%" stop-color="#12204a"/><stop offset="100%" stop-color="#070a1e"/></radialGradient></defs>
+            <rect width="300" height="158" fill="url(#g8)"/>
+            <g stroke="#ffd447" stroke-width="1.2" opacity=".9"><line x1="90" y1="62" x2="90" y2="30"/><line x1="90" y1="62" x2="66" y2="46"/><line x1="90" y1="62" x2="114" y2="46"/><line x1="90" y1="62" x2="68" y2="76"/><line x1="90" y1="62" x2="112" y2="76"/></g>
+            <g stroke="#4d8bff" stroke-width="1.2" opacity=".9"><line x1="210" y1="58" x2="210" y2="28"/><line x1="210" y1="58" x2="188" y2="42"/><line x1="210" y1="58" x2="232" y2="42"/><line x1="210" y1="58" x2="188" y2="72"/><line x1="210" y1="58" x2="232" y2="72"/></g>
+            <g stroke="#e01b2e" stroke-width="1.2" opacity=".9"><line x1="150" y1="112" x2="150" y2="88"/><line x1="150" y1="112" x2="132" y2="98"/><line x1="150" y1="112" x2="168" y2="98"/></g>
+            <circle cx="90" cy="62" r="4" fill="#fff"/><circle cx="210" cy="58" r="4" fill="#fff"/><circle cx="150" cy="112" r="3" fill="#fff"/>
+          </svg>
+        </div>
+        <div class="body">
+          <h3>Growler</h3>
+          <p>A stacked assortment that rolls from cakes to shells to fountains. A whole evening of variety in one crate, ready to light one after another.</p>
+          <div class="foot"><span class="price">$153.50<small>Tax included</small></span></div>
+        </div>
+      </article>
+
+      <!-- The Trump Card (case) -->
+      <article class="pc reveal d3">
+        <div class="art">
+          <span class="tagpill best">Case Pricing</span>
+          <svg viewBox="0 0 300 158" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><radialGradient id="g9" cx="50%" cy="60%" r="80%"><stop offset="0%" stop-color="#1a1e46"/><stop offset="100%" stop-color="#070a1e"/></radialGradient></defs>
+            <rect width="300" height="158" fill="url(#g9)"/>
+            <rect x="124" y="42" width="52" height="74" rx="6" fill="#fdf8ef" transform="rotate(-8 150 79)"/>
+            <rect x="124" y="42" width="52" height="74" rx="6" fill="none" stroke="#e01b2e" stroke-width="2" transform="rotate(-8 150 79)"/>
+            <text x="150" y="86" font-family="Georgia" font-size="26" font-weight="bold" fill="#2e6cf6" text-anchor="middle" transform="rotate(-8 150 79)">A</text>
+            <g fill="#ffd447"><circle cx="70" cy="46" r="2.6"/><circle cx="232" cy="52" r="2.6"/><circle cx="58" cy="100" r="2"/><circle cx="244" cy="96" r="2"/></g>
+          </svg>
+        </div>
+        <div class="body">
+          <h3>The Trump Card</h3>
+          <p>One of our special-order case assortments. Order by the case, lock in your price, and we secure the inventory for you the day you order.</p>
+          <div class="foot"><span class="price">$154.50<small>Case price, tax included</small></span></div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- category cloud -->
+    <div class="cat-cloud reveal">
+      <span class="chip">500 &amp; 200 Gram Cakes</span>
+      <span class="chip">Artillery Shells</span>
+      <span class="chip">Family Assortments</span>
+      <span class="chip">Fountains</span>
+      <span class="chip">Firecrackers</span>
+      <span class="chip">Spinners &amp; Flyers</span>
+      <span class="chip">Roman Candles</span>
+      <span class="chip">Missiles &amp; Rockets</span>
+      <span class="chip">Sparklers</span>
+      <span class="chip">Novelties</span>
+      <span class="chip">Big Daddy Cans</span>
+      <span class="chip">Bunker Buster</span>
+      <span class="chip">Tiger Blood Shells</span>
+      <span class="chip">Class Clowns</span>
+      <span class="chip">Liberty Assortment</span>
+      <span class="chip">USA Assortment</span>
+      <span class="chip">Full House</span>
+      <span class="chip">Lil Pail</span>
+    </div>
+
+    <!-- case pricing note -->
+    <div class="case-note reveal">
+      <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
+      <div style="flex:1;min-width:240px">
+        <h3>Special-Order Case Pricing, Year Round</h3>
+        <p>Planning a big show? Place a case order anytime through the year by phone or our order form. You lock in the price and we hold the inventory for your pickup window. A few of the crowd favorites:</p>
+        <div class="cases">
+          <span>Da Big Box of Bombs <b>$209</b></span>
+          <span>Ignition Squad <b>$240.50</b></span>
+          <span>Texas Pyro <b>$244.60</b></span>
+          <span>Mob Madness <b>$197</b></span>
+          <span>Best-Case Scenario <b>$226</b></span>
+          <span>The Max <b>$689</b></span>
+          <span>Masterclass <b>$449</b></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY ============ -->
+<section class="band story" id="story">
+  <div class="wrap story-wrap">
+    <div class="story-visual reveal">
+      <div class="story-card">
+        <div class="badge-30">
+          <svg class="seal" viewBox="0 0 88 88" fill="none" aria-hidden="true">
+            <circle cx="44" cy="44" r="42" fill="#0a0e2a" stroke="#ffd447" stroke-width="2"/>
+            <circle cx="44" cy="44" r="34" fill="none" stroke="#e01b2e" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <g fill="#fff"><path d="M44 24l3 8h8l-6.5 5 2.5 8-7-5-7 5 2.5-8L33 32h8z"/></g>
+            <text x="44" y="58" font-family="Arial" font-size="8" font-weight="bold" fill="#ffd447" text-anchor="middle" letter-spacing="1">FAMILY</text>
+            <text x="44" y="68" font-family="Arial" font-size="7" fill="#c9cfe6" text-anchor="middle" letter-spacing="1">OWNED</text>
+          </svg>
+          <div>
+            <b>30+ Years</b>
+            <span>Retail experience</span>
+          </div>
+        </div>
+        <p class="quote">Family-owned and operated, we keep our prices low. We don't mislead you with claims of freebies. Nothing is truly free, so don't be fooled.</p>
+        <p class="quote-by">In their own words</p>
+
+        <div class="journey">
+          <div class="leg"><b>Porter, TX</b><span>Houston area roots</span></div>
+          <div class="arrow"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+          <div class="leg"><b>Burleson, TX</b><span>Home for 20+ years</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-copy reveal d1">
+      <span class="eyebrow">Our Story</span>
+      <h2 class="h-serif">A Texas family that knows fireworks.</h2>
+      <p class="lead">Over 30 years of retail experience, including 20 years in the fireworks industry, all under one family. We packed up from Porter in the Houston area and put down roots in Burleson, where our two stands at 13045 Rendon Road have served the Rendon community for more than 20 years.</p>
+      <p class="lead">Our pitch has always been simple: honesty and low prices over gimmicks. The price you see on this site is the same price at the stand, tax included, with no hidden add-ons. We would rather earn your trust than sell you a fake freebie.</p>
+
+      <div class="guar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        <div>
+          <b>Our Guarantee</b>
+          <span>We test our products rigorously. If a firework does not meet expectations, we will either refund your money or replace it with another product. Simple as that.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="band reviews" id="reviews">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Why Neighbors Choose Us</span>
+      <h2 class="h-serif">Built on honesty,<br>backed by a guarantee.</h2>
+      <p class="lead">These are the promises we make to every customer who pulls up to the stand. Straight talk, fair prices, and a product we stand behind.</p>
+    </div>
+
+    <div class="rv-grid">
+      <div class="rv reveal d1">
+        <div class="stars" aria-label="Our promise">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+        </div>
+        <p class="rq">The price you see is the price you pay. Tax is already in, so there are no surprises when you get to the front of the line.</p>
+        <div class="rby">
+          <span class="av" style="background:linear-gradient(180deg,#e01b2e,#b3111f)">$</span>
+          <div><b>Transparent Pricing</b><span>DFW's Low Price Leader</span></div>
+        </div>
+      </div>
+
+      <div class="rv reveal d2">
+        <div class="stars" aria-label="Our promise">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+        </div>
+        <p class="rq">Every product is tested before it hits the table. If something does not meet expectations, we refund you or replace it, no hassle.</p>
+        <div class="rby">
+          <span class="av" style="background:linear-gradient(180deg,#4d8bff,#2e6cf6)">&#10003;</span>
+          <div><b>Money-Back Guarantee</b><span>We stand behind every box</span></div>
+        </div>
+      </div>
+
+      <div class="rv reveal d3">
+        <div class="stars" aria-label="Our promise">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+        </div>
+        <p class="rq">Refer your friends and family. When you collectively spend $500, you earn a $50 credit plus 10% off your next purchases. Loyalty pays.</p>
+        <div class="rby">
+          <span class="av" style="background:linear-gradient(180deg,#ffd447,#ffb020);color:#0a0e2a">&#9733;</span>
+          <div><b>Friends &amp; Family</b><span>Rewards that give back</span></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="rv-disclaimer"><b>A note on reviews.</b> This concept preview shows the shop's real promises rather than invented customer quotes. Verified customer testimonials would be added here from the shop's actual Yelp, Google, and Facebook feedback before launch.</p>
+  </div>
+</section>
+
+<!-- ============ LOCATIONS / HOURS ============ -->
+<section class="band locations" id="visit">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Find Us</span>
+      <h2 class="h-serif">Two stands. One easy stop<br>in Rendon.</h2>
+      <p class="lead">Both of our family-owned stands sit at 13045 Rendon Road in Burleson, in the Rendon area. Pull up during the season, or order online for convenient car pickup.</p>
+    </div>
+
+    <div class="loc-wrap">
+      <!-- map -->
+      <div class="map-card reveal d1">
+        <div class="map-art">
+          <svg viewBox="0 0 520 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="520" height="320" fill="#0b1030"/>
+            <g stroke="#1c2a5e" stroke-width="10" fill="none" opacity=".9">
+              <path d="M-20 120 H540"/><path d="M-20 220 H540"/>
+              <path d="M120 -20 V340"/><path d="M340 -20 V340"/>
+            </g>
+            <g stroke="#26356e" stroke-width="4" fill="none" opacity=".7">
+              <path d="M-20 70 H540"/><path d="M-20 270 H540"/>
+              <path d="M60 -20 V340"/><path d="M240 -20 V340"/><path d="M430 -20 V340"/>
+            </g>
+            <path d="M-20 40 C160 90 260 60 540 150" stroke="#2e6cf6" stroke-width="5" fill="none" opacity=".55"/>
+            <g fill="#0f1636" stroke="#26356e" stroke-width="2">
+              <rect x="150" y="150" width="60" height="42" rx="3"/><rect x="250" y="140" width="70" height="40" rx="3"/>
+              <rect x="150" y="235" width="80" height="46" rx="3"/><rect x="360" y="150" width="60" height="40" rx="3"/>
+            </g>
+            <g fill="#ffd447" opacity=".8"><circle cx="80" cy="45" r="2"/><circle cx="470" cy="255" r="2"/><circle cx="430" cy="60" r="1.6"/></g>
+          </svg>
+          <div class="map-pin">
+            <svg width="46" height="58" viewBox="0 0 46 58" aria-hidden="true">
+              <path d="M23 2C11.4 2 2 11.4 2 23c0 15 21 33 21 33s21-18 21-33C44 11.4 34.6 2 23 2z" fill="#e01b2e" stroke="#ffd447" stroke-width="2.5"/>
+              <circle cx="23" cy="23" r="8" fill="#fff"/>
+            </svg>
+          </div>
+        </div>
+        <div class="map-foot">
+          <div class="addr">
+            <b>Discount Fireworks of Texas</b>
+            <span>13045 Rendon Rd, Burleson, TX 76028</span>
+          </div>
+          <a class="dirbtn" href="https://maps.google.com/?q=13045+Rendon+Rd+Burleson+TX+76028" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 21s-7-6.7-7-12a7 7 0 0114 0c0 5.3-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            Directions
+          </a>
+        </div>
+      </div>
+
+      <!-- hours -->
+      <div class="hours-card reveal d2">
+        <h3>Stand Hours</h3>
+        <span class="season-tag"><span class="dot" style="width:7px;height:7px;border-radius:50%;background:var(--gold-1)"></span>Seasonal &middot; Reopens June 24</span>
+        <div class="hrow"><span class="d">Sunday to Thursday</span><span class="t">12:00 PM to 9:00 PM</span></div>
+        <div class="hrow"><span class="d">Friday &amp; Saturday</span><span class="t">11:00 AM to 11:00 PM</span></div>
+
+        <div class="season-list">
+          <div class="sl"><b>Summer stands</b><span>June 24 to July 5</span></div>
+          <div class="sl"><b>New Year stands</b><span>Dec 20 to Jan 1</span></div>
+          <div class="sl"><b>Summer car pickup</b><span>June 25 to July 3</span></div>
+          <div class="sl"><b>Winter car pickup</b><span>Dec 21 to Dec 30</span></div>
+          <div class="sl"><b>Case orders</b><span>Anytime, year round</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final">
+  <div class="fx" aria-hidden="true">
+    <div class="burst b1" style="left:20%;top:22%"></div>
+    <div class="burst b3" style="left:74%;top:18%"></div>
+    <div class="burst b4" style="left:48%;top:30%"></div>
+  </div>
+  <div class="wrap">
+    <h2>Ready to make it<br><span class="glow">a real show?</span></h2>
+    <p>Place a case order now for the season ahead, or call and we will help you build the perfect backyard lineup. Prices include tax, and every box is guaranteed.</p>
+    <div class="cta-row">
+      <a class="btn btn-call" href="tel:+12812167247">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.9 15.9 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.57 3.6 1 1 0 01-.24 1l-2.23 2.2z"/></svg>
+        <span>Call to Order<small>(281) 216-7247</small></span>
+      </a>
+      <button class="btn btn-ghost" type="button" disabled aria-disabled="true">
+        <span class="soon">Coming Soon</span>
+        Shop Online &middot; Reopens Dec 20
+      </button>
+    </div>
+    <p class="final-tel">or <a href="tel:+12812167247">(281) 216-7247</a> &middot; (972) 832-7248</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site">
+  <div class="flag-line"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="wrap" style="padding-top:40px">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">
+          <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <circle cx="20" cy="20" r="19" fill="#0a0e2a" stroke="#ffd447" stroke-width="1.5"/>
+            <g stroke="#e01b2e" stroke-width="2" stroke-linecap="round"><path d="M20 6v6M20 28v6M6 20h6M28 20h6M10 10l4 4M26 26l4 4M30 10l-4 4M14 26l-4 4"/></g>
+            <circle cx="20" cy="20" r="4.2" fill="#ffd447"/>
+          </svg>
+          <span class="name"><b>Discount Fireworks</b><span>of Texas</span></span>
+        </div>
+        <p>Family-owned and operated in Burleson, Texas. DFW's Low Price Leader. Prices include tax, products are tested, and every purchase is backed by our guarantee.</p>
+      </div>
+
+      <div class="foot-col">
+        <h4>Visit &amp; Order</h4>
+        <p>13045 Rendon Rd<br>Burleson, TX 76028</p>
+        <a href="tel:+12812167247">(281) 216-7247</a>
+        <a href="tel:+19728327248">(972) 832-7248</a>
+        <a href="mailto:pab062142@gmail.com">pab062142@gmail.com</a>
+      </div>
+
+      <div class="foot-col">
+        <h4>Good to Know</h4>
+        <p>Prices include 10.25% tax</p>
+        <p>10% military &amp; first responder</p>
+        <p>Case pricing year round</p>
+        <p>Apple Pay accepted</p>
+        <p>Accessible parking &amp; entrance</p>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <p>&copy; 2026 Discount Fireworks of Texas. All rights reserved.</p>
+      <p class="disclaimer">Concept preview built by DNA Agency, not affiliated with Discount Fireworks of Texas.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* scroll reveal */
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){
+      els.forEach(function(e){e.classList.add('in')});
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { threshold:0.12, rootMargin:'0px 0px -8% 0px' });
+    els.forEach(function(e){ io.observe(e); });
+  })();
+</script>
