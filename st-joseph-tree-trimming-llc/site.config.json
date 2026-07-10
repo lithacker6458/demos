@@ -2,14 +2,14 @@
   "template": "agency-local-business",
   "templateVersion": "1.0.0",
   "business": {
-    "name": "North Alabama Heating and Cooling",
+    "name": "St. Joseph Tree Trimming LLC",
     "tagline": "Quality work, fair prices, and a crew that shows up.",
-    "category": "HVAC contractor",
+    "category": "Tree Service",
     "phone": "(555) 555-5555",
-    "email": "hello@north-alabama-heating-and-cooling.com",
+    "email": "hello@st-joseph-tree-trimming-llc.com",
     "address": "123 Main St",
-    "city": "Athens, AL",
-    "domain": "lithacker6458.github.io/demos/north-alabama-heating-and-cooling"
+    "city": "Chandler, IN",
+    "domain": "lithacker6458.github.io/demos/st-joseph-tree-trimming-llc"
   },
   "brand": {
     "primaryColor": "#1a5fb4",

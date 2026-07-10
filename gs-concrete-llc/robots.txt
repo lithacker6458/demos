@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://lithacker6458.github.io/demos/gs-concrete-llc/sitemap.xml
