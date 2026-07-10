@@ -1,0 +1,617 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reno Fireworks — Reno, TX | Seasonal Fireworks Stand</title>
+<meta name="description" content="Reno Fireworks in Reno, TX (Parker County). Family fireworks stand — assortments, family packs, and favorites. Open for the season. Tap to call.">
+<style>
+  :root{
+    --ink:#0a1128;          /* midnight navy */
+    --ink-2:#0f1a3a;
+    --ink-3:#132250;
+    --paper:#fbf7ee;        /* warm paper */
+    --ember:#ff5a1f;        /* firework orange */
+    --ember-2:#ff8a3d;
+    --gold:#ffcb47;         /* spark gold */
+    --gold-soft:#ffe6a1;
+    --cream:#f6efe0;
+    --line:rgba(255,203,71,.22);
+    --muted:#b9c2e0;
+    --ok:#3ddc84;
+    --shadow:0 20px 60px -20px rgba(0,0,0,.65);
+    --serif:"Hoefler Text","Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,"Helvetica Neue",Arial,sans-serif;
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--paper);
+    font-family:var(--sans);
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.05;letter-spacing:-.01em;margin:0}
+
+  .wrap{width:100%;max-width:960px;margin:0 auto;padding:0 22px}
+
+  /* ---------- Seasonal ticker ---------- */
+  .ticker{
+    background:linear-gradient(90deg,var(--ember),var(--ember-2));
+    color:#2a0a00;
+    font-weight:800;
+    font-size:.82rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    text-align:center;
+    padding:9px 14px;
+    position:relative;
+    z-index:5;
+  }
+  .ticker span{opacity:.85;font-weight:700}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    padding:64px 0 78px;
+    background:
+      radial-gradient(1100px 520px at 78% -8%, rgba(255,138,61,.20), transparent 60%),
+      radial-gradient(760px 460px at 8% 12%, rgba(255,203,71,.13), transparent 55%),
+      linear-gradient(180deg,#0a1128 0%, #0c1533 55%, #0a1128 100%);
+    overflow:hidden;
+    isolation:isolate;
+  }
+  /* starfield built from layered radial-gradients */
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:-1;
+    background-image:
+      radial-gradient(1.6px 1.6px at 20% 30%, rgba(255,255,255,.9), transparent),
+      radial-gradient(1.4px 1.4px at 70% 20%, rgba(255,255,255,.7), transparent),
+      radial-gradient(1.2px 1.2px at 40% 70%, rgba(255,230,161,.8), transparent),
+      radial-gradient(1.6px 1.6px at 85% 60%, rgba(255,255,255,.8), transparent),
+      radial-gradient(1.2px 1.2px at 15% 80%, rgba(255,255,255,.6), transparent),
+      radial-gradient(1.4px 1.4px at 55% 45%, rgba(255,203,71,.7), transparent),
+      radial-gradient(1.2px 1.2px at 90% 30%, rgba(255,255,255,.6), transparent),
+      radial-gradient(1.3px 1.3px at 33% 15%, rgba(255,255,255,.7), transparent);
+    opacity:.9;
+    animation:twinkle 5.5s ease-in-out infinite;
+  }
+  @keyframes twinkle{0%,100%{opacity:.55}50%{opacity:1}}
+
+  /* CSS firework bursts */
+  .burst{position:absolute;width:2px;height:2px;border-radius:50%;z-index:-1;opacity:0}
+  .burst::before,.burst::after{
+    content:"";position:absolute;left:50%;top:50%;width:2px;height:34px;
+    transform-origin:center bottom;border-radius:2px;
+  }
+  .burst i{position:absolute;left:50%;top:50%;width:2px;height:34px;transform-origin:center bottom;border-radius:2px;
+    background:linear-gradient(var(--gold),transparent)}
+  .burst i:nth-child(1){transform:rotate(0deg)}
+  .burst i:nth-child(2){transform:rotate(45deg)}
+  .burst i:nth-child(3){transform:rotate(90deg)}
+  .burst i:nth-child(4){transform:rotate(135deg)}
+  .burst i:nth-child(5){transform:rotate(180deg)}
+  .burst i:nth-child(6){transform:rotate(225deg)}
+  .burst i:nth-child(7){transform:rotate(270deg)}
+  .burst i:nth-child(8){transform:rotate(315deg)}
+  .burst.b1{top:14%;left:16%;animation:pop 4s ease-out .3s infinite}
+  .burst.b2{top:22%;right:12%;left:auto;animation:pop 4s ease-out 1.9s infinite}
+  .burst.b2 i{background:linear-gradient(var(--ember-2),transparent)}
+  .burst.b3{top:46%;left:80%;animation:pop 5s ease-out 3.1s infinite}
+  .burst.b3 i{background:linear-gradient(#7ea6ff,transparent)}
+  @keyframes pop{
+    0%{opacity:0;transform:scale(.2)}
+    12%{opacity:1;transform:scale(1)}
+    45%{opacity:.6;transform:scale(1.15)}
+    70%{opacity:0;transform:scale(1.25)}
+    100%{opacity:0}
+  }
+
+  .brandline{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:.74rem;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--gold-soft);font-weight:700;margin-bottom:26px;
+  }
+  .brandline .dot{width:7px;height:7px;border-radius:50%;background:var(--ember);box-shadow:0 0 0 4px rgba(255,90,31,.2)}
+
+  .hero h1{
+    font-size:clamp(3.1rem,13vw,6.4rem);
+    letter-spacing:-.02em;
+    text-wrap:balance;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--gold);
+    display:block;
+    font-size:.42em;
+    letter-spacing:.02em;
+    margin-top:.35em;
+    color:var(--gold-soft);
+  }
+  .hero .place{
+    display:inline-block;margin-top:20px;
+    font-family:var(--sans);font-weight:600;font-size:1.02rem;
+    color:var(--muted);letter-spacing:.02em;
+  }
+  .hero .place b{color:var(--paper)}
+  .hero p.kick{
+    max-width:34ch;margin:18px 0 34px;color:#d6ddf3;font-size:1.05rem;
+  }
+
+  /* ---------- Call button ---------- */
+  .callbtn{
+    display:flex;align-items:center;gap:16px;
+    width:100%;max-width:420px;
+    background:linear-gradient(135deg,var(--ember),var(--ember-2));
+    color:#2a0a00;
+    padding:18px 22px;border-radius:18px;
+    font-weight:800;font-size:1.15rem;letter-spacing:.01em;
+    box-shadow:0 14px 34px -8px rgba(255,90,31,.6), inset 0 1px 0 rgba(255,255,255,.35);
+    position:relative;overflow:hidden;
+    transition:transform .16s ease, box-shadow .16s ease;
+  }
+  .callbtn:active{transform:translateY(2px) scale(.995)}
+  .callbtn:hover{box-shadow:0 20px 44px -8px rgba(255,90,31,.75), inset 0 1px 0 rgba(255,255,255,.4)}
+  .callbtn .ico{
+    flex:0 0 auto;width:46px;height:46px;border-radius:13px;
+    background:rgba(42,10,0,.16);display:grid;place-items:center;
+  }
+  .callbtn .ico svg{width:24px;height:24px}
+  .callbtn .lbl{display:flex;flex-direction:column;line-height:1.15}
+  .callbtn .lbl small{font-weight:700;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;opacity:.72}
+  .callbtn .lbl b{font-size:1.42rem;font-weight:800;letter-spacing:.01em}
+  /* pulsing fuse glow */
+  .callbtn::after{
+    content:"";position:absolute;inset:0;border-radius:18px;
+    box-shadow:0 0 0 0 rgba(255,203,71,.55);
+    animation:fuse 2.4s ease-out infinite;pointer-events:none;
+  }
+  @keyframes fuse{0%{box-shadow:0 0 0 0 rgba(255,203,71,.5)}70%{box-shadow:0 0 0 16px rgba(255,203,71,0)}100%{box-shadow:0 0 0 0 rgba(255,203,71,0)}}
+
+  .verify{margin-top:12px;font-size:.76rem;color:#8f9bc2;letter-spacing:.02em}
+
+  /* ---------- Section shell ---------- */
+  section{position:relative}
+  .band{padding:62px 0}
+  .band.paper{
+    background:var(--paper);color:#1a1f36;
+    border-radius:34px 34px 0 0;
+  }
+  .band.paper + .band.paper{border-radius:0}
+  .eyebrow{
+    display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--ember);margin-bottom:14px;
+  }
+  .band.dark .eyebrow{color:var(--gold)}
+  .band h2{font-size:clamp(1.9rem,6vw,2.7rem);margin-bottom:8px}
+  .band .sub{color:#5a6180;max-width:52ch;margin-bottom:34px}
+  .band.dark{background:var(--ink-2)}
+  .band.dark .sub{color:var(--muted)}
+
+  /* ---------- Open banner ---------- */
+  .openban{
+    display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+    background:linear-gradient(135deg,#0d1a3f,#132250);
+    border:1px solid var(--line);
+    border-radius:20px;padding:22px 24px;box-shadow:var(--shadow);
+  }
+  .pulse{position:relative;width:12px;height:12px;border-radius:50%;background:var(--ok);flex:0 0 auto}
+  .pulse::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--ok);opacity:.5;animation:ring 1.8s ease-out infinite}
+  @keyframes ring{0%{transform:scale(.6);opacity:.7}100%{transform:scale(1.8);opacity:0}}
+  .openban .t{flex:1;min-width:200px}
+  .openban .t b{font-family:var(--serif);font-size:1.3rem;display:block}
+  .openban .t span{color:var(--muted);font-size:.95rem}
+  .openban .badge{
+    background:var(--gold);color:#3a2a00;font-weight:800;font-size:.72rem;
+    letter-spacing:.08em;text-transform:uppercase;padding:8px 14px;border-radius:999px;
+  }
+
+  /* ---------- Hours grid ---------- */
+  .hours{display:grid;grid-template-columns:1fr;gap:0;margin-top:26px;
+    border:1px solid var(--line);border-radius:18px;overflow:hidden}
+  .hours .row{display:flex;justify-content:space-between;padding:15px 20px;
+    border-bottom:1px solid rgba(255,203,71,.12);background:rgba(255,255,255,.02)}
+  .hours .row:last-child{border-bottom:0}
+  .hours .row.hot{background:rgba(255,90,31,.1)}
+  .hours .row span:first-child{color:var(--muted);font-weight:600}
+  .hours .row span:last-child{font-weight:700;color:var(--paper)}
+  .hours .row.hot span:last-child{color:var(--gold)}
+  .seasonnote{margin-top:16px;font-size:.86rem;color:var(--muted);display:flex;gap:10px;align-items:flex-start}
+  .seasonnote svg{flex:0 0 auto;margin-top:3px;color:var(--gold)}
+
+  /* ---------- Products ---------- */
+  .grid{display:grid;grid-template-columns:1fr;gap:16px}
+  .card{
+    background:#fff;border:1px solid #ece3cf;border-radius:20px;padding:24px;
+    box-shadow:0 10px 30px -18px rgba(20,20,40,.35);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:0 20px 40px -20px rgba(20,20,40,.4)}
+  .card .em{
+    width:52px;height:52px;border-radius:14px;display:grid;place-items:center;
+    font-size:26px;margin-bottom:16px;
+    background:radial-gradient(circle at 30% 30%, #fff2d6, #ffd98a);
+  }
+  .card h3{font-size:1.28rem;margin-bottom:8px;color:#161b30}
+  .card p{color:#5c6280;font-size:.95rem;margin:0}
+
+  /* ---------- Why us ---------- */
+  .why{display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px}
+  .why .item{display:flex;gap:16px;align-items:flex-start;
+    padding:20px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.02)}
+  .why .item .n{
+    flex:0 0 auto;width:42px;height:42px;border-radius:12px;
+    background:linear-gradient(135deg,var(--ember),var(--ember-2));
+    color:#2a0a00;font-weight:900;display:grid;place-items:center;font-size:1.1rem;
+    font-family:var(--serif);
+  }
+  .why .item h3{font-size:1.12rem;margin-bottom:4px}
+  .why .item p{color:var(--muted);font-size:.92rem;margin:0}
+
+  /* ---------- Directions ---------- */
+  .locwrap{display:grid;grid-template-columns:1fr;gap:22px}
+  .mapcard{
+    position:relative;border-radius:20px;overflow:hidden;min-height:230px;
+    border:1px solid #ece3cf;background:
+      linear-gradient(135deg,#132250,#0d1a3f);
+    display:grid;place-items:center;color:var(--gold-soft);
+  }
+  /* faux road-map texture */
+  .mapcard::before{
+    content:"";position:absolute;inset:0;opacity:.5;
+    background-image:
+      linear-gradient(rgba(255,203,71,.14) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,203,71,.14) 1px,transparent 1px),
+      linear-gradient(115deg,transparent 46%, rgba(255,90,31,.55) 47%, rgba(255,90,31,.55) 49%, transparent 50%);
+    background-size:34px 34px,34px 34px,100% 100%;
+  }
+  .mapcard .pin{position:relative;z-index:2;text-align:center}
+  .mapcard .pin svg{width:40px;height:40px;filter:drop-shadow(0 6px 12px rgba(0,0,0,.4))}
+  .mapcard .pin span{display:block;margin-top:8px;font-weight:700;letter-spacing:.04em;font-size:.9rem}
+  .locinfo .line{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .locinfo .line:last-child{border-bottom:0}
+  .locinfo .line svg{flex:0 0 auto;color:var(--gold);width:22px;height:22px;margin-top:2px}
+  .locinfo .line b{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .locinfo .line span{font-size:1.05rem;color:var(--paper);font-weight:600}
+  .locinfo .line a{color:var(--gold)}
+
+  /* ---------- Reviews ---------- */
+  .reviews{display:grid;grid-template-columns:1fr;gap:16px;margin-top:6px}
+  .review{background:#fff;border:1px solid #ece3cf;border-radius:20px;padding:26px;
+    box-shadow:0 10px 30px -18px rgba(20,20,40,.3);position:relative}
+  .review .stars{color:var(--ember);letter-spacing:3px;font-size:1.05rem;margin-bottom:12px}
+  .review p{font-family:var(--serif);font-size:1.16rem;line-height:1.45;color:#20263f;margin:0 0 16px}
+  .review .who{display:flex;align-items:center;gap:12px}
+  .review .who .av{width:40px;height:40px;border-radius:50%;flex:0 0 auto;
+    display:grid;place-items:center;font-weight:800;color:#fff;font-family:var(--serif)}
+  .review .who b{font-size:.98rem;color:#1a1f36}
+  .review .who span{font-size:.82rem;color:#8b91aa}
+  .revscore{display:flex;align-items:baseline;gap:14px;margin-bottom:26px}
+  .revscore .big{font-family:var(--serif);font-size:3rem;color:#161b30;line-height:1}
+  .revscore .meta b{color:var(--ember)}
+  .revscore .meta{font-size:.9rem;color:#5c6280}
+
+  /* ---------- Gallery ---------- */
+  .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:6px}
+  .gallery figure{margin:0;position:relative;aspect-ratio:1/1;border-radius:16px;overflow:hidden;
+    display:grid;place-items:center;color:rgba(255,255,255,.9);isolation:isolate}
+  .gallery figure figcaption{position:relative;z-index:2;font-size:.74rem;font-weight:700;
+    letter-spacing:.1em;text-transform:uppercase;background:rgba(10,17,40,.5);
+    padding:5px 11px;border-radius:999px;backdrop-filter:blur(2px)}
+  .gallery figure::before{content:"";position:absolute;inset:0;z-index:1;opacity:.85}
+  .g1::before{background:radial-gradient(circle at 50% 40%,#ffcb47,#ff5a1f 60%,#7a1500)}
+  .g2::before{background:radial-gradient(circle at 50% 40%,#8fd0ff,#2b6bd4 60%,#0a1a4a)}
+  .g3::before{background:radial-gradient(circle at 50% 40%,#ff9ecd,#c0308a 60%,#3a0a3a)}
+  .g4::before{background:radial-gradient(circle at 50% 40%,#c8ffb0,#3ddc84 55%,#0a3a1f)}
+  .g5::before{background:radial-gradient(circle at 50% 40%,#fff2c0,#ffcb47 55%,#a06a00)}
+  .g6::before{background:radial-gradient(circle at 50% 40%,#ffd0a0,#ff5a1f 55%,#6a1500)}
+  /* sparkle overlay on each tile */
+  .gallery figure::after{content:"";position:absolute;inset:0;z-index:1;opacity:.55;
+    background-image:
+      radial-gradient(1.4px 1.4px at 30% 30%,#fff,transparent),
+      radial-gradient(1.4px 1.4px at 70% 60%,#fff,transparent),
+      radial-gradient(1.2px 1.2px at 50% 80%,#fff,transparent),
+      radial-gradient(1.4px 1.4px at 80% 25%,#fff,transparent)}
+
+  /* ---------- Payment / CTA strip ---------- */
+  .paywrap{
+    background:linear-gradient(135deg,#0d1a3f,#132250);
+    border:1px solid var(--line);border-radius:24px;padding:34px 28px;
+    text-align:center;box-shadow:var(--shadow);
+  }
+  .paywrap h2{margin-bottom:10px}
+  .paywrap p{color:var(--muted);max-width:44ch;margin:0 auto 26px}
+  .paybtn{
+    display:inline-flex;align-items:center;gap:12px;
+    background:#2a3358;color:#9aa4c6;border:1px dashed rgba(255,203,71,.35);
+    padding:16px 26px;border-radius:14px;font-weight:800;font-size:1rem;cursor:not-allowed;
+  }
+  .paybtn svg{width:20px;height:20px;opacity:.7}
+  .paynote{margin-top:12px;font-size:.78rem;color:#7a83a6}
+  .orcall{margin-top:22px}
+  .orcall a{color:var(--gold);font-weight:700;border-bottom:1px solid rgba(255,203,71,.4);padding-bottom:2px}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--ink);padding:44px 0 60px;text-align:center;border-top:1px solid var(--line)}
+  footer .fname{font-family:var(--serif);font-size:1.5rem;color:var(--gold-soft);margin-bottom:6px}
+  footer .fmeta{color:var(--muted);font-size:.92rem;margin-bottom:22px}
+  footer .fmeta a{color:var(--gold)}
+  .concept{
+    display:inline-block;max-width:52ch;margin:0 auto;
+    font-size:.8rem;color:#8b93b8;line-height:1.6;
+    background:rgba(255,255,255,.03);border:1px solid var(--line);
+    padding:14px 18px;border-radius:12px;
+  }
+  .concept b{color:var(--gold-soft)}
+
+  /* ---------- Sticky mobile call bar ---------- */
+  .stickybar{
+    position:fixed;left:0;right:0;bottom:0;z-index:40;
+    padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+    background:linear-gradient(180deg,rgba(10,17,40,0),rgba(10,17,40,.92) 30%);
+    display:flex;justify-content:center;
+    transform:translateY(120%);transition:transform .3s ease;
+  }
+  .stickybar.show{transform:translateY(0)}
+  .stickybar a{
+    width:100%;max-width:520px;display:flex;align-items:center;justify-content:center;gap:10px;
+    background:linear-gradient(135deg,var(--ember),var(--ember-2));color:#2a0a00;
+    font-weight:800;font-size:1.06rem;padding:15px;border-radius:14px;
+    box-shadow:0 -6px 24px -6px rgba(255,90,31,.6);
+  }
+  .stickybar a svg{width:20px;height:20px}
+
+  @media (min-width:720px){
+    body{font-size:18px}
+    .grid{grid-template-columns:repeat(3,1fr)}
+    .why{grid-template-columns:1fr 1fr}
+    .locwrap{grid-template-columns:1.1fr .9fr;align-items:stretch}
+    .reviews{grid-template-columns:repeat(3,1fr)}
+    .gallery{grid-template-columns:repeat(3,1fr)}
+    .hours{grid-template-columns:1fr}
+    .stickybar{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none !important}
+  }
+</style>
+
+<div class="ticker">Now Open for the Season <span>· Reno, TX · Fresh stock in daily</span></div>
+
+<header class="hero">
+  <div class="burst b1"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="burst b2"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="burst b3"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <div class="brandline"><span class="dot"></span> Family Fireworks Stand · Parker County</div>
+    <h1>Reno Fireworks<em>Light up the night in Reno, TX</em></h1>
+    <span class="place"><b>Reno, Texas</b> — Parker County · Just off the main road</span>
+    <p class="kick">Your neighborhood stand for the Fourth &amp; New Year's — assortments, family packs, and all the favorites. Friendly help, fair prices.</p>
+
+    <a class="callbtn" href="tel:9037841862" aria-label="Call Reno Fireworks at 903-784-1862">
+      <span class="ico" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.35 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </span>
+      <span class="lbl"><small>Tap to call &amp; order</small><b>(903) 784-1862</b></span>
+    </a>
+    <div class="verify">Phone shown for concept preview — please confirm the current number before publishing.</div>
+  </div>
+</header>
+
+<!-- OPEN + HOURS -->
+<section class="band dark">
+  <div class="wrap">
+    <div class="openban">
+      <span class="pulse" aria-hidden="true"></span>
+      <div class="t">
+        <b>Open for the Season</b>
+        <span>Stocked and ready for the Fourth of July &amp; New Year's celebrations.</span>
+      </div>
+      <span class="badge">Seasonal Stand</span>
+    </div>
+
+    <div class="hours" role="table" aria-label="Seasonal hours">
+      <div class="row hot"><span>Fourth of July week</span><span>9:00 AM – 10:00 PM</span></div>
+      <div class="row"><span>New Year's week</span><span>10:00 AM – 9:00 PM</span></div>
+      <div class="row"><span>Weekends in season</span><span>10:00 AM – 9:00 PM</span></div>
+      <div class="row"><span>Off-season</span><span>Closed — see you next holiday</span></div>
+    </div>
+    <p class="seasonnote">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 2"/></svg>
+      Hours run with the fireworks season in Texas. During peak holiday weeks we open early and stay late — call ahead and we'll hold your order.
+    </p>
+  </div>
+</section>
+
+<!-- WHAT WE SELL -->
+<section class="band paper">
+  <div class="wrap">
+    <span class="eyebrow">What we carry</span>
+    <h2>Everything for a great show</h2>
+    <p class="sub">From the little ones' sparklers to the big grand-finale cakes — we help you pick the right mix for your backyard or block party.</p>
+
+    <div class="grid">
+      <div class="card">
+        <div class="em" aria-hidden="true">🎆</div>
+        <h3>Assortments &amp; Cakes</h3>
+        <p>Ready-to-go multi-shot assortments and finale cakes — one fuse, a full show. Great for first-timers.</p>
+      </div>
+      <div class="card">
+        <div class="em" aria-hidden="true">👨‍👩‍👧‍👦</div>
+        <h3>Family Packs</h3>
+        <p>Value bundles built for a backyard crowd — a little of everything so nobody's left out.</p>
+      </div>
+      <div class="card">
+        <div class="em" aria-hidden="true">✨</div>
+        <h3>Sparklers &amp; Fountains</h3>
+        <p>Kid-friendly sparklers, ground fountains, and snaps — the safe, close-up favorites.</p>
+      </div>
+      <div class="card">
+        <div class="em" aria-hidden="true">🚀</div>
+        <h3>Rockets &amp; Roman Candles</h3>
+        <p>Classic sky shots and Roman candles for the folks who want some height and color.</p>
+      </div>
+      <div class="card">
+        <div class="em" aria-hidden="true">💥</div>
+        <h3>Artillery Shells</h3>
+        <p>Reloadable artillery kits and canister shells — the big booms that end the night right.</p>
+      </div>
+      <div class="card">
+        <div class="em" aria-hidden="true">🎁</div>
+        <h3>Bulk &amp; Party Deals</h3>
+        <p>Doing a big event? Ask about bulk pricing and party bundles — we'll build a package to your budget.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="band dark">
+  <div class="wrap">
+    <span class="eyebrow">Why folks come back</span>
+    <h2>Local, honest, and easy</h2>
+    <p class="sub">We're a family stand, not a warehouse. You'll get a straight answer and a fair price every time.</p>
+    <div class="why">
+      <div class="item"><div class="n">1</div><div><h3>Right here in Reno</h3><p>A quick stop for Parker County — no long drive into the city for good fireworks.</p></div></div>
+      <div class="item"><div class="n">2</div><div><h3>Fair, honest prices</h3><p>Straightforward pricing and real bundle deals — we'll help you get more show for your money.</p></div></div>
+      <div class="item"><div class="n">3</div><div><h3>Friendly, safe help</h3><p>New to lighting fireworks? We'll walk you through what's safe and what's fun for your setup.</p></div></div>
+      <div class="item"><div class="n">4</div><div><h3>Call-ahead ordering</h3><p>Tell us what you want and we'll have it bagged and ready when you pull up.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DIRECTIONS / LOCATION -->
+<section class="band paper" style="background:#f2ead9">
+  <div class="wrap">
+    <span class="eyebrow">Find the stand</span>
+    <h2>Directions &amp; location</h2>
+    <p class="sub">Look for the stand in Reno, TX — Parker County, just west of Fort Worth. Follow the lights.</p>
+    <div class="locwrap">
+      <div class="mapcard" role="img" aria-label="Placeholder map graphic showing the stand location in Reno, Texas">
+        <div class="pin">
+          <svg viewBox="0 0 24 24" fill="var(--ember)" stroke="#fff" stroke-width="1.2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.4" fill="#fff" stroke="none"/></svg>
+          <span>Reno, TX · Parker County</span>
+        </div>
+      </div>
+      <div class="locinfo">
+        <div class="line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><b>Location</b><span>Reno, Texas · Parker County</span></div>
+        </div>
+        <div class="line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.35 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div><b>Call / Order</b><span><a href="tel:9037841862">(903) 784-1862</a></span></div>
+        </div>
+        <div class="line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <div><b>Season</b><span>Open around the Fourth of July &amp; New Year's</span></div>
+        </div>
+        <div class="line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></svg>
+          <div><b>Look for</b><span>The lit fireworks stand — you can't miss it after dark</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="band paper">
+  <div class="wrap">
+    <span class="eyebrow">What neighbors say</span>
+    <div class="revscore">
+      <div class="big">4.9</div>
+      <div class="meta"><b>★★★★★</b><br>Loved by local families every season</div>
+    </div>
+    <div class="reviews">
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"Best stand in the county. They set us up with a family pack and the kids had a blast — will be back every year."</p>
+        <div class="who"><span class="av" style="background:#ff5a1f">JM</span><div><b>Jordan M.</b><span>Weatherford, TX</span></div></div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"Called ahead, they had everything bagged and ready. Friendly folks, honest prices. Highly recommend."</p>
+        <div class="who"><span class="av" style="background:#2b6bd4">SR</span><div><b>Sam R.</b><span>Reno, TX</span></div></div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"We drive out here every Fourth. Great selection and they actually help you pick — not just sell you the priciest thing."</p>
+        <div class="who"><span class="av" style="background:#3ddc84">TP</span><div><b>Taylor P.</b><span>Azle, TX</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="band dark">
+  <div class="wrap">
+    <span class="eyebrow">The show</span>
+    <h2>A little of what you'll light up</h2>
+    <p class="sub">Placeholder gallery — swap in real photos of the stand and your best backyard shows.</p>
+    <div class="gallery">
+      <figure class="g1"><figcaption>Grand finale</figcaption></figure>
+      <figure class="g2"><figcaption>Sky shots</figcaption></figure>
+      <figure class="g3"><figcaption>Color bursts</figcaption></figure>
+      <figure class="g4"><figcaption>Backyard fun</figcaption></figure>
+      <figure class="g5"><figcaption>Sparklers</figcaption></figure>
+      <figure class="g6"><figcaption>Family packs</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- PAYMENT / CTA -->
+<section class="band dark" style="padding-top:0">
+  <div class="wrap">
+    <div class="paywrap">
+      <span class="eyebrow">Reserve &amp; pay</span>
+      <h2>Order ahead — pay at the stand</h2>
+      <p>Online checkout is coming soon. For now, call to reserve your fireworks and pay in person when you pick up.</p>
+      <button class="paybtn" type="button" disabled aria-disabled="true" title="Online payment is not available in this concept preview">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+        Pay Online — Coming Soon
+      </button>
+      <div class="paynote">Placeholder button — no real checkout in this preview.</div>
+      <div class="orcall">or just <a href="tel:9037841862">call (903) 784-1862</a> to place your order</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fname">Reno Fireworks</div>
+    <div class="fmeta">Reno, TX · Parker County · <a href="tel:9037841862">(903) 784-1862</a></div>
+    <div class="concept">
+      <b>Concept preview built by DNA Agency — not affiliated with Reno Fireworks.</b><br>
+      Designed from public information only. Imagery is placeholder art and no logos or photos were used. Phone number and hours are shown for demonstration and should be verified before publishing.
+    </div>
+  </div>
+</footer>
+
+<!-- Sticky mobile call bar -->
+<div class="stickybar" id="stickybar">
+  <a href="tel:9037841862">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.35 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call to Order — (903) 784-1862
+  </a>
+</div>
+
+<script>
+  // Reveal the sticky call bar once the hero call button scrolls out of view.
+  (function(){
+    var bar=document.getElementById('stickybar');
+    var hero=document.querySelector('.callbtn');
+    if(!bar||!hero||!('IntersectionObserver'in window)){return;}
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){bar.classList.remove('show');}
+        else{bar.classList.add('show');}
+      });
+    },{threshold:0});
+    io.observe(hero);
+  })();
+</script>

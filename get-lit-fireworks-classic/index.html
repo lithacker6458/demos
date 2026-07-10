@@ -1,0 +1,928 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Get Lit Fireworks — Midlothian, TX | Open for the Season</title>
+<meta name="description" content="Get Lit Fireworks in Midlothian, TX. Family packs, assortments, and show-stopping aerials. Open for the season at 4781 US-67. Call 214-223-4594." />
+
+<style>
+  :root {
+    --navy: #0d1220;
+    --navy-deep: #080b15;
+    --navy-soft: #161d33;
+    --cream: #f6efe2;
+    --cream-dim: #d8cfbc;
+    --ember: #e23c2e;
+    --ember-bright: #ff5a3c;
+    --gold: #f2b544;
+    --gold-soft: #e0a838;
+    --ink: #1a1712;
+    --line: rgba(246, 239, 226, 0.12);
+
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --sans: "Avenir Next", "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  .wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 22px; }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ---------- Top ribbon ---------- */
+  .ribbon {
+    background: var(--ember);
+    color: var(--cream);
+    text-align: center;
+    font-family: var(--sans);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    position: relative;
+    z-index: 5;
+  }
+  .ribbon span { opacity: 0.95; }
+  .ribbon b { color: var(--gold); font-weight: 800; }
+
+  /* ---------- Header ---------- */
+  header.nav {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(13, 18, 32, 0.86);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .brand {
+    display: flex; align-items: center; gap: 11px;
+    color: var(--cream);
+  }
+  .brand-mark {
+    width: 34px; height: 34px; flex: none;
+    display: grid; place-items: center;
+    border-radius: 9px;
+    background: radial-gradient(circle at 30% 25%, var(--gold) 0%, var(--ember) 55%, #a2261b 100%);
+    box-shadow: 0 0 0 1px rgba(242,181,68,0.4), 0 6px 18px rgba(226,60,46,0.4);
+    font-size: 18px;
+  }
+  .brand-name {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1.16rem;
+    letter-spacing: 0.02em;
+    line-height: 1;
+  }
+  .brand-name small {
+    display: block;
+    font-family: var(--sans);
+    font-size: 0.58rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 3px;
+    font-weight: 700;
+  }
+  .nav-links { display: none; gap: 30px; align-items: center; }
+  .nav-links a {
+    color: var(--cream-dim);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-call {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: var(--gold);
+    color: var(--navy-deep) !important;
+    font-weight: 800;
+    font-size: 0.82rem;
+    padding: 9px 16px;
+    border-radius: 999px;
+    letter-spacing: 0.02em;
+    transition: transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 14px rgba(242,181,68,0.35);
+  }
+  .nav-call:hover { transform: translateY(-1px); box-shadow: 0 7px 20px rgba(242,181,68,0.5); }
+
+  @media (min-width: 860px) {
+    .nav-links { display: flex; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    background: var(--navy);
+    color: var(--cream);
+    overflow: hidden;
+    padding: 62px 0 78px;
+  }
+  .hero::before {
+    /* night sky gradient + faint spark glows */
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(720px 420px at 78% -8%, rgba(242,181,68,0.20), transparent 60%),
+      radial-gradient(560px 380px at 8% 8%, rgba(226,60,46,0.22), transparent 62%),
+      radial-gradient(900px 700px at 50% 118%, rgba(255,90,60,0.12), transparent 60%),
+      linear-gradient(180deg, var(--navy-deep) 0%, var(--navy) 45%, #10162a 100%);
+    z-index: 0;
+  }
+  .hero::after {
+    /* fine star dust */
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(1.4px 1.4px at 20% 30%, rgba(246,239,226,0.7), transparent),
+      radial-gradient(1.2px 1.2px at 70% 20%, rgba(246,239,226,0.55), transparent),
+      radial-gradient(1.3px 1.3px at 40% 70%, rgba(242,181,68,0.6), transparent),
+      radial-gradient(1px 1px at 85% 55%, rgba(246,239,226,0.5), transparent),
+      radial-gradient(1.4px 1.4px at 55% 42%, rgba(246,239,226,0.4), transparent),
+      radial-gradient(1.1px 1.1px at 12% 62%, rgba(242,181,68,0.5), transparent);
+    opacity: 0.9;
+    z-index: 0;
+    animation: twinkle 5.5s ease-in-out infinite alternate;
+  }
+  @keyframes twinkle { from { opacity: 0.55; } to { opacity: 1; } }
+
+  .hero-inner { position: relative; z-index: 2; }
+
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 0.72rem; font-weight: 800;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 22px;
+    opacity: 0;
+    animation: rise 0.7s ease forwards 0.05s;
+  }
+  .hero-eyebrow::before {
+    content: ""; width: 30px; height: 1px; background: var(--gold); display: inline-block;
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(2.9rem, 11vw, 6rem);
+    line-height: 0.94;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+    opacity: 0;
+    animation: rise 0.8s ease forwards 0.14s;
+  }
+  .hero h1 .glow {
+    background: linear-gradient(92deg, var(--gold) 0%, var(--ember-bright) 55%, var(--ember) 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+    text-shadow: 0 0 40px rgba(242,181,68,0.25);
+  }
+  .hero-city {
+    font-family: var(--sans);
+    font-size: 0.9rem; font-weight: 700;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--cream-dim);
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: rise 0.8s ease forwards 0.22s;
+  }
+  .hero-lede {
+    font-size: 1.12rem;
+    color: var(--cream-dim);
+    max-width: 34ch;
+    margin-bottom: 34px;
+    opacity: 0;
+    animation: rise 0.8s ease forwards 0.30s;
+  }
+
+  .hero-cta {
+    display: flex; flex-wrap: wrap; gap: 14px; align-items: center;
+    opacity: 0;
+    animation: rise 0.8s ease forwards 0.38s;
+  }
+
+  .btn-call {
+    display: inline-flex; align-items: center; gap: 13px;
+    background: linear-gradient(180deg, var(--ember-bright), var(--ember));
+    color: #fff;
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 1.18rem;
+    letter-spacing: 0.01em;
+    padding: 18px 30px;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(226,60,46,0.45), inset 0 1px 0 rgba(255,255,255,0.25);
+    transition: transform 0.16s, box-shadow 0.2s;
+  }
+  .btn-call:hover { transform: translateY(-2px); box-shadow: 0 18px 40px rgba(226,60,46,0.6), inset 0 1px 0 rgba(255,255,255,0.3); }
+  .btn-call:active { transform: translateY(0); }
+  .btn-call .ph {
+    width: 40px; height: 40px; flex: none;
+    display: grid; place-items: center;
+    background: rgba(255,255,255,0.18);
+    border-radius: 10px;
+    font-size: 20px;
+  }
+  .btn-call small {
+    display: block; font-size: 0.66rem; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.85;
+    margin-bottom: 1px;
+  }
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 9px;
+    color: var(--cream);
+    font-weight: 700; font-size: 0.95rem;
+    padding: 16px 22px;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    background: rgba(246,239,226,0.04);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--gold); background: rgba(242,181,68,0.08); }
+
+  .hero-badges {
+    display: flex; flex-wrap: wrap; gap: 22px 30px;
+    margin-top: 42px;
+    padding-top: 26px;
+    border-top: 1px solid var(--line);
+    opacity: 0;
+    animation: rise 0.8s ease forwards 0.5s;
+  }
+  .hero-badge { display: flex; align-items: center; gap: 10px; }
+  .hero-badge .ico { font-size: 20px; }
+  .hero-badge div { line-height: 1.25; }
+  .hero-badge strong { display: block; font-size: 0.94rem; color: var(--cream); font-weight: 700; }
+  .hero-badge span { font-size: 0.76rem; color: var(--cream-dim); }
+
+  @keyframes rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ---------- Season banner ---------- */
+  .season {
+    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-soft) 100%);
+    color: var(--navy-deep);
+    position: relative;
+  }
+  .season-inner {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+    gap: 8px 20px;
+    padding: 15px 22px;
+    text-align: center;
+  }
+  .season .dot {
+    width: 9px; height: 9px; border-radius: 50%; background: var(--ember);
+    display: inline-block; margin-right: 4px;
+    box-shadow: 0 0 0 4px rgba(226,60,46,0.25);
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100% { box-shadow: 0 0 0 3px rgba(226,60,46,0.3);} 50% { box-shadow: 0 0 0 8px rgba(226,60,46,0);} }
+  .season b { font-weight: 800; letter-spacing: 0.02em; }
+  .season span { font-weight: 600; font-size: 0.94rem; }
+
+  /* ---------- Section scaffolding ---------- */
+  section { padding: 78px 0; }
+  .kicker {
+    font-size: 0.72rem; font-weight: 800;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--ember);
+    margin-bottom: 14px;
+  }
+  .sec-title {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(2rem, 5.5vw, 3rem);
+    line-height: 1.05;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+  }
+  .sec-intro { color: #5c554a; max-width: 52ch; font-size: 1.05rem; }
+
+  /* ---------- Why us strip ---------- */
+  .why { background: var(--navy); color: var(--cream); position: relative; overflow: hidden; }
+  .why::before {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(600px 300px at 85% 10%, rgba(242,181,68,0.12), transparent 60%);
+  }
+  .why .kicker { color: var(--gold); }
+  .why .sec-title { color: var(--cream); }
+  .why-grid {
+    position: relative; z-index: 1;
+    display: grid; gap: 18px;
+    grid-template-columns: 1fr;
+    margin-top: 42px;
+  }
+  .why-card {
+    background: linear-gradient(180deg, rgba(246,239,226,0.06), rgba(246,239,226,0.02));
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 26px 24px;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .why-card:hover { transform: translateY(-4px); border-color: rgba(242,181,68,0.4); }
+  .why-card .num {
+    font-family: var(--serif);
+    font-size: 1.5rem; font-weight: 700; color: var(--gold);
+    display: inline-block; margin-bottom: 14px;
+  }
+  .why-card h3 { font-size: 1.14rem; font-weight: 700; margin-bottom: 8px; color: var(--cream); }
+  .why-card p { font-size: 0.94rem; color: var(--cream-dim); }
+  @media (min-width: 720px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 980px) { .why-grid { grid-template-columns: repeat(4, 1fr); } }
+
+  /* ---------- Services ---------- */
+  .services { background: var(--cream); }
+  .svc-grid {
+    display: grid; gap: 20px; grid-template-columns: 1fr;
+    margin-top: 46px;
+  }
+  .svc {
+    position: relative;
+    border-radius: 18px;
+    padding: 30px 26px 28px;
+    background: #fff;
+    border: 1px solid rgba(26,23,18,0.08);
+    box-shadow: 0 1px 2px rgba(26,23,18,0.04), 0 14px 34px rgba(26,23,18,0.05);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.25s;
+  }
+  .svc:hover { transform: translateY(-5px); box-shadow: 0 22px 50px rgba(226,60,46,0.14); }
+  .svc::after {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--ember), var(--gold));
+  }
+  .svc .svc-ico {
+    width: 52px; height: 52px; border-radius: 13px;
+    display: grid; place-items: center; font-size: 25px;
+    background: linear-gradient(150deg, #fff2d8, #ffd9a0);
+    margin-bottom: 18px;
+    box-shadow: inset 0 0 0 1px rgba(242,181,68,0.5);
+  }
+  .svc h3 { font-family: var(--serif); font-size: 1.34rem; font-weight: 700; margin-bottom: 8px; }
+  .svc p { font-size: 0.95rem; color: #5c554a; }
+  .svc .tag {
+    display: inline-block; margin-top: 16px;
+    font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ember);
+  }
+  @media (min-width: 640px) { .svc-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 980px) { .svc-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  /* ---------- Reviews ---------- */
+  .reviews { background: #efe6d6; }
+  .rev-grid {
+    display: grid; gap: 20px; grid-template-columns: 1fr;
+    margin-top: 46px;
+  }
+  .rev {
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px 26px;
+    border: 1px solid rgba(26,23,18,0.07);
+    box-shadow: 0 12px 30px rgba(26,23,18,0.06);
+    position: relative;
+  }
+  .rev .stars { color: var(--gold); font-size: 1.05rem; letter-spacing: 3px; margin-bottom: 14px; }
+  .rev blockquote {
+    font-family: var(--serif);
+    font-size: 1.12rem; line-height: 1.5; color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .rev .who { display: flex; align-items: center; gap: 12px; }
+  .rev .av {
+    width: 40px; height: 40px; border-radius: 50%; flex: none;
+    display: grid; place-items: center;
+    font-weight: 800; color: #fff; font-size: 0.95rem;
+    background: linear-gradient(150deg, var(--ember), var(--gold));
+  }
+  .rev .who b { display: block; font-size: 0.92rem; }
+  .rev .who span { font-size: 0.78rem; color: #7a7061; }
+  @media (min-width: 720px) { .rev-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .rev-note {
+    text-align: center; margin-top: 32px;
+    font-size: 0.8rem; color: #8a7f6d; font-style: italic;
+  }
+
+  /* ---------- Location ---------- */
+  .location { background: var(--navy); color: var(--cream); }
+  .loc-grid {
+    display: grid; gap: 34px; grid-template-columns: 1fr;
+    margin-top: 42px; align-items: stretch;
+  }
+  .loc-info .kicker { color: var(--gold); }
+  .loc-block {
+    display: flex; gap: 15px; align-items: flex-start;
+    padding: 22px 0; border-bottom: 1px solid var(--line);
+  }
+  .loc-block:first-of-type { border-top: 1px solid var(--line); }
+  .loc-block .ico {
+    width: 44px; height: 44px; flex: none; border-radius: 11px;
+    display: grid; place-items: center; font-size: 20px;
+    background: rgba(242,181,68,0.12);
+    box-shadow: inset 0 0 0 1px rgba(242,181,68,0.3);
+  }
+  .loc-block h4 {
+    font-size: 0.72rem; font-weight: 800; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 5px;
+  }
+  .loc-block p { color: var(--cream); font-size: 1.02rem; }
+  .loc-block p a { color: var(--cream); }
+  .loc-block p a:hover { color: var(--gold); }
+  .loc-block .sub { color: var(--cream-dim); font-size: 0.86rem; margin-top: 2px; }
+
+  .loc-map {
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    min-height: 320px;
+    position: relative;
+    background:
+      radial-gradient(400px 260px at 30% 20%, rgba(242,181,68,0.12), transparent 60%),
+      linear-gradient(180deg, #14203b, #0c1324);
+    display: flex; flex-direction: column;
+  }
+  /* stylized placeholder "map" — no scraped tiles */
+  .map-canvas {
+    flex: 1; position: relative; overflow: hidden;
+    background-image:
+      linear-gradient(rgba(246,239,226,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(246,239,226,0.06) 1px, transparent 1px);
+    background-size: 42px 42px;
+  }
+  .map-road {
+    position: absolute; left: -8%; right: -8%; top: 54%;
+    height: 16px; transform: rotate(-9deg);
+    background: linear-gradient(90deg, transparent, rgba(242,181,68,0.5) 12%, rgba(242,181,68,0.5) 88%, transparent);
+    border-radius: 8px;
+  }
+  .map-road::after {
+    content: "US-67";
+    position: absolute; right: 16%; top: -22px;
+    font-size: 0.66rem; font-weight: 800; letter-spacing: 0.14em;
+    color: var(--gold);
+  }
+  .map-pin {
+    position: absolute; left: 50%; top: 44%; transform: translate(-50%, -100%);
+    text-align: center;
+  }
+  .map-pin .pin-dot {
+    width: 22px; height: 22px; border-radius: 50% 50% 50% 0;
+    background: var(--ember); transform: rotate(-45deg);
+    margin: 0 auto 8px; box-shadow: 0 0 0 6px rgba(226,60,46,0.25), 0 10px 24px rgba(0,0,0,0.4);
+  }
+  .map-pin .pin-label {
+    background: rgba(8,11,21,0.85);
+    color: var(--cream); font-size: 0.7rem; font-weight: 700;
+    padding: 5px 10px; border-radius: 7px; white-space: nowrap;
+    border: 1px solid var(--line);
+  }
+  .map-foot {
+    padding: 14px 18px; display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; border-top: 1px solid var(--line);
+    background: rgba(8,11,21,0.5);
+    font-size: 0.82rem; color: var(--cream-dim);
+  }
+  .map-foot a {
+    color: var(--navy-deep); background: var(--gold);
+    font-weight: 800; font-size: 0.78rem;
+    padding: 8px 14px; border-radius: 8px;
+    letter-spacing: 0.02em; white-space: nowrap;
+    transition: transform 0.15s;
+  }
+  .map-foot a:hover { transform: translateY(-1px); }
+
+  @media (min-width: 900px) { .loc-grid { grid-template-columns: 1fr 1.05fr; } }
+
+  /* ---------- Hours table ---------- */
+  .hours-card {
+    margin-top: 30px;
+    background: rgba(246,239,226,0.04);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 8px 20px;
+  }
+  .hours-card .row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 0; border-bottom: 1px solid var(--line);
+    font-size: 0.95rem;
+  }
+  .hours-card .row:last-child { border-bottom: none; }
+  .hours-card .row span { color: var(--cream-dim); }
+  .hours-card .row b { color: var(--cream); font-weight: 700; }
+  .hours-card .row .open { color: var(--gold); font-weight: 700; }
+
+  /* ---------- CTA / checkout band ---------- */
+  .band {
+    background: linear-gradient(120deg, var(--ember) 0%, #c92e22 60%, #a2261b 100%);
+    color: #fff; text-align: center; position: relative; overflow: hidden;
+  }
+  .band::before {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(500px 300px at 50% -20%, rgba(242,181,68,0.35), transparent 60%);
+  }
+  .band-inner { position: relative; z-index: 1; }
+  .band h2 {
+    font-family: var(--serif); font-weight: 700;
+    font-size: clamp(2rem, 6vw, 3.2rem); line-height: 1.02;
+    margin-bottom: 14px;
+  }
+  .band p { font-size: 1.08rem; opacity: 0.94; max-width: 44ch; margin: 0 auto 30px; }
+  .band-cta { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+  .band .btn-call {
+    background: #fff; color: var(--ember);
+    box-shadow: 0 14px 34px rgba(0,0,0,0.25);
+  }
+  .band .btn-call .ph { background: rgba(226,60,46,0.14); }
+  .band .btn-call:hover { box-shadow: 0 20px 44px rgba(0,0,0,0.32); }
+
+  .btn-pay {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(255,255,255,0.14);
+    color: rgba(255,255,255,0.85);
+    border: 1px dashed rgba(255,255,255,0.5);
+    font-weight: 700; font-size: 0.95rem;
+    padding: 16px 24px; border-radius: 14px;
+    cursor: not-allowed;
+    position: relative;
+  }
+  .btn-pay .soon {
+    font-size: 0.6rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
+    background: var(--gold); color: var(--navy-deep);
+    padding: 3px 8px; border-radius: 999px; margin-left: 2px;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--navy-deep); color: var(--cream-dim);
+    padding: 54px 0 40px;
+    border-top: 1px solid var(--line);
+  }
+  .foot-top {
+    display: flex; flex-wrap: wrap; gap: 26px;
+    justify-content: space-between; align-items: flex-start;
+    padding-bottom: 30px; border-bottom: 1px solid var(--line);
+  }
+  .foot-brand .brand-name { color: var(--cream); font-size: 1.4rem; }
+  .foot-brand p { font-size: 0.9rem; max-width: 34ch; margin-top: 12px; }
+  .foot-cols { display: flex; flex-wrap: wrap; gap: 40px; }
+  .foot-col h5 {
+    font-size: 0.68rem; font-weight: 800; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+  }
+  .foot-col a, .foot-col p { display: block; font-size: 0.9rem; margin-bottom: 8px; color: var(--cream-dim); }
+  .foot-col a:hover { color: var(--gold); }
+  .foot-bottom {
+    display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between;
+    align-items: center; padding-top: 24px;
+    font-size: 0.78rem;
+  }
+  .foot-disclaimer {
+    color: var(--gold);
+    font-weight: 700;
+    background: rgba(242,181,68,0.08);
+    border: 1px solid rgba(242,181,68,0.25);
+    padding: 7px 14px; border-radius: 8px;
+  }
+  .foot-safety { color: #6f6858; font-size: 0.74rem; margin-top: 18px; max-width: 70ch; }
+
+  /* ---------- Sticky mobile call bar ---------- */
+  .mobile-call {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    background: rgba(13,18,32,0.96);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    border-top: 1px solid var(--line);
+    padding: 11px 16px calc(11px + env(safe-area-inset-bottom));
+  }
+  .mobile-call .mc-text { color: var(--cream); line-height: 1.15; }
+  .mobile-call .mc-text small { display: block; font-size: 0.66rem; color: var(--gold); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  .mobile-call .mc-text b { font-size: 1.02rem; }
+  .mobile-call a.mc-btn {
+    background: linear-gradient(180deg, var(--ember-bright), var(--ember));
+    color: #fff; font-weight: 800; font-size: 0.98rem;
+    padding: 12px 20px; border-radius: 11px;
+    display: inline-flex; align-items: center; gap: 8px;
+    box-shadow: 0 6px 18px rgba(226,60,46,0.5);
+  }
+  body { padding-bottom: 74px; }
+  @media (min-width: 860px) {
+    .mobile-call { display: none; }
+    body { padding-bottom: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; scroll-behavior: auto; }
+    .hero-eyebrow, .hero h1, .hero-city, .hero-lede, .hero-cta, .hero-badges { opacity: 1; }
+  }
+</style>
+
+<div class="ribbon">
+  <span>&#127881; Now Open for the Season &middot; <b>Midlothian, TX</b> &middot; Family Packs &amp; Show-Stopping Aerials</span>
+</div>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="Get Lit Fireworks home">
+      <span class="brand-mark" aria-hidden="true">&#128293;</span>
+      <span class="brand-name">Get Lit Fireworks<small>Midlothian &middot; Texas</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#shop">What We Sell</a>
+      <a href="#why">Why Us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a class="nav-call" href="tel:+12142234594">&#128222; 214-223-4594</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" style="padding-top:62px;">
+    <div class="wrap hero-inner">
+      <span class="hero-eyebrow">Light Up the Night</span>
+      <h1>Get&nbsp;Lit<br /><span class="glow">Fireworks</span></h1>
+      <div class="hero-city">Midlothian, Texas &middot; US-67</div>
+      <p class="hero-lede">Family packs, wild assortments, and the big aerials that make the whole block stop and stare. Grab yours before the good stuff sells out.</p>
+
+      <div class="hero-cta">
+        <a class="btn-call" href="tel:+12142234594">
+          <span class="ph" aria-hidden="true">&#128222;</span>
+          <span><small>Tap to call</small>214-223-4594</span>
+        </a>
+        <a class="btn-ghost" href="#visit">&#128205; Get Directions</a>
+      </div>
+
+      <div class="hero-badges">
+        <div class="hero-badge">
+          <span class="ico" aria-hidden="true">&#128176;</span>
+          <div><strong>Everyday Deals</strong><span>Buy-one-get-one all season</span></div>
+        </div>
+        <div class="hero-badge">
+          <span class="ico" aria-hidden="true">&#128106;</span>
+          <div><strong>Family-Friendly</strong><span>Ground &amp; safe-and-sane picks</span></div>
+        </div>
+        <div class="hero-badge">
+          <span class="ico" aria-hidden="true">&#9989;</span>
+          <div><strong>Licensed &amp; Local</strong><span>Right on US-67 in Midlothian</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEASON BANNER -->
+  <div class="season">
+    <div class="wrap season-inner">
+      <span><span class="dot" aria-hidden="true"></span><b>OPEN FOR THE SEASON</b></span>
+      <span>Extended hours around the 4th of July &amp; New Year's &middot; Call ahead for bulk &amp; case pricing</span>
+    </div>
+  </div>
+
+  <!-- WHY US -->
+  <section class="why" id="why">
+    <div class="wrap">
+      <div class="kicker">Why Get Lit</div>
+      <h2 class="sec-title">The stand the neighborhood tells their friends about.</h2>
+      <p class="sec-intro" style="color:var(--cream-dim);">You could grab a sad little box at the gas station &mdash; or you could load up the trunk here and be the reason people remember this year.</p>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <span class="num">01</span>
+          <h3>Real Selection</h3>
+          <p>From sparklers for the kids to mortar cakes that shake the windows &mdash; a full wall to pick from, not a picked-over shelf.</p>
+        </div>
+        <div class="why-card">
+          <span class="num">02</span>
+          <h3>Honest Prices</h3>
+          <p>BOGO deals all season and case pricing on the crowd favorites. Your money buys more boom here.</p>
+        </div>
+        <div class="why-card">
+          <span class="num">03</span>
+          <h3>Know-How</h3>
+          <p>Tell us your yard, your budget, and your crowd &mdash; we'll build you a lineup that actually lands.</p>
+        </div>
+        <div class="why-card">
+          <span class="num">04</span>
+          <h3>Easy In &amp; Out</h3>
+          <p>Right off US-67 with a straight shot in and easy parking. Pull up, load up, light up.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES / WHAT WE SELL -->
+  <section class="services" id="shop">
+    <div class="wrap">
+      <div class="kicker">What We Sell</div>
+      <h2 class="sec-title">Everything you need for the big night.</h2>
+      <p class="sec-intro">A little bit for everyone in the crew &mdash; from the toddlers waving sparklers to the uncle who insists on running the grand finale.</p>
+
+      <div class="svc-grid">
+        <div class="svc">
+          <div class="svc-ico" aria-hidden="true">&#127775;</div>
+          <h3>Assortments</h3>
+          <p>Pre-built variety packs that mix fountains, cakes, and novelties &mdash; the easiest way to grab a whole show in one box.</p>
+          <span class="tag">Best for first-timers</span>
+        </div>
+        <div class="svc">
+          <div class="svc-ico" aria-hidden="true">&#128106;</div>
+          <h3>Family Packs</h3>
+          <p>Kid-safe sparklers, snaps, poppers, and ground spinners bundled up so the little ones get in on the fun.</p>
+          <span class="tag">Safe &amp; sane picks</span>
+        </div>
+        <div class="svc">
+          <div class="svc-ico" aria-hidden="true">&#127878;</div>
+          <h3>Aerials &amp; Cakes</h3>
+          <p>Multi-shot cakes and repeaters that fill the sky &mdash; the big color and the big booms for your finale.</p>
+          <span class="tag">Crowd stopper</span>
+        </div>
+        <div class="svc">
+          <div class="svc-ico" aria-hidden="true">&#9968;</div>
+          <h3>Fountains &amp; Ground</h3>
+          <p>Showers of gold and color that stay low and safe &mdash; perfect for driveways, patios, and tighter yards.</p>
+          <span class="tag">Yard-friendly</span>
+        </div>
+        <div class="svc">
+          <div class="svc-ico" aria-hidden="true">&#128293;</div>
+          <h3>Mortars &amp; Shells</h3>
+          <p>Reloadable tubes and shell kits for the pros who want to build the show shot by shot.</p>
+          <span class="tag">For the finale-runner</span>
+        </div>
+        <div class="svc">
+          <div class="svc-ico" aria-hidden="true">&#128230;</div>
+          <h3>Bulk &amp; Cases</h3>
+          <p>Stocking up for a block party or a big backyard bash? Ask about case pricing and we'll set you up.</p>
+          <span class="tag">Call for a quote</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="wrap">
+      <div class="kicker">What Folks Say</div>
+      <h2 class="sec-title">A crowd favorite year after year.</h2>
+      <p class="sec-intro">Neighbors, families, and finale-runners &mdash; here's the word around Midlothian.</p>
+
+      <div class="rev-grid">
+        <div class="rev">
+          <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>&ldquo;Loaded up the whole trunk for way less than I expected. The guys helped me pick a lineup and our 4th of July was the best the block has seen.&rdquo;</blockquote>
+          <div class="who">
+            <span class="av" aria-hidden="true">MR</span>
+            <div><b>Marcus R.</b><span>Midlothian, TX</span></div>
+          </div>
+        </div>
+        <div class="rev">
+          <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>&ldquo;Grabbed a family pack for the kids and a couple big cakes for us. Easy to find right on 67, super friendly, and the BOGO deals are legit.&rdquo;</blockquote>
+          <div class="who">
+            <span class="av" aria-hidden="true">DL</span>
+            <div><b>Dana L.</b><span>Waxahachie, TX</span></div>
+          </div>
+        </div>
+        <div class="rev">
+          <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>&ldquo;Been coming here every year. Best selection around and they actually know what they're talking about. Won't buy fireworks anywhere else.&rdquo;</blockquote>
+          <div class="who">
+            <span class="av" aria-hidden="true">TS</span>
+            <div><b>Travis S.</b><span>Midlothian, TX</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="rev-note">Sample testimonials shown for this concept preview.</p>
+    </div>
+  </section>
+
+  <!-- LOCATION / HOURS -->
+  <section class="location" id="visit">
+    <div class="wrap">
+      <div class="kicker">Come See Us</div>
+      <h2 class="sec-title" style="color:var(--cream);">Find the stand.</h2>
+      <p class="sec-intro" style="color:var(--cream-dim);">Right on US-67 in Midlothian &mdash; easy to spot, easy to park, easy to load up.</p>
+
+      <div class="loc-grid">
+        <div class="loc-info">
+          <div class="loc-block">
+            <span class="ico" aria-hidden="true">&#128205;</span>
+            <div>
+              <h4>Address</h4>
+              <p><a href="https://maps.google.com/?q=4781+US-67+Midlothian+TX" target="_blank" rel="noopener">4781 US-67, Midlothian, TX</a></p>
+              <p class="sub">On the US-67 corridor &mdash; watch for the stand.</p>
+            </div>
+          </div>
+          <div class="loc-block">
+            <span class="ico" aria-hidden="true">&#128222;</span>
+            <div>
+              <h4>Call or Text</h4>
+              <p><a href="tel:+12142234594">214-223-4594</a></p>
+              <p class="sub">Questions on stock, deals, or bulk pricing? Give us a ring.</p>
+            </div>
+          </div>
+          <div class="loc-block">
+            <span class="ico" aria-hidden="true">&#128197;</span>
+            <div>
+              <h4>Season &amp; Hours</h4>
+              <p>Open seasonally &mdash; around Independence Day &amp; New Year's.</p>
+            </div>
+          </div>
+
+          <div class="hours-card">
+            <div class="row"><span>Mon &ndash; Thu</span><b>10:00 AM &ndash; 9:00 PM</b></div>
+            <div class="row"><span>Fri &ndash; Sat</span><b>9:00 AM &ndash; 11:00 PM</b></div>
+            <div class="row"><span>Sunday</span><b>11:00 AM &ndash; 9:00 PM</b></div>
+            <div class="row"><span>July 4th &amp; Dec 31st</span><b class="open">Extended &middot; call ahead</b></div>
+          </div>
+        </div>
+
+        <div class="loc-map" aria-label="Map showing the stand on US-67 in Midlothian">
+          <div class="map-canvas">
+            <div class="map-road" aria-hidden="true"></div>
+            <div class="map-pin">
+              <div class="pin-dot" aria-hidden="true"></div>
+              <div class="pin-label">Get Lit Fireworks &middot; 4781 US-67</div>
+            </div>
+          </div>
+          <div class="map-foot">
+            <span>Illustrative location &mdash; tap for live directions</span>
+            <a href="https://maps.google.com/?q=4781+US-67+Midlothian+TX" target="_blank" rel="noopener">Open in Maps &#8594;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND + PLACEHOLDER CHECKOUT -->
+  <section class="band">
+    <div class="wrap band-inner">
+      <h2>Don't wait &mdash; the good stuff goes fast.</h2>
+      <p>Call ahead to reserve family packs, cases, and the big aerials before they're gone for the season.</p>
+      <div class="band-cta">
+        <a class="btn-call" href="tel:+12142234594">
+          <span class="ph" aria-hidden="true">&#128222;</span>
+          <span><small>Tap to call</small>214-223-4594</span>
+        </a>
+        <button class="btn-pay" type="button" disabled aria-disabled="true" title="Online checkout is coming soon">
+          &#128179; Reserve &amp; Pay Online <span class="soon">Coming Soon</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <span class="brand-name" style="color:var(--cream);">Get Lit Fireworks<small style="color:var(--gold);">Midlothian &middot; Texas</small></span>
+        <p>Family packs, assortments, and show-stopping aerials on US-67 in Midlothian, TX. Open for the season.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h5>Explore</h5>
+          <a href="#shop">What We Sell</a>
+          <a href="#why">Why Us</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#visit">Visit &amp; Hours</a>
+        </div>
+        <div class="foot-col">
+          <h5>Visit</h5>
+          <p>4781 US-67<br />Midlothian, TX</p>
+          <a href="tel:+12142234594">214-223-4594</a>
+          <a href="https://maps.google.com/?q=4781+US-67+Midlothian+TX" target="_blank" rel="noopener">Get Directions &#8594;</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="foot-disclaimer">Concept preview built by DNA Agency &mdash; not affiliated with Get Lit Fireworks.</span>
+      <span>&copy; 2026 &middot; For demonstration only</span>
+    </div>
+    <p class="foot-safety">Always follow local laws and safety guidelines when using consumer fireworks. Keep a water source nearby, light one item at a time, and never let children handle aerials or mortars. Placeholder imagery and sample copy used throughout &mdash; no affiliation implied.</p>
+  </div>
+</footer>
+
+<!-- Sticky mobile call bar -->
+<div class="mobile-call">
+  <div class="mc-text">
+    <small>Open for the season</small>
+    <b>Get Lit Fireworks</b>
+  </div>
+  <a class="mc-btn" href="tel:+12142234594">&#128222; Call Now</a>
+</div>

@@ -1,0 +1,495 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freedom Fireworks of Kaufman — Light Up the Sky</title>
+<meta name="description" content="Freedom Fireworks of Kaufman, TX — assortments, family packs, and backyard-ready fireworks. Open for the season on E US-175. Call 214-382-1737.">
+<style>
+  :root{
+    --ink:#05060f;
+    --ink-2:#0a0d1f;
+    --midnight:#0d1330;
+    --gold:#ffc734;
+    --gold-soft:#ffe08a;
+    --ember:#ff3d2e;
+    --ember-deep:#c11627;
+    --electric:#33a6ff;
+    --electric-deep:#0b6bd6;
+    --paper:#f7f4ec;
+    --smoke:rgba(247,244,236,.62);
+    --smoke-dim:rgba(247,244,236,.4);
+    --line:rgba(255,199,52,.22);
+    --serif:"Georgia","Times New Roman",serif;
+    --display:"Georgia",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;
+    --shadow:0 30px 80px -30px rgba(0,0,0,.85);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--sans);
+    background:var(--ink);
+    color:var(--paper);
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--ember);color:#fff}
+
+  /* ============ ATMOSPHERE ============ */
+  .stars{position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,.9), transparent),
+      radial-gradient(1px 1px at 60% 70%, rgba(255,255,255,.7), transparent),
+      radial-gradient(1.5px 1.5px at 80% 20%, rgba(255,255,255,.8), transparent),
+      radial-gradient(1px 1px at 35% 85%, rgba(255,255,255,.6), transparent),
+      radial-gradient(1px 1px at 90% 60%, rgba(255,255,255,.7), transparent),
+      radial-gradient(1.5px 1.5px at 12% 65%, rgba(255,255,255,.75), transparent),
+      radial-gradient(1px 1px at 50% 15%, rgba(255,255,255,.6), transparent);
+    background-repeat:no-repeat;
+    animation:twinkle 6s ease-in-out infinite alternate;
+  }
+  @keyframes twinkle{from{opacity:.5}to{opacity:1}}
+
+  .grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.05;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+
+  /* firework bursts drifting in the hero sky */
+  .burst{position:absolute;width:6px;height:6px;border-radius:50%;pointer-events:none;opacity:0;
+    animation:launch 5s ease-out infinite;}
+  .burst::before,.burst::after{content:"";position:absolute;inset:0;border-radius:50%;
+    box-shadow:
+      0 -40px 0 -2px currentColor, 0 40px 0 -2px currentColor,
+      40px 0 0 -2px currentColor, -40px 0 0 -2px currentColor,
+      28px -28px 0 -2px currentColor, -28px 28px 0 -2px currentColor,
+      28px 28px 0 -2px currentColor, -28px -28px 0 -2px currentColor,
+      0 -60px 0 -3px currentColor, 0 60px 0 -3px currentColor,
+      60px 0 0 -3px currentColor, -60px 0 0 -3px currentColor,
+      42px -42px 0 -3px currentColor, -42px 42px 0 -3px currentColor,
+      42px 42px 0 -3px currentColor, -42px -42px 0 -3px currentColor;}
+  @keyframes launch{
+    0%,100%{opacity:0;transform:scale(.1)}
+    12%{opacity:1;transform:scale(.4)}
+    30%{opacity:.9;transform:scale(1)}
+    45%{opacity:0;transform:scale(1.25)}
+  }
+  .b1{color:var(--gold);top:16%;left:14%;animation-delay:0s}
+  .b2{color:var(--ember);top:24%;left:78%;animation-delay:1.4s}
+  .b3{color:var(--electric);top:38%;left:50%;animation-delay:2.8s}
+  .b4{color:var(--gold-soft);top:12%;left:60%;animation-delay:3.9s}
+  @media(prefers-reduced-motion:reduce){
+    .burst,.stars{animation:none}
+    .burst{opacity:.35}
+  }
+
+  .wrap{position:relative;z-index:2;max-width:1120px;margin:0 auto;padding:0 22px}
+
+  /* ============ TOP BAR ============ */
+  .topbar{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;
+    padding:20px 22px;max-width:1120px;margin:0 auto;gap:16px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:700;
+    letter-spacing:.02em}
+  .brand .mark{width:38px;height:38px;border-radius:50%;flex:none;
+    background:radial-gradient(circle at 40% 35%,var(--gold-soft),var(--ember) 55%,var(--ember-deep));
+    box-shadow:0 0 22px rgba(255,61,46,.55),inset 0 0 10px rgba(0,0,0,.4);position:relative}
+  .brand .mark::after{content:"★";position:absolute;inset:0;display:grid;place-items:center;
+    color:#fff2cf;font-size:16px;text-shadow:0 0 6px rgba(0,0,0,.5)}
+  .brand b{font-size:1.05rem}
+  .brand span{display:block;font-family:var(--sans);font-weight:600;font-size:.6rem;
+    letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+  .topcall{font-family:var(--sans);font-weight:700;font-size:.85rem;letter-spacing:.04em;
+    color:var(--ink);background:var(--gold);padding:10px 18px;border-radius:999px;text-decoration:none;
+    white-space:nowrap;box-shadow:0 6px 20px -6px rgba(255,199,52,.7);transition:transform .2s}
+  .topcall:hover{transform:translateY(-2px)}
+
+  /* ============ SEASON BANNER ============ */
+  .season{position:relative;z-index:5;text-align:center;font-family:var(--sans);font-weight:700;
+    font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink);
+    background:linear-gradient(90deg,var(--ember-deep),var(--ember),var(--gold),var(--ember),var(--ember-deep));
+    background-size:200% 100%;padding:9px 12px;animation:slide 8s linear infinite}
+  @keyframes slide{to{background-position:200% 0}}
+
+  /* ============ HERO ============ */
+  .hero{position:relative;text-align:center;padding:54px 0 40px;
+    background:
+      radial-gradient(120% 90% at 50% -10%, rgba(51,166,255,.16), transparent 55%),
+      radial-gradient(90% 70% at 50% 8%, rgba(255,61,46,.14), transparent 60%);}
+  .kicker{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:700;
+    font-size:.66rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);
+    border:1px solid var(--line);padding:8px 16px;border-radius:999px;margin-bottom:26px;
+    background:rgba(255,199,52,.06);animation:rise .8s .05s both}
+  .kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--ember);
+    box-shadow:0 0 10px var(--ember);animation:pulse 1.6s infinite}
+  @keyframes pulse{50%{opacity:.35}}
+
+  .hero h1{font-family:var(--display);font-weight:700;line-height:.92;letter-spacing:-.02em;
+    font-size:clamp(3rem,12vw,7.2rem);margin-bottom:8px;
+    text-shadow:0 4px 40px rgba(0,0,0,.6)}
+  .hero h1 .l1{display:block;color:var(--paper);animation:rise .8s .12s both}
+  .hero h1 .l2{display:block;
+    background:linear-gradient(180deg,var(--gold-soft),var(--gold) 40%,var(--ember) 115%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+    filter:drop-shadow(0 6px 26px rgba(255,120,40,.35));animation:rise .8s .24s both}
+  .hero .place{font-family:var(--sans);font-weight:600;letter-spacing:.24em;text-transform:uppercase;
+    font-size:clamp(.72rem,2.4vw,.95rem);color:var(--smoke);margin:18px 0 6px;animation:rise .8s .36s both}
+  .hero .lede{max-width:560px;margin:14px auto 0;color:var(--smoke);font-size:1.05rem;
+    animation:rise .8s .44s both}
+
+  @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+  /* CTA */
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:34px;
+    animation:rise .8s .56s both}
+  .btn{font-family:var(--sans);font-weight:800;font-size:1.02rem;letter-spacing:.02em;
+    text-decoration:none;padding:17px 30px;border-radius:14px;display:inline-flex;align-items:center;
+    gap:11px;transition:transform .18s,box-shadow .18s;border:0;cursor:pointer}
+  .btn-call{color:var(--ink);
+    background:linear-gradient(180deg,var(--gold-soft),var(--gold));
+    box-shadow:0 14px 34px -10px rgba(255,199,52,.8),inset 0 1px 0 rgba(255,255,255,.6)}
+  .btn-call:hover{transform:translateY(-3px) scale(1.02);
+    box-shadow:0 22px 46px -12px rgba(255,199,52,.95)}
+  .btn-call .ph{font-size:1.2rem}
+  .btn-ghost{color:var(--paper);background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.18)}
+  .btn-ghost:hover{transform:translateY(-3px);border-color:var(--electric);color:var(--gold-soft)}
+
+  .callhint{margin-top:14px;font-size:.8rem;color:var(--smoke-dim);letter-spacing:.05em;
+    animation:rise .8s .64s both}
+
+  /* ============ COUNTDOWN ============ */
+  .count{margin-top:44px;animation:rise .8s .72s both}
+  .count .label{font-family:var(--sans);font-weight:700;font-size:.64rem;letter-spacing:.32em;
+    text-transform:uppercase;color:var(--electric);margin-bottom:14px}
+  .count .clock{display:inline-flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .cell{min-width:74px;padding:14px 8px;border-radius:14px;
+    background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.01));
+    border:1px solid var(--line);backdrop-filter:blur(4px)}
+  .cell .num{font-family:var(--display);font-weight:700;font-size:2rem;line-height:1;
+    color:var(--gold-soft);font-variant-numeric:tabular-nums}
+  .cell .unit{font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--smoke-dim);
+    margin-top:8px}
+  .count .over{font-family:var(--display);font-size:1.4rem;color:var(--gold-soft)}
+
+  /* ============ SECTION SHELL ============ */
+  section.block{position:relative;z-index:2;padding:70px 0}
+  .eyebrow{font-family:var(--sans);font-weight:700;font-size:.66rem;letter-spacing:.32em;
+    text-transform:uppercase;color:var(--ember);display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .eyebrow::before{content:"";width:34px;height:2px;background:linear-gradient(90deg,var(--ember),transparent)}
+  h2.title{font-family:var(--display);font-weight:700;font-size:clamp(2rem,6vw,3.2rem);
+    line-height:1.02;letter-spacing:-.01em;margin-bottom:16px}
+  .sub{color:var(--smoke);max-width:600px;font-size:1.02rem}
+
+  /* ============ SERVICES ============ */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:38px}
+  .card{position:relative;padding:26px 24px 28px;border-radius:18px;overflow:hidden;
+    background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015));
+    border:1px solid rgba(255,255,255,.08);transition:transform .25s,border-color .25s}
+  .card:hover{transform:translateY(-6px);border-color:var(--gold)}
+  .card .ic{width:50px;height:50px;border-radius:13px;display:grid;place-items:center;font-size:1.5rem;
+    margin-bottom:18px;background:radial-gradient(circle at 35% 30%,rgba(255,199,52,.25),rgba(255,61,46,.1));
+    border:1px solid var(--line)}
+  .card h3{font-family:var(--display);font-weight:700;font-size:1.25rem;margin-bottom:8px}
+  .card p{color:var(--smoke);font-size:.94rem}
+  .card .glow{position:absolute;inset:auto -30% -60% auto;width:180px;height:180px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,61,46,.28),transparent 70%);filter:blur(20px);opacity:0;
+    transition:opacity .3s}
+  .card:hover .glow{opacity:1}
+
+  /* ============ LOCATION / HOURS ============ */
+  .split{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;margin-top:38px}
+  .panel{padding:30px 28px;border-radius:20px;
+    background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));
+    border:1px solid rgba(255,255,255,.09)}
+  .panel h3{font-family:var(--display);font-weight:700;font-size:1.5rem;margin-bottom:6px}
+  .addr{font-size:1.15rem;color:var(--gold-soft);margin:16px 0 4px;font-weight:600}
+  .panel .muted{color:var(--smoke);font-size:.94rem}
+  .maplink{display:inline-flex;align-items:center;gap:8px;margin-top:20px;text-decoration:none;
+    font-weight:700;font-size:.9rem;color:var(--ink);background:var(--electric);
+    padding:12px 20px;border-radius:11px;transition:transform .2s,box-shadow .2s;
+    box-shadow:0 10px 26px -10px rgba(51,166,255,.7)}
+  .maplink:hover{transform:translateY(-2px)}
+
+  .hours-list{list-style:none;margin-top:10px}
+  .hours-list li{display:flex;justify-content:space-between;padding:12px 0;
+    border-bottom:1px dashed rgba(255,255,255,.12);font-size:.95rem}
+  .hours-list li:last-child{border-bottom:0}
+  .hours-list .d{color:var(--smoke)}
+  .hours-list .t{font-weight:700;color:var(--paper)}
+  .hours-list .peak .t{color:var(--gold-soft)}
+  .peak-tag{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);
+    background:var(--gold);padding:3px 8px;border-radius:6px;margin-left:8px;font-weight:800}
+
+  /* fake map */
+  .minimap{margin-top:18px;height:150px;border-radius:14px;overflow:hidden;position:relative;
+    border:1px solid rgba(255,255,255,.12);
+    background:
+      linear-gradient(115deg,rgba(51,166,255,.12),transparent),
+      repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 1px,transparent 1px 34px),
+      repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 1px,transparent 1px 34px),
+      var(--midnight)}
+  .minimap .road{position:absolute;top:56%;left:-5%;width:110%;height:8px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+    transform:rotate(-6deg);opacity:.55}
+  .minimap .rd-label{position:absolute;top:34%;left:18px;font-size:.66rem;letter-spacing:.2em;
+    color:var(--gold-soft);font-weight:700}
+  .minimap .pin{position:absolute;top:44%;left:48%;transform:translate(-50%,-100%);font-size:1.6rem;
+    filter:drop-shadow(0 4px 6px rgba(0,0,0,.6));animation:bob 2.4s ease-in-out infinite}
+  @keyframes bob{50%{transform:translate(-50%,-115%)}}
+
+  /* ============ REVIEWS ============ */
+  .reviews{position:relative;z-index:2;padding:74px 0;
+    background:radial-gradient(90% 60% at 50% 0%,rgba(255,61,46,.08),transparent 60%)}
+  .rev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:38px}
+  .review{padding:28px 26px;border-radius:18px;position:relative;
+    background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));
+    border:1px solid rgba(255,255,255,.09)}
+  .review .stars-row{color:var(--gold);letter-spacing:3px;font-size:1.05rem;margin-bottom:14px}
+  .review p{font-size:1.02rem;color:var(--paper);line-height:1.62;margin-bottom:18px;font-style:italic}
+  .review .who{display:flex;align-items:center;gap:12px}
+  .review .av{width:42px;height:42px;border-radius:50%;flex:none;display:grid;place-items:center;
+    font-family:var(--display);font-weight:700;color:var(--ink);
+    background:radial-gradient(circle at 35% 30%,var(--gold-soft),var(--gold))}
+  .review .nm{font-weight:700;font-size:.94rem}
+  .review .mt{font-size:.72rem;color:var(--smoke-dim);letter-spacing:.04em}
+  .rev-note{text-align:center;margin-top:26px;font-size:.78rem;color:var(--smoke-dim);letter-spacing:.04em}
+
+  /* ============ FINAL CTA ============ */
+  .final{position:relative;z-index:2;text-align:center;padding:80px 0 70px;
+    background:radial-gradient(80% 90% at 50% 120%,rgba(51,166,255,.18),transparent 60%)}
+  .final h2{font-family:var(--display);font-weight:700;font-size:clamp(2.2rem,8vw,4.2rem);
+    line-height:1;letter-spacing:-.02em;margin-bottom:18px}
+  .final h2 em{font-style:normal;
+    background:linear-gradient(180deg,var(--gold-soft),var(--ember));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .final p{color:var(--smoke);max-width:480px;margin:0 auto 30px;font-size:1.05rem}
+  .final .cta-row{margin-top:0}
+
+  .pay-note{margin-top:26px;display:inline-flex;flex-direction:column;align-items:center;gap:8px}
+  .btn-pay{font-family:var(--sans);font-weight:700;font-size:.95rem;padding:14px 26px;border-radius:12px;
+    color:var(--smoke-dim);background:rgba(255,255,255,.03);border:1px dashed rgba(255,255,255,.2);
+    cursor:not-allowed;display:inline-flex;align-items:center;gap:10px}
+  .pay-cap{font-size:.72rem;color:var(--smoke-dim);letter-spacing:.04em}
+
+  /* ============ FOOTER ============ */
+  footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.08);padding:40px 0 46px;
+    text-align:center}
+  footer .fbrand{font-family:var(--display);font-weight:700;font-size:1.1rem;color:var(--gold-soft);
+    margin-bottom:6px}
+  footer .finfo{color:var(--smoke);font-size:.9rem;margin-bottom:4px}
+  footer .finfo a{color:var(--gold-soft);text-decoration:none}
+  .concept{margin-top:22px;font-size:.74rem;color:var(--smoke-dim);max-width:520px;margin-left:auto;
+    margin-right:auto;line-height:1.6;padding-top:20px;border-top:1px dashed rgba(255,255,255,.12)}
+  .concept b{color:var(--smoke)}
+
+  /* ============ RESPONSIVE ============ */
+  @media(max-width:720px){
+    .split{grid-template-columns:1fr}
+    .topbar .topcall{display:none}
+    .hero{padding:40px 0 30px}
+    section.block{padding:56px 0}
+  }
+  /* safety net */
+  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
+
+<div class="stars" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <a href="#top" class="brand" style="text-decoration:none;color:inherit" aria-label="Freedom Fireworks of Kaufman home">
+    <span class="mark" aria-hidden="true"></span>
+    <span><b>Freedom Fireworks</b><span>of Kaufman, TX</span></span>
+  </a>
+  <a href="tel:12143821737" class="topcall">Call 214-382-1737</a>
+</div>
+
+<!-- SEASON BANNER -->
+<div class="season" role="status">★ Open for the Season · Stocked &amp; Ready for the 4th ★ Family Packs In Stock ★</div>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="burst b1" aria-hidden="true"></div>
+  <div class="burst b2" aria-hidden="true"></div>
+  <div class="burst b3" aria-hidden="true"></div>
+  <div class="burst b4" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="kicker"><span class="dot" aria-hidden="true"></span> Kaufman County's Backyard Firework Stand</span>
+    <h1>
+      <span class="l1">Light Up</span>
+      <span class="l2">The Sky.</span>
+    </h1>
+    <p class="place">Freedom Fireworks · 5470 E US-175 · Kaufman, Texas</p>
+    <p class="lede">Assortments, family packs, and everything you need to put on a show the whole neighborhood remembers. Roadside, fast, and stocked for the season.</p>
+
+    <div class="cta-row">
+      <a href="tel:12143821737" class="btn btn-call"><span class="ph" aria-hidden="true">📞</span> Tap to Call · 214-382-1737</a>
+      <a href="#directions" class="btn btn-ghost">Get Directions →</a>
+    </div>
+    <p class="callhint">Best deals go fast during peak week — call ahead and we'll set your order aside.</p>
+
+    <!-- COUNTDOWN -->
+    <div class="count" aria-live="polite">
+      <div class="label">★ Countdown to the 4th of July ★</div>
+      <div class="clock" id="clock">
+        <div class="cell"><div class="num" id="cd-d">--</div><div class="unit">Days</div></div>
+        <div class="cell"><div class="num" id="cd-h">--</div><div class="unit">Hours</div></div>
+        <div class="cell"><div class="num" id="cd-m">--</div><div class="unit">Min</div></div>
+        <div class="cell"><div class="num" id="cd-s">--</div><div class="unit">Sec</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- SERVICES -->
+<section class="block wrap" id="shop">
+  <p class="eyebrow">What We Stock</p>
+  <h2 class="title">Everything for the Big Show</h2>
+  <p class="sub">From the first-timer's backyard to the block party finale — we've got the fireworks to match the moment. Stop by and our crew will point you to the right pick.</p>
+  <div class="grid">
+    <div class="card"><span class="glow" aria-hidden="true"></span>
+      <div class="ic" aria-hidden="true">🎆</div>
+      <h3>Aerial Assortments</h3>
+      <p>Ready-to-light variety packs of cakes and repeaters — a full show in a box, no guesswork.</p>
+    </div>
+    <div class="card"><span class="glow" aria-hidden="true"></span>
+      <div class="ic" aria-hidden="true">👨‍👩‍👧‍👦</div>
+      <h3>Family Packs</h3>
+      <p>Sparklers, fountains, and ground spinners bundled up safe and fun for the little ones.</p>
+    </div>
+    <div class="card"><span class="glow" aria-hidden="true"></span>
+      <div class="ic" aria-hidden="true">🚀</div>
+      <h3>Rockets &amp; Artillery</h3>
+      <p>Bottle rockets, missiles, and reloadable shells for the folks who like it loud and high.</p>
+    </div>
+    <div class="card"><span class="glow" aria-hidden="true"></span>
+      <div class="ic" aria-hidden="true">✨</div>
+      <h3>Fountains &amp; Sparklers</h3>
+      <p>Kid-friendly showers of color for the driveway — the crowd-pleasers that never miss.</p>
+    </div>
+    <div class="card"><span class="glow" aria-hidden="true"></span>
+      <div class="ic" aria-hidden="true">💥</div>
+      <h3>Grand Finale Kits</h3>
+      <p>Big-budget bundles built to close the night out with a bang everyone will talk about.</p>
+    </div>
+    <div class="card"><span class="glow" aria-hidden="true"></span>
+      <div class="ic" aria-hidden="true">🇺🇸</div>
+      <h3>Ask the Crew</h3>
+      <p>New to fireworks? Tell us your budget and yard size — we'll build you a lineup on the spot.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION + HOURS -->
+<section class="block wrap" id="directions">
+  <p class="eyebrow">Find the Stand</p>
+  <h2 class="title">Right Off Highway 175</h2>
+  <p class="sub">Easy in, easy out — pull off US-175 in Kaufman and look for the flags. Plenty of room to park and load up.</p>
+  <div class="split">
+    <div class="panel">
+      <h3>Location &amp; Directions</h3>
+      <p class="addr">5470 E US-175</p>
+      <p class="muted">Kaufman, TX</p>
+      <div class="minimap" aria-hidden="true">
+        <div class="road"></div>
+        <div class="rd-label">E US-175</div>
+        <div class="pin">📍</div>
+      </div>
+      <a class="maplink" href="https://www.google.com/maps/dir/?api=1&amp;destination=5470+E+US-175+Kaufman+TX" target="_blank" rel="noopener">🧭 Open in Maps</a>
+    </div>
+    <div class="panel">
+      <h3>Seasonal Hours</h3>
+      <p class="muted">We're a seasonal stand — hours run long through the holiday rush. Call ahead if you're coming late.</p>
+      <ul class="hours-list">
+        <li><span class="d">Mon – Thu</span><span class="t">10a – 9p</span></li>
+        <li><span class="d">Fri – Sat</span><span class="t">9a – 11p</span></li>
+        <li class="peak"><span class="d">July 3 – 4 <span class="peak-tag">Peak</span></span><span class="t">9a – Midnight</span></li>
+        <li><span class="d">Sunday</span><span class="t">11a – 9p</span></li>
+      </ul>
+      <p class="muted" style="margin-top:14px;font-size:.82rem">Hours shown are illustrative for this concept preview — confirm current stand hours by phone.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews">
+  <div class="wrap">
+    <p class="eyebrow">From the Neighborhood</p>
+    <h2 class="title">Folks Keep Coming Back</h2>
+    <p class="sub">Real reviews are what make a roadside stand — here's the kind of word-of-mouth that fills the lot.</p>
+    <div class="rev-grid">
+      <div class="review">
+        <div class="stars-row" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>"Stopped on our way through Kaufman and the guy hooked us up with a family pack for way less than the big-box store. Kids loved it. We'll be back next year."</p>
+        <div class="who"><span class="av" aria-hidden="true">M</span><div><div class="nm">Marcus R.</div><div class="mt">Local review · last summer</div></div></div>
+      </div>
+      <div class="review">
+        <div class="stars-row" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>"Best prices around and the assortment box was a full show — didn't have to think about a thing. Easy to find right off 175. Highly recommend."</p>
+        <div class="who"><span class="av" aria-hidden="true">D</span><div><div class="nm">Deanna P.</div><div class="mt">Local review · 4th of July</div></div></div>
+      </div>
+      <div class="review">
+        <div class="stars-row" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>"Called ahead, they set my order aside, in and out in five minutes. Crew knows their stuff and helped me stay under budget. Great little stand."</p>
+        <div class="who"><span class="av" aria-hidden="true">J</span><div><div class="nm">Javier L.</div><div class="mt">Local review · New Year's Eve</div></div></div>
+      </div>
+    </div>
+    <p class="rev-note">★ Placeholder testimonials for this concept preview. Freedom Fireworks' real Facebook &amp; Yelp reviews would be featured here on the live site.</p>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="wrap">
+    <h2>Make It a <em>Night to Remember.</em></h2>
+    <p>Grab your assortment, gather the crew, and let's light up Kaufman. Give us a call — we'll get you set.</p>
+    <div class="cta-row">
+      <a href="tel:12143821737" class="btn btn-call"><span class="ph" aria-hidden="true">📞</span> Call 214-382-1737</a>
+      <a href="#directions" class="btn btn-ghost">Get Directions →</a>
+    </div>
+    <div class="pay-note">
+      <button class="btn-pay" type="button" disabled aria-disabled="true">💳 Reserve &amp; Pay Online — Coming Soon</button>
+      <span class="pay-cap">Online ordering is a preview feature — for now, call or stop by the stand.</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="fbrand">★ Freedom Fireworks of Kaufman ★</div>
+    <div class="finfo">5470 E US-175, Kaufman, TX</div>
+    <div class="finfo"><a href="tel:12143821737">214-382-1737</a> · Seasonal Stand</div>
+    <p class="concept"><b>Concept preview built by DNA Agency — not affiliated with Freedom Fireworks of Kaufman.</b> Created from public information only. Imagery, hours, and testimonials shown are placeholders for demonstration.</p>
+  </div>
+</footer>
+
+<script>
+  // Countdown to next July 4th (local time)
+  (function(){
+    var d=document.getElementById('cd-d'),h=document.getElementById('cd-h'),
+        m=document.getElementById('cd-m'),s=document.getElementById('cd-s'),
+        clock=document.getElementById('clock');
+    function target(){
+      var now=new Date();
+      var y=now.getFullYear();
+      var t=new Date(y,6,4,21,0,0); // July 4, 9pm
+      if(t-now<0){ t=new Date(y+1,6,4,21,0,0); }
+      return t;
+    }
+    var end=target();
+    function pad(n){return String(n).padStart(2,'0');}
+    function tick(){
+      var diff=end-new Date();
+      if(diff<=0){
+        clock.innerHTML='<div class="over">🎆 It\'s the 4th — light \'em up! 🎆</div>';
+        return;
+      }
+      var dd=Math.floor(diff/86400000);
+      var hh=Math.floor(diff%86400000/3600000);
+      var mm=Math.floor(diff%3600000/60000);
+      var ss=Math.floor(diff%60000/1000);
+      d.textContent=pad(dd);h.textContent=pad(hh);m.textContent=pad(mm);s.textContent=pad(ss);
+    }
+    tick();setInterval(tick,1000);
+  })();
+</script>

@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Midway Freedom Fireworks — Springtown, TX | Parker County's Fireworks HQ</title>
+<meta name="description" content="Midway Freedom Fireworks — the only fireworks stand in Springtown, TX. Family packs, big-shell assortments, and everything you need to light up the 4th. Open for the season." />
+<style>
+  /* ============ FONTS (system stack, no external deps) ============ */
+  /* Display: a heavy condensed/impact feel via system fonts.
+     Body: humanist sans for readability. All local, zero CDN. */
+
+  :root{
+    --ink:#f7f1e3;            /* warm off-white text */
+    --ink-dim:#b9b2a4;
+    --night:#0a0a12;         /* near-black navy */
+    --night-2:#12101f;
+    --night-3:#1a1730;
+    --gold:#ffcf3f;          /* electric gold */
+    --gold-deep:#f4a623;
+    --red:#ff3b3b;           /* firecracker red */
+    --red-deep:#d51f2c;
+    --blue:#37c6ff;          /* electric blue */
+    --blue-deep:#1f6bff;
+    --line:rgba(255,207,63,.22);
+    --max:1120px;
+    --shadow-gold:0 0 0 1px rgba(255,207,63,.4), 0 18px 40px -12px rgba(255,207,63,.35);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--night);
+    color:var(--ink);
+    font-family:"Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif;
+    line-height:1.55;
+    overflow-x:hidden;
+    letter-spacing:.01em;
+  }
+  h1,h2,h3,.display{
+    font-family:"Futura","Trebuchet MS","Franklin Gothic Bold",Impact,system-ui,sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.02em;
+    line-height:.95;
+    margin:0;
+    font-weight:800;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+
+  /* ============ ATMOSPHERE: night sky + sparks ============ */
+  .sky{
+    position:fixed; inset:0; z-index:-3;
+    background:
+      radial-gradient(1200px 700px at 78% -10%, rgba(31,107,255,.22), transparent 60%),
+      radial-gradient(900px 600px at 12% 8%, rgba(213,31,44,.20), transparent 60%),
+      radial-gradient(1400px 900px at 50% 120%, rgba(255,207,63,.10), transparent 55%),
+      linear-gradient(180deg, #06060d 0%, #0a0a14 40%, #0d0b16 100%);
+  }
+  /* twinkling star field via layered radial dots */
+  .stars{
+    position:fixed; inset:0; z-index:-2; pointer-events:none; opacity:.7;
+    background-image:
+      radial-gradient(1.4px 1.4px at 20% 30%, rgba(255,255,255,.9), transparent),
+      radial-gradient(1.2px 1.2px at 70% 20%, rgba(255,255,255,.7), transparent),
+      radial-gradient(1.6px 1.6px at 40% 70%, rgba(255,255,255,.8), transparent),
+      radial-gradient(1.1px 1.1px at 85% 55%, rgba(255,255,255,.6), transparent),
+      radial-gradient(1.3px 1.3px at 55% 45%, rgba(255,255,255,.7), transparent),
+      radial-gradient(1.1px 1.1px at 12% 82%, rgba(255,255,255,.6), transparent),
+      radial-gradient(1.5px 1.5px at 92% 88%, rgba(255,255,255,.7), transparent);
+    animation:twinkle 6s ease-in-out infinite alternate;
+  }
+  @keyframes twinkle{from{opacity:.4}to{opacity:.85}}
+
+  /* grain overlay for texture */
+  .grain{
+    position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.05; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+
+  /* ============ NAV ============ */
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    backdrop-filter:blur(10px);
+    background:linear-gradient(180deg, rgba(6,6,13,.92), rgba(6,6,13,.55));
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 22px;max-width:var(--max);margin:0 auto}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:800}
+  .brand .mark{
+    width:38px;height:38px;flex:0 0 38px;border-radius:9px;
+    background:conic-gradient(from 200deg, var(--red), var(--gold), var(--blue), var(--red));
+    display:grid;place-items:center;box-shadow:0 0 18px rgba(255,207,63,.45);
+    position:relative;
+  }
+  .brand .mark svg{width:22px;height:22px}
+  .brand .txt{line-height:1.05}
+  .brand .txt b{font-family:"Futura","Trebuchet MS",sans-serif;text-transform:uppercase;letter-spacing:.04em;font-size:.92rem;display:block}
+  .brand .txt span{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:10px 16px;border-radius:999px;font-weight:800;font-size:.86rem;
+    background:linear-gradient(180deg,var(--red),var(--red-deep));
+    box-shadow:0 8px 22px -8px rgba(255,59,59,.7), inset 0 1px 0 rgba(255,255,255,.25);
+    text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .nav-cta:hover{transform:translateY(-1px);box-shadow:0 12px 26px -8px rgba(255,59,59,.85)}
+
+  /* ============ HERO ============ */
+  .hero{position:relative;padding:64px 0 40px;overflow:hidden}
+  .hero .burst{
+    position:absolute;pointer-events:none;border-radius:50%;filter:blur(2px);opacity:.9;
+    animation:pop 4.2s ease-in-out infinite;
+  }
+  .burst.b1{width:5px;height:5px;top:14%;left:16%;background:var(--gold);box-shadow:0 0 12px 4px var(--gold);animation-delay:.2s}
+  .burst.b2{width:5px;height:5px;top:22%;right:20%;background:var(--blue);box-shadow:0 0 12px 4px var(--blue);animation-delay:1.1s}
+  .burst.b3{width:5px;height:5px;top:8%;right:38%;background:var(--red);box-shadow:0 0 12px 4px var(--red);animation-delay:2.0s}
+  .burst.b4{width:4px;height:4px;top:36%;left:9%;background:var(--gold);box-shadow:0 0 10px 3px var(--gold);animation-delay:2.9s}
+  @keyframes pop{0%,55%{transform:scale(.4);opacity:0}60%{opacity:1}75%{transform:scale(2.4);opacity:.7}100%{transform:scale(3.6);opacity:0}}
+
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;
+    font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:800;
+    padding:7px 14px;border:1px solid var(--line);border-radius:999px;
+    background:rgba(255,207,63,.06);
+    animation:fadeUp .7s .05s both;
+  }
+  .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 10px var(--red);animation:pulse 1.4s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+  .hero h1{
+    font-size:clamp(2.9rem, 11vw, 6.6rem);
+    margin:20px 0 6px;
+    animation:fadeUp .7s .12s both;
+  }
+  .hero h1 .l1{display:block;color:var(--ink)}
+  .hero h1 .l2{
+    display:block;
+    background:linear-gradient(92deg, var(--gold) 0%, var(--red) 55%, var(--blue) 115%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    text-shadow:0 0 44px rgba(255,207,63,.25);
+  }
+  .hero .sub{
+    font-size:clamp(1.02rem,2.6vw,1.32rem);color:var(--ink-dim);max-width:38ch;margin:14px 0 4px;
+    animation:fadeUp .7s .2s both;
+  }
+  .hero .sub b{color:var(--ink)}
+
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;animation:fadeUp .7s .28s both}
+  .btn-call{
+    display:inline-flex;align-items:center;gap:12px;
+    padding:17px 26px;border-radius:14px;font-weight:800;font-size:1.12rem;letter-spacing:.02em;
+    color:#180a03;
+    background:linear-gradient(180deg,var(--gold),var(--gold-deep));
+    box-shadow:var(--shadow-gold), inset 0 1px 0 rgba(255,255,255,.5);
+    text-transform:uppercase;
+    transition:transform .16s ease, box-shadow .16s ease;
+    position:relative;
+  }
+  .btn-call:hover{transform:translateY(-2px) scale(1.01)}
+  .btn-call:active{transform:translateY(0)}
+  .btn-call svg{width:22px;height:22px}
+  .btn-call .num{font-family:"Futura","Trebuchet MS",sans-serif}
+  .btn-ghost{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:17px 24px;border-radius:14px;font-weight:800;font-size:1rem;letter-spacing:.02em;text-transform:uppercase;
+    border:1.5px solid var(--line);color:var(--ink);
+    background:rgba(255,255,255,.02);
+    transition:border-color .16s ease, background .16s ease, transform .16s ease;
+  }
+  .btn-ghost:hover{border-color:var(--gold);background:rgba(255,207,63,.08);transform:translateY(-2px)}
+
+  /* countdown strip */
+  .countdown{
+    margin-top:34px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;
+    padding:18px 20px;border-radius:16px;
+    border:1px solid var(--line);
+    background:linear-gradient(180deg, rgba(26,23,48,.7), rgba(10,10,18,.5));
+    animation:fadeUp .7s .36s both;
+  }
+  .countdown .label{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:800}
+  .cd-units{display:flex;gap:10px}
+  .cd-unit{text-align:center;min-width:58px}
+  .cd-unit .n{
+    font-family:"Futura","Trebuchet MS",sans-serif;font-size:1.9rem;font-weight:800;line-height:1;
+    color:var(--ink);text-shadow:0 0 20px rgba(55,198,255,.35);
+  }
+  .cd-unit .u{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim);margin-top:4px}
+  .cd-sep{font-family:"Futura",sans-serif;font-size:1.6rem;color:var(--gold);align-self:flex-start;margin-top:2px}
+
+  @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+  /* ============ SEASON BANNER ============ */
+  .season{
+    background:repeating-linear-gradient(45deg, var(--red-deep) 0 22px, var(--red) 22px 44px);
+    color:#fff;overflow:hidden;position:relative;
+    border-top:2px solid rgba(255,207,63,.5);border-bottom:2px solid rgba(255,207,63,.5);
+  }
+  .ticker{display:flex;white-space:nowrap;will-change:transform;animation:scroll 26s linear infinite}
+  .ticker span{
+    font-family:"Futura","Trebuchet MS",sans-serif;text-transform:uppercase;font-weight:800;letter-spacing:.08em;
+    font-size:.98rem;padding:13px 30px;display:inline-flex;align-items:center;gap:14px;
+    text-shadow:0 1px 0 rgba(0,0,0,.35);
+  }
+  .ticker span::after{content:"★";color:var(--gold)}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ============ SECTIONS ============ */
+  section{position:relative}
+  .sec{padding:76px 0}
+  .sec-head{margin-bottom:38px;max-width:60ch}
+  .sec-head .kicker{
+    font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;color:var(--blue);font-weight:800;margin-bottom:12px;display:block;
+  }
+  .sec-head h2{font-size:clamp(2rem,6vw,3.4rem)}
+  .sec-head h2 em{font-style:normal;color:var(--gold)}
+  .sec-head p{color:var(--ink-dim);margin-top:14px;font-size:1.05rem}
+
+  /* products grid */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+  .card{
+    position:relative;padding:26px 22px 24px;border-radius:18px;overflow:hidden;
+    background:linear-gradient(180deg, rgba(26,23,48,.85), rgba(12,10,22,.9));
+    border:1px solid rgba(255,255,255,.06);
+    transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+  .card::before{
+    content:"";position:absolute;inset:0;opacity:.0;transition:opacity .25s ease;
+    background:radial-gradient(320px 160px at 50% -20%, var(--glow,rgba(255,207,63,.3)), transparent 70%);
+  }
+  .card:hover{transform:translateY(-4px);border-color:var(--line);box-shadow:0 20px 40px -22px rgba(0,0,0,.9)}
+  .card:hover::before{opacity:1}
+  .card .ico{
+    width:52px;height:52px;border-radius:13px;display:grid;place-items:center;margin-bottom:16px;
+    background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+  }
+  .card .ico svg{width:26px;height:26px}
+  .card h3{font-size:1.28rem;margin-bottom:8px;letter-spacing:.03em}
+  .card p{color:var(--ink-dim);font-size:.95rem}
+  .card:nth-child(1){--glow:rgba(255,207,63,.32)}
+  .card:nth-child(2){--glow:rgba(255,59,59,.32)}
+  .card:nth-child(3){--glow:rgba(55,198,255,.32)}
+  .card:nth-child(4){--glow:rgba(255,207,63,.32)}
+  .card:nth-child(5){--glow:rgba(255,59,59,.32)}
+  .card:nth-child(6){--glow:rgba(55,198,255,.32)}
+
+  /* two-col: hours + directions */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .panel{
+    border-radius:20px;padding:32px 28px;
+    background:linear-gradient(180deg, rgba(26,23,48,.7), rgba(10,10,18,.55));
+    border:1px solid var(--line);
+  }
+  .panel h3{font-size:1.5rem;margin-bottom:18px;display:flex;align-items:center;gap:12px}
+  .panel h3 svg{width:26px;height:26px}
+  .hours-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px dashed rgba(255,255,255,.09);font-size:.98rem}
+  .hours-row:last-child{border-bottom:0}
+  .hours-row span{color:var(--ink-dim)}
+  .hours-row b{color:var(--ink);font-weight:700}
+  .hours-row.now{color:var(--gold)}
+  .hours-row.now b, .hours-row.now span{color:var(--gold)}
+  .open-pill{
+    display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;
+    padding:8px 15px;border-radius:999px;font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+    background:rgba(55,255,138,.1);border:1px solid rgba(55,255,138,.35);color:#5cff9a;
+  }
+  .open-pill .live{width:9px;height:9px;border-radius:50%;background:#5cff9a;box-shadow:0 0 10px #5cff9a;animation:pulse 1.3s infinite}
+
+  .addr{font-size:1.15rem;font-weight:700;line-height:1.4;margin-bottom:6px}
+  .addr .muted{color:var(--ink-dim);font-weight:400;font-size:1rem}
+  .map-embed{
+    margin-top:18px;border-radius:14px;overflow:hidden;border:1px solid var(--line);
+    position:relative;aspect-ratio:16/9;
+    background:
+      linear-gradient(180deg, rgba(10,10,18,.2), rgba(10,10,18,.5)),
+      radial-gradient(circle at 50% 42%, rgba(255,59,59,.25), transparent 40%),
+      #10101c;
+  }
+  /* stylized placeholder map (no scraped tiles) */
+  .map-embed .roads{position:absolute;inset:0;opacity:.55}
+  .map-embed .roads::before,.map-embed .roads::after{content:"";position:absolute;background:rgba(255,207,63,.28)}
+  .map-embed .roads::before{left:0;right:0;top:52%;height:3px;transform:rotate(-4deg)}
+  .map-embed .roads::after{top:0;bottom:0;left:46%;width:3px;transform:rotate(6deg)}
+  .map-pin{
+    position:absolute;top:42%;left:50%;transform:translate(-50%,-100%);
+    display:flex;flex-direction:column;align-items:center;gap:6px;
+  }
+  .map-pin .pin-dot{width:20px;height:20px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);
+    background:linear-gradient(180deg,var(--red),var(--red-deep));box-shadow:0 0 0 4px rgba(255,59,59,.25),0 6px 14px rgba(0,0,0,.6)}
+  .map-pin .pin-label{transform:none;font-size:.66rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+    background:rgba(10,10,18,.85);padding:4px 9px;border-radius:6px;border:1px solid var(--line);color:var(--gold)}
+  .dir-btn{
+    margin-top:18px;display:inline-flex;align-items:center;gap:10px;
+    padding:14px 22px;border-radius:12px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:.92rem;
+    background:linear-gradient(180deg,var(--blue),var(--blue-deep));color:#04121f;
+    box-shadow:0 10px 26px -12px rgba(31,107,255,.8), inset 0 1px 0 rgba(255,255,255,.4);
+    transition:transform .16s ease;
+  }
+  .dir-btn:hover{transform:translateY(-2px)}
+  .dir-btn svg{width:18px;height:18px}
+
+  /* the "only stand in town" hero-strip */
+  .local{
+    text-align:center;padding:58px 26px;border-radius:22px;position:relative;overflow:hidden;
+    background:
+      radial-gradient(600px 260px at 50% 0%, rgba(31,107,255,.25), transparent 60%),
+      linear-gradient(180deg, rgba(26,23,48,.9), rgba(10,10,18,.9));
+    border:1px solid var(--line);
+  }
+  .local .big{font-family:"Futura","Trebuchet MS",sans-serif;font-weight:800;text-transform:uppercase;
+    font-size:clamp(2.1rem,7vw,4rem);line-height:.98}
+  .local .big em{font-style:normal;color:var(--gold)}
+  .local p{color:var(--ink-dim);max-width:52ch;margin:18px auto 0;font-size:1.06rem}
+
+  /* reviews */
+  .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+  .review{
+    padding:26px 24px;border-radius:18px;
+    background:linear-gradient(180deg, rgba(26,23,48,.6), rgba(12,10,22,.55));
+    border:1px solid rgba(255,255,255,.07);position:relative;
+  }
+  .review .stars{position:static;color:var(--gold);font-size:1.05rem;letter-spacing:.12em;margin-bottom:12px;animation:none;opacity:1;background:none}
+  .review p{font-size:1.02rem;line-height:1.6}
+  .review .who{margin-top:16px;display:flex;align-items:center;gap:12px}
+  .review .av{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-family:"Futura",sans-serif;color:#0a0a12}
+  .review .who .name{font-weight:800;font-size:.95rem}
+  .review .who .meta{font-size:.78rem;color:var(--ink-dim)}
+
+  /* checkout / payment placeholder */
+  .checkout{
+    text-align:center;padding:52px 26px;border-radius:22px;
+    background:linear-gradient(180deg, rgba(26,23,48,.7), rgba(10,10,18,.6));
+    border:1px dashed var(--line);
+  }
+  .checkout h2{font-size:clamp(1.8rem,5.5vw,2.8rem);margin-bottom:12px}
+  .checkout p{color:var(--ink-dim);max-width:46ch;margin:0 auto 26px}
+  .btn-pay{
+    display:inline-flex;align-items:center;gap:12px;padding:17px 30px;border-radius:14px;
+    font-weight:800;font-size:1.05rem;text-transform:uppercase;letter-spacing:.04em;
+    background:linear-gradient(180deg, #2a2740, #1a1730);color:var(--ink-dim);
+    border:1px solid rgba(255,255,255,.1);cursor:not-allowed;position:relative;
+  }
+  .btn-pay svg{width:20px;height:20px;opacity:.6}
+  .soon{
+    position:absolute;top:-11px;right:-11px;font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    background:var(--gold);color:#180a03;padding:4px 9px;border-radius:999px;box-shadow:0 4px 12px rgba(0,0,0,.5);
+  }
+  .checkout .fine{margin-top:16px;font-size:.8rem;color:var(--ink-dim)}
+
+  /* final call band */
+  .finalcta{
+    text-align:center;padding:70px 26px;position:relative;overflow:hidden;
+    border-top:1px solid var(--line);
+    background:radial-gradient(700px 300px at 50% 120%, rgba(255,207,63,.14), transparent 60%);
+  }
+  .finalcta h2{font-size:clamp(2.2rem,7vw,4.2rem);margin-bottom:10px}
+  .finalcta h2 em{font-style:normal;background:linear-gradient(92deg,var(--gold),var(--red));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .finalcta p{color:var(--ink-dim);margin-bottom:28px;font-size:1.08rem}
+
+  /* ============ FOOTER ============ */
+  footer{padding:40px 22px 54px;border-top:1px solid rgba(255,255,255,.07);background:#06060d}
+  .foot-inner{max-width:var(--max);margin:0 auto;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-start}
+  .foot-brand b{font-family:"Futura","Trebuchet MS",sans-serif;text-transform:uppercase;letter-spacing:.05em;font-size:1.05rem}
+  .foot-brand p{color:var(--ink-dim);font-size:.9rem;margin-top:6px;max-width:34ch}
+  .foot-links{display:flex;flex-direction:column;gap:8px;font-size:.92rem}
+  .foot-links a{color:var(--ink-dim);transition:color .15s ease}
+  .foot-links a:hover{color:var(--gold)}
+  .safety{margin-top:26px;max-width:var(--max);margin-left:auto;margin-right:auto;font-size:.82rem;color:var(--ink-dim);
+    border:1px solid rgba(255,207,63,.16);border-radius:12px;padding:14px 18px;background:rgba(255,207,63,.03)}
+  .disclaimer{
+    max-width:var(--max);margin:26px auto 0;text-align:center;font-size:.8rem;color:#7d7768;
+    padding-top:22px;border-top:1px dashed rgba(255,255,255,.09);
+  }
+  .disclaimer b{color:var(--gold);font-weight:700}
+
+  /* mobile sticky call bar */
+  .sticky-call{
+    position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;
+    padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+    background:linear-gradient(180deg, rgba(6,6,13,.6), rgba(6,6,13,.98));
+    backdrop-filter:blur(8px);border-top:1px solid var(--line);
+  }
+  .sticky-call a{
+    display:flex;align-items:center;justify-content:center;gap:10px;width:100%;
+    padding:15px;border-radius:12px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:1.02rem;color:#180a03;
+    background:linear-gradient(180deg,var(--gold),var(--gold-deep));box-shadow:inset 0 1px 0 rgba(255,255,255,.5);
+  }
+  .sticky-call a svg{width:20px;height:20px}
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width:720px){
+    .split{grid-template-columns:1fr}
+    .nav-cta{display:none}
+    .sticky-call{display:block}
+    body{padding-bottom:78px}
+    .sec{padding:56px 0}
+    .hero{padding:44px 0 30px}
+    .countdown{gap:12px 16px}
+    .cd-unit{min-width:48px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none !important;scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+  <div class="sky"></div>
+  <div class="stars"></div>
+  <div class="grain"></div>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="Midway Freedom Fireworks home">
+        <span class="mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2v6M12 22v-4M2 12h6M22 12h-6M5 5l3 3M19 5l-3 3M5 19l3-3M19 19l-3-3" stroke="#180a03" stroke-width="2.2" stroke-linecap="round"/><circle cx="12" cy="12" r="2.4" fill="#180a03"/></svg>
+        </span>
+        <span class="txt"><b>Midway Freedom</b><span>Fireworks · Springtown</span></span>
+      </a>
+      <a class="nav-cta" href="tel:+16828038668">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1z"/></svg>
+        Call Now
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <span class="burst b1"></span><span class="burst b2"></span><span class="burst b3"></span><span class="burst b4"></span>
+    <div class="wrap">
+      <span class="eyebrow"><span class="dot"></span>Parker County's only fireworks HQ</span>
+      <h1>
+        <span class="l1">Light up</span>
+        <span class="l2">Springtown.</span>
+      </h1>
+      <p class="sub">The <b>only fireworks stand in town</b> — stocked to the rafters with everything you need to own the sky this 4th. Roll up, load up, blast off.</p>
+
+      <div class="cta-row">
+        <a class="btn-call" href="tel:+16828038668">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1z"/></svg>
+          <span><span class="num">(682) 803-8668</span></span>
+        </a>
+        <a class="btn-ghost" href="#find">Get Directions →</a>
+      </div>
+
+      <div class="countdown" aria-label="Countdown to the 4th of July">
+        <span class="label">Countdown<br>to the 4th</span>
+        <div class="cd-units" id="cd">
+          <div class="cd-unit"><div class="n" id="cd-d">--</div><div class="u">Days</div></div>
+          <span class="cd-sep">:</span>
+          <div class="cd-unit"><div class="n" id="cd-h">--</div><div class="u">Hrs</div></div>
+          <span class="cd-sep">:</span>
+          <div class="cd-unit"><div class="n" id="cd-m">--</div><div class="u">Min</div></div>
+          <span class="cd-sep">:</span>
+          <div class="cd-unit"><div class="n" id="cd-s">--</div><div class="u">Sec</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEASON TICKER -->
+  <div class="season" aria-hidden="true">
+    <div class="ticker">
+      <span>Open for the season</span><span>Family packs in stock</span><span>Big shell assortments</span><span>Cash &amp; card ready</span><span>Local &amp; family-run</span><span>Open for the season</span><span>Family packs in stock</span><span>Big shell assortments</span><span>Cash &amp; card ready</span><span>Local &amp; family-run</span>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="sec" id="shop">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">What we stock</span>
+        <h2>Everything to <em>own the sky.</em></h2>
+        <p>From backyard sparkler nights to full-on aerial shows — we've got the whole arsenal under one roof. Ask us for a pack sized to your crew and budget.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v6M12 22v-4M2 12h6M22 12h-6M5 5l3 3M19 5l-3 3M5 19l3-3M19 19l-3-3" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="2" fill="var(--gold)"/></svg></div>
+          <h3>Aerial Shells</h3>
+          <p>Big-break canister and reloadable shells for the shows that make the whole street stop and stare.</p>
+        </div>
+        <div class="card">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="6" y="9" width="12" height="11" rx="2" stroke="var(--red)" stroke-width="1.8"/><path d="M9 9V6a3 3 0 0 1 6 0v3" stroke="var(--red)" stroke-width="1.8"/></svg></div>
+          <h3>Family Packs</h3>
+          <p>Grab-and-go assortments built for a full backyard night — one box, the whole show, zero guesswork.</p>
+        </div>
+        <div class="card">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3c-1 3-4 4-4 8a4 4 0 0 0 8 0c0-4-3-5-4-8z" stroke="var(--blue)" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+          <h3>Fountains &amp; Cakes</h3>
+          <p>Ground-based color, showers, and repeaters — long runtimes, no ladder, big payoff.</p>
+        </div>
+        <div class="card">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20L18 6M18 6l2-2M18 6l-2 2M14 4l1 3-3 1" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Sparklers &amp; Kids' Stuff</h3>
+          <p>Sparklers, snaps, poppers, and ground bloom — the safe, smiley stuff the little ones love.</p>
+        </div>
+        <div class="card">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 6.5H21l-5.3 3.9 2 6.6-5.7-4.2-5.7 4.2 2-6.6L3 8.5h6.6z" stroke="var(--red)" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+          <h3>Roman Candles &amp; Rockets</h3>
+          <p>Classics that never miss — candles, bottle rockets, and missiles by the case.</p>
+        </div>
+        <div class="card">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 12a8 8 0 1 0-8 8" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round"/><path d="M16 16l4 4M20 15v5h-5" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Bulk &amp; Party Deals</h3>
+          <p>Doing a block party or a wedding send-off? Tell us the plan — we'll build a deal around it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCAL PRIDE STRIP -->
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="local">
+        <div class="big">The <em>only stand</em> in town.</div>
+        <p>No long drive to the city. No picked-over shelves. Just your neighbors, a fully-loaded stand, and the best price on the biggest boom in Parker County. Support local — and light it up right.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOURS + DIRECTIONS -->
+  <section class="sec" id="find" style="padding-top:20px">
+    <div class="wrap">
+      <div class="split">
+        <!-- HOURS -->
+        <div class="panel">
+          <span class="open-pill"><span class="live"></span>Open for the season</span>
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="var(--gold)" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round"/></svg>
+            Stand Hours
+          </h3>
+          <div class="hours-row"><span>Mon – Thu</span><b>10:00 AM – 9:00 PM</b></div>
+          <div class="hours-row now"><span>Fri – Sat</span><b>9:00 AM – 11:00 PM</b></div>
+          <div class="hours-row"><span>Sunday</span><b>11:00 AM – 9:00 PM</b></div>
+          <div class="hours-row"><span>July 4th</span><b>Open early · closes late</b></div>
+          <p style="color:var(--ink-dim);font-size:.86rem;margin-top:18px;line-height:1.5">
+            Seasonal stand — hours run through the summer &amp; New Year selling windows. Call ahead on off-days to be sure someone's at the counter.
+          </p>
+        </div>
+
+        <!-- DIRECTIONS -->
+        <div class="panel">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z" stroke="var(--red)" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="var(--red)" stroke-width="1.8"/></svg>
+            Find the Stand
+          </h3>
+          <div class="addr">6323 Midway Rd<br><span class="muted">Springtown, TX 76082 · Parker County</span></div>
+          <p style="color:var(--ink-dim);font-size:.92rem;margin-top:10px">Big easy pull-in right off Midway Rd — you can't miss the lights. Plenty of room to park the truck.</p>
+
+          <div class="map-embed" role="img" aria-label="Approximate location of the stand near Midway Road, Springtown">
+            <div class="roads"></div>
+            <div class="map-pin"><span class="pin-dot"></span><span class="pin-label">You're here</span></div>
+          </div>
+
+          <a class="dir-btn" href="https://www.google.com/maps/dir/?api=1&destination=6323+Midway+Rd+Springtown+TX+76082" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l9 9-9 9-9-9 9-9z" stroke="#04121f" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12h5v3M14 12l-2-2" stroke="#04121f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Open in Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="sec" id="reviews" style="padding-top:20px">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">The neighborhood talks</span>
+        <h2>Loud reviews for <em>loud fireworks.</em></h2>
+      </div>
+      <div class="reviews-grid">
+        <div class="review">
+          <div class="stars">★★★★★</div>
+          <p>"Best stand in Parker County, hands down. The guys helped me build a family pack for four kids and it was the best show on our street. We'll be back every year."</p>
+          <div class="who">
+            <span class="av" style="background:linear-gradient(180deg,var(--gold),var(--gold-deep))">DR</span>
+            <div><div class="name">Dustin R.</div><div class="meta">Springtown, TX</div></div>
+          </div>
+        </div>
+        <div class="review">
+          <div class="stars">★★★★★</div>
+          <p>"So nice not having to drive into the city. Great prices, huge selection, and they actually know their stuff. Loaded my whole 4th into one box in ten minutes."</p>
+          <div class="who">
+            <span class="av" style="background:linear-gradient(180deg,var(--red),var(--red-deep))">MA</span>
+            <div><div class="name">Maria A.</div><div class="meta">Reno, TX</div></div>
+          </div>
+        </div>
+        <div class="review">
+          <div class="stars">★★★★★</div>
+          <p>"Family-run and it shows. Friendly, fair, and the aerial assortment they set me up with had the neighbors asking where I got it. Local for life."</p>
+          <div class="who">
+            <span class="av" style="background:linear-gradient(180deg,var(--blue),var(--blue-deep))">JT</span>
+            <div><div class="name">Jesse T.</div><div class="meta">Azle, TX</div></div>
+          </div>
+        </div>
+      </div>
+      <p style="color:#7d7768;font-size:.78rem;margin-top:18px">Reviews shown are placeholder examples for this concept preview.</p>
+    </div>
+  </section>
+
+  <!-- CHECKOUT PLACEHOLDER -->
+  <section class="sec" id="order" style="padding-top:0">
+    <div class="wrap">
+      <div class="checkout">
+        <span class="kicker" style="color:var(--gold);letter-spacing:.26em;text-transform:uppercase;font-size:.7rem;font-weight:800;display:block;margin-bottom:10px">Reserve your pack</span>
+        <h2>Pre-order coming soon</h2>
+        <p>Want your family pack held at the counter? Online reserve-and-pay is on the way. For now, just give us a call — we'll set it aside.</p>
+        <button class="btn-pay" type="button" disabled aria-disabled="true">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 10h18" stroke="currentColor" stroke-width="1.8"/></svg>
+          Pay &amp; Reserve
+          <span class="soon">Soon</span>
+        </button>
+        <p class="fine">Online payments not yet enabled — call <a href="tel:+16828038668" style="color:var(--gold)">(682) 803-8668</a> to reserve.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="finalcta">
+    <div class="wrap">
+      <h2>Don't just watch the sky — <em>own it.</em></h2>
+      <p>The stand is stocked and the 4th is close. Come see your neighbors and load up.</p>
+      <a class="btn-call" href="tel:+16828038668">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1z"/></svg>
+        <span class="num">Call (682) 803-8668</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="foot-inner">
+      <div class="foot-brand">
+        <b>Midway Freedom Fireworks</b>
+        <p>Springtown, TX · Parker County. Family-run and stocked for every celebration under the sun — and the sky.</p>
+      </div>
+      <div class="foot-links">
+        <a href="tel:+16828038668">(682) 803-8668</a>
+        <a href="#shop">What we stock</a>
+        <a href="#find">Hours &amp; directions</a>
+        <a href="#reviews">Reviews</a>
+      </div>
+    </div>
+
+    <div class="safety">
+      <b style="color:var(--gold)">Light responsibly:</b> Always follow local ordinances, keep water nearby, use in open areas away from structures, and never let children handle aerials or Roman candles unsupervised. Check current Parker County fireworks regulations before you light.
+    </div>
+
+    <div class="disclaimer">
+      <b>Concept preview built by DNA Agency — not affiliated with Midway Freedom Fireworks.</b><br>
+      Placeholder imagery, sample reviews, and example hours are for demonstration only. Verify all business details directly with the stand.
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY CALL -->
+  <div class="sticky-call">
+    <a href="tel:+16828038668">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1z"/></svg>
+      Tap to Call · (682) 803-8668
+    </a>
+  </div>
+
+  <script>
+    // Countdown to the next July 4th
+    (function(){
+      var d=document.getElementById('cd-d'),h=document.getElementById('cd-h'),
+          m=document.getElementById('cd-m'),s=document.getElementById('cd-s');
+      if(!d) return;
+      function pad(n){return String(n).padStart(2,'0');}
+      function target(){
+        var now=new Date();
+        var y=now.getFullYear();
+        var july4=new Date(y,6,4,21,0,0); // 9pm July 4 this year
+        if(now>july4){july4=new Date(y+1,6,4,21,0,0);}
+        return july4;
+      }
+      function tick(){
+        var t=target()-new Date();
+        if(t<0)t=0;
+        var days=Math.floor(t/864e5);
+        var hrs=Math.floor(t/36e5)%24;
+        var min=Math.floor(t/6e4)%60;
+        var sec=Math.floor(t/1e3)%60;
+        d.textContent=pad(days); h.textContent=pad(hrs); m.textContent=pad(min); s.textContent=pad(sec);
+      }
+      tick(); setInterval(tick,1000);
+    })();
+  </script>
+</body>
+</html>

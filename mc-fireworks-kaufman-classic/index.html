@@ -1,0 +1,730 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MC Fireworks Kaufman Stand — Family-Owned Fireworks in Kaufman, TX</title>
+<meta name="description" content="Family-owned fireworks stand in Kaufman, TX. Assortments, family packs, and classic favorites for the whole neighborhood. Open for the season — call ahead or stop by.">
+<style>
+  /* ============ Fonts: system-native, no CDN ============ */
+  /* Display: a warm high-contrast serif. Body: a clean humanist sans. */
+  :root{
+    --ink:#1a1410;          /* near-black warm */
+    --sky:#120e2a;          /* deep midnight */
+    --sky-2:#1e1642;        /* raised midnight */
+    --cream:#f7f0e2;        /* parchment */
+    --cream-2:#efe4cd;
+    --ember:#ff6a2b;        /* firework ember */
+    --ember-deep:#e2450f;
+    --gold:#f2b544;         /* spark gold */
+    --gold-deep:#c98a1e;
+    --wine:#7a1f2b;         /* deep festive red */
+    --leaf:#2f6b4f;         /* trust green */
+    --muted:#6d5f4c;
+    --line:rgba(26,20,16,.12);
+    --serif: "Hoefler Text","Playfair Display",Georgia,"Times New Roman",serif;
+    --sans: "Avenir Next","Segoe UI",Helvetica,Arial,system-ui,sans-serif;
+    --shadow: 0 18px 40px -18px rgba(18,14,42,.55);
+    --shadow-sm: 0 8px 22px -12px rgba(18,14,42,.4);
+    --radius: 18px;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.55;
+    font-size:17px;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.05;letter-spacing:-.01em;margin:0}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 22px}
+
+  /* ============ Seasonal banner ============ */
+  .season{
+    background:linear-gradient(90deg,var(--wine),var(--ember-deep) 55%,var(--gold-deep));
+    color:#fff;
+    font-family:var(--sans);
+    font-size:13.5px;
+    letter-spacing:.04em;
+    text-align:center;
+    padding:9px 16px;
+    font-weight:600;
+    position:relative;
+    z-index:5;
+  }
+  .season b{color:#ffe6b0}
+  .season .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#7cf29a;box-shadow:0 0 0 0 rgba(124,242,154,.7);margin-right:7px;vertical-align:middle;animation:pulse 2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(124,242,154,.6)}70%{box-shadow:0 0 0 9px rgba(124,242,154,0)}100%{box-shadow:0 0 0 0 rgba(124,242,154,0)}}
+
+  /* ============ Nav ============ */
+  nav{
+    position:sticky;top:0;z-index:20;
+    background:rgba(247,240,226,.86);
+    backdrop-filter:saturate(1.4) blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:var(--serif);font-size:20px;font-weight:600;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+  .brand .mark{
+    width:34px;height:34px;border-radius:9px;flex:0 0 auto;
+    background:radial-gradient(circle at 50% 40%,var(--gold),var(--ember) 55%,var(--wine));
+    position:relative;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.25),0 4px 12px -4px rgba(226,69,15,.7);
+  }
+  .brand .mark::before,.brand .mark::after{content:"";position:absolute;inset:0;margin:auto;background:#fff;opacity:.9}
+  .brand .mark::before{width:2px;height:20px;border-radius:2px}
+  .brand .mark::after{width:20px;height:2px;border-radius:2px}
+  .nav-links{display:none;gap:26px;font-size:14.5px;font-weight:600;letter-spacing:.01em}
+  .nav-links a{text-decoration:none;color:var(--muted);transition:color .18s}
+  .nav-links a:hover{color:var(--ember-deep)}
+  .nav-call{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--ink);color:var(--cream);
+    text-decoration:none;font-weight:700;font-size:14px;
+    padding:9px 16px;border-radius:100px;white-space:nowrap;
+    box-shadow:var(--shadow-sm);transition:transform .15s;
+  }
+  .nav-call:hover{transform:translateY(-1px)}
+
+  /* ============ Hero ============ */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(1200px 500px at 78% -10%,rgba(242,181,68,.30),transparent 60%),
+      radial-gradient(900px 420px at 12% 0%,rgba(255,106,43,.28),transparent 62%),
+      linear-gradient(180deg,var(--sky) 0%,var(--sky-2) 62%,#241a52 100%);
+    color:var(--cream);
+    overflow:hidden;
+    isolation:isolate;
+  }
+  /* firework spark field */
+  .sparks{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.9}
+  .sparks span{position:absolute;border-radius:50%;background:var(--gold);opacity:.0;animation:twinkle 4.5s ease-in-out infinite}
+  @keyframes twinkle{0%,100%{opacity:0;transform:scale(.4)}50%{opacity:.9;transform:scale(1)}}
+  /* big radial burst decoration */
+  .burst{position:absolute;z-index:-1;width:520px;height:520px;right:-140px;top:-120px;opacity:.5;pointer-events:none}
+  .burst .ray{position:absolute;left:50%;top:50%;width:2px;height:230px;background:linear-gradient(var(--gold),transparent);transform-origin:top center;border-radius:2px}
+  .hero-in{padding:64px 0 76px;position:relative}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--gold);
+    border:1px solid rgba(242,181,68,.35);
+    padding:7px 14px;border-radius:100px;
+    background:rgba(242,181,68,.08);
+    margin-bottom:24px;
+  }
+  .hero h1{
+    font-size:clamp(44px,10vw,88px);
+    line-height:.98;
+    letter-spacing:-.02em;
+  }
+  .hero h1 .city{
+    display:block;
+    font-style:italic;
+    font-size:clamp(22px,5.2vw,40px);
+    font-weight:500;
+    color:var(--gold);
+    letter-spacing:.01em;
+    margin-top:12px;
+  }
+  .hero p.lede{
+    max-width:540px;
+    font-size:clamp(16px,2.4vw,19px);
+    color:rgba(247,240,226,.82);
+    margin:22px 0 34px;
+  }
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .btn-call{
+    display:inline-flex;align-items:center;gap:12px;
+    background:linear-gradient(180deg,var(--ember),var(--ember-deep));
+    color:#fff;text-decoration:none;
+    font-weight:800;font-size:20px;letter-spacing:.005em;
+    padding:18px 30px;border-radius:100px;
+    box-shadow:0 16px 34px -12px rgba(226,69,15,.75),inset 0 1px 0 rgba(255,255,255,.3);
+    transition:transform .16s,box-shadow .16s;
+  }
+  .btn-call:hover{transform:translateY(-2px);box-shadow:0 22px 42px -12px rgba(226,69,15,.85),inset 0 1px 0 rgba(255,255,255,.3)}
+  .btn-call svg{width:22px;height:22px;flex:0 0 auto}
+  .btn-call small{display:block;font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.85;line-height:1}
+  .btn-call .num{font-size:20px;line-height:1.15;font-variant-numeric:tabular-nums}
+  .btn-ghost{
+    display:inline-flex;align-items:center;gap:9px;
+    color:var(--cream);text-decoration:none;font-weight:700;font-size:15px;
+    padding:16px 22px;border-radius:100px;
+    border:1.5px solid rgba(247,240,226,.32);
+    transition:background .18s,border-color .18s;
+  }
+  .btn-ghost:hover{background:rgba(247,240,226,.08);border-color:rgba(247,240,226,.55)}
+
+  /* trust chips row under hero */
+  .trust-strip{
+    display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:38px;
+    padding-top:26px;border-top:1px solid rgba(247,240,226,.14);
+  }
+  .trust-strip .chip{display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600;color:rgba(247,240,226,.9)}
+  .trust-strip .chip svg{width:17px;height:17px;color:var(--gold);flex:0 0 auto}
+
+  /* decorative bottom edge */
+  .hero-edge{display:block;width:100%;height:auto;color:var(--cream);margin-bottom:-1px}
+
+  /* ============ Section framing ============ */
+  section{position:relative}
+  .sec-head{max-width:640px;margin:0 auto 42px;text-align:center}
+  .sec-kicker{font-family:var(--sans);font-size:12.5px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--ember-deep);display:block;margin-bottom:12px}
+  .sec-head h2{font-size:clamp(30px,5.6vw,46px)}
+  .sec-head p{color:var(--muted);margin:16px 0 0;font-size:16.5px}
+
+  /* ============ Why us strip ============ */
+  .why{padding:76px 0 8px}
+  .why-grid{display:grid;grid-template-columns:1fr;gap:18px}
+  .why-card{
+    background:linear-gradient(180deg,#fff,var(--cream-2));
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:26px 24px;
+    box-shadow:var(--shadow-sm);
+    position:relative;overflow:hidden;
+  }
+  .why-card .ic{
+    width:48px;height:48px;border-radius:12px;display:grid;place-items:center;margin-bottom:16px;
+    background:radial-gradient(circle at 35% 30%,var(--gold),var(--ember) 70%);
+    color:#fff;box-shadow:0 8px 18px -8px rgba(226,69,15,.7);
+  }
+  .why-card .ic svg{width:24px;height:24px}
+  .why-card h3{font-size:21px;margin-bottom:8px}
+  .why-card p{color:var(--muted);font-size:15px;margin:0}
+  .why-card .yrs{position:absolute;right:-8px;top:-14px;font-family:var(--serif);font-size:92px;font-weight:700;color:rgba(226,69,15,.06);letter-spacing:-.04em;pointer-events:none}
+
+  /* ============ Products / what we sell ============ */
+  .shop{padding:78px 0}
+  .prod-grid{display:grid;grid-template-columns:1fr;gap:20px}
+  .prod{
+    border-radius:var(--radius);overflow:hidden;
+    border:1px solid var(--line);
+    background:#fff;box-shadow:var(--shadow-sm);
+    transition:transform .2s,box-shadow .2s;
+  }
+  .prod:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .prod .art{
+    height:172px;position:relative;overflow:hidden;
+    display:grid;place-items:center;
+  }
+  .prod .art svg{width:100%;height:100%;position:absolute;inset:0}
+  .prod .art .tag{
+    position:relative;z-index:2;
+    font-family:var(--serif);font-style:italic;font-size:15px;color:#fff;
+    background:rgba(18,14,42,.35);padding:5px 13px;border-radius:100px;backdrop-filter:blur(3px);
+    border:1px solid rgba(255,255,255,.22);
+  }
+  .prod .body{padding:20px 22px 24px}
+  .prod h3{font-size:22px;margin-bottom:7px}
+  .prod p{color:var(--muted);font-size:14.5px;margin:0}
+  .prod .ph-note{margin-top:14px;font-size:12px;color:var(--gold-deep);font-weight:700;letter-spacing:.04em}
+
+  .shop-note{
+    margin:40px auto 0;max-width:680px;text-align:center;
+    background:var(--cream-2);border:1px dashed var(--gold-deep);border-radius:var(--radius);
+    padding:22px 24px;color:var(--muted);font-size:14.5px;
+  }
+  .shop-note b{color:var(--ink)}
+
+  /* placeholder / disabled checkout button */
+  .pay-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center;margin-top:20px}
+  .btn-pay{
+    display:inline-flex;align-items:center;gap:10px;
+    background:#d8ccb4;color:#8a7c62;
+    font-weight:800;font-size:15px;padding:14px 24px;border-radius:100px;border:1px solid rgba(0,0,0,.06);
+    cursor:not-allowed;position:relative;
+  }
+  .btn-pay svg{width:17px;height:17px}
+  .btn-pay .lock{position:absolute;top:-10px;right:-8px;background:var(--ink);color:var(--cream);font-size:9.5px;font-weight:800;letter-spacing:.08em;padding:3px 8px;border-radius:100px;text-transform:uppercase}
+
+  /* ============ Location + hours split ============ */
+  .visit{
+    background:
+      radial-gradient(700px 320px at 85% 0%,rgba(242,181,68,.14),transparent 60%),
+      linear-gradient(180deg,var(--sky) 0%,var(--sky-2) 100%);
+    color:var(--cream);padding:80px 0;
+  }
+  .visit .sec-kicker{color:var(--gold)}
+  .visit-grid{display:grid;grid-template-columns:1fr;gap:26px;margin-top:8px}
+  .panel{
+    background:rgba(247,240,226,.05);
+    border:1px solid rgba(247,240,226,.14);
+    border-radius:var(--radius);padding:30px 28px;
+    backdrop-filter:blur(3px);
+  }
+  .panel h3{font-size:26px;margin-bottom:18px;color:var(--cream)}
+  .panel h3 .accent{color:var(--gold)}
+  .hours-list{list-style:none;margin:0;padding:0}
+  .hours-list li{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px solid rgba(247,240,226,.1);font-size:15.5px}
+  .hours-list li:last-child{border-bottom:0}
+  .hours-list .day{font-weight:600;color:rgba(247,240,226,.9)}
+  .hours-list .time{color:var(--gold);font-weight:700;font-variant-numeric:tabular-nums}
+  .hours-list li.today{background:rgba(242,181,68,.08);margin:0 -14px;padding:12px 14px;border-radius:10px;border-bottom:1px solid transparent}
+  .hours-list li.today .day::after{content:"Today";font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:2px 8px;border-radius:100px;margin-left:9px;vertical-align:middle}
+
+  .addr{font-size:16px;line-height:1.7;color:rgba(247,240,226,.9)}
+  .addr .big{font-family:var(--serif);font-size:24px;color:var(--cream);display:block;margin-bottom:4px}
+  .map-card{
+    margin-top:20px;border-radius:14px;overflow:hidden;border:1px solid rgba(247,240,226,.16);
+    position:relative;height:190px;background:#0d1b2a;
+  }
+  .map-card svg{position:absolute;inset:0;width:100%;height:100%}
+  .map-pin{
+    position:absolute;left:50%;top:46%;transform:translate(-50%,-100%);z-index:3;
+    display:flex;flex-direction:column;align-items:center;
+  }
+  .map-pin .dot{width:20px;height:20px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--ember);box-shadow:0 6px 14px -4px rgba(226,69,15,.8),0 0 0 4px rgba(255,106,43,.25)}
+  .map-pin .label{margin-top:12px;background:var(--cream);color:var(--ink);font-size:12px;font-weight:800;padding:4px 11px;border-radius:100px;white-space:nowrap;box-shadow:var(--shadow-sm)}
+  .btn-dir{
+    display:inline-flex;align-items:center;gap:9px;margin-top:18px;
+    background:var(--cream);color:var(--ink);text-decoration:none;font-weight:800;font-size:14.5px;
+    padding:13px 22px;border-radius:100px;box-shadow:var(--shadow-sm);transition:transform .15s;
+  }
+  .btn-dir:hover{transform:translateY(-1px)}
+  .btn-dir svg{width:17px;height:17px}
+  .verify{font-size:12px;color:var(--gold);font-weight:700;letter-spacing:.03em;margin-top:12px;opacity:.85}
+
+  /* ============ Reviews ============ */
+  .reviews{padding:82px 0}
+  .rev-grid{display:grid;grid-template-columns:1fr;gap:20px}
+  .rev{
+    background:linear-gradient(180deg,#fff,var(--cream-2));
+    border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 26px 24px;box-shadow:var(--shadow-sm);position:relative;
+  }
+  .rev .stars{color:var(--gold-deep);font-size:16px;letter-spacing:2px;margin-bottom:14px}
+  .rev blockquote{margin:0;font-family:var(--serif);font-size:19px;line-height:1.45;color:var(--ink);font-style:italic}
+  .rev .who{display:flex;align-items:center;gap:12px;margin-top:20px}
+  .rev .av{width:40px;height:40px;border-radius:50%;flex:0 0 auto;display:grid;place-items:center;color:#fff;font-weight:800;font-family:var(--sans);font-size:15px}
+  .rev .who .n{font-weight:800;font-size:14.5px}
+  .rev .who .m{font-size:12.5px;color:var(--muted)}
+  .rev .quote-mark{position:absolute;right:22px;top:10px;font-family:var(--serif);font-size:80px;color:rgba(226,69,15,.08);line-height:1}
+  .rev-rating{text-align:center;margin-bottom:40px}
+  .rev-rating .score{font-family:var(--serif);font-size:56px;font-weight:700;color:var(--ink);line-height:1}
+  .rev-rating .st{color:var(--gold-deep);font-size:22px;letter-spacing:3px;margin:6px 0}
+  .rev-rating .sub{font-size:13.5px;color:var(--muted);font-weight:600}
+
+  /* ============ Gallery ============ */
+  .gallery{padding:0 0 84px}
+  .gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .gal-grid .g{border-radius:14px;overflow:hidden;position:relative;aspect-ratio:1/1;border:1px solid var(--line)}
+  .gal-grid .g.wide{grid-column:span 2;aspect-ratio:2/1}
+  .gal-grid .g svg{width:100%;height:100%;display:block}
+  .gal-cap{position:absolute;left:12px;bottom:11px;z-index:2;font-family:var(--serif);font-style:italic;font-size:13px;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+  .gal-note{text-align:center;margin-top:18px;font-size:12.5px;color:var(--muted);font-weight:600;letter-spacing:.02em}
+
+  /* ============ Final CTA ============ */
+  .final{
+    background:linear-gradient(135deg,var(--wine),var(--ember-deep) 60%,var(--gold-deep));
+    color:#fff;text-align:center;padding:70px 22px;position:relative;overflow:hidden;
+  }
+  .final::after{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 50% -20%,rgba(255,255,255,.22),transparent 60%);pointer-events:none}
+  .final h2{font-size:clamp(30px,6vw,50px);position:relative;z-index:2}
+  .final p{max-width:520px;margin:16px auto 30px;font-size:17px;opacity:.92;position:relative;z-index:2}
+  .final .btn-call{position:relative;z-index:2;background:#fff;color:var(--ember-deep);box-shadow:0 16px 34px -12px rgba(0,0,0,.4)}
+  .final .btn-call small{opacity:.7}
+
+  /* ============ Footer ============ */
+  footer{background:var(--ink);color:rgba(247,240,226,.72);padding:44px 0 34px;font-size:14px}
+  .foot-top{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start;padding-bottom:26px;border-bottom:1px solid rgba(247,240,226,.12)}
+  .foot-brand{display:flex;align-items:center;gap:11px;font-family:var(--serif);font-size:20px;color:var(--cream)}
+  .foot-links{display:flex;flex-wrap:wrap;gap:18px}
+  .foot-links a{color:rgba(247,240,226,.7);text-decoration:none;font-weight:600;font-size:14px}
+  .foot-links a:hover{color:var(--gold)}
+  .foot-safety{margin-top:22px;font-size:12.5px;color:rgba(247,240,226,.55);line-height:1.7;max-width:760px}
+  .disclaimer{
+    margin-top:22px;padding:14px 18px;border-radius:12px;
+    background:rgba(242,181,68,.08);border:1px solid rgba(242,181,68,.22);
+    font-size:12.5px;color:var(--gold);line-height:1.6;
+  }
+  .disclaimer b{color:#ffe6b0}
+
+  /* ============ Reveal on scroll ============ */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ============ Responsive ============ */
+  @media(min-width:720px){
+    .why-grid{grid-template-columns:repeat(3,1fr)}
+    .prod-grid{grid-template-columns:repeat(3,1fr)}
+    .visit-grid{grid-template-columns:1fr 1fr}
+    .rev-grid{grid-template-columns:repeat(3,1fr)}
+    .gal-grid{grid-template-columns:repeat(4,1fr)}
+    .gal-grid .g.wide{grid-column:span 2;aspect-ratio:2/1}
+  }
+  @media(min-width:900px){
+    .nav-links{display:flex}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .sparks span,.season .dot{animation:none}
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+
+<!-- ============ SEASONAL BANNER ============ -->
+<div class="season">
+  <span class="dot"></span>OPEN FOR THE SEASON &nbsp;·&nbsp; Stocked &amp; ready for the <b>Fourth of July &amp; New Year&rsquo;s</b> &nbsp;·&nbsp; Family-owned in Kaufman for 14 years
+</div>
+
+<!-- ============ NAV ============ -->
+<nav>
+  <div class="wrap nav-in">
+    <a href="#top" class="brand"><span class="mark"></span> MC Fireworks</a>
+    <div class="nav-links">
+      <a href="#why">Why Us</a>
+      <a href="#shop">What We Sell</a>
+      <a href="#visit">Hours &amp; Location</a>
+      <a href="#reviews">Reviews</a>
+    </div>
+    <a href="tel:+10000000000" class="nav-call">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call
+    </a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="sparks" id="sparks"></div>
+  <div class="burst" id="burst"></div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M12 2l2.09 6.26L20 9l-5 3.8L16.5 20 12 16.3 7.5 20 9 12.8 4 9l5.91-.74L12 2z"/></svg>
+      Kaufman&rsquo;s hometown fireworks stand
+    </span>
+    <h1>
+      MC Fireworks
+      <span class="city">Kaufman, Texas</span>
+    </h1>
+    <p class="lede">
+      Fourteen years, same family, same friendly stand. From backyard sparklers to
+      the big finale &mdash; we help Kaufman families light up every celebration. Stop by,
+      or give us a call and we&rsquo;ll have your order ready.
+    </p>
+
+    <div class="hero-cta">
+      <a href="tel:+10000000000" class="btn-call">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>
+          <small>Tap to call</small>
+          <span class="num">(000) 000-0000</span>
+        </span>
+      </a>
+      <a href="#visit" class="btn-ghost">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="17" height="17"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Get directions
+      </a>
+    </div>
+
+    <div class="trust-strip">
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Family-owned since 2011</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.09 6.26L20 9l-5 3.8L16.5 20 12 16.3 7.5 20 9 12.8 4 9l5.91-.74L12 2z"/></svg> Locally trusted &amp; TX-legal</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Fast, friendly service</span>
+    </div>
+  </div>
+
+  <!-- decorative curved edge -->
+  <svg class="hero-edge" viewBox="0 0 1440 70" preserveAspectRatio="none" fill="currentColor"><path d="M0 70V38C240 62 480 14 720 14s480 48 720 24v32H0z"/></svg>
+</header>
+
+<!-- ============ WHY US ============ -->
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Why families come back</span>
+      <h2>The stand your neighbors already trust</h2>
+      <p>Big-box stores don&rsquo;t know your name. We do &mdash; because half of Kaufman has bought their Fourth of July from us for over a decade.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <span class="yrs">14</span>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></span>
+        <h3>Family-run since 2011</h3>
+        <p>Same family, same corner, every season. Generations of Kaufman families have grabbed their fireworks right here.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.09 6.26L20 9l-5 3.8L16.5 20 12 16.3 7.5 20 9 12.8 4 9l5.91-.74L12 2z"/></svg></span>
+        <h3>Advice, not upselling</h3>
+        <p>New to it or a seasoned pro? We&rsquo;ll point you to the right assortment for your yard and your budget &mdash; no pressure.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <h3>Fair prices, real value</h3>
+        <p>Bundle deals and family packs that stretch further than the big lots. Ask about the current season&rsquo;s specials.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT WE SELL ============ -->
+<section class="shop" id="shop">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">What we sell</span>
+      <h2>Everything for a great night sky</h2>
+      <p>A full stand of Texas-legal fireworks &mdash; from the little ones&rsquo; first sparklers to a finale the whole street will watch.</p>
+    </div>
+
+    <div class="prod-grid">
+      <div class="prod reveal">
+        <div class="art">
+          <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="p1" cx="50%" cy="60%" r="70%"><stop offset="0%" stop-color="#2a2050"/><stop offset="100%" stop-color="#120e2a"/></radialGradient></defs><rect width="400" height="200" fill="url(#p1)"/><g stroke="#f2b544" stroke-width="1.4" opacity=".9"><g transform="translate(120 95)"><line x1="0" y1="0" x2="0" y2="-46"/><line x1="0" y1="0" x2="33" y2="-33"/><line x1="0" y1="0" x2="46" y2="0"/><line x1="0" y1="0" x2="33" y2="33"/><line x1="0" y1="0" x2="0" y2="46"/><line x1="0" y1="0" x2="-33" y2="33"/><line x1="0" y1="0" x2="-46" y2="0"/><line x1="0" y1="0" x2="-33" y2="-33"/></g><g transform="translate(270 110)" stroke="#ff6a2b"><line x1="0" y1="0" x2="20" y2="-34"/><line x1="0" y1="0" x2="38" y2="-8"/><line x1="0" y1="0" x2="30" y2="26"/><line x1="0" y1="0" x2="-6" y2="38"/><line x1="0" y1="0" x2="-34" y2="18"/><line x1="0" y1="0" x2="-30" y2="-26"/></g></g></svg>
+          <span class="tag">Aerials &amp; cakes</span>
+        </div>
+        <div class="body">
+          <h3>Aerial Assortments</h3>
+          <p>Multi-shot cakes and repeaters for that show-stopping finale everyone remembers.</p>
+          <div class="ph-note">Placeholder — real product photos on the live site</div>
+        </div>
+      </div>
+
+      <div class="prod reveal">
+        <div class="art">
+          <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="p2" cx="50%" cy="60%" r="70%"><stop offset="0%" stop-color="#3a1436"/><stop offset="100%" stop-color="#160b1a"/></radialGradient></defs><rect width="400" height="200" fill="url(#p2)"/><g fill="#f2b544"><circle cx="120" cy="90" r="4"/><circle cx="150" cy="70" r="3"/><circle cx="180" cy="100" r="4"/><circle cx="210" cy="72" r="3"/><circle cx="240" cy="96" r="4"/><circle cx="270" cy="76" r="3"/></g><g stroke="#ff6a2b" stroke-width="2" stroke-linecap="round"><line x1="120" y1="90" x2="118" y2="130"/><line x1="180" y1="100" x2="182" y2="140"/><line x1="240" y1="96" x2="238" y2="138"/></g></svg>
+          <span class="tag">Kid-friendly</span>
+        </div>
+        <div class="body">
+          <h3>Family Packs</h3>
+          <p>Sparklers, fountains, and ground spinners &mdash; the safe, fun stuff the little ones love.</p>
+          <div class="ph-note">Placeholder — real product photos on the live site</div>
+        </div>
+      </div>
+
+      <div class="prod reveal">
+        <div class="art">
+          <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="p3" cx="50%" cy="55%" r="70%"><stop offset="0%" stop-color="#123a2a"/><stop offset="100%" stop-color="#0a1e16"/></radialGradient></defs><rect width="400" height="200" fill="url(#p3)"/><g stroke="#7cf29a" stroke-width="1.3" opacity=".85"><g transform="translate(200 100)"><line x1="0" y1="0" x2="0" y2="-52"/><line x1="0" y1="0" x2="37" y2="-37"/><line x1="0" y1="0" x2="52" y2="0"/><line x1="0" y1="0" x2="37" y2="37"/><line x1="0" y1="0" x2="0" y2="52"/><line x1="0" y1="0" x2="-37" y2="37"/><line x1="0" y1="0" x2="-52" y2="0"/><line x1="0" y1="0" x2="-37" y2="-37"/></g></g><g fill="#f2b544"><circle cx="200" cy="48" r="2.5"/><circle cx="252" cy="100" r="2.5"/><circle cx="200" cy="152" r="2.5"/><circle cx="148" cy="100" r="2.5"/></g></svg>
+          <span class="tag">Value bundles</span>
+        </div>
+        <div class="body">
+          <h3>Backyard Bundles</h3>
+          <p>Curated boxes that mix aerials, fountains, and novelties &mdash; a whole night&rsquo;s show in one grab.</p>
+          <div class="ph-note">Placeholder — real product photos on the live site</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="shop-note reveal">
+      Inventory changes with the season and while supplies last. <b>Call ahead</b> and we&rsquo;ll tell you what&rsquo;s in stock and hold your order at the counter.
+      <div class="pay-row">
+        <span class="btn-pay" role="button" aria-disabled="true" title="Online checkout coming soon">
+          <span class="lock">Demo</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg>
+          Pay online &mdash; coming soon
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOURS + LOCATION ============ -->
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Come see us</span>
+      <h2 style="color:var(--cream)">Hours &amp; location</h2>
+      <p style="color:rgba(247,240,226,.75)">Fireworks stands run on a season. During peak weeks we&rsquo;re open long hours &mdash; here&rsquo;s when to swing by.</p>
+    </div>
+
+    <div class="visit-grid">
+      <!-- Hours -->
+      <div class="panel reveal">
+        <h3>Seasonal <span class="accent">hours</span></h3>
+        <ul class="hours-list">
+          <li><span class="day">Mon &ndash; Thu</span><span class="time">10:00a &ndash; 9:00p</span></li>
+          <li class="today"><span class="day">Friday</span><span class="time">10:00a &ndash; 11:00p</span></li>
+          <li><span class="day">Saturday</span><span class="time">9:00a &ndash; 11:00p</span></li>
+          <li><span class="day">Sunday</span><span class="time">10:00a &ndash; 9:00p</span></li>
+          <li><span class="day">July 4th</span><span class="time">Open late!</span></li>
+        </ul>
+        <p style="font-size:13px;color:rgba(247,240,226,.6);margin:16px 0 0">Hours extend around the Fourth of July and New Year&rsquo;s. Call to confirm before you drive out &mdash; we&rsquo;re happy to stay a few minutes late for a good customer.</p>
+      </div>
+
+      <!-- Location -->
+      <div class="panel reveal">
+        <h3>Find the <span class="accent">stand</span></h3>
+        <div class="addr">
+          <span class="big">MC Fireworks Kaufman Stand</span>
+          Kaufman, TX 75142<br>
+          Right off the highway &mdash; look for the tent &amp; the flags.
+        </div>
+
+        <div class="map-card">
+          <svg viewBox="0 0 400 190" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="190" fill="#0f2038"/>
+            <g stroke="#1e3a5f" stroke-width="10"><line x1="0" y1="60" x2="400" y2="80"/><line x1="120" y1="0" x2="150" y2="190"/><line x1="0" y1="140" x2="400" y2="130"/></g>
+            <g stroke="#274c78" stroke-width="3" opacity=".7"><line x1="0" y1="30" x2="400" y2="42"/><line x1="260" y1="0" x2="285" y2="190"/><line x1="0" y1="110" x2="400" y2="102"/></g>
+            <g fill="#16304f"><rect x="30" y="88" width="34" height="28" rx="3"/><rect x="200" y="20" width="30" height="26" rx="3"/><rect x="320" y="150" width="40" height="30" rx="3"/></g>
+          </svg>
+          <div class="map-pin">
+            <span class="dot"></span>
+            <span class="label">MC Fireworks &mdash; Kaufman</span>
+          </div>
+        </div>
+
+        <a href="https://maps.google.com/?q=MC+Fireworks+Kaufman+TX" target="_blank" rel="noopener" class="btn-dir">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Open in Google Maps
+        </a>
+        <div class="verify">Address &amp; phone to be confirmed on the live site.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Neighbors say it best</span>
+      <h2>Reviews from around Kaufman</h2>
+    </div>
+
+    <div class="rev-rating reveal">
+      <div class="score">4.9</div>
+      <div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="sub">Loved by local families year after year</div>
+    </div>
+
+    <div class="rev-grid">
+      <div class="rev reveal">
+        <span class="quote-mark">&rdquo;</span>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Been buying here since my kids were little &mdash; now they bring their own kids. Always fair, always friendly.</blockquote>
+        <div class="who"><span class="av" style="background:linear-gradient(135deg,#ff6a2b,#e2450f)">DR</span><div><div class="n">Diana R.</div><div class="m">Kaufman, TX</div></div></div>
+      </div>
+      <div class="rev reveal">
+        <span class="quote-mark">&rdquo;</span>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>They set us up with the perfect backyard bundle and even walked us through lighting it safely. Best show on the block.</blockquote>
+        <div class="who"><span class="av" style="background:linear-gradient(135deg,#f2b544,#c98a1e)">MT</span><div><div class="n">Marcus T.</div><div class="m">Terrell, TX</div></div></div>
+      </div>
+      <div class="rev reveal">
+        <span class="quote-mark">&rdquo;</span>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Prices beat the big lots off the interstate and they actually know their stuff. This is our July 4th stop, every year.</blockquote>
+        <div class="who"><span class="av" style="background:linear-gradient(135deg,#2f6b4f,#1d4835)">SL</span><div><div class="n">Sofia L.</div><div class="m">Kaufman, TX</div></div></div>
+      </div>
+    </div>
+    <p class="gal-note" style="margin-top:24px">Sample testimonials for this concept preview &mdash; real Google &amp; Facebook reviews would appear here on the live site.</p>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="gallery">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">A look at the show</span>
+      <h2>From our night sky</h2>
+    </div>
+    <div class="gal-grid reveal">
+      <div class="g wide">
+        <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="g1" cx="50%" cy="70%" r="80%"><stop offset="0%" stop-color="#2a1f52"/><stop offset="100%" stop-color="#0d0a22"/></radialGradient></defs><rect width="400" height="200" fill="url(#g1)"/><g stroke-width="1.3" opacity=".9"><g transform="translate(110 90)" stroke="#ff6a2b"><line x1="0" y1="0" x2="0" y2="-40"/><line x1="0" y1="0" x2="28" y2="-28"/><line x1="0" y1="0" x2="40" y2="0"/><line x1="0" y1="0" x2="28" y2="28"/><line x1="0" y1="0" x2="0" y2="40"/><line x1="0" y1="0" x2="-28" y2="28"/><line x1="0" y1="0" x2="-40" y2="0"/><line x1="0" y1="0" x2="-28" y2="-28"/></g><g transform="translate(290 80)" stroke="#f2b544"><line x1="0" y1="0" x2="0" y2="-50"/><line x1="0" y1="0" x2="35" y2="-35"/><line x1="0" y1="0" x2="50" y2="0"/><line x1="0" y1="0" x2="35" y2="35"/><line x1="0" y1="0" x2="0" y2="50"/><line x1="0" y1="0" x2="-35" y2="35"/><line x1="0" y1="0" x2="-50" y2="0"/><line x1="0" y1="0" x2="-35" y2="-35"/></g></g></svg>
+        <span class="gal-cap">The grand finale</span>
+      </div>
+      <div class="g">
+        <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="g2" cx="50%" cy="55%" r="70%"><stop offset="0%" stop-color="#3a1436"/><stop offset="100%" stop-color="#12081a"/></radialGradient></defs><rect width="200" height="200" fill="url(#g2)"/><g transform="translate(100 100)" stroke="#f2b544" stroke-width="1.4"><line x1="0" y1="0" x2="0" y2="-45"/><line x1="0" y1="0" x2="32" y2="-32"/><line x1="0" y1="0" x2="45" y2="0"/><line x1="0" y1="0" x2="32" y2="32"/><line x1="0" y1="0" x2="0" y2="45"/><line x1="0" y1="0" x2="-32" y2="32"/><line x1="0" y1="0" x2="-45" y2="0"/><line x1="0" y1="0" x2="-32" y2="-32"/></g></svg>
+        <span class="gal-cap">Gold burst</span>
+      </div>
+      <div class="g">
+        <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="g3" cx="50%" cy="60%" r="70%"><stop offset="0%" stop-color="#123a2a"/><stop offset="100%" stop-color="#08160f"/></radialGradient></defs><rect width="200" height="200" fill="url(#g3)"/><g fill="#7cf29a"><circle cx="100" cy="70" r="3"/><circle cx="70" cy="100" r="3"/><circle cx="130" cy="100" r="3"/><circle cx="100" cy="130" r="3"/><circle cx="100" cy="100" r="4"/></g><g stroke="#f2b544" stroke-width="1" opacity=".7"><line x1="100" y1="100" x2="100" y2="55"/><line x1="100" y1="100" x2="145" y2="100"/><line x1="100" y1="100" x2="100" y2="145"/><line x1="100" y1="100" x2="55" y2="100"/></g></svg>
+        <span class="gal-cap">Green willow</span>
+      </div>
+      <div class="g">
+        <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="g4" cx="50%" cy="60%" r="70%"><stop offset="0%" stop-color="#3a2410"/><stop offset="100%" stop-color="#1a0f06"/></radialGradient></defs><rect width="200" height="200" fill="url(#g4)"/><g stroke="#ff6a2b" stroke-width="2" stroke-linecap="round"><line x1="100" y1="140" x2="100" y2="60"/><line x1="85" y1="135" x2="80" y2="80"/><line x1="115" y1="135" x2="120" y2="80"/></g><g fill="#f2b544"><circle cx="100" cy="58" r="4"/><circle cx="79" cy="78" r="3"/><circle cx="121" cy="78" r="3"/></g></svg>
+        <span class="gal-cap">Fountains for the kids</span>
+      </div>
+    </div>
+    <p class="gal-note">Placeholder artwork for this concept preview &mdash; real photos from the stand would be featured here.</p>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final">
+  <h2>Ready to light up the night?</h2>
+  <p>Call ahead and we&rsquo;ll have your order boxed and waiting at the counter. Kaufman&rsquo;s hometown stand &mdash; we&rsquo;ll take good care of you.</p>
+  <a href="tel:+10000000000" class="btn-call">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <span><small>Tap to call</small><span class="num">(000) 000-0000</span></span>
+  </a>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand"><span class="mark" style="width:30px;height:30px;border-radius:8px;background:radial-gradient(circle at 50% 40%,#f2b544,#ff6a2b 55%,#7a1f2b);display:inline-block"></span> MC Fireworks Kaufman</div>
+        <div style="margin-top:10px;color:rgba(247,240,226,.6);font-size:13.5px;max-width:320px">Kaufman&rsquo;s family-owned fireworks stand since 2011. Kaufman, TX 75142.</div>
+      </div>
+      <div class="foot-links">
+        <a href="#why">Why Us</a>
+        <a href="#shop">What We Sell</a>
+        <a href="#visit">Hours &amp; Location</a>
+        <a href="#reviews">Reviews</a>
+        <a href="tel:+10000000000">Call the stand</a>
+      </div>
+    </div>
+
+    <div class="foot-safety">
+      <b style="color:rgba(247,240,226,.8)">Play it safe:</b> Always follow local ordinances and Texas fireworks law. Adults only should light fireworks, keep water nearby, and never re-light a &ldquo;dud.&rdquo; Check with the City of Kaufman &amp; Kaufman County for any burn bans before your celebration.
+    </div>
+
+    <div class="disclaimer">
+      <b>Concept preview built by DNA Agency</b> &mdash; not affiliated with MC Fireworks Kaufman Stand. This page was created from public information for demonstration only. Phone number, address, hours, imagery, and reviews shown are placeholders and must be verified before any live use. No logos or photos were scraped.
+    </div>
+
+    <div style="margin-top:18px;font-size:12px;color:rgba(247,240,226,.4)">&copy; <span id="yr"></span> Concept preview &middot; DNA Agency</div>
+  </div>
+</footer>
+
+<script>
+  // year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // twinkling spark field in hero
+  (function(){
+    var box = document.getElementById('sparks');
+    if(!box) return;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var n = reduce ? 0 : 40;
+    for(var i=0;i<n;i++){
+      var s = document.createElement('span');
+      var sz = (Math.random()*2.4+1).toFixed(1);
+      s.style.width = s.style.height = sz+'px';
+      s.style.left = (Math.random()*100)+'%';
+      s.style.top = (Math.random()*78)+'%';
+      s.style.animationDelay = (Math.random()*4.5).toFixed(2)+'s';
+      s.style.background = Math.random()>0.5 ? 'var(--gold)' : 'var(--ember)';
+      box.appendChild(s);
+    }
+    // radial burst rays
+    var burst = document.getElementById('burst');
+    if(burst){
+      for(var r=0;r<24;r++){
+        var ray = document.createElement('div');
+        ray.className='ray';
+        ray.style.transform='rotate('+(r*15)+'deg)';
+        ray.style.opacity=(0.25+Math.random()*0.5).toFixed(2);
+        burst.appendChild(ray);
+      }
+    }
+  })();
+
+  // reveal on scroll
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}
+      });
+    },{threshold:0.12});
+    els.forEach(function(e){io.observe(e)});
+  })();
+</script>

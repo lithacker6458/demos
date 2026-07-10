@@ -1,0 +1,786 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MC Fireworks — Kaufman, TX | Light Up the Sky</title>
+<meta name="description" content="MC Fireworks Kaufman Stand — Kaufman, TX. Assortments, family packs, and the biggest shells in town. Open for the season. Tap to call." />
+<style>
+  :root {
+    --ink: #05060f;
+    --ink-2: #0a0c1c;
+    --ink-3: #10132b;
+    --smoke: #b8bed4;
+    --paper: #f3f2ee;
+    --gold: #ffcb3d;
+    --gold-2: #ff9d1c;
+    --red: #ff3b57;
+    --red-2: #ff5e3a;
+    --blue: #38d6ff;
+    --blue-2: #6a7bff;
+    --green: #63f2a8;
+    --line: rgba(255, 255, 255, 0.10);
+    --line-2: rgba(255, 255, 255, 0.18);
+    --maxw: 1180px;
+    --serif: "Times New Roman", Georgia, serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, sans-serif;
+    line-height: 1.55;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .display {
+    font-family: Impact, "Haettenschweiler", "Arial Narrow Bold", "Franklin Gothic Bold", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 0.92;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  .wrap {
+    width: 100%;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 22px;
+  }
+
+  .eyebrow {
+    font-family: ui-sans-serif, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--gold);
+  }
+
+  /* ============ ATMOSPHERE / BACKGROUND ============ */
+  .sky {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background:
+      radial-gradient(900px 620px at 78% -8%, rgba(255,61,87,0.16), transparent 60%),
+      radial-gradient(820px 560px at 12% 8%, rgba(56,214,255,0.14), transparent 62%),
+      radial-gradient(1100px 780px at 50% 120%, rgba(255,157,28,0.12), transparent 60%),
+      linear-gradient(180deg, #05060f 0%, #080a1c 45%, #05060f 100%);
+  }
+  .grain {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.5;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    mix-blend-mode: soft-light;
+  }
+  /* twinkling stars via layered box-shadow dots */
+  .stars, .stars::after {
+    position: fixed; z-index: -1; top: 0; left: 0;
+    width: 2px; height: 2px; border-radius: 50%;
+    background: transparent; pointer-events: none;
+  }
+  .stars {
+    box-shadow:
+      120px 60px #fff, 340px 120px rgba(255,255,255,.7), 620px 40px #fff,
+      880px 160px rgba(255,255,255,.6), 1100px 90px #fff, 200px 300px rgba(255,255,255,.5),
+      500px 260px #fff, 760px 340px rgba(255,255,255,.7), 1000px 300px rgba(255,255,255,.6),
+      1240px 200px #fff, 60px 480px rgba(255,255,255,.6), 420px 520px #fff,
+      700px 560px rgba(255,255,255,.5), 980px 500px #fff, 1180px 560px rgba(255,255,255,.7);
+    animation: twinkle 4s ease-in-out infinite alternate;
+  }
+  .stars::after {
+    content: "";
+    box-shadow:
+      260px 90px rgba(255,255,255,.5), 540px 180px #fff, 820px 70px rgba(255,255,255,.6),
+      1050px 220px #fff, 150px 400px rgba(255,255,255,.6), 640px 440px rgba(255,255,255,.5),
+      920px 420px #fff, 1200px 380px rgba(255,255,255,.5);
+    animation: twinkle 5.5s ease-in-out infinite alternate-reverse;
+  }
+  @keyframes twinkle { from { opacity: .35; } to { opacity: .95; } }
+
+  /* ============ TOP BANNER ============ */
+  .season-banner {
+    position: relative;
+    z-index: 5;
+    background: linear-gradient(90deg, var(--red) 0%, var(--gold-2) 50%, var(--red) 100%);
+    background-size: 200% 100%;
+    color: #1a0b02;
+    font-weight: 900;
+    text-align: center;
+    font-size: 0.82rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 9px 14px;
+    animation: slide 6s linear infinite;
+  }
+  @keyframes slide { to { background-position: 200% 0; } }
+  .season-banner .dot {
+    display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+    background: #1a0b02; margin: 0 8px -1px; animation: blink 1s steps(2) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0.25; } }
+
+  /* ============ NAV ============ */
+  header.nav {
+    position: sticky; top: 0; z-index: 40;
+    backdrop-filter: blur(10px);
+    background: rgba(5,6,15,0.55);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 22px; max-width: var(--maxw); margin: 0 auto;
+  }
+  .brand { display: flex; align-items: center; gap: 11px; }
+  .brand .mark {
+    width: 38px; height: 38px; flex: none; border-radius: 10px;
+    background: radial-gradient(circle at 50% 40%, var(--gold) 0%, var(--gold-2) 45%, var(--red) 100%);
+    display: grid; place-items: center;
+    box-shadow: 0 0 22px rgba(255,157,28,0.55);
+  }
+  .brand .mark svg { width: 22px; height: 22px; }
+  .brand .name { font-family: Impact, sans-serif; font-size: 1.15rem; letter-spacing: 1px; line-height: 1; }
+  .brand .name b { display: block; font-size: 0.6rem; letter-spacing: 3px; color: var(--smoke); font-family: ui-sans-serif, sans-serif; font-weight: 700; margin-top: 3px; }
+  .nav-links { display: none; gap: 26px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; }
+  .nav-links a { color: var(--smoke); transition: color .2s; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-call {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: var(--gold); color: #1a0b02; font-weight: 900;
+    padding: 9px 16px; border-radius: 999px; font-size: 0.8rem; letter-spacing: 0.5px;
+    box-shadow: 0 6px 20px rgba(255,203,61,0.35);
+    transition: transform .15s;
+  }
+  .nav-call:hover { transform: translateY(-1px); }
+
+  /* ============ HERO ============ */
+  .hero { position: relative; z-index: 3; padding: 58px 0 30px; text-align: center; }
+  .hero .eyebrow { animation: fadeUp .7s .05s both; }
+  .hero h1 {
+    font-size: clamp(3.6rem, 15vw, 9.5rem);
+    margin: 14px 0 6px;
+    color: var(--paper);
+    text-shadow: 0 0 40px rgba(255,203,61,0.25);
+  }
+  .hero h1 .line1 { display: block; animation: fadeUp .7s .12s both; }
+  .hero h1 .fire {
+    display: block;
+    background: linear-gradient(180deg, #fff 0%, var(--gold) 30%, var(--gold-2) 60%, var(--red) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 8px 26px rgba(255,80,40,0.4));
+    animation: fadeUp .7s .2s both;
+  }
+  .hero .sub {
+    max-width: 560px; margin: 20px auto 0; color: var(--smoke);
+    font-size: 1.05rem; animation: fadeUp .7s .3s both;
+  }
+  .hero .sub strong { color: var(--paper); }
+
+  .cta-row {
+    display: flex; flex-direction: column; align-items: center; gap: 12px;
+    margin-top: 30px; animation: fadeUp .7s .4s both;
+  }
+  .btn-call {
+    display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+    width: 100%; max-width: 380px;
+    background: linear-gradient(180deg, var(--gold) 0%, var(--gold-2) 100%);
+    color: #1a0b02; font-family: Impact, sans-serif; font-size: 1.7rem; letter-spacing: 1px;
+    padding: 20px 26px; border-radius: 16px; text-transform: uppercase;
+    box-shadow: 0 12px 34px rgba(255,157,28,0.45), inset 0 1px 0 rgba(255,255,255,0.5);
+    position: relative; overflow: hidden;
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  .btn-call small { display: block; font-family: ui-sans-serif, sans-serif; font-size: 0.62rem; letter-spacing: 2px; font-weight: 800; opacity: 0.8; }
+  .btn-call:active { transform: scale(0.98); }
+  @keyframes pulse {
+    0%,100% { box-shadow: 0 12px 34px rgba(255,157,28,0.45), inset 0 1px 0 rgba(255,255,255,0.5); }
+    50% { box-shadow: 0 12px 46px rgba(255,157,28,0.75), inset 0 1px 0 rgba(255,255,255,0.5); }
+  }
+  .call-phone { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.05; }
+  .call-phone b { font-size: 1.7rem; }
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--paper); border: 1px solid var(--line-2);
+    padding: 13px 22px; border-radius: 999px; font-weight: 700; font-size: 0.85rem;
+    letter-spacing: 1px; text-transform: uppercase; transition: border-color .2s, background .2s;
+  }
+  .btn-ghost:hover { border-color: var(--gold); background: rgba(255,203,61,0.08); }
+
+  .verify-note {
+    margin-top: 14px; font-size: 0.7rem; color: var(--smoke); letter-spacing: 1px;
+    animation: fadeUp .7s .5s both;
+  }
+  .verify-note span { color: var(--gold-2); }
+
+  /* firework burst decorations in hero */
+  .burst { position: absolute; width: 3px; height: 3px; border-radius: 50%; pointer-events: none; }
+  .burst::before, .burst::after {
+    content: ""; position: absolute; inset: 0; border-radius: 50%;
+    box-shadow:
+      0 -34px 0 -1px currentColor, 0 34px 0 -1px currentColor,
+      -34px 0 0 -1px currentColor, 34px 0 0 -1px currentColor,
+      24px 24px 0 -1px currentColor, -24px 24px 0 -1px currentColor,
+      24px -24px 0 -1px currentColor, -24px -24px 0 -1px currentColor,
+      0 -22px 0 -1px currentColor, 0 22px 0 -1px currentColor,
+      -22px 0 0 -1px currentColor, 22px 0 0 -1px currentColor;
+    animation: boom 3s ease-out infinite;
+  }
+  .burst::after { animation-delay: 1.5s; }
+  .burst.b1 { top: 14%; left: 10%; color: var(--red); animation: none; }
+  .burst.b2 { top: 22%; right: 12%; color: var(--blue); }
+  .burst.b3 { top: 60%; left: 6%; color: var(--gold); }
+  .burst.b4 { top: 50%; right: 8%; color: var(--green); }
+  .burst.b2::after, .burst.b3::after, .burst.b4::after { animation-delay: 0.9s; }
+  @keyframes boom {
+    0% { transform: scale(0.2); opacity: 0; }
+    30% { opacity: 1; }
+    100% { transform: scale(1.4); opacity: 0; }
+  }
+
+  /* ============ COUNTDOWN ============ */
+  .countdown {
+    position: relative; z-index: 3;
+    margin: 26px auto 0; max-width: 620px;
+    border: 1px solid var(--line-2); border-radius: 20px;
+    background: linear-gradient(180deg, rgba(16,19,43,0.9), rgba(8,10,28,0.9));
+    padding: 22px 20px; text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    animation: fadeUp .7s .55s both;
+  }
+  .countdown .eyebrow { color: var(--blue); }
+  .cd-grid { display: flex; justify-content: center; gap: 10px; margin-top: 14px; }
+  .cd-cell {
+    flex: 1; max-width: 120px;
+    background: rgba(0,0,0,0.35); border: 1px solid var(--line);
+    border-radius: 12px; padding: 12px 6px;
+  }
+  .cd-cell b {
+    display: block; font-family: Impact, sans-serif; font-size: clamp(1.9rem, 8vw, 3rem);
+    line-height: 1; color: var(--gold);
+    text-shadow: 0 0 18px rgba(255,203,61,0.4);
+  }
+  .cd-cell span { font-size: 0.62rem; letter-spacing: 2px; text-transform: uppercase; color: var(--smoke); font-weight: 700; }
+  .cd-msg { margin-top: 14px; font-size: 0.8rem; color: var(--smoke); }
+  .cd-msg strong { color: var(--paper); }
+
+  /* ============ SECTION SHELL ============ */
+  section { position: relative; z-index: 3; padding: 62px 0; }
+  .sec-head { text-align: center; margin-bottom: 40px; }
+  .sec-head h2 { font-size: clamp(2.2rem, 8vw, 4rem); }
+  .sec-head h2 em { font-style: normal; color: var(--gold); }
+  .sec-head p { color: var(--smoke); max-width: 560px; margin: 14px auto 0; }
+
+  /* ============ SERVICES ============ */
+  .grid { display: grid; gap: 16px; grid-template-columns: 1fr; }
+  .card {
+    position: relative; overflow: hidden;
+    border: 1px solid var(--line); border-radius: 18px;
+    background: linear-gradient(180deg, rgba(16,19,43,0.85), rgba(8,10,28,0.75));
+    padding: 26px 22px; transition: transform .2s, border-color .2s;
+  }
+  .card:hover { transform: translateY(-4px); border-color: var(--line-2); }
+  .card .ico {
+    width: 52px; height: 52px; border-radius: 13px; display: grid; place-items: center;
+    margin-bottom: 16px; background: rgba(255,255,255,0.05); border: 1px solid var(--line);
+  }
+  .card .ico svg { width: 26px; height: 26px; }
+  .card h3 { font-size: 1.5rem; margin-bottom: 8px; letter-spacing: 0.5px; }
+  .card p { color: var(--smoke); font-size: 0.92rem; margin: 0; }
+  .card .tag {
+    position: absolute; top: 16px; right: 16px;
+    font-size: 0.6rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 800;
+    padding: 4px 9px; border-radius: 999px; color: #1a0b02;
+    background: var(--gold);
+  }
+  .card.accent-red::before, .card.accent-blue::before, .card.accent-gold::before, .card.accent-green::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  }
+  .card.accent-red::before { background: var(--red); }
+  .card.accent-blue::before { background: var(--blue); }
+  .card.accent-gold::before { background: var(--gold); }
+  .card.accent-green::before { background: var(--green); }
+
+  /* ============ HOURS / LOCATION SPLIT ============ */
+  .split { display: grid; gap: 18px; grid-template-columns: 1fr; }
+  .panel {
+    border: 1px solid var(--line); border-radius: 18px; padding: 28px 24px;
+    background: linear-gradient(180deg, rgba(16,19,43,0.85), rgba(8,10,28,0.75));
+  }
+  .panel h3 { font-size: 1.7rem; margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
+  .panel h3 svg { width: 24px; height: 24px; }
+  .hours-list { list-style: none; margin: 0; padding: 0; }
+  .hours-list li {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 11px 0; border-bottom: 1px dashed var(--line);
+    font-size: 0.92rem;
+  }
+  .hours-list li:last-child { border-bottom: 0; }
+  .hours-list li span:first-child { color: var(--smoke); font-weight: 600; }
+  .hours-list li span:last-child { color: var(--paper); font-weight: 700; }
+  .hours-list li.today { color: var(--gold); }
+  .hours-list li.today span { color: var(--gold); }
+  .open-pill {
+    display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px;
+    background: rgba(99,242,168,0.12); color: var(--green); border: 1px solid rgba(99,242,168,0.35);
+    padding: 6px 13px; border-radius: 999px; font-size: 0.72rem; font-weight: 800;
+    letter-spacing: 1.5px; text-transform: uppercase;
+  }
+  .open-pill .live { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 0 rgba(99,242,168,0.6); animation: ping 1.6s infinite; }
+  @keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(99,242,168,0.6);} 70% { box-shadow: 0 0 0 8px rgba(99,242,168,0);} 100% { box-shadow: 0 0 0 0 rgba(99,242,168,0);} }
+
+  .map {
+    position: relative; border-radius: 14px; overflow: hidden;
+    border: 1px solid var(--line); height: 190px; margin-bottom: 18px;
+    background:
+      radial-gradient(circle at 62% 42%, rgba(255,203,61,0.25), transparent 40%),
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.05) 0 1px, transparent 1px 34px),
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0 1px, transparent 1px 34px),
+      #0b0e20;
+    display: grid; place-items: center;
+  }
+  .map .roads { position: absolute; inset: 0; }
+  .map .pin {
+    position: relative; z-index: 2; display: grid; place-items: center; gap: 6px;
+    text-align: center;
+  }
+  .map .pin .dot {
+    width: 20px; height: 20px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg);
+    background: var(--red); box-shadow: 0 0 22px rgba(255,59,87,0.7);
+  }
+  .map .pin small { font-size: 0.7rem; letter-spacing: 1px; color: var(--paper); font-weight: 700; text-transform: uppercase; }
+  .addr { color: var(--smoke); font-size: 0.92rem; margin: 0 0 18px; }
+  .addr b { color: var(--paper); }
+  .dir-btn {
+    display: inline-flex; align-items: center; gap: 9px; width: 100%; justify-content: center;
+    background: transparent; border: 1px solid var(--blue); color: var(--blue);
+    padding: 13px; border-radius: 12px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 1px; font-size: 0.82rem; transition: background .2s;
+  }
+  .dir-btn:hover { background: rgba(56,214,255,0.1); }
+
+  /* ============ REVIEWS ============ */
+  .reviews-grid { display: grid; gap: 16px; grid-template-columns: 1fr; }
+  .review {
+    border: 1px solid var(--line); border-radius: 18px; padding: 24px 22px;
+    background: linear-gradient(180deg, rgba(16,19,43,0.85), rgba(8,10,28,0.7));
+  }
+  .stars-row { display: flex; gap: 3px; margin-bottom: 12px; color: var(--gold); }
+  .stars-row svg { width: 18px; height: 18px; }
+  .review p { margin: 0 0 16px; font-size: 1rem; line-height: 1.6; color: var(--paper); }
+  .review .who { display: flex; align-items: center; gap: 11px; }
+  .review .who .av {
+    width: 40px; height: 40px; border-radius: 50%; flex: none; display: grid; place-items: center;
+    font-family: Impact, sans-serif; font-size: 1.1rem; color: #1a0b02;
+  }
+  .review .who b { display: block; font-size: 0.9rem; }
+  .review .who span { font-size: 0.72rem; color: var(--smoke); letter-spacing: 0.5px; }
+  .rating-strip {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 22px;
+    margin-bottom: 34px; color: var(--smoke); font-size: 0.86rem;
+  }
+  .rating-strip b { color: var(--gold); font-family: Impact, sans-serif; font-size: 1.5rem; letter-spacing: 1px; }
+  .rating-strip .divider { width: 1px; height: 22px; background: var(--line-2); }
+
+  /* ============ ORDER / PAYMENT CTA ============ */
+  .order {
+    position: relative; z-index: 3; overflow: hidden;
+    border-radius: 24px; margin: 0 auto; text-align: center;
+    padding: 48px 26px;
+    background:
+      radial-gradient(600px 300px at 20% 0%, rgba(255,59,87,0.35), transparent 60%),
+      radial-gradient(600px 300px at 80% 100%, rgba(56,214,255,0.3), transparent 60%),
+      linear-gradient(180deg, #14061f, #0a0c1c);
+    border: 1px solid var(--line-2);
+  }
+  .order h2 { font-size: clamp(2.2rem, 9vw, 4.2rem); }
+  .order h2 em { font-style: normal; color: var(--gold); }
+  .order p { color: var(--smoke); max-width: 480px; margin: 14px auto 26px; }
+  .order .btn-call { margin: 0 auto; animation: pulse 2.4s ease-in-out infinite; }
+  .pay-btn {
+    display: inline-flex; align-items: center; gap: 10px; margin-top: 16px;
+    background: rgba(255,255,255,0.06); border: 1px dashed var(--line-2); color: var(--smoke);
+    padding: 13px 22px; border-radius: 12px; font-weight: 700; font-size: 0.85rem;
+    letter-spacing: 1px; cursor: not-allowed;
+  }
+  .pay-btn svg { width: 18px; height: 18px; }
+  .pay-note { display: block; margin-top: 10px; font-size: 0.68rem; color: var(--smoke); letter-spacing: 0.5px; }
+
+  /* ============ FOOTER ============ */
+  footer {
+    position: relative; z-index: 3; text-align: center;
+    padding: 46px 22px 60px; border-top: 1px solid var(--line); margin-top: 8px;
+  }
+  footer .brand { justify-content: center; margin-bottom: 18px; }
+  .foot-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 22px; margin-bottom: 20px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 1.5px; }
+  .foot-links a { color: var(--smoke); }
+  .foot-links a:hover { color: var(--gold); }
+  .foot-call {
+    display: inline-flex; align-items: center; gap: 8px; color: var(--gold);
+    font-family: Impact, sans-serif; font-size: 1.4rem; letter-spacing: 1px; margin-bottom: 18px;
+  }
+  .safety {
+    max-width: 520px; margin: 0 auto 22px; font-size: 0.72rem; color: var(--smoke);
+    line-height: 1.6; opacity: 0.85;
+  }
+  .concept {
+    max-width: 560px; margin: 0 auto; font-size: 0.72rem; color: var(--smoke);
+    padding: 14px 16px; border: 1px dashed var(--line-2); border-radius: 12px;
+    line-height: 1.6;
+  }
+  .concept b { color: var(--paper); }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ============ RESPONSIVE ============ */
+  @media (min-width: 720px) {
+    .nav-links { display: flex; }
+    .cta-row { flex-direction: row; justify-content: center; }
+    .btn-call { width: auto; }
+    .grid { grid-template-columns: repeat(2, 1fr); }
+    .split { grid-template-columns: 1fr 1fr; }
+    .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (min-width: 1000px) {
+    .grid { grid-template-columns: repeat(4, 1fr); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; scroll-behavior: auto; }
+  }
+</style>
+
+<div class="sky" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="stars" aria-hidden="true"></div>
+
+<!-- ===== SEASONAL BANNER ===== -->
+<div class="season-banner">
+  <span class="dot"></span> Open for the season &nbsp;•&nbsp; Stock up before the 4th &nbsp;•&nbsp; Family packs in stock <span class="dot"></span>
+</div>
+
+<!-- ===== NAV ===== -->
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1a0b02" stroke-width="2.2" stroke-linecap="round">
+          <path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/>
+          <circle cx="12" cy="12" r="2.2" fill="#1a0b02" stroke="none"/>
+        </svg>
+      </span>
+      <span class="name">MC FIREWORKS<b>KAUFMAN · TX</b></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#shop">Shop</a>
+      <a href="#hours">Hours</a>
+      <a href="#find">Find Us</a>
+      <a href="#reviews">Reviews</a>
+    </nav>
+    <a class="nav-call" href="tel:+10000000000">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#1a0b02" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+      Call Now
+    </a>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<main id="top">
+<section class="hero">
+  <span class="burst b1" aria-hidden="true"></span>
+  <span class="burst b2" aria-hidden="true"></span>
+  <span class="burst b3" aria-hidden="true"></span>
+  <span class="burst b4" aria-hidden="true"></span>
+  <div class="wrap">
+    <span class="eyebrow">Kaufman, Texas · Family-run fireworks stand</span>
+    <h1>
+      <span class="line1">Light Up</span>
+      <span class="fire">The Sky</span>
+    </h1>
+    <p class="sub">Big shells. Family packs. Backyard finales that get the whole block talking. <strong>MC Fireworks</strong> has your Fourth covered — right here in Kaufman.</p>
+
+    <div class="cta-row">
+      <a class="btn-call" href="tel:+10000000000">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#1a0b02" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+        <span class="call-phone"><small>Tap to call the stand</small><b>Call the Stand</b></span>
+      </a>
+      <a class="btn-ghost" href="#find">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Get Directions
+      </a>
+    </div>
+    <p class="verify-note">Phone &amp; exact stand location <span>confirmed on Google Maps</span> before launch.</p>
+  </div>
+</section>
+
+<!-- ===== COUNTDOWN ===== -->
+<div class="wrap">
+  <div class="countdown" id="countdown">
+    <span class="eyebrow">Countdown to the Fourth</span>
+    <div class="cd-grid">
+      <div class="cd-cell"><b id="cd-d">00</b><span>Days</span></div>
+      <div class="cd-cell"><b id="cd-h">00</b><span>Hrs</span></div>
+      <div class="cd-cell"><b id="cd-m">00</b><span>Min</span></div>
+      <div class="cd-cell"><b id="cd-s">00</b><span>Sec</span></div>
+    </div>
+    <p class="cd-msg" id="cd-msg"><strong>Don't wait for the crowd.</strong> The best assortments go fast the week of the 4th.</p>
+  </div>
+</div>
+
+<!-- ===== SERVICES / WHAT WE SELL ===== -->
+<section id="shop">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What's in the stand</span>
+      <h2>Everything to make it <em>go boom</em></h2>
+      <p>From the little ones' first sparkler to the grand finale — we've got the whole show, all in one stop.</p>
+    </div>
+    <div class="grid">
+      <div class="card accent-gold">
+        <span class="tag">Best value</span>
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ffcb3d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18l-2 13H5L3 7z"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>
+        </div>
+        <h3>Assortment Packs</h3>
+        <p>Curated boxes with a bit of everything — fountains, roman candles, and cakes ready to light straight out of the box.</p>
+      </div>
+      <div class="card accent-red">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ff3b57" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s3 3 3 6a3 3 0 0 1-6 0c0-3 3-6 3-6z"/><path d="M6 22l3-8M18 22l-3-8M12 14v8"/></svg>
+        </div>
+        <h3>Aerials &amp; Shells</h3>
+        <p>The big stuff. Multi-shot cakes and mortars that put a real show over the backyard and turn heads down the street.</p>
+      </div>
+      <div class="card accent-blue">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#38d6ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M2 21a7 7 0 0 1 14 0"/><path d="M16 3.1a3 3 0 0 1 0 5.8"/><path d="M22 21a7 7 0 0 0-5-6.7"/></svg>
+        </div>
+        <h3>Family Packs</h3>
+        <p>Kid-safe sparklers, snaps, and ground bloom flowers — the fun, low-key favorites the little ones can hold.</p>
+      </div>
+      <div class="card accent-green">
+        <span class="tag">Ask us</span>
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#63f2a8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19"/></svg>
+        </div>
+        <h3>Grand Finale Deals</h3>
+        <p>Building the big backyard show? Ask about bundle pricing on the closers that end the night on a bang.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOURS + LOCATION ===== -->
+<section id="hours">
+  <div class="wrap">
+    <div class="split">
+      <!-- HOURS -->
+      <div class="panel">
+        <span class="open-pill"><span class="live"></span> Open for the season</span>
+        <h3>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ffcb3d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          Stand Hours
+        </h3>
+        <ul class="hours-list">
+          <li><span>Mon – Thu</span><span>10 AM – 9 PM</span></li>
+          <li><span>Friday</span><span>10 AM – 10 PM</span></li>
+          <li><span>Saturday</span><span>9 AM – 11 PM</span></li>
+          <li class="today"><span>Sunday · July 4th</span><span>8 AM – Late</span></li>
+        </ul>
+        <p class="addr" style="margin-top:16px">Seasonal hours run through the Fourth of July. Call ahead the day of — we stay open as long as the crowd keeps coming.</p>
+      </div>
+
+      <!-- LOCATION -->
+      <div class="panel" id="find">
+        <h3>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#38d6ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Find the Stand
+        </h3>
+        <div class="map" aria-hidden="true">
+          <div class="pin">
+            <span class="dot"></span>
+            <small>MC Fireworks</small>
+          </div>
+        </div>
+        <p class="addr"><b>Kaufman, TX</b><br/>Exact stand address confirmed on Google Maps before launch — look for the lights just off the highway.</p>
+        <a class="dir-btn" href="https://www.google.com/maps/search/?api=1&query=MC+Fireworks+Kaufman+TX" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+          Open in Google Maps
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What the neighbors say</span>
+      <h2>Kaufman's <em>go-to</em> stand</h2>
+    </div>
+
+    <div class="rating-strip">
+      <span><b>4.9</b> average</span>
+      <span class="divider"></span>
+      <span>Rated by <b>local</b> families</span>
+      <span class="divider"></span>
+      <span><b>14</b> seasons on the block</span>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review">
+        <div class="stars-row" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg>
+        </div>
+        <p>"Been coming here every summer. The assortment pack was more than enough for our whole street party — best money we spent all Fourth."</p>
+        <div class="who">
+          <span class="av" style="background:var(--gold)">R</span>
+          <div><b>Ramon T.</b><span>Kaufman, TX</span></div>
+        </div>
+      </div>
+
+      <div class="review">
+        <div class="stars-row" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg>
+        </div>
+        <p>"They helped me put together a backyard finale for the kids. Friendly, honest about what actually looks good in the air. Real people who know their stuff."</p>
+        <div class="who">
+          <span class="av" style="background:var(--blue)">D</span>
+          <div><b>Danielle M.</b><span>Terrell, TX</span></div>
+        </div>
+      </div>
+
+      <div class="review">
+        <div class="stars-row" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg>
+        </div>
+        <p>"Family-run and it shows. Fair prices, no pressure, and my little girl got her sparklers. We'll be back next year for sure."</p>
+        <div class="who">
+          <span class="av" style="background:var(--green)">J</span>
+          <div><b>Jared &amp; Kids</b><span>Kaufman County</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ORDER / PAYMENT CTA ===== -->
+<section>
+  <div class="wrap">
+    <div class="order">
+      <span class="eyebrow" style="color:var(--red-2)">Ready to stock up?</span>
+      <h2>Don't miss <em>the show</em></h2>
+      <p>Call ahead to reserve an assortment, ask about the big shells, or just check what's in today. We'll have it ready when you roll up.</p>
+      <a class="btn-call" href="tel:+10000000000">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#1a0b02" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+        <span class="call-phone"><small>Tap to call the stand</small><b>Call to Reserve</b></span>
+      </a>
+      <br/>
+      <button class="pay-btn" type="button" disabled aria-disabled="true" title="Online checkout coming soon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+        Pay Online — Coming Soon
+      </button>
+      <span class="pay-note">Online ordering &amp; checkout not active in this preview. In-stand purchase only for now.</span>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <a class="brand" href="#top">
+    <span class="mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#1a0b02" stroke-width="2.2" stroke-linecap="round">
+        <path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/>
+        <circle cx="12" cy="12" r="2.2" fill="#1a0b02" stroke="none"/>
+      </svg>
+    </span>
+    <span class="name">MC FIREWORKS<b>KAUFMAN · TX</b></span>
+  </a>
+
+  <div>
+    <a class="foot-call" href="tel:+10000000000">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+      (VERIFY on Google Maps)
+    </a>
+  </div>
+
+  <div class="foot-links">
+    <a href="#shop">Shop</a>
+    <a href="#hours">Hours</a>
+    <a href="#find">Directions</a>
+    <a href="#reviews">Reviews</a>
+    <a href="tel:+10000000000">Call</a>
+  </div>
+
+  <p class="safety">Please celebrate responsibly. Follow all local Kaufman County and City of Kaufman fireworks ordinances. Keep a bucket of water or a hose nearby, light one item at a time, and keep spectators back.</p>
+
+  <p class="concept"><b>Concept preview built by DNA Agency</b> — not affiliated with MC Fireworks Kaufman Stand. Placeholder imagery, sample reviews, and demo phone/address are used for illustration only. Real hours, phone, and location to be confirmed with the business before launch.</p>
+</footer>
+
+<script>
+  // Countdown to the next July 4th
+  (function () {
+    var d = document.getElementById('cd-d'),
+        h = document.getElementById('cd-h'),
+        m = document.getElementById('cd-m'),
+        s = document.getElementById('cd-s'),
+        msg = document.getElementById('cd-msg');
+    if (!d) return;
+    function pad(n){ return (n < 10 ? '0' : '') + n; }
+    function target() {
+      var now = new Date();
+      var y = now.getFullYear();
+      var t = new Date(y, 6, 4, 21, 0, 0); // July 4, 9 PM
+      // If we're past this year's 4th (end of day), roll to next year
+      if (now > new Date(y, 6, 5, 0, 0, 0)) t = new Date(y + 1, 6, 4, 21, 0, 0);
+      return t;
+    }
+    function tick() {
+      var now = new Date();
+      var t = target();
+      var diff = t - now;
+      // Fourth-of-July window: show a celebratory state
+      if (now >= new Date(now.getFullYear(), 6, 4, 0, 0, 0) &&
+          now <= new Date(now.getFullYear(), 6, 5, 0, 0, 0)) {
+        d.textContent = h.textContent = m.textContent = s.textContent = '00';
+        if (msg) msg.innerHTML = "<strong>It's the Fourth!</strong> The stand is open — come grab your show.";
+        return;
+      }
+      if (diff < 0) diff = 0;
+      var days = Math.floor(diff / 86400000);
+      var hrs = Math.floor((diff % 86400000) / 3600000);
+      var mins = Math.floor((diff % 3600000) / 60000);
+      var secs = Math.floor((diff % 60000) / 1000);
+      d.textContent = pad(days);
+      h.textContent = pad(hrs);
+      m.textContent = pad(mins);
+      s.textContent = pad(secs);
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+</script>

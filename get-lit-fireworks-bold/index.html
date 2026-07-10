@@ -1,0 +1,674 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Lit Fireworks — Midlothian, TX</title>
+<meta name="description" content="Get Lit Fireworks — Midlothian, TX. Big-name fireworks, family packs & assortments. Open for the season. Tap to call 214-223-4594.">
+<style>
+  /* ============ RESET / BASE ============ */
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --ink:#05060c;
+    --ink-2:#0a0c18;
+    --panel:#0e1120;
+    --panel-2:#12142a;
+    --gold:#ffcf3a;
+    --gold-deep:#ff9d0a;
+    --red:#ff2e4d;
+    --red-deep:#e00b3a;
+    --blue:#38b6ff;
+    --blue-deep:#1876ff;
+    --mag:#ff3ea5;
+    --paper:#f5f1e6;
+    --muted:#9aa0c0;
+    --line:rgba(255,255,255,.10);
+    --maxw:1180px;
+    --display:"Bebas Neue","Anton",Impact,"Haettenschweiler","Arial Narrow Bold",sans-serif;
+    --body:ui-sans-serif,"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  }
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--body);
+    color:var(--paper);
+    background:var(--ink);
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--gold);color:#000}
+
+  /* Display font fallback — a stacked, condensed feel without external fonts */
+  .display{
+    font-family:var(--display);
+    font-weight:400;
+    letter-spacing:.02em;
+    line-height:.86;
+    text-transform:uppercase;
+    /* Force a heavy condensed look even on the fallback stack */
+    font-stretch:condensed;
+  }
+
+  .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:22px}
+  .eyebrow{
+    font-family:var(--body);font-weight:800;letter-spacing:.34em;text-transform:uppercase;
+    font-size:12px;color:var(--gold);display:inline-flex;align-items:center;gap:.7em;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:linear-gradient(90deg,var(--red),var(--gold));display:inline-block}
+
+  /* ============ ATMOSPHERE ============ */
+  .stage{position:relative;isolation:isolate;background:
+    radial-gradient(1200px 700px at 78% -8%, rgba(24,118,255,.16), transparent 60%),
+    radial-gradient(1000px 620px at 10% 4%, rgba(255,46,77,.16), transparent 62%),
+    radial-gradient(900px 900px at 50% 120%, rgba(255,157,10,.10), transparent 60%),
+    linear-gradient(180deg,#05060c 0%,#080a16 46%,#05060c 100%);
+  }
+  /* grain */
+  .stage::after{
+    content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.05;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+
+  /* Firework burst decorations (pure CSS) */
+  .burst{position:absolute;width:2px;height:2px;border-radius:50%;z-index:0;pointer-events:none;
+    box-shadow:
+      0 0 0 0 currentColor,
+      14px 0 currentColor,-14px 0 currentColor,0 14px currentColor,0 -14px currentColor,
+      10px 10px currentColor,-10px 10px currentColor,10px -10px currentColor,-10px -10px currentColor,
+      22px 0 rgba(255,255,255,.5),-22px 0 rgba(255,255,255,.5),0 22px rgba(255,255,255,.5),0 -22px rgba(255,255,255,.5);
+    transform:scale(0);animation:pop 4.2s ease-out infinite;
+  }
+  .b1{top:14%;left:16%;color:var(--gold);animation-delay:.2s}
+  .b2{top:22%;right:12%;color:var(--red);animation-delay:1.4s}
+  .b3{top:42%;left:44%;color:var(--blue);animation-delay:2.6s}
+  .b4{top:9%;right:34%;color:var(--mag);animation-delay:3.4s}
+  @keyframes pop{
+    0%{transform:scale(0);opacity:0}
+    8%{transform:scale(.6);opacity:1}
+    30%{transform:scale(1.4);opacity:.9}
+    55%{transform:scale(2.1);opacity:0}
+    100%{opacity:0}
+  }
+
+  /* ============ NAV ============ */
+  header.nav{position:sticky;top:0;z-index:50;
+    background:rgba(5,6,12,.72);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:66px}
+  .brand{display:flex;align-items:center;gap:11px}
+  .spark{width:34px;height:34px;flex:none;position:relative;display:grid;place-items:center;
+    border-radius:50%;background:radial-gradient(circle at 50% 40%,var(--gold),var(--gold-deep) 65%,var(--red-deep));
+    box-shadow:0 0 22px rgba(255,157,10,.55);
+  }
+  .spark::before{content:"";position:absolute;inset:-6px;border-radius:50%;
+    background:conic-gradient(from 0deg,transparent 0 12%,rgba(255,207,58,.9) 13% 15%,transparent 16% 37%,rgba(255,46,77,.9) 38% 40%,transparent 41% 62%,rgba(56,182,255,.9) 63% 65%,transparent 66% 87%,rgba(255,62,165,.9) 88% 90%,transparent 91%);
+    -webkit-mask:radial-gradient(circle,transparent 55%,#000 56%);mask:radial-gradient(circle,transparent 55%,#000 56%);
+    animation:spin 9s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .brand-name{font-family:var(--display);font-size:26px;letter-spacing:.04em;line-height:1;
+    background:linear-gradient(90deg,#fff,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .brand-sub{display:block;font-family:var(--body);font-size:9px;letter-spacing:.42em;color:var(--muted);text-transform:uppercase;margin-top:2px}
+  .nav-links{display:flex;gap:26px;align-items:center}
+  .nav-links a{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#cfd3ea;opacity:.85;transition:.2s}
+  .nav-links a:hover{opacity:1;color:var(--gold)}
+  .nav-call{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:13px;letter-spacing:.04em;
+    padding:10px 16px;border-radius:999px;color:#160a00;
+    background:linear-gradient(180deg,var(--gold),var(--gold-deep));
+    box-shadow:0 6px 18px rgba(255,157,10,.4);white-space:nowrap}
+  .nav-call:hover{filter:brightness(1.06)}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  /* ============ HERO ============ */
+  .hero{position:relative;z-index:1;padding:64px 0 52px}
+  .season-strip{display:inline-flex;align-items:center;gap:12px;margin-bottom:26px;
+    padding:9px 16px 9px 12px;border-radius:999px;
+    background:linear-gradient(90deg,rgba(255,46,77,.16),rgba(255,157,10,.16));
+    border:1px solid rgba(255,157,10,.34);font-size:12.5px;font-weight:700;letter-spacing:.05em}
+  .live-dot{width:9px;height:9px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,77,.7);animation:pulse 1.8s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,77,.6)}70%{box-shadow:0 0 0 12px rgba(255,46,77,0)}100%{box-shadow:0 0 0 0 rgba(255,46,77,0)}}
+
+  .hero h1{font-family:var(--display);font-size:clamp(64px,15.5vw,190px);line-height:.82;letter-spacing:.005em;
+    text-transform:uppercase;margin:6px 0 0;filter:drop-shadow(0 8px 30px rgba(0,0,0,.6))}
+  .hero h1 .lit{
+    display:block;
+    background:linear-gradient(180deg,#fff 0%,var(--gold) 42%,var(--gold-deep) 70%,var(--red) 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    text-shadow:0 0 60px rgba(255,157,10,.25);
+  }
+  .hero h1 .fw{display:block;color:#fff;-webkit-text-stroke:1.5px rgba(255,255,255,.22);color:transparent;
+    letter-spacing:.06em;font-size:.44em;margin-top:.12em}
+  .hero-city{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:22px;color:#d7dbf2;font-weight:600;letter-spacing:.02em}
+  .hero-city .pin{display:inline-flex;align-items:center;gap:7px}
+  .hero-city svg{width:16px;height:16px}
+  .divider-dot{width:5px;height:5px;border-radius:50%;background:var(--gold)}
+
+  .hero-lead{max-width:560px;margin-top:20px;color:#c3c8e4;font-size:clamp(15px,2.2vw,18px)}
+  .hero-lead b{color:#fff}
+
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;align-items:center}
+  .btn-call{position:relative;display:inline-flex;align-items:center;gap:14px;
+    padding:20px 30px;border-radius:16px;font-weight:900;letter-spacing:.01em;color:#180800;
+    background:linear-gradient(135deg,var(--gold) 0%,var(--gold-deep) 55%,var(--red) 130%);
+    box-shadow:0 14px 40px rgba(255,120,0,.42),inset 0 1px 0 rgba(255,255,255,.5);
+    font-size:19px;overflow:hidden;transition:transform .15s ease}
+  .btn-call:hover{transform:translateY(-2px)}
+  .btn-call:active{transform:translateY(0)}
+  .btn-call .ph{display:grid;place-items:center;width:42px;height:42px;border-radius:11px;background:rgba(0,0,0,.16)}
+  .btn-call .ph svg{width:22px;height:22px}
+  .btn-call small{display:block;font-size:10.5px;font-weight:800;letter-spacing:.18em;opacity:.72;text-transform:uppercase}
+  .btn-call .num{font-family:var(--display);font-size:27px;letter-spacing:.03em;line-height:1}
+  .btn-call::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);
+    transform:skewX(-18deg);animation:sheen 4.5s ease-in-out infinite}
+  @keyframes sheen{0%,55%{left:-60%}80%{left:130%}100%{left:130%}}
+  .btn-ghost{display:inline-flex;align-items:center;gap:9px;padding:19px 24px;border-radius:14px;
+    font-weight:800;letter-spacing:.03em;font-size:15px;color:#eef;
+    border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.03);transition:.2s}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold);background:rgba(255,207,58,.06)}
+
+  /* Countdown */
+  .countdown{margin-top:46px;display:flex;flex-wrap:wrap;align-items:center;gap:18px}
+  .cd-label{font-size:12px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+  .cd-units{display:flex;gap:10px}
+  .cd-cell{min-width:78px;text-align:center;padding:14px 8px 10px;border-radius:14px;
+    background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.01));
+    border:1px solid var(--line);box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+  .cd-num{font-family:var(--display);font-size:40px;line-height:1;
+    background:linear-gradient(180deg,#fff,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .cd-unit{display:block;margin-top:6px;font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+
+  /* ============ TICKER ============ */
+  .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    background:linear-gradient(90deg,rgba(255,46,77,.10),rgba(24,118,255,.10));overflow:hidden;position:relative;z-index:1}
+  .ticker-track{display:flex;gap:44px;white-space:nowrap;padding:13px 0;width:max-content;
+    animation:marq 26s linear infinite;font-family:var(--display);font-size:22px;letter-spacing:.08em;color:#e9ecff}
+  .ticker:hover .ticker-track{animation-play-state:paused}
+  .ticker-track span{display:inline-flex;align-items:center;gap:44px}
+  .ticker-track b{color:var(--gold)}
+  .star{color:var(--red)}
+  @keyframes marq{to{transform:translateX(-50%)}}
+
+  /* ============ SECTION SCAFFOLD ============ */
+  section{position:relative;z-index:1}
+  .band{padding:78px 0}
+  .sec-head{max-width:640px;margin-bottom:40px}
+  .sec-head h2{font-family:var(--display);font-size:clamp(38px,7vw,72px);line-height:.9;margin-top:14px;text-transform:uppercase}
+  .sec-head h2 em{font-style:normal;color:var(--gold)}
+  .sec-head p{margin-top:14px;color:#b9bee0;font-size:16px}
+
+  /* ============ SERVICES ============ */
+  .prod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+  .card{position:relative;padding:26px 22px 24px;border-radius:20px;overflow:hidden;
+    background:linear-gradient(180deg,var(--panel),var(--ink-2));
+    border:1px solid var(--line);transition:transform .2s ease,border-color .2s ease}
+  .card:hover{transform:translateY(-4px);border-color:rgba(255,207,58,.4)}
+  .card::before{content:"";position:absolute;inset:0;border-radius:20px;padding:1px;opacity:0;transition:.25s;
+    background:linear-gradient(135deg,var(--gold),var(--red),var(--blue));
+    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor;mask-composite:exclude}
+  .card:hover::before{opacity:.9}
+  .card .emoji{font-size:34px;line-height:1;filter:drop-shadow(0 4px 10px rgba(0,0,0,.5))}
+  .card h3{font-family:var(--display);font-size:26px;letter-spacing:.03em;margin:16px 0 8px;text-transform:uppercase}
+  .card p{color:#aab0d4;font-size:14.5px}
+  .card .tag{position:absolute;top:16px;right:16px;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    padding:4px 9px;border-radius:999px;background:rgba(255,46,77,.16);color:#ff9db0;border:1px solid rgba(255,46,77,.34)}
+
+  /* ============ SPLIT: HOURS + LOCATION ============ */
+  .split{display:grid;grid-template-columns:1.05fr 1fr;gap:20px}
+  @media(max-width:880px){.split{grid-template-columns:1fr}}
+  .panel-box{border-radius:22px;border:1px solid var(--line);overflow:hidden;
+    background:linear-gradient(180deg,var(--panel),var(--ink-2))}
+  .panel-box .pb-head{padding:22px 24px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px}
+  .panel-box .pb-head .ic{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;flex:none;
+    background:linear-gradient(135deg,var(--red),var(--gold-deep));box-shadow:0 6px 16px rgba(255,120,0,.35)}
+  .panel-box .pb-head .ic svg{width:20px;height:20px}
+  .panel-box .pb-head h3{font-family:var(--display);font-size:28px;letter-spacing:.03em;text-transform:uppercase}
+  .panel-box .pb-body{padding:22px 24px}
+
+  .hours-list{list-style:none;display:flex;flex-direction:column}
+  .hours-list li{display:flex;justify-content:space-between;align-items:center;gap:12px;
+    padding:12px 0;border-bottom:1px dashed rgba(255,255,255,.09);font-size:15px}
+  .hours-list li:last-child{border-bottom:0}
+  .hours-list .day{font-weight:700;color:#e9ecff}
+  .hours-list .time{color:#bfc4e6;font-variant-numeric:tabular-nums}
+  .hours-list li.today{margin:2px -12px;padding:12px 12px;border-radius:12px;border-bottom:0;
+    background:linear-gradient(90deg,rgba(255,207,58,.12),rgba(255,46,77,.08));border:1px solid rgba(255,207,58,.3)}
+  .hours-list li.today .day{color:var(--gold)}
+  .badge-open{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    padding:4px 10px;border-radius:999px;background:rgba(56,182,255,.14);color:#9fe0ff;border:1px solid rgba(56,182,255,.35)}
+  .season-note{margin-top:16px;padding:14px 16px;border-radius:13px;font-size:13.5px;color:#e7d9b0;
+    background:rgba(255,157,10,.09);border:1px solid rgba(255,157,10,.28)}
+
+  /* Location / map */
+  .addr{font-size:17px;line-height:1.5;color:#eef}
+  .addr .big{font-family:var(--display);font-size:26px;letter-spacing:.02em;color:#fff;text-transform:uppercase}
+  .map-faux{margin-top:18px;position:relative;height:190px;border-radius:16px;overflow:hidden;border:1px solid var(--line);
+    background:
+      radial-gradient(circle at 62% 42%,rgba(255,46,77,.28),transparent 42%),
+      linear-gradient(180deg,#0b1024,#0a1a2b);
+  }
+  .map-faux .grid-lines{position:absolute;inset:0;opacity:.5;
+    background-image:linear-gradient(rgba(120,160,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(120,160,255,.12) 1px,transparent 1px);
+    background-size:34px 34px}
+  .map-faux .road{position:absolute;height:8px;border-radius:8px;background:linear-gradient(90deg,rgba(255,207,58,.5),rgba(255,157,10,.7));
+    top:44%;left:-4%;right:-4%;transform:rotate(-8deg);box-shadow:0 0 18px rgba(255,157,10,.4)}
+  .map-faux .road-label{position:absolute;top:30%;left:8%;font-family:var(--display);font-size:15px;letter-spacing:.14em;color:#ffd873}
+  .map-faux .pin-mark{position:absolute;top:40%;left:60%;transform:translate(-50%,-100%);text-align:center}
+  .map-faux .pin-mark .dot{width:16px;height:16px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);margin:0 auto;
+    background:var(--red);box-shadow:0 0 0 6px rgba(255,46,77,.22),0 6px 14px rgba(0,0,0,.5)}
+  .map-faux .pin-mark .lbl{margin-top:9px;font-size:11px;font-weight:800;letter-spacing:.08em;color:#fff;
+    background:rgba(0,0,0,.5);padding:3px 8px;border-radius:8px;display:inline-block;transform:rotate(0)}
+  .dir-btn{margin-top:18px;display:inline-flex;align-items:center;gap:9px;padding:14px 20px;border-radius:12px;
+    font-weight:800;letter-spacing:.02em;color:#0a1020;
+    background:linear-gradient(180deg,var(--blue),var(--blue-deep));box-shadow:0 8px 22px rgba(24,118,255,.4)}
+  .dir-btn:hover{filter:brightness(1.07)}
+  .dir-btn svg{width:18px;height:18px}
+
+  /* ============ REVIEWS ============ */
+  .reviews-band{background:
+    radial-gradient(900px 500px at 80% 0%,rgba(255,46,77,.10),transparent 60%),
+    linear-gradient(180deg,#070914,#0a0c1a)}
+  .rev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+  .review{position:relative;padding:28px 24px 24px;border-radius:20px;
+    background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015));
+    border:1px solid var(--line)}
+  .review .quo{position:absolute;top:-12px;left:20px;font-family:var(--display);font-size:70px;line-height:1;color:rgba(255,207,58,.28)}
+  .stars{color:var(--gold);letter-spacing:3px;font-size:16px;margin-bottom:12px}
+  .review p{color:#dfe3fb;font-size:15.5px;line-height:1.65}
+  .review .who{display:flex;align-items:center;gap:12px;margin-top:18px}
+  .review .av{width:40px;height:40px;border-radius:50%;flex:none;display:grid;place-items:center;font-family:var(--display);font-size:20px;color:#160a00}
+  .av.a{background:linear-gradient(135deg,var(--gold),var(--red))}
+  .av.b{background:linear-gradient(135deg,var(--blue),var(--mag))}
+  .av.c{background:linear-gradient(135deg,var(--red),var(--gold-deep))}
+  .review .who b{display:block;font-size:14px;color:#fff}
+  .review .who span{font-size:12px;color:var(--muted)}
+
+  .rev-agg{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:34px;
+    padding:18px 22px;border-radius:16px;border:1px solid rgba(255,207,58,.28);
+    background:linear-gradient(90deg,rgba(255,207,58,.08),rgba(255,46,77,.05))}
+  .rev-agg .score{font-family:var(--display);font-size:52px;line-height:.9;color:var(--gold)}
+  .rev-agg .meta{font-size:13.5px;color:#cfd3ea}
+  .rev-agg .meta b{color:#fff}
+
+  /* ============ CTA / PAYMENT ============ */
+  .final{position:relative;overflow:hidden;padding:82px 0;
+    background:radial-gradient(700px 400px at 50% 0%,rgba(255,157,10,.16),transparent 60%),linear-gradient(180deg,#0a0c1a,#05060c)}
+  .final .wrap{text-align:center}
+  .final h2{font-family:var(--display);font-size:clamp(44px,9vw,96px);line-height:.86;text-transform:uppercase}
+  .final h2 span{background:linear-gradient(180deg,#fff,var(--gold),var(--red));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .final p{max-width:520px;margin:18px auto 0;color:#c3c8e4}
+  .final .cta-row{justify-content:center}
+  .pay-wrap{margin-top:26px;display:flex;flex-direction:column;align-items:center;gap:8px}
+  .btn-pay{display:inline-flex;align-items:center;gap:11px;padding:16px 26px;border-radius:14px;
+    font-weight:800;font-size:15px;letter-spacing:.02em;color:#8b90ad;cursor:not-allowed;
+    background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.22)}
+  .btn-pay svg{width:18px;height:18px;opacity:.7}
+  .pay-note{font-size:11.5px;color:var(--muted);letter-spacing:.03em}
+
+  /* ============ FOOTER ============ */
+  footer{border-top:1px solid var(--line);background:#04050a;padding:44px 0 40px}
+  .foot-grid{display:flex;flex-wrap:wrap;gap:26px;justify-content:space-between;align-items:flex-start}
+  .foot-brand .brand-name{font-size:30px}
+  .foot-contact{display:flex;flex-direction:column;gap:8px;font-size:14px;color:#c9cee8}
+  .foot-contact a{display:inline-flex;align-items:center;gap:9px}
+  .foot-contact a:hover{color:var(--gold)}
+  .foot-contact svg{width:15px;height:15px;color:var(--gold)}
+  .concept{margin-top:34px;padding-top:22px;border-top:1px solid var(--line);
+    display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
+  .concept .badge-concept{font-size:12px;color:#8f95b8;letter-spacing:.02em}
+  .concept .badge-concept b{color:#c9cee8}
+  .concept .dna{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#6b7098;font-weight:800}
+
+  @media(max-width:560px){
+    .btn-call{width:100%;justify-content:center}
+    .btn-ghost{width:100%;justify-content:center}
+    .cd-cell{min-width:64px}
+    .cd-num{font-size:32px}
+    .band{padding:60px 0}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;scroll-behavior:auto!important}
+  }
+</style>
+
+<div class="stage">
+  <!-- decorative bursts -->
+  <span class="burst b1" aria-hidden="true"></span>
+  <span class="burst b2" aria-hidden="true"></span>
+  <span class="burst b3" aria-hidden="true"></span>
+  <span class="burst b4" aria-hidden="true"></span>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a class="brand" href="#top" aria-label="Get Lit Fireworks home">
+        <span class="spark" aria-hidden="true"></span>
+        <span>
+          <span class="brand-name">Get Lit</span>
+          <span class="brand-sub">Fireworks · Midlothian TX</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#stock">The Stock</a>
+        <a href="#hours">Hours</a>
+        <a href="#find">Find Us</a>
+        <a href="#reviews">Reviews</a>
+      </nav>
+      <a class="nav-call" href="tel:+12142234594">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+        214-223-4594
+      </a>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <main id="top" class="hero">
+    <div class="wrap">
+      <div class="season-strip">
+        <span class="live-dot" aria-hidden="true"></span>
+        OPEN FOR THE SEASON · STOCKED &amp; READY FOR THE 4TH
+      </div>
+
+      <p class="eyebrow">Midlothian's loudest little stand</p>
+
+      <h1>
+        <span class="lit">Get&nbsp;Lit</span>
+        <span class="fw">Fireworks</span>
+      </h1>
+
+      <div class="hero-city">
+        <span class="pin">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ffcf3a" stroke-width="2" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 10-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          Midlothian, Texas
+        </span>
+        <span class="divider-dot" aria-hidden="true"></span>
+        <span>4781 US-67</span>
+        <span class="divider-dot" aria-hidden="true"></span>
+        <span>Cash &amp; Card</span>
+      </div>
+
+      <p class="hero-lead">
+        Big-name shells, mortars, and family packs — priced to move and stacked to the ceiling.
+        <b>Skip the big-box lines.</b> Pull off US-67, tell us what kind of show you want, and roll out loaded.
+      </p>
+
+      <div class="cta-row">
+        <a class="btn-call" href="tel:+12142234594" aria-label="Call Get Lit Fireworks at 214-223-4594">
+          <span class="ph" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+          </span>
+          <span>
+            <small>Tap to call now</small>
+            <span class="num">214-223-4594</span>
+          </span>
+        </a>
+        <a class="btn-ghost" href="#find">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 10-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          Get Directions
+        </a>
+      </div>
+
+      <!-- Countdown -->
+      <div class="countdown" id="countdown" aria-label="Countdown to the 4th of July">
+        <span class="cd-label">Light-up in</span>
+        <div class="cd-units">
+          <div class="cd-cell"><span class="cd-num" id="cd-d">--</span><span class="cd-unit">Days</span></div>
+          <div class="cd-cell"><span class="cd-num" id="cd-h">--</span><span class="cd-unit">Hrs</span></div>
+          <div class="cd-cell"><span class="cd-num" id="cd-m">--</span><span class="cd-unit">Min</span></div>
+          <div class="cd-cell"><span class="cd-num" id="cd-s">--</span><span class="cd-unit">Sec</span></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ===== TICKER ===== -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>
+      <b>500-GRAM CAKES</b> <span class="star">✦</span> ARTILLERY SHELLS <span class="star">✦</span> <b>FAMILY PACKS</b> <span class="star">✦</span> ROMAN CANDLES <span class="star">✦</span> <b>SPARKLERS FOR THE KIDS</b> <span class="star">✦</span> BOTTLE ROCKETS <span class="star">✦</span> <b>BUY ONE GET ONE DEALS</b> <span class="star">✦</span> FOUNTAINS <span class="star">✦</span>
+    </span>
+    <span>
+      <b>500-GRAM CAKES</b> <span class="star">✦</span> ARTILLERY SHELLS <span class="star">✦</span> <b>FAMILY PACKS</b> <span class="star">✦</span> ROMAN CANDLES <span class="star">✦</span> <b>SPARKLERS FOR THE KIDS</b> <span class="star">✦</span> BOTTLE ROCKETS <span class="star">✦</span> <b>BUY ONE GET ONE DEALS</b> <span class="star">✦</span> FOUNTAINS <span class="star">✦</span>
+    </span>
+  </div>
+</div>
+
+<!-- ===== SERVICES / STOCK ===== -->
+<section id="stock" class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">What we're slinging</p>
+      <h2>Everything you need to <em>own the night</em></h2>
+      <p>From a porch-full of sparklers to a backyard finale that shakes the windows — we've got the assortment. Not sure where to start? Ask us for a pack and we'll build your show.</p>
+    </div>
+
+    <div class="prod-grid">
+      <article class="card">
+        <span class="tag">Crowd favorite</span>
+        <div class="emoji" aria-hidden="true">🎆</div>
+        <h3>Aerial Cakes</h3>
+        <p>Multi-shot 200 &amp; 500-gram cakes that do the heavy lifting. One fuse, a full sky show.</p>
+      </article>
+      <article class="card">
+        <div class="emoji" aria-hidden="true">🧨</div>
+        <h3>Artillery Shells</h3>
+        <p>Reloadable mortar kits and shell packs for that big, round pro-style burst overhead.</p>
+      </article>
+      <article class="card">
+        <span class="tag">Best value</span>
+        <div class="emoji" aria-hidden="true">📦</div>
+        <h3>Family Packs</h3>
+        <p>Grab-and-go assortments built to cover the whole night — fountains, cakes &amp; novelties bundled.</p>
+      </article>
+      <article class="card">
+        <div class="emoji" aria-hidden="true">🎇</div>
+        <h3>Sparklers &amp; Novelties</h3>
+        <p>Sparklers, snaps, tanks and smoke for the little ones. Daytime fun that keeps the crew busy.</p>
+      </article>
+      <article class="card">
+        <div class="emoji" aria-hidden="true">🚀</div>
+        <h3>Roman Candles &amp; Rockets</h3>
+        <p>Classic candles and bottle rockets — the handheld staples nobody's Fourth is complete without.</p>
+      </article>
+      <article class="card">
+        <div class="emoji" aria-hidden="true">⛲</div>
+        <h3>Ground Fountains</h3>
+        <p>Big color, low noise. Perfect for driveways, tight streets, and the neighbors who like it mellow.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOURS + LOCATION ===== -->
+<section class="band" style="padding-top:0">
+  <div class="wrap split">
+
+    <!-- HOURS -->
+    <div id="hours" class="panel-box">
+      <div class="pb-head">
+        <span class="ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </span>
+        <h3>Seasonal Hours</h3>
+      </div>
+      <div class="pb-body">
+        <ul class="hours-list">
+          <li><span class="day">Mon – Thu</span><span class="time">10:00 AM – 9:00 PM</span></li>
+          <li class="today"><span class="day">Fri – Sat</span><span class="time">9:00 AM – 11:00 PM <span class="badge-open">Open late</span></span></li>
+          <li><span class="day">Sunday</span><span class="time">11:00 AM – 9:00 PM</span></li>
+          <li><span class="day">July 3 &amp; July 4</span><span class="time">8:00 AM – Midnight</span></li>
+        </ul>
+        <div class="season-note">
+          🎆 <b>Seasonal stand.</b> We fire up for the summer Independence Day season and again for New Year's. Hours extend as the 4th gets closer — <b>call ahead on holidays</b> and we'll have your order ready at the counter.
+        </div>
+      </div>
+    </div>
+
+    <!-- LOCATION -->
+    <div id="find" class="panel-box">
+      <div class="pb-head">
+        <span class="ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 21s7-6.3 7-11a7 7 0 10-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        </span>
+        <h3>Find The Stand</h3>
+      </div>
+      <div class="pb-body">
+        <p class="addr">
+          <span class="big">4781 US-67</span><br>
+          Midlothian, TX<br>
+          <span style="color:#aab0d4;font-size:14px">Right on the highway — you can't miss the lights.</span>
+        </p>
+
+        <div class="map-faux" role="img" aria-label="Map showing Get Lit Fireworks on US-67 in Midlothian, Texas">
+          <div class="grid-lines"></div>
+          <div class="road"></div>
+          <div class="road-label">US-67</div>
+          <div class="pin-mark">
+            <div class="dot"></div>
+            <div class="lbl">Get Lit 🎆</div>
+          </div>
+        </div>
+
+        <a class="dir-btn" href="https://maps.google.com/?q=4781+US-67+Midlothian+TX" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg>
+          Open in Maps
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section id="reviews" class="band reviews-band">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Straight from the neighborhood</p>
+      <h2>People come back <em>every year</em></h2>
+    </div>
+
+    <div class="rev-grid">
+      <article class="review">
+        <span class="quo" aria-hidden="true">“</span>
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>Best stand in Midlothian, hands down. The guys built me a family pack on the spot and it lasted the whole night. Kids loved the sparklers, adults loved the finale.</p>
+        <div class="who"><span class="av a" aria-hidden="true">M</span><div><b>Marcus D.</b><span>Waxahachie, TX</span></div></div>
+      </article>
+
+      <article class="review">
+        <span class="quo" aria-hidden="true">“</span>
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>Prices beat the big box up the road and the selection is way better. I called ahead, they had everything bagged and ready. In and out in five minutes on the 4th.</p>
+        <div class="who"><span class="av b" aria-hidden="true">J</span><div><b>Jasmine R.</b><span>Midlothian, TX</span></div></div>
+      </article>
+
+      <article class="review">
+        <span class="quo" aria-hidden="true">“</span>
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>These folks actually know their inventory. Told them my budget and the size of my yard and they picked the perfect cakes. Neighbors thought we hired a pro.</p>
+        <div class="who"><span class="av c" aria-hidden="true">T</span><div><b>Tyler &amp; Fam</b><span>Cedar Hill, TX</span></div></div>
+      </article>
+    </div>
+
+    <div class="rev-agg">
+      <span class="score">4.9</span>
+      <span class="meta">Rated <b>4.9 / 5</b> by local families &nbsp;·&nbsp; <b>Cash &amp; card accepted</b> &nbsp;·&nbsp; Ask about <b>buy-one-get-one</b> tables</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA + PAYMENT ===== -->
+<section class="final">
+  <div class="wrap">
+    <p class="eyebrow" style="justify-content:center">Doors are open</p>
+    <h2>Let's make it <span>a night to remember</span></h2>
+    <p>Call ahead, tell us the vibe and the budget, and we'll have your show boxed and waiting. Walk-ins always welcome.</p>
+
+    <div class="cta-row">
+      <a class="btn-call" href="tel:+12142234594" aria-label="Call Get Lit Fireworks at 214-223-4594">
+        <span class="ph" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+        </span>
+        <span>
+          <small>Tap to call now</small>
+          <span class="num">214-223-4594</span>
+        </span>
+      </a>
+    </div>
+
+    <div class="pay-wrap">
+      <button class="btn-pay" type="button" disabled aria-disabled="true" title="Online ordering coming soon — pay in person at the stand">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+        Reserve &amp; Pay Online — Coming Soon
+      </button>
+      <span class="pay-note">Preview button · online checkout not enabled · pay in person at the stand</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand" style="margin-bottom:10px">
+          <span class="spark" aria-hidden="true"></span>
+          <span>
+            <span class="brand-name" style="font-size:30px">Get Lit</span>
+            <span class="brand-sub">Fireworks · Midlothian TX</span>
+          </span>
+        </div>
+        <p style="color:#8f95b8;font-size:13.5px;max-width:300px">Midlothian's home for the loudest, brightest, best-priced Fourth of July on US-67.</p>
+      </div>
+
+      <div class="foot-contact">
+        <a href="tel:+12142234594">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+          214-223-4594
+        </a>
+        <a href="https://maps.google.com/?q=4781+US-67+Midlothian+TX" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 10-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          4781 US-67, Midlothian, TX
+        </a>
+        <span style="color:#8f95b8;display:inline-flex;gap:9px;align-items:center">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#ffcf3a" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          Open seasonally · call for holiday hours
+        </span>
+      </div>
+    </div>
+
+    <div class="concept">
+      <span class="badge-concept">Concept preview built by <b>DNA Agency</b> — not affiliated with Get Lit Fireworks.</span>
+      <span class="dna">DNA Agency · Spec Demo</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Countdown to the next July 4th
+  (function(){
+    var d=document.getElementById('cd-d'),h=document.getElementById('cd-h'),
+        m=document.getElementById('cd-m'),s=document.getElementById('cd-s');
+    if(!d)return;
+    function target(){
+      var now=new Date(), y=now.getFullYear();
+      var jul4=new Date(y,6,4,21,0,0); // 9pm July 4 = show time
+      if(now>jul4){ jul4=new Date(y+1,6,4,21,0,0); }
+      return jul4;
+    }
+    var t=target();
+    function pad(n){return String(n).padStart(2,'0');}
+    function tick(){
+      var diff=t-new Date();
+      if(diff<0){ t=target(); diff=t-new Date(); }
+      var days=Math.floor(diff/864e5);
+      var hrs=Math.floor(diff%864e5/36e5);
+      var min=Math.floor(diff%36e5/6e4);
+      var sec=Math.floor(diff%6e4/1e3);
+      d.textContent=days; h.textContent=pad(hrs); m.textContent=pad(min); s.textContent=pad(sec);
+    }
+    tick(); setInterval(tick,1000);
+  })();
+</script>
