@@ -2,30 +2,30 @@
   "template": "agency-local-business",
   "templateVersion": "1.0.0",
   "business": {
-    "name": "{{BIZ_NAME}}",
-    "tagline": "{{TAGLINE}}",
-    "category": "{{CATEGORY}}",
-    "phone": "{{PHONE}}",
-    "email": "{{EMAIL}}",
-    "address": "{{ADDRESS}}",
-    "city": "{{CITY}}",
-    "domain": "{{DOMAIN}}"
+    "name": "Lone Star Home Remodeling Co.",
+    "tagline": "Quality work, fair prices, and a crew that shows up.",
+    "category": "remodel",
+    "phone": "(555) 555-5555",
+    "email": "hello@lone-star-home-remodeling-co.com",
+    "address": "123 Main St",
+    "city": "Longview, TX",
+    "domain": "lithacker6458.github.io/demos/lone-star-home-remodeling-co"
   },
   "brand": {
-    "primaryColor": "{{PRIMARY_COLOR}}",
-    "accentColor": "{{ACCENT_COLOR}}",
+    "primaryColor": "#1a5fb4",
+    "accentColor": "#e8590c",
     "displayFont": "Fraunces",
     "bodyFont": "Archivo"
   },
   "payments": {
     "provider": "stripe-payment-links",
-    "depositUrl": "{{DEPOSIT_URL}}",
-    "bookUrl": "{{BOOK_URL}}",
-    "buyUrls": ["{{BUY_URL_1}}", "{{BUY_URL_2}}", "{{BUY_URL_3}}"],
+    "depositUrl": "#",
+    "bookUrl": "#",
+    "buyUrls": ["#", "#", "#"],
     "notes": "Client-owned Stripe Payment Links ONLY (https://buy.stripe.com/...). Card data flows to Stripe, never to this site or the agency. Empty tokens are stripped in client builds and forced to '#' in demo builds. See docs/STRIPE_SETUP.md."
   },
   "meta": {
-    "generatedYear": "{{YEAR}}",
+    "generatedYear": "2026",
     "brandingSource": "assets/css/custom.css",
     "notes": "All branding (colors, fonts) lives in assets/css/custom.css as CSS custom properties."
   }

@@ -1,4 +1,4 @@
-/* {{BIZ_NAME}} — site JS.
+/* Lone Star Home Remodeling Co. — site JS.
    Scope: mobile nav toggle + smooth scroll for same-page anchors. Nothing else. */
 (function () {
   'use strict';
