@@ -19,6 +19,17 @@
     });
   }
 
+  // Before/after comparison slider (index page)
+  var ba = document.querySelector('[data-ba]');
+  if (ba) {
+    var baRange = ba.querySelector('.ba-range');
+    if (baRange) {
+      baRange.addEventListener('input', function () {
+        ba.style.setProperty('--ba', baRange.value + '%');
+      });
+    }
+  }
+
   // Smooth scroll for same-page anchor links
   document.addEventListener('click', function (e) {
     var a = e.target.closest('a[href^="#"]');

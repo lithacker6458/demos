@@ -3,21 +3,23 @@
    Rebrand the entire site by editing the custom properties below.
    ================================================================ */
 :root {
-  /* client brand */
-  --brand:  #1a5fb4;
-  --accent: #e8590c;
+  /* client brand — gunmetal steel + hi-vis construction yellow (Weitz-style,
+     per reference/industries/construction-trades.md; distinct from Cole Fence's
+     charcoal + safety-orange) */
+  --brand:  #26313d;
+  --accent: #f4b400;
 
   /* typefaces (loaded via Google Fonts <link> in each page head) */
-  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-display: 'Oswald', 'Arial Narrow', 'Helvetica Neue', sans-serif;
   --font-body: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
 
-  /* fixed editorial palette — paper & ink, not client branding */
-  --ink: #221d18;
-  --ink-soft: #5b544c;
-  --paper: #f7f1e6;
-  --paper-deep: #eee5d3;
-  --line: #d8cdba;
-  --white: #fffdf8;
+  /* fixed industrial palette — concrete & steel, not client branding */
+  --ink: #14171b;
+  --ink-soft: #4d545c;
+  --paper: #f4f3ef;
+  --paper-deep: #e7e5de;
+  --line: #cfccc2;
+  --white: #fcfcf9;
 }
 
 /* ================================================================
@@ -46,8 +48,8 @@ body::after {
 
 h1, h2, h3, .display {
   font-family: var(--font-display);
-  font-variation-settings: 'SOFT' 40, 'WONK' 1;
-  letter-spacing: -0.015em;
+  font-weight: 600;
+  letter-spacing: 0.005em;
 }
 
 ::selection { background: var(--accent); color: var(--white); }
@@ -124,7 +126,7 @@ select:focus-visible, textarea:focus-visible {
 .btn-ghost:hover { background: var(--paper-deep); transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(34, 29, 24, 0.2); }
 .btn-accent {
   background: var(--accent);
-  color: var(--white);
+  color: var(--ink);
   box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.35);
 }
 .btn-accent:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.35); }
@@ -216,10 +218,10 @@ select:focus-visible, textarea:focus-visible {
   font-weight: 700;
 }
 .hero-display em {
-  font-style: italic;
-  font-weight: 500;
-  color: var(--brand);
-  font-variation-settings: 'SOFT' 100, 'WONK' 1;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--ink);
+  background-image: linear-gradient(transparent 58%, var(--accent) 58%, var(--accent) 94%, transparent 94%);
 }
 
 .hero-panel {
@@ -260,7 +262,7 @@ select:focus-visible, textarea:focus-visible {
   border-top: 2px solid var(--ink);
   border-bottom: 2px solid var(--ink);
   background: var(--accent);
-  color: var(--white);
+  color: var(--ink);
 }
 .marquee-track {
   display: flex;
@@ -298,7 +300,7 @@ select:focus-visible, textarea:focus-visible {
   font-family: var(--font-display);
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--accent);
+  color: #c79000;
 }
 .card-service .icon {
   width: 2.75rem;
@@ -322,7 +324,7 @@ select:focus-visible, textarea:focus-visible {
   text-decoration: none;
   border-bottom: 2px solid var(--accent);
 }
-.card-link:hover { color: var(--accent); }
+.card-link:hover { color: #a67800; }
 
 /* ================================================================
    Testimonials
@@ -343,13 +345,13 @@ select:focus-visible, textarea:focus-visible {
   font-family: var(--font-display);
   font-size: 4.5rem;
   line-height: 1;
-  color: var(--accent);
+  color: #c79000;
 }
 .quote-card blockquote { font-family: var(--font-display); font-size: 1.06rem; line-height: 1.5; font-style: italic; }
 .quote-card figcaption { margin-top: 1rem; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
 .quote-card figcaption::before { content: "— "; color: var(--accent); }
 
-.stars { color: var(--accent); letter-spacing: 0.15em; font-size: 0.9rem; }
+.stars { color: #c79000; letter-spacing: 0.15em; font-size: 0.9rem; }
 
 /* ================================================================
    CTA band
@@ -461,10 +463,10 @@ select:focus-visible, textarea:focus-visible {
   border: 2px solid var(--ink);
   border-radius: 999px;
   background: var(--accent);
-  color: var(--white);
+  color: var(--ink);
   font-family: var(--font-display);
   font-weight: 700;
-  box-shadow: 3px 3px 0 rgba(34,29,24,0.25);
+  box-shadow: 3px 3px 0 rgba(20,23,27,0.3);
 }
 
 details.faq {

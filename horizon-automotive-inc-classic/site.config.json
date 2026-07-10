@@ -3,7 +3,7 @@
   "templateVersion": "1.0.0",
   "business": {
     "name": "Horizon Automotive, Inc.",
-    "tagline": "Quality work, fair prices, and a crew that shows up.",
+    "tagline": "Honest auto repair in Casper — written estimates before any work begins.",
     "category": "auto repair",
     "phone": "(555) 555-5555",
     "email": "hello@horizon-automotive-inc.com",
@@ -12,10 +12,10 @@
     "domain": "lithacker6458.github.io/demos/horizon-automotive-inc-classic"
   },
   "brand": {
-    "primaryColor": "#1a5fb4",
-    "accentColor": "#e8590c",
-    "displayFont": "Fraunces",
-    "bodyFont": "Archivo"
+    "primaryColor": "#12325c",
+    "accentColor": "#d62828",
+    "displayFont": "Barlow Condensed",
+    "bodyFont": "Barlow"
   },
   "payments": {
     "provider": "stripe-payment-links",

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lithacker6458.github.io/demos/nvision-automotive-customs-tint/sitemap.xml
+Sitemap: https://lithacker6458.github.io/demos/nvision-automotive-customs-tint-classic/sitemap.xml

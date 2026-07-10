@@ -3,21 +3,22 @@
    Rebrand the entire site by editing the custom properties below.
    ================================================================ */
 :root {
-  /* client brand */
-  --brand:  #1a5fb4;
-  --accent: #e8590c;
+  /* client brand — Max's Mobile Auto Detailing: dark-luxury detail bay,
+     near-black canvas + one electric gloss-cyan accent */
+  --brand:  #22d3ee;
+  --accent: #67e8f9;
 
   /* typefaces (loaded via Google Fonts <link> in each page head) */
-  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
-  --font-body: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-body: 'Manrope', 'Helvetica Neue', Arial, sans-serif;
 
-  /* fixed editorial palette — paper & ink, not client branding */
-  --ink: #221d18;
-  --ink-soft: #5b544c;
-  --paper: #f7f1e6;
-  --paper-deep: #eee5d3;
-  --line: #d8cdba;
-  --white: #fffdf8;
+  /* inverted palette — midnight garage, not paper & ink */
+  --ink: #e9edf3;        /* light foreground / borders */
+  --ink-soft: #a7b0bc;
+  --paper: #0b0d10;      /* canvas */
+  --paper-deep: #12151b; /* deep section background */
+  --line: #262b33;
+  --white: #161a20;      /* card surfaces (dark) */
 }
 
 /* ================================================================
@@ -527,6 +528,139 @@ details.faq .faq-body { padding: 0 1.25rem 1.1rem; color: var(--ink-soft); font-
 @keyframes rise {
   from { opacity: 0; transform: translateY(18px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================================================================
+   DARK DETAIL-BAY OVERRIDES — the inverted palette flips a few
+   hardcoded assumptions from the paper theme; fix them here.
+   ================================================================ */
+
+/* condensed automotive display type */
+.hero-display,
+.wordmark,
+.cta-band .display,
+.footer-ghost { text-transform: uppercase; }
+.hero-display { font-size: clamp(2.9rem, 7.5vw, 5.6rem); letter-spacing: 0.01em; }
+.wordmark { letter-spacing: 0.03em; }
+.marquee-track { text-transform: uppercase; letter-spacing: 0.08em; }
+
+/* topbar + footer stay darker than the canvas (were var(--ink) = now light) */
+.topbar { background: #07090c; color: var(--ink-soft); border-bottom: 1px solid var(--line); }
+.topbar a { color: var(--brand); }
+.topbar a:hover { color: var(--accent); }
+.site-header { border-bottom-color: var(--line); }
+.site-footer { background: #07090c; color: var(--ink); border-top: 2px solid var(--brand); }
+.site-footer .wordmark { color: var(--ink); }
+.site-footer a { color: var(--ink); }
+.site-footer a:hover { color: var(--accent); }
+.footer-ghost { -webkit-text-stroke: 1px rgba(233, 237, 243, 0.13); }
+
+/* nav panel + hamburger against dark canvas */
+.nav-panel { border-top-color: var(--line); }
+.nav-panel a { border-bottom-color: var(--line); }
+
+/* subtle borders instead of heavy light frames where it got loud */
+.site-header, .marquee { border-color: var(--line); }
+.marquee { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: #07242b; }
+
+/* shadows: dark offsets are invisible on dark — use a soft cyan glow */
+.card-service { box-shadow: 4px 4px 0 rgba(34, 211, 238, 0.10); border-color: var(--line); }
+.card-service:hover { box-shadow: 7px 7px 0 rgba(34, 211, 238, 0.35); border-color: var(--brand); transform: translate(-3px, -3px); }
+.quote-card { box-shadow: 5px 5px 0 rgba(34, 211, 238, 0.10); border-color: var(--line); }
+.btn { border-color: var(--ink); }
+.btn-brand { color: #06181d; box-shadow: 4px 4px 0 rgba(34, 211, 238, 0.25); border-color: transparent; }
+.btn-brand:hover { box-shadow: 6px 6px 0 rgba(34, 211, 238, 0.35); }
+.btn-accent { color: #06181d; box-shadow: 4px 4px 0 rgba(103, 232, 249, 0.25); border-color: transparent; }
+.btn-ghost { box-shadow: 4px 4px 0 rgba(233, 237, 243, 0.10); border-color: var(--line); }
+.btn-ghost:hover { box-shadow: 6px 6px 0 rgba(233, 237, 243, 0.15); }
+.step .step-num { color: #06181d; box-shadow: 3px 3px 0 rgba(34, 211, 238, 0.25); border-color: transparent; }
+.chip { border-color: var(--line); }
+.hamburger { border-color: var(--line); }
+details.faq { border-color: var(--line); box-shadow: 3px 3px 0 rgba(34, 211, 238, 0.10); }
+.field input, .field select, .field textarea { border-color: var(--line); }
+.map-label { border-color: var(--line); box-shadow: 3px 3px 0 rgba(34, 211, 238, 0.2); }
+
+/* sections that framed themselves with heavy ink borders */
+.hero-panel { border-color: var(--line); box-shadow: 8px 8px 0 rgba(34, 211, 238, 0.18); }
+.cta-band { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: #06181d; }
+.cta-band .eyebrow { color: #06181d !important; }
+section.border-y-2 { border-color: var(--line) !important; }
+
+/* map placeholder grid was drawn in dark ink — redraw in faint light */
+.map-ph {
+  border-color: var(--line);
+  background-image:
+    repeating-linear-gradient(0deg, rgba(233,237,243,0.06) 0 2px, transparent 2px 44px),
+    repeating-linear-gradient(90deg, rgba(233,237,243,0.06) 0 2px, transparent 2px 56px),
+    repeating-linear-gradient(45deg, rgba(233,237,243,0.035) 0 1px, transparent 1px 90px);
+  box-shadow: 5px 5px 0 rgba(34, 211, 238, 0.10);
+}
+
+/* grain: a touch quieter on near-black */
+body::after { opacity: 0.04; }
+
+/* ================================================================
+   Before / after comparison slider (index.html)
+   ================================================================ */
+.ba-wrap {
+  position: relative;
+  border: 2px solid var(--line);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: #0e1116;
+  box-shadow: 6px 6px 0 rgba(34, 211, 238, 0.14);
+}
+.ba-layer { display: block; width: 100%; }
+.ba-layer svg { display: block; width: 100%; height: auto; }
+.ba-after {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(0 0 0 var(--ba, 50%));
+}
+.ba-handle {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: var(--ba, 50%);
+  width: 2px;
+  background: var(--brand);
+  pointer-events: none;
+}
+.ba-handle::after {
+  content: "\25C2 \25B8";
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--brand);
+  color: #06181d;
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  padding: 0.4rem 0.55rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.ba-tag {
+  position: absolute;
+  top: 0.75rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: rgba(11, 13, 16, 0.78);
+  border: 1px solid var(--line);
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
+  pointer-events: none;
+}
+.ba-range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
 }
 
 @media (prefers-reduced-motion: reduce) {

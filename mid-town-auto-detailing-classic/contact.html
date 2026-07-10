@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact — Mid-Town Auto Detailing | Killeen, TX</title>
-  <meta name="description" content="Get a free estimate from Mid-Town Auto Detailing in Killeen, TX. Call (555) 555-5555, email hello@mid-town-auto-detailing.com, or send the quick form — we reply within one business day.">
+  <meta name="description" content="Get a flat written detail quote from Mid-Town Auto Detailing in Killeen, TX. Call (555) 555-5555, email hello@mid-town-auto-detailing.com, or send the vehicle form — we reply within one business day.">
   <link rel="canonical" href="https://lithacker6458.github.io/demos/mid-town-auto-detailing-classic/contact.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Mid-Town Auto Detailing">
   <meta property="og:title" content="Contact Mid-Town Auto Detailing">
-  <meta property="og:description" content="Free estimates in Killeen, TX. Call (555) 555-5555 or send the form.">
+  <meta property="og:description" content="Flat written detail quotes in Killeen, TX. Call (555) 555-5555 or send the form.">
   <meta property="og:url" content="https://lithacker6458.github.io/demos/mid-town-auto-detailing-classic/contact.html">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23221d18'/%3E%3Ctext x='32' y='56' font-size='58' text-anchor='middle' fill='%23f7f1e6' font-family='Georgia,serif'%3E*%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101114'/%3E%3Ctext x='32' y='56' font-size='58' text-anchor='middle' fill='%23D9A62E' font-family='Georgia,serif'%3E*%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;1,600;1,700&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
   <!-- Utility bar -->
   <div class="topbar">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-2 flex items-center justify-between gap-4">
-      <p class="truncate">Serving Killeen, TX &amp; surrounding areas</p>
+      <p class="truncate">Serving Killeen, Harker Heights &amp; Copperas Cove</p>
       <p class="hidden sm:block">Mon&ndash;Fri 8&ndash;6 &middot; Sat 9&ndash;2 &middot; <a href="tel:(555) 555-5555">(555) 555-5555</a></p>
     </div>
   </div>
@@ -57,10 +57,10 @@
     <!-- Page hero -->
     <section class="max-w-6xl mx-auto px-4 sm:px-6 pt-14 pb-8 lg:pt-20">
       <p class="eyebrow reveal">Contact</p>
-      <h1 class="hero-display mt-4 max-w-3xl reveal reveal-1">Tell us what's up.<br><em>We'll take it from there.</em></h1>
+      <h1 class="hero-display mt-4 max-w-3xl reveal reveal-1">Tell us about the car.<br><em>We'll quote it flat.</em></h1>
       <p class="mt-6 text-lg leading-relaxed max-w-2xl reveal reveal-2" style="color: var(--ink-soft);">
-        Call, email, or send the form &mdash; whichever suits you. We reply to every message within one business day,
-        usually a lot faster.
+        Call, email, or send the form &mdash; year, make, model, and how it's been living is all we need to put one
+        flat number in writing. We reply within one business day, usually a lot faster.
       </p>
     </section>
 
@@ -69,8 +69,8 @@
       <!-- Form -->
       <div class="lg:col-span-7">
         <div class="card-service" style="padding: 2rem 1.75rem;">
-          <h2 class="text-2xl font-bold">Request a free estimate</h2>
-          <p class="text-sm mt-1 mb-6" style="color: var(--ink-soft);">No spam, no pressure. Just a straight answer.</p>
+          <h2 class="text-2xl font-bold">Request a flat quote</h2>
+          <p class="text-sm mt-1 mb-6" style="color: var(--ink-soft);">No spam, no pressure. Just one written number.</p>
           <!-- FormSubmit placeholder: activates automatically the first time it receives a submission. Docs: https://formsubmit.co -->
           <form action="https://formsubmit.co/hello@mid-town-auto-detailing.com" method="POST" class="space-y-5">
             <input type="hidden" name="_subject" value="New estimate request — lithacker6458.github.io/demos/mid-town-auto-detailing-classic">
@@ -90,19 +90,33 @@
               <label for="f-email">Email</label>
               <input id="f-email" name="email" type="email" required autocomplete="email" placeholder="you@example.com">
             </div>
+            <div class="grid sm:grid-cols-3 gap-5">
+              <div class="field">
+                <label for="f-year">Vehicle year</label>
+                <input id="f-year" name="vehicle_year" type="text" inputmode="numeric" placeholder="2021">
+              </div>
+              <div class="field">
+                <label for="f-make">Make</label>
+                <input id="f-make" name="vehicle_make" type="text" placeholder="Ford">
+              </div>
+              <div class="field">
+                <label for="f-model">Model</label>
+                <input id="f-model" name="vehicle_model" type="text" placeholder="F-150">
+              </div>
+            </div>
             <div class="field">
-              <label for="f-service">What do you need?</label>
+              <label for="f-service">Which package?</label>
               <select id="f-service" name="service">
-                <option>The Signature Service</option>
-                <option>Routine care &amp; upkeep</option>
-                <option>A one-time project</option>
-                <option>Commercial account</option>
-                <option>Not sure yet — just talk to me</option>
+                <option>Full Interior Detail</option>
+                <option>Hand Wash &amp; Seal</option>
+                <option>The Full Works (interior + exterior)</option>
+                <option>Fleet / commercial account</option>
+                <option>Not sure yet — quote me the right one</option>
               </select>
             </div>
             <div class="field">
-              <label for="f-message">Tell us about the job</label>
-              <textarea id="f-message" name="message" rows="5" required placeholder="What's going on, roughly where you are in Killeen, TX, and any timing that matters."></textarea>
+              <label for="f-message">How's the car been living?</label>
+              <textarea id="f-message" name="message" rows="5" required placeholder="Pets? Kids? Parked under a tree? Selling it soon? The more honest you are, the more accurate the flat quote."></textarea>
             </div>
             <button class="btn btn-brand w-full sm:w-auto" type="submit">Send it over</button>
           </form>

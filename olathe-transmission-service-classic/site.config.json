@@ -3,7 +3,7 @@
   "templateVersion": "1.0.0",
   "business": {
     "name": "Olathe Transmission Service",
-    "tagline": "Quality work, fair prices, and a crew that shows up.",
+    "tagline": "Diagnosed honestly. Rebuilt to last.",
     "category": "transmission repair",
     "phone": "(555) 555-5555",
     "email": "hello@olathe-transmission-service.com",
@@ -12,9 +12,9 @@
     "domain": "lithacker6458.github.io/demos/olathe-transmission-service-classic"
   },
   "brand": {
-    "primaryColor": "#1a5fb4",
-    "accentColor": "#e8590c",
-    "displayFont": "Fraunces",
+    "primaryColor": "#12325c",
+    "accentColor": "#f26522",
+    "displayFont": "Barlow Condensed",
     "bodyFont": "Archivo"
   },
   "payments": {

@@ -3,21 +3,21 @@
    Rebrand the entire site by editing the custom properties below.
    ================================================================ */
 :root {
-  /* client brand */
-  --brand:  #1a5fb4;
-  --accent: #e8590c;
+  /* client brand — "midnight garage": tint-film black + one electric cyan */
+  --brand:  #14b8ce;
+  --accent: #22e0ff;
 
   /* typefaces (loaded via Google Fonts <link> in each page head) */
-  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-display: 'Barlow Condensed', 'Arial Narrow', Impact, sans-serif;
   --font-body: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
 
-  /* fixed editorial palette — paper & ink, not client branding */
-  --ink: #221d18;
-  --ink-soft: #5b544c;
-  --paper: #f7f1e6;
-  --paper-deep: #eee5d3;
-  --line: #d8cdba;
-  --white: #fffdf8;
+  /* dark shop palette — inverted paper/ink: canvas is near-black, "ink" is light */
+  --ink: #eceef0;
+  --ink-soft: #9ca3ad;
+  --paper: #0b0c0e;
+  --paper-deep: #14161a;
+  --line: #262a31;
+  --white: #17191e;
 }
 
 /* ================================================================
@@ -533,3 +533,88 @@ details.faq .faq-body { padding: 0 1.25rem 1.1rem; color: var(--ink-soft); font-
   .stamp, .marquee-track, .map-pin, .reveal { animation: none !important; }
   html { scroll-behavior: auto; }
 }
+
+/* ================================================================
+   MIDNIGHT GARAGE overrides — dark-theme patches for the inverted
+   palette + condensed display type. Nvision Automotive Customs & Tint.
+   ================================================================ */
+
+/* condensed garage-sign display type */
+.hero-display,
+.cta-band .display,
+.footer-ghost {
+  text-transform: uppercase;
+  letter-spacing: 0.015em;
+}
+.hero-display { font-weight: 800; }
+.hero-display em {
+  color: var(--accent);
+  text-shadow: 0 0 26px rgba(34, 224, 255, 0.35);
+}
+
+/* utility bar: dark strip, not the (now light) --ink */
+.topbar { background: #060708; color: var(--ink-soft); }
+.topbar a { color: var(--ink); }
+.topbar a:hover { color: var(--accent); }
+
+/* header on the dark canvas, cyan edge */
+.site-header { border-bottom: 2px solid var(--line); box-shadow: 0 1px 0 rgba(34, 224, 255, 0.25); }
+
+/* neon-edge letterpress buttons */
+.btn { border-color: var(--line); }
+.btn-brand { color: #06171a; box-shadow: 4px 4px 0 rgba(34, 224, 255, 0.28); }
+.btn-brand:hover { box-shadow: 6px 6px 0 rgba(34, 224, 255, 0.38); }
+.btn-brand:active { box-shadow: 1px 1px 0 rgba(34, 224, 255, 0.28); }
+.btn-accent { color: #06171a; box-shadow: 4px 4px 0 rgba(34, 224, 255, 0.22); }
+.btn-ghost { color: var(--ink); box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.55); }
+.btn-ghost:hover { background: var(--paper-deep); }
+
+/* cards & chips glow faintly instead of paper-shadowing */
+.card-service,
+.quote-card { box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5); }
+.card-service:hover { box-shadow: 7px 7px 0 rgba(34, 224, 255, 0.32); }
+.card-service .icon { color: var(--accent); }
+.chip { background: var(--white); border-color: var(--line); }
+
+/* marquee + CTA band carry the electric cyan with DARK text */
+.marquee { color: #06171a; border-color: var(--line); }
+.cta-band { color: #06171a; border-color: var(--line); }
+.cta-band .eyebrow { color: #06171a !important; }
+
+/* hero panel: tinted-glass gradient, cyan glow */
+.hero-panel {
+  border-color: var(--line);
+  box-shadow: 8px 8px 0 rgba(34, 224, 255, 0.25);
+}
+
+/* stamp badge: light disc was var(--ink); keep contrast pair */
+.stamp text { fill: #06171a; }
+
+/* map placeholder grid was ink-dark; needs light lines on dark */
+.map-ph {
+  background-image:
+    repeating-linear-gradient(0deg, rgba(236,238,240,0.07) 0 2px, transparent 2px 44px),
+    repeating-linear-gradient(90deg, rgba(236,238,240,0.07) 0 2px, transparent 2px 56px),
+    repeating-linear-gradient(45deg, rgba(236,238,240,0.04) 0 1px, transparent 1px 90px);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* footer: true black pit with cyan top edge */
+.site-footer { background: #060708; border-top: 2px solid var(--accent); color: var(--ink-soft); }
+.site-footer .wordmark, .site-footer a { color: var(--ink); }
+.site-footer a:hover { color: var(--accent); }
+.footer-ghost { -webkit-text-stroke: 1px rgba(34, 224, 255, 0.14); }
+
+/* forms on dark */
+.field input, .field select, .field textarea { border-color: var(--line); }
+.field input::placeholder, .field textarea::placeholder { color: #5a616b; }
+
+/* steps + faq */
+.step .step-num { color: #06171a; border-color: var(--line); box-shadow: 3px 3px 0 rgba(0,0,0,0.5); }
+details.faq { border-color: var(--line); box-shadow: 3px 3px 0 rgba(0,0,0,0.5); }
+
+/* testimonial / hours accents */
+.hours-table th, .hours-table td { border-bottom-color: var(--line); }
+
+/* section dividers drawn with --ink inline styles read as light on dark — soften via borders already ok; grain stays */
+body::after { opacity: 0.07; }
