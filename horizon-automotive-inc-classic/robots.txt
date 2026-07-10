@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lithacker6458.github.io/demos/horizon-automotive-inc/sitemap.xml
+Sitemap: https://lithacker6458.github.io/demos/horizon-automotive-inc-classic/sitemap.xml
