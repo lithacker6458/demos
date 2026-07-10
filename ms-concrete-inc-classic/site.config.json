@@ -2,18 +2,18 @@
   "template": "agency-local-business",
   "templateVersion": "1.0.0",
   "business": {
-    "name": "North Alabama Heating and Cooling",
-    "tagline": "Heating and cooling done right \u2014 honest quotes, tidy work, and a phone that gets answered.",
-    "category": "HVAC contractor",
-    "phone": "(555) 555-5555",
-    "email": "hello@north-alabama-heating-and-cooling.com",
-    "address": "123 Main St",
-    "city": "Athens, AL",
-    "domain": "lithacker6458.github.io/demos/north-alabama-heating-and-cooling-classic"
+    "name": "MS Concrete, Inc",
+    "tagline": "Curb and gutter, flatwork, and structural concrete across Southern Utah since the 1980s.",
+    "category": "concrete",
+    "phone": "(435) 586-9122",
+    "email": "msconcrete1@gmail.com",
+    "address": "1102 N Airport Rd, Cedar City, UT",
+    "city": "Cedar City, UT",
+    "domain": "lithacker6458.github.io/demos/ms-concrete-inc-classic"
   },
   "brand": {
-    "primaryColor": "#0f3e5e",
-    "accentColor": "#d9480f",
+    "primaryColor": "#1A1D21",
+    "accentColor": "#F26522",
     "displayFont": "Fraunces",
     "bodyFont": "Archivo"
   },
@@ -21,11 +21,7 @@
     "provider": "stripe-payment-links",
     "depositUrl": "#",
     "bookUrl": "#",
-    "buyUrls": [
-      "#",
-      "#",
-      "#"
-    ],
+    "buyUrls": ["#", "#", "#"],
     "notes": "Client-owned Stripe Payment Links ONLY (https://buy.stripe.com/...). Card data flows to Stripe, never to this site or the agency. Empty tokens are stripped in client builds and forced to '#' in demo builds. See docs/STRIPE_SETUP.md."
   },
   "meta": {

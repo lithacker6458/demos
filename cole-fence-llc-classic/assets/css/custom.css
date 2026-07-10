@@ -1,25 +1,22 @@
 /* ================================================================
    BRAND TOKENS — the ONLY place branding lives.
-   GS Concrete LLC — industrial charcoal base + ONE safety-orange
-   accent (construction-trades reference: dark base, hi-vis accent,
-   condensed display type, quantified-proof layout).
+   Rebrand the entire site by editing the custom properties below.
    ================================================================ */
 :root {
   /* client brand */
-  --brand:  #f1651f;              /* safety orange — the ONE accent */
-  --accent: #d9530f;              /* deeper orange for hover/secondary marks */
-  --steel:  #21262b;              /* poured-charcoal panel surfaces */
+  --brand:  #15181c;
+  --accent: #f26522;
 
   /* typefaces (loaded via Google Fonts <link> in each page head) */
-  --font-display: 'Barlow Condensed', 'Arial Narrow', Impact, sans-serif;
-  --font-body: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Barlow Condensed', 'Arial Narrow', 'Helvetica Neue', sans-serif;
+  --font-body: 'Barlow', 'Helvetica Neue', Arial, sans-serif;
 
-  /* fixed industrial palette — concrete & ink, not client branding */
-  --ink: #16191d;
-  --ink-soft: #4a4f55;
-  --paper: #f2f1ed;
-  --paper-deep: #e4e2dc;
-  --line: #c9c7c0;
+  /* industrial concrete-and-charcoal palette (construction-trades intent) */
+  --ink: #15181c;
+  --ink-soft: #4b5259;
+  --paper: #f5f4f1;
+  --paper-deep: #e8e6df;
+  --line: #d4d1c8;
   --white: #fdfdfb;
 }
 
@@ -36,28 +33,24 @@ body {
   position: relative;
 }
 
-/* fine aggregate grain over everything, very subtle */
+/* paper grain over everything, very subtle */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 60;
-  opacity: 0.06;
+  opacity: 0.05;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 h1, h2, h3, .display {
   font-family: var(--font-display);
+  font-weight: 700;
   letter-spacing: 0.005em;
 }
-h1, h2, .display {
-  text-transform: uppercase;
-  font-weight: 700;
-}
-h3 { font-weight: 700; }
 
-::selection { background: var(--brand); color: var(--white); }
+::selection { background: var(--accent); color: var(--white); }
 
 a:focus-visible, button:focus-visible, input:focus-visible,
 select:focus-visible, textarea:focus-visible {
@@ -66,28 +59,27 @@ select:focus-visible, textarea:focus-visible {
 }
 
 /* ================================================================
-   Small industrial atoms
+   Small editorial atoms
    ================================================================ */
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--ink-soft);
+  color: var(--brand);
 }
 .eyebrow::before {
   content: "";
   width: 2.2rem;
-  height: 3px;
-  background: var(--brand);
+  height: 2px;
+  background: var(--accent);
 }
 
 .section-num {
   font-family: var(--font-display);
-  font-weight: 800;
   font-size: clamp(3.5rem, 8vw, 6rem);
   line-height: 1;
   color: transparent;
@@ -101,7 +93,7 @@ select:focus-visible, textarea:focus-visible {
 }
 
 /* ================================================================
-   Buttons — cast-block offset shadow
+   Buttons — letterpress offset shadow
    ================================================================ */
 .btn {
   display: inline-flex;
@@ -110,11 +102,9 @@ select:focus-visible, textarea:focus-visible {
   gap: 0.5rem;
   font-weight: 700;
   font-size: 0.95rem;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
   padding: 0.85rem 1.6rem;
   border: 2px solid var(--ink);
-  border-radius: 0.2rem;
+  border-radius: 0.25rem;
   transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
   cursor: pointer;
   text-decoration: none;
@@ -124,20 +114,20 @@ select:focus-visible, textarea:focus-visible {
   color: var(--white);
   box-shadow: 4px 4px 0 var(--ink);
 }
-.btn-brand:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); background: var(--accent); }
+.btn-brand:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); }
 .btn-brand:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
 .btn-ghost {
   background: transparent;
   color: var(--ink);
-  box-shadow: 4px 4px 0 rgba(22, 25, 29, 0.15);
+  box-shadow: 4px 4px 0 rgba(34, 29, 24, 0.15);
 }
-.btn-ghost:hover { background: var(--paper-deep); transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(22, 25, 29, 0.2); }
+.btn-ghost:hover { background: var(--paper-deep); transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(34, 29, 24, 0.2); }
 .btn-accent {
-  background: var(--brand);
+  background: var(--accent);
   color: var(--white);
   box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.35);
 }
-.btn-accent:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.35); background: var(--accent); }
+.btn-accent:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.35); }
 .btn-sm { padding: 0.6rem 1.15rem; font-size: 0.85rem; }
 
 /* ================================================================
@@ -149,12 +139,12 @@ select:focus-visible, textarea:focus-visible {
   font-size: 0.75rem;
   letter-spacing: 0.08em;
 }
-.topbar a { color: var(--brand); text-decoration: underline; text-underline-offset: 3px; font-weight: 700; }
+.topbar a { color: var(--paper); text-decoration: underline; text-underline-offset: 3px; }
 .topbar a:hover { color: var(--white); }
 
 .site-header {
   background: var(--paper);
-  border-bottom: 3px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
   position: sticky;
   top: 0;
   z-index: 50;
@@ -163,17 +153,18 @@ select:focus-visible, textarea:focus-visible {
 .wordmark {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 1.5rem;
-  line-height: 1;
-  letter-spacing: 0.02em;
   text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 1.45rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
   text-decoration: none;
   color: var(--ink);
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
 }
-.wordmark .spark { color: var(--brand); font-size: 1.4rem; line-height: 0; }
+.wordmark .spark { color: var(--accent); font-size: 1.5rem; line-height: 0; }
 
 .navlink {
   position: relative;
@@ -187,19 +178,19 @@ select:focus-visible, textarea:focus-visible {
   content: "";
   position: absolute;
   left: 0; right: 100%; bottom: -2px;
-  height: 3px;
-  background: var(--brand);
+  height: 2px;
+  background: var(--accent);
   transition: right 160ms ease;
 }
 .navlink:hover { color: var(--ink); }
 .navlink:hover::after { right: 0; }
 .navlink.active { color: var(--ink); }
-.navlink.active::after { right: 0; }
+.navlink.active::after { right: 0; background: var(--brand); }
 
 /* mobile panel */
 .nav-panel {
   display: none;
-  border-top: 3px solid var(--ink);
+  border-top: 2px solid var(--ink);
   background: var(--paper);
 }
 .nav-panel.open { display: block; }
@@ -207,44 +198,43 @@ select:focus-visible, textarea:focus-visible {
   display: block;
   padding: 0.9rem 1.5rem;
   font-family: var(--font-display);
-  font-size: 1.35rem;
-  font-weight: 700;
-  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: 600;
   color: var(--ink);
   text-decoration: none;
   border-bottom: 1px solid var(--line);
 }
 .nav-panel a:hover { background: var(--paper-deep); }
 
-.hamburger { border: 2px solid var(--ink); border-radius: 0.2rem; padding: 0.45rem 0.6rem; background: transparent; }
+.hamburger { border: 2px solid var(--ink); border-radius: 0.25rem; padding: 0.45rem 0.6rem; background: transparent; }
 .hamburger:hover { background: var(--paper-deep); }
 
 /* ================================================================
    Hero
    ================================================================ */
 .hero-display {
-  font-size: clamp(3rem, 8vw, 5.6rem);
-  line-height: 0.94;
+  font-size: clamp(2.9rem, 7vw, 5.4rem);
+  line-height: 0.95;
   font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
 }
 .hero-display em {
   font-style: normal;
   font-weight: 800;
-  color: var(--brand);
+  color: var(--accent);
 }
 
 .hero-panel {
   position: relative;
   border: 2px solid var(--ink);
-  border-radius: 0.4rem;
-  color: var(--white);
+  border-radius: 0.5rem;
   background:
-    repeating-linear-gradient(-55deg, rgba(241,101,31,0.12) 0 12px, transparent 12px 60px),
-    linear-gradient(160deg, #191d21 0%, var(--steel) 55%, #2c3238 100%);
+    linear-gradient(160deg, color-mix(in srgb, var(--brand) 88%, black) 0%, var(--brand) 55%, color-mix(in srgb, var(--brand) 70%, white) 100%);
   box-shadow: 8px 8px 0 var(--ink);
   overflow: hidden;
 }
-.hero-panel .rays { position: absolute; inset: 0; opacity: 0.14; }
+.hero-panel .rays { position: absolute; inset: 0; opacity: 0.25; }
 
 .stamp {
   animation: spin 22s linear infinite;
@@ -257,47 +247,22 @@ select:focus-visible, textarea:focus-visible {
   align-items: center;
   gap: 0.4rem;
   border: 1.5px solid var(--ink);
-  border-radius: 0.2rem;
+  border-radius: 999px;
   padding: 0.3rem 0.8rem;
   font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  font-weight: 600;
   background: var(--white);
 }
-.chip .dot { width: 0.5rem; height: 0.5rem; background: var(--brand); }
-
-/* big stat medallion inside the hero panel */
-.hero-stat {
-  position: relative;
-  text-align: center;
-  font-family: var(--font-display);
-  text-transform: uppercase;
-}
-.hero-stat .big {
-  display: block;
-  font-size: clamp(5rem, 10vw, 8rem);
-  font-weight: 800;
-  line-height: 0.9;
-  color: var(--brand);
-  text-shadow: 4px 4px 0 rgba(0,0,0,0.45);
-}
-.hero-stat .sub {
-  display: block;
-  margin-top: 0.35rem;
-  font-size: 1.15rem;
-  font-weight: 700;
-  letter-spacing: 0.28em;
-  color: var(--white);
-}
+.chip .dot { width: 0.5rem; height: 0.5rem; border-radius: 999px; background: var(--accent); }
 
 /* ================================================================
    Marquee strip
    ================================================================ */
 .marquee {
   overflow: hidden;
-  border-top: 3px solid var(--ink);
-  border-bottom: 3px solid var(--ink);
-  background: var(--brand);
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  background: var(--accent);
   color: var(--white);
 }
 .marquee-track {
@@ -306,45 +271,12 @@ select:focus-visible, textarea:focus-visible {
   white-space: nowrap;
   padding: 0.7rem 0;
   font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-size: 1.05rem;
+  font-weight: 600;
   animation: marquee 26s linear infinite;
   width: max-content;
 }
 @keyframes marquee { to { transform: translateX(-50%); } }
-
-/* ================================================================
-   Stat row — the proof band (animated counters via [data-count])
-   ================================================================ */
-.stat-band {
-  background: var(--steel);
-  color: var(--white);
-  border-bottom: 3px solid var(--ink);
-}
-.stat {
-  text-align: center;
-  padding: 0.5rem 0;
-}
-.stat .stat-num {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(2.6rem, 6vw, 4rem);
-  line-height: 1;
-  color: var(--brand);
-  font-variant-numeric: tabular-nums;
-}
-.stat .stat-num sup { font-size: 55%; top: -0.5em; }
-.stat .stat-label {
-  margin-top: 0.35rem;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  opacity: 0.85;
-}
-.stat + .stat { border-left: 1px solid rgba(253,253,251,0.12); }
 
 /* ================================================================
    Service cards
@@ -353,10 +285,10 @@ select:focus-visible, textarea:focus-visible {
   position: relative;
   background: var(--white);
   border: 2px solid var(--ink);
-  border-radius: 0.4rem;
+  border-radius: 0.5rem;
   padding: 1.75rem 1.5rem 1.5rem;
   transition: transform 140ms ease, box-shadow 140ms ease;
-  box-shadow: 3px 3px 0 rgba(22, 25, 29, 0.12);
+  box-shadow: 3px 3px 0 rgba(34, 29, 24, 0.12);
 }
 .card-service:hover {
   transform: translate(-3px, -3px);
@@ -367,9 +299,9 @@ select:focus-visible, textarea:focus-visible {
   top: 0.9rem;
   right: 1.1rem;
   font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 800;
-  color: var(--brand);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent);
 }
 .card-service .icon {
   width: 2.75rem;
@@ -377,62 +309,59 @@ select:focus-visible, textarea:focus-visible {
   display: grid;
   place-items: center;
   border: 2px solid var(--ink);
-  border-radius: 0.3rem;
-  background: var(--steel);
+  border-radius: 0.4rem;
+  background: var(--paper);
   color: var(--brand);
   margin-bottom: 1rem;
 }
-.card-service h3 { font-size: 1.45rem; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.02em; }
-.card-service h2 { letter-spacing: 0.02em; }
+.card-service h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.4rem; }
 .card-service p { color: var(--ink-soft); font-size: 0.92rem; line-height: 1.55; }
 .card-link {
   display: inline-block;
   margin-top: 0.9rem;
   font-weight: 700;
   font-size: 0.85rem;
-  color: var(--ink);
+  color: var(--brand);
   text-decoration: none;
-  border-bottom: 2px solid var(--brand);
+  border-bottom: 2px solid var(--accent);
 }
-.card-link:hover { color: var(--brand); }
+.card-link:hover { color: var(--accent); }
 
 /* ================================================================
-   Promise cards (replaces generic testimonials — built on the
-   business's own published guarantees, not invented reviews)
+   Testimonials
    ================================================================ */
 .quote-card {
   position: relative;
   background: var(--white);
   border: 2px solid var(--ink);
-  border-radius: 0.4rem;
+  border-radius: 0.5rem;
   padding: 2.4rem 1.6rem 1.5rem;
-  box-shadow: 5px 5px 0 rgba(22, 25, 29, 0.12);
+  box-shadow: 5px 5px 0 rgba(34, 29, 24, 0.12);
 }
 .quote-card::before {
-  content: "\2192";
+  content: "\201C";
   position: absolute;
-  top: 0.7rem;
-  left: 1.1rem;
+  top: -0.4rem;
+  left: 1rem;
   font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 4.5rem;
   line-height: 1;
-  color: var(--brand);
+  color: var(--accent);
 }
-.quote-card blockquote { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; line-height: 1.25; text-transform: uppercase; letter-spacing: 0.02em; }
-.quote-card figcaption { margin-top: 1rem; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
-.quote-card figcaption::before { content: "— "; color: var(--brand); }
+.quote-card blockquote { font-family: var(--font-display); font-size: 1.06rem; line-height: 1.5; font-style: italic; }
+.quote-card figcaption { margin-top: 1rem; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
+.quote-card figcaption::before { content: "— "; color: var(--accent); }
 
-.stars { color: var(--brand); letter-spacing: 0.15em; font-size: 0.9rem; }
+.stars { color: var(--accent); letter-spacing: 0.15em; font-size: 0.9rem; }
 
 /* ================================================================
-   CTA band — charcoal with the hi-vis accent, formwork stripes
+   CTA band
    ================================================================ */
 .cta-band {
-  background: var(--steel);
+  background: var(--brand);
   color: var(--white);
-  border-top: 3px solid var(--ink);
-  border-bottom: 3px solid var(--brand);
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
   position: relative;
   overflow: hidden;
 }
@@ -440,9 +369,9 @@ select:focus-visible, textarea:focus-visible {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: repeating-linear-gradient(-45deg, rgba(241,101,31,0.07) 0 14px, transparent 14px 28px);
+  background-image: repeating-linear-gradient(-45deg, rgba(255,255,255,0.06) 0 14px, transparent 14px 28px);
 }
-.cta-band .display { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+.cta-band .display { font-size: clamp(2rem, 5vw, 3.4rem); }
 
 /* ================================================================
    Hours table & map placeholder
@@ -461,22 +390,22 @@ select:focus-visible, textarea:focus-visible {
 .map-ph {
   position: relative;
   border: 2px solid var(--ink);
-  border-radius: 0.4rem;
+  border-radius: 0.5rem;
   min-height: 260px;
   overflow: hidden;
   background-color: var(--paper-deep);
   background-image:
-    repeating-linear-gradient(0deg, rgba(22,25,29,0.09) 0 2px, transparent 2px 44px),
-    repeating-linear-gradient(90deg, rgba(22,25,29,0.09) 0 2px, transparent 2px 56px),
-    repeating-linear-gradient(45deg, rgba(22,25,29,0.05) 0 1px, transparent 1px 90px);
-  box-shadow: 5px 5px 0 rgba(22, 25, 29, 0.12);
+    repeating-linear-gradient(0deg, rgba(34,29,24,0.09) 0 2px, transparent 2px 44px),
+    repeating-linear-gradient(90deg, rgba(34,29,24,0.09) 0 2px, transparent 2px 56px),
+    repeating-linear-gradient(45deg, rgba(34,29,24,0.05) 0 1px, transparent 1px 90px);
+  box-shadow: 5px 5px 0 rgba(34, 29, 24, 0.12);
 }
 .map-pin {
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -90%);
-  color: var(--brand);
-  filter: drop-shadow(2px 3px 0 rgba(22,25,29,0.35));
+  color: var(--accent);
+  filter: drop-shadow(2px 3px 0 rgba(34,29,24,0.35));
   animation: bob 2.4s ease-in-out infinite;
 }
 @keyframes bob { 0%, 100% { transform: translate(-50%, -90%); } 50% { transform: translate(-50%, -110%); } }
@@ -485,11 +414,11 @@ select:focus-visible, textarea:focus-visible {
   left: 0.9rem; bottom: 0.9rem;
   background: var(--white);
   border: 2px solid var(--ink);
-  border-radius: 0.2rem;
+  border-radius: 0.3rem;
   padding: 0.45rem 0.8rem;
   font-size: 0.8rem;
   font-weight: 700;
-  box-shadow: 3px 3px 0 rgba(22,25,29,0.25);
+  box-shadow: 3px 3px 0 rgba(34,29,24,0.25);
 }
 
 /* ================================================================
@@ -507,7 +436,7 @@ select:focus-visible, textarea:focus-visible {
   width: 100%;
   background: var(--white);
   border: 2px solid var(--ink);
-  border-radius: 0.2rem;
+  border-radius: 0.3rem;
   padding: 0.75rem 0.9rem;
   font-size: 0.95rem;
   font-family: var(--font-body);
@@ -515,7 +444,7 @@ select:focus-visible, textarea:focus-visible {
   transition: box-shadow 120ms ease;
 }
 .field input:focus, .field select:focus, .field textarea:focus {
-  box-shadow: 3px 3px 0 var(--brand);
+  box-shadow: 3px 3px 0 var(--accent);
 }
 
 /* ================================================================
@@ -533,21 +462,20 @@ select:focus-visible, textarea:focus-visible {
   display: grid;
   place-items: center;
   border: 2px solid var(--ink);
-  border-radius: 0.2rem;
-  background: var(--brand);
+  border-radius: 999px;
+  background: var(--accent);
   color: var(--white);
   font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 800;
-  box-shadow: 3px 3px 0 rgba(22,25,29,0.25);
+  font-weight: 700;
+  box-shadow: 3px 3px 0 rgba(34,29,24,0.25);
 }
 
 details.faq {
   border: 2px solid var(--ink);
-  border-radius: 0.3rem;
+  border-radius: 0.4rem;
   background: var(--white);
   padding: 0;
-  box-shadow: 3px 3px 0 rgba(22,25,29,0.12);
+  box-shadow: 3px 3px 0 rgba(34,29,24,0.12);
 }
 details.faq summary {
   cursor: pointer;
@@ -559,7 +487,7 @@ details.faq summary {
   align-items: center;
   gap: 1rem;
 }
-details.faq summary::after { content: "+"; font-family: var(--font-display); font-size: 1.4rem; color: var(--brand); }
+details.faq summary::after { content: "+"; font-family: var(--font-display); font-size: 1.4rem; color: var(--accent); }
 details.faq[open] summary::after { content: "\2212"; }
 details.faq .faq-body { padding: 0 1.25rem 1.1rem; color: var(--ink-soft); font-size: 0.94rem; line-height: 1.6; }
 
@@ -569,11 +497,11 @@ details.faq .faq-body { padding: 0 1.25rem 1.1rem; color: var(--ink-soft); font-
 .site-footer {
   background: var(--ink);
   color: var(--paper);
-  border-top: 4px solid var(--brand);
+  border-top: 2px solid var(--accent);
 }
 .site-footer .wordmark { color: var(--paper); }
 .site-footer a { color: var(--paper); text-decoration: none; }
-.site-footer a:hover { color: var(--brand); text-decoration: underline; text-underline-offset: 3px; }
+.site-footer a:hover { color: var(--white); text-decoration: underline; text-underline-offset: 3px; }
 .footer-links a { display: block; padding: 0.2rem 0; font-size: 0.92rem; opacity: 0.85; }
 .footer-fine { font-size: 0.78rem; opacity: 0.6; }
 
@@ -581,11 +509,10 @@ details.faq .faq-body { padding: 0 1.25rem 1.1rem; color: var(--ink-soft); font-
 .footer-ghost {
   font-family: var(--font-display);
   font-weight: 800;
-  text-transform: uppercase;
   font-size: clamp(3rem, 11vw, 8rem);
   line-height: 0.9;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(242, 241, 237, 0.18);
+  -webkit-text-stroke: 1px rgba(247, 241, 230, 0.18);
   white-space: nowrap;
   user-select: none;
   pointer-events: none;
@@ -608,4 +535,73 @@ details.faq .faq-body { padding: 0 1.25rem 1.1rem; color: var(--ink-soft); font-
 @media (prefers-reduced-motion: reduce) {
   .stamp, .marquee-track, .map-pin, .reveal { animation: none !important; }
   html { scroll-behavior: auto; }
+}
+
+
+/* ================================================================
+   Cole Fence additions — gallery, service-area chips, scroll reveal
+   ================================================================ */
+.gallery-tile {
+  position: relative;
+  border: 2px solid var(--ink);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: 3px 3px 0 rgba(21, 24, 28, 0.12);
+  transition: transform 140ms ease, box-shadow 140ms ease;
+}
+.gallery-tile:hover { transform: translate(-3px, -3px); box-shadow: 7px 7px 0 var(--ink); }
+.gallery-tile svg { display: block; width: 100%; height: auto; }
+.gallery-tile figcaption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 0.9rem;
+  border-top: 2px solid var(--ink);
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.95rem;
+}
+.gallery-tile figcaption .tag {
+  font-family: var(--font-body);
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.68rem;
+  color: var(--ink-soft);
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  white-space: nowrap;
+}
+
+.area-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 2px solid var(--ink);
+  border-radius: 0.3rem;
+  padding: 0.5rem 0.9rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.95rem;
+  background: var(--white);
+  box-shadow: 2px 2px 0 rgba(21, 24, 28, 0.15);
+}
+.area-chip::before { content: ""; width: 0.5rem; height: 0.5rem; background: var(--accent); }
+
+/* engineered scroll reveal (respects reduced motion) */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 560ms cubic-bezier(0.22, 1, 0.36, 1), transform 560ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-reveal].in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
 }

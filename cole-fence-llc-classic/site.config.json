@@ -2,18 +2,18 @@
   "template": "agency-local-business",
   "templateVersion": "1.0.0",
   "business": {
-    "name": "North Alabama Heating and Cooling",
-    "tagline": "Heating and cooling done right \u2014 honest quotes, tidy work, and a phone that gets answered.",
-    "category": "HVAC contractor",
-    "phone": "(555) 555-5555",
-    "email": "hello@north-alabama-heating-and-cooling.com",
-    "address": "123 Main St",
-    "city": "Athens, AL",
-    "domain": "lithacker6458.github.io/demos/north-alabama-heating-and-cooling-classic"
+    "name": "Cole Fence LLC",
+    "tagline": "Wood, vinyl, chain link, and farm fencing built to last in the Upstate.",
+    "category": "Fencing contractor",
+    "phone": "(864) 205-7246",
+    "email": "hello@cole-fence-llc-classic.com",
+    "address": "180 James Road",
+    "city": "Roebuck, SC",
+    "domain": "lithacker6458.github.io/demos/cole-fence-llc-classic"
   },
   "brand": {
-    "primaryColor": "#0f3e5e",
-    "accentColor": "#d9480f",
+    "primaryColor": "#15181c",
+    "accentColor": "#f26522",
     "displayFont": "Fraunces",
     "bodyFont": "Archivo"
   },
@@ -21,11 +21,7 @@
     "provider": "stripe-payment-links",
     "depositUrl": "#",
     "bookUrl": "#",
-    "buyUrls": [
-      "#",
-      "#",
-      "#"
-    ],
+    "buyUrls": ["#", "#", "#"],
     "notes": "Client-owned Stripe Payment Links ONLY (https://buy.stripe.com/...). Card data flows to Stripe, never to this site or the agency. Empty tokens are stripped in client builds and forced to '#' in demo builds. See docs/STRIPE_SETUP.md."
   },
   "meta": {

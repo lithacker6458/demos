@@ -2,18 +2,18 @@
   "template": "agency-local-business",
   "templateVersion": "1.0.0",
   "business": {
-    "name": "North Alabama Heating and Cooling",
-    "tagline": "Heating and cooling done right \u2014 honest quotes, tidy work, and a phone that gets answered.",
-    "category": "HVAC contractor",
-    "phone": "(555) 555-5555",
-    "email": "hello@north-alabama-heating-and-cooling.com",
-    "address": "123 Main St",
-    "city": "Athens, AL",
-    "domain": "lithacker6458.github.io/demos/north-alabama-heating-and-cooling-classic"
+    "name": "Absolute Comfort HVAC LLC",
+    "tagline": "Heating and cooling done right, from Cottonwood to the whole Verde Valley.",
+    "category": "HVAC",
+    "phone": "(928) 606-1030",
+    "email": "absolutecomforthvacllc@gmail.com",
+    "address": "1460 E State Route 89A, Suite C",
+    "city": "Cottonwood, AZ",
+    "domain": "lithacker6458.github.io/demos/absolute-comfort-hvac-llc-classic"
   },
   "brand": {
-    "primaryColor": "#0f3e5e",
-    "accentColor": "#d9480f",
+    "primaryColor": "#0E3A5D",
+    "accentColor": "#E25A1B",
     "displayFont": "Fraunces",
     "bodyFont": "Archivo"
   },
@@ -21,11 +21,7 @@
     "provider": "stripe-payment-links",
     "depositUrl": "#",
     "bookUrl": "#",
-    "buyUrls": [
-      "#",
-      "#",
-      "#"
-    ],
+    "buyUrls": ["#", "#", "#"],
     "notes": "Client-owned Stripe Payment Links ONLY (https://buy.stripe.com/...). Card data flows to Stripe, never to this site or the agency. Empty tokens are stripped in client builds and forced to '#' in demo builds. See docs/STRIPE_SETUP.md."
   },
   "meta": {
