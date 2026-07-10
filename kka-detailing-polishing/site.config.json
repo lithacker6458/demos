@@ -2,17 +2,17 @@
   "template": "agency-local-business",
   "templateVersion": "1.0.0",
   "business": {
-    "name": "TreeRx",
-    "tagline": "The cure for problem trees: removal, trimming, and stump grinding done right.",
-    "category": "Tree Service",
+    "name": "KKA Detailing & Polishing",
+    "tagline": "Quality work, fair prices, and a crew that shows up.",
+    "category": "auto detailing",
     "phone": "(555) 555-5555",
-    "email": "hello@treerx.com",
+    "email": "hello@kka-detailing-polishing.com",
     "address": "123 Main St",
-    "city": "Zanesville, OH",
-    "domain": "lithacker6458.github.io/demos/treerx-classic"
+    "city": "Bettendorf, IA",
+    "domain": "lithacker6458.github.io/demos/kka-detailing-polishing"
   },
   "brand": {
-    "primaryColor": "#1f5e3d",
+    "primaryColor": "#1a5fb4",
     "accentColor": "#e8590c",
     "displayFont": "Fraunces",
     "bodyFont": "Archivo"
