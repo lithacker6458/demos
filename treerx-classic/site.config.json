@@ -2,19 +2,19 @@
   "template": "agency-local-business",
   "templateVersion": "1.0.0",
   "business": {
-    "name": "Cross Fence & Supply Co. LLC",
-    "tagline": "Fence installation & fence supply, built for the high desert.",
-    "category": "fencing",
+    "name": "TreeRx",
+    "tagline": "Quality work, fair prices, and a crew that shows up.",
+    "category": "Tree Service",
     "phone": "(555) 555-5555",
-    "email": "hello@cross-fence-supply-co-llc-classic.com",
+    "email": "hello@treerx.com",
     "address": "123 Main St",
-    "city": "Elko, NV",
-    "domain": "lithacker6458.github.io/demos/cross-fence-supply-co-llc-classic"
+    "city": "Zanesville, OH",
+    "domain": "lithacker6458.github.io/demos/treerx-classic"
   },
   "brand": {
-    "primaryColor": "#26313d",
-    "accentColor": "#f4b400",
-    "displayFont": "Oswald",
+    "primaryColor": "#1a5fb4",
+    "accentColor": "#e8590c",
+    "displayFont": "Fraunces",
     "bodyFont": "Archivo"
   },
   "payments": {

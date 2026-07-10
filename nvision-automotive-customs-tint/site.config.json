@@ -2,14 +2,14 @@
   "template": "agency-local-business",
   "templateVersion": "1.0.0",
   "business": {
-    "name": "TreeRx",
+    "name": "Nvision Automotive Customs & Tint",
     "tagline": "Quality work, fair prices, and a crew that shows up.",
-    "category": "Tree Service",
+    "category": "window tint / auto customs",
     "phone": "(555) 555-5555",
-    "email": "hello@treerx.com",
+    "email": "hello@nvision-automotive-customs-tint.com",
     "address": "123 Main St",
-    "city": "Zanesville, OH",
-    "domain": "lithacker6458.github.io/demos/treerx"
+    "city": "Texas City, TX",
+    "domain": "lithacker6458.github.io/demos/nvision-automotive-customs-tint"
   },
   "brand": {
     "primaryColor": "#1a5fb4",
