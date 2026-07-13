@@ -26,7 +26,7 @@
     --line-strong:rgba(236,229,216,.20);
     --shadow:0 30px 70px -28px rgba(0,0,0,.85);
     --shadow-soft:0 18px 44px -22px rgba(0,0,0,.7);
-    --font-display:"Playfair Display","Georgia","Times New Roman",serif;
+    --font-display:Georgia,"Times New Roman","Times",serif;
     --font-body:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
     --ease:cubic-bezier(.22,.61,.36,1);
   }
@@ -53,7 +53,7 @@
   .display{
     font-family:var(--font-display);
     font-weight:700;
-    letter-spacing:-.01em;
+    letter-spacing:-.02em;
     line-height:1.04;
   }
   .eyebrow{
@@ -958,23 +958,23 @@
         <!-- STEP 2: BARBER -->
         <div class="step-panel" data-panel="1">
           <div class="step-title">Pick your barber</div>
-          <div class="step-hint">Book a name and a face, not just a time slot. Any barber works too.</div>
+          <div class="step-hint">Choose the specialist for your service, or let us grab you the first open chair.</div>
           <div class="barber-grid" id="barberGrid">
-            <button class="barber-opt" data-barber="Marcos">
+            <button class="barber-opt" data-barber="Master Barber">
               <div class="av"><svg width="100%" height="100%" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" fill="#26262c"/><circle cx="32" cy="26" r="12" fill="#c19a54" opacity="0.85"/><path d="M12 60c0-12 9-18 20-18s20 6 20 18" fill="#c19a54" opacity="0.85"/><path d="M22 24c2-6 18-6 20 0" stroke="#16161a" stroke-width="2" fill="none"/></svg></div>
-              <b>Marcos</b><span>Owner</span><span class="tag">Fades and Designs</span>
+              <b>Master Barber</b><span>Lead chair</span><span class="tag">Fades and Designs</span>
             </button>
-            <button class="barber-opt" data-barber="Julian">
+            <button class="barber-opt" data-barber="Beard and Shave Specialist">
               <div class="av"><svg width="100%" height="100%" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" fill="#26262c"/><circle cx="32" cy="26" r="12" fill="#d8b877" opacity="0.85"/><path d="M12 60c0-12 9-18 20-18s20 6 20 18" fill="#d8b877" opacity="0.85"/><path d="M22 22c3 8 17 8 20 0" stroke="#16161a" stroke-width="2" fill="none"/></svg></div>
-              <b>Julian</b><span>Master Barber</span><span class="tag">Beard and Shave</span>
+              <b>Beard and Shave</b><span>Specialist</span><span class="tag">Beard and Shave</span>
             </button>
-            <button class="barber-opt" data-barber="Andre">
+            <button class="barber-opt" data-barber="Scissor and Kids Barber">
               <div class="av"><svg width="100%" height="100%" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" fill="#26262c"/><circle cx="32" cy="26" r="12" fill="#9c7a3a" opacity="0.9"/><path d="M12 60c0-12 9-18 20-18s20 6 20 18" fill="#9c7a3a" opacity="0.9"/><path d="M24 20l16 2" stroke="#16161a" stroke-width="2" fill="none"/></svg></div>
-              <b>Andre</b><span>Barber</span><span class="tag">Scissor and Kids</span>
+              <b>Scissor and Kids</b><span>Barber</span><span class="tag">Scissor and Kids</span>
             </button>
-            <button class="barber-opt" data-barber="Sofia">
+            <button class="barber-opt" data-barber="Color and Brow Specialist">
               <div class="av"><svg width="100%" height="100%" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" fill="#26262c"/><circle cx="32" cy="26" r="12" fill="#c19a54" opacity="0.8"/><path d="M12 60c0-12 9-18 20-18s20 6 20 18" fill="#c19a54" opacity="0.8"/><path d="M20 28c0-8 24-8 24 0" stroke="#16161a" stroke-width="2" fill="none"/></svg></div>
-              <b>Sofia</b><span>Barber and Brows</span><span class="tag">Brows and Facials</span>
+              <b>Color and Brows</b><span>Specialist</span><span class="tag">Brows and Facials</span>
             </button>
             <button class="barber-opt" data-barber="Any Barber">
               <div class="av"><svg width="100%" height="100%" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" fill="#26262c"/><path d="M32 14l6 6-6 6-6-6 6-6z" fill="#c19a54"/><path d="M18 46h28M24 40h16" stroke="#c19a54" stroke-width="2.4" stroke-linecap="round"/></svg></div>
@@ -1063,18 +1063,18 @@
       <span class="eyebrow">The Chairs</span>
       <h2>Meet your barbers</h2>
       <div class="rule"></div>
-      <p>You book a person, not a slot. Every one of our barbers is picked for skill, speed, and a steady hand.</p>
+      <p>You book a specialty, not just a slot. Every chair is staffed for skill, speed, and a steady hand. Sample chair profiles shown, your barber's name is confirmed at the shop.</p>
     </div>
     <div class="team-grid">
       <div class="barber reveal">
         <div class="photo">
           <div class="art"><svg width="100%" height="100%" viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="300" height="300" fill="url(#charGrad)"/><rect width="300" height="300" filter="url(#grain)" opacity="0.35"/><circle cx="150" cy="120" r="52" fill="#c19a54" opacity="0.85"/><path d="M60 300c0-56 40-84 90-84s90 28 90 84" fill="#c19a54" opacity="0.85"/><path d="M105 116c8-24 82-24 90 0" stroke="#16161a" stroke-width="4" fill="none"/><path d="M118 150c14 12 50 12 64 0" stroke="#16161a" stroke-width="4" fill="none"/></svg></div>
-          <span class="chip">Owner</span>
+          <span class="chip">Lead Chair</span>
         </div>
         <div class="info">
-          <b>Marcos</b><div class="role">Master Barber and Owner</div>
-          <p>Opened The Diamond to do cuts the right way. Known for razor-sharp fades and freehand line designs.</p>
-          <a class="book-me" href="#book">Book with Marcos <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
+          <b>Master Barber</b><div class="role">Fades and Line Designs</div>
+          <p>The lead chair for razor-sharp fades and freehand line designs. Clean lines, done right the first time.</p>
+          <a class="book-me" href="#book">Book this chair <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
         </div>
       </div>
       <div class="barber reveal d1">
@@ -1083,9 +1083,9 @@
           <span class="chip">Master Barber</span>
         </div>
         <div class="info">
-          <b>Julian</b><div class="role">Beard and Shave Specialist</div>
-          <p>The hot towel and straight razor guy. If you want your beard sculpted and your face relaxed, this is your chair.</p>
-          <a class="book-me" href="#book">Book with Julian <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
+          <b>Beard and Shave</b><div class="role">Hot Towel and Straight Razor</div>
+          <p>The hot towel and straight razor chair. If you want your beard sculpted and your face relaxed, this is the one.</p>
+          <a class="book-me" href="#book">Book this chair <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
         </div>
       </div>
       <div class="barber reveal d2">
@@ -1094,9 +1094,9 @@
           <span class="chip">Barber</span>
         </div>
         <div class="info">
-          <b>Andre</b><div class="role">Scissor Work and Kids</div>
-          <p>Patient, precise, and great with the little ones. Ask for him for scissor cuts and longer styles.</p>
-          <a class="book-me" href="#book">Book with Andre <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
+          <b>Scissor and Kids</b><div class="role">Scissor Work and Kids Cuts</div>
+          <p>Patient, precise, and great with the little ones. The chair to ask for on scissor cuts and longer styles.</p>
+          <a class="book-me" href="#book">Book this chair <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
         </div>
       </div>
     </div>
@@ -1188,8 +1188,8 @@
         <svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="9" r="2.6" stroke="currentColor" stroke-width="1.7"/></svg>
         <div>
           <b>Address</b>
-          <p>401 N Central Expy, Suite 500<br>Richardson, TX 75080</p>
-          <a class="link" href="https://maps.google.com/?q=The+Diamond+Barbershop+401+N+Central+Expy+Suite+500+Richardson+TX+75080" target="_blank" rel="noopener">Get directions</a>
+          <p>401 N Central Expy<br>Richardson, TX 75080</p>
+          <a class="link" href="https://maps.google.com/?q=The+Diamond+Barbershop+401+N+Central+Expy+Richardson+TX+75080" target="_blank" rel="noopener">Get directions</a>
         </div>
       </div>
       <div class="loc-block">
@@ -1235,7 +1235,7 @@
       </div>
       <svg class="pin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z" fill="#c19a54"/><circle cx="12" cy="9" r="2.6" fill="#16161a"/></svg>
       <div class="map-cta">
-        <a class="btn btn-primary" href="https://maps.google.com/?q=The+Diamond+Barbershop+401+N+Central+Expy+Suite+500+Richardson+TX+75080" target="_blank" rel="noopener">Open in Maps</a>
+        <a class="btn btn-primary" href="https://maps.google.com/?q=The+Diamond+Barbershop+401+N+Central+Expy+Richardson+TX+75080" target="_blank" rel="noopener">Open in Maps</a>
       </div>
     </div>
   </div>
@@ -1271,9 +1271,6 @@
         </a>
         <p>The best barbers in Richardson and Dallas. Sharp cuts, hot towel care, and a chair that always feels like home.</p>
         <div class="foot-social">
-          <a href="https://instagram.com/thediamond_barbershop504" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.7"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
-          </a>
           <a href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener" aria-label="Book on Booksy">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.6"/></svg>
           </a>
@@ -1292,8 +1289,8 @@
       </div>
       <div class="foot-col">
         <h4>Visit</h4>
-        <p>401 N Central Expy<br>Suite 500<br>Richardson, TX 75080</p>
-        <a href="https://maps.google.com/?q=The+Diamond+Barbershop+401+N+Central+Expy+Suite+500+Richardson+TX+75080" target="_blank" rel="noopener">Directions</a>
+        <p>401 N Central Expy<br>Richardson, TX 75080</p>
+        <a href="https://maps.google.com/?q=The+Diamond+Barbershop+401+N+Central+Expy+Richardson+TX+75080" target="_blank" rel="noopener">Directions</a>
       </div>
       <div class="foot-col">
         <h4>Hours</h4>
@@ -1407,10 +1404,9 @@
       var taken = ((seed >> i) & 1) === 1 && (i % 3 !== 0); // ~1/3 taken, deterministic
       var el = document.createElement('button');
       el.className = 'slot' + (taken ? ' taken' : '') + (state.time===t ? ' sel' : '');
-      var ampm = (parseInt(t) < 8 || t.indexOf(':')>-1 && parseInt(t) >= 9 && parseInt(t) <= 11) ? 'AM' : 'PM';
       // hours 9,10,11 = AM, 1-6 = PM
       var hr = parseInt(t);
-      ampm = (hr >= 9 && hr <= 11) ? 'AM' : 'PM';
+      var ampm = (hr >= 9 && hr <= 11) ? 'AM' : 'PM';
       el.textContent = t + ' ' + ampm;
       if(!taken){
         el.addEventListener('click', function(){
