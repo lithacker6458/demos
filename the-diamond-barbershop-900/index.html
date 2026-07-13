@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Diamond Barbershop | Richardson, TX</title>
+<meta name="description" content="The Diamond Barbershop in Richardson, TX. 4.8 stars across 295 reviews. Fades, beard designs with hot towel, facials, kids cuts, and straight razor shaves. Walk-ins welcome. Bilingual, English and Spanish.">
+<style>
+  :root{
+    --ink:#0E0E10;
+    --ink-2:#16161A;
+    --ink-3:#1E1E23;
+    --char:#26262C;
+    --line:rgba(184,147,90,0.22);
+    --line-soft:rgba(237,232,223,0.08);
+    --paper:#EDE8DF;
+    --paper-dim:#B7B1A6;
+    --paper-faint:#7C776E;
+    --brass:#C9A227;
+    --brass-2:#B8935A;
+    --brass-deep:#8C6A2E;
+    --red:#B4302E;
+    --grad-brass:linear-gradient(135deg,#E7C874 0%,#C9A227 42%,#8C6A2E 100%);
+    --grad-ink:linear-gradient(180deg,#16161A 0%,#0E0E10 100%);
+    --font-display:"Playfair Display","Hoefler Text","Georgia",Cambria,"Times New Roman",serif;
+    --font-body:"Helvetica Neue","Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+    --shadow:0 30px 80px -30px rgba(0,0,0,0.75);
+    --maxw:1200px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:var(--font-body);
+    font-size:clamp(15px,0.6vw + 13px,17px);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    letter-spacing:0.01em;
+  }
+  ::selection{background:var(--brass);color:var(--ink)}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.05;letter-spacing:-0.01em}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,64px)}
+  .eyebrow{
+    font-family:var(--font-body);
+    text-transform:uppercase;
+    letter-spacing:0.34em;
+    font-size:clamp(10px,0.9vw,12px);
+    font-weight:700;
+    color:var(--brass-2);
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+  }
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--grad-brass)}
+  .eyebrow.center::after{content:"";width:34px;height:1px;background:var(--grad-brass)}
+  .eyebrow.center{justify-content:center}
+
+  /* grain + vignette atmosphere */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:0.045;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode:overlay;
+  }
+
+  /* ============ NAV ============ */
+  header.nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    transition:background .4s ease, border-color .4s ease, backdrop-filter .4s ease, padding .4s ease;
+    border-bottom:1px solid transparent;
+    padding:clamp(14px,2vw,22px) 0;
+  }
+  header.nav.scrolled{
+    background:rgba(14,14,16,0.82);
+    backdrop-filter:blur(14px) saturate(1.2);
+    border-bottom:1px solid var(--line-soft);
+    padding:12px 0;
+  }
+  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,64px);display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .brand{display:flex;align-items:center;gap:13px;font-family:var(--font-display);font-weight:700}
+  .brand .mark{width:38px;height:38px;flex:0 0 38px}
+  .brand .name{font-size:clamp(17px,1.4vw,21px);letter-spacing:0.02em;line-height:1}
+  .brand .name small{display:block;font-family:var(--font-body);font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--brass-2);margin-top:3px;font-weight:700}
+  .nav-links{display:flex;align-items:center;gap:clamp(18px,2vw,34px)}
+  .nav-links a.link{
+    font-size:12px;text-transform:uppercase;letter-spacing:0.18em;font-weight:600;color:var(--paper-dim);
+    position:relative;padding:4px 0;transition:color .25s;
+  }
+  .nav-links a.link::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;background:var(--grad-brass);transition:width .3s ease}
+  .nav-links a.link:hover{color:var(--paper)}
+  .nav-links a.link:hover::after{width:100%}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:none;
+    font-family:var(--font-body);font-weight:700;text-transform:uppercase;letter-spacing:0.14em;font-size:12.5px;
+    padding:13px 22px;border-radius:2px;transition:transform .25s ease, box-shadow .25s ease, background .3s ease;
+    position:relative;overflow:hidden;white-space:nowrap;
+  }
+  .btn-brass{background:var(--grad-brass);color:#1a1406;box-shadow:0 8px 24px -8px rgba(201,162,39,0.5)}
+  .btn-brass:hover{transform:translateY(-2px);box-shadow:0 14px 30px -8px rgba(201,162,39,0.7)}
+  .btn-ghost{background:transparent;color:var(--paper);border:1px solid var(--line)}
+  .btn-ghost:hover{background:rgba(201,162,39,0.1);border-color:var(--brass-2)}
+  .btn svg{width:15px;height:15px}
+  .nav-cta{display:flex;align-items:center;gap:12px}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px}
+  .hamburger svg{width:26px;height:26px;color:var(--paper)}
+
+  @media(max-width:900px){
+    .nav-links{
+      position:fixed;inset:0 0 0 auto;width:min(78vw,320px);background:var(--ink-2);
+      flex-direction:column;justify-content:center;align-items:flex-start;gap:26px;padding:0 40px;
+      transform:translateX(100%);transition:transform .4s cubic-bezier(.7,0,.2,1);
+      border-left:1px solid var(--line);z-index:120;box-shadow:var(--shadow);
+    }
+    .nav-links.open{transform:translateX(0)}
+    .nav-links a.link{font-size:16px;letter-spacing:0.1em}
+    .nav-links .btn{width:100%;justify-content:center}
+    .hamburger{display:block;z-index:130}
+    .nav-cta .btn.desk{display:none}
+  }
+
+  /* ============ HERO ============ */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:var(--grad-ink)}
+  .hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+  .hero-bg .stripes{
+    position:absolute;inset:-20% -10%;opacity:0.5;
+    background:repeating-linear-gradient(115deg,transparent 0 46px,rgba(201,162,39,0.05) 46px 47px);
+    animation:drift 40s linear infinite;
+  }
+  .hero-bg .glow{position:absolute;width:60vw;height:60vw;border-radius:50%;filter:blur(90px);opacity:0.4}
+  .hero-bg .glow.g1{top:-10%;right:-10%;background:radial-gradient(circle,rgba(201,162,39,0.28),transparent 70%)}
+  .hero-bg .glow.g2{bottom:-20%;left:-15%;background:radial-gradient(circle,rgba(180,48,46,0.16),transparent 70%)}
+  @keyframes drift{to{transform:translateX(47px)}}
+
+  .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr 0.85fr;gap:clamp(30px,4vw,60px);align-items:center;width:100%}
+  @media(max-width:940px){.hero-grid{grid-template-columns:1fr;gap:36px}}
+
+  .hero-copy{padding-top:80px}
+  .hero .rating-pill{
+    display:inline-flex;align-items:center;gap:10px;background:rgba(237,232,223,0.05);
+    border:1px solid var(--line);border-radius:100px;padding:7px 15px 7px 11px;font-size:12.5px;
+    color:var(--paper-dim);margin-bottom:26px;letter-spacing:0.02em;
+  }
+  .hero .rating-pill .stars{display:inline-flex;gap:2px}
+  .hero .rating-pill .stars svg{width:14px;height:14px;color:var(--brass)}
+  .hero .rating-pill b{color:var(--paper);font-weight:700}
+  .hero h1{
+    font-size:clamp(42px,7.4vw,88px);line-height:0.98;letter-spacing:-0.02em;margin-bottom:22px;
+  }
+  .hero h1 .thin{font-weight:400;font-style:italic;color:var(--paper-dim)}
+  .hero h1 .gold{
+    background:var(--grad-brass);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero p.lede{font-size:clamp(16px,1.5vw,19px);color:var(--paper-dim);max-width:46ch;margin-bottom:34px}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .hero-actions .tel{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:15px;color:var(--paper);letter-spacing:0.02em}
+  .hero-actions .tel svg{width:17px;height:17px;color:var(--brass)}
+  .hero-meta{margin-top:38px;display:flex;flex-wrap:wrap;gap:26px 40px}
+  .hero-meta .item{display:flex;flex-direction:column;gap:2px}
+  .hero-meta .item .k{font-size:10.5px;text-transform:uppercase;letter-spacing:0.2em;color:var(--brass-2);font-weight:700}
+  .hero-meta .item .v{font-size:14px;color:var(--paper);font-weight:600}
+
+  /* hero visual: barber emblem card */
+  .hero-visual{position:relative;display:flex;justify-content:center;align-items:center;padding-top:60px}
+  .emblem-card{
+    position:relative;width:min(100%,380px);aspect-ratio:4/5;border-radius:6px;overflow:hidden;
+    background:linear-gradient(160deg,#1c1c22,#101013);border:1px solid var(--line);box-shadow:var(--shadow);
+  }
+  .emblem-card .frame{position:absolute;inset:14px;border:1px solid var(--line);border-radius:3px;pointer-events:none}
+  .emblem-card .pole-wrap{position:absolute;left:26px;top:0;bottom:0;width:16px;display:flex;align-items:center}
+  .pole{width:16px;height:78%;border-radius:8px;border:1px solid rgba(0,0,0,0.5);overflow:hidden;position:relative;box-shadow:inset 0 0 6px rgba(0,0,0,0.6)}
+  .pole .spin{position:absolute;inset:-40%;background:repeating-linear-gradient(60deg,#d9d5cc 0 10px,#B4302E 10px 20px,#d9d5cc 20px 30px,#2455a4 30px 40px);animation:poleSpin 3.2s linear infinite}
+  @keyframes poleSpin{to{transform:translateY(40px)}}
+  .emblem-card .crest{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 30px 40px 56px}
+  .emblem-card .crest .big{font-family:var(--font-display);font-size:clamp(30px,4vw,44px);line-height:0.95;margin:14px 0 6px}
+  .emblem-card .crest .est{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--brass-2);font-weight:700}
+  .emblem-card .crest .sub{font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--paper-faint);margin-top:10px}
+  .emblem-card .crest .diamond-ic{width:64px;height:64px;color:var(--brass)}
+  .emblem-card .barcode{position:absolute;bottom:16px;left:0;right:0;text-align:center;font-size:9px;letter-spacing:0.4em;color:var(--paper-faint);text-transform:uppercase}
+  .float-chip{
+    position:absolute;background:var(--ink-2);border:1px solid var(--line);border-radius:4px;padding:11px 15px;
+    display:flex;align-items:center;gap:10px;box-shadow:var(--shadow);font-size:12.5px;font-weight:600;
+  }
+  .float-chip svg{width:20px;height:20px;color:var(--brass);flex:0 0 20px}
+  .float-chip.c1{top:34px;right:-6px;animation:floaty 5s ease-in-out infinite}
+  .float-chip.c2{bottom:44px;left:-14px;animation:floaty 6s ease-in-out infinite .8s}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+
+  .scroll-cue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:7px;color:var(--paper-faint)}
+  .scroll-cue span{font-size:9.5px;letter-spacing:0.28em;text-transform:uppercase}
+  .scroll-cue .m{width:22px;height:34px;border:1px solid var(--line);border-radius:12px;display:flex;justify-content:center;padding-top:6px}
+  .scroll-cue .m i{width:3px;height:7px;border-radius:2px;background:var(--brass);animation:cue 1.6s ease-in-out infinite}
+  @keyframes cue{0%,100%{opacity:0;transform:translateY(0)}40%{opacity:1}80%{opacity:0;transform:translateY(9px)}}
+
+  /* ============ MARQUEE ============ */
+  .marquee{background:var(--ink-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);overflow:hidden;padding:16px 0}
+  .marquee-track{display:flex;gap:48px;white-space:nowrap;animation:scrollx 30s linear infinite;width:max-content}
+  .marquee:hover .marquee-track{animation-play-state:paused}
+  .marquee-track .m-item{display:inline-flex;align-items:center;gap:14px;font-family:var(--font-display);font-style:italic;font-size:clamp(16px,1.8vw,22px);color:var(--paper-dim)}
+  .marquee-track .m-item svg{width:16px;height:16px;color:var(--brass)}
+  @keyframes scrollx{to{transform:translateX(-50%)}}
+
+  /* ============ SECTION FRAME ============ */
+  section{position:relative}
+  .sec{padding:clamp(70px,9vw,120px) 0}
+  .sec-head{max-width:640px;margin-bottom:clamp(38px,5vw,60px)}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .sec-head h2{font-size:clamp(30px,4.6vw,54px);margin:16px 0 16px}
+  .sec-head p{color:var(--paper-dim);font-size:clamp(15px,1.3vw,17px)}
+
+  /* ============ BENEFIT STRIP ============ */
+  .benefits{background:var(--ink-2);border-top:1px solid var(--line-soft)}
+  .benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  @media(max-width:860px){.benefit-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:480px){.benefit-grid{grid-template-columns:1fr}}
+  .benefit{padding:clamp(30px,4vw,46px) clamp(20px,3vw,36px);border-right:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);transition:background .3s}
+  .benefit:hover{background:rgba(201,162,39,0.04)}
+  .benefit .ic{width:44px;height:44px;color:var(--brass);margin-bottom:18px}
+  .benefit h3{font-family:var(--font-body);font-size:16px;font-weight:700;letter-spacing:0.01em;margin-bottom:8px;text-transform:none}
+  .benefit p{font-size:13.5px;color:var(--paper-faint);line-height:1.55}
+
+  /* ============ MENU ============ */
+  .menu-cats{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:44px}
+  .menu-cats button{
+    background:transparent;border:1px solid var(--line-soft);color:var(--paper-dim);cursor:pointer;
+    font-family:var(--font-body);font-size:12px;text-transform:uppercase;letter-spacing:0.15em;font-weight:700;
+    padding:10px 18px;border-radius:2px;transition:all .25s;
+  }
+  .menu-cats button:hover{border-color:var(--brass-2);color:var(--paper)}
+  .menu-cats button.active{background:var(--grad-brass);color:#1a1406;border-color:transparent}
+
+  .menu-block{margin-bottom:clamp(40px,5vw,64px)}
+  .menu-block:last-child{margin-bottom:0}
+  .menu-block-head{display:flex;align-items:center;gap:16px;margin-bottom:24px}
+  .menu-block-head .ic{width:30px;height:30px;color:var(--brass);flex:0 0 30px}
+  .menu-block-head h3{font-size:clamp(21px,2.6vw,30px);text-transform:none;letter-spacing:0}
+  .menu-block-head .es{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--paper-faint);font-family:var(--font-body);font-weight:600;margin-top:3px}
+  .menu-rows{display:grid;gap:2px}
+  .m-row{
+    display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:16px;
+    padding:15px 4px;border-bottom:1px solid var(--line-soft);position:relative;
+  }
+  .m-row .lead{display:flex;flex-direction:column;gap:4px;min-width:0}
+  .m-row .lead .nm{font-family:var(--font-display);font-size:clamp(16px,1.7vw,20px);font-weight:700;color:var(--paper);line-height:1.15}
+  .m-row .lead .nm .es-inline{display:block;font-family:var(--font-body);font-size:11.5px;font-style:italic;color:var(--brass-2);font-weight:500;letter-spacing:0.02em;margin-top:2px}
+  .m-row .lead .desc{font-size:13px;color:var(--paper-faint);line-height:1.5;max-width:52ch}
+  .m-row .price{font-family:var(--font-display);font-size:clamp(16px,1.7vw,20px);font-weight:700;color:var(--brass);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .m-row .price .from{display:block;font-family:var(--font-body);font-size:9.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--paper-faint);font-weight:700;text-align:right;margin-bottom:1px}
+  .menu-note{margin-top:26px;font-size:12.5px;color:var(--paper-faint);display:flex;align-items:flex-start;gap:10px;line-height:1.55}
+  .menu-note svg{width:16px;height:16px;color:var(--brass-2);flex:0 0 16px;margin-top:2px}
+
+  /* ============ ABOUT / STORY ============ */
+  .about{background:var(--grad-ink);border-top:1px solid var(--line-soft)}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,72px);align-items:center}
+  @media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:44px}}
+  .about-copy .lg{font-family:var(--font-display);font-size:clamp(20px,2.4vw,28px);line-height:1.4;color:var(--paper);margin:20px 0 20px;font-style:italic;font-weight:400}
+  .about-copy p{color:var(--paper-dim);margin-bottom:16px}
+  .about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+  .about-stats .st{border:1px solid var(--line-soft);border-radius:4px;padding:20px 16px;text-align:center;background:rgba(237,232,223,0.02)}
+  .about-stats .st .n{font-family:var(--font-display);font-size:clamp(26px,3.6vw,40px);background:var(--grad-brass);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+  .about-stats .st .l{font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--paper-faint);margin-top:7px;font-weight:600}
+  .about-visual{position:relative;aspect-ratio:1/1;border-radius:6px;overflow:hidden;border:1px solid var(--line);background:linear-gradient(150deg,#1a1a20,#0f0f12);box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center}
+  .about-visual .art{width:82%;height:82%;color:var(--brass);opacity:0.92}
+
+  /* ============ GALLERY ============ */
+  .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  @media(max-width:900px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:480px){.gallery-grid{grid-template-columns:1fr}}
+  .g-tile{
+    position:relative;aspect-ratio:3/4;border-radius:5px;overflow:hidden;border:1px solid var(--line-soft);
+    background:linear-gradient(160deg,#1b1b21,#101013);cursor:default;
+  }
+  .g-tile.wide{grid-column:span 2;aspect-ratio:auto}
+  @media(max-width:480px){.g-tile.wide{grid-column:span 1}}
+  /* full-bleed SVG scene fills the whole tile, not a small centered icon */
+  .g-tile .g-scene{position:absolute;inset:0;width:100%;height:100%;display:block;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+  .g-tile:hover .g-scene{transform:scale(1.05)}
+  .g-tile .g-vig{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(14,14,16,0) 30%,rgba(10,10,12,0.55) 78%,rgba(8,8,10,0.9));pointer-events:none}
+  .g-tile .g-label{position:absolute;left:14px;right:14px;bottom:13px;z-index:2;font-size:11px;text-transform:uppercase;letter-spacing:0.14em;font-weight:700;color:var(--paper);display:flex;align-items:center;gap:8px}
+  .g-tile .g-label::before{content:"";width:16px;height:1px;background:var(--grad-brass);flex:0 0 16px;transition:width .35s}
+  .g-tile:hover .g-label::before{width:26px}
+  .g-tile .g-label small{display:block;font-family:var(--font-body);font-size:9.5px;letter-spacing:0.18em;color:var(--brass-2);font-weight:700;margin-top:2px}
+
+  /* our craft strip */
+  .craft-strip{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:14px;
+    background:var(--line-soft);border:1px solid var(--line-soft);border-radius:6px;overflow:hidden;
+  }
+  @media(max-width:640px){.craft-strip{grid-template-columns:repeat(2,1fr)}}
+  .craft-strip .cs{display:flex;align-items:center;gap:13px;padding:20px 22px;background:var(--ink-2);transition:background .3s}
+  .craft-strip .cs:hover{background:rgba(201,162,39,0.05)}
+  .craft-strip .cs svg{width:28px;height:28px;color:var(--brass);flex:0 0 28px}
+  .craft-strip .cs .t{font-family:var(--font-display);font-weight:700;font-size:16px;line-height:1.1;color:var(--paper)}
+  .craft-strip .cs .s{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--paper-faint);font-weight:600;margin-top:2px}
+
+  /* ============ REVIEWS ============ */
+  .reviews{background:var(--ink-2);border-top:1px solid var(--line-soft)}
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:860px){.rev-grid{grid-template-columns:1fr}}
+  .rev-card{
+    border:1px solid var(--line-soft);border-radius:6px;padding:30px 28px;background:linear-gradient(170deg,rgba(237,232,223,0.03),transparent);
+    display:flex;flex-direction:column;gap:16px;position:relative;overflow:hidden;
+  }
+  .rev-card .quote-mark{font-family:var(--font-display);font-size:80px;line-height:0.5;color:var(--brass);opacity:0.16;position:absolute;top:22px;right:20px}
+  .rev-card .stars{display:flex;gap:3px}
+  .rev-card .stars svg{width:16px;height:16px;color:var(--brass)}
+  .rev-card blockquote{font-family:var(--font-display);font-size:clamp(16px,1.6vw,19px);line-height:1.5;color:var(--paper);font-style:italic}
+  .rev-card .who{display:flex;align-items:center;gap:12px;margin-top:auto}
+  .rev-card .who .av{width:38px;height:38px;border-radius:50%;background:var(--grad-brass);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;color:#1a1406;font-size:16px;flex:0 0 38px}
+  .rev-card .who .nm{font-weight:700;font-size:14px}
+  .rev-card .who .src{font-size:11px;color:var(--paper-faint);letter-spacing:0.06em}
+  .rev-summary{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 26px;margin-top:40px;padding-top:34px;border-top:1px solid var(--line-soft)}
+  .rev-summary .big{font-family:var(--font-display);font-size:clamp(38px,5vw,58px);background:var(--grad-brass);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+  .rev-summary .stk{display:flex;flex-direction:column;gap:5px}
+  .rev-summary .stk .stars{display:flex;gap:3px}
+  .rev-summary .stk .stars svg{width:17px;height:17px;color:var(--brass)}
+  .rev-summary .stk .cnt{font-size:12.5px;color:var(--paper-dim);letter-spacing:0.04em}
+
+  /* ============ LOCATION ============ */
+  .location{background:var(--grad-ink);border-top:1px solid var(--line-soft)}
+  .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,4vw,56px);align-items:stretch}
+  @media(max-width:900px){.loc-grid{grid-template-columns:1fr}}
+  .loc-info{display:flex;flex-direction:column;gap:26px}
+  .loc-row{display:flex;gap:16px;align-items:flex-start}
+  .loc-row .ic{width:40px;height:40px;border-radius:4px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex:0 0 40px;color:var(--brass);background:rgba(201,162,39,0.05)}
+  .loc-row .ic svg{width:20px;height:20px}
+  .loc-row .k{font-size:11px;text-transform:uppercase;letter-spacing:0.18em;color:var(--brass-2);font-weight:700;margin-bottom:5px}
+  .loc-row .v{font-size:15px;color:var(--paper);line-height:1.5}
+  .loc-row .v a:hover{color:var(--brass)}
+  .hours-list{display:grid;gap:3px;margin-top:6px}
+  .hours-list .h{display:flex;justify-content:space-between;gap:20px;padding:7px 0;border-bottom:1px solid var(--line-soft);font-size:13.5px}
+  .hours-list .h.today{color:var(--paper)}
+  .hours-list .h .d{color:var(--paper-dim)}
+  .hours-list .h.today .d{color:var(--brass);font-weight:700}
+  .hours-list .h .t{font-variant-numeric:tabular-nums;color:var(--paper-dim)}
+  .hours-list .h.today .t{color:var(--paper);font-weight:600}
+  .open-badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:#7bd88f;letter-spacing:0.04em;margin-bottom:8px}
+  .open-badge[hidden]{display:none}
+  .open-badge .dot{width:8px;height:8px;border-radius:50%;background:#7bd88f;box-shadow:0 0 0 0 rgba(123,216,143,0.5);animation:pulse 2s infinite}
+  .open-badge.closed{color:var(--paper-dim)}
+  .open-badge.closed .dot{background:var(--red);animation:none;box-shadow:none}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(123,216,143,0.5)}70%{box-shadow:0 0 0 8px rgba(123,216,143,0)}100%{box-shadow:0 0 0 0 rgba(123,216,143,0)}}
+
+  .loc-map{position:relative;border-radius:6px;overflow:hidden;border:1px solid var(--line);min-height:340px;background:var(--ink-3);display:flex;flex-direction:column;justify-content:flex-end}
+  .loc-map .map-art{position:absolute;inset:0;opacity:0.5}
+  .loc-map .map-art svg{width:100%;height:100%}
+  .loc-map .map-pin{position:absolute;top:44%;left:50%;transform:translate(-50%,-100%);color:var(--brass);filter:drop-shadow(0 6px 10px rgba(0,0,0,0.6))}
+  .loc-map .map-pin svg{width:44px;height:44px}
+  .loc-map .map-cta{position:relative;z-index:2;margin:auto 18px 18px;background:rgba(14,14,16,0.9);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:5px;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:14px}
+  .loc-map .map-cta .addr{font-size:13px;color:var(--paper);line-height:1.4}
+  .loc-map .map-cta .addr b{display:block;font-family:var(--font-display);font-size:15px;margin-bottom:2px}
+
+  /* ============ BIG CTA ============ */
+  .cta-band{position:relative;overflow:hidden;background:var(--ink-2);text-align:center;padding:clamp(64px,9vw,110px) 0}
+  .cta-band .stripes{position:absolute;inset:0;opacity:0.5;background:repeating-linear-gradient(115deg,transparent 0 46px,rgba(201,162,39,0.05) 46px 47px)}
+  .cta-band .glow{position:absolute;width:70vw;height:40vw;border-radius:50%;filter:blur(100px);opacity:0.35;top:-30%;left:50%;transform:translateX(-50%);background:radial-gradient(circle,rgba(201,162,39,0.3),transparent 70%)}
+  .cta-band .inner{position:relative;z-index:2;max-width:720px;margin:0 auto;padding:0 24px}
+  .cta-band h2{font-size:clamp(32px,5.4vw,64px);margin:18px 0 18px;line-height:1}
+  .cta-band h2 .gold{background:var(--grad-brass);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .cta-band p{color:var(--paper-dim);font-size:clamp(15px,1.4vw,18px);margin-bottom:34px}
+  .cta-band .actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;align-items:center}
+  .cta-band .btn{padding:16px 30px;font-size:13.5px}
+
+  /* ============ FOOTER ============ */
+  footer{background:var(--ink);border-top:1px solid var(--line-soft);padding:clamp(48px,6vw,72px) 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;margin-bottom:44px}
+  @media(max-width:820px){.foot-grid{grid-template-columns:1fr 1fr;gap:32px}}
+  @media(max-width:480px){.foot-grid{grid-template-columns:1fr}}
+  .foot-brand .brand{margin-bottom:16px}
+  .foot-brand p{font-size:13.5px;color:var(--paper-faint);max-width:34ch;line-height:1.6}
+  .foot-social{display:flex;gap:10px;margin-top:18px}
+  .foot-social a{width:38px;height:38px;border:1px solid var(--line-soft);border-radius:4px;display:flex;align-items:center;justify-content:center;color:var(--paper-dim);transition:all .25s}
+  .foot-social a:hover{border-color:var(--brass-2);color:var(--brass);transform:translateY(-2px)}
+  .foot-social a svg{width:18px;height:18px}
+  .foot-col h4{font-family:var(--font-body);font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:var(--brass-2);margin-bottom:16px;font-weight:700}
+  .foot-col a,.foot-col .fi{display:block;font-size:13.5px;color:var(--paper-dim);margin-bottom:11px;transition:color .2s;line-height:1.4}
+  .foot-col a:hover{color:var(--brass)}
+  .foot-bottom{border-top:1px solid var(--line-soft);padding-top:24px;display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center}
+  .foot-bottom p{font-size:12px;color:var(--paper-faint);line-height:1.5}
+  .disclaimer{font-size:11.5px;color:var(--paper-faint);max-width:60ch;margin-top:14px;line-height:1.55;font-style:italic}
+
+  /* mobile sticky call bar */
+  .mobile-bar{
+    position:fixed;left:0;right:0;bottom:0;z-index:90;display:none;gap:1px;background:var(--line-soft);
+    box-shadow:0 -10px 30px -12px rgba(0,0,0,0.8);
+  }
+  .mobile-bar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:15px 10px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em}
+  .mobile-bar a svg{width:16px;height:16px}
+  .mobile-bar .mb-call{background:var(--ink-2);color:var(--paper)}
+  .mobile-bar .mb-book{background:var(--grad-brass);color:#1a1406}
+  @media(max-width:720px){.mobile-bar{display:flex}body{padding-bottom:52px}}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+    .reveal{opacity:1;transform:none}
+    .hero-bg .stripes,.pole .spin,.marquee-track{animation:none !important}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand" aria-label="The Diamond Barbershop home">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <rect x="1" y="1" width="38" height="38" rx="4" stroke="url(#navg)" stroke-width="1.4"/>
+        <path d="M20 8 L30 20 L20 32 L10 20 Z" stroke="url(#navg)" stroke-width="1.6" fill="none"/>
+        <path d="M20 13 L26 20 L20 27 L14 20 Z" fill="url(#navg)" opacity="0.85"/>
+        <defs><linearGradient id="navg" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#E7C874"/><stop offset="1" stop-color="#8C6A2E"/></linearGradient></defs>
+      </svg>
+      <span class="name">Diamond<small>Barbershop · RICHARDSON</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a class="link" href="#services">Services</a>
+      <a class="link" href="#story">Story</a>
+      <a class="link" href="#gallery">Gallery</a>
+      <a class="link" href="#reviews">Reviews</a>
+      <a class="link" href="#visit">Visit</a>
+      <a class="btn btn-brass" href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener">Book a Chair</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-brass desk" href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg>
+        Book a Chair
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="stripes"></div>
+    <div class="glow g1"></div>
+    <div class="glow g2"></div>
+  </div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="rating-pill reveal">
+        <span class="stars">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+        </span>
+        <span><b>4.8</b> from 295 Google reviews</span>
+      </div>
+      <h1 class="reveal d1">The sharpest cut <span class="thin">in</span> <span class="gold">Richardson.</span></h1>
+      <p class="lede reveal d2">Old-school craft, modern edge. Fades, beard designs with hot towel, straight razor shaves, and cuts the whole family trusts. Bilingual chairs, walk-ins welcome, coffee is on us.</p>
+      <div class="hero-actions reveal d3">
+        <a class="btn btn-brass" href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg>
+          Book a Chair
+        </a>
+        <a class="tel" href="tel:+14695797374">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.8.7a2 2 0 011.7 2z"/></svg>
+          (469) 579-7374
+        </a>
+      </div>
+      <div class="hero-meta reveal d4">
+        <div class="item"><span class="k">Walk-Ins</span><span class="v">Always Welcome</span></div>
+        <div class="item"><span class="k">Bilingual</span><span class="v">English &amp; Español</span></div>
+        <div class="item"><span class="k">Good For</span><span class="v">Kids &amp; Dads</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal d2">
+      <div class="emblem-card">
+        <div class="frame"></div>
+        <div class="pole-wrap"><div class="pole"><div class="spin"></div></div></div>
+        <div class="crest">
+          <svg class="diamond-ic" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <path d="M32 6 L54 28 L32 58 L10 28 Z" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M32 14 L46 28 L32 46 L18 28 Z" stroke="currentColor" stroke-width="1.2" opacity="0.7"/>
+            <path d="M32 22 L39 28 L32 36 L25 28 Z" fill="currentColor" opacity="0.9"/>
+            <path d="M10 28 H54 M22 15 L18 28 M42 15 L46 28" stroke="currentColor" stroke-width="0.8" opacity="0.45"/>
+          </svg>
+          <div class="est">Est. Richardson, TX</div>
+          <div class="big">The Diamond<br>Barbershop</div>
+          <div class="sub">Cuts · Beards · Shaves</div>
+        </div>
+        <div class="barcode">· Quality · Precision · Pride ·</div>
+      </div>
+      <div class="float-chip c1">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14.7 6.3a4 4 0 010 5.6l-8.4 8.4-3.5.7.7-3.5 8.4-8.4a4 4 0 015.6 0zM18 4l2 2"/></svg>
+        Fresh fades daily
+      </div>
+      <div class="float-chip c2">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+        Coffee on the house
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"><div class="m"><i></i></div><span>Scroll</span></div>
+</section>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4L8.1 15.9M14.7 6.3a4 4 0 010 5.6M6 20a2 2 0 100-4 2 2 0 000 4z"/></svg> Skin Fades</span>
+    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg> Hot Towel Shaves</span>
+    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20M8 12a4 4 0 018 0"/></svg> Beard Design</span>
+    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13M9 9l12-2"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg> Kids Cuts</span>
+    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg> Facials</span>
+    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4L8.1 15.9M14.7 6.3a4 4 0 010 5.6"/></svg> Straight Razor</span>
+    <!-- duplicate for seamless loop -->
+    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4L8.1 15.9M14.7 6.3a4 4 0 010 5.6M6 20a2 2 0 100-4 2 2 0 000 4z"/></svg> Skin Fades</span>
+    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg> Hot Towel Shaves</span>
+    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20M8 12a4 4 0 018 0"/></svg> Beard Design</span>
+    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13M9 9l12-2"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg> Kids Cuts</span>
+    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg> Facials</span>
+    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4L8.1 15.9M14.7 6.3a4 4 0 010 5.6"/></svg> Straight Razor</span>
+  </div>
+</div>
+
+<!-- ================= BENEFITS ================= -->
+<section class="benefits">
+  <div class="wrap">
+    <div class="benefit-grid">
+      <div class="benefit reveal">
+        <svg class="ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M31 8L14 25M23 11a6 6 0 010 8.5M11 34a4 4 0 100-8 4 4 0 000 8zM31 32L20 21"/><circle cx="11" cy="30" r="4"/></svg>
+        <h3>Master Barbers</h3>
+        <p>Precision fades, tapers, and shape-ups from barbers regulars call the best in Richardson and Dallas.</p>
+      </div>
+      <div class="benefit reveal d1">
+        <svg class="ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M30 13h2a6 6 0 010 12h-2M4 13h26v15a6 6 0 01-6 6H10a6 6 0 01-6-6V13zM11 4v4M17 4v4M23 4v4"/></svg>
+        <h3>Beverages On Us</h3>
+        <p>Coffee, water, or a cold soda while you relax in the chair. The visit should feel as good as the cut.</p>
+      </div>
+      <div class="benefit reveal d2">
+        <svg class="ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 5l4 8 9 1.3-6.5 6.3 1.5 9L20 25l-8 4.6 1.5-9L7 14.3 16 13z"/></svg>
+        <h3>Walk-Ins Welcome</h3>
+        <p>No appointment, no problem. Swing by, or lock a chair in seconds online whenever it suits you.</p>
+      </div>
+      <div class="benefit reveal d3">
+        <svg class="ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 4a10 10 0 100 20 10 10 0 000-20zM8 36a12 12 0 0124 0"/><path d="M14 14a6 6 0 0112 0"/></svg>
+        <h3>Great For Kids</h3>
+        <p>Patient chairs, easy smiles, and clean cuts for the little ones. A family shop through and through.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES / MENU ================= -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The Menu</span>
+      <h2>Every service, sharply priced.</h2>
+      <p>Every haircut includes an edge up and outline. Prices below are typical starting points, ask your barber for the exact quote when you book. Todos los cortes incluyen perfilado.</p>
+    </div>
+
+    <div class="menu-cats reveal d1" id="menuCats">
+      <button class="active" data-cat="all">All</button>
+      <button data-cat="cuts">Haircuts</button>
+      <button data-cat="beard">Beard &amp; Shave</button>
+      <button data-cat="facial">Facial &amp; Grooming</button>
+      <button data-cat="kids">Kids &amp; More</button>
+    </div>
+
+    <!-- HAIRCUTS -->
+    <div class="menu-block reveal" data-block="cuts">
+      <div class="menu-block-head">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 4L8.1 15.9M14.7 6.3a4 4 0 010 5.6M6 20a2 2 0 100-4 2 2 0 000 4zM6 8a2 2 0 100-4 2 2 0 000 4zM9.4 9.4L20 20"/></svg>
+        <div><h3>Haircuts</h3><div class="es">Cortes de cabello</div></div>
+      </div>
+      <div class="menu-rows">
+        <div class="m-row">
+          <div class="lead"><div class="nm">Regular Haircut<span class="es-inline">Corte Regular</span></div><div class="desc">A clean, classic cut finished with an edge up and outline. The everyday standard.</div></div>
+          <div class="price"><span class="from">From</span>$25</div>
+        </div>
+        <div class="m-row">
+          <div class="lead"><div class="nm">Skin &amp; Taper Fade</div><div class="desc">Seamless blend from skin to length, low, mid, or high. Includes edge up and outline.</div></div>
+          <div class="price"><span class="from">From</span>$30</div>
+        </div>
+        <div class="m-row">
+          <div class="lead"><div class="nm">Men's Haircut with Design</div><div class="desc">Freehand line work and custom design razored into the cut for a signature look.</div></div>
+          <div class="price"><span class="from">From</span>$35</div>
+        </div>
+        <div class="m-row">
+          <div class="lead"><div class="nm">Scissor Cut</div><div class="desc">Fully scissor-crafted for texture and movement on longer or looser styles.</div></div>
+          <div class="price"><span class="from">From</span>$30</div>
+        </div>
+        <div class="m-row">
+          <div class="lead"><div class="nm">Long Haircut</div><div class="desc">Shape, layer, and finish for longer hair. Blow dry and style included.</div></div>
+          <div class="price"><span class="from">From</span>$35</div>
+        </div>
+        <div class="m-row">
+          <div class="lead"><div class="nm">Curly Hair Cut</div><div class="desc">Cut and shaped for curl pattern and volume, so it grows out clean.</div></div>
+          <div class="price"><span class="from">From</span>$30</div>
+        </div>
+        <div class="m-row">
+          <div class="lead"><div class="nm">Buzz Cut</div><div class="desc">One-length clipper cut, quick and crisp, with a fresh outline.</div></div>
+          <div class="price"><span class="from">From</span>$20</div>
+        </div>
+        <div class="m-row">
+          <div class="lead"><div class="nm">Head Shave</div><div class="desc">Smooth razor head shave with hot towel finish for a clean, close result.</div></div>
+          <div class="price"><span class="from">From</span>$28</div>
+        </div>
+        <div class="m-row">
+          <div class="lead"><div class="nm">Hair Shape Up</div><div class="desc">Line up and outline between cuts to keep the edges sharp.</div></div>
+          <div class="price"><span class="from">From</span>$15</div>
+        </div>
+        <div class="m-row">
+          <div class="lead"><div class="nm">Hair Coloring</div><div class="desc">Custom color, gray blending, or a bold new tone. Consultation first.</div></div>
+          <div class="price"><span class="from">Ask</span>Quote</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BEARD & SHAVE -->
+    <div class="menu-block reveal" data-block="beard">
+      <div class="menu-block-head">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 6c0 6 3 12 7 12s7-6 7-12M5 6c2-1 4-1 7-1s5 0 7 1M8 5V3M16 5V3M9 12a3 3 0 006 0"/></svg>
+        <div><h3>Beard &amp; Shave</h3><div class="es">Barba y afeitado</div></div>
+      </div>
+      <div class="menu-rows">
+        <div class="m-row">
+          <div class="lead"><div class="nm">Beard Design, Hot Towel &amp; Massage<span class="es-inline">Diseño de barba con toalla caliente y masaje</span></div><div class="desc">Shaped and lined with a hot towel wrap and relaxing massage to finish.</div></div>
+          <div class="price"><span class="from">From</span>$20</div>
+        </div>
+        <div class="m-row">
+          <div class="lead"><div class="nm">Haircut &amp; Shave, Hot Towel &amp; Massage<span class="es-inline">Corte y barba con toalla caliente</span></div><div class="desc">The full package: fresh cut plus a straight razor beard shave, hot towel, and massage.</div></div>
+          <div class="price"><span class="from">From</span>$45</div>
+        </div>
+        <div class="m-row">
+          <div class="lead"><div class="nm">Straight Razor Shave</div><div class="desc">Traditional close shave with hot lather and a straight razor. Smooth every time.</div></div>
+          <div class="price"><span class="from">From</span>$25</div>
+        </div>
+        <div class="m-row">
+          <div class="lead"><div class="nm">Beard Trim</div><div class="desc">Clean up length and shape to keep the beard tidy between designs.</div></div>
+          <div class="price"><span class="from">From</span>$15</div>
+        </div>
+        <div class="m-row">
+          <div class="lead"><div class="nm">Beard Grooming &amp; Conditioning</div><div class="desc">Trim, shape, condition, and oil for a soft, healthy, well-kept beard.</div></div>
+          <div class="price"><span class="from">From</span>$22</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FACIAL & GROOMING -->
+    <div class="menu-block reveal" data-block="facial">
+      <div class="menu-block-head">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zM8 10h.01M16 10h.01M8.5 15a4.5 4.5 0 007 0"/></svg>
+        <div><h3>Facial &amp; Grooming</h3><div class="es">Facial y aseo personal</div></div>
+      </div>
+      <div class="menu-rows">
+        <div class="m-row">
+          <div class="lead"><div class="nm">Facial Service</div><div class="desc">Cleansing cream, exfoliating scrub with black mask, and a relaxing massage included.</div></div>
+          <div class="price"><span class="from">From</span>$30</div>
+        </div>
+        <div class="m-row">
+          <div class="lead"><div class="nm">Eyebrow Design &amp; Pigmentation</div><div class="desc">Shape, clean, and define the brows with optional pigmentation for a fuller line.</div></div>
+          <div class="price"><span class="from">From</span>$15</div>
+        </div>
+        <div class="m-row">
+          <div class="lead"><div class="nm">Eyebrow Tinting</div><div class="desc">Tint to darken and define the brows for a bolder, cleaner frame.</div></div>
+          <div class="price"><span class="from">From</span>$12</div>
+        </div>
+        <div class="m-row">
+          <div class="lead"><div class="nm">Waxing</div><div class="desc">Quick, clean facial waxing, ears, nose, brow line, and more.</div></div>
+          <div class="price"><span class="from">From</span>$10</div>
+        </div>
+        <div class="m-row">
+          <div class="lead"><div class="nm">Styling</div><div class="desc">Wash, product, and finish to send you out camera-ready.</div></div>
+          <div class="price"><span class="from">From</span>$12</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KIDS & MORE -->
+    <div class="menu-block reveal" data-block="kids">
+      <div class="menu-block-head">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3a4 4 0 100 8 4 4 0 000-8zM6 21a6 6 0 0112 0M9 14l-2 3M15 14l2 3"/></svg>
+        <div><h3>Kids &amp; Full Service</h3><div class="es">Niños y servicio completo</div></div>
+      </div>
+      <div class="menu-rows">
+        <div class="m-row">
+          <div class="lead"><div class="nm">Kids Haircut<span class="es-inline">Corte de cabello para niños</span></div><div class="desc">Patient, friendly cuts for the little ones, finished clean with an outline.</div></div>
+          <div class="price"><span class="from">From</span>$20</div>
+        </div>
+        <div class="m-row">
+          <div class="lead"><div class="nm">Full Service<span class="es-inline">Servicio completo</span></div><div class="desc">Haircut, beard, hot towel, facial, and the works. The complete Diamond treatment.</div></div>
+          <div class="price"><span class="from">From</span>$65</div>
+        </div>
+      </div>
+      <div class="menu-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <span>Prices are typical starting points shown for reference and confirmed in the chair. Final pricing may vary by hair length, style, and add-ons. Book online to see live availability.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STORY / ABOUT ================= -->
+<section class="sec about" id="story">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <span class="eyebrow">Our Story</span>
+        <p class="lg">"The best barbers of the city of Richardson and Dallas."</p>
+        <p>The Diamond Barbershop was built on a simple idea: a great haircut is more than a service, it is a ritual. From the moment you walk in you are handed a coffee, water, or soda, and from there the chair is yours.</p>
+        <p>Our barbers are bilingual and our doors are open to everyone, first-timers, regulars, dads bringing their kids for a first cut, and anyone who wants to leave looking and feeling their sharpest. Every cut ends with a crisp edge up and outline, because the details are what set a Diamond cut apart.</p>
+        <p>We earned 4.8 stars across nearly 300 reviews the honest way: professional skill, a clean and welcoming shop, and treating every client like a regular from day one.</p>
+        <div class="about-stats">
+          <div class="st"><div class="n">4.8</div><div class="l">Star Rating</div></div>
+          <div class="st"><div class="n">295+</div><div class="l">Reviews</div></div>
+          <div class="st"><div class="n">2</div><div class="l">Languages</div></div>
+        </div>
+      </div>
+      <div class="about-visual reveal d2">
+        <svg class="art" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+          <circle cx="100" cy="100" r="94" stroke="currentColor" stroke-width="1" opacity="0.35"/>
+          <circle cx="100" cy="100" r="80" stroke="currentColor" stroke-width="0.7" opacity="0.25"/>
+          <text x="100" y="34" text-anchor="middle" font-family="Georgia, serif" font-size="10" letter-spacing="3" fill="currentColor" opacity="0.7">THE DIAMOND BARBERSHOP</text>
+          <text x="100" y="176" text-anchor="middle" font-family="Georgia, serif" font-size="9" letter-spacing="4" fill="currentColor" opacity="0.6">RICHARDSON · TEXAS</text>
+          <path d="M100 58 L138 100 L100 156 L62 100 Z" stroke="currentColor" stroke-width="1.4"/>
+          <path d="M100 72 L126 100 L100 140 L74 100 Z" stroke="currentColor" stroke-width="1" opacity="0.7"/>
+          <path d="M100 86 L114 100 L100 122 L86 100 Z" fill="currentColor" opacity="0.85"/>
+          <path d="M62 100 H138" stroke="currentColor" stroke-width="0.7" opacity="0.5"/>
+          <path d="M74 79 L70 100 M126 79 L130 100" stroke="currentColor" stroke-width="0.6" opacity="0.4"/>
+          <!-- crossed razor + scissors emblem -->
+          <path d="M46 120 L70 132 M46 122 a3 3 0 106 0" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+          <path d="M154 120 L130 132 M154 122 a3 3 0 116 0" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section class="sec" id="gallery">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">The Work</span>
+      <h2>A look inside the shop.</h2>
+      <p>Fresh fades, sharp lines, hot towel shaves, and the easy hum of a full chair. This is the craft that keeps Richardson coming back.</p>
+    </div>
+    <div class="gallery-grid">
+
+      <!-- SCENE: fade study / portrait -->
+      <div class="g-tile reveal">
+        <svg class="g-scene" viewBox="0 0 120 160" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="sc1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#20202a"/><stop offset="1" stop-color="#101014"/></linearGradient>
+            <linearGradient id="fade1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a2f1c"/><stop offset="1" stop-color="#171720"/></linearGradient>
+          </defs>
+          <rect width="120" height="160" fill="url(#sc1)"/>
+          <g stroke="#B8935A" stroke-width="0.6" opacity="0.16"><path d="M0 44h120M0 80h120M0 116h120"/></g>
+          <path d="M40 150c0-30 4-52 20-52s20 22 20 52z" fill="url(#fade1)"/>
+          <ellipse cx="60" cy="70" rx="20" ry="23" fill="#2b2b34"/>
+          <path d="M40 66c0-18 8-30 20-30s20 12 20 30c-4-8-11-12-20-12s-16 4-20 12z" fill="#141420"/>
+          <g stroke="#C9A227" stroke-width="0.7" opacity="0.5"><path d="M42 62c5-3 31-3 36 0M43 70c5-2 29-2 34 0M45 78c4-1 26-1 30 0"/></g>
+          <path d="M78 72c4 2 4 8 1 11" stroke="#B8935A" stroke-width="1.2" fill="none" opacity="0.7"/>
+        </svg>
+        <span class="g-vig"></span>
+        <span class="g-label">Skin Fade<small>Blended to zero</small></span>
+      </div>
+
+      <!-- SCENE (wide): the shop floor / chairs + mirrors -->
+      <div class="g-tile wide reveal d1">
+        <svg class="g-scene" viewBox="0 0 240 160" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true">
+          <defs><linearGradient id="sc2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#23232e"/><stop offset="1" stop-color="#0e0e13"/></linearGradient></defs>
+          <rect width="240" height="160" fill="url(#sc2)"/>
+          <rect x="0" y="0" width="240" height="70" fill="#191922"/>
+          <g stroke="#B8935A" stroke-width="1" opacity="0.4">
+            <rect x="16" y="12" width="46" height="46" rx="3"/><rect x="97" y="12" width="46" height="46" rx="3"/><rect x="178" y="12" width="46" height="46" rx="3"/>
+          </g>
+          <g opacity="0.5"><circle cx="39" cy="35" r="10" fill="#2c2c36"/><circle cx="120" cy="35" r="10" fill="#2c2c36"/><circle cx="201" cy="35" r="10" fill="#2c2c36"/></g>
+          <path d="M0 92h240" stroke="#C9A227" stroke-width="1.4" opacity="0.5"/>
+          <g fill="#20202a" stroke="#3a3a44" stroke-width="1">
+            <path d="M22 150v-20a17 17 0 0134 0v20z"/><path d="M103 150v-20a17 17 0 0134 0v20z"/><path d="M184 150v-20a17 17 0 0134 0v20z"/>
+          </g>
+          <g stroke="#B8935A" stroke-width="1" opacity="0.6"><path d="M39 130v14M120 130v14M201 130v14"/></g>
+          <circle cx="120" cy="112" r="3" fill="#C9A227"/>
+        </svg>
+        <span class="g-vig"></span>
+        <span class="g-label">The Shop Floor<small>Three chairs, always full</small></span>
+      </div>
+
+      <!-- SCENE: straight razor + hot towel -->
+      <div class="g-tile reveal d2">
+        <svg class="g-scene" viewBox="0 0 120 160" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true">
+          <defs><linearGradient id="sc3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22222c"/><stop offset="1" stop-color="#0f0f14"/></linearGradient></defs>
+          <rect width="120" height="160" fill="url(#sc3)"/>
+          <g opacity="0.5" stroke="#B8935A" stroke-width="0.6"><path d="M0 108q30 -14 60 0t60 0" fill="none"/><path d="M0 124q30 -14 60 0t60 0" fill="none"/></g>
+          <path d="M18 118q42 -20 84 0" stroke="#EDE8DF" stroke-width="12" opacity="0.14" fill="none" stroke-linecap="round"/>
+          <path d="M30 66l44-30a5 5 0 016 8L40 78z" fill="#2f2f3a" stroke="#C9A227" stroke-width="1"/>
+          <path d="M32 70l40-28" stroke="#EDE8DF" stroke-width="1" opacity="0.5"/>
+          <rect x="30" y="70" width="18" height="7" rx="3" transform="rotate(-34 39 73)" fill="#8C6A2E"/>
+          <g opacity="0.7"><path d="M74 44c6 3 6 12 0 15" stroke="#B8935A" stroke-width="1.4" fill="none"/></g>
+        </svg>
+        <span class="g-vig"></span>
+        <span class="g-label">Hot Towel Shave<small>Straight razor finish</small></span>
+      </div>
+
+      <!-- SCENE: beard design portrait -->
+      <div class="g-tile reveal d1">
+        <svg class="g-scene" viewBox="0 0 120 160" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true">
+          <defs><linearGradient id="sc4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#21212b"/><stop offset="1" stop-color="#0f0f14"/></linearGradient></defs>
+          <rect width="120" height="160" fill="url(#sc4)"/>
+          <g stroke="#B8935A" stroke-width="0.6" opacity="0.14"><path d="M22 0v160M98 0v160"/></g>
+          <path d="M38 150c0-24 6-42 22-42s22 18 22 42z" fill="#242430"/>
+          <ellipse cx="60" cy="60" rx="21" ry="24" fill="#2b2b34"/>
+          <path d="M39 68c2 22 11 34 21 34s19-12 21-34c-6 8-13 11-21 11s-15-3-21-11z" fill="#15151f"/>
+          <g stroke="#C9A227" stroke-width="0.7" opacity="0.55"><path d="M40 70c6 3 34 3 40 0M44 86c5 2 27 2 32 0"/></g>
+          <path d="M39 60c0-16 9-26 21-26s21 10 21 26c-5-7-12-10-21-10s-16 3-21 10z" fill="#12121c"/>
+          <path d="M80 78c3 2 3 7 0 9" stroke="#B8935A" stroke-width="1.1" opacity="0.7" fill="none"/>
+        </svg>
+        <span class="g-vig"></span>
+        <span class="g-label">Beard Design<small>Lined and shaped</small></span>
+      </div>
+
+      <!-- SCENE: tools flat-lay -->
+      <div class="g-tile reveal d2">
+        <svg class="g-scene" viewBox="0 0 120 160" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true">
+          <defs><linearGradient id="sc5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#24242f"/><stop offset="1" stop-color="#101015"/></linearGradient></defs>
+          <rect width="120" height="160" fill="url(#sc5)"/>
+          <g stroke="#B8935A" stroke-width="0.5" opacity="0.12"><path d="M0 40h120M0 80h120M0 120h120"/></g>
+          <!-- clippers -->
+          <rect x="20" y="28" width="26" height="16" rx="4" fill="#2c2c37" stroke="#C9A227" stroke-width="0.9"/>
+          <path d="M20 34l-9-3v6z" fill="#8C6A2E"/>
+          <g stroke="#EDE8DF" stroke-width="0.6" opacity="0.4"><path d="M25 32v8M30 32v8M35 32v8M40 32v8"/></g>
+          <!-- scissors -->
+          <g stroke="#B8935A" stroke-width="1.3" fill="none" opacity="0.85"><path d="M70 70l30 26M70 96l30-26"/><circle cx="68" cy="70" r="5"/><circle cx="68" cy="96" r="5"/></g>
+          <!-- comb -->
+          <rect x="22" y="112" width="60" height="9" rx="3" fill="#2c2c37" stroke="#8C6A2E" stroke-width="0.8"/>
+          <g stroke="#8C6A2E" stroke-width="0.8"><path d="M26 121v9M31 121v9M36 121v9M41 121v9M46 121v9M51 121v9M56 121v9M61 121v9M66 121v9M71 121v9M76 121v9"/></g>
+        </svg>
+        <span class="g-vig"></span>
+        <span class="g-label">Tools Of The Trade<small>Clippers, shears, comb</small></span>
+      </div>
+
+      <!-- SCENE (wide): storefront + barber pole -->
+      <div class="g-tile wide reveal d3">
+        <svg class="g-scene" viewBox="0 0 240 160" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="sc6" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1e1e28"/><stop offset="1" stop-color="#0d0d12"/></linearGradient>
+            <linearGradient id="win6" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a2f1c"/><stop offset="1" stop-color="#1a1a22"/></linearGradient>
+          </defs>
+          <rect width="240" height="160" fill="url(#sc6)"/>
+          <rect x="20" y="30" width="200" height="100" rx="4" fill="#17171f" stroke="#B8935A" stroke-width="1" opacity="0.9"/>
+          <rect x="34" y="44" width="76" height="72" rx="2" fill="url(#win6)" opacity="0.85"/>
+          <rect x="130" y="44" width="76" height="72" rx="2" fill="url(#win6)" opacity="0.85"/>
+          <text x="120" y="26" text-anchor="middle" font-family="Georgia,serif" font-size="13" letter-spacing="3" fill="#C9A227" opacity="0.85">THE DIAMOND</text>
+          <path d="M72 116V60M168 116V60" stroke="#0d0d12" stroke-width="2" opacity="0.6"/>
+          <!-- barber pole -->
+          <rect x="204" y="52" width="9" height="60" rx="4" fill="#141018" stroke="#8C6A2E" stroke-width="0.8"/>
+          <path d="M204 60l9-8M204 72l9-8M204 84l9-8M204 96l9-8M204 108l9-8" stroke="#B4302E" stroke-width="2"/>
+          <path d="M204 66l9-8M204 78l9-8M204 90l9-8M204 102l9-8" stroke="#2455a4" stroke-width="1.4" opacity="0.8"/>
+          <circle cx="120" cy="80" r="12" fill="none" stroke="#C9A227" stroke-width="0.8" opacity="0.5"/>
+          <path d="M120 71l3 6 6 .6-4.5 4.3 1 6-5.5-3-5.5 3 1-6-4.5-4.3 6-.6z" fill="#C9A227" opacity="0.7"/>
+        </svg>
+        <span class="g-vig"></span>
+        <span class="g-label">On North Central<small>Est. Richardson, TX</small></span>
+      </div>
+
+    </div>
+
+    <!-- OUR CRAFT strip -->
+    <div class="craft-strip reveal d1">
+      <div class="cs">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 4L8.1 15.9M14.7 6.3a4 4 0 010 5.6M6 20a2 2 0 100-4 2 2 0 000 4zM9.4 9.4L20 20"/></svg>
+        <div><div class="t">Every fade</div><div class="s">Edge up included</div></div>
+      </div>
+      <div class="cs">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+        <div><div class="t">Hot towel</div><div class="s">On every shave</div></div>
+      </div>
+      <div class="cs">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 2a10 10 0 100 20M8 12a4 4 0 018 0M8 9h.01M16 9h.01"/></svg>
+        <div><div class="t">Beard design</div><div class="s">Lined and detailed</div></div>
+      </div>
+      <div class="cs">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 2l2.9 6 6.6.6-5 4.4 1.5 6.5L12 16.6 5.9 20l1.6-6.5-5-4.4 6.6-.6z"/></svg>
+        <div><div class="t">4.8 stars</div><div class="s">295 reviews</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="sec reviews" id="reviews">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Word On The Street</span>
+      <h2>295 reviews. 4.8 stars.</h2>
+      <p>Real quotes from real Google reviews. The kind of shop people tell their friends about.</p>
+    </div>
+    <div class="rev-grid">
+      <div class="rev-card reveal">
+        <div class="quote-mark">&ldquo;</div>
+        <div class="stars">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+        </div>
+        <blockquote>Extremely professional, great environment, great service and perfect skills.</blockquote>
+        <div class="who"><div class="av">G</div><div><div class="nm">Google Reviewer</div><div class="src">Verified Google review</div></div></div>
+      </div>
+      <div class="rev-card reveal d1">
+        <div class="quote-mark">&ldquo;</div>
+        <div class="stars">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+        </div>
+        <blockquote>Staff is also very friendly offering coffee, water, or soda while you there.</blockquote>
+        <div class="who"><div class="av">D</div><div><div class="nm">Google Reviewer</div><div class="src">Verified Google review</div></div></div>
+      </div>
+      <div class="rev-card reveal d2">
+        <div class="quote-mark">&ldquo;</div>
+        <div class="stars">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+        </div>
+        <blockquote>Great customer service, clean place, quality hair cuts.</blockquote>
+        <div class="who"><div class="av">M</div><div><div class="nm">Google Reviewer</div><div class="src">Verified Google review</div></div></div>
+      </div>
+    </div>
+    <div class="rev-summary reveal">
+      <div class="big">4.8</div>
+      <div class="stk">
+        <div class="stars">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+        </div>
+        <div class="cnt">Rated across 295 Google reviews</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LOCATION ================= -->
+<section class="sec location" id="visit">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Come See Us</span>
+      <h2>Find your chair in Richardson.</h2>
+      <p>Right on North Central Expressway. Easy to reach, easy to park, and always worth the stop.</p>
+    </div>
+    <div class="loc-grid">
+      <div class="loc-info reveal">
+        <div class="loc-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="k">Address</div><div class="v"><a href="https://www.google.com/maps/search/?api=1&query=The+Diamond+Barbershop+401+N+Central+Expy+Suite+500+Richardson+TX+75080" target="_blank" rel="noopener">401 N Central Expy, Suite 500<br>Richardson, TX 75080</a></div></div>
+        </div>
+        <div class="loc-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.8.7a2 2 0 011.7 2z"/></svg></div>
+          <div><div class="k">Phone</div><div class="v"><a href="tel:+14695797374">(469) 579-7374</a></div></div>
+        </div>
+        <div class="loc-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div style="flex:1">
+            <div class="k">Hours</div>
+            <div class="open-badge" id="openBadge" hidden><span class="dot"></span><span id="openBadgeText"></span></div>
+            <div class="hours-list" id="hoursList">
+              <div class="h" data-day="1"><span class="d">Monday</span><span class="t">9:00 AM to 8:00 PM</span></div>
+              <div class="h" data-day="2"><span class="d">Tuesday</span><span class="t">9:00 AM to 8:00 PM</span></div>
+              <div class="h" data-day="3"><span class="d">Wednesday</span><span class="t">9:00 AM to 8:00 PM</span></div>
+              <div class="h" data-day="4"><span class="d">Thursday</span><span class="t">9:00 AM to 8:00 PM</span></div>
+              <div class="h" data-day="5"><span class="d">Friday</span><span class="t">9:00 AM to 8:00 PM</span></div>
+              <div class="h" data-day="6"><span class="d">Saturday</span><span class="t">9:00 AM to 8:00 PM</span></div>
+              <div class="h" data-day="0"><span class="d">Sunday</span><span class="t">10:00 AM to 6:00 PM</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="loc-map reveal d2">
+        <div class="map-art" aria-hidden="true">
+          <svg viewBox="0 0 400 400" fill="none">
+            <rect width="400" height="400" fill="#15151a"/>
+            <path d="M0 120 H400 M0 260 H400 M120 0 V400 M280 0 V400" stroke="#26262c" stroke-width="10"/>
+            <path d="M0 190 H400" stroke="#B8935A" stroke-width="3" opacity="0.5"/>
+            <path d="M200 0 V400" stroke="#B8935A" stroke-width="3" opacity="0.5"/>
+            <path d="M60 60 H100 V100 H60 Z M300 300 H340 V340 H300 Z M300 60 H340 V100 H300 Z M60 300 H100 V340 H60 Z" stroke="#2f2f36" stroke-width="2"/>
+            <circle cx="200" cy="176" r="6" fill="#C9A227"/>
+          </svg>
+        </div>
+        <div class="map-pin" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>
+        </div>
+        <div class="map-cta">
+          <div class="addr"><b>The Diamond Barbershop</b>401 N Central Expy, Suite 500, Richardson</div>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=The+Diamond+Barbershop+401+N+Central+Expy+Suite+500+Richardson+TX+75080" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 20l-6-3V4l6 3 6-3 6 3v13l-6-3-6 3z M9 7v13M15 4v13"/></svg>
+            Directions
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BIG CTA ================= -->
+<section class="cta-band">
+  <div class="stripes" aria-hidden="true"></div>
+  <div class="glow" aria-hidden="true"></div>
+  <div class="inner reveal">
+    <span class="eyebrow center">Ready When You Are</span>
+    <h2>Your best cut is <span class="gold">one tap away.</span></h2>
+    <p>Book a chair online in seconds, or call the shop and walk right in. Coffee is already brewing.</p>
+    <div class="actions">
+      <a class="btn btn-brass" href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg>
+        Book a Chair
+      </a>
+      <a class="btn btn-ghost" href="tel:+14695797374">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.8.7a2 2 0 011.7 2z"/></svg>
+        Call (469) 579-7374
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="brand">
+          <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <rect x="1" y="1" width="38" height="38" rx="4" stroke="url(#fg)" stroke-width="1.4"/>
+            <path d="M20 8 L30 20 L20 32 L10 20 Z" stroke="url(#fg)" stroke-width="1.6"/>
+            <path d="M20 13 L26 20 L20 27 L14 20 Z" fill="url(#fg)" opacity="0.85"/>
+            <defs><linearGradient id="fg" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#E7C874"/><stop offset="1" stop-color="#8C6A2E"/></linearGradient></defs>
+          </svg>
+          <span class="name">Diamond<small>Barbershop · RICHARDSON</small></span>
+        </a>
+        <p>Precision cuts, hot towel shaves, and a welcome as warm as the coffee. The sharpest chair in Richardson, TX.</p>
+        <div class="foot-social">
+          <a href="https://www.instagram.com/thediamond_barbershop504" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener" aria-label="Book online">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg>
+          </a>
+          <a href="tel:+14695797374" aria-label="Call the shop">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.8.7a2 2 0 011.7 2z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="#services">Services</a>
+        <a href="#story">Our Story</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#visit">Visit Us</a>
+      </div>
+      <div class="foot-col">
+        <h4>Popular</h4>
+        <a href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener">Skin Fade</a>
+        <a href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener">Beard Design</a>
+        <a href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener">Hot Towel Shave</a>
+        <a href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener">Kids Haircut</a>
+        <a href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener">Full Service</a>
+      </div>
+      <div class="foot-col">
+        <h4>Visit</h4>
+        <span class="fi">401 N Central Expy, Suite 500<br>Richardson, TX 75080</span>
+        <a href="tel:+14695797374">(469) 579-7374</a>
+        <span class="fi">Mon to Sat · 9AM to 8PM</span>
+        <span class="fi">Sunday · 10AM to 6PM</span>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>&copy; 2026 The Diamond Barbershop, Richardson, TX. All rights reserved.</p>
+      <p class="disclaimer">Concept preview built by DNA Agency, not affiliated with The Diamond Barbershop. Prices and hours shown are illustrative placeholders for demonstration only.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= MOBILE STICKY BAR ================= -->
+<div class="mobile-bar" aria-hidden="false">
+  <a class="mb-call" href="tel:+14695797374">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.8.7a2 2 0 011.7 2z"/></svg>
+    Call
+  </a>
+  <a class="mb-book" href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg>
+    Book a Chair
+  </a>
+</div>
+
+<script>
+  // sticky nav
+  var nav=document.getElementById('nav');
+  var onScroll=function(){ if(window.scrollY>24){nav.classList.add('scrolled')}else{nav.classList.remove('scrolled')} };
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  // mobile menu
+  var burger=document.getElementById('hamburger'), links=document.getElementById('navLinks');
+  burger.addEventListener('click',function(){
+    var open=links.classList.toggle('open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){links.classList.remove('open');burger.setAttribute('aria-expanded','false');});});
+
+  // reveal on scroll
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);} });
+  },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+  // dynamic hours: compute today + open/closed in the shop's timezone (America/Chicago)
+  (function(){
+    var badge=document.getElementById('openBadge');
+    var badgeText=document.getElementById('openBadgeText');
+    var list=document.getElementById('hoursList');
+    if(!badge||!badgeText||!list){return;}
+    // open minutes from midnight, keyed by JS getDay() (0=Sun..6=Sat)
+    var HOURS={0:[600,1080],1:[540,1200],2:[540,1200],3:[540,1200],4:[540,1200],5:[540,1200],6:[540,1200]};
+    var now, dow, mins;
+    try{
+      // read wall-clock in the shop's timezone so the demo is correct for any visitor
+      var parts=new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
+      var map={};parts.forEach(function(p){map[p.type]=p.value;});
+      var dmap={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+      dow=dmap[map.weekday];
+      var hh=parseInt(map.hour,10);if(hh===24){hh=0;}
+      mins=hh*60+parseInt(map.minute,10);
+    }catch(err){
+      now=new Date();dow=now.getDay();mins=now.getHours()*60+now.getMinutes();
+    }
+    if(dow===undefined||isNaN(mins)){return;}
+    // highlight today's row
+    var todayRow=list.querySelector('.h[data-day="'+dow+'"]');
+    if(todayRow){todayRow.classList.add('today');}
+    var span=HOURS[dow];
+    function fmt(m){
+      var h=Math.floor(m/60), mm=m%60;
+      var ap=h>=12?'PM':'AM';var h12=h%12;if(h12===0){h12=12;}
+      return h12+':'+(mm<10?'0'+mm:mm)+' '+ap;
+    }
+    if(span&&mins>=span[0]&&mins<span[1]){
+      badge.classList.remove('closed');
+      badgeText.textContent='Open now, until '+fmt(span[1]);
+    }else{
+      badge.classList.add('closed');
+      // find the next open day (today if still before opening, else the following days)
+      var msg='Closed now';
+      if(span&&mins<span[0]){
+        msg='Closed now, opens today at '+fmt(span[0]);
+      }else{
+        for(var i=1;i<=7;i++){
+          var d=(dow+i)%7;var s=HOURS[d];
+          if(s){
+            var names=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+            var label=(i===1)?'tomorrow':names[d];
+            msg='Closed now, opens '+label+' at '+fmt(s[0]);
+            break;
+          }
+        }
+      }
+      badgeText.textContent=msg;
+    }
+    badge.hidden=false;
+  })();
+
+  // menu category filter
+  var cats=document.getElementById('menuCats');
+  var blocks=document.querySelectorAll('.menu-block');
+  cats.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b)return;
+    cats.querySelectorAll('button').forEach(function(x){x.classList.remove('active')});
+    b.classList.add('active');
+    var cat=b.getAttribute('data-cat');
+    blocks.forEach(function(bl){
+      var show=(cat==='all'||bl.getAttribute('data-block')===cat);
+      bl.style.display=show?'':'none';
+    });
+  });
+</script>
+</body>
+</html>
