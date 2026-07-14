@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="lang-en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,6 +48,34 @@
   svg{display:block}
 
   .wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
+
+  /* ============ LANGUAGE TOGGLE / VISIBILITY ============ */
+  /* two-span swap: show one language, hide the other */
+  html.lang-en .lang-es{display:none}
+  html.lang-es .lang-en{display:none}
+  /* inline variants keep flow */
+  span.lang-en,span.lang-es{display:inline}
+  html.lang-en span.lang-es{display:none}
+  html.lang-es span.lang-en{display:none}
+
+  .lang-switch{
+    display:inline-flex;align-items:center;
+    border:1px solid var(--line-strong);border-radius:30px;overflow:hidden;
+    background:rgba(236,229,216,.02);
+  }
+  .lang-switch button{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:7px 13px;font-weight:800;font-size:.72rem;letter-spacing:.10em;
+    color:var(--cream-dim);transition:color .25s,background .25s;line-height:1;
+  }
+  .lang-switch button .globe{width:13px;height:13px;color:var(--brass-lite)}
+  .lang-switch button.on{background:var(--brass);color:#1a1408}
+  .lang-switch button:not(.on):hover{color:var(--brass-lite)}
+  .lang-switch .sep{width:1px;align-self:stretch;background:var(--line-strong)}
+  /* mobile menu variant */
+  .mm-lang{margin:22px 0 4px}
+  .mm-lang .lang-switch{width:100%;justify-content:center}
+  .mm-lang .lang-switch button{flex:1;justify-content:center;padding:12px 0;font-size:.8rem}
 
   /* Display type helpers */
   .display{
@@ -595,7 +623,8 @@
 <!-- ===== TOP BANNER ===== -->
 <div class="top-banner">
   <svg class="pole" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="9" y="2" width="6" height="20" rx="3" fill="#c19a54"/><path d="M9 5l6-3M9 10l6-3M9 15l6-3M9 20l6-3" stroke="#7a2e2e" stroke-width="1.4"/></svg>
-  <span>Walk-ins welcome, no appointment needed. <strong>Coffee, water and soda on us.</strong> Hablamos Espanol.</span>
+  <span class="lang-en">Walk-ins welcome, no appointment needed. <strong>Coffee, water and soda on us.</strong> Hablamos Espanol.</span>
+  <span class="lang-es">Se aceptan clientes sin cita, no necesitas reservacion. <strong>El cafe, el agua y el refresco corren por nuestra cuenta.</strong> We speak English.</span>
 </div>
 
 <!-- ===== NAV ===== -->
@@ -611,19 +640,27 @@
       <span class="name"><b>The Diamond</b><span>Barbershop</span></span>
     </a>
     <nav class="nav-links" aria-label="Primary">
-      <a href="#services">Services</a>
-      <a href="#book">Book</a>
-      <a href="#team">Barbers</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#visit">Visit</a>
+      <a href="#services" data-en="Services" data-es="Servicios">Services</a>
+      <a href="#book" data-en="Book" data-es="Reservar">Book</a>
+      <a href="#team" data-en="Barbers" data-es="Barberos">Barbers</a>
+      <a href="#reviews" data-en="Reviews" data-es="Reseñas">Reviews</a>
+      <a href="#visit" data-en="Visit" data-es="Visitanos">Visit</a>
     </nav>
     <div class="nav-cta">
+      <div class="lang-switch" id="langSwitch" role="group" aria-label="Language / Idioma">
+        <button type="button" class="lang-btn on" data-lang="en" aria-label="English">
+          <svg class="globe" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.6"/><path d="M2.5 12h19M12 2.5c3 3 3 16 0 19M12 2.5c-3 3-3 16 0 19M4 6c4.5 3 11.5 3 16 0M4 18c4.5-3 11.5-3 16 0" stroke="currentColor" stroke-width="1.4"/></svg>
+          EN
+        </button>
+        <span class="sep"></span>
+        <button type="button" class="lang-btn" data-lang="es" aria-label="Español">ES</button>
+      </div>
       <a class="nav-call" href="tel:+14695797374">
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
         (469) 579-7374
       </a>
-      <a class="btn btn-primary nav-book" href="#book">Book a Chair</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+      <a class="btn btn-primary nav-book" href="#book" data-en="Book a Chair" data-es="Reservar Silla">Book a Chair</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu / Abrir menu">
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
       </button>
     </div>
@@ -637,17 +674,27 @@
     <button class="mm-close" id="mmClose" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
   </div>
   <nav>
-    <a href="#services" class="mm-link">Services</a>
-    <a href="#book" class="mm-link">Book</a>
-    <a href="#team" class="mm-link">Barbers</a>
-    <a href="#reviews" class="mm-link">Reviews</a>
-    <a href="#visit" class="mm-link">Visit</a>
+    <a href="#services" class="mm-link" data-en="Services" data-es="Servicios">Services</a>
+    <a href="#book" class="mm-link" data-en="Book" data-es="Reservar">Book</a>
+    <a href="#team" class="mm-link" data-en="Barbers" data-es="Barberos">Barbers</a>
+    <a href="#reviews" class="mm-link" data-en="Reviews" data-es="Reseñas">Reviews</a>
+    <a href="#visit" class="mm-link" data-en="Visit" data-es="Visitanos">Visit</a>
   </nav>
+  <div class="mm-lang">
+    <div class="lang-switch" role="group" aria-label="Language / Idioma">
+      <button type="button" class="lang-btn on" data-lang="en" aria-label="English">
+        <svg class="globe" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.6"/><path d="M2.5 12h19M12 2.5c3 3 3 16 0 19M12 2.5c-3 3-3 16 0 19M4 6c4.5 3 11.5 3 16 0M4 18c4.5-3 11.5-3 16 0" stroke="currentColor" stroke-width="1.4"/></svg>
+        English
+      </button>
+      <span class="sep"></span>
+      <button type="button" class="lang-btn" data-lang="es" aria-label="Español">Español</button>
+    </div>
+  </div>
   <div class="mm-foot">
-    <a class="btn btn-primary" href="#book" style="justify-content:center">Book a Chair</a>
+    <a class="btn btn-primary" href="#book" style="justify-content:center" data-en="Book a Chair" data-es="Reservar Silla">Book a Chair</a>
     <a class="btn btn-ghost" href="tel:+14695797374" style="justify-content:center">
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Call (469) 579-7374
+      <span data-en="Call (469) 579-7374" data-es="Llamar (469) 579-7374">Call (469) 579-7374</span>
     </a>
   </div>
 </div>
@@ -686,29 +733,35 @@
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9 12 2z"/></svg>
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9 12 2z"/></svg>
       </span>
-      <span>4.8 stars, 295 Google reviews, Richardson TX</span>
+      <span data-en="4.8 stars, 295 Google reviews, Richardson TX" data-es="4.8 estrellas, 295 reseñas en Google, Richardson TX">4.8 stars, 295 Google reviews, Richardson TX</span>
     </div>
     <h1 class="display">
-      <span class="line">Sharp cuts.</span>
-      <span class="line"><em>Old-school</em> care.</span>
+      <span class="lang-en">
+        <span class="line">Sharp cuts.</span>
+        <span class="line"><em>Old-school</em> care.</span>
+      </span>
+      <span class="lang-es">
+        <span class="line">Cortes precisos.</span>
+        <span class="line">Trato de <em>toda la vida</em>.</span>
+      </span>
     </h1>
-    <p class="hero-sub">The best barbers in Richardson and Dallas. Precision fades, beard designs with a hot towel and massage, and straight razor shaves, done right the first time.</p>
+    <p class="hero-sub" data-en="The best barbers in Richardson and Dallas. Precision fades, beard designs with a hot towel and massage, and straight razor shaves, done right the first time." data-es="Los mejores barberos de Richardson y Dallas. Fades de precision, diseño de barba con toalla caliente y masaje, y afeitadas con navaja, bien hechas desde la primera vez.">The best barbers in Richardson and Dallas. Precision fades, beard designs with a hot towel and massage, and straight razor shaves, done right the first time.</p>
     <div class="hero-cta">
       <a class="btn btn-primary" href="#book">
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-        Book a Chair
+        <span data-en="Book a Chair" data-es="Reservar Silla">Book a Chair</span>
       </a>
       <a class="btn btn-ghost" href="tel:+14695797374">
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Call the Shop
+        <span data-en="Call the Shop" data-es="Llamar a la Barberia">Call the Shop</span>
       </a>
     </div>
     <div class="hero-meta">
-      <div class="m"><b>295+</b><span>5-Star Cuts</span></div>
+      <div class="m"><b>295+</b><span data-en="5-Star Cuts" data-es="Cortes 5 Estrellas">5-Star Cuts</span></div>
       <div class="div"></div>
-      <div class="m"><b>Walk-ins</b><span>Always Welcome</span></div>
+      <div class="m"><b data-en="Walk-ins" data-es="Sin Cita">Walk-ins</b><span data-en="Always Welcome" data-es="Siempre Bienvenidos">Always Welcome</span></div>
       <div class="div"></div>
-      <div class="m"><b>EN / ES</b><span>Bilingual Shop</span></div>
+      <div class="m"><b>EN / ES</b><span data-en="Bilingual Shop" data-es="Barberia Bilingue">Bilingual Shop</span></div>
     </div>
   </div>
 </section>
@@ -716,19 +769,19 @@
 <!-- ===== MARQUEE ===== -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M6 3v18M18 3v18M6 8h12M6 16h12" stroke="currentColor" stroke-width="1.6"/></svg>Skin Fades</span>
-    <span class="item"><svg viewBox="0 0 24 24" fill="none"><circle cx="6" cy="6" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 8L20 19M8.5 16L20 5" stroke="currentColor" stroke-width="1.6"/></svg>Beard Design</span>
-    <span class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12c4-6 12-6 16 0-4 6-12 6-16 0z" stroke="currentColor" stroke-width="1.6"/><path d="M12 4v3M12 17v3" stroke="currentColor" stroke-width="1.6"/></svg>Hot Towel Shaves</span>
-    <span class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M6 3v18M18 3v18M6 8h12M6 16h12" stroke="currentColor" stroke-width="1.6"/></svg>Kids Cuts</span>
-    <span class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="1.6"/></svg>Eyebrow Design</span>
-    <span class="item"><svg viewBox="0 0 24 24" fill="none"><circle cx="6" cy="6" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 8L20 19M8.5 16L20 5" stroke="currentColor" stroke-width="1.6"/></svg>Scissor Cuts</span>
+    <span class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M6 3v18M18 3v18M6 8h12M6 16h12" stroke="currentColor" stroke-width="1.6"/></svg><span data-en="Skin Fades" data-es="Fades al Ras">Skin Fades</span></span>
+    <span class="item"><svg viewBox="0 0 24 24" fill="none"><circle cx="6" cy="6" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 8L20 19M8.5 16L20 5" stroke="currentColor" stroke-width="1.6"/></svg><span data-en="Beard Design" data-es="Diseño de Barba">Beard Design</span></span>
+    <span class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12c4-6 12-6 16 0-4 6-12 6-16 0z" stroke="currentColor" stroke-width="1.6"/><path d="M12 4v3M12 17v3" stroke="currentColor" stroke-width="1.6"/></svg><span data-en="Hot Towel Shaves" data-es="Afeitadas con Toalla Caliente">Hot Towel Shaves</span></span>
+    <span class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M6 3v18M18 3v18M6 8h12M6 16h12" stroke="currentColor" stroke-width="1.6"/></svg><span data-en="Kids Cuts" data-es="Cortes para Niños">Kids Cuts</span></span>
+    <span class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="1.6"/></svg><span data-en="Eyebrow Design" data-es="Diseño de Cejas">Eyebrow Design</span></span>
+    <span class="item"><svg viewBox="0 0 24 24" fill="none"><circle cx="6" cy="6" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 8L20 19M8.5 16L20 5" stroke="currentColor" stroke-width="1.6"/></svg><span data-en="Scissor Cuts" data-es="Cortes a Tijera">Scissor Cuts</span></span>
     <!-- duplicate for seamless loop -->
-    <span class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M6 3v18M18 3v18M6 8h12M6 16h12" stroke="currentColor" stroke-width="1.6"/></svg>Skin Fades</span>
-    <span class="item"><svg viewBox="0 0 24 24" fill="none"><circle cx="6" cy="6" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 8L20 19M8.5 16L20 5" stroke="currentColor" stroke-width="1.6"/></svg>Beard Design</span>
-    <span class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12c4-6 12-6 16 0-4 6-12 6-16 0z" stroke="currentColor" stroke-width="1.6"/><path d="M12 4v3M12 17v3" stroke="currentColor" stroke-width="1.6"/></svg>Hot Towel Shaves</span>
-    <span class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M6 3v18M18 3v18M6 8h12M6 16h12" stroke="currentColor" stroke-width="1.6"/></svg>Kids Cuts</span>
-    <span class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="1.6"/></svg>Eyebrow Design</span>
-    <span class="item"><svg viewBox="0 0 24 24" fill="none"><circle cx="6" cy="6" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 8L20 19M8.5 16L20 5" stroke="currentColor" stroke-width="1.6"/></svg>Scissor Cuts</span>
+    <span class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M6 3v18M18 3v18M6 8h12M6 16h12" stroke="currentColor" stroke-width="1.6"/></svg><span data-en="Skin Fades" data-es="Fades al Ras">Skin Fades</span></span>
+    <span class="item"><svg viewBox="0 0 24 24" fill="none"><circle cx="6" cy="6" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 8L20 19M8.5 16L20 5" stroke="currentColor" stroke-width="1.6"/></svg><span data-en="Beard Design" data-es="Diseño de Barba">Beard Design</span></span>
+    <span class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12c4-6 12-6 16 0-4 6-12 6-16 0z" stroke="currentColor" stroke-width="1.6"/><path d="M12 4v3M12 17v3" stroke="currentColor" stroke-width="1.6"/></svg><span data-en="Hot Towel Shaves" data-es="Afeitadas con Toalla Caliente">Hot Towel Shaves</span></span>
+    <span class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M6 3v18M18 3v18M6 8h12M6 16h12" stroke="currentColor" stroke-width="1.6"/></svg><span data-en="Kids Cuts" data-es="Cortes para Niños">Kids Cuts</span></span>
+    <span class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="1.6"/></svg><span data-en="Eyebrow Design" data-es="Diseño de Cejas">Eyebrow Design</span></span>
+    <span class="item"><svg viewBox="0 0 24 24" fill="none"><circle cx="6" cy="6" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 8L20 19M8.5 16L20 5" stroke="currentColor" stroke-width="1.6"/></svg><span data-en="Scissor Cuts" data-es="Cortes a Tijera">Scissor Cuts</span></span>
   </div>
 </div>
 
@@ -737,23 +790,23 @@
   <div class="benefits-grid">
     <div class="benefit reveal">
       <svg class="ic" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="14" cy="14" r="6" stroke="currentColor" stroke-width="2"/><circle cx="14" cy="34" r="6" stroke="currentColor" stroke-width="2"/><path d="M19 19L40 38M19 29L40 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      <h3>Master Barbers</h3>
-      <p>Every cut includes an edge up and outline. Fades done clean, every time.</p>
+      <h3 data-en="Master Barbers" data-es="Barberos Expertos">Master Barbers</h3>
+      <p data-en="Every cut includes an edge up and outline. Fades done clean, every time." data-es="Cada corte incluye perfilado y contorno. Fades bien limpios, siempre.">Every cut includes an edge up and outline. Fades done clean, every time.</p>
     </div>
     <div class="benefit reveal d1">
       <svg class="ic" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 6C14 6 8 14 8 24s6 18 16 18 16-8 16-18S34 6 24 6z" stroke="currentColor" stroke-width="2"/><path d="M18 22c2 3 10 3 12 0M17 30c3 4 11 4 14 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      <h3>Hot Towel Care</h3>
-      <p>Beard designs and shaves finished with a hot towel and a real massage.</p>
+      <h3 data-en="Hot Towel Care" data-es="Toalla Caliente">Hot Towel Care</h3>
+      <p data-en="Beard designs and shaves finished with a hot towel and a real massage." data-es="Diseños de barba y afeitadas rematadas con toalla caliente y un buen masaje.">Beard designs and shaves finished with a hot towel and a real massage.</p>
     </div>
     <div class="benefit reveal d2">
       <svg class="ic" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 4l4 8 9 1-6.5 6.3L32 28l-8-4-8 4 1.5-8.7L11 13l9-1 4-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M24 30v14M16 44h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      <h3>Good for Kids</h3>
-      <p>Patient with the little ones. Family shop, everybody leaves looking sharp.</p>
+      <h3 data-en="Good for Kids" data-es="Ideal para Niños">Good for Kids</h3>
+      <p data-en="Patient with the little ones. Family shop, everybody leaves looking sharp." data-es="Con paciencia para los mas pequeños. Barberia familiar, todos salen bien presentados.">Patient with the little ones. Family shop, everybody leaves looking sharp.</p>
     </div>
     <div class="benefit reveal d3">
       <svg class="ic" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M14 10h20l-2 20a4 4 0 0 1-4 4h-8a4 4 0 0 1-4-4L14 10z" stroke="currentColor" stroke-width="2"/><path d="M14 10c0-3 2-4 4-4M22 6c4 0 6 2 6 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 18v8M24 18v8M30 18v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      <h3>On the House</h3>
-      <p>Relax with a coffee, water, or soda while you wait for your chair.</p>
+      <h3 data-en="On the House" data-es="Por Nuestra Cuenta">On the House</h3>
+      <p data-en="Relax with a coffee, water, or soda while you wait for your chair." data-es="Relajate con un cafe, agua o refresco mientras esperas tu silla.">Relax with a coffee, water, or soda while you wait for your chair.</p>
     </div>
   </div>
 </section>
@@ -762,11 +815,11 @@
 <section class="story sec-pad">
   <div class="wrap story-grid">
     <div class="story-copy reveal">
-      <span class="eyebrow">Our Craft</span>
-      <h2>Where Richardson comes to look its best</h2>
-      <p>The Diamond Barbershop was built on one simple idea: a great haircut is worth doing right. Not rushed, not close enough, done right. Our barbers bring the precision of a modern shop and the patience of the old-school chair.</p>
-      <p>Walk in for a skin fade, a beard design with a hot towel and massage, or a straight razor shave, and you get the same thing every time: clean lines, honest work, and a barber who actually listens. English or Spanish, first-timer or regular, everyone leaves sharp.</p>
-      <p class="signature">Extremely professional, great environment, perfect skills.</p>
+      <span class="eyebrow" data-en="Our Craft" data-es="Nuestro Oficio">Our Craft</span>
+      <h2 data-en="Where Richardson comes to look its best" data-es="Donde Richardson viene a verse mejor">Where Richardson comes to look its best</h2>
+      <p data-en="The Diamond Barbershop was built on one simple idea: a great haircut is worth doing right. Not rushed, not close enough, done right. Our barbers bring the precision of a modern shop and the patience of the old-school chair." data-es="The Diamond Barbershop nacio de una idea sencilla: un buen corte se merece hacerse bien. Sin prisas, sin conformarse, bien hecho. Nuestros barberos traen la precision de una barberia moderna y la paciencia de la silla de toda la vida.">The Diamond Barbershop was built on one simple idea: a great haircut is worth doing right. Not rushed, not close enough, done right. Our barbers bring the precision of a modern shop and the patience of the old-school chair.</p>
+      <p data-en="Walk in for a skin fade, a beard design with a hot towel and massage, or a straight razor shave, and you get the same thing every time: clean lines, honest work, and a barber who actually listens. English or Spanish, first-timer or regular, everyone leaves sharp." data-es="Ven por un fade al ras, un diseño de barba con toalla caliente y masaje, o una afeitada con navaja, y siempre recibes lo mismo: lineas limpias, trabajo honesto y un barbero que de verdad te escucha. En ingles o en español, primera vez o cliente de siempre, todos salen bien presentados.">Walk in for a skin fade, a beard design with a hot towel and massage, or a straight razor shave, and you get the same thing every time: clean lines, honest work, and a barber who actually listens. English or Spanish, first-timer or regular, everyone leaves sharp.</p>
+      <p class="signature" data-en="Extremely professional, great environment, perfect skills." data-es="Sumamente profesionales, buen ambiente, habilidad perfecta.">Extremely professional, great environment, perfect skills.</p>
     </div>
     <div class="story-visual reveal d2">
       <div class="art">
@@ -791,7 +844,7 @@
       </div>
       <div class="story-badge">
         <svg class="badge-ic" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 3l5 11 12 1-9 8 3 12-11-6.5L9 35l3-12-9-8 12-1 5-11z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-        <div><b>4.8 out of 5 stars</b><span>Across 295 Google reviews</span></div>
+        <div><b data-en="4.8 out of 5 stars" data-es="4.8 de 5 estrellas">4.8 out of 5 stars</b><span data-en="Across 295 Google reviews" data-es="En 295 reseñas de Google">Across 295 Google reviews</span></div>
       </div>
     </div>
   </div>
@@ -801,95 +854,95 @@
 <section class="menu sec-pad" id="services">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">The Menu</span>
-      <h2>Services and pricing</h2>
+      <span class="eyebrow" data-en="The Menu" data-es="El Menu">The Menu</span>
+      <h2 data-en="Services and pricing" data-es="Servicios y precios">Services and pricing</h2>
       <div class="rule"></div>
-      <p>Every haircut includes an edge up and outline. Prices are starting points, your barber will confirm at the chair.</p>
+      <p data-en="Every haircut includes an edge up and outline. Prices are starting points, your barber will confirm at the chair." data-es="Cada corte incluye perfilado y contorno. Los precios son de referencia, tu barbero los confirma en la silla.">Every haircut includes an edge up and outline. Prices are starting points, your barber will confirm at the chair.</p>
     </div>
     <div class="menu-cats">
 
       <div class="menu-cat reveal">
-        <h3><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 8L20 19M8.5 16L20 5" stroke="currentColor" stroke-width="1.6"/></svg> Cuts</h3>
+        <h3><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 8L20 19M8.5 16L20 5" stroke="currentColor" stroke-width="1.6"/></svg> <span data-en="Cuts" data-es="Cortes">Cuts</span></h3>
         <div class="menu-row">
-          <div><div class="mr-name">Regular Haircut<span class="es">Corte Regular</span></div><div class="mr-desc">Fade, taper, or classic cut with edge up and outline.</div></div>
-          <div class="mr-price">$30<small>40 min</small></div>
+          <div><div class="mr-name" data-en="Regular Haircut" data-es="Corte Regular">Regular Haircut</div><div class="mr-desc" data-en="Fade, taper, or classic cut with edge up and outline." data-es="Fade, degradado o corte clasico con perfilado y contorno.">Fade, taper, or classic cut with edge up and outline.</div></div>
+          <div class="mr-price">$30<small data-en="40 min" data-es="40 min">40 min</small></div>
         </div>
         <div class="menu-row">
-          <div><div class="mr-name">Men's Haircut with Design</div><div class="mr-desc">Custom line work and hair designs added to your cut.</div></div>
-          <div class="mr-price">$40<small>50 min</small></div>
+          <div><div class="mr-name" data-en="Men's Haircut with Design" data-es="Corte de Caballero con Diseño">Men's Haircut with Design</div><div class="mr-desc" data-en="Custom line work and hair designs added to your cut." data-es="Lineas y diseños personalizados a mano sumados a tu corte.">Custom line work and hair designs added to your cut.</div></div>
+          <div class="mr-price">$40<small data-en="50 min" data-es="50 min">50 min</small></div>
         </div>
         <div class="menu-row">
-          <div><div class="mr-name">Scissor Cut</div><div class="mr-desc">All scissor work for longer or textured styles.</div></div>
-          <div class="mr-price">$40<small>50 min</small></div>
+          <div><div class="mr-name" data-en="Scissor Cut" data-es="Corte a Tijera">Scissor Cut</div><div class="mr-desc" data-en="All scissor work for longer or textured styles." data-es="Todo a tijera para estilos mas largos o con textura.">All scissor work for longer or textured styles.</div></div>
+          <div class="mr-price">$40<small data-en="50 min" data-es="50 min">50 min</small></div>
         </div>
         <div class="menu-row">
-          <div><div class="mr-name">Kids Haircut<span class="es">Corte para Ninos</span></div><div class="mr-desc">Patient cuts for the little ones, 12 and under.</div></div>
-          <div class="mr-price">$25<small>30 min</small></div>
+          <div><div class="mr-name" data-en="Kids Haircut" data-es="Corte para Niños">Kids Haircut</div><div class="mr-desc" data-en="Patient cuts for the little ones, 12 and under." data-es="Cortes con paciencia para los pequeños, 12 años o menos.">Patient cuts for the little ones, 12 and under.</div></div>
+          <div class="mr-price">$25<small data-en="30 min" data-es="30 min">30 min</small></div>
         </div>
         <div class="menu-row">
-          <div><div class="mr-name">Buzz Cut and Head Shave</div><div class="mr-desc">Clean all-over clipper cut or a smooth head shave.</div></div>
-          <div class="mr-price">$22<small>25 min</small></div>
+          <div><div class="mr-name" data-en="Buzz Cut and Head Shave" data-es="Rapado y Afeitado de Cabeza">Buzz Cut and Head Shave</div><div class="mr-desc" data-en="Clean all-over clipper cut or a smooth head shave." data-es="Corte al ras con maquina o un rapado de cabeza bien liso.">Clean all-over clipper cut or a smooth head shave.</div></div>
+          <div class="mr-price">$22<small data-en="25 min" data-es="25 min">25 min</small></div>
         </div>
       </div>
 
       <div class="menu-cat reveal d1">
-        <h3><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8C4 8 8 6 12 6s8 2 8 2M6 8c0 6 3 10 6 10s6-4 6-10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M9 13c1 1.5 5 1.5 6 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg> Beard and Shave</h3>
+        <h3><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8C4 8 8 6 12 6s8 2 8 2M6 8c0 6 3 10 6 10s6-4 6-10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M9 13c1 1.5 5 1.5 6 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg> <span data-en="Beard and Shave" data-es="Barba y Afeitada">Beard and Shave</span></h3>
         <div class="menu-row">
-          <div><div class="mr-name">Beard Design, Hot Towel and Massage<span class="es">Diseno de barba con toalla caliente y masaje</span></div><div class="mr-desc">Shaped, lined and finished with a hot towel and massage.</div></div>
-          <div class="mr-price">$25<small>30 min</small></div>
+          <div><div class="mr-name" data-en="Beard Design, Hot Towel and Massage" data-es="Diseño de Barba, Toalla Caliente y Masaje">Beard Design, Hot Towel and Massage</div><div class="mr-desc" data-en="Shaped, lined and finished with a hot towel and massage." data-es="Perfilada, delineada y rematada con toalla caliente y masaje.">Shaped, lined and finished with a hot towel and massage.</div></div>
+          <div class="mr-price">$25<small data-en="30 min" data-es="30 min">30 min</small></div>
         </div>
         <div class="menu-row">
-          <div><div class="mr-name">Haircut and Shave with Hot Towel<span class="es">Corte y barba con toalla caliente</span></div><div class="mr-desc">Full cut plus a hot towel beard service and massage.</div></div>
-          <div class="mr-price">$50<small>70 min</small></div>
+          <div><div class="mr-name" data-en="Haircut and Shave with Hot Towel" data-es="Corte y Barba con Toalla Caliente">Haircut and Shave with Hot Towel</div><div class="mr-desc" data-en="Full cut plus a hot towel beard service and massage." data-es="Corte completo mas servicio de barba con toalla caliente y masaje.">Full cut plus a hot towel beard service and massage.</div></div>
+          <div class="mr-price">$50<small data-en="70 min" data-es="70 min">70 min</small></div>
         </div>
         <div class="menu-row">
-          <div><div class="mr-name">Straight Razor Shave</div><div class="mr-desc">Traditional straight razor shave, hot towel included.</div></div>
-          <div class="mr-price">$30<small>40 min</small></div>
+          <div><div class="mr-name" data-en="Straight Razor Shave" data-es="Afeitada con Navaja">Straight Razor Shave</div><div class="mr-desc" data-en="Traditional straight razor shave, hot towel included." data-es="Afeitada tradicional con navaja, toalla caliente incluida.">Traditional straight razor shave, hot towel included.</div></div>
+          <div class="mr-price">$30<small data-en="40 min" data-es="40 min">40 min</small></div>
         </div>
         <div class="menu-row">
-          <div><div class="mr-name">Beard Trim and Conditioning</div><div class="mr-desc">Clean up, shape and condition to keep the beard right.</div></div>
-          <div class="mr-price">$18<small>20 min</small></div>
+          <div><div class="mr-name" data-en="Beard Trim and Conditioning" data-es="Recorte y Acondicionado de Barba">Beard Trim and Conditioning</div><div class="mr-desc" data-en="Clean up, shape and condition to keep the beard right." data-es="Limpieza, perfilado y acondicionado para mantener la barba en forma.">Clean up, shape and condition to keep the beard right.</div></div>
+          <div class="mr-price">$18<small data-en="20 min" data-es="20 min">20 min</small></div>
         </div>
       </div>
 
       <div class="menu-cat reveal d2">
-        <h3><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3C8 3 5 6 5 10c0 5 7 11 7 11s7-6 7-11c0-4-3-7-7-7z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg> Grooming</h3>
+        <h3><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3C8 3 5 6 5 10c0 5 7 11 7 11s7-6 7-11c0-4-3-7-7-7z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg> <span data-en="Grooming" data-es="Arreglo Personal">Grooming</span></h3>
         <div class="menu-row">
-          <div><div class="mr-name">Eyebrow Design and Pigmentation</div><div class="mr-desc">Shaped and defined brows with optional tinting.</div></div>
-          <div class="mr-price">$15<small>20 min</small></div>
+          <div><div class="mr-name" data-en="Eyebrow Design and Pigmentation" data-es="Diseño de Cejas y Pigmentacion">Eyebrow Design and Pigmentation</div><div class="mr-desc" data-en="Shaped and defined brows with optional tinting." data-es="Cejas perfiladas y definidas, con tinte opcional.">Shaped and defined brows with optional tinting.</div></div>
+          <div class="mr-price">$15<small data-en="20 min" data-es="20 min">20 min</small></div>
         </div>
         <div class="menu-row">
-          <div><div class="mr-name">Facial Service</div><div class="mr-desc">Cleansing cream and black-mask scrub, massage included.</div></div>
-          <div class="mr-price">$35<small>40 min</small></div>
+          <div><div class="mr-name" data-en="Facial Service" data-es="Servicio Facial">Facial Service</div><div class="mr-desc" data-en="Cleansing cream and black-mask scrub, massage included." data-es="Crema limpiadora y exfoliacion con mascarilla negra, masaje incluido.">Cleansing cream and black-mask scrub, massage included.</div></div>
+          <div class="mr-price">$35<small data-en="40 min" data-es="40 min">40 min</small></div>
         </div>
         <div class="menu-row">
-          <div><div class="mr-name">Waxing</div><div class="mr-desc">Quick wax for ears, nose or brows, clean and simple.</div></div>
-          <div class="mr-price">$12<small>15 min</small></div>
+          <div><div class="mr-name" data-en="Waxing" data-es="Depilacion con Cera">Waxing</div><div class="mr-desc" data-en="Quick wax for ears, nose or brows, clean and simple." data-es="Depilacion rapida de orejas, nariz o cejas, limpia y sencilla.">Quick wax for ears, nose or brows, clean and simple.</div></div>
+          <div class="mr-price">$12<small data-en="15 min" data-es="15 min">15 min</small></div>
         </div>
         <div class="menu-row">
-          <div><div class="mr-name">Hair Coloring and Styling</div><div class="mr-desc">Color, gray blending, or a finished style for the day.</div></div>
-          <div class="mr-price">$40<small>60 min</small></div>
+          <div><div class="mr-name" data-en="Hair Coloring and Styling" data-es="Tinte y Peinado">Hair Coloring and Styling</div><div class="mr-desc" data-en="Color, gray blending, or a finished style for the day." data-es="Color, cobertura de canas o un peinado listo para el dia.">Color, gray blending, or a finished style for the day.</div></div>
+          <div class="mr-price">$40<small data-en="60 min" data-es="60 min">60 min</small></div>
         </div>
       </div>
 
       <div class="menu-cat reveal d3">
-        <h3><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9 12 2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg> The Works</h3>
+        <h3><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9 12 2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg> <span data-en="The Works" data-es="Lo Completo">The Works</span></h3>
         <div class="menu-row">
-          <div><div class="mr-name">Full Service<span class="es">Servicio Completo</span></div><div class="mr-desc">Haircut, beard design, hot towel, facial and brows. The whole chair.</div></div>
-          <div class="mr-price">$75<small>90 min</small></div>
+          <div><div class="mr-name" data-en="Full Service" data-es="Servicio Completo">Full Service</div><div class="mr-desc" data-en="Haircut, beard design, hot towel, facial and brows. The whole chair." data-es="Corte, diseño de barba, toalla caliente, facial y cejas. La silla completa.">Haircut, beard design, hot towel, facial and brows. The whole chair.</div></div>
+          <div class="mr-price">$75<small data-en="90 min" data-es="90 min">90 min</small></div>
         </div>
         <div class="menu-row">
-          <div><div class="mr-name">Cut and Beard Combo</div><div class="mr-desc">The everyday favorite: fresh cut plus a shaped beard.</div></div>
-          <div class="mr-price">$45<small>60 min</small></div>
+          <div><div class="mr-name" data-en="Cut and Beard Combo" data-es="Combo de Corte y Barba">Cut and Beard Combo</div><div class="mr-desc" data-en="The everyday favorite: fresh cut plus a shaped beard." data-es="El favorito de siempre: corte fresco mas barba perfilada.">The everyday favorite: fresh cut plus a shaped beard.</div></div>
+          <div class="mr-price">$45<small data-en="60 min" data-es="60 min">60 min</small></div>
         </div>
         <div class="menu-row">
-          <div><div class="mr-name">Long Hair and Curly Cut</div><div class="mr-desc">Cut and shape for longer or curly hair textures.</div></div>
-          <div class="mr-price">$45<small>60 min</small></div>
+          <div><div class="mr-name" data-en="Long Hair and Curly Cut" data-es="Corte de Cabello Largo y Rizado">Long Hair and Curly Cut</div><div class="mr-desc" data-en="Cut and shape for longer or curly hair textures." data-es="Corte y forma para cabello largo o con textura rizada.">Cut and shape for longer or curly hair textures.</div></div>
+          <div class="mr-price">$45<small data-en="60 min" data-es="60 min">60 min</small></div>
         </div>
       </div>
 
     </div>
-    <p class="menu-note reveal">Not sure what you need? <span class="serif-italic">Just walk in.</span> Your barber will square you away.</p>
+    <p class="menu-note reveal"><span class="lang-en">Not sure what you need? <span class="serif-italic">Just walk in.</span> Your barber will square you away.</span><span class="lang-es">¿No sabes que necesitas? <span class="serif-italic">Solo pasa sin cita.</span> Tu barbero te acomoda.</span></p>
   </div>
 </section>
 
@@ -898,58 +951,58 @@
   <div class="glow"></div>
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">Reserve Your Chair</span>
-      <h2>Book in under a minute</h2>
+      <span class="eyebrow" data-en="Reserve Your Chair" data-es="Reserva Tu Silla">Reserve Your Chair</span>
+      <h2 data-en="Book in under a minute" data-es="Reserva en menos de un minuto">Book in under a minute</h2>
       <div class="rule"></div>
-      <p>Pick your service, choose your barber, and grab a time. We will text you to confirm.</p>
+      <p data-en="Pick your service, choose your barber, and grab a time. We will text you to confirm." data-es="Elige tu servicio, escoge tu barbero y aparta una hora. Te enviamos un mensaje para confirmar.">Pick your service, choose your barber, and grab a time. We will text you to confirm.</p>
     </div>
 
     <div class="booking-shell reveal d1">
       <div class="booking-topbar">
         <span class="bt-brand">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l4 4-4 4-4-4 4-4z" fill="currentColor"/><path d="M4 20h16M7 16h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          The Diamond Booking
+          <span data-en="The Diamond Booking" data-es="Reservas The Diamond">The Diamond Booking</span>
         </span>
-        <span class="bt-live"><span class="dot"></span> Live Availability</span>
+        <span class="bt-live"><span class="dot"></span> <span data-en="Live Availability" data-es="Disponibilidad en Vivo">Live Availability</span></span>
       </div>
 
       <!-- STEPPER -->
       <div class="stepper" id="stepper">
-        <div class="step-dot active" data-i="0"><span class="num">1</span><span class="lbl">Service</span><span class="bar"></span></div>
-        <div class="step-dot" data-i="1"><span class="num">2</span><span class="lbl">Barber</span><span class="bar"></span></div>
-        <div class="step-dot" data-i="2"><span class="num">3</span><span class="lbl">Time</span><span class="bar"></span></div>
-        <div class="step-dot" data-i="3"><span class="num">4</span><span class="lbl">Details</span></div>
+        <div class="step-dot active" data-i="0"><span class="num">1</span><span class="lbl" data-en="Service" data-es="Servicio">Service</span><span class="bar"></span></div>
+        <div class="step-dot" data-i="1"><span class="num">2</span><span class="lbl" data-en="Barber" data-es="Barbero">Barber</span><span class="bar"></span></div>
+        <div class="step-dot" data-i="2"><span class="num">3</span><span class="lbl" data-en="Time" data-es="Hora">Time</span><span class="bar"></span></div>
+        <div class="step-dot" data-i="3"><span class="num">4</span><span class="lbl" data-en="Details" data-es="Datos">Details</span></div>
       </div>
 
       <div class="booking-body">
 
         <!-- STEP 1: SERVICE -->
         <div class="step-panel active" data-panel="0">
-          <div class="step-title">What are we doing today?</div>
-          <div class="step-hint">Choose the service you would like. You can tell your barber the rest at the chair.</div>
+          <div class="step-title" data-en="What are we doing today?" data-es="¿Que hacemos hoy?">What are we doing today?</div>
+          <div class="step-hint" data-en="Choose the service you would like. You can tell your barber the rest at the chair." data-es="Elige el servicio que quieres. El resto se lo dices a tu barbero en la silla.">Choose the service you would like. You can tell your barber the rest at the chair.</div>
           <div class="opt-grid" id="serviceGrid">
-            <button class="opt" data-svc="Regular Haircut" data-price="30" data-dur="40 min">
-              <div class="o-left"><b>Regular Haircut</b><span>Fade or classic, edge up included</span></div>
+            <button class="opt" data-svc="Regular Haircut" data-svc-es="Corte Regular" data-price="30" data-dur="40 min">
+              <div class="o-left"><b data-en="Regular Haircut" data-es="Corte Regular">Regular Haircut</b><span data-en="Fade or classic, edge up included" data-es="Fade o clasico, perfilado incluido">Fade or classic, edge up included</span></div>
               <div style="display:flex;align-items:center;gap:10px"><span class="o-price">$30</span><span class="o-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
             </button>
-            <button class="opt" data-svc="Cut and Beard Combo" data-price="45" data-dur="60 min">
-              <div class="o-left"><b>Cut and Beard Combo</b><span>Fresh cut plus a shaped beard</span></div>
+            <button class="opt" data-svc="Cut and Beard Combo" data-svc-es="Combo de Corte y Barba" data-price="45" data-dur="60 min">
+              <div class="o-left"><b data-en="Cut and Beard Combo" data-es="Combo de Corte y Barba">Cut and Beard Combo</b><span data-en="Fresh cut plus a shaped beard" data-es="Corte fresco mas barba perfilada">Fresh cut plus a shaped beard</span></div>
               <div style="display:flex;align-items:center;gap:10px"><span class="o-price">$45</span><span class="o-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
             </button>
-            <button class="opt" data-svc="Beard Design and Hot Towel" data-price="25" data-dur="30 min">
-              <div class="o-left"><b>Beard Design, Hot Towel</b><span>Shaped, lined, hot towel and massage</span></div>
+            <button class="opt" data-svc="Beard Design and Hot Towel" data-svc-es="Diseño de Barba y Toalla Caliente" data-price="25" data-dur="30 min">
+              <div class="o-left"><b data-en="Beard Design, Hot Towel" data-es="Diseño de Barba, Toalla Caliente">Beard Design, Hot Towel</b><span data-en="Shaped, lined, hot towel and massage" data-es="Perfilada, delineada, toalla caliente y masaje">Shaped, lined, hot towel and massage</span></div>
               <div style="display:flex;align-items:center;gap:10px"><span class="o-price">$25</span><span class="o-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
             </button>
-            <button class="opt" data-svc="Straight Razor Shave" data-price="30" data-dur="40 min">
-              <div class="o-left"><b>Straight Razor Shave</b><span>Traditional shave, hot towel included</span></div>
+            <button class="opt" data-svc="Straight Razor Shave" data-svc-es="Afeitada con Navaja" data-price="30" data-dur="40 min">
+              <div class="o-left"><b data-en="Straight Razor Shave" data-es="Afeitada con Navaja">Straight Razor Shave</b><span data-en="Traditional shave, hot towel included" data-es="Afeitada tradicional, toalla caliente incluida">Traditional shave, hot towel included</span></div>
               <div style="display:flex;align-items:center;gap:10px"><span class="o-price">$30</span><span class="o-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
             </button>
-            <button class="opt" data-svc="Kids Haircut" data-price="25" data-dur="30 min">
-              <div class="o-left"><b>Kids Haircut</b><span>Patient cuts, 12 and under</span></div>
+            <button class="opt" data-svc="Kids Haircut" data-svc-es="Corte para Niños" data-price="25" data-dur="30 min">
+              <div class="o-left"><b data-en="Kids Haircut" data-es="Corte para Niños">Kids Haircut</b><span data-en="Patient cuts, 12 and under" data-es="Cortes con paciencia, 12 años o menos">Patient cuts, 12 and under</span></div>
               <div style="display:flex;align-items:center;gap:10px"><span class="o-price">$25</span><span class="o-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
             </button>
-            <button class="opt" data-svc="Full Service" data-price="75" data-dur="90 min">
-              <div class="o-left"><b>Full Service</b><span>Cut, beard, hot towel, facial, brows</span></div>
+            <button class="opt" data-svc="Full Service" data-svc-es="Servicio Completo" data-price="75" data-dur="90 min">
+              <div class="o-left"><b data-en="Full Service" data-es="Servicio Completo">Full Service</b><span data-en="Cut, beard, hot towel, facial, brows" data-es="Corte, barba, toalla caliente, facial, cejas">Cut, beard, hot towel, facial, brows</span></div>
               <div style="display:flex;align-items:center;gap:10px"><span class="o-price">$75</span><span class="o-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
             </button>
           </div>
@@ -957,62 +1010,62 @@
 
         <!-- STEP 2: BARBER -->
         <div class="step-panel" data-panel="1">
-          <div class="step-title">Pick your barber</div>
-          <div class="step-hint">Choose the specialist for your service, or let us grab you the first open chair.</div>
+          <div class="step-title" data-en="Pick your barber" data-es="Elige tu barbero">Pick your barber</div>
+          <div class="step-hint" data-en="Choose the specialist for your service, or let us grab you the first open chair." data-es="Escoge al especialista para tu servicio, o dejanos apartarte la primera silla libre.">Choose the specialist for your service, or let us grab you the first open chair.</div>
           <div class="barber-grid" id="barberGrid">
-            <button class="barber-opt" data-barber="Master Barber">
+            <button class="barber-opt" data-barber="Master Barber" data-barber-es="Barbero Experto">
               <div class="av"><svg width="100%" height="100%" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" fill="#26262c"/><circle cx="32" cy="26" r="12" fill="#c19a54" opacity="0.85"/><path d="M12 60c0-12 9-18 20-18s20 6 20 18" fill="#c19a54" opacity="0.85"/><path d="M22 24c2-6 18-6 20 0" stroke="#16161a" stroke-width="2" fill="none"/></svg></div>
-              <b>Master Barber</b><span>Lead chair</span><span class="tag">Fades and Designs</span>
+              <b data-en="Master Barber" data-es="Barbero Experto">Master Barber</b><span data-en="Lead chair" data-es="Silla principal">Lead chair</span><span class="tag" data-en="Fades and Designs" data-es="Fades y Diseños">Fades and Designs</span>
             </button>
-            <button class="barber-opt" data-barber="Beard and Shave Specialist">
+            <button class="barber-opt" data-barber="Beard and Shave Specialist" data-barber-es="Especialista en Barba y Afeitada">
               <div class="av"><svg width="100%" height="100%" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" fill="#26262c"/><circle cx="32" cy="26" r="12" fill="#d8b877" opacity="0.85"/><path d="M12 60c0-12 9-18 20-18s20 6 20 18" fill="#d8b877" opacity="0.85"/><path d="M22 22c3 8 17 8 20 0" stroke="#16161a" stroke-width="2" fill="none"/></svg></div>
-              <b>Beard and Shave</b><span>Specialist</span><span class="tag">Beard and Shave</span>
+              <b data-en="Beard and Shave" data-es="Barba y Afeitada">Beard and Shave</b><span data-en="Specialist" data-es="Especialista">Specialist</span><span class="tag" data-en="Beard and Shave" data-es="Barba y Afeitada">Beard and Shave</span>
             </button>
-            <button class="barber-opt" data-barber="Scissor and Kids Barber">
+            <button class="barber-opt" data-barber="Scissor and Kids Barber" data-barber-es="Barbero de Tijera y Niños">
               <div class="av"><svg width="100%" height="100%" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" fill="#26262c"/><circle cx="32" cy="26" r="12" fill="#9c7a3a" opacity="0.9"/><path d="M12 60c0-12 9-18 20-18s20 6 20 18" fill="#9c7a3a" opacity="0.9"/><path d="M24 20l16 2" stroke="#16161a" stroke-width="2" fill="none"/></svg></div>
-              <b>Scissor and Kids</b><span>Barber</span><span class="tag">Scissor and Kids</span>
+              <b data-en="Scissor and Kids" data-es="Tijera y Niños">Scissor and Kids</b><span data-en="Barber" data-es="Barbero">Barber</span><span class="tag" data-en="Scissor and Kids" data-es="Tijera y Niños">Scissor and Kids</span>
             </button>
-            <button class="barber-opt" data-barber="Color and Brow Specialist">
+            <button class="barber-opt" data-barber="Color and Brow Specialist" data-barber-es="Especialista en Color y Cejas">
               <div class="av"><svg width="100%" height="100%" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" fill="#26262c"/><circle cx="32" cy="26" r="12" fill="#c19a54" opacity="0.8"/><path d="M12 60c0-12 9-18 20-18s20 6 20 18" fill="#c19a54" opacity="0.8"/><path d="M20 28c0-8 24-8 24 0" stroke="#16161a" stroke-width="2" fill="none"/></svg></div>
-              <b>Color and Brows</b><span>Specialist</span><span class="tag">Brows and Facials</span>
+              <b data-en="Color and Brows" data-es="Color y Cejas">Color and Brows</b><span data-en="Specialist" data-es="Especialista">Specialist</span><span class="tag" data-en="Brows and Facials" data-es="Cejas y Faciales">Brows and Facials</span>
             </button>
-            <button class="barber-opt" data-barber="Any Barber">
+            <button class="barber-opt" data-barber="Any Barber" data-barber-es="Cualquier Barbero">
               <div class="av"><svg width="100%" height="100%" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" fill="#26262c"/><path d="M32 14l6 6-6 6-6-6 6-6z" fill="#c19a54"/><path d="M18 46h28M24 40h16" stroke="#c19a54" stroke-width="2.4" stroke-linecap="round"/></svg></div>
-              <b>Any Barber</b><span>First available</span><span class="tag">Fastest Chair</span>
+              <b data-en="Any Barber" data-es="Cualquier Barbero">Any Barber</b><span data-en="First available" data-es="El primero libre">First available</span><span class="tag" data-en="Fastest Chair" data-es="Silla mas Rapida">Fastest Chair</span>
             </button>
           </div>
         </div>
 
         <!-- STEP 3: TIME -->
         <div class="step-panel" data-panel="2">
-          <div class="step-title">Choose a day and time</div>
-          <div class="step-hint">Availability updates in real time. Grayed-out times are already booked.</div>
+          <div class="step-title" data-en="Choose a day and time" data-es="Elige un dia y una hora">Choose a day and time</div>
+          <div class="step-hint" data-en="Availability updates in real time. Grayed-out times are already booked." data-es="La disponibilidad se actualiza al momento. Las horas en gris ya estan ocupadas.">Availability updates in real time. Grayed-out times are already booked.</div>
           <div class="day-tabs" id="dayTabs"></div>
           <div class="slot-grid" id="slotGrid"></div>
-          <div class="slot-legend"><span class="sw"></span> Grayed out means taken. Pick any open time.</div>
+          <div class="slot-legend"><span class="sw"></span> <span data-en="Grayed out means taken. Pick any open time." data-es="En gris significa ocupada. Elige cualquier hora libre.">Grayed out means taken. Pick any open time.</span></div>
         </div>
 
         <!-- STEP 4: DETAILS -->
         <div class="step-panel" data-panel="3">
-          <div class="step-title">Almost done, your details</div>
-          <div class="step-hint">We will text you to confirm your chair. No spam, just your appointment.</div>
+          <div class="step-title" data-en="Almost done, your details" data-es="Ya casi, tus datos">Almost done, your details</div>
+          <div class="step-hint" data-en="We will text you to confirm your chair. No spam, just your appointment." data-es="Te enviamos un mensaje para confirmar tu silla. Sin spam, solo tu cita.">We will text you to confirm your chair. No spam, just your appointment.</div>
           <div class="field" id="fName">
-            <label for="inName">Full Name</label>
-            <input id="inName" type="text" placeholder="e.g. Chris Martinez" autocomplete="name">
-            <div class="err">Please enter your name.</div>
+            <label for="inName" data-en="Full Name" data-es="Nombre Completo">Full Name</label>
+            <input id="inName" type="text" placeholder="e.g. Chris Martinez" data-ph-en="e.g. Chris Martinez" data-ph-es="ej. Chris Martinez" autocomplete="name">
+            <div class="err" data-en="Please enter your name." data-es="Por favor ingresa tu nombre.">Please enter your name.</div>
           </div>
           <div class="field" id="fPhone">
-            <label for="inPhone">Mobile Number</label>
-            <input id="inPhone" type="tel" placeholder="(469) 555-0142" autocomplete="tel" inputmode="tel">
-            <div class="err">Please enter a valid 10-digit phone number.</div>
+            <label for="inPhone" data-en="Mobile Number" data-es="Numero de Celular">Mobile Number</label>
+            <input id="inPhone" type="tel" placeholder="(469) 555-0142" data-ph-en="(469) 555-0142" data-ph-es="(469) 555-0142" autocomplete="tel" inputmode="tel">
+            <div class="err" data-en="Please enter a valid 10-digit phone number." data-es="Por favor ingresa un numero de 10 digitos valido.">Please enter a valid 10-digit phone number.</div>
           </div>
-          <label class="consent"><input type="checkbox" id="inConsent"> I agree to get a text confirming my appointment at The Diamond Barbershop.</label>
+          <label class="consent"><input type="checkbox" id="inConsent"> <span data-en="I agree to get a text confirming my appointment at The Diamond Barbershop." data-es="Acepto recibir un mensaje de texto para confirmar mi cita en The Diamond Barbershop.">I agree to get a text confirming my appointment at The Diamond Barbershop.</span></label>
           <div class="summary" id="summary">
-            <h4>Your Appointment</h4>
-            <div class="s-row"><span>Service</span><b id="sumSvc">-</b></div>
-            <div class="s-row"><span>Barber</span><b id="sumBarber">-</b></div>
-            <div class="s-row"><span>When</span><b id="sumTime">-</b></div>
-            <div class="s-total"><span>Starting at</span><b id="sumPrice">-</b></div>
+            <h4 data-en="Your Appointment" data-es="Tu Cita">Your Appointment</h4>
+            <div class="s-row"><span data-en="Service" data-es="Servicio">Service</span><b id="sumSvc">-</b></div>
+            <div class="s-row"><span data-en="Barber" data-es="Barbero">Barber</span><b id="sumBarber">-</b></div>
+            <div class="s-row"><span data-en="When" data-es="Cuando">When</span><b id="sumTime">-</b></div>
+            <div class="s-total"><span data-en="Starting at" data-es="Desde">Starting at</span><b id="sumPrice">-</b></div>
           </div>
         </div>
 
@@ -1020,25 +1073,28 @@
         <div class="step-panel" data-panel="4">
           <div class="confirm">
             <div class="check-ring"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12l6 6L20 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <h3>You are on the books</h3>
-            <p>Thanks <b id="cfName">friend</b>, we saved your chair. We will text <b id="cfPhone">you</b> shortly to confirm.</p>
+            <h3 data-en="You are on the books" data-es="Ya estas apuntado">You are on the books</h3>
+            <p>
+              <span class="lang-en">Thanks <b id="cfName">friend</b>, we saved your chair. We will text <b id="cfPhone">you</b> shortly to confirm.</span>
+              <span class="lang-es">Gracias <b id="cfNameEs">amigo</b>, apartamos tu silla. Te enviaremos un mensaje al <b id="cfPhoneEs">numero</b> muy pronto para confirmar.</span>
+            </p>
             <div class="recap">
-              <div class="r"><span>Service</span><b id="cfSvc">-</b></div>
-              <div class="r"><span>Barber</span><b id="cfBarber">-</b></div>
-              <div class="r"><span>When</span><b id="cfTime">-</b></div>
-              <div class="r"><span>Starting at</span><b id="cfPrice">-</b></div>
+              <div class="r"><span data-en="Service" data-es="Servicio">Service</span><b id="cfSvc">-</b></div>
+              <div class="r"><span data-en="Barber" data-es="Barbero">Barber</span><b id="cfBarber">-</b></div>
+              <div class="r"><span data-en="When" data-es="Cuando">When</span><b id="cfTime">-</b></div>
+              <div class="r"><span data-en="Starting at" data-es="Desde">Starting at</span><b id="cfPrice">-</b></div>
             </div>
             <div class="confirm-cta">
               <a class="btn btn-primary" href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.8"/></svg>
-                Add to Booksy
+                <span data-en="Add to Booksy" data-es="Agregar en Booksy">Add to Booksy</span>
               </a>
               <a class="btn btn-ghost" href="tel:+14695797374">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z" stroke="currentColor" stroke-width="1.7"/></svg>
-                Call the Shop
+                <span data-en="Call the Shop" data-es="Llamar a la Barberia">Call the Shop</span>
               </a>
             </div>
-            <p class="disclaimer">Prefer to book yourself? Reserve any time on Booksy or Square, or just walk in.</p>
+            <p class="disclaimer" data-en="Prefer to book yourself? Reserve any time on Booksy or Square, or just walk in." data-es="¿Prefieres reservar por tu cuenta? Aparta cualquier hora en Booksy o Square, o solo pasa sin cita.">Prefer to book yourself? Reserve any time on Booksy or Square, or just walk in.</p>
           </div>
         </div>
 
@@ -1046,7 +1102,7 @@
 
       <!-- NAV BUTTONS -->
       <div class="booking-nav" id="bookingNav" style="padding:0 24px 26px">
-        <button class="bk-back" id="bkBack" disabled>Back</button>
+        <button class="bk-back" id="bkBack" data-en="Back" data-es="Atras" disabled>Back</button>
         <button class="bk-next" id="bkNext" disabled>
           Continue
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1060,43 +1116,43 @@
 <section class="team sec-pad" id="team">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">The Chairs</span>
-      <h2>Meet your barbers</h2>
+      <span class="eyebrow" data-en="The Chairs" data-es="Las Sillas">The Chairs</span>
+      <h2 data-en="Meet your barbers" data-es="Conoce a tus barberos">Meet your barbers</h2>
       <div class="rule"></div>
-      <p>You book a specialty, not just a slot. Every chair is staffed for skill, speed, and a steady hand. Sample chair profiles shown, your barber's name is confirmed at the shop.</p>
+      <p data-en="You book a specialty, not just a slot. Every chair is staffed for skill, speed, and a steady hand. Sample chair profiles shown, your barber's name is confirmed at the shop." data-es="Reservas una especialidad, no solo un horario. Cada silla esta a cargo de habilidad, rapidez y buen pulso. Se muestran perfiles de ejemplo, el nombre de tu barbero se confirma en la barberia.">You book a specialty, not just a slot. Every chair is staffed for skill, speed, and a steady hand. Sample chair profiles shown, your barber's name is confirmed at the shop.</p>
     </div>
     <div class="team-grid">
       <div class="barber reveal">
         <div class="photo">
           <div class="art"><svg width="100%" height="100%" viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="300" height="300" fill="url(#charGrad)"/><rect width="300" height="300" filter="url(#grain)" opacity="0.35"/><circle cx="150" cy="120" r="52" fill="#c19a54" opacity="0.85"/><path d="M60 300c0-56 40-84 90-84s90 28 90 84" fill="#c19a54" opacity="0.85"/><path d="M105 116c8-24 82-24 90 0" stroke="#16161a" stroke-width="4" fill="none"/><path d="M118 150c14 12 50 12 64 0" stroke="#16161a" stroke-width="4" fill="none"/></svg></div>
-          <span class="chip">Lead Chair</span>
+          <span class="chip" data-en="Lead Chair" data-es="Silla Principal">Lead Chair</span>
         </div>
         <div class="info">
-          <b>Master Barber</b><div class="role">Fades and Line Designs</div>
-          <p>The lead chair for razor-sharp fades and freehand line designs. Clean lines, done right the first time.</p>
-          <a class="book-me" href="#book">Book this chair <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
+          <b data-en="Master Barber" data-es="Barbero Experto">Master Barber</b><div class="role" data-en="Fades and Line Designs" data-es="Fades y Diseños de Linea">Fades and Line Designs</div>
+          <p data-en="The lead chair for razor-sharp fades and freehand line designs. Clean lines, done right the first time." data-es="La silla principal para fades bien definidos y diseños de linea a mano alzada. Lineas limpias, bien hechas desde la primera vez.">The lead chair for razor-sharp fades and freehand line designs. Clean lines, done right the first time.</p>
+          <a class="book-me" href="#book"><span data-en="Book this chair" data-es="Reservar esta silla">Book this chair</span> <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
         </div>
       </div>
       <div class="barber reveal d1">
         <div class="photo">
           <div class="art"><svg width="100%" height="100%" viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="300" height="300" fill="url(#charGrad)"/><rect width="300" height="300" filter="url(#grain)" opacity="0.35"/><circle cx="150" cy="120" r="52" fill="#d8b877" opacity="0.85"/><path d="M60 300c0-56 40-84 90-84s90 28 90 84" fill="#d8b877" opacity="0.85"/><path d="M100 108c12 30 88 30 100 0" stroke="#16161a" stroke-width="4" fill="none"/><path d="M110 170c10 16 60 16 70 0" stroke="#16161a" stroke-width="5" fill="none"/></svg></div>
-          <span class="chip">Master Barber</span>
+          <span class="chip" data-en="Master Barber" data-es="Barbero Experto">Master Barber</span>
         </div>
         <div class="info">
-          <b>Beard and Shave</b><div class="role">Hot Towel and Straight Razor</div>
-          <p>The hot towel and straight razor chair. If you want your beard sculpted and your face relaxed, this is the one.</p>
-          <a class="book-me" href="#book">Book this chair <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
+          <b data-en="Beard and Shave" data-es="Barba y Afeitada">Beard and Shave</b><div class="role" data-en="Hot Towel and Straight Razor" data-es="Toalla Caliente y Navaja">Hot Towel and Straight Razor</div>
+          <p data-en="The hot towel and straight razor chair. If you want your beard sculpted and your face relaxed, this is the one." data-es="La silla de la toalla caliente y la navaja. Si quieres la barba esculpida y la cara relajada, esta es la indicada.">The hot towel and straight razor chair. If you want your beard sculpted and your face relaxed, this is the one.</p>
+          <a class="book-me" href="#book"><span data-en="Book this chair" data-es="Reservar esta silla">Book this chair</span> <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
         </div>
       </div>
       <div class="barber reveal d2">
         <div class="photo">
           <div class="art"><svg width="100%" height="100%" viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="300" height="300" fill="url(#charGrad)"/><rect width="300" height="300" filter="url(#grain)" opacity="0.35"/><circle cx="150" cy="120" r="52" fill="#9c7a3a" opacity="0.9"/><path d="M60 300c0-56 40-84 90-84s90 28 90 84" fill="#9c7a3a" opacity="0.9"/><path d="M112 112l76 8" stroke="#16161a" stroke-width="4" fill="none"/><path d="M122 152c10 10 46 10 56 0" stroke="#16161a" stroke-width="4" fill="none"/></svg></div>
-          <span class="chip">Barber</span>
+          <span class="chip" data-en="Barber" data-es="Barbero">Barber</span>
         </div>
         <div class="info">
-          <b>Scissor and Kids</b><div class="role">Scissor Work and Kids Cuts</div>
-          <p>Patient, precise, and great with the little ones. The chair to ask for on scissor cuts and longer styles.</p>
-          <a class="book-me" href="#book">Book this chair <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
+          <b data-en="Scissor and Kids" data-es="Tijera y Niños">Scissor and Kids</b><div class="role" data-en="Scissor Work and Kids Cuts" data-es="Trabajo a Tijera y Cortes de Niños">Scissor Work and Kids Cuts</div>
+          <p data-en="Patient, precise, and great with the little ones. The chair to ask for on scissor cuts and longer styles." data-es="Paciente, preciso y excelente con los pequeños. La silla que hay que pedir para cortes a tijera y estilos mas largos.">Patient, precise, and great with the little ones. The chair to ask for on scissor cuts and longer styles.</p>
+          <a class="book-me" href="#book"><span data-en="Book this chair" data-es="Reservar esta silla">Book this chair</span> <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
         </div>
       </div>
     </div>
@@ -1107,17 +1163,17 @@
 <section class="gallery sec-pad">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">The Work</span>
-      <h2>Fresh from the chair</h2>
+      <span class="eyebrow" data-en="The Work" data-es="El Trabajo">The Work</span>
+      <h2 data-en="Fresh from the chair" data-es="Recien salidos de la silla">Fresh from the chair</h2>
       <div class="rule"></div>
     </div>
     <div class="gal-grid">
-      <div class="gal-cell wide reveal"><div class="art"><svg width="100%" height="100%" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="200" fill="url(#charGrad)"/><rect width="400" height="200" filter="url(#grain)" opacity="0.3"/><g stroke="#c19a54" stroke-width="2" fill="none" opacity="0.7"><path d="M40 160c0-40 30-60 60-60s60 20 60 60"/><circle cx="100" cy="80" r="34"/><path d="M200 40h160M200 90h160M200 140h120" stroke-width="3"/></g></svg></div><span class="glab">Skin fade with a line design</span></div>
-      <div class="gal-cell reveal d1"><div class="art"><svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="200" height="200" fill="url(#charGrad)"/><rect width="200" height="200" filter="url(#grain)" opacity="0.3"/><g stroke="#d8b877" stroke-width="2" fill="none" opacity="0.75"><circle cx="100" cy="86" r="40"/><path d="M60 100c0 30 80 30 80 0"/><path d="M100 46v-14"/></g></svg></div><span class="glab">Beard shaped up</span></div>
-      <div class="gal-cell reveal d2"><div class="art"><svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="200" height="200" fill="url(#charGrad)"/><rect width="200" height="200" filter="url(#grain)" opacity="0.3"/><g stroke="#c19a54" stroke-width="2" fill="none" opacity="0.75"><circle cx="60" cy="70" r="18"/><circle cx="60" cy="130" r="18"/><path d="M76 82L150 150M76 118L150 50"/></g></svg></div><span class="glab">Scissor cut</span></div>
-      <div class="gal-cell reveal"><div class="art"><svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="200" height="200" fill="url(#charGrad)"/><rect width="200" height="200" filter="url(#grain)" opacity="0.3"/><g stroke="#9c7a3a" stroke-width="2.4" fill="none" opacity="0.8"><path d="M70 40l60 4-6 100a10 10 0 0 1-10 9H86a10 10 0 0 1-10-9z"/><path d="M84 70v60M100 70v60M116 70v60"/></g></svg></div><span class="glab">Straight razor finish</span></div>
-      <div class="gal-cell reveal d1"><div class="art"><svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="200" height="200" fill="url(#charGrad)"/><rect width="200" height="200" filter="url(#grain)" opacity="0.3"/><g stroke="#c19a54" stroke-width="2" fill="none" opacity="0.75"><circle cx="100" cy="90" r="44"/><path d="M100 46l4 90M70 70c10 8 50 8 60 0"/></g></svg></div><span class="glab">Kids first cut</span></div>
-      <div class="gal-cell wide reveal d2"><div class="art"><svg width="100%" height="100%" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="200" fill="url(#charGrad)"/><rect width="400" height="200" filter="url(#grain)" opacity="0.3"/><g stroke="#d8b877" stroke-width="2" fill="none" opacity="0.7"><rect x="150" y="40" width="12" height="120" rx="6" fill="#c19a54" opacity="0.5"/><path d="M150 60l12-6M150 90l12-6M150 120l12-6M150 150l12-6" stroke="#7a2e2e"/><path d="M40 100h90M230 100h130" stroke-width="3"/></g></svg></div><span class="glab">The shop floor</span></div>
+      <div class="gal-cell wide reveal"><div class="art"><svg width="100%" height="100%" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="200" fill="url(#charGrad)"/><rect width="400" height="200" filter="url(#grain)" opacity="0.3"/><g stroke="#c19a54" stroke-width="2" fill="none" opacity="0.7"><path d="M40 160c0-40 30-60 60-60s60 20 60 60"/><circle cx="100" cy="80" r="34"/><path d="M200 40h160M200 90h160M200 140h120" stroke-width="3"/></g></svg></div><span class="glab" data-en="Skin fade with a line design" data-es="Fade al ras con diseño de linea">Skin fade with a line design</span></div>
+      <div class="gal-cell reveal d1"><div class="art"><svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="200" height="200" fill="url(#charGrad)"/><rect width="200" height="200" filter="url(#grain)" opacity="0.3"/><g stroke="#d8b877" stroke-width="2" fill="none" opacity="0.75"><circle cx="100" cy="86" r="40"/><path d="M60 100c0 30 80 30 80 0"/><path d="M100 46v-14"/></g></svg></div><span class="glab" data-en="Beard shaped up" data-es="Barba perfilada">Beard shaped up</span></div>
+      <div class="gal-cell reveal d2"><div class="art"><svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="200" height="200" fill="url(#charGrad)"/><rect width="200" height="200" filter="url(#grain)" opacity="0.3"/><g stroke="#c19a54" stroke-width="2" fill="none" opacity="0.75"><circle cx="60" cy="70" r="18"/><circle cx="60" cy="130" r="18"/><path d="M76 82L150 150M76 118L150 50"/></g></svg></div><span class="glab" data-en="Scissor cut" data-es="Corte a tijera">Scissor cut</span></div>
+      <div class="gal-cell reveal"><div class="art"><svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="200" height="200" fill="url(#charGrad)"/><rect width="200" height="200" filter="url(#grain)" opacity="0.3"/><g stroke="#9c7a3a" stroke-width="2.4" fill="none" opacity="0.8"><path d="M70 40l60 4-6 100a10 10 0 0 1-10 9H86a10 10 0 0 1-10-9z"/><path d="M84 70v60M100 70v60M116 70v60"/></g></svg></div><span class="glab" data-en="Straight razor finish" data-es="Remate con navaja">Straight razor finish</span></div>
+      <div class="gal-cell reveal d1"><div class="art"><svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="200" height="200" fill="url(#charGrad)"/><rect width="200" height="200" filter="url(#grain)" opacity="0.3"/><g stroke="#c19a54" stroke-width="2" fill="none" opacity="0.75"><circle cx="100" cy="90" r="44"/><path d="M100 46l4 90M70 70c10 8 50 8 60 0"/></g></svg></div><span class="glab" data-en="Kids first cut" data-es="Primer corte de niño">Kids first cut</span></div>
+      <div class="gal-cell wide reveal d2"><div class="art"><svg width="100%" height="100%" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="200" fill="url(#charGrad)"/><rect width="400" height="200" filter="url(#grain)" opacity="0.3"/><g stroke="#d8b877" stroke-width="2" fill="none" opacity="0.7"><rect x="150" y="40" width="12" height="120" rx="6" fill="#c19a54" opacity="0.5"/><path d="M150 60l12-6M150 90l12-6M150 120l12-6M150 150l12-6" stroke="#7a2e2e"/><path d="M40 100h90M230 100h130" stroke-width="3"/></g></svg></div><span class="glab" data-en="The shop floor" data-es="El interior de la barberia">The shop floor</span></div>
     </div>
   </div>
 </section>
@@ -1126,8 +1182,8 @@
 <section class="reviews sec-pad" id="reviews">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">Word on the Street</span>
-      <h2>What Richardson says</h2>
+      <span class="eyebrow" data-en="Word on the Street" data-es="Lo que se Dice">Word on the Street</span>
+      <h2 data-en="What Richardson says" data-es="Lo que dice Richardson">What Richardson says</h2>
       <div class="rule"></div>
     </div>
     <div class="rev-top reveal d1">
@@ -1141,37 +1197,37 @@
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9 12 2z"/></svg>
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9 12 2z"/></svg>
           </span>
-          <div class="of">Based on 295 Google reviews</div>
+          <div class="of" data-en="Based on 295 Google reviews" data-es="Basado en 295 reseñas de Google">Based on 295 Google reviews</div>
         </div>
       </div>
-      <span class="rev-badge"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l2.4 7.3H22l-6 4.4 2.3 7.3L12 16.6 5.7 21l2.3-7.3-6-4.4h7.6L12 2z" stroke="#c19a54" stroke-width="1.4"/></svg> Top rated in Richardson</span>
+      <span class="rev-badge"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l2.4 7.3H22l-6 4.4 2.3 7.3L12 16.6 5.7 21l2.3-7.3-6-4.4h7.6L12 2z" stroke="#c19a54" stroke-width="1.4"/></svg> <span data-en="Top rated in Richardson" data-es="Mejor calificados en Richardson">Top rated in Richardson</span></span>
     </div>
     <div class="rev-grid">
       <div class="review reveal">
         <div class="quote-mark">&ldquo;</div>
         <div class="stars" aria-label="5 stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9 12 2z"/></svg></div>
-        <p>Extremely professional, great environment, great service and perfect skills.</p>
+        <p data-en="Extremely professional, great environment, great service and perfect skills." data-es="Sumamente profesionales, excelente ambiente, buen servicio y habilidad perfecta.">Extremely professional, great environment, great service and perfect skills.</p>
         <div class="who">
           <div class="av"><svg width="100%" height="100%" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" fill="#7a2e2e"/><circle cx="20" cy="16" r="8" fill="#ece5d8" opacity="0.85"/><path d="M6 40c0-8 6-12 14-12s14 4 14 12" fill="#ece5d8" opacity="0.85"/></svg></div>
-          <div><b>Google Reviewer</b><span>Verified visit, Richardson</span></div>
+          <div><b data-en="Google Reviewer" data-es="Reseña de Google">Google Reviewer</b><span data-en="Verified visit, Richardson" data-es="Visita verificada, Richardson">Verified visit, Richardson</span></div>
         </div>
       </div>
       <div class="review reveal d1">
         <div class="quote-mark">&ldquo;</div>
         <div class="stars" aria-label="5 stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9 12 2z"/></svg></div>
-        <p>Staff is also very friendly offering coffee, water, or soda while you there.</p>
+        <p data-en="Staff is also very friendly offering coffee, water, or soda while you there." data-es="El personal tambien es muy amable, te ofrecen cafe, agua o refresco mientras esperas.">Staff is also very friendly offering coffee, water, or soda while you there.</p>
         <div class="who">
           <div class="av"><svg width="100%" height="100%" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" fill="#1e3a8a"/><circle cx="20" cy="16" r="8" fill="#ece5d8" opacity="0.85"/><path d="M6 40c0-8 6-12 14-12s14 4 14 12" fill="#ece5d8" opacity="0.85"/></svg></div>
-          <div><b>Google Reviewer</b><span>Verified visit, Richardson</span></div>
+          <div><b data-en="Google Reviewer" data-es="Reseña de Google">Google Reviewer</b><span data-en="Verified visit, Richardson" data-es="Visita verificada, Richardson">Verified visit, Richardson</span></div>
         </div>
       </div>
       <div class="review reveal d2">
         <div class="quote-mark">&ldquo;</div>
         <div class="stars" aria-label="5 stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9 12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9 12 2z"/></svg></div>
-        <p>Great customer service, clean place, quality hair cuts.</p>
+        <p data-en="Great customer service, clean place, quality hair cuts." data-es="Excelente atencion al cliente, lugar limpio, cortes de calidad.">Great customer service, clean place, quality hair cuts.</p>
         <div class="who">
           <div class="av"><svg width="100%" height="100%" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" fill="#9c7a3a"/><circle cx="20" cy="16" r="8" fill="#ece5d8" opacity="0.85"/><path d="M6 40c0-8 6-12 14-12s14 4 14 12" fill="#ece5d8" opacity="0.85"/></svg></div>
-          <div><b>Google Reviewer</b><span>Verified visit, Richardson</span></div>
+          <div><b data-en="Google Reviewer" data-es="Reseña de Google">Google Reviewer</b><span data-en="Verified visit, Richardson" data-es="Visita verificada, Richardson">Verified visit, Richardson</span></div>
         </div>
       </div>
     </div>
@@ -1182,34 +1238,34 @@
 <section class="location sec-pad" id="visit">
   <div class="wrap loc-grid">
     <div class="loc-info reveal">
-      <span class="eyebrow">Find the Chair</span>
-      <h2>Come see us in Richardson</h2>
+      <span class="eyebrow" data-en="Find the Chair" data-es="Encuentra la Silla">Find the Chair</span>
+      <h2 data-en="Come see us in Richardson" data-es="Ven a vernos en Richardson">Come see us in Richardson</h2>
       <div class="loc-block">
         <svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="9" r="2.6" stroke="currentColor" stroke-width="1.7"/></svg>
         <div>
-          <b>Address</b>
+          <b data-en="Address" data-es="Direccion">Address</b>
           <p>401 N Central Expy<br>Richardson, TX 75080</p>
-          <a class="link" href="https://maps.google.com/?q=The+Diamond+Barbershop+401+N+Central+Expy+Richardson+TX+75080" target="_blank" rel="noopener">Get directions</a>
+          <a class="link" href="https://maps.google.com/?q=The+Diamond+Barbershop+401+N+Central+Expy+Richardson+TX+75080" target="_blank" rel="noopener" data-en="Get directions" data-es="Como llegar">Get directions</a>
         </div>
       </div>
       <div class="loc-block">
         <svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
         <div>
-          <b>Hours</b>
+          <b data-en="Hours" data-es="Horario">Hours</b>
           <table class="hours-tbl">
-            <tr><td>Monday</td><td>9:00 AM to 8:00 PM</td></tr>
-            <tr><td>Tuesday to Friday</td><td>9:00 AM to 8:00 PM</td></tr>
-            <tr><td>Saturday</td><td>9:00 AM to 7:00 PM</td></tr>
-            <tr><td>Sunday</td><td>10:00 AM to 5:00 PM</td></tr>
+            <tr><td data-en="Monday" data-es="Lunes">Monday</td><td data-en="9:00 AM to 8:00 PM" data-es="9:00 AM a 8:00 PM">9:00 AM to 8:00 PM</td></tr>
+            <tr><td data-en="Tuesday to Friday" data-es="Martes a Viernes">Tuesday to Friday</td><td data-en="9:00 AM to 8:00 PM" data-es="9:00 AM a 8:00 PM">9:00 AM to 8:00 PM</td></tr>
+            <tr><td data-en="Saturday" data-es="Sabado">Saturday</td><td data-en="9:00 AM to 7:00 PM" data-es="9:00 AM a 7:00 PM">9:00 AM to 7:00 PM</td></tr>
+            <tr><td data-en="Sunday" data-es="Domingo">Sunday</td><td data-en="10:00 AM to 5:00 PM" data-es="10:00 AM a 5:00 PM">10:00 AM to 5:00 PM</td></tr>
           </table>
         </div>
       </div>
       <div class="loc-block">
         <svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z" stroke="currentColor" stroke-width="1.7"/></svg>
         <div>
-          <b>Call or Text</b>
+          <b data-en="Call or Text" data-es="Llama o Escribe">Call or Text</b>
           <a class="link" href="tel:+14695797374">(469) 579-7374</a>
-          <p style="margin-top:4px">Walk-ins always welcome. Hablamos Espanol.</p>
+          <p style="margin-top:4px" data-en="Walk-ins always welcome. Hablamos Espanol." data-es="Siempre puedes llegar sin cita. We speak English too.">Walk-ins always welcome. Hablamos Espanol.</p>
         </div>
       </div>
     </div>
@@ -1235,7 +1291,7 @@
       </div>
       <svg class="pin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z" fill="#c19a54"/><circle cx="12" cy="9" r="2.6" fill="#16161a"/></svg>
       <div class="map-cta">
-        <a class="btn btn-primary" href="https://maps.google.com/?q=The+Diamond+Barbershop+401+N+Central+Expy+Richardson+TX+75080" target="_blank" rel="noopener">Open in Maps</a>
+        <a class="btn btn-primary" href="https://maps.google.com/?q=The+Diamond+Barbershop+401+N+Central+Expy+Richardson+TX+75080" target="_blank" rel="noopener" data-en="Open in Maps" data-es="Abrir en Maps">Open in Maps</a>
       </div>
     </div>
   </div>
@@ -1247,11 +1303,11 @@
   <svg class="pole-bg" viewBox="0 0 120 360" aria-hidden="true"><defs><clipPath id="pc2"><rect x="30" y="30" width="60" height="300" rx="30"/></clipPath></defs><ellipse cx="60" cy="24" rx="30" ry="12" fill="#c19a54"/><g clip-path="url(#pc2)"><rect x="30" y="30" width="60" height="300" fill="#f4efe4"/><g fill="#7a2e2e"><rect x="30" y="30" width="60" height="26" transform="skewY(-30)"/><rect x="30" y="110" width="60" height="26" transform="skewY(-30)"/><rect x="30" y="190" width="60" height="26" transform="skewY(-30)"/></g></g><ellipse cx="60" cy="336" rx="30" ry="12" fill="#c19a54"/></svg>
   <svg class="pole-bg r" viewBox="0 0 120 360" aria-hidden="true"><defs><clipPath id="pc3"><rect x="30" y="30" width="60" height="300" rx="30"/></clipPath></defs><ellipse cx="60" cy="24" rx="30" ry="12" fill="#c19a54"/><g clip-path="url(#pc3)"><rect x="30" y="30" width="60" height="300" fill="#f4efe4"/><g fill="#1e3a8a"><rect x="30" y="30" width="60" height="26" transform="skewY(-30)"/><rect x="30" y="110" width="60" height="26" transform="skewY(-30)"/><rect x="30" y="190" width="60" height="26" transform="skewY(-30)"/></g></g><ellipse cx="60" cy="336" rx="30" ry="12" fill="#c19a54"/></svg>
   <div class="wrap inner">
-    <h2 class="reveal">Your best cut is <em>one chair away</em></h2>
-    <p class="reveal d1">Book online in under a minute, or just walk in. Coffee is on us while you wait.</p>
+    <h2 class="reveal"><span class="lang-en">Your best cut is <em>one chair away</em></span><span class="lang-es">Tu mejor corte esta a <em>una silla de distancia</em></span></h2>
+    <p class="reveal d1" data-en="Book online in under a minute, or just walk in. Coffee is on us while you wait." data-es="Reserva en linea en menos de un minuto, o solo pasa sin cita. El cafe corre por nuestra cuenta mientras esperas.">Book online in under a minute, or just walk in. Coffee is on us while you wait.</p>
     <div class="btns reveal d2">
-      <a class="btn btn-primary" href="#book">Book a Chair</a>
-      <a class="btn btn-ghost" href="https://the-diamond-barbershop.square.site" target="_blank" rel="noopener">Book on Square</a>
+      <a class="btn btn-primary" href="#book" data-en="Book a Chair" data-es="Reservar Silla">Book a Chair</a>
+      <a class="btn btn-ghost" href="https://the-diamond-barbershop.square.site" target="_blank" rel="noopener" data-en="Book on Square" data-es="Reservar en Square">Book on Square</a>
     </div>
     <a class="call-big reveal d3" href="tel:+14695797374">
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z" stroke="currentColor" stroke-width="1.7"/></svg>
@@ -1269,10 +1325,13 @@
           <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="1" y="1" width="46" height="46" rx="8" fill="#16161a" stroke="#c19a54" stroke-width="1.4"/><path d="M24 9l9 9-9 9-9-9 9-9z" fill="url(#brassGrad)"/><path d="M24 13.5l5.5 5.5L24 24.5 18.5 19 24 13.5z" fill="#16161a"/><path d="M14 32h20M18 36h12" stroke="#c19a54" stroke-width="1.6" stroke-linecap="round"/></svg>
           <span class="name"><b>The Diamond</b><span>Barbershop</span></span>
         </a>
-        <p>The best barbers in Richardson and Dallas. Sharp cuts, hot towel care, and a chair that always feels like home.</p>
+        <p data-en="The best barbers in Richardson and Dallas. Sharp cuts, hot towel care, and a chair that always feels like home." data-es="Los mejores barberos de Richardson y Dallas. Cortes precisos, atencion con toalla caliente y una silla que siempre se siente como en casa.">The best barbers in Richardson and Dallas. Sharp cuts, hot towel care, and a chair that always feels like home.</p>
         <div class="foot-social">
           <a href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener" aria-label="Book on Booksy">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.6"/></svg>
+          </a>
+          <a href="https://instagram.com/thediamond_barbershop504" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
           </a>
           <a href="tel:+14695797374" aria-label="Call the shop">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z" stroke="currentColor" stroke-width="1.6"/></svg>
@@ -1280,36 +1339,36 @@
         </div>
       </div>
       <div class="foot-col">
-        <h4>Services</h4>
-        <a href="#services">Fades and Cuts</a>
-        <a href="#services">Beard Design</a>
-        <a href="#services">Hot Towel Shave</a>
-        <a href="#services">Kids Cuts</a>
-        <a href="#services">Full Service</a>
+        <h4 data-en="Services" data-es="Servicios">Services</h4>
+        <a href="#services" data-en="Fades and Cuts" data-es="Fades y Cortes">Fades and Cuts</a>
+        <a href="#services" data-en="Beard Design" data-es="Diseño de Barba">Beard Design</a>
+        <a href="#services" data-en="Hot Towel Shave" data-es="Afeitada con Toalla Caliente">Hot Towel Shave</a>
+        <a href="#services" data-en="Kids Cuts" data-es="Cortes para Niños">Kids Cuts</a>
+        <a href="#services" data-en="Full Service" data-es="Servicio Completo">Full Service</a>
       </div>
       <div class="foot-col">
-        <h4>Visit</h4>
+        <h4 data-en="Visit" data-es="Visitanos">Visit</h4>
         <p>401 N Central Expy<br>Richardson, TX 75080</p>
-        <a href="https://maps.google.com/?q=The+Diamond+Barbershop+401+N+Central+Expy+Richardson+TX+75080" target="_blank" rel="noopener">Directions</a>
+        <a href="https://maps.google.com/?q=The+Diamond+Barbershop+401+N+Central+Expy+Richardson+TX+75080" target="_blank" rel="noopener" data-en="Directions" data-es="Como llegar">Directions</a>
       </div>
       <div class="foot-col">
-        <h4>Hours</h4>
-        <p>Mon to Fri, 9 AM to 8 PM<br>Sat, 9 AM to 7 PM<br>Sun, 10 AM to 5 PM</p>
+        <h4 data-en="Hours" data-es="Horario">Hours</h4>
+        <p><span class="lang-en">Mon to Fri, 9 AM to 8 PM<br>Sat, 9 AM to 7 PM<br>Sun, 10 AM to 5 PM</span><span class="lang-es">Lun a Vie, 9 AM a 8 PM<br>Sab, 9 AM a 7 PM<br>Dom, 10 AM a 5 PM</span></p>
         <a href="tel:+14695797374">(469) 579-7374</a>
       </div>
     </div>
     <div class="foot-bottom">
-      <p>&copy; <span id="yr"></span> The Diamond Barbershop, Richardson, TX. All rights reserved.</p>
-      <p>Walk-ins welcome. Bilingual, English and Spanish.</p>
+      <p>&copy; <span id="yr"></span> <span data-en="The Diamond Barbershop, Richardson, TX. All rights reserved." data-es="The Diamond Barbershop, Richardson, TX. Todos los derechos reservados.">The Diamond Barbershop, Richardson, TX. All rights reserved.</span></p>
+      <p data-en="Walk-ins welcome. Bilingual, English and Spanish." data-es="Se aceptan clientes sin cita. Bilingues, ingles y español.">Walk-ins welcome. Bilingual, English and Spanish.</p>
     </div>
-    <p class="foot-disclaimer">Concept preview built by DNA Agency, not affiliated with The Diamond Barbershop.</p>
+    <p class="foot-disclaimer" data-en="Concept preview built by DNA Agency, not affiliated with The Diamond Barbershop." data-es="Vista previa de concepto creada por DNA Agency, no afiliada con The Diamond Barbershop.">Concept preview built by DNA Agency, not affiliated with The Diamond Barbershop.</p>
   </div>
 </footer>
 
 <!-- ===== FLOATING CALL (mobile) ===== -->
 <a class="float-call" href="tel:+14695797374">
   <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z" stroke="currentColor" stroke-width="1.9"/></svg>
-  Tap to Call (469) 579-7374
+  <span data-en="Tap to Call (469) 579-7374" data-es="Toca para Llamar (469) 579-7374">Tap to Call (469) 579-7374</span>
 </a>
 
 <script>
@@ -1333,6 +1392,57 @@
     a.addEventListener('click', function(){ mm.classList.remove('open'); });
   });
 
+  /* ===================== LANGUAGE TOGGLE ===================== */
+  var LANG = 'en';
+  try { var saved = sessionStorage.getItem('tdb-lang'); if(saved==='en'||saved==='es') LANG = saved; } catch(e){}
+
+  function applyLangToStatic(){
+    // text-node swap for data-en / data-es
+    var nodes = document.querySelectorAll('[data-en]');
+    for(var i=0;i<nodes.length;i++){
+      var el = nodes[i];
+      var val = el.getAttribute('data-'+LANG);
+      if(val!==null) el.textContent = val;
+    }
+    // placeholder swap
+    var phs = document.querySelectorAll('[data-ph-en]');
+    for(var j=0;j<phs.length;j++){
+      var p = phs[j];
+      var pv = p.getAttribute('data-ph-'+LANG);
+      if(pv!==null) p.setAttribute('placeholder', pv);
+    }
+  }
+
+  function setLang(lang, opts){
+    if(lang!=='en' && lang!=='es') return;
+    LANG = lang;
+    var root = document.documentElement;
+    root.classList.remove('lang-en','lang-es');
+    root.classList.add('lang-'+lang);
+    root.setAttribute('lang', lang);
+    try { sessionStorage.setItem('tdb-lang', lang); } catch(e){}
+    // toggle button states
+    Array.prototype.forEach.call(document.querySelectorAll('.lang-btn'), function(b){
+      var on = b.getAttribute('data-lang')===lang;
+      b.classList.toggle('on', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    applyLangToStatic();
+    // re-render language-dependent booking pieces if they exist
+    if(typeof renderDays === 'function'){ renderDays(); }
+    if(typeof renderSlots === 'function'){ renderSlots(); }
+    if(typeof updateSummary === 'function'){ updateSummary(); }
+    if(typeof refreshNextLabel === 'function'){ refreshNextLabel(); }
+    if(typeof fillConfirm === 'function' && typeof state !== 'undefined' && state.step >= TOTAL_INPUT_STEPS && state.service){ fillConfirm(); }
+  }
+  // expose so booking code can read current language
+  function currentLang(){ return LANG; }
+
+  Array.prototype.forEach.call(document.querySelectorAll('.lang-btn'), function(b){
+    b.setAttribute('aria-pressed', b.getAttribute('data-lang')===LANG ? 'true':'false');
+    b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang')); });
+  });
+
   /* scroll reveal */
   var reveals = document.querySelectorAll('.reveal');
   if('IntersectionObserver' in window){
@@ -1353,8 +1463,26 @@
   }
 
   /* ===================== BOOKING FUNNEL ===================== */
-  var state = { step:0, service:null, price:null, dur:null, barber:null, day:null, dayLabel:null, time:null, name:'', phone:'' };
+  /* store selected labels in both languages so the summary/confirm flip cleanly */
+  var state = { step:0, service:null, serviceEs:null, price:null, dur:null, barber:null, barberEs:null, day:null, dayIndex:null, time:null, name:'', phone:'' };
   var TOTAL_INPUT_STEPS = 4; // service, barber, time, details -> then confirm(4)
+
+  /* booking micro-copy in both languages */
+  var BK = {
+    en: {
+      today:'Today', pickDay:'Pick a day above to see open times.',
+      confirm:'Confirm Booking ', cont:'Continue ',
+      dayNames:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
+      months:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+    },
+    es: {
+      today:'Hoy', pickDay:'Elige un dia arriba para ver las horas libres.',
+      confirm:'Confirmar Reserva ', cont:'Continuar ',
+      dayNames:['Dom','Lun','Mar','Mie','Jue','Vie','Sab'],
+      months:['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic']
+    }
+  };
+  function bk(){ return BK[currentLang()]; }
 
   var panels = document.querySelectorAll('.step-panel');
   var stepDots = document.querySelectorAll('#stepper .step-dot');
@@ -1362,22 +1490,22 @@
   var bkNext = document.getElementById('bkNext');
   var bookingNav = document.getElementById('bookingNav');
 
-  /* build day tabs (next 5 open days) */
+  /* build day tabs (next 5 open days) -- store raw Date so labels can re-localize */
   var dayTabs = document.getElementById('dayTabs');
   var slotGrid = document.getElementById('slotGrid');
-  var DAYNAMES = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-  var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   var days = [];
   (function buildDays(){
     var d = new Date(); d.setHours(0,0,0,0);
     var count = 0;
     while(days.length < 5 && count < 14){
       count++;
-      var label = (days.length===0) ? 'Today' : DAYNAMES[d.getDay()];
-      days.push({ key: d.toISOString().slice(0,10), name: label, sub: MONTHS[d.getMonth()]+' '+d.getDate(), dow: d.getDay() });
+      days.push({ key: d.toISOString().slice(0,10), date: new Date(d.getTime()), first:(days.length===0) });
       d = new Date(d.getTime() + 86400000);
     }
   })();
+  function dayName(dy){ return dy.first ? bk().today : bk().dayNames[dy.date.getDay()]; }
+  function daySub(dy){ return bk().months[dy.date.getMonth()] + ' ' + dy.date.getDate(); }
+  function dayLabelFull(dy){ return dayName(dy) + ' ' + daySub(dy); }
 
   /* pseudo-random but stable "taken" slots per day+barber */
   function hashStr(s){ var h=0; for(var i=0;i<s.length;i++){ h=(h<<5)-h+s.charCodeAt(i); h|=0; } return Math.abs(h); }
@@ -1388,9 +1516,12 @@
     days.forEach(function(dy, i){
       var b = document.createElement('button');
       b.className = 'day-tab' + (state.day===dy.key ? ' sel' : '');
-      b.innerHTML = dy.name + '<small>'+dy.sub+'</small>';
+      var small = document.createElement('small');
+      small.textContent = daySub(dy);
+      b.appendChild(document.createTextNode(dayName(dy)));
+      b.appendChild(small);
       b.addEventListener('click', function(){
-        state.day = dy.key; state.dayLabel = dy.name+' '+dy.sub; state.time = null;
+        state.day = dy.key; state.dayIndex = i; state.time = null;
         renderDays(); renderSlots(); updateNext();
       });
       dayTabs.appendChild(b);
@@ -1398,13 +1529,13 @@
   }
   function renderSlots(){
     slotGrid.innerHTML = '';
-    if(!state.day){ slotGrid.innerHTML = '<p style="grid-column:1/-1;color:var(--cream-faint);font-size:.86rem">Pick a day above to see open times.</p>'; return; }
+    if(!state.day){ slotGrid.innerHTML = '<p style="grid-column:1/-1;color:var(--cream-faint);font-size:.86rem">'+bk().pickDay+'</p>'; return; }
     var seed = hashStr(state.day + (state.barber||'any'));
     ALL_SLOTS.forEach(function(t, i){
       var taken = ((seed >> i) & 1) === 1 && (i % 3 !== 0); // ~1/3 taken, deterministic
       var el = document.createElement('button');
       el.className = 'slot' + (taken ? ' taken' : '') + (state.time===t ? ' sel' : '');
-      // hours 9,10,11 = AM, 1-6 = PM
+      // hours 9,10,11 = AM, 1-6 = PM (AM/PM read the same in both languages)
       var hr = parseInt(t);
       var ampm = (hr >= 9 && hr <= 11) ? 'AM' : 'PM';
       el.textContent = t + ' ' + ampm;
@@ -1417,6 +1548,8 @@
       slotGrid.appendChild(el);
     });
   }
+  function selectedDay(){ return (state.dayIndex!=null && days[state.dayIndex]) ? days[state.dayIndex] : null; }
+  function selectedDayLabel(){ var dy = selectedDay(); return dy ? dayLabelFull(dy) : ''; }
 
   /* service selection */
   document.querySelectorAll('#serviceGrid .opt').forEach(function(o){
@@ -1424,6 +1557,7 @@
       document.querySelectorAll('#serviceGrid .opt').forEach(function(x){ x.classList.remove('sel'); });
       o.classList.add('sel');
       state.service = o.getAttribute('data-svc');
+      state.serviceEs = o.getAttribute('data-svc-es') || o.getAttribute('data-svc');
       state.price = o.getAttribute('data-price');
       state.dur = o.getAttribute('data-dur');
       updateNext();
@@ -1436,10 +1570,15 @@
       document.querySelectorAll('#barberGrid .barber-opt').forEach(function(x){ x.classList.remove('sel'); });
       o.classList.add('sel');
       state.barber = o.getAttribute('data-barber');
+      state.barberEs = o.getAttribute('data-barber-es') || o.getAttribute('data-barber');
       renderSlots(); // refresh availability for this barber
       updateNext();
     });
   });
+
+  /* language-aware label helpers for the booking summary/confirm */
+  function svcLabel(){ return currentLang()==='es' ? state.serviceEs : state.service; }
+  function barberLabel(){ return currentLang()==='es' ? state.barberEs : state.barber; }
 
   /* details inputs */
   var inName = document.getElementById('inName');
@@ -1463,15 +1602,33 @@
   /* summary */
   function updateSummary(){
     var sum = document.getElementById('summary');
+    if(!sum) return;
     if(state.service && state.barber && state.time){
       sum.classList.add('show');
-      document.getElementById('sumSvc').textContent = state.service + ' ('+state.dur+')';
-      document.getElementById('sumBarber').textContent = state.barber;
-      document.getElementById('sumTime').textContent = (state.dayLabel||'') + ', ' + (state.timeLabel||'');
+      document.getElementById('sumSvc').textContent = svcLabel() + ' ('+state.dur+')';
+      document.getElementById('sumBarber').textContent = barberLabel();
+      document.getElementById('sumTime').textContent = selectedDayLabel() + ', ' + (state.timeLabel||'');
       document.getElementById('sumPrice').textContent = '$' + state.price;
     } else {
       sum.classList.remove('show');
     }
+  }
+
+  /* confirmation fill (re-runnable so it re-localizes on language flip) */
+  function fillConfirm(){
+    var first = (state.name.split(' ')[0] || '');
+    var cfName = document.getElementById('cfName');
+    var cfNameEs = document.getElementById('cfNameEs');
+    if(cfName) cfName.textContent = first || 'friend';
+    if(cfNameEs) cfNameEs.textContent = first || 'amigo';
+    var cfPhone = document.getElementById('cfPhone');
+    var cfPhoneEs = document.getElementById('cfPhoneEs');
+    if(cfPhone) cfPhone.textContent = state.phone || 'you';
+    if(cfPhoneEs) cfPhoneEs.textContent = state.phone || 'tu numero';
+    document.getElementById('cfSvc').textContent = svcLabel() + ' ('+state.dur+')';
+    document.getElementById('cfBarber').textContent = barberLabel();
+    document.getElementById('cfTime').textContent = selectedDayLabel() + ', ' + (state.timeLabel||'');
+    document.getElementById('cfPrice').textContent = '$' + state.price;
   }
 
   /* step gating */
@@ -1486,11 +1643,16 @@
     }
     return true;
   }
+  function refreshNextLabel(){
+    if(state.step < TOTAL_INPUT_STEPS && bkNext.firstChild){
+      bkNext.childNodes[0].nodeValue = (state.step===3 ? bk().confirm : bk().cont);
+    }
+  }
   function updateNext(){
     updateSummary();
     if(state.step < TOTAL_INPUT_STEPS){
       bkNext.disabled = !stepValid(state.step);
-      bkNext.firstChild && (bkNext.childNodes[0].nodeValue = (state.step===3 ? 'Confirm Booking ' : 'Continue '));
+      refreshNextLabel();
     }
   }
 
@@ -1531,13 +1693,7 @@
     if(state.step < TOTAL_INPUT_STEPS - 1){
       showStep(state.step + 1);
     } else {
-      // finalize -> confirmation
-      document.getElementById('cfName').textContent = state.name.split(' ')[0] || 'friend';
-      document.getElementById('cfPhone').textContent = state.phone;
-      document.getElementById('cfSvc').textContent = state.service + ' ('+state.dur+')';
-      document.getElementById('cfBarber').textContent = state.barber;
-      document.getElementById('cfTime').textContent = (state.dayLabel||'') + ', ' + (state.timeLabel||'');
-      document.getElementById('cfPrice').textContent = '$' + state.price;
+      fillConfirm();
       showStep(TOTAL_INPUT_STEPS);
     }
   });
@@ -1547,6 +1703,7 @@
   inPhone.addEventListener('input', function(){ fPhone.classList.remove('invalid'); });
 
   /* init */
+  setLang(LANG);   // apply persisted/default language to the whole page + booking copy
   renderDays();
   renderSlots();
   showStep(0);

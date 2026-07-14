@@ -107,6 +107,21 @@
   .hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px}
   .hamburger svg{width:26px;height:26px;color:var(--paper)}
 
+  /* language toggle */
+  .lang-toggle{
+    display:inline-flex;align-items:center;gap:0;border:1px solid var(--line);border-radius:100px;
+    padding:3px;background:rgba(237,232,223,0.04);cursor:pointer;font-family:var(--font-body);
+    line-height:1;flex:0 0 auto;
+  }
+  .lang-toggle .lt{
+    border:none;background:transparent;cursor:pointer;color:var(--paper-dim);
+    font-family:var(--font-body);font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
+    padding:6px 12px;border-radius:100px;transition:color .25s, background .3s;
+  }
+  .lang-toggle .lt:hover{color:var(--paper)}
+  .lang-toggle .lt.on{background:var(--grad-brass);color:#1a1406}
+  .lang-toggle .globe{width:15px;height:15px;color:var(--brass-2);margin:0 4px 0 7px;flex:0 0 15px}
+
   @media(max-width:900px){
     .nav-links{
       position:fixed;inset:0 0 0 auto;width:min(78vw,320px);background:var(--ink-2);
@@ -119,6 +134,12 @@
     .nav-links .btn{width:100%;justify-content:center}
     .hamburger{display:block;z-index:130}
     .nav-cta .btn.desk{display:none}
+    .nav-cta .lang-toggle.desk{display:none}
+    .nav-links .lang-toggle{margin-top:4px}
+    .nav-links .lang-toggle .lt{font-size:13px;padding:8px 16px}
+  }
+  @media(min-width:901px){
+    .nav-links .lang-toggle.mob{display:none}
   }
 
   /* ============ HERO ============ */
@@ -416,20 +437,30 @@
         <path d="M20 13 L26 20 L20 27 L14 20 Z" fill="url(#navg)" opacity="0.85"/>
         <defs><linearGradient id="navg" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#E7C874"/><stop offset="1" stop-color="#8C6A2E"/></linearGradient></defs>
       </svg>
-      <span class="name">Diamond<small>Barbershop · RICHARDSON</small></span>
+      <span class="name">Diamond<small data-en="Barbershop · RICHARDSON" data-es="Barbería · RICHARDSON">Barbershop · RICHARDSON</small></span>
     </a>
     <nav class="nav-links" id="navLinks">
-      <a class="link" href="#services">Services</a>
-      <a class="link" href="#story">Story</a>
-      <a class="link" href="#gallery">Gallery</a>
-      <a class="link" href="#reviews">Reviews</a>
-      <a class="link" href="#visit">Visit</a>
-      <a class="btn btn-brass" href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener">Book a Chair</a>
+      <a class="link" href="#services" data-en="Services" data-es="Servicios">Services</a>
+      <a class="link" href="#story" data-en="Story" data-es="Historia">Story</a>
+      <a class="link" href="#gallery" data-en="Gallery" data-es="Galería">Gallery</a>
+      <a class="link" href="#reviews" data-en="Reviews" data-es="Reseñas">Reviews</a>
+      <a class="link" href="#visit" data-en="Visit" data-es="Visítanos">Visit</a>
+      <a class="btn btn-brass" href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener" data-en="Book a Chair" data-es="Reservar Silla">Book a Chair</a>
+      <div class="lang-toggle mob" role="group" aria-label="Language / Idioma">
+        <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
+        <button class="lt" data-lang="en" aria-label="English">EN</button>
+        <button class="lt" data-lang="es" aria-label="Español">ES</button>
+      </div>
     </nav>
     <div class="nav-cta">
+      <div class="lang-toggle desk" role="group" aria-label="Language / Idioma">
+        <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
+        <button class="lt" data-lang="en" aria-label="English">EN</button>
+        <button class="lt" data-lang="es" aria-label="Español">ES</button>
+      </div>
       <a class="btn btn-brass desk" href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg>
-        Book a Chair
+        <span data-en="Book a Chair" data-es="Reservar Silla">Book a Chair</span>
       </a>
       <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
@@ -455,14 +486,14 @@
           <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
           <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
         </span>
-        <span><b>4.8</b> from 295 Google reviews</span>
+        <span><b>4.8</b> <span data-en="from 295 Google reviews" data-es="de 295 reseñas en Google">from 295 Google reviews</span></span>
       </div>
-      <h1 class="reveal d1">The sharpest cut <span class="thin">in</span> <span class="gold">Richardson.</span></h1>
-      <p class="lede reveal d2">Old-school craft, modern edge. Fades, beard designs with hot towel, straight razor shaves, and cuts the whole family trusts. Bilingual chairs, walk-ins welcome, coffee is on us.</p>
+      <h1 class="reveal d1"><span data-en="The sharpest cut" data-es="El corte más filoso">The sharpest cut</span> <span class="thin" data-en="in" data-es="de">in</span> <span class="gold">Richardson.</span></h1>
+      <p class="lede reveal d2" data-en="Old-school craft, modern edge. Fades, beard designs with hot towel, straight razor shaves, and cuts the whole family trusts. Bilingual chairs, walk-ins welcome, coffee is on us." data-es="Oficio de siempre, con estilo actual. Fades, diseños de barba con toalla caliente, afeitadas con navaja y cortes en los que confía toda la familia. Atendemos en español e inglés, aceptamos clientes sin cita y el café va por la casa.">Old-school craft, modern edge. Fades, beard designs with hot towel, straight razor shaves, and cuts the whole family trusts. Bilingual chairs, walk-ins welcome, coffee is on us.</p>
       <div class="hero-actions reveal d3">
         <a class="btn btn-brass" href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg>
-          Book a Chair
+          <span data-en="Book a Chair" data-es="Reservar Silla">Book a Chair</span>
         </a>
         <a class="tel" href="tel:+14695797374">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.8.7a2 2 0 011.7 2z"/></svg>
@@ -470,9 +501,9 @@
         </a>
       </div>
       <div class="hero-meta reveal d4">
-        <div class="item"><span class="k">Walk-Ins</span><span class="v">Always Welcome</span></div>
-        <div class="item"><span class="k">Bilingual</span><span class="v">English &amp; Español</span></div>
-        <div class="item"><span class="k">Good For</span><span class="v">Kids &amp; Dads</span></div>
+        <div class="item"><span class="k" data-en="Walk-Ins" data-es="Sin Cita">Walk-Ins</span><span class="v" data-en="Always Welcome" data-es="Siempre Bienvenidos">Always Welcome</span></div>
+        <div class="item"><span class="k" data-en="Bilingual" data-es="Bilingüe">Bilingual</span><span class="v" data-en="English &amp; Español" data-es="Español e Inglés">English &amp; Español</span></div>
+        <div class="item"><span class="k" data-en="Good For" data-es="Ideal Para">Good For</span><span class="v" data-en="Kids &amp; Dads" data-es="Niños y Papás">Kids &amp; Dads</span></div>
       </div>
     </div>
 
@@ -487,41 +518,41 @@
             <path d="M32 22 L39 28 L32 36 L25 28 Z" fill="currentColor" opacity="0.9"/>
             <path d="M10 28 H54 M22 15 L18 28 M42 15 L46 28" stroke="currentColor" stroke-width="0.8" opacity="0.45"/>
           </svg>
-          <div class="est">Est. Richardson, TX</div>
+          <div class="est" data-en="Est. Richardson, TX" data-es="En Richardson, TX">Est. Richardson, TX</div>
           <div class="big">The Diamond<br>Barbershop</div>
-          <div class="sub">Cuts · Beards · Shaves</div>
+          <div class="sub" data-en="Cuts · Beards · Shaves" data-es="Cortes · Barbas · Afeitadas">Cuts · Beards · Shaves</div>
         </div>
-        <div class="barcode">· Quality · Precision · Pride ·</div>
+        <div class="barcode" data-en="· Quality · Precision · Pride ·" data-es="· Calidad · Precisión · Orgullo ·">· Quality · Precision · Pride ·</div>
       </div>
       <div class="float-chip c1">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14.7 6.3a4 4 0 010 5.6l-8.4 8.4-3.5.7.7-3.5 8.4-8.4a4 4 0 015.6 0zM18 4l2 2"/></svg>
-        Fresh fades daily
+        <span data-en="Fresh fades daily" data-es="Fades frescos a diario">Fresh fades daily</span>
       </div>
       <div class="float-chip c2">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
-        Coffee on the house
+        <span data-en="Coffee on the house" data-es="Café por la casa">Coffee on the house</span>
       </div>
     </div>
   </div>
-  <div class="scroll-cue" aria-hidden="true"><div class="m"><i></i></div><span>Scroll</span></div>
+  <div class="scroll-cue" aria-hidden="true"><div class="m"><i></i></div><span data-en="Scroll" data-es="Desliza">Scroll</span></div>
 </section>
 
 <!-- ================= MARQUEE ================= -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4L8.1 15.9M14.7 6.3a4 4 0 010 5.6M6 20a2 2 0 100-4 2 2 0 000 4z"/></svg> Skin Fades</span>
-    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg> Hot Towel Shaves</span>
-    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20M8 12a4 4 0 018 0"/></svg> Beard Design</span>
-    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13M9 9l12-2"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg> Kids Cuts</span>
-    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg> Facials</span>
-    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4L8.1 15.9M14.7 6.3a4 4 0 010 5.6"/></svg> Straight Razor</span>
+    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4L8.1 15.9M14.7 6.3a4 4 0 010 5.6M6 20a2 2 0 100-4 2 2 0 000 4z"/></svg> <span data-en="Skin Fades" data-es="Fades a Piel">Skin Fades</span></span>
+    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg> <span data-en="Hot Towel Shaves" data-es="Afeitadas con Toalla Caliente">Hot Towel Shaves</span></span>
+    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20M8 12a4 4 0 018 0"/></svg> <span data-en="Beard Design" data-es="Diseño de Barba">Beard Design</span></span>
+    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13M9 9l12-2"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg> <span data-en="Kids Cuts" data-es="Cortes para Niños">Kids Cuts</span></span>
+    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg> <span data-en="Facials" data-es="Faciales">Facials</span></span>
+    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4L8.1 15.9M14.7 6.3a4 4 0 010 5.6"/></svg> <span data-en="Straight Razor" data-es="Navaja">Straight Razor</span></span>
     <!-- duplicate for seamless loop -->
-    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4L8.1 15.9M14.7 6.3a4 4 0 010 5.6M6 20a2 2 0 100-4 2 2 0 000 4z"/></svg> Skin Fades</span>
-    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg> Hot Towel Shaves</span>
-    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20M8 12a4 4 0 018 0"/></svg> Beard Design</span>
-    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13M9 9l12-2"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg> Kids Cuts</span>
-    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg> Facials</span>
-    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4L8.1 15.9M14.7 6.3a4 4 0 010 5.6"/></svg> Straight Razor</span>
+    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4L8.1 15.9M14.7 6.3a4 4 0 010 5.6M6 20a2 2 0 100-4 2 2 0 000 4z"/></svg> <span data-en="Skin Fades" data-es="Fades a Piel">Skin Fades</span></span>
+    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg> <span data-en="Hot Towel Shaves" data-es="Afeitadas con Toalla Caliente">Hot Towel Shaves</span></span>
+    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20M8 12a4 4 0 018 0"/></svg> <span data-en="Beard Design" data-es="Diseño de Barba">Beard Design</span></span>
+    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13M9 9l12-2"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg> <span data-en="Kids Cuts" data-es="Cortes para Niños">Kids Cuts</span></span>
+    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg> <span data-en="Facials" data-es="Faciales">Facials</span></span>
+    <span class="m-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4L8.1 15.9M14.7 6.3a4 4 0 010 5.6"/></svg> <span data-en="Straight Razor" data-es="Navaja">Straight Razor</span></span>
   </div>
 </div>
 
@@ -531,23 +562,23 @@
     <div class="benefit-grid">
       <div class="benefit reveal">
         <svg class="ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M31 8L14 25M23 11a6 6 0 010 8.5M11 34a4 4 0 100-8 4 4 0 000 8zM31 32L20 21"/><circle cx="11" cy="30" r="4"/></svg>
-        <h3>Master Barbers</h3>
-        <p>Precision fades, tapers, and shape-ups from barbers regulars call the best in Richardson and Dallas.</p>
+        <h3 data-en="Master Barbers" data-es="Barberos Expertos">Master Barbers</h3>
+        <p data-en="Precision fades, tapers, and shape-ups from barbers regulars call the best in Richardson and Dallas." data-es="Fades, degradados y perfilados de precisión, hechos por barberos que los clientes consideran los mejores de Richardson y Dallas.">Precision fades, tapers, and shape-ups from barbers regulars call the best in Richardson and Dallas.</p>
       </div>
       <div class="benefit reveal d1">
         <svg class="ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M30 13h2a6 6 0 010 12h-2M4 13h26v15a6 6 0 01-6 6H10a6 6 0 01-6-6V13zM11 4v4M17 4v4M23 4v4"/></svg>
-        <h3>Beverages On Us</h3>
-        <p>Coffee, water, or a cold soda while you relax in the chair. The visit should feel as good as the cut.</p>
+        <h3 data-en="Beverages On Us" data-es="Bebidas por la Casa">Beverages On Us</h3>
+        <p data-en="Coffee, water, or a cold soda while you relax in the chair. The visit should feel as good as the cut." data-es="Café, agua o un refresco frío mientras te relajas en la silla. La visita debe sentirse tan bien como el corte.">Coffee, water, or a cold soda while you relax in the chair. The visit should feel as good as the cut.</p>
       </div>
       <div class="benefit reveal d2">
         <svg class="ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 5l4 8 9 1.3-6.5 6.3 1.5 9L20 25l-8 4.6 1.5-9L7 14.3 16 13z"/></svg>
-        <h3>Walk-Ins Welcome</h3>
-        <p>No appointment, no problem. Swing by, or lock a chair in seconds online whenever it suits you.</p>
+        <h3 data-en="Walk-Ins Welcome" data-es="Sin Cita, Bienvenido">Walk-Ins Welcome</h3>
+        <p data-en="No appointment, no problem. Swing by, or lock a chair in seconds online whenever it suits you." data-es="Sin cita, no hay problema. Pásate cuando quieras, o aparta tu silla en segundos por internet.">No appointment, no problem. Swing by, or lock a chair in seconds online whenever it suits you.</p>
       </div>
       <div class="benefit reveal d3">
         <svg class="ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 4a10 10 0 100 20 10 10 0 000-20zM8 36a12 12 0 0124 0"/><path d="M14 14a6 6 0 0112 0"/></svg>
-        <h3>Great For Kids</h3>
-        <p>Patient chairs, easy smiles, and clean cuts for the little ones. A family shop through and through.</p>
+        <h3 data-en="Great For Kids" data-es="Ideal para Niños">Great For Kids</h3>
+        <p data-en="Patient chairs, easy smiles, and clean cuts for the little ones. A family shop through and through." data-es="Sillas con paciencia, sonrisas fáciles y cortes limpios para los más pequeños. Una barbería familiar de principio a fin.">Patient chairs, easy smiles, and clean cuts for the little ones. A family shop through and through.</p>
       </div>
     </div>
   </div>
@@ -557,65 +588,65 @@
 <section class="sec" id="services">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">The Menu</span>
-      <h2>Every service, sharply priced.</h2>
-      <p>Every haircut includes an edge up and outline. Prices below are typical starting points, ask your barber for the exact quote when you book. Todos los cortes incluyen perfilado.</p>
+      <span class="eyebrow" data-en="The Menu" data-es="El Menú">The Menu</span>
+      <h2 data-en="Every service, sharply priced." data-es="Cada servicio, con precio claro.">Every service, sharply priced.</h2>
+      <p data-en="Every haircut includes an edge up and outline. Prices below are typical starting points, ask your barber for the exact quote when you book." data-es="Todos los cortes incluyen perfilado y contorno. Los precios de abajo son puntos de partida típicos; pídele a tu barbero el precio exacto al reservar.">Every haircut includes an edge up and outline. Prices below are typical starting points, ask your barber for the exact quote when you book.</p>
     </div>
 
     <div class="menu-cats reveal d1" id="menuCats">
-      <button class="active" data-cat="all">All</button>
-      <button data-cat="cuts">Haircuts</button>
-      <button data-cat="beard">Beard &amp; Shave</button>
-      <button data-cat="facial">Facial &amp; Grooming</button>
-      <button data-cat="kids">Kids &amp; More</button>
+      <button class="active" data-cat="all" data-en="All" data-es="Todos">All</button>
+      <button data-cat="cuts" data-en="Haircuts" data-es="Cortes">Haircuts</button>
+      <button data-cat="beard" data-en="Beard &amp; Shave" data-es="Barba y Afeitado">Beard &amp; Shave</button>
+      <button data-cat="facial" data-en="Facial &amp; Grooming" data-es="Facial y Aseo">Facial &amp; Grooming</button>
+      <button data-cat="kids" data-en="Kids &amp; More" data-es="Niños y Más">Kids &amp; More</button>
     </div>
 
     <!-- HAIRCUTS -->
     <div class="menu-block reveal" data-block="cuts">
       <div class="menu-block-head">
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 4L8.1 15.9M14.7 6.3a4 4 0 010 5.6M6 20a2 2 0 100-4 2 2 0 000 4zM6 8a2 2 0 100-4 2 2 0 000 4zM9.4 9.4L20 20"/></svg>
-        <div><h3>Haircuts</h3><div class="es">Cortes de cabello</div></div>
+        <div><h3 data-en="Haircuts" data-es="Cortes de Cabello">Haircuts</h3><div class="es" data-en="Cortes de cabello" data-es="">Cortes de cabello</div></div>
       </div>
       <div class="menu-rows">
         <div class="m-row">
-          <div class="lead"><div class="nm">Regular Haircut<span class="es-inline">Corte Regular</span></div><div class="desc">A clean, classic cut finished with an edge up and outline. The everyday standard.</div></div>
-          <div class="price"><span class="from">From</span>$25</div>
+          <div class="lead"><div class="nm" data-en="Regular Haircut" data-es="Corte Regular">Regular Haircut</div><div class="desc" data-en="A clean, classic cut finished with an edge up and outline. The everyday standard." data-es="Un corte limpio y clásico, rematado con perfilado y contorno. El estándar de todos los días.">A clean, classic cut finished with an edge up and outline. The everyday standard.</div></div>
+          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$25</div>
         </div>
         <div class="m-row">
-          <div class="lead"><div class="nm">Skin &amp; Taper Fade</div><div class="desc">Seamless blend from skin to length, low, mid, or high. Includes edge up and outline.</div></div>
-          <div class="price"><span class="from">From</span>$30</div>
+          <div class="lead"><div class="nm" data-en="Skin &amp; Taper Fade" data-es="Fade a Piel y Degradado">Skin &amp; Taper Fade</div><div class="desc" data-en="Seamless blend from skin to length, low, mid, or high. Includes edge up and outline." data-es="Difuminado perfecto de la piel al largo, bajo, medio o alto. Incluye perfilado y contorno.">Seamless blend from skin to length, low, mid, or high. Includes edge up and outline.</div></div>
+          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$30</div>
         </div>
         <div class="m-row">
-          <div class="lead"><div class="nm">Men's Haircut with Design</div><div class="desc">Freehand line work and custom design razored into the cut for a signature look.</div></div>
-          <div class="price"><span class="from">From</span>$35</div>
+          <div class="lead"><div class="nm" data-en="Men's Haircut with Design" data-es="Corte de Caballero con Diseño">Men's Haircut with Design</div><div class="desc" data-en="Freehand line work and custom design razored into the cut for a signature look." data-es="Líneas a mano alzada y diseño personalizado trazado con navaja para un look único.">Freehand line work and custom design razored into the cut for a signature look.</div></div>
+          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$35</div>
         </div>
         <div class="m-row">
-          <div class="lead"><div class="nm">Scissor Cut</div><div class="desc">Fully scissor-crafted for texture and movement on longer or looser styles.</div></div>
-          <div class="price"><span class="from">From</span>$30</div>
+          <div class="lead"><div class="nm" data-en="Scissor Cut" data-es="Corte a Tijera">Scissor Cut</div><div class="desc" data-en="Fully scissor-crafted for texture and movement on longer or looser styles." data-es="Trabajado por completo a tijera para dar textura y movimiento a estilos más largos o sueltos.">Fully scissor-crafted for texture and movement on longer or looser styles.</div></div>
+          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$30</div>
         </div>
         <div class="m-row">
-          <div class="lead"><div class="nm">Long Haircut</div><div class="desc">Shape, layer, and finish for longer hair. Blow dry and style included.</div></div>
-          <div class="price"><span class="from">From</span>$35</div>
+          <div class="lead"><div class="nm" data-en="Long Haircut" data-es="Corte para Cabello Largo">Long Haircut</div><div class="desc" data-en="Shape, layer, and finish for longer hair. Blow dry and style included." data-es="Forma, capas y acabado para cabello largo. Incluye secado y peinado.">Shape, layer, and finish for longer hair. Blow dry and style included.</div></div>
+          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$35</div>
         </div>
         <div class="m-row">
-          <div class="lead"><div class="nm">Curly Hair Cut</div><div class="desc">Cut and shaped for curl pattern and volume, so it grows out clean.</div></div>
-          <div class="price"><span class="from">From</span>$30</div>
+          <div class="lead"><div class="nm" data-en="Curly Hair Cut" data-es="Corte para Cabello Rizado">Curly Hair Cut</div><div class="desc" data-en="Cut and shaped for curl pattern and volume, so it grows out clean." data-es="Cortado y moldeado según el rizo y el volumen, para que crezca parejo.">Cut and shaped for curl pattern and volume, so it grows out clean.</div></div>
+          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$30</div>
         </div>
         <div class="m-row">
-          <div class="lead"><div class="nm">Buzz Cut</div><div class="desc">One-length clipper cut, quick and crisp, with a fresh outline.</div></div>
-          <div class="price"><span class="from">From</span>$20</div>
+          <div class="lead"><div class="nm" data-en="Buzz Cut" data-es="Corte al Rape">Buzz Cut</div><div class="desc" data-en="One-length clipper cut, quick and crisp, with a fresh outline." data-es="Corte a máquina de un solo largo, rápido y limpio, con contorno fresco.">One-length clipper cut, quick and crisp, with a fresh outline.</div></div>
+          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$20</div>
         </div>
         <div class="m-row">
-          <div class="lead"><div class="nm">Head Shave</div><div class="desc">Smooth razor head shave with hot towel finish for a clean, close result.</div></div>
-          <div class="price"><span class="from">From</span>$28</div>
+          <div class="lead"><div class="nm" data-en="Head Shave" data-es="Rapado de Cabeza">Head Shave</div><div class="desc" data-en="Smooth razor head shave with hot towel finish for a clean, close result." data-es="Rapado de cabeza a navaja con acabado de toalla caliente, para un resultado limpio y al ras.">Smooth razor head shave with hot towel finish for a clean, close result.</div></div>
+          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$28</div>
         </div>
         <div class="m-row">
-          <div class="lead"><div class="nm">Hair Shape Up</div><div class="desc">Line up and outline between cuts to keep the edges sharp.</div></div>
-          <div class="price"><span class="from">From</span>$15</div>
+          <div class="lead"><div class="nm" data-en="Hair Shape Up" data-es="Perfilado de Contorno">Hair Shape Up</div><div class="desc" data-en="Line up and outline between cuts to keep the edges sharp." data-es="Delineado y contorno entre cortes para mantener los bordes marcados.">Line up and outline between cuts to keep the edges sharp.</div></div>
+          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$15</div>
         </div>
         <div class="m-row">
-          <div class="lead"><div class="nm">Hair Coloring</div><div class="desc">Custom color, gray blending, or a bold new tone. Consultation first.</div></div>
-          <div class="price"><span class="from">Ask</span>Quote</div>
+          <div class="lead"><div class="nm" data-en="Hair Coloring" data-es="Tinte de Cabello">Hair Coloring</div><div class="desc" data-en="Custom color, gray blending, or a bold new tone. Consultation first." data-es="Color personalizado, cobertura de canas o un tono nuevo y atrevido. Primero una consulta.">Custom color, gray blending, or a bold new tone. Consultation first.</div></div>
+          <div class="price"><span class="from" data-en="Ask" data-es="Consulta">Ask</span><span data-en="Quote" data-es="Cotización">Quote</span></div>
         </div>
       </div>
     </div>
@@ -624,28 +655,28 @@
     <div class="menu-block reveal" data-block="beard">
       <div class="menu-block-head">
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 6c0 6 3 12 7 12s7-6 7-12M5 6c2-1 4-1 7-1s5 0 7 1M8 5V3M16 5V3M9 12a3 3 0 006 0"/></svg>
-        <div><h3>Beard &amp; Shave</h3><div class="es">Barba y afeitado</div></div>
+        <div><h3 data-en="Beard &amp; Shave" data-es="Barba y Afeitado">Beard &amp; Shave</h3><div class="es" data-en="Barba y afeitado" data-es="">Barba y afeitado</div></div>
       </div>
       <div class="menu-rows">
         <div class="m-row">
-          <div class="lead"><div class="nm">Beard Design, Hot Towel &amp; Massage<span class="es-inline">Diseño de barba con toalla caliente y masaje</span></div><div class="desc">Shaped and lined with a hot towel wrap and relaxing massage to finish.</div></div>
-          <div class="price"><span class="from">From</span>$20</div>
+          <div class="lead"><div class="nm" data-en="Beard Design, Hot Towel &amp; Massage" data-es="Diseño de Barba con Toalla Caliente y Masaje">Beard Design, Hot Towel &amp; Massage</div><div class="desc" data-en="Shaped and lined with a hot towel wrap and relaxing massage to finish." data-es="Barba moldeada y delineada, con envoltura de toalla caliente y un masaje relajante para terminar.">Shaped and lined with a hot towel wrap and relaxing massage to finish.</div></div>
+          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$20</div>
         </div>
         <div class="m-row">
-          <div class="lead"><div class="nm">Haircut &amp; Shave, Hot Towel &amp; Massage<span class="es-inline">Corte y barba con toalla caliente</span></div><div class="desc">The full package: fresh cut plus a straight razor beard shave, hot towel, and massage.</div></div>
-          <div class="price"><span class="from">From</span>$45</div>
+          <div class="lead"><div class="nm" data-en="Haircut &amp; Shave, Hot Towel &amp; Massage" data-es="Corte y Barba con Toalla Caliente y Masaje">Haircut &amp; Shave, Hot Towel &amp; Massage</div><div class="desc" data-en="The full package: fresh cut plus a straight razor beard shave, hot towel, and massage." data-es="El paquete completo: corte fresco más afeitado de barba con navaja, toalla caliente y masaje.">The full package: fresh cut plus a straight razor beard shave, hot towel, and massage.</div></div>
+          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$45</div>
         </div>
         <div class="m-row">
-          <div class="lead"><div class="nm">Straight Razor Shave</div><div class="desc">Traditional close shave with hot lather and a straight razor. Smooth every time.</div></div>
-          <div class="price"><span class="from">From</span>$25</div>
+          <div class="lead"><div class="nm" data-en="Straight Razor Shave" data-es="Afeitada con Navaja">Straight Razor Shave</div><div class="desc" data-en="Traditional close shave with hot lather and a straight razor. Smooth every time." data-es="Afeitada tradicional al ras con espuma caliente y navaja. Siempre suave.">Traditional close shave with hot lather and a straight razor. Smooth every time.</div></div>
+          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$25</div>
         </div>
         <div class="m-row">
-          <div class="lead"><div class="nm">Beard Trim</div><div class="desc">Clean up length and shape to keep the beard tidy between designs.</div></div>
-          <div class="price"><span class="from">From</span>$15</div>
+          <div class="lead"><div class="nm" data-en="Beard Trim" data-es="Recorte de Barba">Beard Trim</div><div class="desc" data-en="Clean up length and shape to keep the beard tidy between designs." data-es="Emparejamos largo y forma para mantener la barba arreglada entre diseños.">Clean up length and shape to keep the beard tidy between designs.</div></div>
+          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$15</div>
         </div>
         <div class="m-row">
-          <div class="lead"><div class="nm">Beard Grooming &amp; Conditioning</div><div class="desc">Trim, shape, condition, and oil for a soft, healthy, well-kept beard.</div></div>
-          <div class="price"><span class="from">From</span>$22</div>
+          <div class="lead"><div class="nm" data-en="Beard Grooming &amp; Conditioning" data-es="Cuidado y Acondicionamiento de Barba">Beard Grooming &amp; Conditioning</div><div class="desc" data-en="Trim, shape, condition, and oil for a soft, healthy, well-kept beard." data-es="Recorte, forma, acondicionador y aceite para una barba suave, sana y bien cuidada.">Trim, shape, condition, and oil for a soft, healthy, well-kept beard.</div></div>
+          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$22</div>
         </div>
       </div>
     </div>
@@ -654,28 +685,28 @@
     <div class="menu-block reveal" data-block="facial">
       <div class="menu-block-head">
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zM8 10h.01M16 10h.01M8.5 15a4.5 4.5 0 007 0"/></svg>
-        <div><h3>Facial &amp; Grooming</h3><div class="es">Facial y aseo personal</div></div>
+        <div><h3 data-en="Facial &amp; Grooming" data-es="Facial y Aseo Personal">Facial &amp; Grooming</h3><div class="es" data-en="Facial y aseo personal" data-es="">Facial y aseo personal</div></div>
       </div>
       <div class="menu-rows">
         <div class="m-row">
-          <div class="lead"><div class="nm">Facial Service</div><div class="desc">Cleansing cream, exfoliating scrub with black mask, and a relaxing massage included.</div></div>
-          <div class="price"><span class="from">From</span>$30</div>
+          <div class="lead"><div class="nm" data-en="Facial Service" data-es="Servicio Facial">Facial Service</div><div class="desc" data-en="Cleansing cream, exfoliating scrub with black mask, and a relaxing massage included." data-es="Incluye crema limpiadora, exfoliante con mascarilla negra y un masaje relajante.">Cleansing cream, exfoliating scrub with black mask, and a relaxing massage included.</div></div>
+          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$30</div>
         </div>
         <div class="m-row">
-          <div class="lead"><div class="nm">Eyebrow Design &amp; Pigmentation</div><div class="desc">Shape, clean, and define the brows with optional pigmentation for a fuller line.</div></div>
-          <div class="price"><span class="from">From</span>$15</div>
+          <div class="lead"><div class="nm" data-en="Eyebrow Design &amp; Pigmentation" data-es="Diseño de Cejas y Pigmentación">Eyebrow Design &amp; Pigmentation</div><div class="desc" data-en="Shape, clean, and define the brows with optional pigmentation for a fuller line." data-es="Damos forma, limpiamos y definimos las cejas, con pigmentación opcional para una línea más marcada.">Shape, clean, and define the brows with optional pigmentation for a fuller line.</div></div>
+          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$15</div>
         </div>
         <div class="m-row">
-          <div class="lead"><div class="nm">Eyebrow Tinting</div><div class="desc">Tint to darken and define the brows for a bolder, cleaner frame.</div></div>
-          <div class="price"><span class="from">From</span>$12</div>
+          <div class="lead"><div class="nm" data-en="Eyebrow Tinting" data-es="Tinte de Cejas">Eyebrow Tinting</div><div class="desc" data-en="Tint to darken and define the brows for a bolder, cleaner frame." data-es="Tinte para oscurecer y definir las cejas, con un marco más marcado y limpio.">Tint to darken and define the brows for a bolder, cleaner frame.</div></div>
+          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$12</div>
         </div>
         <div class="m-row">
-          <div class="lead"><div class="nm">Waxing</div><div class="desc">Quick, clean facial waxing, ears, nose, brow line, and more.</div></div>
-          <div class="price"><span class="from">From</span>$10</div>
+          <div class="lead"><div class="nm" data-en="Waxing" data-es="Depilación con Cera">Waxing</div><div class="desc" data-en="Quick, clean facial waxing, ears, nose, brow line, and more." data-es="Depilación facial rápida y limpia con cera: orejas, nariz, cejas y más.">Quick, clean facial waxing, ears, nose, brow line, and more.</div></div>
+          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$10</div>
         </div>
         <div class="m-row">
-          <div class="lead"><div class="nm">Styling</div><div class="desc">Wash, product, and finish to send you out camera-ready.</div></div>
-          <div class="price"><span class="from">From</span>$12</div>
+          <div class="lead"><div class="nm" data-en="Styling" data-es="Peinado">Styling</div><div class="desc" data-en="Wash, product, and finish to send you out camera-ready." data-es="Lavado, producto y acabado para que salgas listo para la foto.">Wash, product, and finish to send you out camera-ready.</div></div>
+          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$12</div>
         </div>
       </div>
     </div>
@@ -684,21 +715,21 @@
     <div class="menu-block reveal" data-block="kids">
       <div class="menu-block-head">
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3a4 4 0 100 8 4 4 0 000-8zM6 21a6 6 0 0112 0M9 14l-2 3M15 14l2 3"/></svg>
-        <div><h3>Kids &amp; Full Service</h3><div class="es">Niños y servicio completo</div></div>
+        <div><h3 data-en="Kids &amp; Full Service" data-es="Niños y Servicio Completo">Kids &amp; Full Service</h3><div class="es" data-en="Niños y servicio completo" data-es="">Niños y servicio completo</div></div>
       </div>
       <div class="menu-rows">
         <div class="m-row">
-          <div class="lead"><div class="nm">Kids Haircut<span class="es-inline">Corte de cabello para niños</span></div><div class="desc">Patient, friendly cuts for the little ones, finished clean with an outline.</div></div>
-          <div class="price"><span class="from">From</span>$20</div>
+          <div class="lead"><div class="nm" data-en="Kids Haircut" data-es="Corte para Niños">Kids Haircut</div><div class="desc" data-en="Patient, friendly cuts for the little ones, finished clean with an outline." data-es="Cortes con paciencia y trato amable para los más pequeños, rematados limpios con contorno.">Patient, friendly cuts for the little ones, finished clean with an outline.</div></div>
+          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$20</div>
         </div>
         <div class="m-row">
-          <div class="lead"><div class="nm">Full Service<span class="es-inline">Servicio completo</span></div><div class="desc">Haircut, beard, hot towel, facial, and the works. The complete Diamond treatment.</div></div>
-          <div class="price"><span class="from">From</span>$65</div>
+          <div class="lead"><div class="nm" data-en="Full Service" data-es="Servicio Completo">Full Service</div><div class="desc" data-en="Haircut, beard, hot towel, facial, and the works. The complete Diamond treatment." data-es="Corte, barba, toalla caliente, facial y todo lo demás. El tratamiento Diamond completo.">Haircut, beard, hot towel, facial, and the works. The complete Diamond treatment.</div></div>
+          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$65</div>
         </div>
       </div>
       <div class="menu-note">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-        <span>Prices are typical starting points shown for reference and confirmed in the chair. Final pricing may vary by hair length, style, and add-ons. Book online to see live availability.</span>
+        <span data-en="Prices are typical starting points shown for reference and confirmed in the chair. Final pricing may vary by hair length, style, and add-ons. Book online to see live availability." data-es="Los precios son puntos de partida típicos, mostrados como referencia y confirmados en la silla. El precio final puede variar según el largo del cabello, el estilo y los extras. Reserva en línea para ver la disponibilidad en tiempo real.">Prices are typical starting points shown for reference and confirmed in the chair. Final pricing may vary by hair length, style, and add-ons. Book online to see live availability.</span>
       </div>
     </div>
   </div>
@@ -709,15 +740,15 @@
   <div class="wrap">
     <div class="about-grid">
       <div class="about-copy reveal">
-        <span class="eyebrow">Our Story</span>
-        <p class="lg">"The best barbers of the city of Richardson and Dallas."</p>
-        <p>The Diamond Barbershop was built on a simple idea: a great haircut is more than a service, it is a ritual. From the moment you walk in you are handed a coffee, water, or soda, and from there the chair is yours.</p>
-        <p>Our barbers are bilingual and our doors are open to everyone, first-timers, regulars, dads bringing their kids for a first cut, and anyone who wants to leave looking and feeling their sharpest. Every cut ends with a crisp edge up and outline, because the details are what set a Diamond cut apart.</p>
-        <p>We earned 4.8 stars across nearly 300 reviews the honest way: professional skill, a clean and welcoming shop, and treating every client like a regular from day one.</p>
+        <span class="eyebrow" data-en="Our Story" data-es="Nuestra Historia">Our Story</span>
+        <p class="lg" data-en="&ldquo;The best barbers of the city of Richardson and Dallas.&rdquo;" data-es="&ldquo;Los mejores barberos de Richardson y Dallas.&rdquo;">"The best barbers of the city of Richardson and Dallas."</p>
+        <p data-en="The Diamond Barbershop was built on a simple idea: a great haircut is more than a service, it is a ritual. From the moment you walk in you are handed a coffee, water, or soda, and from there the chair is yours." data-es="The Diamond Barbershop nació de una idea sencilla: un buen corte es más que un servicio, es un ritual. Desde que entras te ofrecemos un café, agua o un refresco, y de ahí en adelante la silla es tuya.">The Diamond Barbershop was built on a simple idea: a great haircut is more than a service, it is a ritual. From the moment you walk in you are handed a coffee, water, or soda, and from there the chair is yours.</p>
+        <p data-en="Our barbers are bilingual and our doors are open to everyone, first-timers, regulars, dads bringing their kids for a first cut, and anyone who wants to leave looking and feeling their sharpest. Every cut ends with a crisp edge up and outline, because the details are what set a Diamond cut apart." data-es="Nuestros barberos son bilingües y nuestras puertas están abiertas para todos: los que vienen por primera vez, los clientes de siempre, los papás que traen a sus hijos para su primer corte y cualquiera que quiera salir viéndose y sintiéndose mejor. Cada corte termina con un perfilado y contorno bien marcados, porque los detalles son lo que hace distinto a un corte Diamond.">Our barbers are bilingual and our doors are open to everyone, first-timers, regulars, dads bringing their kids for a first cut, and anyone who wants to leave looking and feeling their sharpest. Every cut ends with a crisp edge up and outline, because the details are what set a Diamond cut apart.</p>
+        <p data-en="We earned 4.8 stars across nearly 300 reviews the honest way: professional skill, a clean and welcoming shop, and treating every client like a regular from day one." data-es="Ganamos 4.8 estrellas en casi 300 reseñas de la forma honesta: con habilidad profesional, una barbería limpia y acogedora, y tratando a cada cliente como un habitual desde el primer día.">We earned 4.8 stars across nearly 300 reviews the honest way: professional skill, a clean and welcoming shop, and treating every client like a regular from day one.</p>
         <div class="about-stats">
-          <div class="st"><div class="n">4.8</div><div class="l">Star Rating</div></div>
-          <div class="st"><div class="n">295+</div><div class="l">Reviews</div></div>
-          <div class="st"><div class="n">2</div><div class="l">Languages</div></div>
+          <div class="st"><div class="n">4.8</div><div class="l" data-en="Star Rating" data-es="Calificación">Star Rating</div></div>
+          <div class="st"><div class="n">295+</div><div class="l" data-en="Reviews" data-es="Reseñas">Reviews</div></div>
+          <div class="st"><div class="n">2</div><div class="l" data-en="Languages" data-es="Idiomas">Languages</div></div>
         </div>
       </div>
       <div class="about-visual reveal d2">
@@ -744,9 +775,9 @@
 <section class="sec" id="gallery">
   <div class="wrap">
     <div class="sec-head center reveal">
-      <span class="eyebrow center">The Work</span>
-      <h2>A look inside the shop.</h2>
-      <p>Fresh fades, sharp lines, hot towel shaves, and the easy hum of a full chair. This is the craft that keeps Richardson coming back.</p>
+      <span class="eyebrow center" data-en="The Work" data-es="El Trabajo">The Work</span>
+      <h2 data-en="A look inside the shop." data-es="Un vistazo dentro de la barbería.">A look inside the shop.</h2>
+      <p data-en="Fresh fades, sharp lines, hot towel shaves, and the easy hum of a full chair. This is the craft that keeps Richardson coming back." data-es="Fades frescos, líneas marcadas, afeitadas con toalla caliente y el buen ambiente de una silla siempre ocupada. Este es el oficio que hace que Richardson regrese.">Fresh fades, sharp lines, hot towel shaves, and the easy hum of a full chair. This is the craft that keeps Richardson coming back.</p>
     </div>
     <div class="gallery-grid">
 
@@ -766,7 +797,7 @@
           <path d="M78 72c4 2 4 8 1 11" stroke="#B8935A" stroke-width="1.2" fill="none" opacity="0.7"/>
         </svg>
         <span class="g-vig"></span>
-        <span class="g-label">Skin Fade<small>Blended to zero</small></span>
+        <span class="g-label"><span data-en="Skin Fade" data-es="Fade a Piel">Skin Fade</span><small data-en="Blended to zero" data-es="Difuminado hasta cero">Blended to zero</small></span>
       </div>
 
       <!-- SCENE (wide): the shop floor / chairs + mirrors -->
@@ -787,7 +818,7 @@
           <circle cx="120" cy="112" r="3" fill="#C9A227"/>
         </svg>
         <span class="g-vig"></span>
-        <span class="g-label">The Shop Floor<small>Three chairs, always full</small></span>
+        <span class="g-label"><span data-en="The Shop Floor" data-es="El Salón">The Shop Floor</span><small data-en="Three chairs, always full" data-es="Tres sillas, siempre llenas">Three chairs, always full</small></span>
       </div>
 
       <!-- SCENE: straight razor + hot towel -->
@@ -803,7 +834,7 @@
           <g opacity="0.7"><path d="M74 44c6 3 6 12 0 15" stroke="#B8935A" stroke-width="1.4" fill="none"/></g>
         </svg>
         <span class="g-vig"></span>
-        <span class="g-label">Hot Towel Shave<small>Straight razor finish</small></span>
+        <span class="g-label"><span data-en="Hot Towel Shave" data-es="Afeitada con Toalla Caliente">Hot Towel Shave</span><small data-en="Straight razor finish" data-es="Acabado a navaja">Straight razor finish</small></span>
       </div>
 
       <!-- SCENE: beard design portrait -->
@@ -820,7 +851,7 @@
           <path d="M80 78c3 2 3 7 0 9" stroke="#B8935A" stroke-width="1.1" opacity="0.7" fill="none"/>
         </svg>
         <span class="g-vig"></span>
-        <span class="g-label">Beard Design<small>Lined and shaped</small></span>
+        <span class="g-label"><span data-en="Beard Design" data-es="Diseño de Barba">Beard Design</span><small data-en="Lined and shaped" data-es="Delineada y moldeada">Lined and shaped</small></span>
       </div>
 
       <!-- SCENE: tools flat-lay -->
@@ -840,7 +871,7 @@
           <g stroke="#8C6A2E" stroke-width="0.8"><path d="M26 121v9M31 121v9M36 121v9M41 121v9M46 121v9M51 121v9M56 121v9M61 121v9M66 121v9M71 121v9M76 121v9"/></g>
         </svg>
         <span class="g-vig"></span>
-        <span class="g-label">Tools Of The Trade<small>Clippers, shears, comb</small></span>
+        <span class="g-label"><span data-en="Tools Of The Trade" data-es="Herramientas del Oficio">Tools Of The Trade</span><small data-en="Clippers, shears, comb" data-es="Máquina, tijeras, peine">Clippers, shears, comb</small></span>
       </div>
 
       <!-- SCENE (wide): storefront + barber pole -->
@@ -864,7 +895,7 @@
           <path d="M120 71l3 6 6 .6-4.5 4.3 1 6-5.5-3-5.5 3 1-6-4.5-4.3 6-.6z" fill="#C9A227" opacity="0.7"/>
         </svg>
         <span class="g-vig"></span>
-        <span class="g-label">On North Central<small>Est. Richardson, TX</small></span>
+        <span class="g-label"><span data-en="On North Central" data-es="Sobre North Central">On North Central</span><small data-en="Est. Richardson, TX" data-es="En Richardson, TX">Est. Richardson, TX</small></span>
       </div>
 
     </div>
@@ -873,19 +904,19 @@
     <div class="craft-strip reveal d1">
       <div class="cs">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 4L8.1 15.9M14.7 6.3a4 4 0 010 5.6M6 20a2 2 0 100-4 2 2 0 000 4zM9.4 9.4L20 20"/></svg>
-        <div><div class="t">Every fade</div><div class="s">Edge up included</div></div>
+        <div><div class="t" data-en="Every fade" data-es="Cada fade">Every fade</div><div class="s" data-en="Edge up included" data-es="Perfilado incluido">Edge up included</div></div>
       </div>
       <div class="cs">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
-        <div><div class="t">Hot towel</div><div class="s">On every shave</div></div>
+        <div><div class="t" data-en="Hot towel" data-es="Toalla caliente">Hot towel</div><div class="s" data-en="On every shave" data-es="En cada afeitada">On every shave</div></div>
       </div>
       <div class="cs">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 2a10 10 0 100 20M8 12a4 4 0 018 0M8 9h.01M16 9h.01"/></svg>
-        <div><div class="t">Beard design</div><div class="s">Lined and detailed</div></div>
+        <div><div class="t" data-en="Beard design" data-es="Diseño de barba">Beard design</div><div class="s" data-en="Lined and detailed" data-es="Delineada y detallada">Lined and detailed</div></div>
       </div>
       <div class="cs">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 2l2.9 6 6.6.6-5 4.4 1.5 6.5L12 16.6 5.9 20l1.6-6.5-5-4.4 6.6-.6z"/></svg>
-        <div><div class="t">4.8 stars</div><div class="s">295 reviews</div></div>
+        <div><div class="t">4.8 <span data-en="stars" data-es="estrellas">stars</span></div><div class="s" data-en="295 reviews" data-es="295 reseñas">295 reviews</div></div>
       </div>
     </div>
   </div>
@@ -895,9 +926,9 @@
 <section class="sec reviews" id="reviews">
   <div class="wrap">
     <div class="sec-head center reveal">
-      <span class="eyebrow center">Word On The Street</span>
-      <h2>295 reviews. 4.8 stars.</h2>
-      <p>Real quotes from real Google reviews. The kind of shop people tell their friends about.</p>
+      <span class="eyebrow center" data-en="Word On The Street" data-es="Lo Que Dice La Gente">Word On The Street</span>
+      <h2 data-en="295 reviews. 4.8 stars." data-es="295 reseñas. 4.8 estrellas.">295 reviews. 4.8 stars.</h2>
+      <p data-en="Real quotes from real Google reviews. The kind of shop people tell their friends about." data-es="Frases reales de reseñas reales de Google. De esas barberías que le recomiendas a tus amigos.">Real quotes from real Google reviews. The kind of shop people tell their friends about.</p>
     </div>
     <div class="rev-grid">
       <div class="rev-card reveal">
@@ -909,8 +940,8 @@
           <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
           <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
         </div>
-        <blockquote>Extremely professional, great environment, great service and perfect skills.</blockquote>
-        <div class="who"><div class="av">G</div><div><div class="nm">Google Reviewer</div><div class="src">Verified Google review</div></div></div>
+        <blockquote data-en="Extremely professional, great environment, great service and perfect skills." data-es="Súper profesionales, muy buen ambiente, excelente servicio y una técnica perfecta.">Extremely professional, great environment, great service and perfect skills.</blockquote>
+        <div class="who"><div class="av">G</div><div><div class="nm" data-en="Google Reviewer" data-es="Reseña de Google">Google Reviewer</div><div class="src" data-en="Verified Google review" data-es="Reseña verificada de Google">Verified Google review</div></div></div>
       </div>
       <div class="rev-card reveal d1">
         <div class="quote-mark">&ldquo;</div>
@@ -921,8 +952,8 @@
           <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
           <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
         </div>
-        <blockquote>Staff is also very friendly offering coffee, water, or soda while you there.</blockquote>
-        <div class="who"><div class="av">D</div><div><div class="nm">Google Reviewer</div><div class="src">Verified Google review</div></div></div>
+        <blockquote data-en="Staff is also very friendly offering coffee, water, or soda while you there." data-es="El personal es muy amable y te ofrece café, agua o refresco mientras esperas.">Staff is also very friendly offering coffee, water, or soda while you there.</blockquote>
+        <div class="who"><div class="av">D</div><div><div class="nm" data-en="Google Reviewer" data-es="Reseña de Google">Google Reviewer</div><div class="src" data-en="Verified Google review" data-es="Reseña verificada de Google">Verified Google review</div></div></div>
       </div>
       <div class="rev-card reveal d2">
         <div class="quote-mark">&ldquo;</div>
@@ -933,8 +964,8 @@
           <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
           <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
         </div>
-        <blockquote>Great customer service, clean place, quality hair cuts.</blockquote>
-        <div class="who"><div class="av">M</div><div><div class="nm">Google Reviewer</div><div class="src">Verified Google review</div></div></div>
+        <blockquote data-en="Great customer service, clean place, quality hair cuts." data-es="Excelente atención al cliente, lugar limpio y cortes de calidad.">Great customer service, clean place, quality hair cuts.</blockquote>
+        <div class="who"><div class="av">M</div><div><div class="nm" data-en="Google Reviewer" data-es="Reseña de Google">Google Reviewer</div><div class="src" data-en="Verified Google review" data-es="Reseña verificada de Google">Verified Google review</div></div></div>
       </div>
     </div>
     <div class="rev-summary reveal">
@@ -947,7 +978,7 @@
           <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
           <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17l1-5.8L1.5 7.2l5.9-.9z"/></svg>
         </div>
-        <div class="cnt">Rated across 295 Google reviews</div>
+        <div class="cnt" data-en="Rated across 295 Google reviews" data-es="Calificado en 295 reseñas de Google">Rated across 295 Google reviews</div>
       </div>
     </div>
   </div>
@@ -957,33 +988,33 @@
 <section class="sec location" id="visit">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">Come See Us</span>
-      <h2>Find your chair in Richardson.</h2>
-      <p>Right on North Central Expressway. Easy to reach, easy to park, and always worth the stop.</p>
+      <span class="eyebrow" data-en="Come See Us" data-es="Ven a Vernos">Come See Us</span>
+      <h2 data-en="Find your chair in Richardson." data-es="Encuentra tu silla en Richardson.">Find your chair in Richardson.</h2>
+      <p data-en="Right on North Central Expressway. Easy to reach, easy to park, and always worth the stop." data-es="Justo sobre North Central Expressway. Fácil de llegar, fácil de estacionar y siempre vale la pena la visita.">Right on North Central Expressway. Easy to reach, easy to park, and always worth the stop.</p>
     </div>
     <div class="loc-grid">
       <div class="loc-info reveal">
         <div class="loc-row">
           <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <div><div class="k">Address</div><div class="v"><a href="https://www.google.com/maps/search/?api=1&query=The+Diamond+Barbershop+401+N+Central+Expy+Suite+500+Richardson+TX+75080" target="_blank" rel="noopener">401 N Central Expy, Suite 500<br>Richardson, TX 75080</a></div></div>
+          <div><div class="k" data-en="Address" data-es="Dirección">Address</div><div class="v"><a href="https://www.google.com/maps/search/?api=1&query=The+Diamond+Barbershop+401+N+Central+Expy+Suite+500+Richardson+TX+75080" target="_blank" rel="noopener">401 N Central Expy, Suite 500<br>Richardson, TX 75080</a></div></div>
         </div>
         <div class="loc-row">
           <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.8.7a2 2 0 011.7 2z"/></svg></div>
-          <div><div class="k">Phone</div><div class="v"><a href="tel:+14695797374">(469) 579-7374</a></div></div>
+          <div><div class="k" data-en="Phone" data-es="Teléfono">Phone</div><div class="v"><a href="tel:+14695797374">(469) 579-7374</a></div></div>
         </div>
         <div class="loc-row">
           <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
           <div style="flex:1">
-            <div class="k">Hours</div>
+            <div class="k" data-en="Hours" data-es="Horario">Hours</div>
             <div class="open-badge" id="openBadge" hidden><span class="dot"></span><span id="openBadgeText"></span></div>
             <div class="hours-list" id="hoursList">
-              <div class="h" data-day="1"><span class="d">Monday</span><span class="t">9:00 AM to 8:00 PM</span></div>
-              <div class="h" data-day="2"><span class="d">Tuesday</span><span class="t">9:00 AM to 8:00 PM</span></div>
-              <div class="h" data-day="3"><span class="d">Wednesday</span><span class="t">9:00 AM to 8:00 PM</span></div>
-              <div class="h" data-day="4"><span class="d">Thursday</span><span class="t">9:00 AM to 8:00 PM</span></div>
-              <div class="h" data-day="5"><span class="d">Friday</span><span class="t">9:00 AM to 8:00 PM</span></div>
-              <div class="h" data-day="6"><span class="d">Saturday</span><span class="t">9:00 AM to 8:00 PM</span></div>
-              <div class="h" data-day="0"><span class="d">Sunday</span><span class="t">10:00 AM to 6:00 PM</span></div>
+              <div class="h" data-day="1"><span class="d" data-en="Monday" data-es="Lunes">Monday</span><span class="t" data-en="9:00 AM to 8:00 PM" data-es="9:00 AM a 8:00 PM">9:00 AM to 8:00 PM</span></div>
+              <div class="h" data-day="2"><span class="d" data-en="Tuesday" data-es="Martes">Tuesday</span><span class="t" data-en="9:00 AM to 8:00 PM" data-es="9:00 AM a 8:00 PM">9:00 AM to 8:00 PM</span></div>
+              <div class="h" data-day="3"><span class="d" data-en="Wednesday" data-es="Miércoles">Wednesday</span><span class="t" data-en="9:00 AM to 8:00 PM" data-es="9:00 AM a 8:00 PM">9:00 AM to 8:00 PM</span></div>
+              <div class="h" data-day="4"><span class="d" data-en="Thursday" data-es="Jueves">Thursday</span><span class="t" data-en="9:00 AM to 8:00 PM" data-es="9:00 AM a 8:00 PM">9:00 AM to 8:00 PM</span></div>
+              <div class="h" data-day="5"><span class="d" data-en="Friday" data-es="Viernes">Friday</span><span class="t" data-en="9:00 AM to 8:00 PM" data-es="9:00 AM a 8:00 PM">9:00 AM to 8:00 PM</span></div>
+              <div class="h" data-day="6"><span class="d" data-en="Saturday" data-es="Sábado">Saturday</span><span class="t" data-en="9:00 AM to 8:00 PM" data-es="9:00 AM a 8:00 PM">9:00 AM to 8:00 PM</span></div>
+              <div class="h" data-day="0"><span class="d" data-en="Sunday" data-es="Domingo">Sunday</span><span class="t" data-en="10:00 AM to 6:00 PM" data-es="10:00 AM a 6:00 PM">10:00 AM to 6:00 PM</span></div>
             </div>
           </div>
         </div>
@@ -1006,7 +1037,7 @@
           <div class="addr"><b>The Diamond Barbershop</b>401 N Central Expy, Suite 500, Richardson</div>
           <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=The+Diamond+Barbershop+401+N+Central+Expy+Suite+500+Richardson+TX+75080" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 20l-6-3V4l6 3 6-3 6 3v13l-6-3-6 3z M9 7v13M15 4v13"/></svg>
-            Directions
+            <span data-en="Directions" data-es="Cómo Llegar">Directions</span>
           </a>
         </div>
       </div>
@@ -1019,17 +1050,17 @@
   <div class="stripes" aria-hidden="true"></div>
   <div class="glow" aria-hidden="true"></div>
   <div class="inner reveal">
-    <span class="eyebrow center">Ready When You Are</span>
-    <h2>Your best cut is <span class="gold">one tap away.</span></h2>
-    <p>Book a chair online in seconds, or call the shop and walk right in. Coffee is already brewing.</p>
+    <span class="eyebrow center" data-en="Ready When You Are" data-es="Cuando Estés Listo">Ready When You Are</span>
+    <h2><span data-en="Your best cut is" data-es="Tu mejor corte está">Your best cut is</span> <span class="gold" data-en="one tap away." data-es="a un toque.">one tap away.</span></h2>
+    <p data-en="Book a chair online in seconds, or call the shop and walk right in. Coffee is already brewing." data-es="Reserva tu silla en línea en segundos, o llama a la barbería y pásate directo. El café ya se está preparando.">Book a chair online in seconds, or call the shop and walk right in. Coffee is already brewing.</p>
     <div class="actions">
       <a class="btn btn-brass" href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg>
-        Book a Chair
+        <span data-en="Book a Chair" data-es="Reservar Silla">Book a Chair</span>
       </a>
       <a class="btn btn-ghost" href="tel:+14695797374">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.8.7a2 2 0 011.7 2z"/></svg>
-        Call (469) 579-7374
+        <span data-en="Call (469) 579-7374" data-es="Llamar (469) 579-7374">Call (469) 579-7374</span>
       </a>
     </div>
   </div>
@@ -1047,12 +1078,15 @@
             <path d="M20 13 L26 20 L20 27 L14 20 Z" fill="url(#fg)" opacity="0.85"/>
             <defs><linearGradient id="fg" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#E7C874"/><stop offset="1" stop-color="#8C6A2E"/></linearGradient></defs>
           </svg>
-          <span class="name">Diamond<small>Barbershop · RICHARDSON</small></span>
+          <span class="name">Diamond<small data-en="Barbershop · RICHARDSON" data-es="Barbería · RICHARDSON">Barbershop · RICHARDSON</small></span>
         </a>
-        <p>Precision cuts, hot towel shaves, and a welcome as warm as the coffee. The sharpest chair in Richardson, TX.</p>
+        <p data-en="Precision cuts, hot towel shaves, and a welcome as warm as the coffee. The sharpest chair in Richardson, TX." data-es="Cortes de precisión, afeitadas con toalla caliente y una bienvenida tan cálida como el café. La silla más filosa de Richardson, TX.">Precision cuts, hot towel shaves, and a welcome as warm as the coffee. The sharpest chair in Richardson, TX.</p>
         <div class="foot-social">
           <a href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener" aria-label="Book online">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg>
+          </a>
+          <a href="https://instagram.com/thediamond_barbershop504" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
           </a>
           <a href="tel:+14695797374" aria-label="Call the shop">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.8.7a2 2 0 011.7 2z"/></svg>
@@ -1060,32 +1094,33 @@
         </div>
       </div>
       <div class="foot-col">
-        <h4>Explore</h4>
-        <a href="#services">Services</a>
-        <a href="#story">Our Story</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#visit">Visit Us</a>
+        <h4 data-en="Explore" data-es="Explorar">Explore</h4>
+        <a href="#services" data-en="Services" data-es="Servicios">Services</a>
+        <a href="#story" data-en="Our Story" data-es="Nuestra Historia">Our Story</a>
+        <a href="#gallery" data-en="Gallery" data-es="Galería">Gallery</a>
+        <a href="#reviews" data-en="Reviews" data-es="Reseñas">Reviews</a>
+        <a href="#visit" data-en="Visit Us" data-es="Visítanos">Visit Us</a>
       </div>
       <div class="foot-col">
-        <h4>Popular</h4>
-        <a href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener">Skin Fade</a>
-        <a href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener">Beard Design</a>
-        <a href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener">Hot Towel Shave</a>
-        <a href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener">Kids Haircut</a>
-        <a href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener">Full Service</a>
+        <h4 data-en="Popular" data-es="Populares">Popular</h4>
+        <a href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener" data-en="Skin Fade" data-es="Fade a Piel">Skin Fade</a>
+        <a href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener" data-en="Beard Design" data-es="Diseño de Barba">Beard Design</a>
+        <a href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener" data-en="Hot Towel Shave" data-es="Afeitada con Toalla Caliente">Hot Towel Shave</a>
+        <a href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener" data-en="Kids Haircut" data-es="Corte para Niños">Kids Haircut</a>
+        <a href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener" data-en="Full Service" data-es="Servicio Completo">Full Service</a>
       </div>
       <div class="foot-col">
-        <h4>Visit</h4>
+        <h4 data-en="Visit" data-es="Visítanos">Visit</h4>
         <span class="fi">401 N Central Expy, Suite 500<br>Richardson, TX 75080</span>
         <a href="tel:+14695797374">(469) 579-7374</a>
-        <span class="fi">Mon to Sat · 9AM to 8PM</span>
-        <span class="fi">Sunday · 10AM to 6PM</span>
+        <a href="https://instagram.com/thediamond_barbershop504" target="_blank" rel="noopener">@thediamond_barbershop504</a>
+        <span class="fi" data-en="Mon to Sat · 9AM to 8PM" data-es="Lun a Sáb · 9AM a 8PM">Mon to Sat · 9AM to 8PM</span>
+        <span class="fi" data-en="Sunday · 10AM to 6PM" data-es="Domingo · 10AM a 6PM">Sunday · 10AM to 6PM</span>
       </div>
     </div>
     <div class="foot-bottom">
-      <p>&copy; 2026 The Diamond Barbershop, Richardson, TX. All rights reserved.</p>
-      <p class="disclaimer">Concept preview built by DNA Agency, not affiliated with The Diamond Barbershop. Prices and hours shown are illustrative placeholders for demonstration only.</p>
+      <p data-en="&copy; 2026 The Diamond Barbershop, Richardson, TX. All rights reserved." data-es="&copy; 2026 The Diamond Barbershop, Richardson, TX. Todos los derechos reservados.">&copy; 2026 The Diamond Barbershop, Richardson, TX. All rights reserved.</p>
+      <p class="disclaimer" data-en="Concept preview built by DNA Agency, not affiliated with The Diamond Barbershop. Prices and hours shown are illustrative placeholders for demonstration only." data-es="Vista previa conceptual creada por DNA Agency, no afiliada con The Diamond Barbershop. Los precios y horarios mostrados son ejemplos ilustrativos solo para demostración.">Concept preview built by DNA Agency, not affiliated with The Diamond Barbershop. Prices and hours shown are illustrative placeholders for demonstration only.</p>
     </div>
   </div>
 </footer>
@@ -1094,11 +1129,11 @@
 <div class="mobile-bar" aria-hidden="false">
   <a class="mb-call" href="tel:+14695797374">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.8.7a2 2 0 011.7 2z"/></svg>
-    Call
+    <span data-en="Call" data-es="Llamar">Call</span>
   </a>
   <a class="mb-book" href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg>
-    Book a Chair
+    <span data-en="Book a Chair" data-es="Reservar Silla">Book a Chair</span>
   </a>
 </div>
 
@@ -1152,29 +1187,43 @@
       var ap=h>=12?'PM':'AM';var h12=h%12;if(h12===0){h12=12;}
       return h12+':'+(mm<10?'0'+mm:mm)+' '+ap;
     }
-    if(span&&mins>=span[0]&&mins<span[1]){
-      badge.classList.remove('closed');
-      badgeText.textContent='Open now, until '+fmt(span[1]);
-    }else{
-      badge.classList.add('closed');
-      // find the next open day (today if still before opening, else the following days)
-      var msg='Closed now';
-      if(span&&mins<span[0]){
-        msg='Closed now, opens today at '+fmt(span[0]);
+    // bilingual day names + phrase templates, keyed by language
+    var DAY_NAMES={
+      en:['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+      es:['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado']
+    };
+    var PHRASES={
+      en:{open:function(t){return 'Open now, until '+t;},today:function(t){return 'Closed now, opens today at '+t;},tomorrow:function(t){return 'Closed now, opens tomorrow at '+t;},day:function(n,t){return 'Closed now, opens '+n+' at '+t;}},
+      es:{open:function(t){return 'Abierto ahora, hasta las '+t;},today:function(t){return 'Cerrado ahora, abre hoy a las '+t;},tomorrow:function(t){return 'Cerrado ahora, abre mañana a las '+t;},day:function(n,t){return 'Cerrado ahora, abre el '+n+' a las '+t;}}}
+    ;
+    // build the badge message in a given language from the already-computed day/time
+    function renderBadge(lang){
+      var L=(lang==='es')?'es':'en';var P=PHRASES[L];
+      if(span&&mins>=span[0]&&mins<span[1]){
+        badge.classList.remove('closed');
+        badgeText.textContent=P.open(fmt(span[1]));
       }else{
-        for(var i=1;i<=7;i++){
-          var d=(dow+i)%7;var s=HOURS[d];
-          if(s){
-            var names=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-            var label=(i===1)?'tomorrow':names[d];
-            msg='Closed now, opens '+label+' at '+fmt(s[0]);
-            break;
+        badge.classList.add('closed');
+        var msg;
+        if(span&&mins<span[0]){
+          msg=P.today(fmt(span[0]));
+        }else{
+          for(var i=1;i<=7;i++){
+            var d=(dow+i)%7;var s=HOURS[d];
+            if(s){
+              if(i===1){msg=P.tomorrow(fmt(s[0]));}
+              else{msg=P.day(DAY_NAMES[L][d],fmt(s[0]));}
+              break;
+            }
           }
         }
+        badgeText.textContent=msg||P.open(fmt(span?span[1]:0));
       }
-      badgeText.textContent=msg;
+      badge.hidden=false;
     }
-    badge.hidden=false;
+    // expose so the language toggle can re-render, then paint once for current lang
+    window.__renderOpenBadge=renderBadge;
+    renderBadge(document.documentElement.getAttribute('lang')||'en');
   })();
 
   // menu category filter
@@ -1190,6 +1239,50 @@
       bl.style.display=show?'':'none';
     });
   });
+
+  // ============ LANGUAGE TOGGLE (EN / ES) ============
+  (function(){
+    var STORE='diamond_lang';
+    var toggles=document.querySelectorAll('.lang-toggle');
+    var i18nNodes=document.querySelectorAll('[data-en]');
+
+    function apply(lang){
+      lang=(lang==='es')?'es':'en';
+      // swap every translatable node's visible text
+      i18nNodes.forEach(function(el){
+        var val=el.getAttribute('data-'+lang);
+        if(val===null){return;}
+        // The HTML parser already decoded any entities in the attribute value
+        // (&amp; -> &, &copy; -> ©, &ldquo; -> “), so textContent renders them right.
+        el.textContent=val;
+      });
+      // reflect state on the page + toggle buttons
+      document.documentElement.setAttribute('lang',lang);
+      toggles.forEach(function(t){
+        t.querySelectorAll('.lt').forEach(function(btn){
+          var on=(btn.getAttribute('data-lang')===lang);
+          btn.classList.toggle('on',on);
+          btn.setAttribute('aria-pressed',on?'true':'false');
+        });
+      });
+      // rebuild the open/closed badge in the chosen language
+      if(typeof window.__renderOpenBadge==='function'){window.__renderOpenBadge(lang);}
+      try{localStorage.setItem(STORE,lang);}catch(err){}
+    }
+
+    // wire up both the desktop and mobile toggles
+    toggles.forEach(function(t){
+      t.addEventListener('click',function(e){
+        var btn=e.target.closest('.lt'); if(!btn){return;}
+        apply(btn.getAttribute('data-lang'));
+      });
+    });
+
+    // load persisted choice (default English)
+    var saved='en';
+    try{var s=localStorage.getItem(STORE);if(s==='es'||s==='en'){saved=s;}}catch(err){}
+    apply(saved);
+  })();
 </script>
 </body>
 </html>
