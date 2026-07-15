@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The Diamond Barbershop · Website Previews · DNA Agency</title>
+<style>
+  :root{
+    --bg:#0e0f12; --panel:#16181d; --panel2:#1c1f26; --line:#2a2e37;
+    --text:#f2f0ea; --muted:#9aa0ab; --gold:#c9a35c; --gold2:#e2c188;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased; min-height:100vh; display:flex; flex-direction:column;
+  }
+  .wrap{width:min(920px,92vw); margin:0 auto; flex:1}
+  header{padding:clamp(3rem,8vh,5rem) 0 0}
+  .brand{
+    display:flex; align-items:center; gap:.6rem; color:var(--gold);
+    font-weight:700; letter-spacing:.14em; font-size:.8rem; text-transform:uppercase;
+  }
+  .brand svg{width:20px;height:20px}
+  h1{
+    margin-top:1.4rem;
+    font-size:clamp(1.9rem,4.5vw,3rem); line-height:1.12; font-weight:800; letter-spacing:-.01em;
+  }
+  h1 .biz{color:var(--gold2)}
+  .sub{margin-top:.9rem; color:var(--muted); font-size:clamp(1rem,1.4vw,1.1rem); max-width:56ch; line-height:1.6}
+  .cards{display:grid; gap:1rem; margin:clamp(2rem,5vh,3rem) 0 2.5rem}
+  @media(min-width:760px){.cards{grid-template-columns:repeat(3,1fr)}}
+  .card{
+    display:flex; flex-direction:column; gap:.55rem; text-decoration:none; color:var(--text);
+    background:linear-gradient(160deg,var(--panel2),var(--panel));
+    border:1px solid var(--line); border-radius:14px; padding:1.5rem 1.4rem 1.35rem;
+    transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    opacity:0; transform:translateY(14px);
+  }
+  .card.in{opacity:1; transform:none}
+  .card:hover{transform:translateY(-4px); border-color:var(--gold); box-shadow:0 14px 40px rgba(0,0,0,.45)}
+  .k{
+    color:var(--gold); font-size:.72rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+  }
+  .card h2{font-size:1.25rem; font-weight:750}
+  .card p{color:var(--muted); font-size:.92rem; line-height:1.55; flex:1}
+  .go{color:var(--gold2); font-weight:650; font-size:.92rem; margin-top:.4rem}
+  .note{
+    border:1px solid var(--line); border-radius:12px; background:var(--panel);
+    padding:1rem 1.2rem; color:var(--muted); font-size:.9rem; line-height:1.6; margin-bottom:2.5rem;
+  }
+  .note b{color:var(--text)}
+  footer{
+    border-top:1px solid var(--line); padding:1.4rem 0 2rem; margin-top:auto;
+  }
+  footer .wrap{display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; justify-content:space-between; align-items:center}
+  footer p{color:var(--muted); font-size:.8rem; line-height:1.5}
+  @media (prefers-reduced-motion: reduce){
+    .card{opacity:1; transform:none; transition:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l2.6 5.6L20 9l-4 4 1 6-5-2.8L7 19l1-6-4-4 5.4-1.4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      DNA Agency
+    </div>
+    <h1>Website previews for<br><span class="biz">The Diamond Barbershop</span></h1>
+    <p class="sub">We built three real, working directions for your new website. Every one is live, tap any card to explore it on your phone or computer. No commitment, they are yours to look at.</p>
+  </header>
+
+  <main class="cards">
+    <a class="card" href="./option-1/">
+      <span class="k">Option 1</span>
+      <h2>Clean and focused</h2>
+      <p>A sharp, modern one-page site. Everything a customer needs to choose you and call, nothing in the way.</p>
+      <span class="go">View Option 1 &rarr;</span>
+    </a>
+    <a class="card" href="./option-2/">
+      <span class="k">Option 2</span>
+      <h2>The complete site</h2>
+      <p>A full website with every section: services in depth, your story, reviews, and a contact form that reaches you directly.</p>
+      <span class="go">View Option 2 &rarr;</span>
+    </a>
+    <a class="card" href="./option-3/">
+      <span class="k">Option 3</span>
+      <h2>The premium experience</h2>
+      <p>Everything in Option 2, elevated: cinematic feel, and customers can start a request right on the site.</p>
+      <span class="go">View Option 3 &rarr;</span>
+    </a>
+  </main>
+
+  <div class="note">
+    <b>What happens next:</b> look through all three, then tell us which direction feels right. We will walk you through it and tailor the final site exactly to how you run your business. Questions any time, we are quick to answer.
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p><b style="color:var(--gold)">DNA Agency</b> &middot; Dallas, TX</p>
+    <p>Concept previews built from public information. Not affiliated with The Diamond Barbershop until we work together. Taken down on request, same day.</p>
+  </div>
+</footer>
+
+<script>
+  var cards=[].slice.call(document.querySelectorAll('.card'));
+  if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    cards.forEach(function(c,i){c.style.transitionDelay=(i*90)+'ms'});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+    cards.forEach(function(c){io.observe(c)});
+  }else{
+    cards.forEach(function(c){c.classList.add('in')});
+  }
+</script>
+</body>
+</html>

@@ -3,864 +3,612 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HOT Electric LLC | Master Electrician in Cleburne, TX</title>
-<meta name="description" content="HOT Electric LLC is a licensed and insured, BBB A+ master electrician serving Cleburne, TX and Johnson County since 2017. Owner-operated. Call (817) 933-1981 for a free estimate.">
+<title>HOT Electric LLC · Master Electrician in Cleburne, TX</title>
+<meta name="description" content="HOT Electric LLC. Licensed and insured master electrician serving Cleburne and Johnson County, TX since 2017. BBB A+ rated. Call (817) 933-1981.">
 <style>
-  /* ============================================================
-     HOT Electric LLC - Concept preview by DNA Agency
-     Palette: deep navy base + single electric-amber accent.
-     Self-contained, zero external dependencies.
-     ============================================================ */
+/* ==========================================================================
+   HOT Electric LLC · Option 1 · Concept preview by DNA Agency
+   Direction: warm paper minimalism. One photo, one accent, one CTA.
+   Restraint is the design. Zero external dependencies.
+   ========================================================================== */
 
-  :root{
-    --navy-950:#070d1c;
-    --navy-900:#0a1226;
-    --navy-850:#0d1830;
-    --navy-800:#111f3d;
-    --navy-700:#182a52;
-    --navy-line:#20325e;
-    --slate-100:#e8edf7;
-    --slate-300:#b6c2da;
-    --slate-400:#8b9ac0;
-    --slate-500:#6a7aa0;
-    --white:#ffffff;
-    --amber:#ffb020;
-    --amber-bright:#ffc44d;
-    --amber-deep:#e08c00;
-    --amber-glow:rgba(255,176,32,.16);
-    --green:#2fbf71;
-    --radius:16px;
-    --radius-lg:24px;
-    --shadow-sm:0 2px 8px rgba(3,7,18,.4);
-    --shadow-md:0 14px 40px rgba(3,7,18,.45);
-    --shadow-lg:0 30px 80px rgba(3,7,18,.55);
-    --maxw:1180px;
-    --ff-display:"Georgia","Times New Roman",serif;
-    --ff-body:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;
-  }
+:root{
+  --paper:#faf8f4;
+  --paper-deep:#f3f0e9;
+  --ink:#191712;
+  --ink-soft:#3b382f;
+  --muted:#716c5e;
+  --hairline:#e5e0d4;
+  --accent:#d14708;
+  --accent-hot:#e8500a;
+  --accent-ink:#ffffff;
+  --ok:#2e7d4f;
+  --ff-display:"Avenir Next","Helvetica Neue","Segoe UI",Helvetica,Arial,system-ui,sans-serif;
+  --ff-body:"Avenir Next","Helvetica Neue","Segoe UI",Helvetica,Arial,system-ui,sans-serif;
+  --ff-mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  --maxw:1080px;
+  --pad:clamp(1.25rem,5vw,2.5rem);
+  --sec:clamp(4.5rem,10vw,7.5rem);
+  --mo-dur:640ms;
+  --mo-ease:cubic-bezier(.22,1,.36,1);
+  --mo-dist:22px;
+  --mo-stagger:80ms;
+}
 
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-  body{
-    font-family:var(--ff-body);
-    background:var(--navy-950);
-    color:var(--slate-100);
-    line-height:1.6;
-    overflow-x:hidden;
-    -webkit-font-smoothing:antialiased;
-    text-rendering:optimizeLegibility;
-  }
-  a{color:inherit;text-decoration:none}
-  img,svg{display:block;max-width:100%}
-  h1,h2,h3,h4{font-family:var(--ff-display);font-weight:700;line-height:1.08;letter-spacing:-.015em}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--ff-body);
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.6;
+  font-size:1.0625rem;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  border-top:4px solid var(--accent);
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+ul,ol{list-style:none}
+::selection{background:var(--accent);color:var(--accent-ink)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
 
-  .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(1.1rem,4vw,2.5rem)}
-  .eyebrow{
-    font-family:var(--ff-body);
-    font-size:.74rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
-    color:var(--amber);display:inline-flex;align-items:center;gap:.55rem;
-  }
-  .eyebrow::before{content:"";width:26px;height:2px;background:var(--amber);display:inline-block;border-radius:2px}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
+.mono{font-family:var(--ff-mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase}
 
-  /* ---------- BUTTONS ---------- */
-  .btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
-    font-family:var(--ff-body);font-weight:700;font-size:1.02rem;
-    padding:1rem 1.6rem;border-radius:12px;cursor:pointer;border:none;
-    transition:transform .18s ease,box-shadow .25s ease,background .25s ease;
-    white-space:nowrap;letter-spacing:.005em;
-  }
-  .btn svg{width:20px;height:20px;flex-shrink:0}
-  .btn-primary{
-    background:linear-gradient(135deg,var(--amber-bright),var(--amber-deep));
-    color:#2a1600;box-shadow:0 10px 26px var(--amber-glow),inset 0 1px 0 rgba(255,255,255,.35);
-  }
-  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(255,176,32,.32),inset 0 1px 0 rgba(255,255,255,.4)}
-  .btn-ghost{
-    background:rgba(255,255,255,.04);color:var(--slate-100);
-    border:1.5px solid var(--navy-line);backdrop-filter:blur(6px);
-  }
-  .btn-ghost:hover{transform:translateY(-3px);border-color:var(--amber);color:var(--white)}
+.skip{
+  position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);
+  padding:.6rem 1rem;z-index:99;font-weight:600;
+}
+.skip:focus{left:0}
 
-  /* ============================================================
-     HEADER
-     ============================================================ */
-  header{
-    position:sticky;top:0;z-index:60;
-    background:rgba(7,13,28,.82);
-    backdrop-filter:saturate(150%) blur(14px);
-    border-bottom:1px solid transparent;
-    transition:border-color .3s ease,background .3s ease;
-  }
-  header.scrolled{border-bottom-color:var(--navy-line);background:rgba(7,13,28,.95)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
-  .brand{display:flex;align-items:center;gap:.7rem}
-  .brand-mark{
-    width:42px;height:42px;border-radius:11px;flex-shrink:0;
-    background:linear-gradient(140deg,var(--amber-bright),var(--amber-deep));
-    display:grid;place-items:center;box-shadow:0 6px 18px var(--amber-glow),inset 0 1px 0 rgba(255,255,255,.4);
-  }
-  .brand-mark svg{width:24px;height:24px}
-  .brand-txt{display:flex;flex-direction:column;line-height:1.05}
-  .brand-name{font-family:var(--ff-display);font-weight:700;font-size:1.18rem;letter-spacing:-.01em;color:var(--white)}
-  .brand-sub{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--slate-400);font-weight:600}
-  .nav-links{display:flex;align-items:center;gap:2rem}
-  .nav-links a{font-size:.92rem;font-weight:600;color:var(--slate-300);transition:color .2s}
-  .nav-links a:hover{color:var(--white)}
-  .nav-cta{display:flex;align-items:center;gap:1.3rem}
-  .nav-phone{display:flex;align-items:center;gap:.55rem;font-weight:700;color:var(--white);font-size:1.02rem}
-  .nav-phone svg{width:18px;height:18px;color:var(--amber)}
-  .nav-call-btn{padding:.72rem 1.15rem;font-size:.95rem}
-  @media(max-width:940px){.nav-links{display:none}.nav-phone .np-label{display:none}}
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  font-family:var(--ff-body);font-weight:600;font-size:1rem;
+  padding:.95rem 1.5rem;border-radius:999px;border:1px solid transparent;
+  cursor:pointer;white-space:nowrap;
+  transition:transform .16s var(--mo-ease),background .2s ease,box-shadow .2s ease;
+}
+.btn svg{width:18px;height:18px;flex-shrink:0}
+.btn--primary{
+  background:var(--accent);color:var(--accent-ink);
+  box-shadow:0 8px 24px rgba(209,71,8,.22);
+}
+.btn--primary:hover{background:var(--accent-hot);transform:translateY(-2px);box-shadow:0 12px 30px rgba(209,71,8,.3)}
+.btn--primary:active{transform:translateY(0)}
+.btn--ink{background:var(--ink);color:var(--paper)}
+.btn--ink:hover{background:#2c2a22;transform:translateY(-2px)}
+.btn--big{font-size:1.125rem;padding:1.15rem 2rem}
 
-  /* ============================================================
-     HERO
-     ============================================================ */
-  .hero{position:relative;overflow:hidden;padding:clamp(3.5rem,8vw,6.5rem) 0 clamp(3rem,6vw,5rem)}
-  .hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
-  .hero-bg .glow-a{
-    position:absolute;top:-18%;right:-8%;width:640px;height:640px;border-radius:50%;
-    background:radial-gradient(circle,var(--amber-glow),transparent 66%);filter:blur(20px);
-  }
-  .hero-bg .glow-b{
-    position:absolute;bottom:-30%;left:-14%;width:560px;height:560px;border-radius:50%;
-    background:radial-gradient(circle,rgba(24,42,82,.7),transparent 68%);filter:blur(24px);
-  }
-  .grid-overlay{
-    position:absolute;inset:0;opacity:.5;
-    background-image:linear-gradient(var(--navy-line) 1px,transparent 1px),linear-gradient(90deg,var(--navy-line) 1px,transparent 1px);
-    background-size:64px 64px;
-    -webkit-mask-image:radial-gradient(ellipse 90% 70% at 70% 20%,#000 0%,transparent 75%);
-            mask-image:radial-gradient(ellipse 90% 70% at 70% 20%,#000 0%,transparent 75%);
-  }
-  .hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,5vw,4rem);align-items:center}
-  .hero-badges{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.4rem 0 1.7rem}
-  .mini-badge{
-    display:inline-flex;align-items:center;gap:.4rem;
-    background:rgba(255,255,255,.045);border:1px solid var(--navy-line);
-    padding:.38rem .75rem;border-radius:999px;font-size:.78rem;font-weight:600;color:var(--slate-300);
-  }
-  .mini-badge svg{width:14px;height:14px;color:var(--amber)}
-  .hero h1{font-size:clamp(2.5rem,5.7vw,4.35rem);color:var(--white);margin-top:1.35rem}
-  .hero h1 .accent{
-    background:linear-gradient(120deg,var(--amber-bright),var(--amber-deep));
-    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
-  }
-  .hero p.lede{font-size:clamp(1.05rem,1.7vw,1.22rem);color:var(--slate-300);max-width:33rem;margin-top:1.35rem}
-  .hero-actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2rem}
-  .hero-rating{display:flex;align-items:center;gap:.85rem;margin-top:2rem;flex-wrap:wrap}
-  .stars{display:inline-flex;gap:2px}
-  .stars svg{width:19px;height:19px;color:var(--amber)}
-  .hero-rating .r-txt{font-size:.9rem;color:var(--slate-400)}
-  .hero-rating .r-txt b{color:var(--slate-100)}
+/* ---------- header ---------- */
+.top{
+  position:sticky;top:0;z-index:50;
+  background:rgba(250,248,244,.88);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--hairline);
+}
+.top__in{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.85rem}
+.wordmark{display:inline-flex;align-items:center;gap:.55rem;font-weight:700;font-size:1.1rem;letter-spacing:-.01em}
+.wordmark svg{width:20px;height:20px;color:var(--accent)}
+.wordmark small{font-weight:500;color:var(--muted);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;margin-left:.35rem;display:none}
+.top__right{display:flex;align-items:center;gap:1.25rem}
+.top__phone{font-family:var(--ff-mono);font-size:.85rem;letter-spacing:.04em;color:var(--ink-soft);display:none;position:relative}
+.top__phone::after{
+  content:"";position:absolute;left:0;right:100%;bottom:-3px;height:1.5px;
+  background:currentColor;transition:right .26s var(--mo-ease);
+}
+.top__phone:hover::after,.top__phone:focus-visible::after{right:0}
+@media(min-width:720px){
+  .top__phone{display:inline-block}
+  .wordmark small{display:inline}
+}
 
-  /* hero card - the "van/panel" trust card */
-  .hero-card{
-    position:relative;border-radius:var(--radius-lg);overflow:hidden;
-    background:linear-gradient(165deg,var(--navy-800),var(--navy-900));
-    border:1px solid var(--navy-line);box-shadow:var(--shadow-lg);
-  }
-  .hc-top{position:relative;padding:1.9rem 1.7rem 1.6rem;overflow:hidden;
-    background:linear-gradient(150deg,var(--navy-700),var(--navy-850));border-bottom:1px solid var(--navy-line)}
-  .hc-top .bolt-deco{position:absolute;right:-12px;top:-16px;width:150px;height:150px;color:var(--amber);opacity:.1}
-  .hc-est{display:inline-flex;align-items:center;gap:.5rem;background:var(--amber-glow);border:1px solid rgba(255,176,32,.4);
-    color:var(--amber-bright);font-weight:700;font-size:.8rem;padding:.4rem .8rem;border-radius:999px;letter-spacing:.02em}
-  .hc-est svg{width:15px;height:15px}
-  .hc-h{font-family:var(--ff-display);font-size:1.5rem;color:var(--white);margin-top:1rem;line-height:1.15}
-  .hc-p{font-size:.92rem;color:var(--slate-300);margin-top:.5rem}
-  .hc-list{padding:1.5rem 1.7rem 1.3rem;display:grid;gap:.95rem}
-  .hc-row{display:flex;align-items:flex-start;gap:.85rem}
-  .hc-ic{width:34px;height:34px;border-radius:9px;flex-shrink:0;display:grid;place-items:center;
-    background:rgba(255,176,32,.1);border:1px solid rgba(255,176,32,.28)}
-  .hc-ic svg{width:18px;height:18px;color:var(--amber)}
-  .hc-row .t{font-weight:700;font-size:.94rem;color:var(--slate-100)}
-  .hc-row .s{font-size:.82rem;color:var(--slate-400)}
-  .hc-foot{padding:1.15rem 1.7rem;background:var(--navy-950);border-top:1px solid var(--navy-line);
-    display:flex;align-items:center;justify-content:space-between;gap:1rem}
-  .hc-foot .lbl{font-size:.78rem;color:var(--slate-400);letter-spacing:.02em}
-  .hc-foot .num{font-family:var(--ff-display);font-size:1.35rem;font-weight:700;color:var(--white)}
-  .hc-foot a{color:var(--amber-bright)}
-  @media(max-width:860px){.hero-inner{grid-template-columns:1fr}.hero-card{max-width:460px}}
+/* ---------- hero ---------- */
+.hero{padding-top:clamp(4rem,10vw,7rem)}
+.eyebrow{
+  color:var(--accent);font-weight:600;
+  display:inline-flex;align-items:center;gap:.6rem;margin-bottom:1.5rem;
+}
+.eyebrow::before{content:"";width:22px;height:2px;background:currentColor;border-radius:2px}
+.hero h1{
+  font-family:var(--ff-display);
+  font-size:clamp(2.75rem,8.5vw,5.5rem);
+  font-weight:700;line-height:1.02;letter-spacing:-.035em;
+  max-width:14ch;
+}
+.hero__sub{
+  margin-top:1.75rem;max-width:52ch;
+  font-size:clamp(1.0625rem,1.8vw,1.25rem);color:var(--ink-soft);line-height:1.65;
+}
+.hero__cta{margin-top:2.5rem;display:flex;align-items:center;gap:1.75rem;flex-wrap:wrap}
+.hero__more{
+  font-weight:600;font-size:.95rem;color:var(--ink-soft);position:relative;
+}
+.hero__more::after{
+  content:"";position:absolute;left:0;right:0;bottom:-3px;height:1.5px;background:var(--hairline);
+}
+.hero__more::before{
+  content:"";position:absolute;left:0;right:100%;bottom:-3px;height:1.5px;background:var(--accent);
+  transition:right .26s var(--mo-ease);z-index:1;
+}
+.hero__more:hover::before,.hero__more:focus-visible::before{right:0}
+.hero__note{margin-top:1.1rem;font-family:var(--ff-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 
-  /* ============================================================
-     TRUST BAR
-     ============================================================ */
-  .trustbar{border-top:1px solid var(--navy-line);border-bottom:1px solid var(--navy-line);background:var(--navy-900)}
-  .trustbar-grid{display:grid;grid-template-columns:repeat(4,1fr)}
-  .tb-item{display:flex;align-items:center;gap:.9rem;padding:1.5rem clamp(.8rem,2vw,1.6rem);
-    border-right:1px solid var(--navy-line)}
-  .tb-item:last-child{border-right:none}
-  .tb-ic{width:44px;height:44px;border-radius:11px;flex-shrink:0;display:grid;place-items:center;
-    background:rgba(255,176,32,.08);border:1px solid rgba(255,176,32,.22)}
-  .tb-ic svg{width:23px;height:23px;color:var(--amber)}
-  .tb-txt .big{font-family:var(--ff-display);font-weight:700;font-size:1.12rem;color:var(--white);line-height:1.1}
-  .tb-txt .sm{font-size:.78rem;color:var(--slate-400)}
-  @media(max-width:820px){.trustbar-grid{grid-template-columns:repeat(2,1fr)}
-    .tb-item:nth-child(2){border-right:none}.tb-item:nth-child(1),.tb-item:nth-child(2){border-bottom:1px solid var(--navy-line)}}
-  @media(max-width:440px){.trustbar-grid{grid-template-columns:1fr}.tb-item{border-right:none;border-bottom:1px solid var(--navy-line)}.tb-item:last-child{border-bottom:none}}
+/* ---------- hero photo (the one photo) ---------- */
+.hero__media{margin-top:clamp(3rem,7vw,5rem)}
+.hero__media figure{
+  border-radius:14px;overflow:hidden;
+  aspect-ratio:16/10;
+  box-shadow:0 24px 60px rgba(25,23,18,.14);
+}
+@media(min-width:720px){.hero__media figure{aspect-ratio:21/10}}
+.hero__media img{width:100%;height:100%;object-fit:cover}
+.hero__caption{
+  display:flex;justify-content:space-between;gap:1rem;
+  margin-top:.8rem;color:var(--muted);
+  font-family:var(--ff-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+}
 
-  /* ============================================================
-     SECTION SHELL
-     ============================================================ */
-  section{position:relative}
-  .sec{padding:clamp(3.8rem,7vw,6rem) 0}
-  .sec-head{max-width:44rem;margin-bottom:clamp(2.2rem,4vw,3.2rem)}
-  .sec-head.center{margin-inline:auto;text-align:center}
-  .sec-head h2{font-size:clamp(1.9rem,3.6vw,2.9rem);color:var(--white);margin-top:1rem}
-  .sec-head p{color:var(--slate-300);font-size:1.05rem;margin-top:1rem}
+/* ---------- trust strip ---------- */
+.trust{margin-top:var(--sec);border-block:1px solid var(--hairline);background:var(--paper-deep)}
+.trust__row{
+  display:grid;grid-template-columns:1fr 1fr;gap:1.25rem var(--pad);
+  padding-block:2rem;
+}
+@media(min-width:720px){.trust__row{grid-template-columns:repeat(4,1fr);padding-block:2.25rem}}
+.trust__item{display:flex;align-items:flex-start;gap:.6rem}
+.trust__item svg{width:16px;height:16px;flex-shrink:0;color:var(--accent);margin-top:.15rem}
+.trust__item span{font-family:var(--ff-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);line-height:1.5}
 
-  /* ============================================================
-     SERVICES
-     ============================================================ */
-  #services{background:linear-gradient(180deg,var(--navy-950),var(--navy-900))}
-  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
-  .svc-card{
-    position:relative;background:linear-gradient(165deg,var(--navy-850),var(--navy-900));
-    border:1px solid var(--navy-line);border-radius:var(--radius);padding:1.7rem 1.55rem;
-    transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s,box-shadow .3s;overflow:hidden;
-  }
-  .svc-card::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;
-    background:linear-gradient(160deg,rgba(255,176,32,.35),transparent 40%);
-    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
-    -webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .3s}
-  .svc-card:hover{transform:translateY(-6px);border-color:rgba(255,176,32,.4);box-shadow:var(--shadow-md)}
-  .svc-card:hover::before{opacity:1}
-  .svc-ic{width:52px;height:52px;border-radius:13px;display:grid;place-items:center;margin-bottom:1.15rem;
-    background:linear-gradient(150deg,var(--navy-700),var(--navy-800));border:1px solid var(--navy-line)}
-  .svc-ic svg{width:27px;height:27px;color:var(--amber)}
-  .svc-card h3{font-size:1.18rem;color:var(--white)}
-  .svc-card p{font-size:.9rem;color:var(--slate-400);margin-top:.55rem}
-  .svc-tag{position:absolute;top:1.2rem;right:1.2rem;font-size:.64rem;font-weight:700;letter-spacing:.1em;
-    text-transform:uppercase;padding:.28rem .55rem;border-radius:6px;
-    background:rgba(255,176,32,.12);border:1px solid rgba(255,176,32,.3);color:var(--amber-bright)}
-  @media(max-width:900px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:560px){.svc-grid{grid-template-columns:1fr}}
+/* ---------- sections ---------- */
+section{scroll-margin-top:5rem}
+.sec-head{margin-bottom:clamp(2.5rem,6vw,4rem)}
+.sec-head h2{
+  font-family:var(--ff-display);
+  font-size:clamp(1.9rem,4.5vw,3rem);
+  font-weight:700;line-height:1.08;letter-spacing:-.025em;max-width:20ch;
+}
 
-  .svc-note{margin-top:1.8rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;
-    padding:1.1rem 1.4rem;background:rgba(255,176,32,.05);border:1px dashed rgba(255,176,32,.3);border-radius:14px}
-  .svc-note svg{width:22px;height:22px;color:var(--amber);flex-shrink:0}
-  .svc-note span{font-size:.95rem;color:var(--slate-300)}
-  .svc-note b{color:var(--white)}
+/* ---------- services ---------- */
+.services{padding-top:var(--sec)}
+.svc{border-top:1px solid var(--hairline)}
+.svc li{
+  display:grid;grid-template-columns:auto 1fr;gap:.35rem 1.5rem;
+  padding-block:1.35rem;border-bottom:1px solid var(--hairline);
+  align-items:baseline;
+}
+.svc__num{font-family:var(--ff-mono);font-size:.72rem;letter-spacing:.1em;color:var(--accent);min-width:2ch}
+.svc__name{font-weight:600;font-size:1.15rem;letter-spacing:-.01em}
+.svc__desc{grid-column:2;color:var(--muted);font-size:.95rem;line-height:1.55;max-width:56ch}
+@media(min-width:820px){
+  .svc li{grid-template-columns:3rem 17rem 1fr;gap:1.5rem}
+  .svc__desc{grid-column:auto}
+}
 
-  /* ============================================================
-     WHY CHOOSE US
-     ============================================================ */
-  #why{background:var(--navy-900)}
-  .why-inner{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(2rem,5vw,4rem);align-items:center}
-  .why-features{display:grid;gap:1.15rem}
-  .why-item{display:flex;gap:1.1rem;align-items:flex-start;
-    padding:1.25rem 1.3rem;background:var(--navy-850);border:1px solid var(--navy-line);border-radius:14px;
-    transition:border-color .25s,transform .25s}
-  .why-item:hover{border-color:rgba(255,176,32,.35);transform:translateX(4px)}
-  .why-ic{width:46px;height:46px;border-radius:12px;flex-shrink:0;display:grid;place-items:center;
-    background:linear-gradient(150deg,var(--amber-bright),var(--amber-deep));box-shadow:0 6px 16px var(--amber-glow)}
-  .why-ic svg{width:24px;height:24px;color:#2a1600}
-  .why-item h4{font-size:1.08rem;color:var(--white)}
-  .why-item p{font-size:.88rem;color:var(--slate-400);margin-top:.3rem}
+/* ---------- how it works ---------- */
+.how{padding-top:var(--sec)}
+.how__grid{display:grid;gap:2.5rem}
+@media(min-width:720px){.how__grid{grid-template-columns:repeat(3,1fr);gap:var(--pad)}}
+.how__step{border-top:2px solid var(--ink);padding-top:1.25rem}
+.how__step .mono{color:var(--accent);display:block;margin-bottom:.9rem}
+.how__step h3{font-size:1.2rem;font-weight:700;letter-spacing:-.015em;margin-bottom:.6rem}
+.how__step p{color:var(--muted);font-size:.97rem;line-height:1.6}
 
-  /* owner card */
-  .owner-card{position:relative;border-radius:var(--radius-lg);overflow:hidden;
-    background:linear-gradient(160deg,var(--navy-800),var(--navy-950));border:1px solid var(--navy-line);box-shadow:var(--shadow-lg)}
-  .oc-visual{position:relative;height:230px;overflow:hidden;
-    background:radial-gradient(120% 130% at 30% 10%,var(--navy-700),var(--navy-950))}
-  .oc-visual .ring{position:absolute;border:1px solid rgba(255,176,32,.16);border-radius:50%}
-  .oc-visual .r1{width:300px;height:300px;top:-60px;right:-60px}
-  .oc-visual .r2{width:200px;height:200px;top:-10px;right:-10px;border-color:rgba(255,176,32,.28)}
-  .oc-avatar{position:absolute;left:1.9rem;bottom:-38px;width:104px;height:104px;border-radius:24px;z-index:3;
-    background:linear-gradient(150deg,var(--amber-bright),var(--amber-deep));display:grid;place-items:center;
-    box-shadow:0 16px 40px rgba(3,7,18,.55),inset 0 1px 0 rgba(255,255,255,.4);border:4px solid var(--navy-800)}
-  .oc-avatar svg{width:52px;height:52px;color:#2a1600}
-  .oc-badge{position:absolute;right:1.6rem;top:1.5rem;z-index:3;display:inline-flex;align-items:center;gap:.45rem;
-    background:rgba(7,13,28,.7);border:1px solid var(--navy-line);backdrop-filter:blur(6px);
-    padding:.45rem .85rem;border-radius:999px;font-size:.78rem;font-weight:700;color:var(--amber-bright)}
-  .oc-badge svg{width:15px;height:15px}
-  .oc-body{padding:3.2rem 1.9rem 1.9rem}
-  .oc-body .name{font-family:var(--ff-display);font-size:1.5rem;color:var(--white)}
-  .oc-body .role{font-size:.85rem;color:var(--amber);font-weight:600;letter-spacing:.03em;margin-top:.15rem}
-  .oc-body .quote{font-size:1rem;color:var(--slate-300);margin-top:1.1rem;line-height:1.65;font-style:italic}
-  .oc-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6rem;margin-top:1.6rem;
-    border-top:1px solid var(--navy-line);padding-top:1.4rem}
-  .oc-stat .n{font-family:var(--ff-display);font-size:1.55rem;font-weight:700;color:var(--white);line-height:1}
-  .oc-stat .l{font-size:.72rem;color:var(--slate-400);margin-top:.35rem}
-  @media(max-width:860px){.why-inner{grid-template-columns:1fr}.owner-card{max-width:460px}}
+/* ---------- area / hours / contact ---------- */
+.contact{padding-top:var(--sec)}
+.contact__grid{display:grid;gap:3.5rem}
+@media(min-width:880px){.contact__grid{grid-template-columns:1fr 1fr;gap:calc(var(--pad)*2)}}
+.info__block+.info__block{margin-top:2.25rem;padding-top:2.25rem;border-top:1px solid var(--hairline)}
+.info__block .mono{color:var(--muted);display:block;margin-bottom:1rem}
+.info__phone{
+  font-family:var(--ff-display);font-size:clamp(1.8rem,4vw,2.4rem);
+  font-weight:700;letter-spacing:-.02em;display:inline-block;
+}
+.info__phone:hover{color:var(--accent)}
+.info__sub{color:var(--muted);font-size:.95rem;margin-top:.4rem}
+.area{display:flex;flex-wrap:wrap;gap:.5rem}
+.area li{
+  font-size:.9rem;font-weight:500;color:var(--ink-soft);
+  border:1px solid var(--hairline);border-radius:999px;padding:.35rem .85rem;background:#fff;
+}
+.hours{max-width:26rem}
+.hours div{display:flex;justify-content:space-between;gap:1rem;padding-block:.55rem;border-bottom:1px dashed var(--hairline);font-size:.95rem}
+.hours dt{color:var(--muted)}
+.hours dd{font-weight:600;text-align:right}
 
-  /* ============================================================
-     REVIEWS
-     ============================================================ */
-  #reviews{background:linear-gradient(180deg,var(--navy-900),var(--navy-950))}
-  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
-  .rev-card{position:relative;background:var(--navy-850);border:1px solid var(--navy-line);
-    border-radius:var(--radius);padding:1.7rem 1.55rem;transition:transform .3s,border-color .3s}
-  .rev-card:hover{transform:translateY(-5px);border-color:rgba(255,176,32,.3)}
-  .rev-quote-mark{position:absolute;top:1.1rem;right:1.35rem;font-family:var(--ff-display);
-    font-size:3.4rem;color:var(--navy-line);line-height:1}
-  .rev-stars{display:inline-flex;gap:2px;margin-bottom:.9rem}
-  .rev-stars svg{width:17px;height:17px;color:var(--amber)}
-  .rev-card p{font-size:.96rem;color:var(--slate-200);line-height:1.6;position:relative;z-index:1}
-  .rev-author{display:flex;align-items:center;gap:.75rem;margin-top:1.35rem;
-    border-top:1px solid var(--navy-line);padding-top:1.15rem}
-  .rev-ava{width:40px;height:40px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;
-    font-family:var(--ff-display);font-weight:700;color:#2a1600;font-size:1rem;
-    background:linear-gradient(150deg,var(--amber-bright),var(--amber-deep))}
-  .rev-author .who{font-weight:700;font-size:.92rem;color:var(--white)}
-  .rev-author .verd{font-size:.76rem;color:var(--slate-400);display:flex;align-items:center;gap:.3rem}
-  .rev-author .verd svg{width:12px;height:12px;color:var(--green)}
-  .rev-src{margin-top:2rem;text-align:center;font-size:.86rem;color:var(--slate-400)}
-  .rev-src b{color:var(--amber-bright)}
-  @media(max-width:900px){.rev-grid{grid-template-columns:1fr}.rev-card{max-width:560px;margin-inline:auto}}
+/* ---------- form ---------- */
+.form-card{
+  background:#fff;border:1px solid var(--hairline);border-radius:14px;
+  padding:clamp(1.5rem,4vw,2.25rem);
+  box-shadow:0 14px 40px rgba(25,23,18,.06);
+}
+.form-card>p{color:var(--muted);font-size:.95rem;margin-bottom:1.5rem}
+.form-card h3{font-size:1.25rem;font-weight:700;letter-spacing:-.015em;margin-bottom:.35rem}
+.field{margin-bottom:1.1rem}
+.field label{display:block;font-family:var(--ff-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.45rem}
+.field input,.field textarea{
+  width:100%;font:inherit;font-size:1rem;color:var(--ink);
+  background:var(--paper);border:1px solid var(--hairline);border-radius:8px;
+  padding:.8rem .95rem;transition:border-color .18s ease;
+}
+.field textarea{min-height:6.5rem;resize:vertical}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--accent)}
+.form-card .btn{width:100%}
+.form-card small{display:block;margin-top:.9rem;text-align:center;color:var(--muted);font-size:.8rem}
 
-  /* ============================================================
-     SERVICE AREA
-     ============================================================ */
-  #area{background:var(--navy-950)}
-  .area-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,3.5rem);align-items:center}
-  .area-map{position:relative;border-radius:var(--radius-lg);overflow:hidden;
-    border:1px solid var(--navy-line);background:var(--navy-900);aspect-ratio:4/3;box-shadow:var(--shadow-md)}
-  .area-map svg{width:100%;height:100%}
-  .area-pin-label{position:absolute;background:rgba(7,13,28,.85);border:1px solid var(--navy-line);
-    backdrop-filter:blur(6px);padding:.35rem .7rem;border-radius:8px;font-size:.76rem;font-weight:700;color:var(--white);white-space:nowrap}
-  .area-list{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-top:1.6rem}
-  .area-chip{display:flex;align-items:center;gap:.6rem;padding:.85rem 1rem;
-    background:var(--navy-850);border:1px solid var(--navy-line);border-radius:11px;font-weight:600;font-size:.95rem;color:var(--slate-100);
-    transition:border-color .2s,transform .2s}
-  .area-chip:hover{border-color:rgba(255,176,32,.4);transform:translateY(-2px)}
-  .area-chip svg{width:18px;height:18px;color:var(--amber);flex-shrink:0}
-  .area-hours{margin-top:1.7rem;padding:1.3rem 1.4rem;background:var(--navy-850);border:1px solid var(--navy-line);border-radius:14px}
-  .area-hours .ah-h{display:flex;align-items:center;gap:.6rem;font-weight:700;color:var(--white);margin-bottom:.85rem}
-  .area-hours .ah-h svg{width:19px;height:19px;color:var(--amber)}
-  .ah-row{display:flex;justify-content:space-between;font-size:.92rem;padding:.35rem 0;color:var(--slate-300)}
-  .ah-row.closed{color:var(--slate-500)}
-  .ah-row b{color:var(--slate-100)}
-  @media(max-width:820px){.area-inner{grid-template-columns:1fr}.area-map{max-width:520px}}
+/* ---------- final CTA band ---------- */
+.cta{margin-top:var(--sec);background:var(--ink);color:var(--paper)}
+.cta__in{padding-block:clamp(4.5rem,9vw,7rem);text-align:center}
+.cta h2{
+  font-family:var(--ff-display);
+  font-size:clamp(2.4rem,7vw,4.5rem);
+  font-weight:700;line-height:1.03;letter-spacing:-.03em;
+}
+.cta p{margin-top:1.25rem;color:#b9b4a5;max-width:44ch;margin-inline:auto}
+.cta .btn{margin-top:2.5rem}
+.cta__badges{
+  margin-top:2.5rem;display:flex;justify-content:center;flex-wrap:wrap;gap:.75rem 1.75rem;
+  font-family:var(--ff-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#8d8878;
+}
 
-  /* ============================================================
-     CTA
-     ============================================================ */
-  #cta{position:relative;overflow:hidden;
-    background:linear-gradient(150deg,var(--navy-800),var(--navy-950));border-top:1px solid var(--navy-line)}
-  .cta-glow{position:absolute;top:-40%;left:50%;transform:translateX(-50%);width:900px;height:700px;
-    background:radial-gradient(circle,var(--amber-glow),transparent 62%);filter:blur(30px);pointer-events:none}
-  .cta-inner{position:relative;z-index:2;text-align:center;max-width:44rem;margin-inline:auto}
-  .cta-inner .eyebrow{justify-content:center}
-  .cta-inner h2{font-size:clamp(2.1rem,4.4vw,3.4rem);color:var(--white);margin-top:1.1rem}
-  .cta-inner h2 .accent{color:var(--amber-bright)}
-  .cta-inner p{color:var(--slate-300);font-size:1.12rem;margin-top:1.2rem}
-  .cta-phone{margin-top:2.2rem;display:inline-flex;flex-direction:column;align-items:center;gap:.4rem}
-  .cta-phone .lbl{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--slate-400);font-weight:600}
-  .cta-phone .num{font-family:var(--ff-display);font-size:clamp(2.2rem,5vw,3rem);font-weight:700;color:var(--white);
-    display:inline-flex;align-items:center;gap:.8rem;transition:color .2s}
-  .cta-phone .num:hover{color:var(--amber-bright)}
-  .cta-phone .num svg{width:clamp(30px,5vw,42px);height:clamp(30px,5vw,42px);color:var(--amber)}
-  .cta-actions{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center;margin-top:2rem}
-  .cta-fine{margin-top:1.6rem;font-size:.86rem;color:var(--slate-400);display:inline-flex;align-items:center;gap:.5rem}
-  .cta-fine svg{width:15px;height:15px;color:var(--green)}
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--hairline);background:var(--paper)}
+.foot__in{
+  padding-block:2.25rem;display:flex;flex-direction:column;gap:1rem;
+  font-size:.85rem;color:var(--muted);
+}
+.foot__row{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.5rem;justify-content:space-between}
+.foot__tag{
+  font-family:var(--ff-mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+  border:1px solid var(--hairline);border-radius:999px;padding:.3rem .8rem;color:var(--ink-soft);background:#fff;
+}
+.foot__legal{font-size:.8rem;line-height:1.6}
 
-  /* ============================================================
-     FOOTER
-     ============================================================ */
-  footer{background:var(--navy-950);border-top:1px solid var(--navy-line);padding:clamp(3rem,5vw,4rem) 0 2rem}
-  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid var(--navy-line)}
-  .foot-brand .brand{margin-bottom:1.1rem}
-  .foot-brand p{font-size:.9rem;color:var(--slate-400);max-width:24rem;line-height:1.65}
-  .foot-badges{display:flex;gap:.6rem;margin-top:1.3rem;flex-wrap:wrap}
-  .foot-badge{display:inline-flex;align-items:center;gap:.4rem;font-size:.76rem;font-weight:600;color:var(--slate-300);
-    background:var(--navy-850);border:1px solid var(--navy-line);padding:.4rem .75rem;border-radius:8px}
-  .foot-badge svg{width:14px;height:14px;color:var(--amber)}
-  .foot-col h4{font-family:var(--ff-body);font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;
-    color:var(--slate-400);margin-bottom:1.1rem;font-weight:700}
-  .foot-col ul{list-style:none;display:grid;gap:.65rem}
-  .foot-col li a,.foot-col li{font-size:.92rem;color:var(--slate-300);transition:color .2s;display:flex;align-items:center;gap:.5rem}
-  .foot-col li a:hover{color:var(--amber-bright)}
-  .foot-col li svg{width:15px;height:15px;color:var(--amber);flex-shrink:0}
-  .foot-bottom{padding-top:1.8rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
-  .foot-bottom p{font-size:.82rem;color:var(--slate-500)}
-  .foot-disclaimer{font-size:.8rem;color:var(--slate-500);background:var(--navy-900);border:1px dashed var(--navy-line);
-    border-radius:10px;padding:.7rem 1rem;margin-top:1.6rem;text-align:center;line-height:1.55}
-  @media(max-width:760px){.foot-grid{grid-template-columns:1fr;gap:2rem}}
+/* ---------- mobile sticky call bar ---------- */
+.callbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;
+  padding:.65rem var(--pad) calc(.65rem + env(safe-area-inset-bottom));
+  background:rgba(250,248,244,.92);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border-top:1px solid var(--hairline);
+}
+.callbar .btn{width:100%}
+@media(min-width:720px){.callbar{display:none}}
+@media(max-width:719.98px){body{padding-bottom:4.75rem}}
 
-  /* ============================================================
-     STICKY MOBILE CALL BAR
-     ============================================================ */
-  .mobile-bar{position:fixed;bottom:0;left:0;right:0;z-index:80;display:none;
-    padding:.7rem;gap:.6rem;background:rgba(7,13,28,.95);backdrop-filter:blur(12px);
-    border-top:1px solid var(--navy-line);box-shadow:0 -8px 30px rgba(3,7,18,.5)}
-  .mobile-bar .btn{flex:1;padding:.9rem;font-size:.98rem}
-  @media(max-width:720px){.mobile-bar{display:flex}body{padding-bottom:76px}}
+/* ==========================================================================
+   Motion layer, adapted from the DNA premium system (motion.css / motion.js).
+   Progressive enhancement: reveals hide ONLY under html.mo-js.
+   ========================================================================== */
+html.mo-js [data-reveal]{
+  opacity:0;transform:translateY(var(--mo-dist));
+  transition:opacity var(--mo-dur) var(--mo-ease),transform var(--mo-dur) var(--mo-ease);
+  will-change:opacity,transform;
+}
+html.mo-js [data-reveal="zoom"]{transform:scale(.975)}
+html.mo-js [data-reveal].in-view{opacity:1;transform:none;will-change:auto}
+html.mo-js [data-reveal-group]>*{
+  opacity:0;transform:translateY(var(--mo-dist));
+  transition:opacity var(--mo-dur) var(--mo-ease),transform var(--mo-dur) var(--mo-ease);
+}
+html.mo-js [data-reveal-group].in-view>*{
+  opacity:1;transform:none;
+  transition-delay:calc(var(--mo-i,0)*var(--mo-stagger));
+}
 
-  /* ============================================================
-     SCROLL REVEAL
-     ============================================================ */
-  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
-  .reveal.in{opacity:1;transform:none}
-  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
-  .reveal.d4{transition-delay:.32s}.reveal.d5{transition-delay:.4s}.reveal.d6{transition-delay:.48s}
+/* hero on-load rise, CSS only */
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+html.mo-js .hero .eyebrow,
+html.mo-js .hero h1,
+html.mo-js .hero__sub,
+html.mo-js .hero__cta,
+html.mo-js .hero__note{animation:rise .7s var(--mo-ease) both}
+html.mo-js .hero h1{animation-delay:.06s}
+html.mo-js .hero__sub{animation-delay:.14s}
+html.mo-js .hero__cta{animation-delay:.22s}
+html.mo-js .hero__note{animation-delay:.3s}
 
-  @media(prefers-reduced-motion:reduce){
-    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-    .reveal{opacity:1!important;transform:none!important}
-  }
-
-  /* pulse on the live-answer dot */
-  .live-dot{width:9px;height:9px;border-radius:50%;background:var(--green);position:relative}
-  .live-dot::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--green);
-    animation:pulse 2s ease-out infinite}
-  @keyframes pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(3);opacity:0}}
+/* reduced motion: kill all motion, keep everything visible */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  html.mo-js [data-reveal],
+  html.mo-js [data-reveal-group]>*{opacity:1!important;transform:none!important;transition:none!important}
+  html.mo-js .hero .eyebrow,
+  html.mo-js .hero h1,
+  html.mo-js .hero__sub,
+  html.mo-js .hero__cta,
+  html.mo-js .hero__note{animation:none!important}
+  .btn,.top__phone::after,.hero__more::before{transition:none!important}
+}
 </style>
 </head>
 <body>
 
-<!-- ================= HEADER ================= -->
-<header id="top">
-  <div class="wrap nav">
-    <a class="brand" href="#top" aria-label="HOT Electric LLC home">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4.5 13.5H11l-1 8.5L19.5 10H13l0-8z" fill="#2a1600"/></svg>
-      </span>
-      <span class="brand-txt">
-        <span class="brand-name">HOT Electric</span>
-        <span class="brand-sub">Master Electrician</span>
-      </span>
+<a class="skip" href="#services">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top__in">
+    <a class="wordmark" href="#" aria-label="HOT Electric LLC, back to top">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z"/></svg>
+      HOT Electric<small>Cleburne, TX</small>
     </a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="#services">Services</a>
-      <a href="#why">Why Us</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#area">Service Area</a>
-    </nav>
-    <div class="nav-cta">
-      <a class="nav-phone" href="tel:+18179331981">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span class="np-label">(817) 933-1981</span>
+    <div class="top__right">
+      <a class="top__phone" href="tel:+18179331981">(817) 933-1981</a>
+      <a class="btn btn--primary" href="tel:+18179331981">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call now
       </a>
-      <a class="btn btn-primary nav-call-btn" href="tel:+18179331981">Call Now</a>
     </div>
   </div>
 </header>
 
-<!-- ================= HERO ================= -->
-<section class="hero">
-  <div class="hero-bg" aria-hidden="true">
-    <div class="grid-overlay"></div>
-    <div class="glow-a"></div>
-    <div class="glow-b"></div>
-  </div>
-  <div class="wrap hero-inner">
-    <div class="hero-copy">
-      <span class="eyebrow reveal">Cleburne, TX &bull; Serving Since 2017</span>
-      <div class="hero-badges reveal d1">
-        <span class="mini-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 4v6c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-4z"/><path d="M9 12l2 2 4-4"/></svg>Licensed &amp; Insured</span>
-        <span class="mini-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8L12 2z"/></svg>BBB A+ Rated</span>
-        <span class="mini-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9M14 17H5M17 17a3 3 0 1 0 6 0 3 3 0 0 0-6 0zM7 7a3 3 0 1 0-6 0 3 3 0 0 0 6 0z"/></svg>Owner-Operated</span>
-      </div>
-      <h1 class="reveal d2">Reliable <span class="accent">electrical work</span>, done right the first time.</h1>
-      <p class="lede reveal d3">HOT Electric LLC is a master-electrician-owned shop serving Cleburne and Johnson County. You deal directly with Mike, the licensed pro who does the work. No call centers. No runaround. Just clean, code-correct wiring.</p>
-      <div class="hero-actions reveal d4">
-        <a class="btn btn-primary" href="tel:+18179331981">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+<main>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap">
+      <p class="eyebrow mono">Master electrician · Cleburne, TX</p>
+      <h1 id="hero-h">Wired right. The first time.</h1>
+      <p class="hero__sub">Residential and commercial electrical work for Cleburne and Johnson County, handled by master electrician Michael Hall since 2017. Licensed, insured, and BBB A+ rated.</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary btn--big" href="tel:+18179331981">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           Call (817) 933-1981
         </a>
-        <a class="btn btn-ghost" href="#cta">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>
-          Request a Free Estimate
-        </a>
+        <a class="hero__more" href="#services">See what we do</a>
       </div>
-      <div class="hero-rating reveal d5">
-        <span class="stars" aria-label="5 out of 5 stars">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8L12 2z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8L12 2z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8L12 2z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8L12 2z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8L12 2z"/></svg>
-        </span>
-        <span class="r-txt"><b>A+ Accredited</b> with the Better Business Bureau &bull; <b>&ldquo;Good guys to deal with.&rdquo;</b></span>
-      </div>
+      <p class="hero__note">Straight answers on the phone. Emergency calls picked up.</p>
     </div>
 
-    <!-- HERO TRUST CARD -->
-    <aside class="hero-card reveal d3" aria-label="Free estimate highlights">
-      <div class="hc-top">
-        <svg class="bolt-deco" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2L4.5 13.5H11l-1 8.5L19.5 10H13l0-8z"/></svg>
-        <span class="hc-est"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Free Estimates</span>
-        <div class="hc-h">Straight answers,<br>fair pricing.</div>
-        <p class="hc-p">Tell us what is going on and we will tell you what it takes to fix it, before any work starts.</p>
-      </div>
-      <div class="hc-list">
-        <div class="hc-row">
-          <span class="hc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 4v6c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-4z"/><path d="M9 12l2 2 4-4"/></svg></span>
-          <div><div class="t">Licensed master electrician</div><div class="s">Work done to code, inspected and guaranteed</div></div>
-        </div>
-        <div class="hc-row">
-          <span class="hc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
-          <div><div class="t">Prompt &amp; responsive</div><div class="s">We show up when we say we will</div></div>
-        </div>
-        <div class="hc-row">
-          <span class="hc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h1m4 0h1m-6 4h1m4 0h1m-6 4h1m4 0h1"/></svg></span>
-          <div><div class="t">Residential &amp; commercial</div><div class="s">New construction, remodels, repairs and upgrades</div></div>
-        </div>
-      </div>
-      <div class="hc-foot">
-        <div>
-          <div class="lbl" style="display:flex;align-items:center;gap:.4rem"><span class="live-dot"></span>We answer the phone</div>
-          <a class="num" href="tel:+18179331981">(817) 933-1981</a>
-        </div>
-      </div>
-    </aside>
-  </div>
-</section>
+    <div class="wrap hero__media" data-reveal="zoom">
+      <figure>
+        <img src="../assets/hero-electrician.jpg" alt="Electrician in safety gear working on an outdoor electrical panel" width="1600" height="1067" fetchpriority="high">
+      </figure>
+      <p class="hero__caption"><span>On the job · Johnson County</span><span>Est. 2017</span></p>
+    </div>
+  </section>
 
-<!-- ================= TRUST BAR ================= -->
-<div class="trustbar">
-  <div class="wrap">
-    <div class="trustbar-grid">
-      <div class="tb-item reveal">
-        <span class="tb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8L12 2z"/></svg></span>
-        <span class="tb-txt"><span class="big">BBB A+</span><span class="sm">Accredited Business</span></span>
+  <!-- ================= TRUST STRIP ================= -->
+  <section class="trust" aria-label="Credentials">
+    <div class="wrap trust__row" data-reveal-group>
+      <div class="trust__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <span>Licensed &amp; insured</span>
       </div>
-      <div class="tb-item reveal d1">
-        <span class="tb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 4v6c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-4z"/><path d="M9 12l2 2 4-4"/></svg></span>
-        <span class="tb-txt"><span class="big">Licensed</span><span class="sm">&amp; Fully Insured</span></span>
+      <div class="trust__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <span>BBB A+ rated</span>
       </div>
-      <div class="tb-item reveal d2">
-        <span class="tb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V2M12 2L9 5m3-3l3 3M5 12H2m3 0l-3 3m3-3l-3-3M22 12h-3m3 0l-3-3m3 3l-3 3M12 16v6m0-6l-3 3m3-3l3 3"/><circle cx="12" cy="12" r="3"/></svg></span>
-        <span class="tb-txt"><span class="big">Since 2017</span><span class="sm">Serving Cleburne</span></span>
+      <div class="trust__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <span>Master electrician</span>
       </div>
-      <div class="tb-item reveal d3">
-        <span class="tb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a7 7 0 0 1 14 0v1"/></svg></span>
-        <span class="tb-txt"><span class="big">Owner-Run</span><span class="sm">You deal with Mike</span></span>
+      <div class="trust__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <span>Serving Cleburne since 2017</span>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- ================= SERVICES ================= -->
-<section id="services" class="sec">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">What We Do</span>
-      <h2>Full-service electrical for homes &amp; businesses</h2>
-      <p>From a single flickering outlet to a full commercial panel, we handle it, cleanly and to code. Here is where most of our calls come from.</p>
-    </div>
-    <div class="svc-grid">
-      <!-- 1 -->
-      <article class="svc-card reveal">
-        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M9 6h6M9 10h6M9 14h6M10 18h4"/></svg></span>
-        <h3>Panel Upgrades</h3>
-        <p>Tripping breakers or an old fuse box? We replace and upgrade electrical panels to handle a modern home safely.</p>
-      </article>
-      <!-- 2 -->
-      <article class="svc-card reveal d1">
-        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6a6 6 0 0 0 12 0V3"/><path d="M6 3h12M9 3V1M15 3V1M12 15v4a4 4 0 0 1-4 4"/></svg></span>
-        <h3>Wiring &amp; Rewiring</h3>
-        <p>New circuits, whole-home rewires, and troubleshooting dead outlets or shorts. We find the fault and fix the root cause.</p>
-      </article>
-      <!-- 3 -->
-      <article class="svc-card reveal d2">
-        <span class="svc-tag">Popular</span>
-        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="14" height="12" rx="2"/><path d="M17 10h2a2 2 0 0 1 2 2v0a2 2 0 0 1-2 2h-2M7 3v3M13 3v3"/></svg></span>
-        <h3>EV Charger Install</h3>
-        <p>Home charging done right. We install Level 2 EV chargers with the correct circuit and load calculation for your panel.</p>
-      </article>
-      <!-- 4 -->
-      <article class="svc-card reveal">
-        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1h6c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"/></svg></span>
-        <h3>Lighting &amp; Fixtures</h3>
-        <p>Interior and exterior lighting, recessed cans, ceiling fans, and fixture swaps, installed level, safe, and looking sharp.</p>
-      </article>
-      <!-- 5 -->
-      <article class="svc-card reveal d1">
-        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="20" rx="2"/><circle cx="10.5" cy="9" r="1"/><circle cx="10.5" cy="13" r="1"/></svg></span>
-        <h3>Outlets &amp; Switches</h3>
-        <p>Add, move, or replace outlets and switches, install GFCI and USB outlets, and fix anything that has stopped working.</p>
-      </article>
-      <!-- 6 -->
-      <article class="svc-card reveal d2">
-        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6M9 11h.01M15 11h.01"/></svg></span>
-        <h3>New Construction &amp; Remodel</h3>
-        <p>Complete wiring for new builds, additions, and renovations, coordinated with your GC and inspected end to end.</p>
-      </article>
-    </div>
-    <div class="svc-note reveal">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13.5H11l-1 8.5L19.5 10H13l0-8z"/></svg>
-      <span>Also handling <b>surge protection, circuit-breaker repair, commercial service work</b> and more. Not sure if it is us? <b>Just call and ask.</b></span>
-    </div>
-  </div>
-</section>
-
-<!-- ================= WHY CHOOSE US ================= -->
-<section id="why" class="sec">
-  <div class="wrap why-inner">
-    <div class="why-copy">
-      <div class="sec-head reveal" style="margin-bottom:1.8rem">
-        <span class="eyebrow">Why HOT Electric</span>
-        <h2>Built on trust, not on turnover.</h2>
-        <p>A lot of shops send whoever is available. Here, the master electrician who answers the phone is the one who does the work, and stands behind it.</p>
+  <!-- ================= SERVICES ================= -->
+  <section class="services" id="services" aria-labelledby="svc-h">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <p class="eyebrow mono">Services</p>
+        <h2 id="svc-h">Everything electrical. Nothing you do not need.</h2>
       </div>
-      <div class="why-features">
-        <div class="why-item reveal">
-          <span class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 4v6c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-4z"/><path d="M9 12l2 2 4-4"/></svg></span>
-          <div><h4>Licensed &amp; insured, every job</h4><p>A real Texas master electrician on site. Work is done to code and backed by proper insurance, so you are protected.</p></div>
+      <ol class="svc" data-reveal-group>
+        <li>
+          <span class="svc__num" aria-hidden="true">01</span>
+          <span class="svc__name">Residential electrical</span>
+          <span class="svc__desc">New builds, remodels, and additions, wired to code and built to last.</span>
+        </li>
+        <li>
+          <span class="svc__num" aria-hidden="true">02</span>
+          <span class="svc__name">Commercial electrical</span>
+          <span class="svc__desc">Shops, offices, and light industrial spaces around Johnson County.</span>
+        </li>
+        <li>
+          <span class="svc__num" aria-hidden="true">03</span>
+          <span class="svc__name">Panel upgrades</span>
+          <span class="svc__desc">Modern breaker panels sized for how your home actually runs today.</span>
+        </li>
+        <li>
+          <span class="svc__num" aria-hidden="true">04</span>
+          <span class="svc__name">Rewiring</span>
+          <span class="svc__desc">Full and partial rewires for older Cleburne homes, done cleanly.</span>
+        </li>
+        <li>
+          <span class="svc__num" aria-hidden="true">05</span>
+          <span class="svc__name">Lighting &amp; ceiling fans</span>
+          <span class="svc__desc">Interior, exterior, and fan installs that sit flush, level, and quiet.</span>
+        </li>
+        <li>
+          <span class="svc__num" aria-hidden="true">06</span>
+          <span class="svc__name">EV charger installs</span>
+          <span class="svc__desc">Level 2 home charging, installed safely with the capacity to support it.</span>
+        </li>
+        <li>
+          <span class="svc__num" aria-hidden="true">07</span>
+          <span class="svc__name">Troubleshooting &amp; repair</span>
+          <span class="svc__desc">Tripping breakers, dead outlets, flickering lights. Found and fixed.</span>
+        </li>
+        <li>
+          <span class="svc__num" aria-hidden="true">08</span>
+          <span class="svc__name">Emergency calls</span>
+          <span class="svc__desc">When it cannot wait, call. The phone gets answered.</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ================= HOW IT WORKS ================= -->
+  <section class="how" aria-labelledby="how-h">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <p class="eyebrow mono">How it works</p>
+        <h2 id="how-h">No runaround. Just the work.</h2>
+      </div>
+      <div class="how__grid" data-reveal-group>
+        <div class="how__step">
+          <span class="mono">Step 1</span>
+          <h3>You call. Michael answers.</h3>
+          <p>No call center, no dispatcher. You talk directly to the master electrician who will be doing the work.</p>
         </div>
-        <div class="why-item reveal d1">
-          <span class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-          <div><h4>Prompt, and we actually show up</h4><p>Our customers say it best: prompt, communicative, and easy to deal with. No no-shows, no vanishing mid-job.</p></div>
+        <div class="how__step">
+          <span class="mono">Step 2</span>
+          <h3>Straight scope, up front.</h3>
+          <p>You know exactly what needs to be done and why before any work starts. No padding, no surprises.</p>
         </div>
-        <div class="why-item reveal d2">
-          <span class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/><circle cx="12" cy="12" r="4"/></svg></span>
-          <div><h4>Honest, upfront estimates</h4><p>You get a clear price before we start. No surprise line items, no pressure, no bait-and-switch.</p></div>
-        </div>
-        <div class="why-item reveal d3">
-          <span class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-          <div><h4>Local to Johnson County</h4><p>Based in Cleburne since 2017. We know the area, the inspectors, and the older housing stock around here.</p></div>
+        <div class="how__step">
+          <span class="mono">Step 3</span>
+          <h3>Clean work, tested twice.</h3>
+          <p>Every job is tested, the site is left clean, and you get walked through what was done before we leave.</p>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- OWNER CARD -->
-    <aside class="owner-card reveal d2" aria-label="About the owner">
-      <div class="oc-visual" aria-hidden="true">
-        <span class="ring r1"></span><span class="ring r2"></span>
-        <span class="oc-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8L12 2z"/></svg>Master Electrician</span>
-        <span class="oc-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a7 7 0 0 1 14 0v1"/></svg></span>
+  <!-- ================= AREA / HOURS / CONTACT ================= -->
+  <section class="contact" id="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <p class="eyebrow mono">Contact</p>
+        <h2 id="contact-h">Based in Cleburne. On call across Johnson County.</h2>
       </div>
-      <div class="oc-body">
-        <div class="name">Michael Hall</div>
-        <div class="role">Owner &amp; Master Electrician</div>
-        <p class="quote">&ldquo;When you call HOT Electric, you get me, not a call center. I do the work myself, I do it to code, and I stand behind it. That is the whole business.&rdquo;</p>
-        <div class="oc-stats">
-          <div class="oc-stat"><div class="n">2017</div><div class="l">In business since</div></div>
-          <div class="oc-stat"><div class="n">A+</div><div class="l">BBB rating</div></div>
-          <div class="oc-stat"><div class="n">4</div><div class="l">Counties served</div></div>
+      <div class="contact__grid">
+        <div data-reveal>
+          <div class="info__block">
+            <span class="mono">Call or text</span>
+            <a class="info__phone" href="tel:+18179331981">(817) 933-1981</a>
+            <p class="info__sub">Fastest way to reach us. If we are on a job, we call back the same day.</p>
+          </div>
+          <div class="info__block">
+            <span class="mono">Service area</span>
+            <ul class="area">
+              <li>Cleburne</li>
+              <li>Burleson</li>
+              <li>Joshua</li>
+              <li>Keene</li>
+              <li>Alvarado</li>
+              <li>Godley</li>
+              <li>Grandview</li>
+              <li>All of Johnson County</li>
+            </ul>
+          </div>
+          <div class="info__block">
+            <span class="mono">Hours</span>
+            <dl class="hours">
+              <div><dt>Monday to Friday</dt><dd>7:00 am to 6:00 pm</dd></div>
+              <div><dt>Saturday</dt><dd>By appointment</dd></div>
+              <div><dt>Emergencies</dt><dd>Call any time</dd></div>
+            </dl>
+          </div>
         </div>
-      </div>
-    </aside>
-  </div>
-</section>
 
-<!-- ================= REVIEWS ================= -->
-<section id="reviews" class="sec">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow" style="justify-content:center">Real Feedback</span>
-      <h2>Neighbors who trust HOT Electric</h2>
-      <p>Straight from customers in and around Cleburne. Honest work gets honest reviews.</p>
-    </div>
-    <div class="rev-grid">
-      <article class="rev-card reveal">
-        <span class="rev-quote-mark" aria-hidden="true">&ldquo;</span>
-        <span class="rev-stars" aria-label="5 stars">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8L12 2z"/></svg>
-        </span>
-        <p>The guys from HOT Electric were prompt, and did a great job for me. Good guys to deal with!</p>
-        <div class="rev-author">
-          <span class="rev-ava">B</span>
-          <div><div class="who">Bill M.</div><div class="verd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Verified BBB review</div></div>
-        </div>
-      </article>
-
-      <article class="rev-card reveal d1">
-        <span class="rev-quote-mark" aria-hidden="true">&ldquo;</span>
-        <span class="rev-stars" aria-label="5 stars">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8L12 2z"/></svg>
-        </span>
-        <p>Mike was easy to schedule with and kept me in the loop the whole time. Fast, clean, and fairly priced. Would call again.</p>
-        <div class="rev-author">
-          <span class="rev-ava">J</span>
-          <div><div class="who">Jayne H.</div><div class="verd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Verified BBB review</div></div>
-        </div>
-      </article>
-
-      <article class="rev-card reveal d2">
-        <span class="rev-quote-mark" aria-hidden="true">&ldquo;</span>
-        <span class="rev-stars" aria-label="5 stars">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8L12 2z"/></svg>
-        </span>
-        <p>Called about a panel that kept tripping. He diagnosed it right away, explained what was wrong, and had it fixed the same day. Professional all around.</p>
-        <div class="rev-author">
-          <span class="rev-ava">D</span>
-          <div><div class="who">Cleburne homeowner</div><div class="verd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Local customer</div></div>
-        </div>
-      </article>
-    </div>
-    <p class="rev-src reveal">Rated <b>A+</b> and accredited by the Better Business Bureau. Ask us for references anytime.</p>
-  </div>
-</section>
-
-<!-- ================= SERVICE AREA ================= -->
-<section id="area" class="sec">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Where We Work</span>
-      <h2>Proudly serving Cleburne &amp; North Central Texas</h2>
-      <p>Home base is Cleburne in Johnson County, and we cover the surrounding counties too. If you are nearby and not sure, give us a call.</p>
-    </div>
-    <div class="area-inner">
-      <!-- MAP -->
-      <div class="area-map reveal" aria-label="Service area map centered on Cleburne, Texas">
-        <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <defs>
-            <radialGradient id="mapglow" cx="50%" cy="50%" r="55%">
-              <stop offset="0%" stop-color="#ffb020" stop-opacity="0.16"/>
-              <stop offset="100%" stop-color="#ffb020" stop-opacity="0"/>
-            </radialGradient>
-            <pattern id="mgrid" width="28" height="28" patternUnits="userSpaceOnUse">
-              <path d="M28 0H0V28" fill="none" stroke="#20325e" stroke-width="1"/>
-            </pattern>
-          </defs>
-          <rect width="400" height="300" fill="#0a1226"/>
-          <rect width="400" height="300" fill="url(#mgrid)"/>
-          <circle cx="200" cy="150" r="130" fill="url(#mapglow)"/>
-          <!-- abstract county blocks -->
-          <path d="M120 90 L210 80 L225 150 L150 175 L110 140 Z" fill="#111f3d" stroke="#20325e" stroke-width="1.5"/>
-          <path d="M210 80 L300 95 L295 160 L225 150 Z" fill="#0d1830" stroke="#20325e" stroke-width="1.5"/>
-          <path d="M150 175 L225 150 L235 220 L165 235 Z" fill="#0d1830" stroke="#20325e" stroke-width="1.5"/>
-          <path d="M225 150 L295 160 L305 225 L235 220 Z" fill="#111f3d" stroke="#20325e" stroke-width="1.5"/>
-          <!-- radius ring around home -->
-          <circle cx="200" cy="150" r="78" fill="none" stroke="#ffb020" stroke-width="1.4" stroke-dasharray="5 6" opacity="0.55"/>
-          <!-- roads -->
-          <path d="M60 150 H340 M200 40 V260" stroke="#20325e" stroke-width="2" opacity="0.6"/>
-          <path d="M110 90 L300 225" stroke="#20325e" stroke-width="1.5" opacity="0.4"/>
-          <!-- home pin -->
-          <g transform="translate(200 150)">
-            <circle r="16" fill="#ffb020" opacity="0.18"/>
-            <path d="M0 -13 C7 -13 12 -8 12 -1 C12 8 0 16 0 16 C0 16 -12 8 -12 -1 C-12 -8 -7 -13 0 -13 Z" fill="#ffb020"/>
-            <circle cx="0" cy="-1" r="4.5" fill="#0a1226"/>
-          </g>
-          <!-- satellite pins -->
-          <circle cx="130" cy="105" r="4" fill="#8b9ac0"/>
-          <circle cx="285" cy="120" r="4" fill="#8b9ac0"/>
-          <circle cx="180" cy="215" r="4" fill="#8b9ac0"/>
-          <circle cx="270" cy="205" r="4" fill="#8b9ac0"/>
-        </svg>
-        <span class="area-pin-label" style="left:50%;top:44%;transform:translate(-50%,-160%)">Cleburne, TX &bull; HQ</span>
-      </div>
-
-      <!-- LIST + HOURS -->
-      <div class="area-copy">
-        <div class="area-list">
-          <a class="area-chip reveal" href="tel:+18179331981"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Johnson County</a>
-          <a class="area-chip reveal d1" href="tel:+18179331981"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Ellis County</a>
-          <a class="area-chip reveal d2" href="tel:+18179331981"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Hood County</a>
-          <a class="area-chip reveal d3" href="tel:+18179331981"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Tarrant County</a>
-        </div>
-        <div class="area-hours reveal d2">
-          <div class="ah-h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Business Hours</div>
-          <div class="ah-row"><span>Monday to Friday</span><b>8:00 AM to 5:00 PM</b></div>
-          <div class="ah-row closed"><span>Saturday</span><span>Closed</span></div>
-          <div class="ah-row closed"><span>Sunday</span><span>Closed</span></div>
+        <div data-reveal>
+          <!-- SWAP BEFORE LAUNCH: replace REPLACE-WITH-CLIENT-EMAIL below with the
+               client's real email address. FormSubmit activates on the first real
+               submission it receives at that address. -->
+          <form class="form-card" action="https://formsubmit.co/REPLACE-WITH-CLIENT-EMAIL" method="POST">
+            <h3>Prefer to write?</h3>
+            <p>Leave a note and we will call you back. For anything urgent, call the number instead.</p>
+            <div class="field">
+              <label for="f-name">Name</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="f-phone">Phone</label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel" required>
+            </div>
+            <div class="field">
+              <label for="f-msg">What needs work?</label>
+              <textarea id="f-msg" name="message" required></textarea>
+            </div>
+            <input type="hidden" name="_subject" value="New website inquiry, HOT Electric">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" aria-hidden="true">
+            <button class="btn btn--ink" type="submit">Request a callback</button>
+            <small>We only use this to call you back about your job.</small>
+          </form>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ================= CTA ================= -->
-<section id="cta" class="sec">
-  <div class="cta-glow" aria-hidden="true"></div>
-  <div class="wrap cta-inner">
-    <span class="eyebrow reveal">Ready When You Are</span>
-    <h2 class="reveal d1">Let&rsquo;s get your <span class="accent">electrical</span> handled.</h2>
-    <p class="reveal d2">Whether it is a quick fix, an upgrade, or a full project, one call gets you a straight answer and a fair estimate from a licensed master electrician.</p>
-    <div class="cta-phone reveal d3">
-      <span class="lbl">Call or text</span>
-      <a class="num" href="tel:+18179331981">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        (817) 933-1981
+  <!-- ================= FINAL CTA ================= -->
+  <section class="cta" aria-labelledby="cta-h">
+    <div class="wrap cta__in" data-reveal>
+      <h2 id="cta-h">One call. Handled.</h2>
+      <p>Talk directly to a master electrician about your panel, your rewire, your charger, or the outlet that just quit.</p>
+      <a class="btn btn--primary btn--big" href="tel:+18179331981">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (817) 933-1981
       </a>
+      <div class="cta__badges">
+        <span>Licensed &amp; insured</span>
+        <span>BBB A+</span>
+        <span>Master electrician</span>
+        <span>Cleburne, TX</span>
+      </div>
     </div>
-    <div class="cta-actions reveal d4">
-      <a class="btn btn-primary" href="tel:+18179331981">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        Call for a Free Estimate
-      </a>
-      <a class="btn btn-ghost" href="https://maps.google.com/?q=HOT+Electric+LLC+Cleburne+TX" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Find Us on the Map
-      </a>
-    </div>
-    <div class="cta-fine reveal d5">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-      Licensed &amp; insured &bull; BBB A+ &bull; Free estimates &bull; Serving Cleburne since 2017
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ================= FOOTER ================= -->
+</main>
+
 <footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <a class="brand" href="#top">
-          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4.5 13.5H11l-1 8.5L19.5 10H13l0-8z" fill="#2a1600"/></svg></span>
-          <span class="brand-txt"><span class="brand-name">HOT Electric LLC</span><span class="brand-sub">Cleburne, Texas</span></span>
-        </a>
-        <p>Owner-operated, licensed and insured master electrician serving Cleburne and Johnson County since 2017. Residential and commercial electrical done right the first time.</p>
-        <div class="foot-badges">
-          <span class="foot-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8L12 2z"/></svg>BBB A+</span>
-          <span class="foot-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 4v6c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-4z"/></svg>Licensed &amp; Insured</span>
-          <span class="foot-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Since 2017</span>
-        </div>
-      </div>
-      <div class="foot-col">
-        <h4>Services</h4>
-        <ul>
-          <li>Panel Upgrades</li>
-          <li>Wiring &amp; Rewiring</li>
-          <li>EV Charger Install</li>
-          <li>Lighting &amp; Fixtures</li>
-          <li>Outlets &amp; Switches</li>
-          <li>New Construction</li>
-        </ul>
-      </div>
-      <div class="foot-col">
-        <h4>Get In Touch</h4>
-        <ul>
-          <li><a href="tel:+18179331981"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(817) 933-1981</a></li>
-          <li><a href="https://maps.google.com/?q=Cleburne+TX" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Cleburne, TX 76031</a></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Mon to Fri, 8 AM to 5 PM</li>
-        </ul>
-      </div>
+  <div class="wrap foot__in">
+    <div class="foot__row">
+      <span><strong>HOT Electric LLC</strong> · Cleburne, TX · <a href="tel:+18179331981">(817) 933-1981</a></span>
+      <span class="foot__tag">Option 1</span>
     </div>
-    <div class="foot-bottom">
-      <p>&copy; 2026 HOT Electric LLC. All rights reserved.</p>
-      <p>Cleburne &bull; Johnson County &bull; North Central Texas</p>
-    </div>
-    <div class="foot-disclaimer">
-      Concept preview built by DNA Agency, not affiliated with HOT Electric LLC.
-    </div>
+    <p class="foot__legal">Concept preview built by DNA Agency, not affiliated with HOT Electric LLC. Photography is licensed stock imagery used for preview purposes only.</p>
   </div>
 </footer>
 
-<!-- ================= STICKY MOBILE CALL BAR ================= -->
-<div class="mobile-bar">
-  <a class="btn btn-primary" href="tel:+18179331981">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-    Call Now
-  </a>
-  <a class="btn btn-ghost" href="#cta">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
-    Free Estimate
+<!-- mobile sticky call bar -->
+<div class="callbar">
+  <a class="btn btn--primary" href="tel:+18179331981">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call (817) 933-1981
   </a>
 </div>
 
 <script>
-  /* header shadow on scroll */
-  var header=document.getElementById('top');
-  var onScroll=function(){header.classList.toggle('scrolled',window.scrollY>12);};
-  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
-
-  /* scroll-reveal (reduced-motion aware) */
-  var prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var reveals=document.querySelectorAll('.reveal');
-  if(prefersReduced||!('IntersectionObserver'in window)){
-    reveals.forEach(function(el){el.classList.add('in');});
-  }else{
-    var io=new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+/* Motion engine, adapted from the DNA premium system (motion.js).
+   Progressive enhancement: if this never runs, nothing is hidden. */
+(function(){
+  'use strict';
+  var docEl=document.documentElement;
+  docEl.classList.add('mo-js');
+  var reduce=!!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var noIO=!('IntersectionObserver' in window);
+  function show(el){el.classList.add('in-view');}
+  var reveals=[].slice.call(document.querySelectorAll('[data-reveal],[data-reveal-group]'));
+  [].forEach.call(document.querySelectorAll('[data-reveal-group]'),function(g){
+    [].forEach.call(g.children,function(c,i){c.style.setProperty('--mo-i',i);});
+  });
+  if(reduce||noIO){reveals.forEach(show);return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting)return;
+      show(e.target);
+      io.unobserve(e.target);
+    });
+  },{rootMargin:'0px 0px -12% 0px',threshold:0.15});
+  reveals.forEach(function(el){io.observe(el);});
+  /* safety net: never leave content stuck hidden */
+  var sweep=function(){
+    setTimeout(function(){
+      reveals.forEach(function(el){
+        if(!el.classList.contains('in-view'))show(el);
       });
-    },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
-    reveals.forEach(function(el){io.observe(el);});
-  }
+    },1200);
+  };
+  if(document.readyState==='complete')sweep();
+  else window.addEventListener('load',sweep,{once:true});
+})();
 </script>
+
 </body>
 </html>
