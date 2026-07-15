@@ -717,7 +717,7 @@
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
         </span>
-        <span class="rtext"><b>&ldquo;Prompt, great work.&rdquo;</b> From BBB customer feedback</span>
+        <span class="rtext"><b>BBB A+ accredited</b> &middot; your real reviews feature here</span>
       </div>
     </div>
   </div>
@@ -869,7 +869,7 @@
         </div>
         <div class="why-feat">
           <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-          <div><h4>We show up when we say</h4><p>Our own reviews say it best: prompt, communicative, and easy to deal with. Your time matters, so we respect the window we give you.</p></div>
+          <div><h4>We show up when we say</h4><p>We give you a real window and we keep it. Prompt, communicative, and easy to deal with, because your time matters as much as the work does.</p></div>
         </div>
         <div class="why-feat">
           <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/><path d="M4 20h16" opacity=".3"/></svg></div>
@@ -966,6 +966,14 @@
         </div>
       </div>
 
+      <!--
+        LEAD DELIVERY (concept demo): this form does NOT post anywhere yet. It shows a
+        client-side confirmation only, so no lead is ever silently dropped to a dead endpoint.
+        To go live, wire it to the owner's inbox via FormSubmit (host-agnostic, no backend):
+        add  action="https://formsubmit.co/{{OWNER_EMAIL}}"  method="POST"  to the <form> tag
+        below and swap {{OWNER_EMAIL}} for HOT Electric's real address (e.g. the shop's Gmail).
+        Do NOT point it at example.com or any placeholder domain that would eat submissions.
+      -->
       <form class="funnel-body" id="quoteForm" novalidate>
         <!-- STEP 1: service type -->
         <div class="fpanel" data-panel="1">
@@ -1106,35 +1114,31 @@
     <div class="sec-head center reveal">
       <div class="kicker-line"></div>
       <span class="eyebrow">What Customers Say</span>
-      <h2>A+ rated, and the reviews back it up.</h2>
-      <p>HOT Electric is BBB accredited with an A+ rating. Here is the kind of feedback customers leave, and where you can read more.</p>
+      <h2>BBB A+ accredited, with room for your reviews.</h2>
+      <p>HOT Electric is BBB accredited with an A+ rating. On the live site, your real Google and BBB reviews load into the cards below. The slots are placeholders until then.</p>
     </div>
 
     <div class="rev-grid">
-      <!-- Real paraphrased BBB feedback (attributed as BBB customer, not a fabricated full name) -->
+      <!-- Placeholder cards. No invented people, no fake "verified" labels. Swap in the client's REAL Google/BBB reviews before launch. -->
       <article class="rev-card reveal">
-        <span class="stars" aria-label="5 out of 5 stars">
+        <span class="stars" aria-label="Review placeholder">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
         </span>
-        <blockquote>&ldquo;The guys from HOT Electric were prompt and did a great job for me. Good guys to deal with.&rdquo;</blockquote>
+        <blockquote>&ldquo;Your real customer review goes here. On the live site, HOT Electric&rsquo;s actual Google and BBB reviews load into this card.&rdquo;</blockquote>
         <div class="rev-by">
-          <div class="rev-avatar">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg>
-          </div>
-          <div><div class="rn">Verified BBB customer</div><div class="rm">Better Business Bureau review</div></div>
+          <div class="rev-avatar" style="background:linear-gradient(150deg,var(--amber),var(--amber-deep));color:#241800">+</div>
+          <div><div class="rn">Your review here</div><div class="rm">Review placeholder</div></div>
         </div>
       </article>
 
       <article class="rev-card reveal" data-d="1">
-        <span class="stars" aria-label="5 out of 5 stars">
+        <span class="stars" aria-label="Review placeholder">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
         </span>
-        <blockquote>&ldquo;Easy to schedule, and they kept me in the loop the whole time. Would call HOT Electric again.&rdquo;</blockquote>
+        <blockquote>&ldquo;A second review slot, ready for your words. We pull your best verified reviews straight from Google and the BBB so new customers see them first.&rdquo;</blockquote>
         <div class="rev-by">
-          <div class="rev-avatar">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg>
-          </div>
-          <div><div class="rn">Verified BBB customer</div><div class="rm">Better Business Bureau review</div></div>
+          <div class="rev-avatar" style="background:linear-gradient(150deg,var(--amber),var(--amber-deep));color:#241800">+</div>
+          <div><div class="rn">Your review here</div><div class="rm">Review placeholder</div></div>
         </div>
       </article>
 

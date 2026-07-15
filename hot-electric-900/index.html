@@ -282,6 +282,17 @@
   .rev .who span{font-size:.78rem;color:var(--ink-mute);display:flex;align-items:center;gap:5px}
   .rev .who span .ic{font-size:.85rem;color:var(--emerald)}
   .rev-disclaim{text-align:center;margin-top:26px;font-size:.82rem;color:var(--ink-mute)}
+  /* Intentional review PLACEHOLDERS: no invented testimonials. Real Google/BBB reviews drop in here at go-live. */
+  .rev.placeholder{background:var(--white);border:1.5px dashed var(--line-soft);box-shadow:none}
+  .rev.placeholder:hover{transform:translateY(-5px);box-shadow:var(--shadow-sm);border-color:var(--amber-600)}
+  .rev.placeholder .ph-badge{display:inline-flex;align-items:center;gap:7px;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--amber-700);background:rgba(255,193,43,.1);border:1px solid rgba(255,193,43,.28);border-radius:999px;padding:5px 11px;margin-bottom:14px}
+  .rev.placeholder .ph-badge .ic{font-size:.9rem}
+  .rev.placeholder .stars.muted{color:var(--line-soft)}
+  .rev.placeholder .ph-title{font-family:var(--ff-display);font-size:1.12rem;color:var(--ink);text-transform:uppercase;line-height:1.08;margin-bottom:8px}
+  .rev.placeholder p{color:var(--ink-mute)}
+  .rev.placeholder .ph-src{display:flex;align-items:center;gap:9px;font-size:.82rem;color:var(--ink-mute);font-weight:600}
+  .rev.placeholder .ph-src .av{width:34px;height:34px;flex:none;border-radius:9px;background:var(--paper-2);border:1px solid var(--line-soft);color:var(--amber-700);display:grid;place-items:center}
+  .rev.placeholder .ph-src .av .ic{font-size:1.05rem}
 
   /* ================= SERVICE AREA ================= */
   #area{background:var(--white)}
@@ -419,7 +430,7 @@
         <svg class="ic" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L20 13l1 4v3a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></svg>
         <span><small>Call today</small><b>817-933-1981</b></span>
       </a>
-      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+      <button class="menu-btn" id="menuBtn" aria-label="Jump to contact and free estimate">
         <svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
     </div>
@@ -459,8 +470,11 @@
         <span class="bb">A+</span>
         <span><small>BBB Accredited</small><b>Business</b></span>
       </div>
-      <!-- Placeholder inbox for the concept preview. Swap to HOT Electric's real email when the client signs. -->
-      <form class="qcard" action="https://formsubmit.co/hello@hot-electric-llc.com" method="POST" novalidate>
+      <!-- PLACEHOLDER FORM ACTION. This form does NOT deliver leads until the token below is replaced.
+           Before go-live, swap YOUR-EMAIL@EXAMPLE.COM for HOT Electric's real inbox, e.g.
+           action="https://formsubmit.co/office@your-real-domain.com" . FormSubmit activates on the first
+           real submission (client confirms once by email). Do not ship live with this placeholder. -->
+      <form class="qcard" action="https://formsubmit.co/YOUR-EMAIL@EXAMPLE.COM" method="POST" novalidate>
         <h3>Get a Free Estimate</h3>
         <p class="qsub">Tell us what you need. Mike gets back to you fast, usually same business day.</p>
         <div class="field">
@@ -664,23 +678,17 @@
   <div class="wrap">
     <div class="sec-head center">
       <span class="kicker reveal">Reputation</span>
-      <h2 class="sec-title reveal" data-d="1">Cleburne Keeps <span class="hl">Calling Us Back</span></h2>
-      <p class="sec-sub reveal" data-d="2">An A+ BBB rating is earned one honest job at a time. Here is the kind of feedback our customers leave.</p>
+      <h2 class="sec-title reveal" data-d="1">Built on an <span class="hl">A+ Reputation</span></h2>
+      <p class="sec-sub reveal" data-d="2">Licensed, insured, and BBB A+ accredited, serving Cleburne since 2017. Your real Google and BBB reviews will feature right here once the site is live.</p>
     </div>
 
     <div class="rev-top reveal" data-d="2">
       <div class="rev-score">
+        <div class="bb" style="width:56px;height:56px;flex:none;border-radius:14px;background:var(--navy-900);color:var(--amber);display:grid;place-items:center;font-family:var(--ff-display);font-weight:700;font-size:1.5rem">A+</div>
         <div>
-          <div class="stars" aria-label="5 out of 5 stars">
-            <svg class="ic ic-fill" viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.6.6-5 4.4 1.5 6.6L12 16.9 6 19.8l1.5-6.6-5-4.4 6.6-.6z"/></svg>
-            <svg class="ic ic-fill" viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.6.6-5 4.4 1.5 6.6L12 16.9 6 19.8l1.5-6.6-5-4.4 6.6-.6z"/></svg>
-            <svg class="ic ic-fill" viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.6.6-5 4.4 1.5 6.6L12 16.9 6 19.8l1.5-6.6-5-4.4 6.6-.6z"/></svg>
-            <svg class="ic ic-fill" viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.6.6-5 4.4 1.5 6.6L12 16.9 6 19.8l1.5-6.6-5-4.4 6.6-.6z"/></svg>
-            <svg class="ic ic-fill" viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.6.6-5 4.4 1.5 6.6L12 16.9 6 19.8l1.5-6.6-5-4.4 6.6-.6z"/></svg>
-          </div>
-          <span class="big" style="font-size:1.4rem;display:block;margin-top:6px">Well-Reviewed</span>
+          <span class="big" style="font-size:1.5rem;display:block;line-height:1">BBB Accredited</span>
+          <small>A+ rating with the Better Business Bureau.<br>Licensed &amp; insured, serving Cleburne since 2017.</small>
         </div>
-        <small>Prompt, professional,<br>good guys to deal with.</small>
       </div>
       <div class="rev-badges">
         <span class="rev-chip"><svg class="ic ic-fill" viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.6.6-5 4.4 1.5 6.6L12 16.9 6 19.8l1.5-6.6-5-4.4 6.6-.6z"/></svg><span><b>BBB A+</b><span>Accredited business</span></span></span>
@@ -689,45 +697,50 @@
       </div>
     </div>
 
+    <!-- REVIEW PLACEHOLDERS (intentional). No invented testimonials live here.
+         At go-live, replace each card with a REAL, verbatim Google or BBB review (name + rating pulled from the profile). -->
     <div class="rev-grid">
-      <div class="rev reveal">
-        <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-        <div class="stars" aria-label="5 stars">
+      <div class="rev placeholder reveal">
+        <span class="ph-badge"><svg class="ic" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>Your real review here</span>
+        <div class="stars muted" aria-hidden="true">
           <svg class="ic ic-fill" viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.6.6-5 4.4 1.5 6.6L12 16.9 6 19.8l1.5-6.6-5-4.4 6.6-.6z"/></svg>
           <svg class="ic ic-fill" viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.6.6-5 4.4 1.5 6.6L12 16.9 6 19.8l1.5-6.6-5-4.4 6.6-.6z"/></svg>
           <svg class="ic ic-fill" viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.6.6-5 4.4 1.5 6.6L12 16.9 6 19.8l1.5-6.6-5-4.4 6.6-.6z"/></svg>
           <svg class="ic ic-fill" viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.6.6-5 4.4 1.5 6.6L12 16.9 6 19.8l1.5-6.6-5-4.4 6.6-.6z"/></svg>
           <svg class="ic ic-fill" viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.6.6-5 4.4 1.5 6.6L12 16.9 6 19.8l1.5-6.6-5-4.4 6.6-.6z"/></svg>
         </div>
-        <p>Prompt and did a great job. Good guys to deal with, and they explained everything as they went.</p>
-        <div class="who"><span class="av">C</span><div><b>Verified Customer</b><span><svg class="ic" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Cleburne, TX</span></div></div>
+        <p class="ph-title">A real customer quote goes here</p>
+        <p>This is a placeholder. Once the site is live, we pull your genuine Google and BBB reviews into this spot, word for word, with the reviewer's real name.</p>
+        <div class="ph-src"><span class="av"><svg class="ic" viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.6.6-5 4.4 1.5 6.6L12 16.9 6 19.8l1.5-6.6-5-4.4 6.6-.6z"/></svg></span>Pulled live from your Google Business Profile</div>
       </div>
-      <div class="rev reveal" data-d="1">
-        <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-        <div class="stars" aria-label="5 stars">
+      <div class="rev placeholder reveal" data-d="1">
+        <span class="ph-badge"><svg class="ic" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>Your real review here</span>
+        <div class="stars muted" aria-hidden="true">
           <svg class="ic ic-fill" viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.6.6-5 4.4 1.5 6.6L12 16.9 6 19.8l1.5-6.6-5-4.4 6.6-.6z"/></svg>
           <svg class="ic ic-fill" viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.6.6-5 4.4 1.5 6.6L12 16.9 6 19.8l1.5-6.6-5-4.4 6.6-.6z"/></svg>
           <svg class="ic ic-fill" viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.6.6-5 4.4 1.5 6.6L12 16.9 6 19.8l1.5-6.6-5-4.4 6.6-.6z"/></svg>
           <svg class="ic ic-fill" viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.6.6-5 4.4 1.5 6.6L12 16.9 6 19.8l1.5-6.6-5-4.4 6.6-.6z"/></svg>
           <svg class="ic ic-fill" viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.6.6-5 4.4 1.5 6.6L12 16.9 6 19.8l1.5-6.6-5-4.4 6.6-.6z"/></svg>
         </div>
-        <p>Easy to schedule and they showed up right on time. The crew was pleasant, communicative, and finished faster than expected.</p>
-        <div class="who"><span class="av">J</span><div><b>Verified Customer</b><span><svg class="ic" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Johnson County, TX</span></div></div>
+        <p class="ph-title">Space reserved for real feedback</p>
+        <p>We never invent testimonials. This card stays empty until it holds an actual, verifiable review from one of your Cleburne customers.</p>
+        <div class="ph-src"><span class="av"><svg class="ic" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>Or synced from your BBB profile</div>
       </div>
-      <div class="rev reveal" data-d="2">
-        <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-        <div class="stars" aria-label="5 stars">
+      <div class="rev placeholder reveal" data-d="2">
+        <span class="ph-badge"><svg class="ic" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>Your real review here</span>
+        <div class="stars muted" aria-hidden="true">
           <svg class="ic ic-fill" viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.6.6-5 4.4 1.5 6.6L12 16.9 6 19.8l1.5-6.6-5-4.4 6.6-.6z"/></svg>
           <svg class="ic ic-fill" viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.6.6-5 4.4 1.5 6.6L12 16.9 6 19.8l1.5-6.6-5-4.4 6.6-.6z"/></svg>
           <svg class="ic ic-fill" viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.6.6-5 4.4 1.5 6.6L12 16.9 6 19.8l1.5-6.6-5-4.4 6.6-.6z"/></svg>
           <svg class="ic ic-fill" viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.6.6-5 4.4 1.5 6.6L12 16.9 6 19.8l1.5-6.6-5-4.4 6.6-.6z"/></svg>
           <svg class="ic ic-fill" viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.6.6-5 4.4 1.5 6.6L12 16.9 6 19.8l1.5-6.6-5-4.4 6.6-.6z"/></svg>
         </div>
-        <p>Called about a panel that kept tripping. They found the real problem, fixed it right, and the price was fair. Would use again.</p>
-        <div class="who"><span class="av">R</span><div><b>Verified Customer</b><span><svg class="ic" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Cleburne, TX</span></div></div>
+        <p class="ph-title">Your best review, front and center</p>
+        <p>Tell us your favorite job story and we will feature the real review that came from it, so visitors see proof, not marketing copy.</p>
+        <div class="ph-src"><span class="av"><svg class="ic" viewBox="0 0 24 24"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>Real Cleburne &amp; Johnson County customers</div>
       </div>
     </div>
-    <p class="rev-disclaim">Representative of the feedback our customers share. See our verified reviews on our BBB profile.</p>
+    <p class="rev-disclaim">These cards are intentional placeholders. No reviews on this concept preview are real. Your verified Google and BBB reviews replace them at go-live.</p>
   </div>
 </section>
 
@@ -852,8 +865,11 @@
         </div>
       </div>
 
-      <!-- Placeholder inbox for the concept preview. Swap to HOT Electric's real email when the client signs. -->
-      <form class="contact-form reveal" data-d="2" action="https://formsubmit.co/hello@hot-electric-llc.com" method="POST" novalidate>
+      <!-- PLACEHOLDER FORM ACTION. This form does NOT deliver leads until the token below is replaced.
+           Before go-live, swap YOUR-EMAIL@EXAMPLE.COM for HOT Electric's real inbox, e.g.
+           action="https://formsubmit.co/office@your-real-domain.com" . FormSubmit activates on the first
+           real submission (client confirms once by email). Do not ship live with this placeholder. -->
+      <form class="contact-form reveal" data-d="2" action="https://formsubmit.co/YOUR-EMAIL@EXAMPLE.COM" method="POST" novalidate>
         <h3>Send a Request</h3>
         <p class="cf-sub">Tell us about the job. The more detail, the faster we can quote it.</p>
         <input type="hidden" name="_subject" value="New estimate request from HOT Electric website">
