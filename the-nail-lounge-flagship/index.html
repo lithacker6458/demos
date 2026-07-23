@@ -300,6 +300,10 @@ h1,h2,h3,.serif{font-family:var(--serif);font-weight:400;letter-spacing:0.005em}
 .card:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(59,42,56,.12);border-color:rgba(201,169,106,.5)}
 .card-art{height:150px;position:relative;overflow:hidden;border-bottom:1px solid var(--greige-deep)}
 .card-art svg{position:absolute;inset:0;width:100%;height:100%}
+.card-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.card:hover .card-art img{transform:scale(1.05)}
+/* soft plum wash over photo cards so the palette stays cohesive */
+.card-art.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(59,42,56,.08),rgba(156,174,151,.14));pointer-events:none}
 .card-body{padding:1.5rem 1.6rem 1.8rem}
 .card-cat{font-size:.66rem;text-transform:uppercase;letter-spacing:.2em;font-weight:600;color:var(--sage-deep);margin-bottom:.7rem;display:block}
 .card h3{font-size:1.22rem;color:var(--plum);margin-bottom:.55rem;line-height:1.2}
@@ -376,7 +380,10 @@ h1,h2,h3,.serif{font-family:var(--serif);font-weight:400;letter-spacing:0.005em}
 .map-pin .pin-dot::after{content:"";position:absolute;top:5px;left:5px;width:8px;height:8px;border-radius:50%;background:var(--gold-soft)}
 .map-pin .pin-ring{position:absolute;top:0;left:50%;width:18px;height:18px;border-radius:50%;border:2px solid var(--plum);transform:translate(-50%,0);animation:ring 2.6s ease-out infinite}
 @keyframes ring{0%{transform:translate(-50%,0) scale(1);opacity:.6}100%{transform:translate(-50%,0) scale(3.4);opacity:0}}
-.map-pin .lbl{margin-top:1.2rem;background:var(--paper);border:1px solid var(--greige-deep);border-radius:3px;padding:.4rem .8rem;font-size:.78rem;color:var(--plum);font-weight:600;box-shadow:0 4px 14px rgba(59,42,56,.12)}
+.map-pin .lbl{display:inline-block;margin-top:1.2rem;background:var(--paper);border:1px solid var(--greige-deep);border-radius:3px;padding:.42rem .8rem;font-size:.8rem;line-height:1.2;color:var(--plum);font-weight:600;box-shadow:0 4px 14px rgba(59,42,56,.12)}
+.map-pin .lbl-sub{display:block;font-size:.66rem;font-weight:500;color:var(--ink-soft);margin-top:.2rem;letter-spacing:.01em}
+.map-pin .you-are-here{display:inline-block;margin-bottom:.7rem;background:var(--gold);color:var(--plum-deep);font-size:.6rem;text-transform:uppercase;letter-spacing:.16em;font-weight:700;padding:.22rem .55rem;border-radius:2px;box-shadow:0 3px 10px rgba(201,169,106,.4)}
+.map-note{position:absolute;left:1rem;top:1rem;font-size:.66rem;color:var(--ink-soft);background:rgba(251,249,245,.82);padding:.28rem .55rem;border-radius:3px;max-width:56%;line-height:1.3}
 .map-btn{position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);white-space:nowrap}
 
 /* ============ FINAL CTA ============ */
@@ -437,7 +444,7 @@ h1,h2,h3,.serif{font-family:var(--serif);font-weight:400;letter-spacing:0.005em}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   .reveal{opacity:1;transform:none}
-  .swatch,.hero-eyebrow,.hero h1 .l,.hero-lead,.hero-actions,.swatch-field .drift{opacity:1;transform:none}
+  .swatch,.hero-eyebrow,.hero h1 .l,.hero-lead,.hero-actions,.swatch-field .drift,.swatch-floor,.hero-photo{opacity:1;transform:none}
   .btn-primary .ul{transform:scaleX(1)}
   html{scroll-behavior:auto}
 }
@@ -493,7 +500,32 @@ h1,h2,h3,.serif{font-family:var(--serif);font-weight:400;letter-spacing:0.005em}
 <section class="hero" aria-label="The Nail Lounge, Kansas City's best nail salon">
   <div class="swatch-field" id="swatchField" aria-hidden="true">
     <!-- Static floor: renders instantly with zero JS so the hero is never bare -->
-    <div class="swatch-floor" id="swatchFloor"></div>
+    <div class="swatch-floor" id="swatchFloor">
+      <span class="swatch" style="background:linear-gradient(145deg,#F0C9CE,#E1A6AD)"></span>
+      <span class="swatch" style="background:linear-gradient(145deg,#F5DAD9,#EAC0BF)"></span>
+      <span class="swatch" style="background:linear-gradient(145deg,#EBD9C7,#D9BFA6)"></span>
+      <span class="swatch" style="background:linear-gradient(145deg,#E8D2BC,#D2B396)"></span>
+      <span class="swatch" style="background:linear-gradient(145deg,#DED3C3,#C4B39D)"></span>
+      <span class="swatch" style="background:linear-gradient(145deg,#F3E5C6,#E4CE9A)"></span>
+      <span class="swatch" style="background:linear-gradient(145deg,#DCC79A,#C9A96A)"></span>
+      <span class="swatch" style="background:linear-gradient(145deg,#F0DDA6,#E2C06B)"></span>
+      <span class="swatch" style="background:linear-gradient(145deg,#C4D2B4,#9CAE97)"></span>
+      <span class="swatch" style="background:linear-gradient(145deg,#AEBFA5,#7E9179)"></span>
+      <span class="swatch" style="background:linear-gradient(145deg,#BCD0BE,#8FAE93)"></span>
+      <span class="swatch" style="background:linear-gradient(145deg,#C9A9AE,#9E7B84)"></span>
+      <span class="swatch" style="background:linear-gradient(145deg,#6E4E63,#3B2A38)"></span>
+      <span class="swatch" style="background:linear-gradient(145deg,#4A3646,#2A2230)"></span>
+      <span class="swatch" style="background:linear-gradient(145deg,#8A5A6C,#5A3543)"></span>
+      <span class="swatch" style="background:linear-gradient(145deg,#D8A48C,#B87A63)"></span>
+      <span class="swatch" style="background:linear-gradient(145deg,#B79A82,#8C6E56)"></span>
+      <span class="swatch" style="background:linear-gradient(145deg,#F2CDD5,#E3A9B6)"></span>
+      <span class="swatch" style="background:linear-gradient(145deg,#F0B7A6,#E38A73)"></span>
+      <span class="swatch" style="background:linear-gradient(145deg,#D8CBE0,#B7A4C8)"></span>
+      <span class="swatch" style="background:linear-gradient(145deg,#CBBFD8,#A491BB)"></span>
+      <span class="swatch" style="background:linear-gradient(145deg,#F3EEE6,#DED5C7)"></span>
+      <span class="swatch" style="background:linear-gradient(145deg,#C25260,#9A2E3C)"></span>
+      <span class="swatch" style="background:linear-gradient(145deg,#B7CFC7,#8FB0A6)"></span>
+    </div>
     <div class="drift" id="drift"></div>
   </div>
   <div class="hero-inner">
@@ -579,16 +611,10 @@ h1,h2,h3,.serif{font-family:var(--serif);font-weight:400;letter-spacing:0.005em}
     <div class="menu-grid">
       <!-- Manicures -->
       <article class="card reveal d1">
-        <div class="card-art">
-          <svg viewBox="0 0 320 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <defs><linearGradient id="mg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3E1E2"/><stop offset="1" stop-color="#E4DCD0"/></linearGradient></defs>
-            <rect width="320" height="150" fill="url(#mg1)"/>
-            <g transform="translate(160 92)">
-              <path d="M-38 8c-4-22 2-46 10-58 4-6 12-6 16 0 8 12 14 36 10 58Z" fill="#FBF9F5" stroke="#C9A96A" stroke-width="1"/>
-              <path d="M-24 -30c1 4-1 8-4 10M-8 -40c1 4 0 9-2 12M8 -40c-1 4 0 9 2 12M22 -30c-1 4 1 8 4 10" stroke="#9CAE97" stroke-width="2" fill="none" stroke-linecap="round"/>
-              <ellipse cx="-24" cy="-38" rx="5" ry="7" fill="#E9C9CC"/><ellipse cx="-8" cy="-46" rx="5" ry="7" fill="#E9C9CC"/><ellipse cx="8" cy="-46" rx="5" ry="7" fill="#E9C9CC"/><ellipse cx="24" cy="-38" rx="5" ry="7" fill="#E9C9CC"/>
-            </g>
-          </svg>
+        <div class="card-art photo">
+          <!-- Real licensed photo (Pexels, see assets/ATTRIBUTION.txt) -->
+          <img src="assets/manicure-technician.jpg" width="1200" height="900" loading="lazy" decoding="async"
+               alt="Licensed technician in gloves finishing a client's manicure">
         </div>
         <div class="card-body">
           <span class="card-cat">Manicures</span>
@@ -604,17 +630,10 @@ h1,h2,h3,.serif{font-family:var(--serif);font-weight:400;letter-spacing:0.005em}
 
       <!-- Signature Pedicures -->
       <article class="card reveal d2">
-        <div class="card-art">
-          <svg viewBox="0 0 320 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <defs><linearGradient id="mg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E7EDE4"/><stop offset="1" stop-color="#F6F2EC"/></linearGradient></defs>
-            <rect width="320" height="150" fill="url(#mg2)"/>
-            <g transform="translate(160 78)">
-              <ellipse cx="0" cy="34" rx="70" ry="16" fill="#9CAE97" opacity=".28"/>
-              <path d="M-30 30c-6-16-4-34 2-46 4-8 14-10 20-6 8 6 12 22 12 38 0 8-4 14-10 14Z" fill="#FBF9F5" stroke="#C9A96A" stroke-width="1"/>
-              <circle cx="-20" cy="-18" r="4" fill="#E9C9CC"/><circle cx="-8" cy="-24" r="4.5" fill="#C9A96A"/><circle cx="5" cy="-22" r="4" fill="#9CAE97"/><circle cx="15" cy="-14" r="3.5" fill="#3B2A38"/>
-              <path d="M-52 6q10-8 20 0M42 -2q8-8 16 0" stroke="#C9A96A" stroke-width="1.4" fill="none" opacity=".7"/>
-            </g>
-          </svg>
+        <div class="card-art photo">
+          <!-- Real licensed photo (Pexels, see assets/ATTRIBUTION.txt) -->
+          <img src="assets/gel-blush.jpg" width="1200" height="900" loading="lazy" decoding="async"
+               alt="Hand with soft blush gel polish and a glitter accent nail">
         </div>
         <div class="card-body">
           <span class="card-cat">Signature Pedicures</span>
@@ -661,17 +680,10 @@ h1,h2,h3,.serif{font-family:var(--serif);font-weight:400;letter-spacing:0.005em}
 
       <!-- Color & Art -->
       <article class="card reveal d1">
-        <div class="card-art">
-          <svg viewBox="0 0 320 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <defs><radialGradient id="mg4" cx="50%" cy="40%" r="70%"><stop offset="0" stop-color="#FBF9F5"/><stop offset="1" stop-color="#E9C9CC"/></radialGradient></defs>
-            <rect width="320" height="150" fill="url(#mg4)"/>
-            <g transform="translate(160 75)">
-              <circle cx="0" cy="0" r="46" fill="none" stroke="#C9A96A" stroke-width="1" opacity=".7"/>
-              <g>
-                <circle cx="0" cy="-34" r="9" fill="#E9C9CC"/><circle cx="24" cy="-24" r="9" fill="#C9A96A"/><circle cx="34" cy="0" r="9" fill="#9CAE97"/><circle cx="24" cy="24" r="9" fill="#3B2A38"/><circle cx="0" cy="34" r="9" fill="#7E9179"/><circle cx="-24" cy="24" r="9" fill="#DCC79A"/><circle cx="-34" cy="0" r="9" fill="#F3E1E2"/><circle cx="-24" cy="-24" r="9" fill="#5C5162"/>
-              </g>
-            </g>
-          </svg>
+        <div class="card-art photo">
+          <!-- Real licensed photo (Pexels, see assets/ATTRIBUTION.txt) -->
+          <img src="assets/nail-art-botanical.jpg" width="1200" height="900" loading="lazy" decoding="async"
+               alt="Deep green botanical leaf nail art on a nude accent nail">
         </div>
         <div class="card-body">
           <span class="card-cat">Color &amp; Artistry</span>
@@ -895,28 +907,41 @@ h1,h2,h3,.serif{font-family:var(--serif);font-weight:400;letter-spacing:0.005em}
         </div>
       </div>
 
-      <div class="loc-map reveal d1" aria-label="Map showing The Shops at Boardwalk">
-        <svg viewBox="0 0 400 340" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <figure class="loc-map reveal d1" aria-label="Stylized neighborhood map of The Shops at Boardwalk, Northland Kansas City">
+        <svg viewBox="0 0 400 340" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Stylized street map">
           <rect width="400" height="340" fill="#E7EDE4"/>
-          <g stroke="#DCD3C4" stroke-width="10" fill="none">
-            <path d="M-20 90H420"/><path d="M-20 230H420"/><path d="M120 -20V360"/><path d="M300 -20V360"/>
+          <!-- greenery blocks -->
+          <rect x="34" y="238" width="66" height="46" rx="5" fill="#9CAE97" opacity=".32"/>
+          <rect x="306" y="36" width="60" height="40" rx="5" fill="#9CAE97" opacity=".32"/>
+          <g fill="#7E9179" opacity=".4"><circle cx="66" cy="58" r="9"/><circle cx="352" cy="268" r="11"/><circle cx="28" cy="176" r="7"/></g>
+          <!-- minor streets -->
+          <g stroke="#DCD3C4" stroke-width="10" fill="none" stroke-linecap="square">
+            <path d="M-20 92H420"/><path d="M-20 232H420"/><path d="M118 -20V360"/><path d="M302 -20V360"/>
           </g>
-          <g stroke="#C9A96A" stroke-width="3" fill="none" opacity=".55"><path d="M-20 160H420"/><path d="M210 -20V360"/></g>
-          <rect x="150" y="120" width="120" height="80" rx="6" fill="#F3E1E2" stroke="#C9A96A" stroke-width="1.5"/>
-          <rect x="40" y="240" width="60" height="40" rx="4" fill="#9CAE97" opacity=".4"/>
-          <rect x="310" y="40" width="55" height="35" rx="4" fill="#9CAE97" opacity=".4"/>
-          <g fill="#7E9179" opacity=".5"><circle cx="70" cy="60" r="10"/><circle cx="350" cy="270" r="12"/><circle cx="30" cy="180" r="8"/></g>
+          <!-- main roads (gold) -->
+          <g stroke="#C9A96A" stroke-width="4" fill="none" opacity=".6"><path d="M-20 162H420"/><path d="M210 -20V360"/></g>
+          <!-- The Shops at Boardwalk footprint -->
+          <rect x="150" y="118" width="120" height="82" rx="7" fill="#F3E1E2" stroke="#C9A96A" stroke-width="1.5"/>
+          <!-- street labels -->
+          <g font-family="-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="600" fill="#5C5162">
+            <text x="14" y="156" font-size="10" letter-spacing="1.4">N BOARDWALK AVE</text>
+            <text x="216" y="28" font-size="10" letter-spacing="1.4" transform="rotate(90 216 28)">N CONGRESS AVE</text>
+            <text x="158" y="112" font-size="9.5" fill="#3B2A38" letter-spacing=".6">The Shops at Boardwalk</text>
+            <text x="14" y="86" font-size="9" fill="#7E9179" letter-spacing="1">NW BARRY RD</text>
+          </g>
         </svg>
         <div class="map-pin">
+          <span class="you-are-here">You are here</span>
           <span class="pin-ring" aria-hidden="true"></span>
           <span class="pin-dot" aria-hidden="true"></span>
-          <span class="lbl">The Nail Lounge</span>
+          <span class="lbl">The Nail Lounge<span class="lbl-sub">8622 N Boardwalk Ave</span></span>
         </div>
         <a class="btn btn-primary map-btn" href="https://maps.google.com/?q=The+Nail+Lounge+8622+N+Boardwalk+Ave+Kansas+City+MO+64154" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
           Get directions
         </a>
-      </div>
+        <figcaption class="map-note">Stylized location sketch. Tap Get directions for live Google Maps.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -1078,8 +1103,16 @@ h1,h2,h3,.serif{font-family:var(--serif);font-weight:400;letter-spacing:0.005em}
       frag.appendChild(s);
     }
     drift.appendChild(frag);
-    // trigger the field fade-in
-    requestAnimationFrame(function(){ field.classList.add('lit'); });
+    // trigger the live field fade-in, then retire the static floor so the
+    // two grids never stack (the floor is only the no-JS / pre-paint fallback)
+    var floor = document.getElementById('swatchFloor');
+    requestAnimationFrame(function(){
+      field.classList.add('lit');
+      if(floor){
+        floor.style.transition = 'opacity 1.2s ease';
+        floor.style.opacity = '0';
+      }
+    });
   }
 
   /* ---- Nav shadow on scroll ---- */
