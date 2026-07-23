@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en" class="lang-en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact and Visit | The Diamond Barbershop, Richardson TX</title>
+<meta name="description" content="Visit The Diamond Barbershop at 401 N Central Expy, Richardson, TX 75080. Call or text (469) 579-7374, book on Booksy, or send a message. Hours, directions, and walk-ins welcome. Bilingual English and Spanish.">
+<style>
+  :root{
+    --char-950:#0c0c0e;--char-900:#111114;--char-850:#16161a;--char-800:#1b1b20;--char-700:#26262c;--char-600:#33333b;
+    --cream:#ece5d8;--cream-2:#d8cfbd;--cream-dim:rgba(236,229,216,.62);--cream-faint:rgba(236,229,216,.40);
+    --brass:#c19a54;--brass-lite:#d8b877;--brass-deep:#9c7a3a;--oxblood:#7a2e2e;
+    --line:rgba(236,229,216,.12);--line-strong:rgba(236,229,216,.20);
+    --shadow:0 30px 70px -28px rgba(0,0,0,.85);--shadow-soft:0 18px 44px -22px rgba(0,0,0,.7);
+    --font-display:Georgia,"Times New Roman","Times",serif;
+    --font-body:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:var(--font-body);background:var(--char-950);color:var(--cream);line-height:1.62;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+  svg{display:block}
+  .wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
+
+  html.lang-en .lang-es{display:none}
+  html.lang-es .lang-en{display:none}
+  span.lang-en,span.lang-es{display:inline}
+  html.lang-en span.lang-es{display:none}
+  html.lang-es span.lang-en{display:none}
+  .lang-switch{display:inline-flex;align-items:center;border:1px solid var(--line-strong);border-radius:30px;overflow:hidden;background:rgba(236,229,216,.02)}
+  .lang-switch button{display:inline-flex;align-items:center;gap:6px;padding:7px 13px;font-weight:800;font-size:.72rem;letter-spacing:.10em;color:var(--cream-dim);transition:color .25s,background .25s;line-height:1}
+  .lang-switch button .globe{width:13px;height:13px;color:var(--brass-lite)}
+  .lang-switch button.on{background:var(--brass);color:#1a1408}
+  .lang-switch button:not(.on):hover{color:var(--brass-lite)}
+  .lang-switch .sep{width:1px;align-self:stretch;background:var(--line-strong)}
+  .mm-lang{margin:22px 0 4px}
+  .mm-lang .lang-switch{width:100%;justify-content:center}
+  .mm-lang .lang-switch button{flex:1;justify-content:center;padding:12px 0;font-size:.8rem}
+
+  .display{font-family:var(--font-display);font-weight:700;letter-spacing:-.02em;line-height:1.04}
+  .eyebrow{font-family:var(--font-body);font-weight:800;text-transform:uppercase;letter-spacing:.30em;font-size:.70rem;color:var(--brass-lite)}
+  .serif-italic{font-family:var(--font-display);font-style:italic;font-weight:500}
+
+  section{position:relative}
+  .sec-pad{padding:clamp(64px,9vw,120px) 0}
+  .sec-head{max-width:640px;margin:0 auto clamp(40px,6vw,64px);text-align:center}
+  .sec-head.left{margin-left:0;margin-right:auto;text-align:left}
+  .sec-head h2{font-family:var(--font-display);font-weight:800;font-size:clamp(2rem,4.6vw,3.4rem);line-height:1.02;letter-spacing:-.015em;margin:14px 0 0}
+  .sec-head p{margin-top:16px;color:var(--cream-dim);font-size:1.02rem}
+  .rule{width:64px;height:2px;margin:20px auto 0;background:linear-gradient(90deg,transparent,var(--brass),transparent)}
+  .sec-head.left .rule{margin-left:0}
+
+  .btn{position:relative;display:inline-flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:.80rem;padding:15px 26px;border-radius:2px;transition:transform .3s var(--ease),box-shadow .3s var(--ease),background .3s var(--ease);will-change:transform}
+  .btn-primary{background:linear-gradient(135deg,var(--brass-lite),var(--brass) 55%,var(--brass-deep));color:#1a1408;box-shadow:0 12px 30px -12px rgba(193,154,84,.6)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 38px -12px rgba(193,154,84,.75)}
+  .btn-ghost{border:1px solid var(--line-strong);color:var(--cream);background:rgba(236,229,216,.02)}
+  .btn-ghost:hover{border-color:var(--brass);color:var(--brass-lite);transform:translateY(-2px)}
+  .btn svg{width:17px;height:17px}
+
+  .top-banner{position:relative;z-index:60;background:var(--char-900);color:var(--cream-dim);text-align:center;font-weight:600;font-size:.78rem;letter-spacing:.04em;padding:8px 16px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+  .top-banner strong{color:var(--brass-lite);font-weight:800}
+  .top-banner .pole{width:13px;height:13px}
+
+  header.nav{position:sticky;top:0;z-index:55;background:rgba(12,12,14,.78);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);border-bottom:1px solid var(--line);transition:background .3s var(--ease),border-color .3s var(--ease)}
+  header.nav.scrolled{background:rgba(12,12,14,.94)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
+  .brand{display:flex;align-items:center;gap:13px}
+  .brand .mark{width:42px;height:42px;flex:0 0 42px;filter:drop-shadow(0 3px 10px rgba(193,154,84,.35))}
+  .brand .name{display:flex;flex-direction:column;line-height:1}
+  .brand .name b{font-family:var(--font-display);font-weight:800;font-size:1.14rem;letter-spacing:.01em}
+  .brand .name span{font-size:.60rem;letter-spacing:.34em;text-transform:uppercase;color:var(--brass-lite);margin-top:5px}
+  .nav-links{display:flex;align-items:center;gap:30px}
+  .nav-links a{font-size:.80rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--cream-dim);transition:color .25s;position:relative}
+  .nav-links a:hover{color:var(--brass-lite)}
+  .nav-links a.current{color:var(--brass-lite)}
+  .nav-links a.current::after{content:"";position:absolute;left:0;right:0;bottom:-25px;height:2px;background:var(--brass)}
+  .nav-cta{display:flex;align-items:center;gap:12px}
+  .nav-call{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:.86rem;letter-spacing:.02em;color:var(--cream)}
+  .nav-call svg{width:16px;height:16px;color:var(--brass-lite)}
+  .nav-book{padding:12px 20px;font-size:.74rem}
+  .nav-toggle{display:none;width:44px;height:44px;align-items:center;justify-content:center;border:1px solid var(--line-strong);border-radius:3px}
+  .nav-toggle svg{width:20px;height:20px}
+
+  .mobile-menu{position:fixed;inset:0;z-index:70;background:var(--char-950);display:flex;flex-direction:column;padding:26px 24px;transform:translateX(100%);transition:transform .4s var(--ease)}
+  .mobile-menu.open{transform:translateX(0)}
+  .mm-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:38px}
+  .mm-close{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line-strong);border-radius:3px}
+  .mm-close svg{width:20px;height:20px}
+  .mobile-menu nav{display:flex;flex-direction:column;gap:4px}
+  .mobile-menu nav a{font-family:var(--font-display);font-weight:700;font-size:1.9rem;padding:12px 0;border-bottom:1px solid var(--line)}
+  .mobile-menu nav a.current{color:var(--brass-lite)}
+  .mm-foot{margin-top:auto;display:flex;flex-direction:column;gap:14px}
+
+  .page-hero{position:relative;overflow:hidden;background:var(--char-950);padding:clamp(64px,10vw,120px) 0 clamp(48px,7vw,84px)}
+  .page-hero .stripes{position:absolute;inset:0;opacity:.55;z-index:0;background:radial-gradient(120% 90% at 78% 12%,rgba(193,154,84,.16),transparent 60%),radial-gradient(90% 80% at 10% 100%,rgba(122,46,46,.14),transparent 62%),linear-gradient(180deg,var(--char-900),var(--char-950) 70%)}
+  .page-hero .grain{position:absolute;inset:0;opacity:.5;mix-blend-mode:overlay;pointer-events:none;z-index:0}
+  .page-hero .wrap{position:relative;z-index:2}
+  .ph-crumb{display:flex;align-items:center;gap:9px;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-faint);margin-bottom:20px}
+  .ph-crumb a{color:var(--brass-lite);transition:color .2s}
+  .ph-crumb a:hover{color:var(--brass)}
+  .ph-crumb svg{width:13px;height:13px;color:var(--cream-faint)}
+  .page-hero .eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:16px}
+  .page-hero h1{font-family:var(--font-display);font-weight:800;font-size:clamp(2.5rem,6.4vw,5rem);line-height:1;letter-spacing:-.02em;max-width:18ch}
+  .page-hero h1 em{font-style:italic;color:var(--brass-lite)}
+  .page-hero .ph-sub{margin-top:20px;max-width:54ch;color:var(--cream-dim);font-size:clamp(1rem,1.5vw,1.14rem)}
+
+  /* QUICK CONTACT CARDS */
+  .quick{background:var(--char-950);border-top:1px solid var(--line)}
+  .quick-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .quick-card{background:var(--char-850);border:1px solid var(--line);border-radius:5px;padding:30px 26px;text-align:center;transition:transform .35s var(--ease),border-color .35s;display:flex;flex-direction:column;align-items:center}
+  .quick-card:hover{transform:translateY(-5px);border-color:var(--brass-deep)}
+  .quick-card .ic{width:54px;height:54px;border-radius:50%;border:1px solid var(--line-strong);display:flex;align-items:center;justify-content:center;color:var(--brass-lite);background:rgba(193,154,84,.05);margin-bottom:16px}
+  .quick-card .ic svg{width:26px;height:26px}
+  .quick-card h3{font-family:var(--font-display);font-weight:700;font-size:1.16rem;margin-bottom:6px}
+  .quick-card p{font-size:.9rem;color:var(--cream-dim);margin-bottom:16px}
+  .quick-card .act{margin-top:auto;font-size:.78rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--brass-lite);display:inline-flex;align-items:center;gap:8px;transition:gap .25s}
+  .quick-card .act:hover{gap:12px}
+  .quick-card .act svg{width:14px;height:14px}
+
+  /* CONTACT MAIN */
+  .contact{background:var(--char-900);border-top:1px solid var(--line)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,56px);align-items:start}
+  .loc-info h2{font-family:var(--font-display);font-weight:800;font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.05;letter-spacing:-.015em;margin:12px 0 22px}
+  .loc-block{display:flex;gap:14px;padding:18px 0;border-bottom:1px solid var(--line)}
+  .loc-block:last-of-type{border-bottom:none}
+  .loc-block .ic{width:40px;height:40px;flex:0 0 40px;color:var(--brass-lite)}
+  .loc-block b{font-family:var(--font-display);font-weight:700;font-size:1.06rem;display:block;margin-bottom:4px}
+  .loc-block p,.loc-block a{color:var(--cream-dim);font-size:.94rem;line-height:1.55}
+  .loc-block a.link{color:var(--brass-lite);font-weight:700}
+  .hours-tbl{width:100%;margin-top:6px;border-collapse:collapse}
+  .hours-tbl td{padding:5px 0;font-size:.9rem;color:var(--cream-dim)}
+  .hours-tbl td:last-child{text-align:right;color:var(--cream);font-weight:600}
+
+  /* FORM */
+  .form-shell{background:var(--char-850);border:1px solid var(--line-strong);border-radius:6px;padding:clamp(26px,4vw,38px);box-shadow:var(--shadow-soft)}
+  .form-shell h3{font-family:var(--font-display);font-weight:800;font-size:1.5rem;margin-bottom:6px}
+  .form-shell .fs-hint{font-size:.9rem;color:var(--cream-dim);margin-bottom:22px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cream-dim);margin-bottom:7px}
+  .field input,.field textarea,.field select{width:100%;padding:13px 15px;border:1px solid var(--line-strong);border-radius:3px;background:var(--char-900);color:var(--cream);font-size:.95rem;font-family:var(--font-body);transition:border-color .25s}
+  .field textarea{resize:vertical;min-height:120px}
+  .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--brass)}
+  .field input::placeholder,.field textarea::placeholder{color:var(--cream-faint)}
+  .field select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c19a54' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:16px;padding-right:40px}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .form-shell button[type=submit]{width:100%;justify-content:center;margin-top:6px}
+  .form-note{font-size:.76rem;color:var(--cream-faint);margin-top:14px;text-align:center;line-height:1.5}
+
+  /* MAP */
+  .map-section{background:var(--char-950);border-top:1px solid var(--line)}
+  .loc-map{position:relative;border-radius:6px;overflow:hidden;border:1px solid var(--line-strong);min-height:clamp(320px,42vw,440px);box-shadow:var(--shadow-soft)}
+  .loc-map .mapart{position:absolute;inset:0}
+  .loc-map .pin{position:absolute;top:44%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;color:var(--brass-lite);filter:drop-shadow(0 6px 12px rgba(0,0,0,.6));animation:floatY 3s ease-in-out infinite}
+  .loc-map .map-cta{position:absolute;bottom:18px;left:18px;right:18px;display:flex;justify-content:center}
+  @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+  .cta-band{position:relative;overflow:hidden;background:var(--char-900);border-top:1px solid var(--line);text-align:center}
+  .cta-band .glow{position:absolute;inset:0;background:radial-gradient(60% 80% at 50% 50%,rgba(193,154,84,.14),transparent 62%)}
+  .cta-band .pole-bg{position:absolute;left:-40px;top:50%;transform:translateY(-50%);width:150px;opacity:.14}
+  .cta-band .pole-bg.r{left:auto;right:-40px}
+  .cta-band .inner{position:relative;z-index:1;padding:clamp(56px,9vw,110px) 0}
+  .cta-band h2{font-family:var(--font-display);font-weight:800;font-size:clamp(2rem,5.2vw,3.8rem);line-height:1.02;letter-spacing:-.02em;max-width:20ch;margin:0 auto}
+  .cta-band h2 em{font-style:italic;color:var(--brass-lite)}
+  .cta-band p{margin:18px auto 0;max-width:46ch;color:var(--cream-dim);font-size:1.06rem}
+  .cta-band .btns{margin-top:32px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .cta-band .call-big{display:inline-flex;align-items:center;gap:12px;font-family:var(--font-display);font-weight:800;font-size:clamp(1.5rem,3.4vw,2.2rem);color:var(--cream);margin-top:26px}
+  .cta-band .call-big svg{width:26px;height:26px;color:var(--brass-lite)}
+
+  footer{background:var(--char-900);border-top:1px solid var(--line);padding:clamp(48px,7vw,72px) 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;padding-bottom:40px;border-bottom:1px solid var(--line)}
+  .foot-brand .brand{margin-bottom:16px}
+  .foot-brand p{color:var(--cream-dim);font-size:.9rem;max-width:34ch}
+  .foot-social{display:flex;gap:12px;margin-top:18px}
+  .foot-social a{width:40px;height:40px;border:1px solid var(--line-strong);border-radius:3px;display:flex;align-items:center;justify-content:center;color:var(--cream-dim);transition:all .25s}
+  .foot-social a:hover{color:var(--brass-lite);border-color:var(--brass-deep);transform:translateY(-2px)}
+  .foot-social a svg{width:18px;height:18px}
+  .foot-col h4{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brass-lite);margin-bottom:16px}
+  .foot-col a,.foot-col p{display:block;color:var(--cream-dim);font-size:.9rem;margin-bottom:10px;transition:color .2s}
+  .foot-col a:hover{color:var(--cream)}
+  .foot-bottom{padding-top:26px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .foot-bottom p{font-size:.8rem;color:var(--cream-faint)}
+  .foot-disclaimer{font-size:.78rem;color:var(--cream-faint);text-align:center;margin-top:18px;line-height:1.5}
+
+  .float-call{position:fixed;bottom:18px;left:18px;right:18px;z-index:50;display:none;background:linear-gradient(135deg,var(--brass-lite),var(--brass) 55%,var(--brass-deep));color:#1a1408;padding:16px;border-radius:4px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:.9rem;align-items:center;justify-content:center;gap:10px;box-shadow:0 16px 40px -12px rgba(0,0,0,.7)}
+  .float-call svg{width:19px;height:19px}
+
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+  .reveal.in{opacity:1;transform:translateY(0)}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  @media(max-width:1000px){
+    .nav-links{display:none}.nav-call{display:none}.nav-toggle{display:flex}.nav-book{display:none}
+    .quick-grid{grid-template-columns:1fr}
+    .contact-grid{grid-template-columns:1fr;gap:40px}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:640px){
+    .field-row{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .float-call{display:flex}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}
+    .reveal{opacity:1;transform:none}.loc-map .pin{animation:none}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+  <linearGradient id="brassGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d8b877"/><stop offset="1" stop-color="#9c7a3a"/></linearGradient>
+  <linearGradient id="charGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#26262c"/><stop offset="1" stop-color="#111114"/></linearGradient>
+</svg>
+
+<!-- ===== TOP BANNER ===== -->
+<div class="top-banner">
+  <svg class="pole" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="9" y="2" width="6" height="20" rx="3" fill="#c19a54"/><path d="M9 5l6-3M9 10l6-3M9 15l6-3M9 20l6-3" stroke="#7a2e2e" stroke-width="1.4"/></svg>
+  <span class="lang-en">Walk-ins welcome, no appointment needed. <strong>Coffee, water and soda on us.</strong> Hablamos Espanol.</span>
+  <span class="lang-es">Se aceptan clientes sin cita, no necesitas reservacion. <strong>El cafe, el agua y el refresco corren por nuestra cuenta.</strong> We speak English.</span>
+</div>
+
+<!-- ===== NAV ===== -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand" aria-label="The Diamond Barbershop home">
+      <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <rect x="1" y="1" width="46" height="46" rx="8" fill="#16161a" stroke="#c19a54" stroke-width="1.4"/>
+        <path d="M24 9l9 9-9 9-9-9 9-9z" fill="url(#brassGrad)"/>
+        <path d="M24 13.5l5.5 5.5L24 24.5 18.5 19 24 13.5z" fill="#16161a"/>
+        <path d="M14 32h20M18 36h12" stroke="#c19a54" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <span class="name"><b>The Diamond</b><span>Barbershop</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html" data-en="Home" data-es="Inicio">Home</a>
+      <a href="services.html" data-en="Services" data-es="Servicios">Services</a>
+      <a href="about.html" data-en="About" data-es="Nosotros">About</a>
+      <a href="gallery.html" data-en="Gallery" data-es="Galeria">Gallery</a>
+      <a href="contact.html" class="current" aria-current="page" data-en="Contact" data-es="Contacto">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-switch" id="langSwitch" role="group" aria-label="Language / Idioma">
+        <button type="button" class="lang-btn on" data-lang="en" aria-label="English">
+          <svg class="globe" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.6"/><path d="M2.5 12h19M12 2.5c3 3 3 16 0 19M12 2.5c-3 3-3 16 0 19M4 6c4.5 3 11.5 3 16 0M4 18c4.5-3 11.5-3 16 0" stroke="currentColor" stroke-width="1.4"/></svg>
+          EN
+        </button>
+        <span class="sep"></span>
+        <button type="button" class="lang-btn" data-lang="es" aria-label="Español">ES</button>
+      </div>
+      <a class="nav-call" href="tel:+14695797374">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        (469) 579-7374
+      </a>
+      <a class="btn btn-primary nav-book" href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener" data-en="Book a Chair" data-es="Reservar Silla">Book a Chair</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu / Abrir menu">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MOBILE MENU ===== -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mm-top">
+    <span class="brand"><svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="1" y="1" width="46" height="46" rx="8" fill="#16161a" stroke="#c19a54" stroke-width="1.4"/><path d="M24 9l9 9-9 9-9-9 9-9z" fill="url(#brassGrad)"/><path d="M24 13.5l5.5 5.5L24 24.5 18.5 19 24 13.5z" fill="#16161a"/></svg><span class="name"><b>The Diamond</b><span>Barbershop</span></span></span>
+    <button class="mm-close" id="mmClose" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+  </div>
+  <nav>
+    <a href="index.html" class="mm-link" data-en="Home" data-es="Inicio">Home</a>
+    <a href="services.html" class="mm-link" data-en="Services" data-es="Servicios">Services</a>
+    <a href="about.html" class="mm-link" data-en="About" data-es="Nosotros">About</a>
+    <a href="gallery.html" class="mm-link" data-en="Gallery" data-es="Galeria">Gallery</a>
+    <a href="contact.html" class="mm-link current" data-en="Contact" data-es="Contacto">Contact</a>
+  </nav>
+  <div class="mm-lang">
+    <div class="lang-switch" role="group" aria-label="Language / Idioma">
+      <button type="button" class="lang-btn on" data-lang="en" aria-label="English">
+        <svg class="globe" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.6"/><path d="M2.5 12h19M12 2.5c3 3 3 16 0 19M12 2.5c-3 3-3 16 0 19M4 6c4.5 3 11.5 3 16 0M4 18c4.5-3 11.5-3 16 0" stroke="currentColor" stroke-width="1.4"/></svg>
+        English
+      </button>
+      <span class="sep"></span>
+      <button type="button" class="lang-btn" data-lang="es" aria-label="Español">Español</button>
+    </div>
+  </div>
+  <div class="mm-foot">
+    <a class="btn btn-primary" href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener" style="justify-content:center" data-en="Book a Chair" data-es="Reservar Silla">Book a Chair</a>
+    <a class="btn btn-ghost" href="tel:+14695797374" style="justify-content:center">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span data-en="Call (469) 579-7374" data-es="Llamar (469) 579-7374">Call (469) 579-7374</span>
+    </a>
+  </div>
+</div>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+  <div class="stripes"></div>
+  <div class="grain"><svg width="100%" height="100%"><rect width="100%" height="100%" filter="url(#grain)" opacity="0.5"/></svg></div>
+  <div class="wrap">
+    <div class="ph-crumb">
+      <a href="index.html" data-en="Home" data-es="Inicio">Home</a>
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span data-en="Contact" data-es="Contacto">Contact</span>
+    </div>
+    <span class="eyebrow" data-en="Find the Chair" data-es="Encuentra la Silla">Find the Chair</span>
+    <h1><span class="lang-en">Come see us in <em>Richardson</em></span><span class="lang-es">Ven a vernos en <em>Richardson</em></span></h1>
+    <p class="ph-sub" data-en="Right on North Central Expressway. Call or text, book on Booksy, send a message, or just walk in. English or Spanish, we have got you." data-es="Justo sobre North Central Expressway. Llama o escribe, reserva en Booksy, envia un mensaje, o solo pasa sin cita. En ingles o español, aqui te atendemos.">Right on North Central Expressway. Call or text, book on Booksy, send a message, or just walk in. English or Spanish, we have got you.</p>
+  </div>
+</section>
+
+<!-- ===== QUICK CONTACT CARDS ===== -->
+<section class="quick sec-pad" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="quick-grid">
+      <div class="quick-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <h3 data-en="Call or Text" data-es="Llama o Escribe">Call or Text</h3>
+        <p data-en="The fastest way to reach the chair. Same number for calls and texts." data-es="La forma mas rapida de contactar la silla. El mismo numero para llamadas y mensajes.">The fastest way to reach the chair. Same number for calls and texts.</p>
+        <a class="act" href="tel:+14695797374"><span>(469) 579-7374</span> <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
+      </div>
+      <div class="quick-card reveal d1">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <h3 data-en="Book Online" data-es="Reserva en Linea">Book Online</h3>
+        <p data-en="Reserve your chair on Booksy in under a minute, any time of day." data-es="Aparta tu silla en Booksy en menos de un minuto, a cualquier hora.">Reserve your chair on Booksy in under a minute, any time of day.</p>
+        <a class="act" href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener"><span data-en="Open Booksy" data-es="Abrir Booksy">Open Booksy</span> <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
+      </div>
+      <div class="quick-card reveal d2">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="9" r="2.6" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <h3 data-en="Walk In" data-es="Pasa Sin Cita">Walk In</h3>
+        <p data-en="No appointment needed. Grab a coffee on us and take the first open chair." data-es="No necesitas cita. Toma un cafe por nuestra cuenta y aparta la primera silla libre.">No appointment needed. Grab a coffee on us and take the first open chair.</p>
+        <a class="act" href="https://maps.google.com/?q=The+Diamond+Barbershop+401+N+Central+Expy+Richardson+TX+75080" target="_blank" rel="noopener"><span data-en="Get Directions" data-es="Como Llegar">Get Directions</span> <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT MAIN ===== -->
+<section class="contact sec-pad">
+  <div class="wrap contact-grid">
+    <div class="loc-info reveal">
+      <span class="eyebrow" data-en="Visit Us" data-es="Visitanos">Visit Us</span>
+      <h2 data-en="Hours and location" data-es="Horario y ubicacion">Hours and location</h2>
+      <div class="loc-block">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="9" r="2.6" stroke="currentColor" stroke-width="1.7"/></svg>
+        <div>
+          <b data-en="Address" data-es="Direccion">Address</b>
+          <p>401 N Central Expy<br>Richardson, TX 75080</p>
+          <a class="link" href="https://maps.google.com/?q=The+Diamond+Barbershop+401+N+Central+Expy+Richardson+TX+75080" target="_blank" rel="noopener" data-en="Get directions" data-es="Como llegar">Get directions</a>
+        </div>
+      </div>
+      <div class="loc-block">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <div>
+          <b data-en="Hours" data-es="Horario">Hours</b>
+          <table class="hours-tbl">
+            <tr><td data-en="Monday" data-es="Lunes">Monday</td><td data-en="9:00 AM to 8:00 PM" data-es="9:00 AM a 8:00 PM">9:00 AM to 8:00 PM</td></tr>
+            <tr><td data-en="Tuesday to Friday" data-es="Martes a Viernes">Tuesday to Friday</td><td data-en="9:00 AM to 8:00 PM" data-es="9:00 AM a 8:00 PM">9:00 AM to 8:00 PM</td></tr>
+            <tr><td data-en="Saturday" data-es="Sabado">Saturday</td><td data-en="9:00 AM to 7:00 PM" data-es="9:00 AM a 7:00 PM">9:00 AM to 7:00 PM</td></tr>
+            <tr><td data-en="Sunday" data-es="Domingo">Sunday</td><td data-en="10:00 AM to 5:00 PM" data-es="10:00 AM a 5:00 PM">10:00 AM to 5:00 PM</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="loc-block">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z" stroke="currentColor" stroke-width="1.7"/></svg>
+        <div>
+          <b data-en="Call or Text" data-es="Llama o Escribe">Call or Text</b>
+          <a class="link" href="tel:+14695797374">(469) 579-7374</a>
+          <p style="margin-top:4px" data-en="Walk-ins always welcome. Hablamos Espanol." data-es="Siempre puedes llegar sin cita. We speak English too.">Walk-ins always welcome. Hablamos Espanol.</p>
+        </div>
+      </div>
+      <div class="loc-block">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <div>
+          <b data-en="Book and Socials" data-es="Reservas y Redes">Book and Socials</b>
+          <a class="link" href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener" data-en="Book on Booksy" data-es="Reservar en Booksy">Book on Booksy</a>
+          <p style="margin-top:4px" data-en="Follow the work on Instagram, or reserve any time on Booksy." data-es="Sigue el trabajo en Instagram, o reserva cuando quieras en Booksy.">Follow the work on Instagram, or reserve any time on Booksy.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal d1">
+      <form class="form-shell" action="https://formsubmit.co/dnagencyservice@gmail.com" method="POST">
+        <h3 data-en="Send us a message" data-es="Envianos un mensaje">Send us a message</h3>
+        <p class="fs-hint" data-en="Have a question about a service or want to check availability? Drop us a line and we will get back to you." data-es="¿Tienes una pregunta sobre un servicio o quieres saber la disponibilidad? Escribenos y te respondemos.">Have a question about a service or want to check availability? Drop us a line and we will get back to you.</p>
+        <input type="hidden" name="_subject" value="New message from The Diamond Barbershop site">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <div class="field-row">
+          <div class="field">
+            <label for="cName" data-en="Full Name" data-es="Nombre Completo">Full Name</label>
+            <input id="cName" name="Name" type="text" required placeholder="Chris Martinez" data-ph-en="Chris Martinez" data-ph-es="Chris Martinez" autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="cPhone" data-en="Phone" data-es="Telefono">Phone</label>
+            <input id="cPhone" name="Phone" type="tel" placeholder="(469) 555-0142" data-ph-en="(469) 555-0142" data-ph-es="(469) 555-0142" autocomplete="tel" inputmode="tel">
+          </div>
+        </div>
+        <div class="field">
+          <label for="cEmail" data-en="Email" data-es="Correo">Email</label>
+          <input id="cEmail" name="Email" type="email" required placeholder="you@email.com" data-ph-en="you@email.com" data-ph-es="tu@correo.com" autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="cService" data-en="What are you after?" data-es="¿Que buscas?">What are you after?</label>
+          <select id="cService" name="Service">
+            <option value="Haircut or Fade" data-en="Haircut or Fade" data-es="Corte o Fade">Haircut or Fade</option>
+            <option value="Beard Design or Shave" data-en="Beard Design or Shave" data-es="Diseño de Barba o Afeitada">Beard Design or Shave</option>
+            <option value="Straight Razor Shave" data-en="Straight Razor Shave" data-es="Afeitada con Navaja">Straight Razor Shave</option>
+            <option value="Kids Cut" data-en="Kids Cut" data-es="Corte para Niños">Kids Cut</option>
+            <option value="Facial or Eyebrows" data-en="Facial or Eyebrows" data-es="Facial o Cejas">Facial or Eyebrows</option>
+            <option value="Something Else" data-en="Something Else" data-es="Otra Cosa">Something Else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="cMsg" data-en="Message" data-es="Mensaje">Message</label>
+          <textarea id="cMsg" name="Message" required placeholder="Tell us what you need and when works for you." data-ph-en="Tell us what you need and when works for you." data-ph-es="Cuentanos que necesitas y que horario te acomoda."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span data-en="Send Message" data-es="Enviar Mensaje">Send Message</span>
+        </button>
+        <p class="form-note" data-en="Prefer to talk? Call or text (469) 579-7374, or just walk in. We speak English and Spanish." data-es="¿Prefieres hablar? Llama o escribe al (469) 579-7374, o solo pasa sin cita. Hablamos ingles y español.">Prefer to talk? Call or text (469) 579-7374, or just walk in. We speak English and Spanish.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MAP ===== -->
+<section class="map-section sec-pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="loc-map reveal">
+      <div class="mapart">
+        <svg width="100%" height="100%" viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="500" height="400" fill="#16161a"/>
+          <g stroke="#26262c" stroke-width="1.5" fill="none">
+            <path d="M0 90h500M0 190h500M0 290h500M90 0v400M240 0v400M380 0v400"/>
+          </g>
+          <path d="M60 400 L300 0" stroke="#33333b" stroke-width="18" fill="none"/>
+          <path d="M60 400 L300 0" stroke="#c19a54" stroke-width="2" stroke-dasharray="8 10" opacity="0.6" fill="none"/>
+          <text x="150" y="200" fill="#9c7a3a" font-size="13" font-family="Arial" transform="rotate(-59 150 200)" opacity="0.7">N Central Expy</text>
+          <g fill="#1b1b20">
+            <rect x="110" y="110" width="110" height="60" rx="3"/>
+            <rect x="260" y="210" width="100" height="60" rx="3"/>
+            <rect x="120" y="310" width="90" height="60" rx="3"/>
+            <rect x="400" y="110" width="80" height="70" rx="3"/>
+          </g>
+        </svg>
+      </div>
+      <svg class="pin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z" fill="#c19a54"/><circle cx="12" cy="9" r="2.6" fill="#16161a"/></svg>
+      <div class="map-cta">
+        <a class="btn btn-primary" href="https://maps.google.com/?q=The+Diamond+Barbershop+401+N+Central+Expy+Richardson+TX+75080" target="_blank" rel="noopener" data-en="Open in Maps" data-es="Abrir en Maps">Open in Maps</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BAND ===== -->
+<section class="cta-band">
+  <div class="glow"></div>
+  <svg class="pole-bg" viewBox="0 0 120 360" aria-hidden="true"><defs><clipPath id="pc2"><rect x="30" y="30" width="60" height="300" rx="30"/></clipPath></defs><ellipse cx="60" cy="24" rx="30" ry="12" fill="#c19a54"/><g clip-path="url(#pc2)"><rect x="30" y="30" width="60" height="300" fill="#f4efe4"/><g fill="#7a2e2e"><rect x="30" y="30" width="60" height="26" transform="skewY(-30)"/><rect x="30" y="110" width="60" height="26" transform="skewY(-30)"/><rect x="30" y="190" width="60" height="26" transform="skewY(-30)"/></g></g><ellipse cx="60" cy="336" rx="30" ry="12" fill="#c19a54"/></svg>
+  <svg class="pole-bg r" viewBox="0 0 120 360" aria-hidden="true"><defs><clipPath id="pc3"><rect x="30" y="30" width="60" height="300" rx="30"/></clipPath></defs><ellipse cx="60" cy="24" rx="30" ry="12" fill="#c19a54"/><g clip-path="url(#pc3)"><rect x="30" y="30" width="60" height="300" fill="#f4efe4"/><g fill="#1e3a8a"><rect x="30" y="30" width="60" height="26" transform="skewY(-30)"/><rect x="30" y="110" width="60" height="26" transform="skewY(-30)"/><rect x="30" y="190" width="60" height="26" transform="skewY(-30)"/></g></g><ellipse cx="60" cy="336" rx="30" ry="12" fill="#c19a54"/></svg>
+  <div class="wrap inner">
+    <h2 class="reveal"><span class="lang-en">The chair is <em>ready</em></span><span class="lang-es">La silla esta <em>lista</em></span></h2>
+    <p class="reveal d1" data-en="Tap to call, book online, or just walk in. Coffee is on us while you wait." data-es="Toca para llamar, reserva en linea, o solo pasa sin cita. El cafe corre por nuestra cuenta mientras esperas.">Tap to call, book online, or just walk in. Coffee is on us while you wait.</p>
+    <div class="btns reveal d2">
+      <a class="btn btn-primary" href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener" data-en="Book on Booksy" data-es="Reservar en Booksy">Book on Booksy</a>
+      <a class="btn btn-ghost" href="services.html" data-en="See Services" data-es="Ver Servicios">See Services</a>
+    </div>
+    <a class="call-big reveal d3" href="tel:+14695797374">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z" stroke="currentColor" stroke-width="1.7"/></svg>
+      (469) 579-7374
+    </a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand">
+          <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="1" y="1" width="46" height="46" rx="8" fill="#16161a" stroke="#c19a54" stroke-width="1.4"/><path d="M24 9l9 9-9 9-9-9 9-9z" fill="url(#brassGrad)"/><path d="M24 13.5l5.5 5.5L24 24.5 18.5 19 24 13.5z" fill="#16161a"/><path d="M14 32h20M18 36h12" stroke="#c19a54" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <span class="name"><b>The Diamond</b><span>Barbershop</span></span>
+        </a>
+        <p data-en="The best barbers in Richardson and Dallas. Sharp cuts, hot towel care, and a chair that always feels like home." data-es="Los mejores barberos de Richardson y Dallas. Cortes precisos, atencion con toalla caliente y una silla que siempre se siente como en casa.">The best barbers in Richardson and Dallas. Sharp cuts, hot towel care, and a chair that always feels like home.</p>
+        <div class="foot-social">
+          <a href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener" aria-label="Book on Booksy">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.6"/></svg>
+          </a>
+          <a href="https://instagram.com/thediamond_barbershop504" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+          <a href="tel:+14695797374" aria-label="Call the shop">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z" stroke="currentColor" stroke-width="1.6"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4 data-en="Explore" data-es="Explora">Explore</h4>
+        <a href="index.html" data-en="Home" data-es="Inicio">Home</a>
+        <a href="services.html" data-en="Services" data-es="Servicios">Services</a>
+        <a href="about.html" data-en="About Us" data-es="Nosotros">About Us</a>
+        <a href="gallery.html" data-en="Gallery" data-es="Galeria">Gallery</a>
+        <a href="contact.html" data-en="Contact" data-es="Contacto">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4 data-en="Visit" data-es="Visitanos">Visit</h4>
+        <p>401 N Central Expy<br>Richardson, TX 75080</p>
+        <a href="https://maps.google.com/?q=The+Diamond+Barbershop+401+N+Central+Expy+Richardson+TX+75080" target="_blank" rel="noopener" data-en="Directions" data-es="Como llegar">Directions</a>
+      </div>
+      <div class="foot-col">
+        <h4 data-en="Hours" data-es="Horario">Hours</h4>
+        <p><span class="lang-en">Mon to Fri, 9 AM to 8 PM<br>Sat, 9 AM to 7 PM<br>Sun, 10 AM to 5 PM</span><span class="lang-es">Lun a Vie, 9 AM a 8 PM<br>Sab, 9 AM a 7 PM<br>Dom, 10 AM a 5 PM</span></p>
+        <a href="tel:+14695797374">(469) 579-7374</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>&copy; <span id="yr"></span> <span data-en="The Diamond Barbershop, Richardson, TX. All rights reserved." data-es="The Diamond Barbershop, Richardson, TX. Todos los derechos reservados.">The Diamond Barbershop, Richardson, TX. All rights reserved.</span></p>
+      <p data-en="Walk-ins welcome. Bilingual, English and Spanish." data-es="Se aceptan clientes sin cita. Bilingues, ingles y español.">Walk-ins welcome. Bilingual, English and Spanish.</p>
+    </div>
+    <p class="foot-disclaimer" data-en="Concept preview built by DNA Agency, not affiliated with The Diamond Barbershop." data-es="Vista previa de concepto creada por DNA Agency, no afiliada con The Diamond Barbershop.">Concept preview built by DNA Agency, not affiliated with The Diamond Barbershop.</p>
+  </div>
+</footer>
+
+<!-- ===== FLOATING CALL (mobile) ===== -->
+<a class="float-call" href="tel:+14695797374">
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z" stroke="currentColor" stroke-width="1.9"/></svg>
+  <span data-en="Tap to Call (469) 579-7374" data-es="Toca para Llamar (469) 579-7374">Tap to Call (469) 579-7374</span>
+</a>
+
+<script>
+(function(){
+  "use strict";
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 20) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+  }, {passive:true});
+
+  var mm = document.getElementById('mobileMenu');
+  document.getElementById('navToggle').addEventListener('click', function(){ mm.classList.add('open'); });
+  document.getElementById('mmClose').addEventListener('click', function(){ mm.classList.remove('open'); });
+  Array.prototype.forEach.call(document.querySelectorAll('.mm-link, .mm-foot a'), function(a){
+    a.addEventListener('click', function(){ mm.classList.remove('open'); });
+  });
+
+  /* ===================== LANGUAGE TOGGLE ===================== */
+  var LANG = 'en';
+  try { var saved = sessionStorage.getItem('tdb-lang'); if(saved==='en'||saved==='es') LANG = saved; } catch(e){}
+
+  function applyLangToStatic(){
+    var nodes = document.querySelectorAll('[data-en]');
+    for(var i=0;i<nodes.length;i++){
+      var el = nodes[i];
+      var val = el.getAttribute('data-'+LANG);
+      if(val!==null) el.textContent = val;
+    }
+    var phs = document.querySelectorAll('[data-ph-en]');
+    for(var j=0;j<phs.length;j++){
+      var p = phs[j];
+      var pv = p.getAttribute('data-ph-'+LANG);
+      if(pv!==null) p.setAttribute('placeholder', pv);
+    }
+  }
+
+  function setLang(lang){
+    if(lang!=='en' && lang!=='es') return;
+    LANG = lang;
+    var root = document.documentElement;
+    root.classList.remove('lang-en','lang-es');
+    root.classList.add('lang-'+lang);
+    root.setAttribute('lang', lang);
+    try { sessionStorage.setItem('tdb-lang', lang); } catch(e){}
+    Array.prototype.forEach.call(document.querySelectorAll('.lang-btn'), function(b){
+      var on = b.getAttribute('data-lang')===lang;
+      b.classList.toggle('on', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    applyLangToStatic();
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll('.lang-btn'), function(b){
+    b.setAttribute('aria-pressed', b.getAttribute('data-lang')===LANG ? 'true':'false');
+    b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang')); });
+  });
+
+  var reveals = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  setLang(LANG);
+})();
+</script>
+
+</body>
+</html>

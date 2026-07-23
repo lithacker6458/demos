@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top of the Line Detailing LLC | 100% Mobile Auto Detailing &amp; Ceramic Coating | Central Texas</title>
+<meta name="description" content="Top of the Line Detailing LLC. 100% mobile auto detailing, ceramic coating, and paint correction serving Central Texas since 2014. We come to you. 4.9 stars, BBB A+, 5,000+ vehicles detailed.">
+<style>
+:root{
+  --obsidian:#0B0C0E;
+  --panel:#16181C;
+  --panel-2:#1D2026;
+  --chrome:#C7CDD4;
+  --chrome-lo:#9AA1AA;
+  --chrome-hi:#EDEFF2;
+  --cherry:#C1121F;
+  --cherry-glow:#E01E2B;
+  --text:#F4F6F8;
+  --muted:#A8AEB6;
+  --green:#3FB67A;
+  --brushed:linear-gradient(135deg,#EDEFF2 0%,#9AA1AA 48%,#C7CDD4 100%);
+  --hairline:rgba(199,205,212,0.14);
+  --hairline-2:rgba(199,205,212,0.28);
+  --shadow-lg:0 30px 80px -20px rgba(0,0,0,0.85);
+  --display:"Oswald","Bebas Neue","Arial Narrow",sans-serif;
+  --body:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--body);
+  background:var(--obsidian);
+  color:var(--text);
+  font-size:clamp(16px,1.05vw,18px);
+  line-height:1.7;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,.display{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:0.02em;line-height:1.02}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+::selection{background:var(--cherry);color:#fff}
+
+.wrap{width:min(1200px,92vw);margin-inline:auto}
+.eyebrow{
+  font-family:var(--display);
+  text-transform:uppercase;
+  letter-spacing:0.34em;
+  font-size:clamp(0.72rem,1.1vw,0.85rem);
+  font-weight:500;
+  color:var(--chrome-lo);
+}
+.num{font-variant-numeric:tabular-nums;letter-spacing:0.06em}
+
+/* ============ NAV ============ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0.85rem clamp(1rem,4vw,2.4rem);
+  background:rgba(11,12,14,0.55);
+  backdrop-filter:blur(14px) saturate(140%);
+  -webkit-backdrop-filter:blur(14px) saturate(140%);
+  border-bottom:1px solid transparent;
+  transition:background .4s ease,border-color .4s ease,padding .4s ease;
+}
+.nav.scrolled{background:rgba(11,12,14,0.92);border-bottom-color:var(--hairline);padding-top:0.6rem;padding-bottom:0.6rem}
+.brand{display:flex;align-items:center;gap:0.7rem}
+.brand-mark{width:38px;height:38px;flex:0 0 38px}
+.brand-txt{display:flex;flex-direction:column;line-height:1}
+.brand-txt .b1{font-family:var(--display);font-weight:600;font-size:1.02rem;letter-spacing:0.06em}
+.brand-txt .b2{font-family:var(--display);font-size:0.6rem;letter-spacing:0.32em;color:var(--chrome-lo);margin-top:3px}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{
+  font-family:var(--display);text-transform:uppercase;letter-spacing:0.14em;
+  font-size:0.82rem;color:var(--muted);position:relative;transition:color .25s;
+}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:1px;width:0;background:var(--brushed);transition:width .3s ease}
+.nav-links a:hover{color:var(--text)}
+.nav-links a:hover::after{width:100%}
+.nav-call{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  font-family:var(--display);text-transform:uppercase;letter-spacing:0.1em;font-size:0.82rem;
+  padding:0.55rem 1.1rem;border-radius:999px;
+  background:var(--cherry);color:#fff;
+  box-shadow:0 6px 20px -6px rgba(193,18,31,0.7);
+  transition:transform .2s,box-shadow .2s,background .2s;
+}
+.nav-call:hover{background:var(--cherry-glow);transform:translateY(-2px);box-shadow:0 10px 26px -6px rgba(224,30,43,0.8)}
+.nav-call svg{width:15px;height:15px}
+.nav-toggle{display:none;background:none;border:0;color:var(--text);cursor:pointer}
+@media(max-width:880px){
+  .nav-links{display:none}
+  .nav-toggle{display:flex}
+  .nav-call span.long{display:none}
+}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+  padding:7rem clamp(1rem,4vw,2.4rem) 3rem;
+  overflow:hidden;
+  background:
+    radial-gradient(120% 80% at 78% 8%, rgba(199,205,212,0.14) 0%, rgba(199,205,212,0.02) 34%, transparent 60%),
+    radial-gradient(140% 120% at 12% 100%, rgba(193,18,31,0.14) 0%, transparent 46%),
+    linear-gradient(160deg,#141619 0%, #0B0C0E 48%, #060708 100%);
+}
+/* fake glossy clear-coat light streak */
+.hero::before{
+  content:"";position:absolute;inset:-10% -20%;
+  background:linear-gradient(115deg,transparent 30%,rgba(237,239,242,0.10) 46%,rgba(237,239,242,0.22) 50%,rgba(237,239,242,0.06) 55%,transparent 70%);
+  transform:translateX(-8%);
+  pointer-events:none;
+  mix-blend-mode:screen;
+  animation:sheen 9s ease-in-out infinite;
+}
+/* curved panel bottom reflection */
+.hero::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:32%;
+  background:radial-gradient(120% 100% at 50% 120%, rgba(199,205,212,0.10), transparent 60%);
+  pointer-events:none;
+}
+.droplets{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.drop{
+  position:absolute;border-radius:50%;
+  background:radial-gradient(circle at 34% 30%, rgba(255,255,255,0.9) 0%, rgba(233,238,243,0.28) 18%, rgba(120,130,140,0.16) 46%, rgba(6,7,8,0.08) 72%, transparent 78%);
+  box-shadow:inset -1px -2px 4px rgba(0,0,0,0.5), inset 1px 1px 2px rgba(255,255,255,0.35), 0 2px 5px rgba(0,0,0,0.35);
+  animation:bead var(--dur,7s) ease-in-out var(--del,0s) infinite;
+  opacity:0;
+}
+.hero-inner{position:relative;z-index:3;width:min(1120px,100%);margin-inline:auto}
+.hero-badges{display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:1.6rem}
+.chip{
+  display:inline-flex;align-items:center;gap:0.45rem;
+  font-family:var(--display);text-transform:uppercase;letter-spacing:0.12em;font-size:0.72rem;
+  padding:0.4rem 0.85rem;border-radius:999px;
+  background:rgba(22,24,28,0.7);border:1px solid var(--hairline-2);
+  color:var(--chrome);
+  backdrop-filter:blur(4px);
+}
+.chip svg{width:13px;height:13px}
+.chip.stars{color:#F4F6F8}
+.chip.stars .star{color:#EFC24A}
+.chip.bbb{color:var(--green)}
+h1.hero-h{
+  font-size:clamp(2.6rem,7.8vw,5.6rem);
+  line-height:0.96;
+  letter-spacing:-0.01em;
+  max-width:16ch;
+  margin-bottom:1.3rem;
+}
+h1.hero-h .waxpass{
+  background:linear-gradient(100deg,var(--chrome-hi) 0%, var(--chrome) 18%, var(--chrome-lo) 34%, var(--chrome-hi) 50%, var(--cherry-glow) 74%, var(--cherry) 100%);
+  background-size:280% 100%;
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+  animation:waxpass 1.6s ease-out both;
+  animation-delay:.3s;
+}
+.hero-sub{font-size:clamp(1rem,1.7vw,1.28rem);color:var(--muted);max-width:56ch;margin-bottom:2rem;line-height:1.6}
+.hero-sub strong{color:var(--text);font-weight:600}
+.hero-cta{display:flex;flex-wrap:wrap;gap:0.9rem;align-items:center;margin-bottom:2.6rem}
+.btn{
+  display:inline-flex;align-items:center;gap:0.6rem;cursor:pointer;
+  font-family:var(--display);text-transform:uppercase;letter-spacing:0.1em;font-size:0.98rem;
+  padding:0.95rem 1.7rem;border-radius:10px;border:1px solid transparent;
+  transition:transform .2s,box-shadow .2s,background .2s,border-color .2s,color .2s;
+}
+.btn svg{width:18px;height:18px}
+.btn-primary{background:var(--cherry);color:#fff;box-shadow:0 12px 34px -12px rgba(193,18,31,0.85)}
+.btn-primary:hover{background:var(--cherry-glow);transform:translateY(-3px);box-shadow:0 18px 42px -12px rgba(224,30,43,0.95)}
+.btn-ghost{background:linear-gradient(180deg,rgba(29,32,38,0.9),rgba(16,18,22,0.9));color:var(--chrome);border:1px solid var(--hairline-2)}
+.btn-ghost:hover{border-color:var(--chrome);color:#fff;transform:translateY(-3px)}
+.btn.disabled{opacity:0.5;cursor:not-allowed;background:var(--panel);color:var(--muted);border:1px solid var(--hairline)}
+.btn.disabled:hover{transform:none;box-shadow:none}
+.hero-locale{
+  display:inline-flex;align-items:center;gap:0.7rem;
+  font-size:0.98rem;color:var(--chrome);
+  padding:0.7rem 1.1rem;border-radius:12px;
+  background:rgba(11,12,14,0.5);border:1px solid var(--hairline);
+  backdrop-filter:blur(6px);
+}
+.pin{width:22px;height:26px;flex:0 0 22px}
+.pin .pulse{animation:pinpulse 2.2s ease-in-out infinite;transform-origin:center;transform-box:fill-box}
+.hero-locale b{color:#fff;font-weight:600}
+.scrollcue{position:absolute;left:50%;bottom:1.5rem;transform:translateX(-50%);z-index:3;color:var(--chrome-lo);display:flex;flex-direction:column;align-items:center;gap:0.4rem;font-size:0.66rem;letter-spacing:0.24em;font-family:var(--display);text-transform:uppercase}
+.scrollcue .line{width:1px;height:38px;background:linear-gradient(var(--chrome-lo),transparent);animation:cue 2s ease-in-out infinite}
+
+/* ============ MARQUEE / TRUST STRIP ============ */
+.strip{border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);background:linear-gradient(180deg,#0E0F12,#0B0C0E);overflow:hidden}
+.marquee{display:flex;gap:3.4rem;white-space:nowrap;padding:0.95rem 0;animation:scrollx 34s linear infinite;width:max-content}
+.marquee:hover{animation-play-state:paused}
+.marquee span{font-family:var(--display);text-transform:uppercase;letter-spacing:0.16em;font-size:0.86rem;color:var(--muted);display:inline-flex;align-items:center;gap:0.9rem}
+.marquee .dot{width:6px;height:6px;border-radius:50%;background:var(--cherry);flex:0 0 6px}
+
+/* ============ SECTION SHELL ============ */
+section{position:relative}
+.sec{padding:clamp(4rem,9vw,7.5rem) 0}
+.sec-head{max-width:64ch;margin-bottom:3rem}
+.sec-head.center{margin-inline:auto;text-align:center}
+.sec-head h2{font-size:clamp(2rem,5vw,3.4rem);margin:0.7rem 0 1rem;letter-spacing:-0.005em}
+.sec-head p{color:var(--muted);font-size:clamp(1rem,1.4vw,1.14rem)}
+.accent{color:var(--cherry)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+/* ============ BENEFITS ============ */
+.benefits{background:linear-gradient(180deg,#0B0C0E,#0E0F13)}
+.bgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}
+@media(max-width:900px){.bgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.bgrid{grid-template-columns:1fr}}
+.bcard{
+  position:relative;padding:1.9rem 1.6rem;border-radius:16px;
+  background:linear-gradient(180deg,var(--panel),#101216);
+  border:1px solid var(--hairline);overflow:hidden;
+  transition:transform .35s,border-color .35s,box-shadow .35s;
+}
+.bcard::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--brushed);opacity:.5;transition:opacity .35s}
+.bcard:hover{transform:translateY(-6px);border-color:var(--hairline-2);box-shadow:var(--shadow-lg)}
+.bcard:hover::before{opacity:1}
+.bicon{width:52px;height:52px;margin-bottom:1.1rem;display:flex;align-items:center;justify-content:center;border-radius:12px;background:radial-gradient(circle at 35% 25%,rgba(199,205,212,0.16),rgba(11,12,14,0.4));border:1px solid var(--hairline)}
+.bicon svg{width:28px;height:28px}
+.bcard h3{font-size:1.12rem;letter-spacing:0.02em;margin-bottom:0.5rem}
+.bcard p{font-size:0.94rem;color:var(--muted);line-height:1.55}
+
+/* ============ SERVICES ============ */
+.services{background:
+  radial-gradient(90% 60% at 90% 0%, rgba(199,205,212,0.05), transparent 55%),
+  linear-gradient(180deg,#0E0F13,#0B0C0E);}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+@media(max-width:980px){.sgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.sgrid{grid-template-columns:1fr}}
+.scard{
+  position:relative;border-radius:18px;overflow:hidden;
+  background:linear-gradient(180deg,var(--panel-2),#0F1115);
+  border:1px solid var(--hairline);
+  display:flex;flex-direction:column;
+  transition:transform .4s,box-shadow .4s,border-color .4s;
+}
+.scard:hover{transform:translateY(-7px);border-color:var(--hairline-2);box-shadow:var(--shadow-lg)}
+.scard.feature{grid-column:span 1;border-color:rgba(193,18,31,0.4)}
+.scard-art{height:170px;position:relative;overflow:hidden;background:linear-gradient(160deg,#101318,#08090B)}
+.scard-art svg{position:absolute;inset:0;width:100%;height:100%}
+.scard-tag{position:absolute;top:0.8rem;left:0.8rem;z-index:2;font-family:var(--display);text-transform:uppercase;letter-spacing:0.14em;font-size:0.64rem;padding:0.28rem 0.6rem;border-radius:999px;background:var(--cherry);color:#fff}
+.scard-body{padding:1.4rem 1.5rem 1.7rem;flex:1;display:flex;flex-direction:column}
+.scard-body h3{font-size:1.22rem;letter-spacing:0.015em;margin-bottom:0.55rem}
+.scard-body p{font-size:0.93rem;color:var(--muted);line-height:1.55;flex:1}
+.scard-list{margin-top:0.9rem;display:flex;flex-wrap:wrap;gap:0.4rem}
+.scard-list li{list-style:none;font-family:var(--display);text-transform:uppercase;letter-spacing:0.06em;font-size:0.66rem;color:var(--chrome);padding:0.26rem 0.55rem;border-radius:6px;background:rgba(199,205,212,0.08);border:1px solid var(--hairline)}
+.more-line{margin-top:2.4rem;text-align:center;color:var(--muted);font-size:0.98rem}
+.more-line b{color:var(--chrome)}
+
+/* fleet band */
+.fleet{display:grid;grid-template-columns:repeat(6,1fr);gap:0.9rem;margin-top:2.6rem}
+@media(max-width:820px){.fleet{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:460px){.fleet{grid-template-columns:repeat(2,1fr)}}
+.fleet-item{display:flex;flex-direction:column;align-items:center;gap:0.6rem;padding:1.2rem 0.6rem;border-radius:12px;background:linear-gradient(180deg,var(--panel),#0D0F12);border:1px solid var(--hairline);transition:transform .3s,border-color .3s}
+.fleet-item:hover{transform:translateY(-4px);border-color:var(--hairline-2)}
+.fleet-item svg{width:38px;height:38px}
+.fleet-item span{font-family:var(--display);text-transform:uppercase;letter-spacing:0.08em;font-size:0.72rem;color:var(--chrome);text-align:center}
+
+/* ============ PROCESS ============ */
+.process{background:linear-gradient(180deg,#0B0C0E,#0E0F13)}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;counter-reset:step}
+@media(max-width:900px){.pgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.pgrid{grid-template-columns:1fr}}
+.pstep{position:relative;padding:1.8rem 1.5rem;border-radius:14px;background:linear-gradient(180deg,var(--panel),#0F1115);border:1px solid var(--hairline)}
+.pstep .n{font-family:var(--display);font-size:2.6rem;line-height:1;background:var(--brushed);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;display:block;margin-bottom:0.6rem}
+.pstep h3{font-size:1.05rem;margin-bottom:0.45rem;letter-spacing:0.02em}
+.pstep p{font-size:0.9rem;color:var(--muted);line-height:1.5}
+
+/* ============ STORY ============ */
+.story{background:
+  radial-gradient(80% 90% at 100% 20%, rgba(193,18,31,0.10), transparent 50%),
+  linear-gradient(180deg,#0E0F13,#0B0C0E);}
+.story-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+@media(max-width:900px){.story-grid{grid-template-columns:1fr}}
+.story-portrait{position:relative;border-radius:20px;overflow:hidden;background:linear-gradient(160deg,#1A1D22,#0A0B0D);border:1px solid var(--hairline-2);aspect-ratio:4/5;box-shadow:var(--shadow-lg)}
+.story-portrait svg{position:absolute;inset:0;width:100%;height:100%}
+.story-portrait .plate{position:absolute;left:1rem;bottom:1rem;z-index:3;background:rgba(11,12,14,0.8);border:1px solid var(--hairline-2);border-radius:10px;padding:0.7rem 1rem;backdrop-filter:blur(6px)}
+.story-portrait .plate .nm{font-family:var(--display);text-transform:uppercase;letter-spacing:0.06em;font-size:0.98rem;color:#fff}
+.story-portrait .plate .rl{font-size:0.74rem;color:var(--chrome-lo);letter-spacing:0.14em;text-transform:uppercase;margin-top:2px}
+.story-copy h2{font-size:clamp(1.9rem,4.4vw,3rem);margin:0.6rem 0 1.2rem}
+.story-copy p{color:var(--muted);margin-bottom:1.1rem;font-size:1.04rem;line-height:1.72}
+.story-copy p b{color:var(--text)}
+.pullquote{border-left:3px solid var(--cherry);padding:0.4rem 0 0.4rem 1.3rem;margin:1.6rem 0;font-family:var(--display);text-transform:none;font-weight:400;font-size:clamp(1.15rem,2.4vw,1.5rem);letter-spacing:0.01em;color:#fff;line-height:1.3}
+.story-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.8rem}
+.sstat{padding:1.1rem 1rem;border-radius:12px;background:rgba(22,24,28,0.6);border:1px solid var(--hairline)}
+.sstat .v{font-family:var(--display);font-size:clamp(1.6rem,3.4vw,2.1rem);background:var(--brushed);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;letter-spacing:0.02em}
+.sstat .l{font-size:0.76rem;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;font-family:var(--display);margin-top:2px}
+
+/* ============ REVIEWS ============ */
+.reviews{background:linear-gradient(180deg,#0B0C0E,#0D0F12)}
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+@media(max-width:940px){.rgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.rgrid{grid-template-columns:1fr}}
+.rcard{padding:1.7rem 1.6rem;border-radius:16px;background:linear-gradient(180deg,var(--panel),#0F1115);border:1px solid var(--hairline);display:flex;flex-direction:column;transition:transform .35s,border-color .35s}
+.rcard:hover{transform:translateY(-5px);border-color:var(--hairline-2)}
+.rstars{display:flex;gap:2px;margin-bottom:0.9rem;color:#EFC24A}
+.rstars svg{width:17px;height:17px}
+.rquote{font-size:1.02rem;color:var(--text);line-height:1.6;flex:1;font-style:italic}
+.rquote::before{content:"\201C";font-family:var(--display);color:var(--cherry);font-size:2.4rem;line-height:0;vertical-align:-0.35em;margin-right:0.1em}
+.rsource{margin-top:1.1rem;padding-top:0.9rem;border-top:1px solid var(--hairline);display:flex;align-items:center;gap:0.7rem}
+.ravatar{width:38px;height:38px;flex:0 0 38px;border-radius:50%;background:var(--brushed);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:600;color:#0B0C0E;font-size:0.9rem}
+.rsource .rn{font-weight:600;font-size:0.9rem;color:var(--text);font-family:var(--display);letter-spacing:0.03em;text-transform:uppercase}
+.rsource .rp{font-size:0.76rem;color:var(--muted)}
+.rating-hero{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1.4rem;margin-bottom:2.6rem}
+.rating-hero .big{font-family:var(--display);font-size:clamp(2.6rem,6vw,3.6rem);color:#fff;line-height:1}
+.rating-hero .rr{display:flex;flex-direction:column}
+.rating-hero .rr .st{color:#EFC24A;font-size:1.1rem;letter-spacing:2px}
+.rating-hero .rr .ct{color:var(--muted);font-size:0.82rem;letter-spacing:0.06em}
+.rating-hero .div{width:1px;height:44px;background:var(--hairline-2)}
+
+/* ============ LOCATIONS ============ */
+.locations{background:radial-gradient(70% 80% at 8% 30%,rgba(199,205,212,0.05),transparent 55%),linear-gradient(180deg,#0D0F12,#0B0C0E)}
+.loc-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:2rem}
+@media(max-width:900px){.loc-grid{grid-template-columns:1fr}}
+.map-card{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--hairline-2);background:#0A0B0D;min-height:360px;box-shadow:var(--shadow-lg)}
+.map-card svg{width:100%;height:100%;display:block}
+.map-legend{position:absolute;left:1rem;bottom:1rem;background:rgba(11,12,14,0.82);border:1px solid var(--hairline-2);border-radius:10px;padding:0.7rem 0.9rem;backdrop-filter:blur(6px);font-size:0.8rem;color:var(--chrome);display:flex;align-items:center;gap:0.5rem}
+.map-legend .pindot{width:10px;height:10px;border-radius:50%;background:var(--cherry);box-shadow:0 0 0 4px rgba(193,18,31,0.25)}
+.loc-info{display:flex;flex-direction:column;gap:1.1rem}
+.info-card{padding:1.5rem 1.6rem;border-radius:14px;background:linear-gradient(180deg,var(--panel),#0F1115);border:1px solid var(--hairline)}
+.info-card h3{font-size:1.02rem;letter-spacing:0.06em;margin-bottom:0.7rem;display:flex;align-items:center;gap:0.6rem;color:#fff}
+.info-card h3 svg{width:20px;height:20px;color:var(--cherry)}
+.info-card p{font-size:0.95rem;color:var(--muted);line-height:1.6}
+.info-card .strong{color:var(--text);font-weight:600}
+.hours-row{display:flex;justify-content:space-between;padding:0.35rem 0;font-size:0.92rem;border-bottom:1px solid var(--hairline)}
+.hours-row:last-child{border-bottom:0}
+.hours-row .d{color:var(--muted)}
+.hours-row .t{color:var(--text);font-variant-numeric:tabular-nums}
+.hours-row.open .t{color:var(--green)}
+.area-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.6rem}
+.area-tags span{font-family:var(--display);text-transform:uppercase;letter-spacing:0.06em;font-size:0.68rem;color:var(--chrome);padding:0.26rem 0.55rem;border-radius:6px;background:rgba(199,205,212,0.07);border:1px solid var(--hairline)}
+
+/* ============ CTA ============ */
+.cta{position:relative;overflow:hidden;padding:clamp(4rem,9vw,7rem) 0;background:linear-gradient(160deg,#141619,#0B0C0E 60%,#060708)}
+.cta::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 120% at 50% 0%,rgba(193,18,31,0.18),transparent 55%);pointer-events:none}
+.cta::after{content:"";position:absolute;top:-30%;left:-10%;right:-10%;height:60%;background:linear-gradient(115deg,transparent 40%,rgba(237,239,242,0.10) 50%,transparent 60%);mix-blend-mode:screen;pointer-events:none;animation:sheen 11s ease-in-out infinite}
+.cta-inner{position:relative;z-index:2;text-align:center;max-width:44ch;margin-inline:auto}
+.cta-inner h2{font-size:clamp(2.2rem,6vw,4rem);margin:0.8rem 0 1rem;line-height:0.98}
+.cta-inner p{color:var(--muted);font-size:clamp(1rem,1.6vw,1.2rem);margin-bottom:2.2rem}
+.cta-btns{display:flex;flex-wrap:wrap;gap:0.9rem;justify-content:center}
+.cta-phone{margin-top:1.8rem;font-family:var(--display);letter-spacing:0.08em;font-size:clamp(1.4rem,3.4vw,2rem);color:#fff}
+.cta-phone a{background:var(--brushed);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.cta-note{margin-top:0.6rem;color:var(--muted);font-size:0.86rem}
+
+/* contact form */
+.form-wrap{max-width:560px;margin:2.6rem auto 0;text-align:left;background:rgba(16,18,22,0.7);border:1px solid var(--hairline-2);border-radius:18px;padding:1.8rem clamp(1.2rem,3vw,2rem);backdrop-filter:blur(6px)}
+.form-wrap h3{font-size:1.2rem;letter-spacing:0.03em;margin-bottom:1.2rem;text-align:center}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem}
+@media(max-width:520px){.frow{grid-template-columns:1fr}}
+.field{margin-bottom:0.9rem;display:flex;flex-direction:column;gap:0.35rem}
+.field label{font-family:var(--display);text-transform:uppercase;letter-spacing:0.1em;font-size:0.68rem;color:var(--chrome-lo)}
+.field input,.field select,.field textarea{
+  font-family:var(--body);font-size:0.95rem;color:var(--text);
+  background:#0C0E11;border:1px solid var(--hairline-2);border-radius:9px;padding:0.7rem 0.85rem;
+  transition:border-color .2s,box-shadow .2s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--cherry);box-shadow:0 0 0 3px rgba(193,18,31,0.18)}
+.field textarea{resize:vertical;min-height:84px}
+.form-submit{width:100%;justify-content:center;margin-top:0.4rem}
+
+/* ============ FOOTER ============ */
+footer{background:#070809;border-top:1px solid var(--hairline);padding:3.4rem 0 2rem}
+.f-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:2rem;margin-bottom:2.4rem}
+@media(max-width:820px){.f-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.f-grid{grid-template-columns:1fr}}
+.f-brand .brand{margin-bottom:1rem}
+.f-brand p{color:var(--muted);font-size:0.92rem;line-height:1.6;max-width:34ch}
+.f-col h4{font-family:var(--display);text-transform:uppercase;letter-spacing:0.14em;font-size:0.78rem;color:var(--chrome);margin-bottom:1rem}
+.f-col a,.f-col p{display:block;color:var(--muted);font-size:0.9rem;margin-bottom:0.5rem;transition:color .2s}
+.f-col a:hover{color:var(--text)}
+.f-bottom{border-top:1px solid var(--hairline);padding-top:1.5rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;align-items:center}
+.f-bottom p{color:var(--muted);font-size:0.82rem}
+.disclaimer{color:var(--chrome-lo);font-size:0.78rem;max-width:52ch;line-height:1.5}
+.disclaimer b{color:var(--muted)}
+
+/* ============ KEYFRAMES ============ */
+@keyframes waxpass{0%{background-position:180% 0;opacity:0}25%{opacity:1}100%{background-position:0% 0;opacity:1}}
+@keyframes sheen{0%,100%{transform:translateX(-14%)}50%{transform:translateX(14%)}}
+@keyframes bead{
+  0%{opacity:0;transform:translateY(0) scale(0.85)}
+  12%{opacity:0.95;transform:translateY(0) scale(1)}
+  60%{opacity:0.95;transform:translateY(2px) scale(1)}
+  78%{opacity:0.85;transform:translateY(9px) scale(0.98)}
+  90%{opacity:0;transform:translateY(24px) scale(0.7)}
+  100%{opacity:0;transform:translateY(24px) scale(0.7)}
+}
+@keyframes pinpulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(0.82);opacity:0.7}}
+@keyframes scrollx{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes cue{0%,100%{opacity:0.3;transform:scaleY(0.6)}50%{opacity:1;transform:scaleY(1)}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .drop{opacity:0.9!important;transform:none!important}
+  .hero-h .waxpass{background-position:0 0!important;opacity:1!important}
+  .reveal{opacity:1!important;transform:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <a href="#top" class="brand" aria-label="Top of the Line Detailing home">
+    <svg class="brand-mark" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="chr" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#EDEFF2"/><stop offset="0.5" stop-color="#9AA1AA"/><stop offset="1" stop-color="#C7CDD4"/>
+        </linearGradient>
+      </defs>
+      <path d="M22 2 L40 11 V24 C40 34 32 40 22 43 C12 40 4 34 4 24 V11 Z" fill="#0B0C0E" stroke="url(#chr)" stroke-width="1.6"/>
+      <path d="M13 27 C17 20 27 20 31 27" stroke="#C1121F" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+      <path d="M22 12 L25 18 L31 18.6 L26.5 22.6 L28 28.4 L22 25 L16 28.4 L17.5 22.6 L13 18.6 L19 18 Z" fill="url(#chr)"/>
+    </svg>
+    <span class="brand-txt">
+      <span class="b1">Top of the Line</span>
+      <span class="b2">Detailing &middot; Est. 2014</span>
+    </span>
+  </a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#ceramic">Ceramic</a>
+    <a href="#story">Our Story</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#area">Service Area</a>
+  </div>
+  <a href="tel:+15126528272" class="nav-call">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <span class="long">(512) 652-8272</span>
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+  </button>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="droplets" id="droplets" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-badges reveal in">
+      <span class="chip stars"><span class="star">&#9733;</span> 4.9 Google Rating</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> 5,000+ Vehicles Detailed</span>
+      <span class="chip bbb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 3 6v6c0 5 3.8 8.5 9 10 5.2-1.5 9-5 9-10V6z"/></svg> BBB A+ Rated</span>
+    </div>
+
+    <h1 class="hero-h">Let's Bring Your <br><span class="waxpass">Vehicle Back To Life</span></h1>
+
+    <p class="hero-sub"><strong>100% mobile</strong> auto detailing, ceramic coating, and paint correction. We arrive with all our equipment and premium products, and hand your vehicle back with a showroom finish, right in your driveway.</p>
+
+    <div class="hero-cta">
+      <a href="tel:+15126528272" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Tap to Call
+      </a>
+      <a href="#services" class="btn btn-ghost">View Our Services
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <div class="hero-locale reveal in d2">
+      <svg class="pin" viewBox="0 0 22 26" fill="none" aria-hidden="true">
+        <path class="pulse" d="M11 1C6 1 2 5 2 10c0 6.5 9 15 9 15s9-8.5 9-15c0-5-4-9-9-9z" fill="#C1121F"/>
+        <circle cx="11" cy="10" r="3.4" fill="#0B0C0E"/>
+      </svg>
+      <span><b>100% Mobile. We Come To You.</b> Central Texas, since 2014.</span>
+    </div>
+  </div>
+  <div class="scrollcue" aria-hidden="true"><span>Scroll</span><span class="line"></span></div>
+</header>
+
+<!-- ============ TRUST MARQUEE ============ -->
+<div class="strip" aria-hidden="true">
+  <div class="marquee" id="marquee">
+    <span><span class="dot"></span> Family Owned &amp; Operated</span>
+    <span><span class="dot"></span> MOHS Ceramic Coatings</span>
+    <span><span class="dot"></span> Paint Correction &amp; LED Inspection</span>
+    <span><span class="dot"></span> Filtered Water, Premium Products</span>
+    <span><span class="dot"></span> No Shop Visit Needed</span>
+    <span><span class="dot"></span> Honest, Transparent, No Upselling</span>
+    <span><span class="dot"></span> Serving Central Texas Since 2014</span>
+    <span><span class="dot"></span> Family Owned &amp; Operated</span>
+    <span><span class="dot"></span> MOHS Ceramic Coatings</span>
+    <span><span class="dot"></span> Paint Correction &amp; LED Inspection</span>
+    <span><span class="dot"></span> Filtered Water, Premium Products</span>
+    <span><span class="dot"></span> No Shop Visit Needed</span>
+    <span><span class="dot"></span> Honest, Transparent, No Upselling</span>
+    <span><span class="dot"></span> Serving Central Texas Since 2014</span>
+  </div>
+</div>
+
+<!-- ============ BENEFITS ============ -->
+<section class="sec benefits">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">The Difference</span>
+      <h2>Detailing, Done Right At Your Door</h2>
+      <p>Twelve years, thousands of vehicles, and one promise: we treat every vehicle as if it were our own.</p>
+    </div>
+    <div class="bgrid">
+      <div class="bcard reveal d1">
+        <div class="bicon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C7CDD4" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg>
+        </div>
+        <h3>We Come To You</h3>
+        <p>100% mobile across Central Texas. We arrive with all equipment and filtered water. No shop visit, no drop-off, no waiting room.</p>
+      </div>
+      <div class="bcard reveal d2">
+        <div class="bicon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C7CDD4" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V5z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <h3>MOHS Ceramic Gloss</h3>
+        <p>Professional MOHS ceramic coatings for a deep, glassy shine and years of protection against the Texas sun, water spots, and grime.</p>
+      </div>
+      <div class="bcard reveal d3">
+        <div class="bicon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C7CDD4" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg>
+        </div>
+        <h3>Multi-Stage Correction</h3>
+        <p>Swirls, scratches, oxidation, and holograms removed with LED inspection and paint-thickness measurement. Real showroom results.</p>
+      </div>
+      <div class="bcard reveal d4">
+        <div class="bicon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C7CDD4" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3>Honest, No Upselling</h3>
+        <p>Transparent, straightforward pricing and a family voice built on honesty, professionalism, and humbleness. Just great work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="sec services" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Detail Menu</span>
+      <h2>Choose Your Level Of Shine</h2>
+      <p>From a quick refresh to a full multi-day transformation, every package is performed on location by hand, with premium products and real craft.</p>
+    </div>
+
+    <div class="sgrid">
+      <!-- Cherry Wash -->
+      <div class="scard feature reveal d1">
+        <span class="scard-tag">Signature</span>
+        <div class="scard-art">
+          <svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="cw-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1A0508"/><stop offset="1" stop-color="#0A0B0D"/></linearGradient>
+              <radialGradient id="cw-gloss" cx="0.4" cy="0.2" r="0.9"><stop offset="0" stop-color="#E01E2B" stop-opacity="0.5"/><stop offset="0.6" stop-color="#C1121F" stop-opacity="0.12"/><stop offset="1" stop-color="#C1121F" stop-opacity="0"/></radialGradient>
+            </defs>
+            <rect width="400" height="170" fill="url(#cw-bg)"/>
+            <rect width="400" height="170" fill="url(#cw-gloss)"/>
+            <path d="M40 120 C80 96 130 92 200 92 C270 92 320 96 360 120 L360 138 C320 128 270 124 200 124 C130 124 80 128 40 138 Z" fill="#C1121F" opacity="0.85"/>
+            <ellipse cx="200" cy="98" rx="150" ry="10" fill="#EDEFF2" opacity="0.14"/>
+            <circle cx="120" cy="70" r="7" fill="#fff" opacity="0.85"/><circle cx="118" cy="68" r="2" fill="#fff"/>
+            <circle cx="180" cy="58" r="5" fill="#fff" opacity="0.7"/><circle cx="179" cy="57" r="1.4" fill="#fff"/>
+            <circle cx="250" cy="66" r="6" fill="#fff" opacity="0.8"/><circle cx="248" cy="64" r="1.8" fill="#fff"/>
+            <circle cx="300" cy="54" r="4" fill="#fff" opacity="0.6"/>
+            <circle cx="150" cy="48" r="3.4" fill="#fff" opacity="0.55"/>
+          </svg>
+        </div>
+        <div class="scard-body">
+          <h3>Cherry Wash &amp; Wax</h3>
+          <p>Our signature exterior refresh. Hand wash, clay bar decontamination, and your choice of carnauba wax or ceramic spray sealant for a slick, water-beading finish.</p>
+          <ul class="scard-list"><li>Clay Bar</li><li>Wax or Sealant</li><li>Tires &amp; Wheels</li><li>Glass &amp; Jambs</li></ul>
+        </div>
+      </div>
+
+      <!-- Premium Detail -->
+      <div class="scard reveal d2">
+        <div class="scard-art">
+          <svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><linearGradient id="pd-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#12151A"/><stop offset="1" stop-color="#08090B"/></linearGradient></defs>
+            <rect width="400" height="170" fill="url(#pd-bg)"/>
+            <rect x="70" y="46" width="260" height="90" rx="14" fill="#0E1116" stroke="#C7CDD4" stroke-opacity="0.25"/>
+            <rect x="86" y="62" width="120" height="58" rx="8" fill="#1A1E24"/>
+            <rect x="96" y="70" width="100" height="8" rx="4" fill="#C7CDD4" opacity="0.35"/>
+            <rect x="96" y="86" width="70" height="6" rx="3" fill="#C7CDD4" opacity="0.2"/>
+            <circle cx="250" cy="90" r="26" fill="none" stroke="#C7CDD4" stroke-opacity="0.4" stroke-width="3"/>
+            <path d="M240 90 l7 7 14-15" stroke="#3FB67A" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M300 60 q10 12 0 24" stroke="#EDEFF2" stroke-opacity="0.3" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+        <div class="scard-body">
+          <h3>Premium Detail</h3>
+          <p>Full interior and exterior. Deep vacuum, dashboard and console cleaning, fabric protection, leather conditioning, and plastic and vinyl protection.</p>
+          <ul class="scard-list"><li>Interior &amp; Exterior</li><li>Leather Conditioning</li><li>Fabric Protection</li></ul>
+        </div>
+      </div>
+
+      <!-- Platinum Detail -->
+      <div class="scard reveal d3">
+        <div class="scard-art">
+          <svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><linearGradient id="pl-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#141821"/><stop offset="1" stop-color="#08090B"/></linearGradient><linearGradient id="pl-chr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EDEFF2"/><stop offset="0.5" stop-color="#9AA1AA"/><stop offset="1" stop-color="#C7CDD4"/></linearGradient></defs>
+            <rect width="400" height="170" fill="url(#pl-bg)"/>
+            <path d="M200 30 l16 30 34 5 -25 24 6 34 -31 -18 -31 18 6 -34 -25 -24 34 -5z" fill="url(#pl-chr)" opacity="0.9"/>
+            <path d="M120 132 h160" stroke="#C7CDD4" stroke-opacity="0.3" stroke-width="2"/>
+            <circle cx="110" cy="70" r="3" fill="#EDEFF2" opacity="0.6"/><circle cx="300" cy="60" r="4" fill="#EDEFF2" opacity="0.5"/><circle cx="330" cy="110" r="2.5" fill="#EDEFF2" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="scard-body">
+          <h3>Platinum Detail</h3>
+          <p>Everything in the Premium package, plus a full engine bay cleaning and dressing. Our most complete top-to-bottom treatment.</p>
+          <ul class="scard-list"><li>Everything Premium</li><li>Engine Bay Clean</li><li>Engine Dressing</li></ul>
+        </div>
+      </div>
+
+      <!-- Ceramic Coating -->
+      <div class="scard reveal d1" id="ceramic">
+        <span class="scard-tag">Most Popular</span>
+        <div class="scard-art">
+          <svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><linearGradient id="cc-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0F141A"/><stop offset="1" stop-color="#08090B"/></linearGradient><radialGradient id="cc-shield" cx="0.5" cy="0.3" r="0.8"><stop offset="0" stop-color="#C7CDD4" stop-opacity="0.4"/><stop offset="1" stop-color="#C7CDD4" stop-opacity="0"/></radialGradient></defs>
+            <rect width="400" height="170" fill="url(#cc-bg)"/>
+            <rect width="400" height="170" fill="url(#cc-shield)"/>
+            <path d="M200 34 L248 52 V92 C248 120 226 136 200 144 C174 136 152 120 152 92 V52 Z" fill="#0B0C0E" stroke="#C7CDD4" stroke-opacity="0.6" stroke-width="2"/>
+            <path d="M178 92 q22 -22 44 0" stroke="#E01E2B" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <circle cx="188" cy="80" r="4" fill="#fff" opacity="0.85"/><circle cx="205" cy="74" r="3" fill="#fff" opacity="0.7"/><circle cx="216" cy="84" r="3.4" fill="#fff" opacity="0.75"/>
+            <text x="200" y="118" text-anchor="middle" font-family="Oswald,sans-serif" font-size="15" letter-spacing="2" fill="#C7CDD4">MOHS</text>
+          </svg>
+        </div>
+        <div class="scard-body">
+          <h3>Ceramic Coating</h3>
+          <p>Professional MOHS coatings in 6-month, 12-month, and 48-month tiers for unmatched gloss, hydrophobic beading, and long-term paint protection.</p>
+          <ul class="scard-list"><li>6 Month</li><li>12 Month</li><li>48 Month</li><li>Hydrophobic</li></ul>
+        </div>
+      </div>
+
+      <!-- Paint Correction -->
+      <div class="scard reveal d2">
+        <div class="scard-art">
+          <svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><linearGradient id="pc-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#12151A"/><stop offset="1" stop-color="#08090B"/></linearGradient></defs>
+            <rect width="400" height="170" fill="url(#pc-bg)"/>
+            <path d="M60 60 q40 30 0 60" stroke="#C7CDD4" stroke-opacity="0.2" stroke-width="2" fill="none"/>
+            <path d="M90 50 q40 40 0 80" stroke="#C7CDD4" stroke-opacity="0.16" stroke-width="2" fill="none"/>
+            <circle cx="240" cy="90" r="46" fill="#0E1116" stroke="#C7CDD4" stroke-opacity="0.4" stroke-width="3"/>
+            <circle cx="240" cy="90" r="30" fill="none" stroke="#E01E2B" stroke-opacity="0.5" stroke-width="2" stroke-dasharray="4 5"/>
+            <line x1="240" y1="90" x2="272" y2="70" stroke="#C7CDD4" stroke-width="2"/>
+            <rect x="238" y="52" width="4" height="76" rx="2" fill="#C1121F"/>
+            <circle cx="240" cy="46" r="6" fill="#EDEFF2"/>
+          </svg>
+        </div>
+        <div class="scard-body">
+          <h3>Paint Correction</h3>
+          <p>Single and multi-stage correction removes swirls, scratches, oxidation, and holograms. LED inspection and paint-thickness measurement on every panel.</p>
+          <ul class="scard-list"><li>LED Inspection</li><li>Swirl Removal</li><li>Oxidation</li></ul>
+        </div>
+      </div>
+
+      <!-- Interior + more -->
+      <div class="scard reveal d3">
+        <div class="scard-art">
+          <svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><linearGradient id="in-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#12151A"/><stop offset="1" stop-color="#08090B"/></linearGradient></defs>
+            <rect width="400" height="170" fill="url(#in-bg)"/>
+            <path d="M140 130 V80 q0 -20 20 -20 h30 q20 0 20 20 v50" fill="#1A1E24" stroke="#C7CDD4" stroke-opacity="0.3" stroke-width="2"/>
+            <rect x="150" y="72" width="60" height="34" rx="8" fill="#0E1116"/>
+            <path d="M230 130 V96 q0 -14 14 -14 h20" fill="none" stroke="#C7CDD4" stroke-opacity="0.3" stroke-width="2"/>
+            <circle cx="285" cy="66" r="16" fill="none" stroke="#E01E2B" stroke-width="3"/>
+            <path d="M279 66 l4 4 9 -9" stroke="#3FB67A" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="120" cy="60" r="3" fill="#fff" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="scard-body">
+          <h3>Interior &amp; Exterior Detailing</h3>
+          <p>Deep clean of carpets, seats, and dashboard with shampoo and odor and stain removal, or a hand wash, clay bar, polish, and wax for a true showroom exterior.</p>
+          <ul class="scard-list"><li>Shampoo</li><li>Odor Removal</li><li>Polish &amp; Wax</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="more-line reveal">Also offering <b>Overspray Removal</b>, <b>Headlight Restoration</b>, and <b>Engine Detailing</b>. If it drives, floats, or rolls, we can bring it back to life.</div>
+
+    <!-- FLEET / VEHICLE TYPES -->
+    <div class="fleet">
+      <div class="fleet-item reveal d1">
+        <svg viewBox="0 0 40 40" fill="none" stroke="#C7CDD4" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 26h28M8 26l3-9a3 3 0 0 1 3-2h12a3 3 0 0 1 3 2l3 9M6 26v4M34 26v4"/><circle cx="13" cy="30" r="3"/><circle cx="27" cy="30" r="3"/></svg>
+        <span>Cars &amp; Trucks</span>
+      </div>
+      <div class="fleet-item reveal d1">
+        <svg viewBox="0 0 40 40" fill="none" stroke="#C7CDD4" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="12" width="20" height="16" rx="2"/><path d="M26 18h5l3 5v5h-8z"/><circle cx="12" cy="30" r="3"/><circle cx="29" cy="30" r="3"/></svg>
+        <span>RVs</span>
+      </div>
+      <div class="fleet-item reveal d2">
+        <svg viewBox="0 0 40 40" fill="none" stroke="#C7CDD4" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 24c0 3 3 5 8 5h12c5 0 8-2 8-5"/><path d="M8 24l3-10h14l5 10"/><path d="M16 14v10M24 14v10"/></svg>
+        <span>Boats</span>
+      </div>
+      <div class="fleet-item reveal d2">
+        <svg viewBox="0 0 40 40" fill="none" stroke="#C7CDD4" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="27" r="5"/><circle cx="29" cy="27" r="5"/><path d="M11 27l6-9h6l4 9M17 18l-3-4h-3M23 18l4-3"/></svg>
+        <span>Motorcycles</span>
+      </div>
+      <div class="fleet-item reveal d3">
+        <svg viewBox="0 0 40 40" fill="none" stroke="#C7CDD4" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22c4-3 8 0 12-3s8 0 12-3M8 28c4-3 8 0 12-3s8 0 10-2"/><path d="M6 16h28"/></svg>
+        <span>Jet Skis</span>
+      </div>
+      <div class="fleet-item reveal d3">
+        <svg viewBox="0 0 40 40" fill="none" stroke="#C7CDD4" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="14" width="24" height="12" rx="2"/><path d="M28 18h6l2 4v4h-8z"/><circle cx="10" cy="28" r="3"/><circle cx="22" cy="28" r="3"/><circle cx="32" cy="28" r="3"/></svg>
+        <span>Commercial Fleet</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="sec process">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">How It Works</span>
+      <h2>Four Steps To A Fresh Finish</h2>
+      <p>No shop visit, no hassle. Here is exactly how we bring the studio to your driveway.</p>
+    </div>
+    <div class="pgrid">
+      <div class="pstep reveal d1"><span class="n">01</span><h3>Get Your Free Quote</h3><p>Call or message us about your vehicle and what you are after. Straightforward pricing, no pressure, no upselling.</p></div>
+      <div class="pstep reveal d2"><span class="n">02</span><h3>We Come To You</h3><p>We arrive at your home or office with every tool, premium product, and our own filtered water. You never leave the driveway.</p></div>
+      <div class="pstep reveal d3"><span class="n">03</span><h3>Passion &amp; Precision</h3><p>We hand-detail with the care of a Smithsonian restoration, treating your vehicle as if it were our own.</p></div>
+      <div class="pstep reveal d4"><span class="n">04</span><h3>Back To Life</h3><p>You walk out to a gleaming, water-beading, showroom-ready finish. Most of our work comes from referrals for a reason.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY ============ -->
+<section class="sec story" id="story">
+  <div class="wrap">
+    <div class="story-grid">
+      <div class="story-portrait reveal">
+        <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <linearGradient id="por-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#20242B"/><stop offset="1" stop-color="#0A0B0D"/></linearGradient>
+            <radialGradient id="por-light" cx="0.5" cy="0.28" r="0.7"><stop offset="0" stop-color="#C7CDD4" stop-opacity="0.28"/><stop offset="1" stop-color="#C7CDD4" stop-opacity="0"/></radialGradient>
+            <linearGradient id="por-chr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EDEFF2"/><stop offset="0.5" stop-color="#9AA1AA"/><stop offset="1" stop-color="#C7CDD4"/></linearGradient>
+          </defs>
+          <rect width="400" height="500" fill="url(#por-bg)"/>
+          <rect width="400" height="500" fill="url(#por-light)"/>
+          <!-- silhouette figure -->
+          <circle cx="200" cy="180" r="62" fill="#0E1116"/>
+          <path d="M96 500 C96 360 140 300 200 300 C260 300 304 360 304 500 Z" fill="#0E1116"/>
+          <path d="M96 500 C96 360 140 300 200 300 C260 300 304 360 304 500 Z" fill="url(#por-light)" opacity="0.4"/>
+          <!-- polisher in hand -->
+          <circle cx="150" cy="420" r="30" fill="none" stroke="url(#por-chr)" stroke-width="4" opacity="0.7"/>
+          <circle cx="150" cy="420" r="16" fill="#16181C"/>
+          <!-- droplets accent -->
+          <circle cx="300" cy="120" r="6" fill="#fff" opacity="0.5"/>
+          <circle cx="330" cy="180" r="4" fill="#fff" opacity="0.4"/>
+          <circle cx="70" cy="150" r="5" fill="#fff" opacity="0.4"/>
+          <path d="M0 300 C120 280 280 280 400 300" stroke="#C1121F" stroke-width="2" opacity="0.4" fill="none"/>
+        </svg>
+        <div class="plate">
+          <div class="nm">Joseph Montoya Jr.</div>
+          <div class="rl">Founder &amp; Owner</div>
+        </div>
+      </div>
+
+      <div class="story-copy reveal d1">
+        <span class="eyebrow">Our Story</span>
+        <h2>From Porter To Owner, Built On Family</h2>
+        <p>Owner Joseph Montoya Jr. was born and raised in Austin and grew up in the automotive industry, working his way up from porter to manager at a large Austin dealership and learning <b>every aspect of automobiles</b> along the way. In April 2014 he founded Top of the Line Detailing, bringing 25+ years of hands-on detailing experience.</p>
+        <div class="pullquote">"Owning my own company has always been a dream of mine, so I was able to combine the love of the auto industry and being my own boss."</div>
+        <p>Family is at the center of everything. Joseph has been married to his wife Gina for 19 years, and their two college-educated kids, John-Michael and Sylvie, are, in his words, the joys of their lives and the inspiration to <b>work as hard as they do</b>. He credits his honesty, professionalism, and humbleness, and says what drives him is the extreme satisfaction of his customers.</p>
+        <div class="story-stats">
+          <div class="sstat"><div class="v">2014</div><div class="l">Serving Since</div></div>
+          <div class="sstat"><div class="v">25<span style="font-size:0.6em">+</span></div><div class="l">Yrs Experience</div></div>
+          <div class="sstat"><div class="v">5,000<span style="font-size:0.6em">+</span></div><div class="l">Detailed</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="sec reviews" id="reviews">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Real Customer Reviews</span>
+      <h2>What Central Texas Is Saying</h2>
+    </div>
+
+    <div class="rating-hero reveal d1">
+      <div style="display:flex;align-items:center;gap:0.9rem">
+        <span class="big num">4.9</span>
+        <div class="rr"><span class="st">&#9733; &#9733; &#9733; &#9733; &#9733;</span><span class="ct">100+ Google reviews</span></div>
+      </div>
+      <div class="div"></div>
+      <div class="rr"><span class="big num" style="font-size:clamp(1.6rem,4vw,2.2rem)">A+</span></div>
+      <div class="rr"><span class="ct" style="max-width:12ch">BBB Accredited &amp; Rated</span></div>
+    </div>
+
+    <div class="rgrid">
+      <div class="rcard reveal d1">
+        <div class="rstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="rquote">Jeremy did a spectacular job on my SUV. Not only that, but he is kind, considerate, and loves what he does.</p>
+        <div class="rsource"><div class="ravatar">P</div><div><div class="rn">Priscilla Trizna</div><div class="rp">5&#9733; &middot; Google via Birdeye</div></div></div>
+      </div>
+      <div class="rcard reveal d2">
+        <div class="rstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="rquote">Joseph did an amazing job on the interior of our two, very neglected, vehicles! They both look as much like new inside as 15+ year old vehicles can.</p>
+        <div class="rsource"><div class="ravatar">B</div><div><div class="rn">Brenda Chlapek</div><div class="rp">5&#9733; &middot; Google via Birdeye</div></div></div>
+      </div>
+      <div class="rcard reveal d3">
+        <div class="rstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="rquote">Joseph and his people are fantastic! We had spilled three chocolate milkshakes in our truck and they were able to get to us in less than 48 hours.</p>
+        <div class="rsource"><div class="ravatar">M</div><div><div class="rn">Mary C. Lamb</div><div class="rp">5&#9733; &middot; Google via Birdeye</div></div></div>
+      </div>
+      <div class="rcard reveal d1">
+        <div class="rstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="rquote">They attacked it like a Smithsonian restoration! It looks and smells like showroom floor.</p>
+        <div class="rsource"><div class="ravatar">D</div><div><div class="rn">Dick Gossen</div><div class="rp">5&#9733; &middot; SoTellUs</div></div></div>
+      </div>
+      <div class="rcard reveal d2">
+        <div class="rstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="rquote">Fantastic job on my ancient Explorer. Made a '14 look brand new!</p>
+        <div class="rsource"><div class="ravatar">J</div><div><div class="rn">Joe McSpadden</div><div class="rp">5&#9733; &middot; SoTellUs</div></div></div>
+      </div>
+      <div class="rcard reveal d3">
+        <div class="rstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="rquote">Super professional, on time, and made my truck look the best it's ever looked.</p>
+        <div class="rsource"><div class="ravatar">R</div><div><div class="rn">Richard Powell</div><div class="rp">5&#9733; &middot; SoTellUs</div></div></div>
+      </div>
+      <div class="rcard reveal d1">
+        <div class="rstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="rquote">After he finished detailing the interior of my car, you couldn't even tell I'd been to the beach.</p>
+        <div class="rsource"><div class="ravatar">K</div><div><div class="rn">Kristin Chait</div><div class="rp">5&#9733; &middot; SoTellUs</div></div></div>
+      </div>
+      <div class="rcard reveal d2">
+        <div class="rstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="rquote">Great job on RV. Very professional, will use again.</p>
+        <div class="rsource"><div class="ravatar">S</div><div><div class="rn">Sonny Cook</div><div class="rp">5&#9733; &middot; SoTellUs</div></div></div>
+      </div>
+      <!-- honest placeholder -->
+      <div class="rcard reveal d3" style="border-style:dashed;background:rgba(22,24,28,0.4)">
+        <div class="rstars" style="color:var(--chrome-lo)">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="rquote" style="font-style:normal;color:var(--muted)">Your live Google reviews stream in right here. This card pulls your latest verified 5-star reviews automatically once your site is connected.</p>
+        <div class="rsource"><div class="ravatar" style="background:var(--panel-2);color:var(--chrome)">&#43;</div><div><div class="rn">Live Google Feed</div><div class="rp">Connects on launch</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCATIONS / SERVICE AREA ============ -->
+<section class="sec locations" id="area">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Service Area</span>
+      <h2>From Waco To San Antonio, We Come To You</h2>
+      <p>Based in Georgetown and 100% mobile across Central Texas. If you are anywhere from Lampasas to Smithville, we will bring the studio to your driveway.</p>
+    </div>
+
+    <div class="loc-grid">
+      <div class="map-card reveal">
+        <svg viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <radialGradient id="mp-glow" cx="0.5" cy="0.45" r="0.6"><stop offset="0" stop-color="#C1121F" stop-opacity="0.22"/><stop offset="1" stop-color="#C1121F" stop-opacity="0"/></radialGradient>
+            <linearGradient id="mp-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#101318"/><stop offset="1" stop-color="#070809"/></linearGradient>
+          </defs>
+          <rect width="500" height="400" fill="url(#mp-bg)"/>
+          <!-- grid -->
+          <g stroke="#C7CDD4" stroke-opacity="0.06" stroke-width="1">
+            <line x1="0" y1="50" x2="500" y2="50"/><line x1="0" y1="100" x2="500" y2="100"/><line x1="0" y1="150" x2="500" y2="150"/><line x1="0" y1="200" x2="500" y2="200"/><line x1="0" y1="250" x2="500" y2="250"/><line x1="0" y1="300" x2="500" y2="300"/><line x1="0" y1="350" x2="500" y2="350"/>
+            <line x1="60" y1="0" x2="60" y2="400"/><line x1="130" y1="0" x2="130" y2="400"/><line x1="200" y1="0" x2="200" y2="400"/><line x1="270" y1="0" x2="270" y2="400"/><line x1="340" y1="0" x2="340" y2="400"/><line x1="410" y1="0" x2="410" y2="400"/>
+          </g>
+          <!-- service radius -->
+          <circle cx="250" cy="200" r="150" fill="url(#mp-glow)"/>
+          <circle cx="250" cy="200" r="150" fill="none" stroke="#C1121F" stroke-opacity="0.35" stroke-dasharray="5 6" stroke-width="1.5"/>
+          <!-- roads -->
+          <path d="M250 30 L250 380 M60 200 L440 380 M60 380 L440 40" stroke="#C7CDD4" stroke-opacity="0.12" stroke-width="2"/>
+          <!-- HQ pin -->
+          <g transform="translate(250,180)">
+            <path d="M0 0 C-9 0 -16 7 -16 16 C-16 28 0 44 0 44 C0 44 16 28 16 16 C16 7 9 0 0 0z" fill="#C1121F"/>
+            <circle cx="0" cy="16" r="6" fill="#0B0C0E"/>
+          </g>
+          <!-- city dots -->
+          <g fill="#C7CDD4">
+            <circle cx="250" cy="120" r="3.5" opacity="0.85"/><circle cx="300" cy="150" r="3" opacity="0.7"/><circle cx="210" cy="235" r="3.5" opacity="0.8"/><circle cx="180" cy="160" r="3" opacity="0.7"/><circle cx="330" cy="240" r="3" opacity="0.7"/><circle cx="160" cy="300" r="3.5" opacity="0.75"/><circle cx="310" cy="300" r="3" opacity="0.65"/><circle cx="220" cy="90" r="3" opacity="0.6"/>
+          </g>
+          <g font-family="Oswald,sans-serif" font-size="11" fill="#A8AEB6" letter-spacing="1">
+            <text x="258" y="118">Georgetown</text>
+            <text x="308" y="150">Round Rock</text>
+            <text x="130" y="160">Cedar Park</text>
+            <text x="218" y="248">Austin</text>
+            <text x="338" y="242">Pflugerville</text>
+            <text x="100" y="300">San Antonio</text>
+            <text x="318" y="300">Waco</text>
+          </g>
+        </svg>
+        <div class="map-legend"><span class="pindot"></span> HQ: Georgetown, TX &middot; Mobile service across Central Texas</div>
+      </div>
+
+      <div class="loc-info">
+        <div class="info-card reveal d1">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> Base &amp; Coverage</h3>
+          <p><span class="strong">Georgetown, TX 78626</span><br>100% mobile. We come to your location with all equipment. No shop visit needed.</p>
+          <div class="area-tags">
+            <span>Georgetown</span><span>Round Rock</span><span>Cedar Park</span><span>Austin</span><span>Pflugerville</span><span>Leander</span><span>San Marcos</span><span>New Braunfels</span><span>Temple</span><span>Killeen</span><span>Waco</span><span>San Antonio</span>
+          </div>
+          <p style="margin-top:0.7rem;font-size:0.86rem">Serving Travis, Williamson, Bell, Bastrop, and Hays counties.</p>
+        </div>
+
+        <div class="info-card reveal d2">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> Hours</h3>
+          <div class="hours-row open"><span class="d">Monday to Sunday</span><span class="t">9:00 AM to 5:00 PM</span></div>
+          <p style="margin-top:0.7rem;font-size:0.86rem">Open all seven days, same hours. Free quotes anytime, and fleet pricing available for commercial accounts.</p>
+        </div>
+
+        <div class="info-card reveal d3">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Book Your Detail</h3>
+          <p style="margin-bottom:0.9rem">Call or tap to reach Joseph and the team directly.</p>
+          <a href="tel:+15126528272" class="btn btn-primary" style="width:100%;justify-content:center">(512) 652-8272</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta">
+  <div class="wrap cta-inner">
+    <span class="eyebrow">Ready When You Are</span>
+    <h2>Ready To Experience The Difference?</h2>
+    <p>Let's bring your vehicle back to life. Get your free quote today, and we will come to you.</p>
+    <div class="cta-btns">
+      <a href="tel:+15126528272" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Tap to Call Now
+      </a>
+      <button class="btn disabled" disabled title="Coming soon">Book Online &middot; Coming Soon</button>
+    </div>
+    <div class="cta-phone"><a href="tel:+15126528272">(512) 652-8272</a></div>
+    <div class="cta-note">Free quotes &middot; Fleet pricing available &middot; Family owned since 2014</div>
+
+    <!-- CONTACT FORM -->
+    <form class="form-wrap reveal" action="https://formsubmit.co/REPLACE-WITH-CLIENT-EMAIL" method="POST">
+      <!-- To activate: replace REPLACE-WITH-CLIENT-EMAIL above with the client's real email address -->
+      <h3>Request A Free Quote</h3>
+      <div class="frow">
+        <div class="field"><label for="fn">Name</label><input id="fn" name="name" type="text" placeholder="Your name" required></div>
+        <div class="field"><label for="fp">Phone</label><input id="fp" name="phone" type="tel" placeholder="(512) 000-0000" required></div>
+      </div>
+      <div class="field"><label for="fv">Vehicle</label><input id="fv" name="vehicle" type="text" placeholder="Year, make &amp; model"></div>
+      <div class="field"><label for="fs">Service Interested In</label>
+        <select id="fs" name="service">
+          <option>Cherry Wash &amp; Wax</option>
+          <option>Premium Detail</option>
+          <option>Platinum Detail</option>
+          <option>Ceramic Coating</option>
+          <option>Paint Correction</option>
+          <option>Interior / Exterior Detail</option>
+          <option>Boat / RV / Fleet</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <div class="field"><label for="fm">Details &amp; Your Location</label><textarea id="fm" name="message" placeholder="Tell us about your vehicle and where you'd like us to come."></textarea></div>
+      <button type="submit" class="btn btn-primary form-submit">Send My Quote Request</button>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <div class="brand">
+          <svg class="brand-mark" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+            <path d="M22 2 L40 11 V24 C40 34 32 40 22 43 C12 40 4 34 4 24 V11 Z" fill="#0B0C0E" stroke="url(#chr)" stroke-width="1.6"/>
+            <path d="M13 27 C17 20 27 20 31 27" stroke="#C1121F" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+            <path d="M22 12 L25 18 L31 18.6 L26.5 22.6 L28 28.4 L22 25 L16 28.4 L17.5 22.6 L13 18.6 L19 18 Z" fill="url(#chr)"/>
+          </svg>
+          <span class="brand-txt"><span class="b1">Top of the Line</span><span class="b2">Detailing LLC</span></span>
+        </div>
+        <p>Serving Central Texas with passion and precision since 2014. 100% mobile auto detailing, ceramic coating, and paint correction. We come to you.</p>
+      </div>
+      <div class="f-col">
+        <h4>Services</h4>
+        <a href="#services">Cherry Wash &amp; Wax</a>
+        <a href="#services">Premium &amp; Platinum</a>
+        <a href="#ceramic">Ceramic Coating</a>
+        <a href="#services">Paint Correction</a>
+        <a href="#services">Boat &amp; RV Detail</a>
+      </div>
+      <div class="f-col">
+        <h4>Company</h4>
+        <a href="#story">Our Story</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#area">Service Area</a>
+        <a href="tel:+15126528272">Free Quote</a>
+      </div>
+      <div class="f-col">
+        <h4>Contact</h4>
+        <a href="tel:+15126528272">(512) 652-8272</a>
+        <p>Georgetown, TX 78626</p>
+        <p>Mon to Sun: 9AM to 5PM</p>
+        <p>100% Mobile &middot; We Come To You</p>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>&copy; 2026 Top of the Line Detailing LLC. Family owned since 2014.</p>
+      <p class="disclaimer"><b>Concept preview built by DNA Agency, not affiliated with TOP OF THE LINE DETAILING LLC.</b></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* NAV scroll state */
+  var nav = document.getElementById("nav");
+  function onScroll(){ if(window.scrollY > 24){ nav.classList.add("scrolled"); } else { nav.classList.remove("scrolled"); } }
+  window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+  /* mobile menu: jump to services (simple) */
+  var toggle = document.getElementById("navToggle");
+  if(toggle){ toggle.addEventListener("click", function(){ document.getElementById("services").scrollIntoView({behavior: reduce?"auto":"smooth"}); }); }
+
+  /* WATER DROPLETS in hero */
+  var field = document.getElementById("droplets");
+  if(field){
+    var count = reduce ? 22 : 36;
+    var frag = document.createDocumentFragment();
+    for(var i=0;i<count;i++){
+      var d = document.createElement("div");
+      d.className = "drop";
+      var size = 6 + Math.random()*26;
+      d.style.width = size+"px";
+      d.style.height = size+"px";
+      d.style.left = (Math.random()*100)+"%";
+      d.style.top = (Math.random()*92)+"%";
+      d.style.setProperty("--dur", (5 + Math.random()*6).toFixed(2)+"s");
+      d.style.setProperty("--del", (Math.random()*7).toFixed(2)+"s");
+      if(reduce){ d.style.opacity = "0.9"; d.style.animation = "none"; }
+      frag.appendChild(d);
+    }
+    field.appendChild(frag);
+  }
+
+  /* SCROLL REVEAL */
+  var revealEls = document.querySelectorAll(".reveal");
+  if(reduce || !("IntersectionObserver" in window)){
+    revealEls.forEach(function(el){ el.classList.add("in"); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, {threshold:0.12, rootMargin:"0px 0px -8% 0px"});
+    revealEls.forEach(function(el){ if(!el.classList.contains("in")) io.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>

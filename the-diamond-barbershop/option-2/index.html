@@ -92,6 +92,8 @@
   .nav-links a.link::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;background:var(--grad-brass);transition:width .3s ease}
   .nav-links a.link:hover{color:var(--paper)}
   .nav-links a.link:hover::after{width:100%}
+  .nav-links a.link.current{color:var(--paper)}
+  .nav-links a.link.current::after{width:100%}
   .btn{
     display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:none;
     font-family:var(--font-body);font-weight:700;text-transform:uppercase;letter-spacing:0.14em;font-size:12.5px;
@@ -267,8 +269,12 @@
   .m-row .lead .nm{font-family:var(--font-display);font-size:clamp(16px,1.7vw,20px);font-weight:700;color:var(--paper);line-height:1.15}
   .m-row .lead .nm .es-inline{display:block;font-family:var(--font-body);font-size:11.5px;font-style:italic;color:var(--brass-2);font-weight:500;letter-spacing:0.02em;margin-top:2px}
   .m-row .lead .desc{font-size:13px;color:var(--paper-faint);line-height:1.5;max-width:52ch}
-  .m-row .price{font-family:var(--font-display);font-size:clamp(16px,1.7vw,20px);font-weight:700;color:var(--brass);white-space:nowrap;font-variant-numeric:tabular-nums}
-  .m-row .price .from{display:block;font-family:var(--font-body);font-size:9.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--paper-faint);font-weight:700;text-align:right;margin-bottom:1px}
+  .m-row .tag{
+    font-family:var(--font-body);font-size:9.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--brass-2);
+    font-weight:700;white-space:nowrap;align-self:center;display:inline-flex;align-items:center;gap:7px;
+  }
+  .m-row .tag::before{content:"";width:20px;height:1px;background:var(--grad-brass);flex:0 0 20px}
+  @media(max-width:560px){.m-row{grid-template-columns:1fr}.m-row .tag{padding-left:0}.m-row .tag::before{display:none}}
   .menu-note{margin-top:26px;font-size:12.5px;color:var(--paper-faint);display:flex;align-items:flex-start;gap:10px;line-height:1.55}
   .menu-note svg{width:16px;height:16px;color:var(--brass-2);flex:0 0 16px;margin-top:2px}
 
@@ -440,11 +446,11 @@
       <span class="name">Diamond<small data-en="Barbershop · RICHARDSON" data-es="Barbería · RICHARDSON">Barbershop · RICHARDSON</small></span>
     </a>
     <nav class="nav-links" id="navLinks">
-      <a class="link" href="#services" data-en="Services" data-es="Servicios">Services</a>
-      <a class="link" href="#story" data-en="Story" data-es="Historia">Story</a>
-      <a class="link" href="#gallery" data-en="Gallery" data-es="Galería">Gallery</a>
-      <a class="link" href="#reviews" data-en="Reviews" data-es="Reseñas">Reviews</a>
-      <a class="link" href="#visit" data-en="Visit" data-es="Visítanos">Visit</a>
+      <a class="link current" href="index.html" data-en="Home" data-es="Inicio">Home</a>
+      <a class="link" href="services.html" data-en="Services" data-es="Servicios">Services</a>
+      <a class="link" href="about.html" data-en="About" data-es="Nosotros">About</a>
+      <a class="link" href="gallery.html" data-en="Gallery" data-es="Galería">Gallery</a>
+      <a class="link" href="contact.html" data-en="Contact" data-es="Contacto">Contact</a>
       <a class="btn btn-brass" href="https://thediamondbarbershop27.booksy.com" target="_blank" rel="noopener" data-en="Book a Chair" data-es="Reservar Silla">Book a Chair</a>
       <div class="lang-toggle mob" role="group" aria-label="Language / Idioma">
         <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
@@ -589,8 +595,8 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow" data-en="The Menu" data-es="El Menú">The Menu</span>
-      <h2 data-en="Every service, sharply priced." data-es="Cada servicio, con precio claro.">Every service, sharply priced.</h2>
-      <p data-en="Every haircut includes an edge up and outline. Prices below are typical starting points, ask your barber for the exact quote when you book." data-es="Todos los cortes incluyen perfilado y contorno. Los precios de abajo son puntos de partida típicos; pídele a tu barbero el precio exacto al reservar.">Every haircut includes an edge up and outline. Prices below are typical starting points, ask your barber for the exact quote when you book.</p>
+      <h2 data-en="Every service, sharply done." data-es="Cada servicio, hecho con precisión.">Every service, sharply done.</h2>
+      <p data-en="Every haircut includes an edge up and outline. Your barber confirms the exact service in the chair, so it fits your hair and the look you want. Book online to see live availability." data-es="Todos los cortes incluyen perfilado y contorno. Tu barbero confirma el servicio exacto en la silla, para que quede a la medida de tu cabello y el look que buscas. Reserva en línea para ver la disponibilidad en tiempo real.">Every haircut includes an edge up and outline. Your barber confirms the exact service in the chair, so it fits your hair and the look you want. Book online to see live availability.</p>
     </div>
 
     <div class="menu-cats reveal d1" id="menuCats">
@@ -610,43 +616,43 @@
       <div class="menu-rows">
         <div class="m-row">
           <div class="lead"><div class="nm" data-en="Regular Haircut" data-es="Corte Regular">Regular Haircut</div><div class="desc" data-en="A clean, classic cut finished with an edge up and outline. The everyday standard." data-es="Un corte limpio y clásico, rematado con perfilado y contorno. El estándar de todos los días.">A clean, classic cut finished with an edge up and outline. The everyday standard.</div></div>
-          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$25</div>
+          <div class="tag" data-en="Book Online" data-es="Reserva en Línea">Book Online</div>
         </div>
         <div class="m-row">
           <div class="lead"><div class="nm" data-en="Skin &amp; Taper Fade" data-es="Fade a Piel y Degradado">Skin &amp; Taper Fade</div><div class="desc" data-en="Seamless blend from skin to length, low, mid, or high. Includes edge up and outline." data-es="Difuminado perfecto de la piel al largo, bajo, medio o alto. Incluye perfilado y contorno.">Seamless blend from skin to length, low, mid, or high. Includes edge up and outline.</div></div>
-          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$30</div>
+          <div class="tag" data-en="Book Online" data-es="Reserva en Línea">Book Online</div>
         </div>
         <div class="m-row">
           <div class="lead"><div class="nm" data-en="Men's Haircut with Design" data-es="Corte de Caballero con Diseño">Men's Haircut with Design</div><div class="desc" data-en="Freehand line work and custom design razored into the cut for a signature look." data-es="Líneas a mano alzada y diseño personalizado trazado con navaja para un look único.">Freehand line work and custom design razored into the cut for a signature look.</div></div>
-          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$35</div>
+          <div class="tag" data-en="Book Online" data-es="Reserva en Línea">Book Online</div>
         </div>
         <div class="m-row">
           <div class="lead"><div class="nm" data-en="Scissor Cut" data-es="Corte a Tijera">Scissor Cut</div><div class="desc" data-en="Fully scissor-crafted for texture and movement on longer or looser styles." data-es="Trabajado por completo a tijera para dar textura y movimiento a estilos más largos o sueltos.">Fully scissor-crafted for texture and movement on longer or looser styles.</div></div>
-          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$30</div>
+          <div class="tag" data-en="Book Online" data-es="Reserva en Línea">Book Online</div>
         </div>
         <div class="m-row">
           <div class="lead"><div class="nm" data-en="Long Haircut" data-es="Corte para Cabello Largo">Long Haircut</div><div class="desc" data-en="Shape, layer, and finish for longer hair. Blow dry and style included." data-es="Forma, capas y acabado para cabello largo. Incluye secado y peinado.">Shape, layer, and finish for longer hair. Blow dry and style included.</div></div>
-          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$35</div>
+          <div class="tag" data-en="Book Online" data-es="Reserva en Línea">Book Online</div>
         </div>
         <div class="m-row">
           <div class="lead"><div class="nm" data-en="Curly Hair Cut" data-es="Corte para Cabello Rizado">Curly Hair Cut</div><div class="desc" data-en="Cut and shaped for curl pattern and volume, so it grows out clean." data-es="Cortado y moldeado según el rizo y el volumen, para que crezca parejo.">Cut and shaped for curl pattern and volume, so it grows out clean.</div></div>
-          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$30</div>
+          <div class="tag" data-en="Book Online" data-es="Reserva en Línea">Book Online</div>
         </div>
         <div class="m-row">
           <div class="lead"><div class="nm" data-en="Buzz Cut" data-es="Corte al Rape">Buzz Cut</div><div class="desc" data-en="One-length clipper cut, quick and crisp, with a fresh outline." data-es="Corte a máquina de un solo largo, rápido y limpio, con contorno fresco.">One-length clipper cut, quick and crisp, with a fresh outline.</div></div>
-          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$20</div>
+          <div class="tag" data-en="Book Online" data-es="Reserva en Línea">Book Online</div>
         </div>
         <div class="m-row">
           <div class="lead"><div class="nm" data-en="Head Shave" data-es="Rapado de Cabeza">Head Shave</div><div class="desc" data-en="Smooth razor head shave with hot towel finish for a clean, close result." data-es="Rapado de cabeza a navaja con acabado de toalla caliente, para un resultado limpio y al ras.">Smooth razor head shave with hot towel finish for a clean, close result.</div></div>
-          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$28</div>
+          <div class="tag" data-en="Book Online" data-es="Reserva en Línea">Book Online</div>
         </div>
         <div class="m-row">
           <div class="lead"><div class="nm" data-en="Hair Shape Up" data-es="Perfilado de Contorno">Hair Shape Up</div><div class="desc" data-en="Line up and outline between cuts to keep the edges sharp." data-es="Delineado y contorno entre cortes para mantener los bordes marcados.">Line up and outline between cuts to keep the edges sharp.</div></div>
-          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$15</div>
+          <div class="tag" data-en="Book Online" data-es="Reserva en Línea">Book Online</div>
         </div>
         <div class="m-row">
           <div class="lead"><div class="nm" data-en="Hair Coloring" data-es="Tinte de Cabello">Hair Coloring</div><div class="desc" data-en="Custom color, gray blending, or a bold new tone. Consultation first." data-es="Color personalizado, cobertura de canas o un tono nuevo y atrevido. Primero una consulta.">Custom color, gray blending, or a bold new tone. Consultation first.</div></div>
-          <div class="price"><span class="from" data-en="Ask" data-es="Consulta">Ask</span><span data-en="Quote" data-es="Cotización">Quote</span></div>
+          <div class="tag" data-en="Ask Your Barber" data-es="Consulta al Barbero">Ask Your Barber</div>
         </div>
       </div>
     </div>
@@ -660,23 +666,23 @@
       <div class="menu-rows">
         <div class="m-row">
           <div class="lead"><div class="nm" data-en="Beard Design, Hot Towel &amp; Massage" data-es="Diseño de Barba con Toalla Caliente y Masaje">Beard Design, Hot Towel &amp; Massage</div><div class="desc" data-en="Shaped and lined with a hot towel wrap and relaxing massage to finish." data-es="Barba moldeada y delineada, con envoltura de toalla caliente y un masaje relajante para terminar.">Shaped and lined with a hot towel wrap and relaxing massage to finish.</div></div>
-          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$20</div>
+          <div class="tag" data-en="Book Online" data-es="Reserva en Línea">Book Online</div>
         </div>
         <div class="m-row">
           <div class="lead"><div class="nm" data-en="Haircut &amp; Shave, Hot Towel &amp; Massage" data-es="Corte y Barba con Toalla Caliente y Masaje">Haircut &amp; Shave, Hot Towel &amp; Massage</div><div class="desc" data-en="The full package: fresh cut plus a straight razor beard shave, hot towel, and massage." data-es="El paquete completo: corte fresco más afeitado de barba con navaja, toalla caliente y masaje.">The full package: fresh cut plus a straight razor beard shave, hot towel, and massage.</div></div>
-          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$45</div>
+          <div class="tag" data-en="Book Online" data-es="Reserva en Línea">Book Online</div>
         </div>
         <div class="m-row">
           <div class="lead"><div class="nm" data-en="Straight Razor Shave" data-es="Afeitada con Navaja">Straight Razor Shave</div><div class="desc" data-en="Traditional close shave with hot lather and a straight razor. Smooth every time." data-es="Afeitada tradicional al ras con espuma caliente y navaja. Siempre suave.">Traditional close shave with hot lather and a straight razor. Smooth every time.</div></div>
-          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$25</div>
+          <div class="tag" data-en="Book Online" data-es="Reserva en Línea">Book Online</div>
         </div>
         <div class="m-row">
           <div class="lead"><div class="nm" data-en="Beard Trim" data-es="Recorte de Barba">Beard Trim</div><div class="desc" data-en="Clean up length and shape to keep the beard tidy between designs." data-es="Emparejamos largo y forma para mantener la barba arreglada entre diseños.">Clean up length and shape to keep the beard tidy between designs.</div></div>
-          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$15</div>
+          <div class="tag" data-en="Book Online" data-es="Reserva en Línea">Book Online</div>
         </div>
         <div class="m-row">
           <div class="lead"><div class="nm" data-en="Beard Grooming &amp; Conditioning" data-es="Cuidado y Acondicionamiento de Barba">Beard Grooming &amp; Conditioning</div><div class="desc" data-en="Trim, shape, condition, and oil for a soft, healthy, well-kept beard." data-es="Recorte, forma, acondicionador y aceite para una barba suave, sana y bien cuidada.">Trim, shape, condition, and oil for a soft, healthy, well-kept beard.</div></div>
-          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$22</div>
+          <div class="tag" data-en="Book Online" data-es="Reserva en Línea">Book Online</div>
         </div>
       </div>
     </div>
@@ -690,23 +696,23 @@
       <div class="menu-rows">
         <div class="m-row">
           <div class="lead"><div class="nm" data-en="Facial Service" data-es="Servicio Facial">Facial Service</div><div class="desc" data-en="Cleansing cream, exfoliating scrub with black mask, and a relaxing massage included." data-es="Incluye crema limpiadora, exfoliante con mascarilla negra y un masaje relajante.">Cleansing cream, exfoliating scrub with black mask, and a relaxing massage included.</div></div>
-          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$30</div>
+          <div class="tag" data-en="Book Online" data-es="Reserva en Línea">Book Online</div>
         </div>
         <div class="m-row">
           <div class="lead"><div class="nm" data-en="Eyebrow Design &amp; Pigmentation" data-es="Diseño de Cejas y Pigmentación">Eyebrow Design &amp; Pigmentation</div><div class="desc" data-en="Shape, clean, and define the brows with optional pigmentation for a fuller line." data-es="Damos forma, limpiamos y definimos las cejas, con pigmentación opcional para una línea más marcada.">Shape, clean, and define the brows with optional pigmentation for a fuller line.</div></div>
-          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$15</div>
+          <div class="tag" data-en="Book Online" data-es="Reserva en Línea">Book Online</div>
         </div>
         <div class="m-row">
           <div class="lead"><div class="nm" data-en="Eyebrow Tinting" data-es="Tinte de Cejas">Eyebrow Tinting</div><div class="desc" data-en="Tint to darken and define the brows for a bolder, cleaner frame." data-es="Tinte para oscurecer y definir las cejas, con un marco más marcado y limpio.">Tint to darken and define the brows for a bolder, cleaner frame.</div></div>
-          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$12</div>
+          <div class="tag" data-en="Book Online" data-es="Reserva en Línea">Book Online</div>
         </div>
         <div class="m-row">
           <div class="lead"><div class="nm" data-en="Waxing" data-es="Depilación con Cera">Waxing</div><div class="desc" data-en="Quick, clean facial waxing, ears, nose, brow line, and more." data-es="Depilación facial rápida y limpia con cera: orejas, nariz, cejas y más.">Quick, clean facial waxing, ears, nose, brow line, and more.</div></div>
-          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$10</div>
+          <div class="tag" data-en="Book Online" data-es="Reserva en Línea">Book Online</div>
         </div>
         <div class="m-row">
           <div class="lead"><div class="nm" data-en="Styling" data-es="Peinado">Styling</div><div class="desc" data-en="Wash, product, and finish to send you out camera-ready." data-es="Lavado, producto y acabado para que salgas listo para la foto.">Wash, product, and finish to send you out camera-ready.</div></div>
-          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$12</div>
+          <div class="tag" data-en="Book Online" data-es="Reserva en Línea">Book Online</div>
         </div>
       </div>
     </div>
@@ -720,16 +726,16 @@
       <div class="menu-rows">
         <div class="m-row">
           <div class="lead"><div class="nm" data-en="Kids Haircut" data-es="Corte para Niños">Kids Haircut</div><div class="desc" data-en="Patient, friendly cuts for the little ones, finished clean with an outline." data-es="Cortes con paciencia y trato amable para los más pequeños, rematados limpios con contorno.">Patient, friendly cuts for the little ones, finished clean with an outline.</div></div>
-          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$20</div>
+          <div class="tag" data-en="Book Online" data-es="Reserva en Línea">Book Online</div>
         </div>
         <div class="m-row">
           <div class="lead"><div class="nm" data-en="Full Service" data-es="Servicio Completo">Full Service</div><div class="desc" data-en="Haircut, beard, hot towel, facial, and the works. The complete Diamond treatment." data-es="Corte, barba, toalla caliente, facial y todo lo demás. El tratamiento Diamond completo.">Haircut, beard, hot towel, facial, and the works. The complete Diamond treatment.</div></div>
-          <div class="price"><span class="from" data-en="From" data-es="Desde">From</span>$65</div>
+          <div class="tag" data-en="Book Online" data-es="Reserva en Línea">Book Online</div>
         </div>
       </div>
       <div class="menu-note">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-        <span data-en="Prices are typical starting points shown for reference and confirmed in the chair. Final pricing may vary by hair length, style, and add-ons. Book online to see live availability." data-es="Los precios son puntos de partida típicos, mostrados como referencia y confirmados en la silla. El precio final puede variar según el largo del cabello, el estilo y los extras. Reserva en línea para ver la disponibilidad en tiempo real.">Prices are typical starting points shown for reference and confirmed in the chair. Final pricing may vary by hair length, style, and add-ons. Book online to see live availability.</span>
+        <span data-en="Every haircut includes an edge up and outline. Your barber confirms the exact service in the chair, since the finish can vary by hair length, style, and add-ons. Book online to see live availability." data-es="Todos los cortes incluyen perfilado y contorno. Tu barbero confirma el servicio exacto en la silla, ya que el acabado puede variar según el largo del cabello, el estilo y los extras. Reserva en línea para ver la disponibilidad en tiempo real.">Every haircut includes an edge up and outline. Your barber confirms the exact service in the chair, since the finish can vary by hair length, style, and add-ons. Book online to see live availability.</span>
       </div>
     </div>
   </div>
@@ -1095,11 +1101,11 @@
       </div>
       <div class="foot-col">
         <h4 data-en="Explore" data-es="Explorar">Explore</h4>
-        <a href="#services" data-en="Services" data-es="Servicios">Services</a>
-        <a href="#story" data-en="Our Story" data-es="Nuestra Historia">Our Story</a>
-        <a href="#gallery" data-en="Gallery" data-es="Galería">Gallery</a>
-        <a href="#reviews" data-en="Reviews" data-es="Reseñas">Reviews</a>
-        <a href="#visit" data-en="Visit Us" data-es="Visítanos">Visit Us</a>
+        <a href="index.html" data-en="Home" data-es="Inicio">Home</a>
+        <a href="services.html" data-en="Services" data-es="Servicios">Services</a>
+        <a href="about.html" data-en="About" data-es="Nosotros">About</a>
+        <a href="gallery.html" data-en="Gallery" data-es="Galería">Gallery</a>
+        <a href="contact.html" data-en="Contact" data-es="Contacto">Contact</a>
       </div>
       <div class="foot-col">
         <h4 data-en="Popular" data-es="Populares">Popular</h4>
@@ -1120,7 +1126,7 @@
     </div>
     <div class="foot-bottom">
       <p data-en="&copy; 2026 The Diamond Barbershop, Richardson, TX. All rights reserved." data-es="&copy; 2026 The Diamond Barbershop, Richardson, TX. Todos los derechos reservados.">&copy; 2026 The Diamond Barbershop, Richardson, TX. All rights reserved.</p>
-      <p class="disclaimer" data-en="Concept preview built by DNA Agency, not affiliated with The Diamond Barbershop. Prices and hours shown are illustrative placeholders for demonstration only." data-es="Vista previa conceptual creada por DNA Agency, no afiliada con The Diamond Barbershop. Los precios y horarios mostrados son ejemplos ilustrativos solo para demostración.">Concept preview built by DNA Agency, not affiliated with The Diamond Barbershop. Prices and hours shown are illustrative placeholders for demonstration only.</p>
+      <p class="disclaimer" data-en="Concept preview built by DNA Agency, not affiliated with The Diamond Barbershop. Hours shown are illustrative placeholders for demonstration only." data-es="Vista previa conceptual creada por DNA Agency, no afiliada con The Diamond Barbershop. Los horarios mostrados son ejemplos ilustrativos solo para demostración.">Concept preview built by DNA Agency, not affiliated with The Diamond Barbershop. Hours shown are illustrative placeholders for demonstration only.</p>
     </div>
   </div>
 </footer>

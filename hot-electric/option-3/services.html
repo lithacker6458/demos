@@ -3,22 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="HOT Electric LLC. Master Electrician serving Cleburne and Johnson County, Texas since 2017. Panel upgrades, rewiring, EV chargers, lighting and 24/7 emergency electrical service. Licensed and insured, BBB A+.">
+<meta name="description" content="Residential and commercial electrical services from HOT Electric LLC in Cleburne, TX. Panel upgrades, rewiring, lighting, ceiling fans, EV charger installs, troubleshooting and 24/7 emergency service across Johnson County.">
 <meta name="theme-color" content="#0a0d12">
-<title>HOT Electric LLC | Master Electrician | Cleburne, TX</title>
+<title>Electrical Services | HOT Electric LLC | Cleburne, TX</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0d12'/%3E%3Cpath d='M18 4 8 18h6l-2 10L22 13h-6l2-9z' fill='%23ffae1a'/%3E%3C/svg%3E">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Electrician",
-  "name": "HOT Electric LLC",
-  "telephone": "+18179331981",
-  "address": { "@type": "PostalAddress", "addressLocality": "Cleburne", "addressRegion": "TX", "addressCountry": "US" },
-  "areaServed": "Cleburne and Johnson County, Texas",
-  "foundingDate": "2017",
-  "founder": { "@type": "Person", "name": "Michael Hall" }
-}
-</script>
 <style>
 /* ==========================================================================
    HOT ELECTRIC LLC / Option 3 / concept preview by DNA Agency
@@ -76,7 +64,7 @@ body{
   overflow-x: hidden;
 }
 
-img{ max-width: 100%; height: auto; display: block; }
+img{ max-width: 100%; display: block; }
 a{ color: inherit; }
 h1,h2,h3,h4{ margin: 0; line-height: 1.08; }
 p{ margin: 0 0 1rem; }
@@ -507,19 +495,10 @@ section{ position: relative; }
 .dive + .dive{ border-top: 1px solid var(--line-soft); }
 .dive-media{
   position: relative; border-radius: var(--radius); overflow: hidden;
-  width: 100%;
   aspect-ratio: 4 / 3;
-  max-height: 520px;
   box-shadow: 0 30px 70px rgba(0,0,0,.5);
 }
-/* portrait source images (ev-charger, hero-light) still crop to the 4/3 box,
-   never taller than the container */
-.dive-media img{
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
-  max-height: 100%;
-  object-fit: cover;
-}
+.dive-media img{ width: 100%; height: 100%; object-fit: cover; }
 .dive-media::after{
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(to top, rgba(10,13,18,.35), transparent 45%);
@@ -639,21 +618,17 @@ section{ position: relative; }
 .why-collage{ position: relative; min-height: 480px; }
 .why-collage .ph-a{
   position: absolute; top: 0; left: 0; width: 72%;
-  aspect-ratio: 4/3;
   border-radius: var(--radius); overflow: hidden;
   box-shadow: 0 30px 60px rgba(19,24,32,.28);
 }
-.why-collage .ph-a img{ width: 100%; height: 100%; max-height: 100%; object-fit: cover; }
+.why-collage .ph-a img{ aspect-ratio: 4/3; object-fit: cover; width: 100%; }
 .why-collage .ph-b{
   position: absolute; bottom: 0; right: 0; width: 46%;
-  aspect-ratio: 3/4;
   border-radius: var(--radius); overflow: hidden;
   border: 6px solid var(--paper);
   box-shadow: 0 24px 50px rgba(19,24,32,.3);
 }
-/* tools-workbench source is tall portrait; the 3/4 box crops it so it
-   can never render at its full 1778px height */
-.why-collage .ph-b img{ width: 100%; height: 100%; max-height: 100%; object-fit: cover; }
+.why-collage .ph-b img{ aspect-ratio: 3/4; object-fit: cover; width: 100%; }
 .why-badge{
   position: absolute; top: 58%; left: 4%;
   background: var(--coal); color: var(--bone);
@@ -1087,11 +1062,137 @@ html.mo-js .area-map .ring.r2{ animation-duration: 90s; animation-direction: rev
   .qf-progress-fill{ transition: none !important; }
   .btn, .svc-card, .dive-cta, .faq-item summary svg{ transition: none !important; }
 }
+</style>
 
-/* current-page marker in nav (shared across the site) */
+<style>
+/* ---- subpage-scoped additions, same tokens, no new palette ---- */
+.page-hero{
+  position: relative; isolation: isolate; overflow: hidden;
+  display: flex; align-items: flex-end;
+  min-height: clamp(420px, 66vh, 620px);
+  padding-top: 4.5rem;
+}
+.page-hero-media{ position: absolute; inset: 0; z-index: -3; }
+.page-hero-media img{ width: 100%; height: 100%; object-fit: cover; }
+.page-hero-content{
+  position: relative;
+  max-width: var(--maxw); margin: 0 auto; width: 100%;
+  padding: 3.5rem var(--gutter) clamp(2.4rem, 6vw, 4rem);
+}
+.page-hero h1{
+  font-family: var(--font-display); font-weight: 700; text-transform: uppercase;
+  font-size: clamp(2.3rem, 6vw, 4.4rem); letter-spacing: .01em;
+  max-width: 16ch; text-wrap: balance;
+  animation: hero-rise .9s var(--mo-ease) both;
+}
+.page-hero h1 em{ font-style: normal; color: var(--volt); text-shadow: 0 0 34px rgba(255,174,26,.35); }
+.page-hero .hero-eyebrow-row{ animation: hero-rise .9s var(--mo-ease) both; }
+.page-hero h1{ animation-delay: .12s; }
+.page-hero .hero-sub{ animation: hero-rise .9s var(--mo-ease) .26s both; }
+.page-hero .hero-ctas{ animation: hero-rise .9s var(--mo-ease) .4s both; }
+.crumbs{
+  display: flex; align-items: center; gap: .55rem; flex-wrap: wrap;
+  font-family: var(--font-mono); font-size: .68rem; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--mute); margin-bottom: 1.3rem;
+  animation: hero-rise .9s var(--mo-ease) both;
+}
+.crumbs a{ color: var(--bone-dim); text-decoration: none; }
+.crumbs a:hover{ color: var(--volt); }
+.crumbs span[aria-current]{ color: var(--volt); }
+
+/* current-page marker in nav */
 .main-nav a[aria-current="page"]{ color: var(--bone); }
 .main-nav a[aria-current="page"]::after{ right: 0; }
 .mobile-menu a[aria-current="page"]{ color: var(--volt); }
+
+/* generic prose blocks reused across subpages */
+.lead-2col{ display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(2rem,5vw,4.5rem); align-items: center; }
+@media (max-width: 880px){ .lead-2col{ grid-template-columns: 1fr; } }
+.prose p{ color: var(--mute); }
+.prose p + p{ margin-top: 0; }
+.framed-media{
+  position: relative; border-radius: var(--radius); overflow: hidden;
+  box-shadow: 0 30px 70px rgba(0,0,0,.5); aspect-ratio: 4/3;
+}
+.framed-media img{ width: 100%; height: 100%; object-fit: cover; }
+.framed-media::after{ content:""; position:absolute; inset:0; background: linear-gradient(to top, rgba(10,13,18,.35), transparent 45%); pointer-events:none; }
+
+/* checklist reused (dark) */
+.ck-list{ margin: 1.2rem 0 0; display: grid; gap: .6rem; }
+.ck-list li{ display: flex; align-items: flex-start; gap: .7rem; font-size: .96rem; color: var(--bone-dim); }
+.ck-list svg{ width: 17px; height: 17px; color: var(--volt); flex: none; margin-top: .2rem; }
+.on-paper .ck-list li{ color: var(--ink-soft); }
+.on-paper .ck-list svg{ color: var(--volt-deep); }
+
+/* services page: detailed service blocks with anchor targets */
+.svc-detail{ scroll-margin-top: 6rem; }
+.svc-index{ display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.6rem; }
+.svc-index a{
+  font-size: .85rem; font-weight: 600; color: var(--bone-dim); text-decoration: none;
+  border: 1px solid var(--line); border-radius: 99px; padding: .45rem 1rem;
+  transition: border-color .18s ease, color .18s ease, background .18s ease;
+}
+.svc-index a:hover{ border-color: var(--volt); color: var(--volt); background: rgba(255,174,26,.06); }
+
+/* about: values grid reuse svc-card look on dark */
+.val-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+@media (max-width: 880px){ .val-grid{ grid-template-columns: 1fr; } }
+
+/* contact page layout */
+.contact-grid{ display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(2rem,5vw,4.5rem); align-items: start; }
+@media (max-width: 980px){ .contact-grid{ grid-template-columns: 1fr; } }
+.contact-card{
+  background: var(--steel); border: 1px solid var(--line-soft); border-radius: 16px;
+  padding: clamp(1.5rem,3.5vw,2.4rem);
+}
+.contact-row{ display: flex; gap: 1rem; align-items: flex-start; padding: 1.15rem 0; border-bottom: 1px solid var(--line-soft); }
+.contact-row:last-child{ border-bottom: 0; }
+.contact-row .ci{
+  width: 42px; height: 42px; flex: none; border-radius: 9px;
+  background: rgba(255,174,26,.1); border: 1px solid rgba(255,174,26,.22);
+  display: grid; place-items: center;
+}
+.contact-row .ci svg{ width: 20px; height: 20px; color: var(--volt); }
+.contact-row h3{ font-family: var(--font-display); text-transform: uppercase; font-size: 1.1rem; letter-spacing: .03em; margin-bottom: .2rem; }
+.contact-row p, .contact-row a{ font-size: .95rem; color: var(--bone-dim); text-decoration: none; margin: 0; }
+.contact-row a.big-call{ font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; color: var(--volt); letter-spacing: .02em; }
+.contact-row a.big-call:hover{ text-decoration: underline; }
+
+/* simple contact form */
+.cform .qf-field{ margin-bottom: 1.15rem; }
+.cform label.fl{
+  display: block; font-size: .78rem; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--bone-dim); margin-bottom: .45rem;
+}
+.cform label.fl .opt{ color: var(--mute); font-weight: 500; text-transform: none; letter-spacing: 0; }
+.cform input, .cform select, .cform textarea{
+  width: 100%; padding: .85rem 1rem; background: rgba(10,13,18,.6);
+  border: 1px solid var(--line); border-radius: 8px; color: var(--bone);
+  font-family: var(--font-body); font-size: 1rem; transition: border-color .18s ease;
+}
+.cform textarea{ min-height: 130px; resize: vertical; }
+.cform input:focus, .cform select:focus, .cform textarea:focus{ border-color: var(--volt); outline: none; }
+.cform input.is-invalid, .cform textarea.is-invalid, .cform select.is-invalid{ border-color: var(--ember); }
+.cform select{ appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23ffae1a' stroke-width='2'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
+.cform select option{ background: var(--steel); color: var(--bone); }
+.cform .row-2{ display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 560px){ .cform .row-2{ grid-template-columns: 1fr; } }
+.cform-error{ color: #ff9b78; font-size: .85rem; margin: .2rem 0 1rem; min-height: 1.1em; font-weight: 600; }
+.cform .btn{ width: 100%; }
+.cform-success{ text-align: center; padding: 2.5rem 1rem; }
+.cform-success[hidden]{ display: none; }
+.cform-success-ico{ width: 74px; height: 74px; margin: 0 auto 1.4rem; border-radius: 50%; background: rgba(255,174,26,.12); border: 1px solid rgba(255,174,26,.4); display: grid; place-items: center; }
+.cform-success-ico svg{ width: 34px; height: 34px; color: var(--volt); }
+.cform-success h3{ font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: 1.8rem; margin-bottom: .6rem; }
+.cform-success p{ color: var(--bone-dim); max-width: 40ch; margin: 0 auto 1rem; }
+.cform-success a{ color: var(--volt); font-weight: 700; text-decoration: none; }
+
+/* hours table */
+.hours-list{ display: grid; gap: .1rem; }
+.hours-list li{ display: flex; justify-content: space-between; gap: 1rem; padding: .7rem 0; border-bottom: 1px solid var(--line-soft); font-size: .95rem; color: var(--bone-dim); }
+.hours-list li:last-child{ border-bottom: 0; }
+.hours-list li strong{ color: var(--bone); font-weight: 700; }
+.hours-list li .em{ color: var(--volt); font-weight: 700; }
 </style>
 </head>
 <body>
@@ -1103,7 +1204,7 @@ html.mo-js .area-map .ring.r2{ animation-duration: 90s; animation-direction: rev
 <!-- ======================= HEADER ======================= -->
 <header class="site-header" id="site-header">
   <div class="header-inner">
-    <a class="brand" href="#top" aria-label="HOT Electric LLC, back to top">
+    <a class="brand" href="index.html" aria-label="HOT Electric LLC, home">
       <svg class="brand-bolt" viewBox="0 0 32 32" aria-hidden="true"><path d="M18 3 7 18.5h6.4L11 29l11-15.5h-6.4L18 3z" fill="#ffae1a"/></svg>
       <span>
         <span class="brand-word">HOT <em>Electric</em></span>
@@ -1111,8 +1212,8 @@ html.mo-js .area-map .ring.r2{ animation-duration: 90s; animation-direction: rev
       </span>
     </a>
     <nav class="main-nav" aria-label="Primary">
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="services.html">Services</a>
+      <a href="index.html">Home</a>
+      <a href="services.html" aria-current="page">Services</a>
       <a href="service-area.html">Service Area</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
@@ -1132,8 +1233,8 @@ html.mo-js .area-map .ring.r2{ animation-duration: 90s; animation-direction: rev
 
 <div class="mobile-menu" id="mobile-menu">
   <nav aria-label="Mobile">
-    <a href="index.html" aria-current="page">Home</a>
-    <a href="services.html">Services</a>
+    <a href="index.html">Home</a>
+    <a href="services.html" aria-current="page">Services</a>
     <a href="service-area.html">Service Area</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
@@ -1147,13 +1248,12 @@ html.mo-js .area-map .ring.r2{ animation-duration: 90s; animation-direction: rev
 
 <main id="main">
 
-<!-- ======================= HERO ======================= -->
-<section class="hero" id="top" aria-label="Introduction">
-  <div class="hero-media kenburns">
-    <img src="../assets/hero-electrician.jpg" alt="Electrician in safety gear working on an outdoor electrical panel" width="1600" height="1067" fetchpriority="high">
+<!-- ======================= PAGE HERO ======================= -->
+<section class="page-hero" aria-label="Page introduction">
+  <div class="page-hero-media kenburns">
+    <img src="../assets/wiring-work.jpg" alt="Hand wiring an opened electrical switchboard" width="1600" height="1067" fetchpriority="high" style="object-position:50% 50%">
   </div>
   <div class="hero-scrim" aria-hidden="true"></div>
-
   <svg class="hero-sparks" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
     <polyline class="arc" points="1050,120 1120,150 1155,110 1240,170 1290,140 1400,210"/>
     <polyline class="arc a2" points="980,420 1080,390 1120,450 1230,410 1300,480 1440,440"/>
@@ -1162,82 +1262,40 @@ html.mo-js .area-map .ring.r2{ animation-duration: 90s; animation-direction: rev
     <circle class="node n2" cx="1120" cy="450" r="3"/>
     <circle class="node n3" cx="240" cy="670" r="3"/>
   </svg>
-
-  <div class="hero-content">
-    <div class="hero-eyebrow-row">
-      <span class="eyebrow">Master Electrician / Cleburne, Texas</span>
-    </div>
-    <h1>When it has to be <em>done right</em>, Cleburne calls HOT.</h1>
-    <p class="hero-sub">Panel upgrades, rewiring, EV chargers and 24/7 emergency service across Johnson County. A licensed Master Electrician on the job, a straight answer before work starts, and clean work that passes inspection the first time.</p>
+  <div class="page-hero-content">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Services</span>
+    </nav>
+    <div class="hero-eyebrow-row"><span class="eyebrow">Services</span></div>
+    <h1>Every service, done to <em>code.</em></h1>
+    <p class="hero-sub">Residential and commercial electrical for Cleburne and all of Johnson County. From a single ceiling fan to a full commercial build-out, if it carries current we install it, repair it or replace it, and we stand behind it.</p>
     <div class="hero-ctas">
-      <a class="btn btn-volt" href="#quote">
-        Request a Quote
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-      <a class="btn btn-ghost" href="tel:+18179331981">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.66 2.64a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.44-1.23a2 2 0 0 1 2.11-.45c.85.32 1.74.54 2.64.66A2 2 0 0 1 22 16.92z"/></svg>
-        817-933-1981
-      </a>
-    </div>
-  </div>
-
-  <p class="scroll-cue" aria-hidden="true">Scroll</p>
-
-  <div class="hero-trust">
-    <div class="hero-trust-inner">
-      <span class="trust-chip">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Licensed &amp; Insured
-      </span>
-      <span class="trust-chip">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M8.2 12.9 7 22l5-3 5 3-1.2-9.1"/></svg>
-        BBB A+ Rated
-      </span>
-      <span class="trust-chip">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 2 5 15.5h5.4L9 22l10-13.5h-5.4L15 2z"/></svg>
-        Master Electrician
-      </span>
-      <span class="trust-chip">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-        24/7 Emergency
-      </span>
-      <span class="trust-chip">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Serving Cleburne Since 2017
-      </span>
+      <a class="btn btn-volt" href="contact.html">Request a Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost" href="tel:+18179331981"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.66 2.64a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.44-1.23a2 2 0 0 1 2.11-.45c.85.32 1.74.54 2.64.66A2 2 0 0 1 22 16.92z"/></svg>817-933-1981</a>
     </div>
   </div>
 </section>
 
-<!-- ======================= STATS ======================= -->
-<section class="stats" aria-label="Company facts">
-  <div class="stats-inner" data-reveal-group>
-    <div class="stat">
-      <div class="stat-num"><span data-count="9" data-count-suf="+">9+</span></div>
-      <div class="stat-label">Years serving Johnson County</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">A+</div>
-      <div class="stat-label">BBB rating</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">24/7</div>
-      <div class="stat-label">Emergency response</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num"><span data-count="100" data-count-suf="%">100%</span></div>
-      <div class="stat-label">Licensed &amp; insured work</div>
-    </div>
-  </div>
-</section>
-
-<!-- ======================= SERVICES OVERVIEW ======================= -->
-<section class="section-pad" id="services">
+<!-- ======================= SERVICES OVERVIEW GRID ======================= -->
+<section class="section-pad" aria-label="Services overview">
   <div class="wrap">
     <div class="sec-head" data-reveal>
       <span class="eyebrow">What we do</span>
-      <h2 class="sec-title">Residential &amp; commercial, wired to code</h2>
-      <p class="sec-lede">From a single ceiling fan to a full commercial build-out. If it carries current, we install it, repair it or replace it, and we stand behind it.</p>
+      <h2 class="sec-title">Residential and commercial, wired right</h2>
+      <p class="sec-lede">Pick a service to jump to the detail, or scroll the full list. Every job starts with a look, a plain-English explanation of what we found, and a written scope before a single wire is touched.</p>
+      <div class="svc-index" aria-label="Jump to a service">
+      <a href="#residential">Residential Electrical</a>
+      <a href="#commercial">Commercial Electrical</a>
+      <a href="#panels">Panel Upgrades</a>
+      <a href="#rewiring">Whole Home Rewiring</a>
+      <a href="#lighting">Lighting</a>
+      <a href="#fans">Ceiling Fans</a>
+      <a href="#ev">EV Charger Installs</a>
+      <a href="#troubleshooting">Troubleshooting</a>
+      <a href="#emergency">Emergency Service</a>
+      </div>
     </div>
 
     <div class="svc-grid" data-reveal-group>
@@ -1249,7 +1307,7 @@ html.mo-js .area-map .ring.r2{ animation-duration: 90s; animation-direction: rev
       <div class="svc-card">
         <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/><path d="M16 9h4v12"/><path d="M2 21h20"/><path d="M8 7h2M8 11h2M8 15h2"/></svg></div>
         <h3>Commercial Electrical</h3>
-        <p>Shops, offices, restaurants and light industrial. Scheduled around your business hours.</p>
+        <p>Shops, offices, restaurants and light industrial, scheduled around your business hours.</p>
       </div>
       <div class="svc-card">
         <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="1"/><path d="M10 7h4M10 11h4M10 15h4"/></svg></div>
@@ -1278,7 +1336,7 @@ html.mo-js .area-map .ring.r2{ animation-duration: 90s; animation-direction: rev
       </div>
       <div class="svc-card">
         <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m14.7 6.3 3 3L21 6l-3-3-3.3 3.3z"/><path d="m2 22 8.5-8.5"/><path d="m14 4 6 6"/></svg></div>
-        <h3>Troubleshooting &amp; Repair</h3>
+        <h3>Troubleshooting</h3>
         <p>Dead outlets, tripping breakers, flickering lights. We find the cause, not just the symptom.</p>
       </div>
     </div>
@@ -1287,58 +1345,124 @@ html.mo-js .area-map .ring.r2{ animation-duration: 90s; animation-direction: rev
 
 <div class="circuit" aria-hidden="true"><i></i><b></b><i></i></div>
 
-<!-- ======================= DEEP DIVES ======================= -->
-<section class="section-pad" id="work" aria-label="Service details">
+<!-- ======================= SERVICE DETAILS ======================= -->
+<section class="section-pad" aria-label="Service details">
   <div class="wrap">
     <div class="sec-head" data-reveal>
       <span class="eyebrow">The work, up close</span>
-      <h2 class="sec-title">The jobs we get called for most</h2>
-      <p class="sec-lede">Every job starts the same way: we look, we explain what we found in plain English, and you get a written scope before a single wire is touched.</p>
+      <h2 class="sec-title">What each service actually includes</h2>
+      <p class="sec-lede">No mystery, no runaround. Here is how we approach the jobs we get called for most.</p>
     </div>
-
-    <div class="dive" data-reveal>
+    <div class="dive svc-detail" id="residential" data-reveal>
       <div class="dive-media">
-        <img src="../assets/panel-work.jpg" alt="Electrician working on an indoor circuit breaker panel" width="1600" height="1200" loading="lazy" data-parallax="0.06">
-        <span class="dive-tag">Panels</span>
+        <img src="../assets/hero-electrician.jpg" alt="Electrician in safety gear working on an outdoor electrical panel" width="1600" height="1200" loading="lazy" data-parallax="0.06" style="object-position:62% 40%">
+        <span class="dive-tag">Residential</span>
       </div>
       <div class="dive-body">
         <span class="dive-num">01</span>
-        <h3>Panel upgrades &amp; service changes</h3>
-        <p>Most homes around Cleburne were wired for a different era. Add a workshop, a tankless heater or an EV and a tired 100 amp panel starts tripping. We replace it with a properly sized, properly labeled panel that gives you room to grow.</p>
+        <h3>Residential electrical</h3>
+        <p>Homes around Cleburne cover a century of wiring standards. Whether you are adding a circuit for a workshop, updating a kitchen remodel, or chasing down a problem that comes and goes, you get a Master Electrician on the job and a straight answer before work starts.</p>
+        <ul class="dive-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Repairs, additions, remodels and new circuits</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Outlets, switches, GFCI and AFCI protection</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Whole-home safety inspections on request</li>
+        </ul>
+        <a class="dive-cta" href="contact.html">Request a quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <div class="dive svc-detail" id="commercial" data-reveal>
+      <div class="dive-media">
+        <img src="../assets/service-van.jpg" alt="White service van with a ladder on the roof rack" width="1600" height="1200" loading="lazy" data-parallax="0.06" style="object-position:50% 50%">
+        <span class="dive-tag">Commercial</span>
+      </div>
+      <div class="dive-body">
+        <span class="dive-num">02</span>
+        <h3>Commercial electrical</h3>
+        <p>Shops, offices, restaurants and light industrial spaces across Johnson County. We schedule around your business hours so the work does not cost you customers, and we keep the job to a written scope so there are no surprises when the doors reopen.</p>
+        <ul class="dive-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Tenant finish-outs and remodels</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Dedicated circuits for equipment and appliances</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Lighting, signage and exterior power</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Scheduled around your open hours</li>
+        </ul>
+        <a class="dive-cta" href="contact.html">Request a quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <div class="dive svc-detail" id="panels" data-reveal>
+      <div class="dive-media">
+        <img src="../assets/panel-work.jpg" alt="Electrician working on an indoor circuit breaker panel" width="1600" height="1200" loading="lazy" data-parallax="0.06" style="object-position:50% 50%">
+        <span class="dive-tag">Panels</span>
+      </div>
+      <div class="dive-body">
+        <span class="dive-num">03</span>
+        <h3>Panel upgrades and service changes</h3>
+        <p>Add a workshop, a tankless heater or an EV and a tired 100 amp panel starts tripping. We replace it with a properly sized, properly labeled panel that gives you room to grow, permits pulled and inspection handled for you.</p>
         <ul class="dive-list">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Load calculation before we recommend a size</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Permits pulled and inspection handled for you</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Every breaker labeled so you never guess again</li>
         </ul>
-        <a class="dive-cta" href="#quote" data-preselect="Panel upgrade or rewiring">Start a panel quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="dive-cta" href="contact.html">Request a quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
-
-    <div class="dive" data-reveal>
+    <div class="dive svc-detail" id="rewiring" data-reveal>
       <div class="dive-media">
-        <img src="../assets/wiring-work.jpg" alt="Hand wiring an opened electrical switchboard" width="1600" height="1065" loading="lazy" data-parallax="0.06">
+        <img src="../assets/wiring-work.jpg" alt="Hand wiring an opened electrical switchboard" width="1600" height="1200" loading="lazy" data-parallax="0.06" style="object-position:50% 50%">
         <span class="dive-tag">Rewiring</span>
       </div>
       <div class="dive-body">
-        <span class="dive-num">02</span>
-        <h3>Rewiring older homes</h3>
+        <span class="dive-num">04</span>
+        <h3>Whole home rewiring</h3>
         <p>Brittle insulation, aluminum branch circuits and DIY splices hiding in the attic are how house fires start. We rewire occupied homes room by room, keep the mess contained, and leave you with copper runs that will outlast the roof.</p>
         <ul class="dive-list">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Phased plans so you can stay in the house</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>GFCI and AFCI protection brought up to current code</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Drywall cuts kept minimal and documented</li>
         </ul>
-        <a class="dive-cta" href="#quote" data-preselect="Panel upgrade or rewiring">Ask about rewiring <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="dive-cta" href="contact.html">Request a quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
-
-    <div class="dive" data-reveal>
+    <div class="dive svc-detail" id="lighting" data-reveal>
       <div class="dive-media">
-        <img src="../assets/ev-charger.jpg" alt="Modern electric vehicle charging station" width="1200" height="1600" loading="lazy" data-parallax="0.06">
+        <img src="../assets/hero-light.jpg" alt="Warm Edison bulb glowing against a dark background" width="1600" height="1200" loading="lazy" data-parallax="0.06" style="object-position:50% 50%">
+        <span class="dive-tag">Lighting</span>
+      </div>
+      <div class="dive-body">
+        <span class="dive-num">05</span>
+        <h3>Lighting design and installation</h3>
+        <p>Good lighting changes how a room feels and how much it costs to run. We design and install recessed cans, under-cabinet runs, exterior security lighting and landscape lighting, planned before the first hole is cut.</p>
+        <ul class="dive-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Layout planned before any cutting begins</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Dimmers and LED retrofits that do not flicker</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Interior, exterior and landscape lighting</li>
+        </ul>
+        <a class="dive-cta" href="contact.html">Request a quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <div class="dive svc-detail" id="fans" data-reveal>
+      <div class="dive-media">
+        <img src="../assets/tools-workbench.jpg" alt="Organized workbench with electrician hand tools" width="1600" height="1200" loading="lazy" data-parallax="0.06" style="object-position:50% 50%">
+        <span class="dive-tag">Ceiling Fans</span>
+      </div>
+      <div class="dive-body">
+        <span class="dive-num">06</span>
+        <h3>Ceiling fan installs and replacements</h3>
+        <p>A wobbling fan usually means the box was never rated for it. We install and replace ceiling fans with proper bracing and a fan-rated box, so they hang straight, run quiet and stay that way.</p>
+        <ul class="dive-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>New installs and straight swaps</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Fan-rated boxes and proper bracing</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>The wobble fixed right, not just tightened</li>
+        </ul>
+        <a class="dive-cta" href="contact.html">Request a quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <div class="dive svc-detail" id="ev" data-reveal>
+      <div class="dive-media">
+        <img src="../assets/ev-charger.jpg" alt="Modern electric vehicle charging station" width="1600" height="1200" loading="lazy" data-parallax="0.06" style="object-position:50% 50%">
         <span class="dive-tag">EV Charging</span>
       </div>
       <div class="dive-body">
-        <span class="dive-num">03</span>
+        <span class="dive-num">07</span>
         <h3>EV charger installations</h3>
         <p>Charging overnight at home beats standing at a public charger every time. We install Level 2 chargers the right way: load calculation first, a dedicated circuit sized to the charger, and a clean mount where your cable actually reaches.</p>
         <ul class="dive-list">
@@ -1346,43 +1470,24 @@ html.mo-js .area-map .ring.r2{ animation-duration: 90s; animation-direction: rev
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Dedicated circuit sized to the charger, to code</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Garage, carport or outdoor rated installs</li>
         </ul>
-        <a class="dive-cta" href="#quote" data-preselect="EV charger install">Plan my charger install <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="dive-cta" href="contact.html">Request a quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
-
-    <div class="dive" data-reveal>
+    <div class="dive svc-detail" id="troubleshooting" data-reveal>
       <div class="dive-media">
-        <img src="../assets/hero-light.jpg" alt="Warm Edison bulb glowing against a dark background" width="1600" height="1600" loading="lazy" data-parallax="0.06">
-        <span class="dive-tag">Lighting</span>
-      </div>
-      <div class="dive-body">
-        <span class="dive-num">04</span>
-        <h3>Lighting &amp; ceiling fans</h3>
-        <p>Good lighting changes how a room feels and how much it costs to run. We design and install recessed cans, under-cabinet runs, exterior security lighting and ceiling fans that hang straight, run quiet and stay that way.</p>
-        <ul class="dive-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Layout planned before the first hole is cut</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Dimmers and LED retrofits that do not flicker</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Fan boxes braced properly, rated for the load</li>
-        </ul>
-        <a class="dive-cta" href="#quote" data-preselect="Lighting or ceiling fans">Brighten the place up <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-    </div>
-
-    <div class="dive" data-reveal>
-      <div class="dive-media">
-        <img src="../assets/wire-cutting.jpg" alt="Close-up of cutting a wire with pliers" width="1600" height="1067" loading="lazy" data-parallax="0.06">
+        <img src="../assets/wire-cutting.jpg" alt="Close-up of cutting a wire with pliers" width="1600" height="1200" loading="lazy" data-parallax="0.06" style="object-position:50% 50%">
         <span class="dive-tag">Diagnostics</span>
       </div>
       <div class="dive-body">
-        <span class="dive-num">05</span>
-        <h3>Troubleshooting that finds the real fault</h3>
+        <span class="dive-num">08</span>
+        <h3>Troubleshooting and repair</h3>
         <p>A breaker that trips once a week is telling you something. Half-dead outlets, warm switch plates, lights that dim when the AC kicks on: we trace the actual cause with proper test equipment instead of parts-swapping and hoping.</p>
         <ul class="dive-list">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Methodical circuit tracing, not guesswork</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>You see what we found before we fix it</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Safety hazards flagged honestly, no scare tactics</li>
         </ul>
-        <a class="dive-cta" href="#quote" data-preselect="Troubleshooting or repair">Get it diagnosed <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="dive-cta" href="contact.html">Request a quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
   </div>
@@ -1416,406 +1521,6 @@ html.mo-js .area-map .ring.r2{ animation-duration: 90s; animation-direction: rev
   </div>
 </section>
 
-<!-- ======================= WHY / PROCESS (paper band) ======================= -->
-<section class="on-paper section-pad" id="why">
-  <div class="wrap">
-    <div class="why-grid">
-      <div class="why-collage" data-reveal="left">
-        <div class="ph-a"><img src="../assets/service-van.jpg" alt="White service van with a ladder on the roof rack" width="1600" height="1000" loading="lazy"></div>
-        <div class="ph-b"><img src="../assets/tools-workbench.jpg" alt="Organized workbench with electrician hand tools" width="1000" height="1778" loading="lazy"></div>
-        <div class="why-badge" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-          <span><strong>Licensed &amp; Insured</strong><span>Master Electrician on every job</span></span>
-        </div>
-      </div>
-      <div data-reveal="right">
-        <span class="eyebrow">Why HOT Electric</span>
-        <h2 class="sec-title">Owner on the job. Not a call center.</h2>
-        <p class="sec-lede">HOT Electric is run by Michael Hall, a Master Electrician who has served Cleburne and Johnson County since 2017. When you call, you talk to the person responsible for the work. And when other shops are booked out or turn a job away, we pick up the phone.</p>
-        <div class="pillars">
-          <div class="pillar">
-            <div class="pillar-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 2 5 15.5h5.4L9 22l10-13.5h-5.4L15 2z"/></svg></div>
-            <div>
-              <h3>Master Electrician standard</h3>
-              <p>The highest license Texas issues. Every job is held to it, whether it is a ceiling fan or a commercial panel.</p>
-            </div>
-          </div>
-          <div class="pillar">
-            <div class="pillar-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15h6M9 11h2"/></svg></div>
-            <div>
-              <h3>Written scope before work starts</h3>
-              <p>You know exactly what we are doing and why before anyone touches a wire. No surprises when the job is done.</p>
-            </div>
-          </div>
-          <div class="pillar">
-            <div class="pillar-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
-            <div>
-              <h3>We show up when we say</h3>
-              <p>A confirmed window, a call when we are on the way, and boots on your doorstep inside it.</p>
-            </div>
-          </div>
-          <div class="pillar">
-            <div class="pillar-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
-            <div>
-              <h3>Clean, code-compliant work</h3>
-              <p>Labeled panels, tidy runs, floors swept before we leave. Work we would put our name on, because we do.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="process" data-reveal>
-      <h2 class="process-title">How a job with us goes</h2>
-      <div class="steps" data-reveal-group>
-        <div class="step">
-          <h4>You call or send the form</h4>
-          <p>Tell us what is going on. Every request gets a call back within one business day, usually sooner.</p>
-        </div>
-        <div class="step">
-          <h4>We look and give it to you straight</h4>
-          <p>On site, we diagnose the real issue and walk you through the options in plain English.</p>
-        </div>
-        <div class="step">
-          <h4>Written scope, then the work</h4>
-          <p>You approve a clear written scope first. Then the work gets done right, to code, on schedule.</p>
-        </div>
-        <div class="step">
-          <h4>We stand behind it</h4>
-          <p>Inspection passed, panel labeled, site clean. If anything is not right, we come back and make it right.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ======================= REVIEWS (placeholders) ======================= -->
-<section class="on-paper reviews-band section-pad" id="reviews">
-  <div class="wrap">
-    <div class="sec-head" data-reveal>
-      <span class="eyebrow">Reputation</span>
-      <h2 class="sec-title">What Johnson County says</h2>
-      <p class="sec-lede">This is a concept preview, so no reviews are invented here. On the live site, this section pulls your real 5 star Google reviews, with names and dates, straight from your Google Business Profile.</p>
-    </div>
-    <div class="review-grid" data-reveal-group>
-      <article class="review-card">
-        <span class="ph-tag">Placeholder</span>
-        <div class="review-stars" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
-        </div>
-        <p>Your real Google review appears here, word for word, with the customer's name and the date they posted it.</p>
-        <cite>Real customer, Cleburne TX</cite>
-      </article>
-      <article class="review-card">
-        <span class="ph-tag">Placeholder</span>
-        <div class="review-stars" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
-        </div>
-        <p>Another verified review slot. Nothing on this page is fabricated: the live site shows only reviews you actually received.</p>
-        <cite>Real customer, Johnson County</cite>
-      </article>
-      <article class="review-card">
-        <span class="ph-tag">Placeholder</span>
-        <div class="review-stars" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
-        </div>
-        <p>A third review slot. A link under this grid sends visitors to your full Google profile to read every review.</p>
-        <cite>Real customer, Burleson TX</cite>
-      </article>
-    </div>
-    <p class="review-note" data-reveal>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><circle cx="12" cy="16.5" r=".5"/></svg>
-      Review cards are intentionally marked as placeholders in this preview. Real reviews only, always.
-    </p>
-  </div>
-</section>
-
-<!-- ======================= SERVICE AREA ======================= -->
-<section class="section-pad" id="area">
-  <div class="wrap">
-    <div class="area-grid">
-      <div class="area-map" data-reveal="zoom" aria-hidden="true">
-        <svg viewBox="0 0 440 440">
-          <circle class="ring r3" cx="220" cy="220" r="200"/>
-          <circle class="ring r2" cx="220" cy="220" r="150"/>
-          <circle class="ring" cx="220" cy="220" r="100"/>
-          <circle class="hub-glow" cx="220" cy="220" r="26"/>
-          <circle class="hub" cx="220" cy="220" r="7"/>
-          <text class="hub-label" x="220" y="252" text-anchor="middle">Cleburne</text>
-          <circle class="town-dot" cx="252" cy="112" r="4"/>
-          <text x="252" y="98" text-anchor="middle">Burleson</text>
-          <circle class="town-dot" cx="238" cy="158" r="3.5"/>
-          <text x="238" y="145" text-anchor="middle">Joshua</text>
-          <circle class="town-dot" cx="322" cy="196" r="3.5"/>
-          <text x="322" y="183" text-anchor="middle">Alvarado</text>
-          <circle class="town-dot" cx="188" cy="270" r="3.5"/>
-          <text x="188" y="292" text-anchor="middle">Keene</text>
-          <circle class="town-dot" cx="118" cy="192" r="3.5"/>
-          <text x="118" y="178" text-anchor="middle">Godley</text>
-          <circle class="town-dot" cx="300" cy="316" r="3.5"/>
-          <text x="300" y="338" text-anchor="middle">Grandview</text>
-          <circle class="town-dot" cx="182" cy="352" r="3.5"/>
-          <text x="182" y="374" text-anchor="middle">Rio Vista</text>
-          <circle class="town-dot" cx="352" cy="132" r="3.5"/>
-          <text x="352" y="118" text-anchor="middle">Venus</text>
-        </svg>
-      </div>
-      <div data-reveal>
-        <span class="eyebrow">Where we work</span>
-        <h2 class="sec-title">Cleburne based. Johnson County wide.</h2>
-        <p class="sec-lede">Based in Cleburne and on the road across Johnson County every day. If you are close to any of these towns, you are in our service area.</p>
-        <ul class="town-list">
-          <li>Cleburne</li>
-          <li>Burleson</li>
-          <li>Joshua</li>
-          <li>Alvarado</li>
-          <li>Keene</li>
-          <li>Godley</li>
-          <li>Grandview</li>
-          <li>Rio Vista</li>
-          <li>Venus</li>
-          <li>Cross Timber</li>
-        </ul>
-        <p class="area-foot">A little outside the circle? Call anyway. For the right job we travel: <a href="tel:+18179331981">817-933-1981</a></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="circuit" aria-hidden="true"><i></i><b></b><i></i></div>
-
-<!-- ======================= FAQ ======================= -->
-<section class="section-pad" id="faq">
-  <div class="wrap">
-    <div class="sec-head" data-reveal>
-      <span class="eyebrow">Straight answers</span>
-      <h2 class="sec-title">Questions we hear every week</h2>
-    </div>
-    <div class="faq-list" data-reveal-group>
-      <details class="faq-item">
-        <summary>Are you actually licensed and insured?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
-        <div class="faq-body"><p>Yes. HOT Electric is a licensed and insured Texas electrical contractor, and the license behind the work is a Master Electrician license, the highest classification the state issues. Happy to show documentation before any job starts.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Do you pull permits and handle inspections?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
-        <div class="faq-body"><p>Yes, on every job that requires them. We pull the permit, schedule the inspection and are on site when the inspector shows up. Unpermitted electrical work can void insurance claims and stall a home sale, so we never skip it.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Will I know the scope before work starts?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
-        <div class="faq-body"><p>Always. After we diagnose the job you get a written scope describing exactly what will be done. Nothing beyond that scope happens without your say-so. It is how we work, on every job, for every customer.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Do you handle commercial properties?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
-        <div class="faq-body"><p>Yes. Retail, offices, restaurants, shops and light industrial across Johnson County. We schedule around your business hours so the work does not cost you customers.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Can my panel handle an EV charger?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
-        <div class="faq-body"><p>That is the first thing we check, with a real load calculation rather than a guess. Many homes can take a Level 2 charger as-is; some need a panel upgrade first. Either way you will know before you spend anything on hardware.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>What counts as an electrical emergency?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
-        <div class="faq-body"><p>A burning smell, a breaker that will not reset, sparking, a buzzing panel, or losing power to part of your home. Call 817-933-1981 any hour and we will talk you through making it safe. If you ever see flames or smoke, get out and call 911 first.</p></div>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- ======================= QUOTE FUNNEL ======================= -->
-<section class="quote-band section-pad" id="quote">
-  <div class="wrap">
-    <div class="quote-grid">
-      <div class="quote-side" data-reveal="left">
-        <span class="eyebrow">Request a quote</span>
-        <h2 class="sec-title">Tell us about the job</h2>
-        <p class="sec-lede">Four quick steps, under a minute. Michael reviews every request personally.</p>
-        <ul class="quote-side-points">
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-            A call back within one business day, guaranteed
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
-            A written scope before any work begins
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            No pressure, no obligation, no spam
-          </li>
-        </ul>
-        <div class="quote-side-call">
-          Rather just talk to a person?
-          <a href="tel:+18179331981">817-933-1981</a>
-        </div>
-      </div>
-
-      <div class="qf" data-reveal="right">
-        <!--
-          FORM ENDPOINT: swap REPLACE-WITH-CLIENT-EMAIL below for the client's
-          real email address to activate FormSubmit delivery (formsubmit.co).
-          Until it is swapped, the script runs the funnel in demo mode and
-          shows the success state without sending anything anywhere.
-        -->
-        <form id="quote-form" action="https://formsubmit.co/REPLACE-WITH-CLIENT-EMAIL" method="POST" novalidate>
-          <input type="hidden" name="_subject" value="New quote request from the HOT Electric website">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-          <div class="qf-progress" id="qf-progress">
-            <div class="qf-progress-rail"><div class="qf-progress-fill" id="qf-fill"></div></div>
-            <div class="qf-steps-nav" aria-hidden="true">
-              <span class="active" data-step-dot="0"><i>1.</i> Service</span>
-              <span data-step-dot="1"><i>2.</i> Details</span>
-              <span data-step-dot="2"><i>3.</i> Contact</span>
-              <span data-step-dot="3"><i>4.</i> Review</span>
-            </div>
-          </div>
-
-          <!-- STEP 1: service type -->
-          <div class="qf-step" data-step="0" role="group" aria-label="Step 1 of 4, service type">
-            <h3 tabindex="-1">What kind of work is it?</h3>
-            <p class="qf-hint">Pick the closest match. You can explain the details next.</p>
-            <div class="qf-services">
-              <div class="qf-svc">
-                <input type="radio" id="svc-res" name="service" value="Residential electrical">
-                <label for="svc-res"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h14V10"/></svg>Residential</label>
-              </div>
-              <div class="qf-svc">
-                <input type="radio" id="svc-com" name="service" value="Commercial electrical">
-                <label for="svc-com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/><path d="M16 9h4v12"/><path d="M2 21h20"/></svg>Commercial</label>
-              </div>
-              <div class="qf-svc">
-                <input type="radio" id="svc-panel" name="service" value="Panel upgrade or rewiring">
-                <label for="svc-panel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="1"/><path d="M10 7h4M10 11h4M10 15h4"/></svg>Panel / Rewiring</label>
-              </div>
-              <div class="qf-svc">
-                <input type="radio" id="svc-ev" name="service" value="EV charger install">
-                <label for="svc-ev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="2" width="10" height="14" rx="2"/><path d="M8 6h4M8 9h4"/><path d="M15 8h3a2 2 0 0 1 2 2v6a2 2 0 1 1-4 0v-3"/></svg>EV Charger</label>
-              </div>
-              <div class="qf-svc">
-                <input type="radio" id="svc-light" name="service" value="Lighting or ceiling fans">
-                <label for="svc-light"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.8.7 1 1.5 1 2.5h6c0-1 .2-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg>Lighting / Fans</label>
-              </div>
-              <div class="qf-svc">
-                <input type="radio" id="svc-fix" name="service" value="Troubleshooting or repair">
-                <label for="svc-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m14.7 6.3 3 3L21 6l-3-3-3.3 3.3z"/><path d="m2 22 8.5-8.5"/><path d="m14 4 6 6"/></svg>Troubleshooting</label>
-              </div>
-              <div class="qf-svc">
-                <input type="radio" id="svc-emg" name="service" value="Emergency">
-                <label for="svc-emg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 2 5 15.5h5.4L9 22l10-13.5h-5.4L15 2z"/></svg>Emergency</label>
-              </div>
-              <div class="qf-svc">
-                <input type="radio" id="svc-other" name="service" value="Something else">
-                <label for="svc-other"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>Something Else</label>
-              </div>
-            </div>
-            <div class="qf-emergency-note" id="qf-emergency-note" hidden>
-              <strong>This sounds urgent.</strong> The fastest path is the 24/7 line: <a href="tel:+18179331981">call 817-933-1981 now</a>. You can still send this form and we will call you back, but do not wait on it if something is smoking or sparking.
-            </div>
-            <p class="qf-error" data-error aria-live="polite"></p>
-          </div>
-
-          <!-- STEP 2: job details -->
-          <div class="qf-step" data-step="1" hidden role="group" aria-label="Step 2 of 4, job details">
-            <h3 tabindex="-1">Describe the job</h3>
-            <p class="qf-hint">A sentence or two is plenty. What is happening, and where?</p>
-            <div class="qf-field">
-              <label for="qf-details">What is going on?</label>
-              <textarea id="qf-details" name="job_details" required placeholder="Example: half the outlets in the kitchen went dead over the weekend, breaker looks fine."></textarea>
-            </div>
-            <div class="qf-field">
-              <label for="qf-property">Property type</label>
-              <select id="qf-property" name="property_type" required>
-                <option value="" selected disabled>Choose one</option>
-                <option>House</option>
-                <option>Business or commercial space</option>
-                <option>Rental property</option>
-                <option>New construction</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="qf-field">
-              <label id="qf-timing-label">How soon do you need it?</label>
-              <div class="qf-radio-row" role="radiogroup" aria-labelledby="qf-timing-label">
-                <span class="qf-pill"><input type="radio" id="t-now" name="timing" value="As soon as possible"><label for="t-now">As soon as possible</label></span>
-                <span class="qf-pill"><input type="radio" id="t-week" name="timing" value="Within a week"><label for="t-week">Within a week</label></span>
-                <span class="qf-pill"><input type="radio" id="t-month" name="timing" value="In the next month"><label for="t-month">In the next month</label></span>
-                <span class="qf-pill"><input type="radio" id="t-plan" name="timing" value="Just planning ahead"><label for="t-plan">Just planning</label></span>
-              </div>
-            </div>
-            <p class="qf-error" data-error aria-live="polite"></p>
-          </div>
-
-          <!-- STEP 3: contact -->
-          <div class="qf-step" data-step="2" hidden role="group" aria-label="Step 3 of 4, contact information">
-            <h3 tabindex="-1">Where do we call you back?</h3>
-            <p class="qf-hint">We call every request back within one business day.</p>
-            <div class="qf-field">
-              <label for="qf-name">Your name</label>
-              <input type="text" id="qf-name" name="name" required autocomplete="name" placeholder="First and last name">
-            </div>
-            <div class="qf-field">
-              <label for="qf-phone">Phone number</label>
-              <input type="tel" id="qf-phone" name="phone" required autocomplete="tel" inputmode="tel" placeholder="(817) 555-0100">
-            </div>
-            <div class="qf-field">
-              <label for="qf-email">Email <span class="opt">(optional)</span></label>
-              <input type="email" id="qf-email" name="email" autocomplete="email" placeholder="you@example.com">
-            </div>
-            <div class="qf-field">
-              <label id="qf-when-label">Best time to reach you</label>
-              <div class="qf-radio-row" role="radiogroup" aria-labelledby="qf-when-label">
-                <span class="qf-pill"><input type="radio" id="w-morning" name="callback_time" value="Morning"><label for="w-morning">Morning</label></span>
-                <span class="qf-pill"><input type="radio" id="w-afternoon" name="callback_time" value="Afternoon"><label for="w-afternoon">Afternoon</label></span>
-                <span class="qf-pill"><input type="radio" id="w-evening" name="callback_time" value="Evening"><label for="w-evening">Evening</label></span>
-                <span class="qf-pill"><input type="radio" id="w-any" name="callback_time" value="Any time" checked><label for="w-any">Any time</label></span>
-              </div>
-            </div>
-            <p class="qf-error" data-error aria-live="polite"></p>
-          </div>
-
-          <!-- STEP 4: review + submit -->
-          <div class="qf-step" data-step="3" hidden role="group" aria-label="Step 4 of 4, review and send">
-            <h3 tabindex="-1">Look it over, then send it</h3>
-            <p class="qf-hint">Make sure the phone number is right. That is how we reach you.</p>
-            <div class="qf-review">
-              <dl id="qf-review-list"></dl>
-            </div>
-            <p class="qf-consent">By sending this you agree to a call back from HOT Electric about this request. No marketing lists, ever.</p>
-            <p class="qf-error" data-error aria-live="polite"></p>
-          </div>
-
-          <div class="qf-nav" id="qf-nav">
-            <button type="button" class="qf-back" id="qf-back" hidden>Back</button>
-            <button type="button" class="btn btn-volt qf-next" id="qf-next">Next</button>
-          </div>
-        </form>
-
-        <div class="qf-success" id="qf-success" hidden tabindex="-1">
-          <div class="qf-success-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-          </div>
-          <h3>Request received</h3>
-          <p class="big-line">Thank you. Michael will review it and <strong>call you within one business day.</strong></p>
-          <p class="soon">Need help sooner? The line is open now: <a href="tel:+18179331981">817-933-1981</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 </main>
 
 <!-- ======================= FOOTER ======================= -->
@@ -1827,7 +1532,7 @@ html.mo-js .area-map .ring.r2{ animation-duration: 90s; animation-direction: rev
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.66 2.64a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.44-1.23a2 2 0 0 1 2.11-.45c.85.32 1.74.54 2.64.66A2 2 0 0 1 22 16.92z"/></svg>
         Call 817-933-1981
       </a>
-      <a class="btn btn-ghost" href="#quote">Request a Quote</a>
+      <a class="btn btn-ghost" href="contact.html">Request a Quote</a>
     </div>
   </div>
 
@@ -1845,12 +1550,12 @@ html.mo-js .area-map .ring.r2{ animation-duration: 90s; animation-direction: rev
     <div class="footer-col">
       <h3>Services</h3>
       <ul>
-        <li><a href="services.html#residential">Residential Electrical</a></li>
-        <li><a href="services.html#commercial">Commercial Electrical</a></li>
-        <li><a href="services.html#panels">Panel Upgrades</a></li>
-        <li><a href="services.html#rewiring">Rewiring</a></li>
-        <li><a href="services.html#ev">EV Charger Installs</a></li>
-        <li><a href="services.html#emergency">24/7 Emergency</a></li>
+        <li><a href="services.html">Residential Electrical</a></li>
+        <li><a href="services.html">Commercial Electrical</a></li>
+        <li><a href="services.html">Panel Upgrades</a></li>
+        <li><a href="services.html">Rewiring</a></li>
+        <li><a href="services.html">EV Charger Installs</a></li>
+        <li><a href="services.html">24/7 Emergency</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -1868,8 +1573,6 @@ html.mo-js .area-map .ring.r2{ animation-duration: 90s; animation-direction: rev
         <li class="fc-strong"><a href="tel:+18179331981">817-933-1981</a></li>
         <li>Cleburne, Texas</li>
         <li>Serving all of Johnson County</li>
-        <li>Mon to Fri: 7:30 AM to 6 PM</li>
-        <li class="fc-strong">Emergencies: 24/7</li>
       </ul>
     </div>
   </div>
@@ -1888,7 +1591,7 @@ html.mo-js .area-map .ring.r2{ animation-duration: 90s; animation-direction: rev
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.66 2.64a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.44-1.23a2 2 0 0 1 2.11-.45c.85.32 1.74.54 2.64.66A2 2 0 0 1 22 16.92z"/></svg>
     Call Now
   </a>
-  <a class="mc-quote" href="#quote">Get a Quote</a>
+  <a class="mc-quote" href="contact.html">Get a Quote</a>
 </div>
 
 <script>
@@ -1896,7 +1599,7 @@ html.mo-js .area-map .ring.r2{ animation-duration: 90s; animation-direction: rev
    HOT Electric, Option 3. Vanilla JS, zero dependencies.
    Motion engine inline-adapted from the DNA premium motion layer:
    progressive enhancement (html.mo-js gate), IntersectionObserver reveals,
-   count-up counters, rAF parallax, plus the multi-step quote funnel.
+   count-up counters, rAF parallax, header state and mobile menu.
    ========================================================================== */
 (function(){
   'use strict';
@@ -2038,175 +1741,6 @@ html.mo-js .area-map .ring.r2{ animation-duration: 90s; animation-direction: rev
   document.addEventListener('keydown', function(e){
     if (e.key === 'Escape') closeMenu();
   });
-
-  /* ==========================================================================
-     QUOTE FUNNEL
-     ========================================================================== */
-  var form = document.getElementById('quote-form');
-  var steps = [].slice.call(form.querySelectorAll('.qf-step'));
-  var dots = [].slice.call(document.querySelectorAll('[data-step-dot]'));
-  var fill = document.getElementById('qf-fill');
-  var backBtn = document.getElementById('qf-back');
-  var nextBtn = document.getElementById('qf-next');
-  var successBox = document.getElementById('qf-success');
-  var emgNote = document.getElementById('qf-emergency-note');
-  var current = 0;
-
-  function setError(stepEl, msg){
-    var box = stepEl.querySelector('[data-error]');
-    if (box) box.textContent = msg || '';
-  }
-
-  function markInvalid(el, bad){
-    el.classList.toggle('is-invalid', !!bad);
-    if (bad) el.setAttribute('aria-invalid', 'true');
-    else el.removeAttribute('aria-invalid');
-  }
-
-  function validateStep(i){
-    var stepEl = steps[i];
-    setError(stepEl, '');
-    if (i === 0){
-      var picked = form.querySelector('input[name="service"]:checked');
-      if (!picked){ setError(stepEl, 'Pick the option closest to your job to continue.'); return false; }
-      return true;
-    }
-    if (i === 1){
-      var details = document.getElementById('qf-details');
-      var property = document.getElementById('qf-property');
-      var timing = form.querySelector('input[name="timing"]:checked');
-      var ok = true;
-      var msgs = [];
-      if (!details.value.trim()){ markInvalid(details, true); msgs.push('a short description'); ok = false; }
-      else markInvalid(details, false);
-      if (!property.value){ markInvalid(property, true); msgs.push('the property type'); ok = false; }
-      else markInvalid(property, false);
-      if (!timing){ msgs.push('how soon you need it'); ok = false; }
-      if (!ok) setError(stepEl, 'Please add ' + msgs.join(' and ') + '.');
-      return ok;
-    }
-    if (i === 2){
-      var name = document.getElementById('qf-name');
-      var phone = document.getElementById('qf-phone');
-      var email = document.getElementById('qf-email');
-      var ok2 = true;
-      var msgs2 = [];
-      if (!name.value.trim()){ markInvalid(name, true); msgs2.push('your name'); ok2 = false; }
-      else markInvalid(name, false);
-      var digits = phone.value.replace(/\D/g, '');
-      if (digits.length < 10){ markInvalid(phone, true); msgs2.push('a 10 digit phone number'); ok2 = false; }
-      else markInvalid(phone, false);
-      if (email.value.trim() && !/^\S+@\S+\.\S+$/.test(email.value.trim())){
-        markInvalid(email, true); msgs2.push('a valid email (or leave it blank)'); ok2 = false;
-      } else markInvalid(email, false);
-      if (!ok2) setError(stepEl, 'Please enter ' + msgs2.join(', ') + '.');
-      return ok2;
-    }
-    return true;
-  }
-
-  function getVal(fieldName){
-    var checked = form.querySelector('input[name="' + fieldName + '"]:checked');
-    if (checked) return checked.value;
-    var field = form.querySelector('[name="' + fieldName + '"]');
-    return field ? field.value.trim() : '';
-  }
-
-  function esc(s){
-    return s.replace(/[&<>"']/g, function(c){
-      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
-    });
-  }
-
-  function buildReview(){
-    var rows = [
-      ['Service', getVal('service')],
-      ['Property', getVal('property_type')],
-      ['Timing', getVal('timing')],
-      ['The job', getVal('job_details')],
-      ['Name', getVal('name')],
-      ['Phone', getVal('phone')],
-      ['Email', getVal('email') || 'Not provided'],
-      ['Best time', getVal('callback_time')]
-    ];
-    document.getElementById('qf-review-list').innerHTML = rows.map(function(r){
-      return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>';
-    }).join('');
-  }
-
-  function goTo(i){
-    steps.forEach(function(s, idx){ s.hidden = idx !== i; });
-    dots.forEach(function(d, idx){
-      d.classList.toggle('active', idx === i);
-      d.classList.toggle('done', idx < i);
-    });
-    fill.style.width = (i / (steps.length - 1) * 100) + '%';
-    backBtn.hidden = i === 0;
-    nextBtn.textContent = i === steps.length - 1 ? 'Send My Request' : 'Next';
-    current = i;
-    var h = steps[i].querySelector('h3');
-    if (h) h.focus({ preventScroll: true });
-  }
-
-  nextBtn.addEventListener('click', function(){
-    if (!validateStep(current)) return;
-    if (current === steps.length - 1){ submitFunnel(); return; }
-    if (current + 1 === steps.length - 1) buildReview();
-    goTo(current + 1);
-  });
-  backBtn.addEventListener('click', function(){
-    if (current > 0) goTo(current - 1);
-  });
-
-  /* emergency pick: nudge toward the phone */
-  [].forEach.call(form.querySelectorAll('input[name="service"]'), function(r){
-    r.addEventListener('change', function(){
-      emgNote.hidden = getVal('service') !== 'Emergency';
-      setError(steps[0], '');
-    });
-  });
-
-  /* preselect links from the deep-dive sections */
-  [].forEach.call(document.querySelectorAll('[data-preselect]'), function(a){
-    a.addEventListener('click', function(){
-      var val = a.getAttribute('data-preselect');
-      var radio = form.querySelector('input[name="service"][value="' + val + '"]');
-      if (radio){
-        radio.checked = true;
-        emgNote.hidden = val !== 'Emergency';
-        if (current !== 0) goTo(0);
-      }
-    });
-  });
-
-  function showSuccess(){
-    form.hidden = true;
-    successBox.hidden = false;
-    successBox.focus({ preventScroll: true });
-  }
-
-  function submitFunnel(){
-    nextBtn.disabled = true;
-    nextBtn.textContent = 'Sending...';
-    var action = form.getAttribute('action');
-    if (action.indexOf('REPLACE-WITH-CLIENT-EMAIL') !== -1){
-      /* demo mode: endpoint not pointed at a real inbox yet, simulate the send */
-      setTimeout(showSuccess, 900);
-      return;
-    }
-    fetch(action, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    }).then(showSuccess).catch(showSuccess);
-  }
-
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    if (validateStep(current)) submitFunnel();
-  });
-
-  goTo(0);
 })();
 </script>
 

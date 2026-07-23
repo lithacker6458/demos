@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clippers ATL Barbershop | Precision Fades, Welcoming Vibes | Atlanta, GA</title>
+<meta name="description" content="Clippers ATL Barbershop inside Phenix Salons, Atlanta. Master Barber BJ delivers precision fades, crisp line ups and hot towel finishes. 5.0 stars across 200+ reviews. Walk-ins welcome, book on Booksy.">
+<style>
+  /* ============ DUSK BRASS, VINTAGE-MODERN BARBER LOUNGE ============ */
+  :root{
+    --brass:#C6923E;
+    --gold:#E9B872;
+    --bg:#16130F;
+    --surface:#221D17;
+    --surface-2:#2B241C;
+    --text:#F2EBDD;
+    --muted:#9A8E7B;
+    --hairline:#3A3128;
+    --brass-glow:rgba(198,146,62,.35);
+    --font-display:"Oswald","Bebas Neue","Impact","Haettenschweiler",sans-serif;
+    --font-body:Georgia,"Iberville","Times New Roman",serif;
+    --font-ui:"Helvetica Neue",Arial,sans-serif;
+    --maxw:1200px;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--font-ui);
+    line-height:1.6;
+    overflow-x:hidden;
+    /* subtle warm leather grain */
+    background-image:
+      radial-gradient(circle at 15% 8%, rgba(198,146,62,.06), transparent 42%),
+      radial-gradient(circle at 88% 92%, rgba(198,146,62,.05), transparent 46%);
+    background-attachment:fixed;
+  }
+  ::selection{background:var(--brass);color:#16130F}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+
+  /* fine film grain overlay for leather/wood texture feel */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode:overlay;
+  }
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.15rem,4vw,2.5rem)}
+  .eyebrow{
+    font-family:var(--font-ui);font-size:clamp(.66rem,1.4vw,.75rem);font-weight:700;
+    letter-spacing:.32em;text-transform:uppercase;color:var(--brass);
+    display:inline-flex;align-items:center;gap:.6rem;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:linear-gradient(90deg,var(--brass),transparent)}
+  .section-label{
+    font-family:var(--font-display);font-weight:500;text-transform:uppercase;
+    letter-spacing:.06em;line-height:.98;
+    font-size:clamp(1.9rem,5.2vw,3.4rem);
+  }
+  .lede{font-family:var(--font-body);color:var(--muted);font-size:clamp(1.02rem,2.1vw,1.2rem);max-width:56ch}
+
+  /* ---------- STICKY NAV ---------- */
+  .nav{
+    position:sticky;top:0;z-index:60;
+    background:rgba(22,19,15,.72);
+    backdrop-filter:blur(14px) saturate(1.2);
+    -webkit-backdrop-filter:blur(14px) saturate(1.2);
+    border-bottom:1px solid var(--hairline);
+    transition:background .3s ease,border-color .3s ease;
+  }
+  .nav.scrolled{background:rgba(22,19,15,.94)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{display:flex;align-items:center;gap:.7rem}
+  .brand-mark{width:34px;height:34px;flex:0 0 auto;filter:drop-shadow(0 0 6px var(--brass-glow))}
+  .brand-name{font-family:var(--font-display);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:1.12rem}
+  .brand-name span{color:var(--brass)}
+  .nav-links{display:none;gap:2.1rem;align-items:center}
+  .nav-links a{
+    font-family:var(--font-ui);font-size:.78rem;font-weight:600;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--muted);position:relative;padding:.2rem 0;transition:color .25s ease;
+  }
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:1.5px;background:var(--brass);transition:width .28s ease}
+  .nav-links a:hover{color:var(--text)}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{
+    font-family:var(--font-ui);font-size:.76rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+    padding:.62rem 1.2rem;border:1px solid var(--brass);border-radius:999px;color:var(--gold);
+    display:inline-flex;align-items:center;gap:.45rem;transition:all .25s ease;white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--brass);color:#16130F;box-shadow:0 0 22px var(--brass-glow)}
+  @media(min-width:900px){.nav-links{display:flex}}
+
+  /* ---------- UTILITY / HOURS BAR ---------- */
+  .util{
+    background:linear-gradient(90deg,var(--surface),var(--surface-2),var(--surface));
+    border-bottom:1px solid var(--hairline);
+    font-family:var(--font-ui);font-size:clamp(.68rem,1.5vw,.78rem);letter-spacing:.05em;
+  }
+  .util-inner{display:flex;align-items:center;justify-content:center;gap:clamp(.9rem,3vw,2.4rem);
+    flex-wrap:wrap;padding:.55rem 1rem;color:var(--muted);text-align:center}
+  .util-item{display:inline-flex;align-items:center;gap:.45rem}
+  .util-item strong{color:var(--gold);font-weight:600}
+  .util-dot{width:5px;height:5px;border-radius:50%;background:var(--brass);flex:0 0 auto;
+    box-shadow:0 0 8px var(--brass);animation:pulse 2.4s ease-in-out infinite}
+  .util-sep{width:1px;height:12px;background:var(--hairline)}
+  @media(max-width:560px){.util-sep{display:none}}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;overflow:hidden;padding:clamp(3rem,7vw,5.5rem) 0 clamp(3.5rem,8vw,6rem);isolation:isolate}
+  /* breathing warm-light haze */
+  .hero-haze{position:absolute;inset:-30% -10%;z-index:-2;
+    background:
+      radial-gradient(40% 44% at 30% 32%, rgba(233,184,114,.16), transparent 70%),
+      radial-gradient(46% 40% at 74% 62%, rgba(198,146,62,.14), transparent 72%),
+      conic-gradient(from 200deg at 60% 45%, rgba(198,146,62,.05), transparent 40%, rgba(233,184,114,.06) 75%, transparent);
+    filter:blur(8px);
+    animation:breathe 14s ease-in-out infinite;
+  }
+  .hero-vignette{position:absolute;inset:0;z-index:-1;pointer-events:none;
+    background:radial-gradient(120% 100% at 50% 0%, transparent 40%, rgba(11,9,7,.55) 100%)}
+  .hero-grid{display:grid;grid-template-columns:1fr;gap:clamp(2.2rem,5vw,3rem);align-items:center}
+  @media(min-width:940px){.hero-grid{grid-template-columns:1.35fr .65fr}}
+
+  .hero-copy .eyebrow{margin-bottom:1.4rem}
+  .hero h1{
+    font-family:var(--font-display);font-weight:600;text-transform:uppercase;
+    line-height:.9;letter-spacing:.005em;
+    font-size:clamp(2.9rem,10vw,6.3rem);
+    margin-bottom:1.4rem;
+  }
+  .hero h1 .line{display:block}
+  .hero h1 .accent{color:var(--brass)}
+  /* the FADES word literally fades on loop via animated gradient text */
+  .fade-word{
+    background:linear-gradient(90deg,#F2EBDD 0%,#F2EBDD 28%,#C6923E 52%,#9A8E7B 78%,#5c5347 100%);
+    background-size:220% 100%;
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;color:transparent;
+    animation:fadeSweep 5.5s ease-in-out infinite;
+  }
+  .hero p.sub{font-family:var(--font-body);color:var(--muted);font-size:clamp(1.05rem,2.3vw,1.32rem);
+    max-width:46ch;margin-bottom:2rem;line-height:1.5}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-bottom:1.8rem}
+  .btn{
+    font-family:var(--font-ui);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.82rem;
+    padding:1rem 1.7rem;border-radius:999px;display:inline-flex;align-items:center;gap:.6rem;
+    cursor:pointer;transition:all .26s cubic-bezier(.2,.7,.3,1);border:1px solid transparent;white-space:nowrap;
+  }
+  .btn-primary{background:linear-gradient(135deg,var(--gold),var(--brass));color:#16130F;
+    box-shadow:0 8px 30px -8px var(--brass-glow)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 40px -8px var(--brass-glow)}
+  .btn-ghost{background:transparent;border-color:var(--hairline);color:var(--text)}
+  .btn-ghost:hover{border-color:var(--brass);color:var(--gold);background:rgba(198,146,62,.06)}
+  .btn svg{width:17px;height:17px;flex:0 0 auto}
+
+  .rating-pill{
+    display:inline-flex;align-items:center;gap:.7rem;padding:.55rem 1.05rem;border-radius:999px;
+    background:linear-gradient(135deg,rgba(198,146,62,.16),rgba(233,184,114,.06));
+    border:1px solid var(--hairline);font-family:var(--font-ui);font-size:.82rem;color:var(--text);
+  }
+  .rating-pill .stars{display:inline-flex;gap:1px}
+  .rating-pill .stars svg{width:15px;height:15px}
+  .rating-pill b{color:var(--gold);font-weight:700}
+  .rating-pill .muted{color:var(--muted)}
+
+  /* barber pole */
+  .pole-stage{display:flex;justify-content:center;align-items:center;position:relative}
+  .pole-wrap{position:relative;width:clamp(88px,20vw,116px);height:clamp(300px,50vw,400px)}
+  .pole-glow{position:absolute;inset:-24% -60%;z-index:-1;
+    background:radial-gradient(50% 46% at 50% 50%, var(--brass-glow), transparent 72%);
+    filter:blur(10px);animation:breathe 9s ease-in-out infinite}
+  .pole-cap{height:clamp(16px,3vw,22px);border-radius:8px 8px 4px 4px;
+    background:linear-gradient(180deg,#e7d6b4,#b9932f 45%,#7d651f);
+    box-shadow:inset 0 2px 3px rgba(255,255,255,.5),0 3px 8px rgba(0,0,0,.5);position:relative;z-index:2}
+  .pole-cap.bottom{border-radius:4px 4px 8px 8px}
+  .pole-tube{
+    flex:1;position:relative;overflow:hidden;margin:5px 0;border-radius:10px;
+    background:repeating-linear-gradient(-52deg,
+      #F2EBDD 0 14px,
+      #C6923E 14px 28px,
+      #F2EBDD 28px 42px,
+      #221D17 42px 56px);
+    background-size:100% 79.2px;
+    animation:poleSpin 2.6s linear infinite;
+    box-shadow:inset 8px 0 14px -6px rgba(0,0,0,.6),inset -8px 0 14px -6px rgba(0,0,0,.6),
+      inset 0 0 0 1px rgba(0,0,0,.25);
+  }
+  /* glass cylinder highlight */
+  .pole-tube::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(90deg,rgba(0,0,0,.35) 0%,rgba(255,255,255,.28) 26%,transparent 46%,transparent 62%,rgba(0,0,0,.32) 100%)}
+  .pole-inner{display:flex;flex-direction:column;height:100%;
+    background:linear-gradient(180deg,#3a3128,#221D17);border-radius:12px;padding:5px;
+    box-shadow:0 22px 50px -14px rgba(0,0,0,.7),0 0 0 1px var(--hairline)}
+  /* self-drawing comb/scissor motif */
+  .pole-motif{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:150%;height:150%;
+    z-index:-1;opacity:.5;pointer-events:none}
+  .pole-motif path,.pole-motif line{stroke:var(--brass);stroke-width:1.4;fill:none;opacity:.55;
+    stroke-dasharray:600;stroke-dashoffset:600;animation:draw 3.4s ease forwards .5s}
+
+  /* ---------- BENEFIT STRIP ---------- */
+  .benefits{border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);
+    background:linear-gradient(180deg,rgba(43,36,28,.4),transparent)}
+  .benefits-grid{display:grid;grid-template-columns:1fr;gap:0}
+  @media(min-width:640px){.benefits-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1000px){.benefits-grid{grid-template-columns:repeat(4,1fr)}}
+  .benefit{padding:clamp(1.9rem,4vw,2.6rem) clamp(1.3rem,3vw,1.9rem);border-right:1px solid var(--hairline);
+    border-bottom:1px solid var(--hairline);position:relative}
+  .benefit:last-child{border-right:none}
+  @media(max-width:999px){.benefit:nth-child(2n){border-right:none}}
+  @media(max-width:639px){.benefit{border-right:none}}
+  .benefit-ico{width:44px;height:44px;margin-bottom:1.1rem;color:var(--brass);
+    filter:drop-shadow(0 0 8px var(--brass-glow))}
+  .benefit h3{font-family:var(--font-display);font-weight:500;text-transform:uppercase;letter-spacing:.05em;
+    font-size:1.28rem;margin-bottom:.5rem}
+  .benefit p{font-family:var(--font-body);color:var(--muted);font-size:.95rem;line-height:1.5}
+
+  /* ---------- SECTION SHELL ---------- */
+  section.block{padding:clamp(4rem,9vw,7rem) 0;position:relative}
+  .head{margin-bottom:clamp(2.4rem,5vw,3.4rem);max-width:64ch}
+  .head .eyebrow{margin-bottom:1.1rem}
+  .head p{margin-top:1.1rem}
+
+  /* ---------- SERVICES GRID ---------- */
+  .services-grid{display:grid;grid-template-columns:1fr;gap:1.1rem}
+  @media(min-width:600px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1000px){.services-grid{grid-template-columns:repeat(3,1fr)}}
+  .svc{
+    position:relative;background:linear-gradient(165deg,var(--surface),var(--bg));
+    border:1px solid var(--hairline);border-radius:14px;padding:1.7rem 1.6rem 1.6rem;overflow:hidden;
+    transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;
+  }
+  .svc::before{content:"";position:absolute;inset:0;border-radius:14px;pointer-events:none;
+    background:radial-gradient(120% 80% at 100% 0%, rgba(198,146,62,.10), transparent 55%);opacity:0;transition:opacity .3s ease}
+  .svc:hover{transform:translateY(-4px);border-color:rgba(198,146,62,.5);box-shadow:0 18px 40px -20px rgba(0,0,0,.8)}
+  .svc:hover::before{opacity:1}
+  .svc-art{width:100%;height:96px;margin-bottom:1.15rem;color:var(--brass)}
+  .svc h3{font-family:var(--font-display);font-weight:500;text-transform:uppercase;letter-spacing:.045em;
+    font-size:1.32rem;margin-bottom:.45rem;line-height:1.05}
+  .svc p{font-family:var(--font-body);color:var(--muted);font-size:.94rem;line-height:1.5}
+  .svc .idx{position:absolute;top:1.1rem;right:1.3rem;font-family:var(--font-display);font-size:.82rem;
+    letter-spacing:.15em;color:var(--hairline)}
+
+  /* ---------- STORY / ABOUT ---------- */
+  .about{position:relative;overflow:hidden}
+  .about-grid{display:grid;grid-template-columns:1fr;gap:clamp(2.4rem,5vw,3.4rem);align-items:center}
+  @media(min-width:920px){.about-grid{grid-template-columns:.9fr 1.1fr}}
+  .about-visual{position:relative;aspect-ratio:4/5;border-radius:16px;overflow:hidden;
+    border:1px solid var(--hairline);background:linear-gradient(160deg,var(--surface-2),var(--bg));
+    display:flex;align-items:center;justify-content:center;box-shadow:0 30px 70px -30px rgba(0,0,0,.9)}
+  .about-visual .chair-glow{position:absolute;inset:0;
+    background:radial-gradient(60% 44% at 50% 34%, rgba(233,184,114,.14), transparent 70%)}
+  .about-visual svg{width:82%;height:auto;color:var(--brass);position:relative;z-index:1;
+    filter:drop-shadow(0 0 18px var(--brass-glow))}
+  .about-badge{position:absolute;bottom:1.1rem;left:1.1rem;right:1.1rem;z-index:2;
+    background:rgba(22,19,15,.82);backdrop-filter:blur(6px);border:1px solid var(--hairline);
+    border-radius:12px;padding:.9rem 1.1rem;display:flex;align-items:center;gap:.85rem}
+  .about-badge .bnum{font-family:var(--font-display);font-size:2rem;line-height:1;color:var(--gold)}
+  .about-badge .btxt{font-family:var(--font-ui);font-size:.74rem;letter-spacing:.05em;color:var(--muted);text-transform:uppercase}
+  .about-copy h2{font-family:var(--font-display);font-weight:500;text-transform:uppercase;letter-spacing:.04em;
+    line-height:.98;font-size:clamp(2rem,5.4vw,3.4rem);margin-bottom:1.3rem}
+  .about-copy h2 em{font-style:normal;color:var(--brass)}
+  .about-copy p{font-family:var(--font-body);color:var(--muted);font-size:clamp(1.02rem,2.1vw,1.14rem);
+    line-height:1.7;margin-bottom:1.1rem;max-width:54ch}
+  .about-copy p strong{color:var(--text);font-weight:600}
+  .chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.7rem}
+  .chip{font-family:var(--font-ui);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;
+    padding:.5rem .95rem;border-radius:999px;border:1px solid var(--hairline);color:var(--muted);
+    background:rgba(43,36,28,.4);transition:all .25s ease}
+  .chip:hover{border-color:var(--brass);color:var(--gold)}
+
+  /* ---------- REVIEWS ---------- */
+  .reviews{background:linear-gradient(180deg,transparent,rgba(43,36,28,.35),transparent)}
+  .rev-top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1.5rem;
+    margin-bottom:clamp(2.2rem,5vw,3rem)}
+  .rev-score{display:flex;align-items:center;gap:1.1rem}
+  .rev-score .big{font-family:var(--font-display);font-size:clamp(3.2rem,8vw,4.6rem);line-height:.85;color:var(--gold)}
+  .rev-score .meta .stars{display:flex;gap:2px;margin-bottom:.3rem}
+  .rev-score .meta .stars svg{width:19px;height:19px}
+  .rev-score .meta span{font-family:var(--font-ui);font-size:.82rem;color:var(--muted);letter-spacing:.05em}
+  .reviews-grid{display:grid;grid-template-columns:1fr;gap:1.15rem}
+  @media(min-width:680px){.reviews-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1040px){.reviews-grid{grid-template-columns:repeat(3,1fr)}}
+  .review{background:linear-gradient(160deg,var(--surface),var(--bg));border:1px solid var(--hairline);
+    border-radius:14px;padding:1.6rem 1.55rem;display:flex;flex-direction:column;gap:1rem;
+    transition:transform .3s ease,border-color .3s ease}
+  .review:hover{transform:translateY(-3px);border-color:rgba(198,146,62,.4)}
+  .review .qmark{font-family:var(--font-body);font-size:2.6rem;line-height:.5;color:var(--brass);height:22px;opacity:.7}
+  .review .stars{display:flex;gap:2px}
+  .review .stars svg{width:15px;height:15px}
+  .review blockquote{font-family:var(--font-body);font-size:1rem;line-height:1.62;color:var(--text)}
+  .review cite{font-family:var(--font-ui);font-size:.76rem;letter-spacing:.05em;color:var(--muted);
+    font-style:normal;margin-top:auto;padding-top:.4rem;border-top:1px solid var(--hairline)}
+  .review cite b{color:var(--gold);font-weight:600}
+  .rev-note{font-family:var(--font-ui);font-size:.78rem;color:var(--muted);margin-top:1.5rem;letter-spacing:.03em}
+
+  /* ---------- LOCATION ---------- */
+  .loc-grid{display:grid;grid-template-columns:1fr;gap:clamp(2rem,4vw,2.6rem)}
+  @media(min-width:900px){.loc-grid{grid-template-columns:1fr 1fr}}
+  .loc-card{background:linear-gradient(165deg,var(--surface),var(--bg));border:1px solid var(--hairline);
+    border-radius:16px;padding:clamp(1.8rem,4vw,2.6rem)}
+  .loc-row{display:flex;gap:1rem;padding:1.15rem 0;border-bottom:1px solid var(--hairline)}
+  .loc-row:last-child{border-bottom:none}
+  .loc-row svg{width:24px;height:24px;flex:0 0 auto;color:var(--brass);margin-top:2px}
+  .loc-row h4{font-family:var(--font-ui);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.35rem}
+  .loc-row p{font-family:var(--font-body);color:var(--text);font-size:1.02rem;line-height:1.5}
+  .loc-row a{color:var(--gold);border-bottom:1px solid rgba(233,184,114,.35);transition:border-color .2s}
+  .loc-row a:hover{border-color:var(--gold)}
+  .loc-note{font-family:var(--font-ui);font-size:.76rem;color:var(--muted);margin-top:.4rem;line-height:1.5}
+  .hours-list{list-style:none}
+  .hours-list li{display:flex;justify-content:space-between;padding:.62rem 0;border-bottom:1px solid var(--hairline);
+    font-family:var(--font-ui);font-size:.92rem}
+  .hours-list li:last-child{border-bottom:none}
+  .hours-list li span:first-child{color:var(--muted);letter-spacing:.04em}
+  .hours-list li span:last-child{color:var(--text);font-weight:600}
+  .hours-list li.today{color:var(--gold)}
+  .hours-list li.today span{color:var(--gold)}
+  /* map-ish decorative panel */
+  .loc-map{position:relative;height:100%;min-height:230px;border-radius:16px;overflow:hidden;
+    border:1px solid var(--hairline);background:var(--surface)}
+  .loc-map svg{position:absolute;inset:0;width:100%;height:100%}
+  .loc-pin{position:absolute;top:44%;left:52%;transform:translate(-50%,-100%);z-index:2;color:var(--gold);
+    filter:drop-shadow(0 4px 8px rgba(0,0,0,.6))}
+  .loc-pin svg{width:38px;height:38px;position:static}
+  .loc-map .maplabel{position:absolute;bottom:1rem;left:1rem;z-index:2;font-family:var(--font-ui);
+    font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+    background:rgba(22,19,15,.75);padding:.4rem .7rem;border-radius:8px;border:1px solid var(--hairline)}
+
+  /* ---------- FINAL CTA ---------- */
+  .finalcta{position:relative;overflow:hidden;text-align:center;padding:clamp(4.5rem,10vw,7.5rem) 0}
+  .finalcta-haze{position:absolute;inset:-20%;z-index:-1;
+    background:radial-gradient(50% 60% at 50% 40%, rgba(198,146,62,.16), transparent 70%);
+    animation:breathe 11s ease-in-out infinite}
+  .finalcta h2{font-family:var(--font-display);font-weight:600;text-transform:uppercase;letter-spacing:.02em;
+    line-height:.92;font-size:clamp(2.4rem,8vw,5rem);margin-bottom:1.2rem}
+  .finalcta h2 .accent{color:var(--brass)}
+  .finalcta p{font-family:var(--font-body);color:var(--muted);font-size:clamp(1.05rem,2.3vw,1.28rem);
+    max-width:48ch;margin:0 auto 2.2rem}
+  .finalcta .hero-actions{justify-content:center}
+  .btn-call{font-size:clamp(1rem,2.6vw,1.28rem);padding:1.15rem 2.1rem}
+  .btn-disabled{background:transparent;border:1px dashed var(--hairline);color:var(--muted);cursor:not-allowed}
+  .btn-disabled:hover{transform:none;box-shadow:none;border-color:var(--hairline);color:var(--muted)}
+  .btn-disabled .soon{font-size:.62rem;letter-spacing:.14em;background:var(--hairline);color:var(--gold);
+    padding:.2rem .5rem;border-radius:999px;margin-left:.2rem}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--hairline);background:var(--surface);padding:clamp(3rem,6vw,4rem) 0 2rem}
+  .foot-grid{display:grid;grid-template-columns:1fr;gap:2rem;margin-bottom:2.4rem}
+  @media(min-width:760px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr}}
+  .foot-brand .brand{margin-bottom:1rem}
+  .foot-brand p{font-family:var(--font-body);color:var(--muted);font-size:.95rem;max-width:38ch;line-height:1.6}
+  .foot-col h5{font-family:var(--font-ui);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--brass);margin-bottom:1rem}
+  .foot-col a,.foot-col p{display:block;font-family:var(--font-ui);font-size:.9rem;color:var(--muted);
+    margin-bottom:.6rem;transition:color .2s ease}
+  .foot-col a:hover{color:var(--gold)}
+  .foot-bottom{border-top:1px solid var(--hairline);padding-top:1.6rem;display:flex;flex-wrap:wrap;
+    justify-content:space-between;gap:1rem;align-items:center}
+  .foot-bottom p{font-family:var(--font-ui);font-size:.76rem;color:var(--muted);letter-spacing:.02em}
+  .disclaimer{font-family:var(--font-ui);font-size:.74rem;color:var(--muted);text-align:center;
+    margin-top:1.4rem;padding-top:1.4rem;border-top:1px solid var(--hairline);letter-spacing:.03em;opacity:.85}
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}
+  .reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- KEYFRAMES ---------- */
+  @keyframes poleSpin{from{background-position:0 0}to{background-position:0 -79.2px}}
+  @keyframes fadeSweep{0%{background-position:0% 0}50%{background-position:100% 0}100%{background-position:0% 0}}
+  @keyframes breathe{0%,100%{opacity:.75;transform:scale(1)}50%{opacity:1;transform:scale(1.06)}}
+  @keyframes pulse{0%,100%{opacity:.4;transform:scale(.85)}50%{opacity:1;transform:scale(1.15)}}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  .float{animation:floaty 6s ease-in-out infinite}
+
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none}
+    .pole-motif path,.pole-motif line{stroke-dashoffset:0}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ STICKY NAV ============ -->
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand" aria-label="Clippers ATL Barbershop home">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <rect x="18" y="4" width="12" height="6" rx="2" fill="#E9B872"/>
+        <rect x="18" y="38" width="12" height="6" rx="2" fill="#E9B872"/>
+        <rect x="19" y="10" width="10" height="28" rx="3" fill="#221D17" stroke="#C6923E" stroke-width="1.4"/>
+        <path d="M20 12 L28 20 M20 20 L28 28 M20 28 L28 36" stroke="#C6923E" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-name">Clippers<span> ATL</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">The Shop</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit</a>
+    </div>
+    <a href="tel:+14047481810" class="nav-cta">
+      <svg viewBox="0 0 24 24" fill="none" width="15" height="15" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z" fill="currentColor"/></svg>
+      Call the Shop
+    </a>
+  </div>
+</nav>
+
+<!-- ============ UTILITY / HOURS BAR ============ -->
+<div class="util" id="top">
+  <div class="wrap util-inner">
+    <span class="util-item"><span class="util-dot"></span> <strong>Open 7 days</strong> · approx. 10AM to 9PM</span>
+    <span class="util-sep"></span>
+    <span class="util-item">Walk-ins welcome · last cut 8:30 PM</span>
+    <span class="util-sep"></span>
+    <span class="util-item">Inside Phenix Salons · Cheshire Bridge Rd, Atlanta</span>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-haze" aria-hidden="true"></div>
+  <div class="hero-vignette" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Master Barber BJ · Atlanta, GA</span>
+      <h1>
+        <span class="line">Precision</span>
+        <span class="line fade-word">Fades.</span>
+        <span class="line">Welcoming <span class="accent">Vibes.</span></span>
+      </h1>
+      <p class="sub">An upscale barber lounge tucked inside Phenix Salons. Crisp line ups, hot towel finishes, and a chair that fits every hair type and every age.</p>
+      <div class="hero-actions">
+        <a href="#visit" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 2v3M16 2v3M3 9h18M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          Book on Booksy
+        </a>
+        <a href="#services" class="btn btn-ghost">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Walk-ins Welcome
+        </a>
+      </div>
+      <div class="rating-pill">
+        <span class="stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg>
+        </span>
+        <span><b>5.0</b> rating <span class="muted">· 200+ Google reviews</span></span>
+      </div>
+    </div>
+
+    <!-- barber pole -->
+    <div class="pole-stage">
+      <div class="pole-wrap float">
+        <div class="pole-glow" aria-hidden="true"></div>
+        <svg class="pole-motif" viewBox="0 0 200 300" aria-hidden="true">
+          <path d="M40 60 Q100 20 160 60"/>
+          <line x1="52" y1="240" x2="150" y2="242"/>
+          <path d="M58 250 l14 -10 M58 262 l14 -10"/>
+          <circle cx="52" cy="255" r="6"/>
+          <circle cx="52" cy="243" r="6"/>
+        </svg>
+        <div class="pole-inner">
+          <div class="pole-cap" aria-hidden="true"></div>
+          <div class="pole-tube" role="img" aria-label="Rotating barber pole"></div>
+          <div class="pole-cap bottom" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ BENEFIT STRIP ============ -->
+<section class="benefits" aria-label="Why the shop">
+  <div class="wrap">
+    <div class="benefits-grid">
+      <div class="benefit reveal">
+        <svg class="benefit-ico" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="14" cy="16" r="5" stroke="currentColor" stroke-width="2"/>
+          <circle cx="14" cy="32" r="5" stroke="currentColor" stroke-width="2"/>
+          <path d="M18.5 19.5 38 34M18.5 28.5 38 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <h3>Precision, not rushed</h3>
+        <p>BJ takes his time on every fade and line up. The detail is the point.</p>
+      </div>
+      <div class="benefit reveal d1">
+        <svg class="benefit-ico" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M24 6l4.6 9.4 10.4 1.5-7.5 7.3 1.8 10.3L24 39.3l-9.3 4.9 1.8-10.3-7.5-7.3 10.4-1.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        </svg>
+        <h3>5.0 across 200+</h3>
+        <p>Consistently five stars on every platform the shop appears on.</p>
+      </div>
+      <div class="benefit reveal d2">
+        <svg class="benefit-ico" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M14 30c0-6 4-11 10-11s10 5 10 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="24" cy="13" r="5" stroke="currentColor" stroke-width="2"/>
+          <path d="M10 40h28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <h3>All ages, all textures</h3>
+        <p>Fades, curls, mullets and beards. Kid-friendly for ages 5 and up.</p>
+      </div>
+      <div class="benefit reveal d3">
+        <svg class="benefit-ico" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M10 22h28v10a6 6 0 0 1-6 6H16a6 6 0 0 1-6-6z" stroke="currentColor" stroke-width="2"/>
+          <path d="M38 24h3a4 4 0 0 1 0 8h-3" stroke="currentColor" stroke-width="2"/>
+          <path d="M18 10c0 2-2 3-2 5M24 10c0 2-2 3-2 5M30 10c0 2-2 3-2 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <h3>Lounge, not chop-shop</h3>
+        <p>Vintage-meets-modern seating, complimentary snacks and drinks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="block" id="services">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">The Menu</span>
+      <h2 class="section-label">Cuts, line ups and finishes,<br>done with intention.</h2>
+      <p class="lede">Every service is a full consultation first. Tell BJ the look, he builds it to your hair, your face, your routine.</p>
+    </div>
+
+    <div class="services-grid">
+      <!-- 1 -->
+      <article class="svc reveal">
+        <span class="idx">01</span>
+        <svg class="svc-art" viewBox="0 0 200 96" fill="none" aria-hidden="true">
+          <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E9B872"/><stop offset="1" stop-color="#C6923E"/></linearGradient></defs>
+          <path d="M40 78c0-24 12-46 30-46 6 0 10 3 10 8" stroke="url(#g1)" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M50 78c2-18 8-34 18-38" stroke="#3A3128" stroke-width="2"/>
+          <path d="M120 30 L160 60" stroke="url(#g1)" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="118" cy="26" r="7" stroke="url(#g1)" stroke-width="2.4"/>
+          <path d="M120 66 L160 40" stroke="url(#g1)" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="118" cy="70" r="7" stroke="url(#g1)" stroke-width="2.4"/>
+        </svg>
+        <h3>Precision Haircuts & Fades</h3>
+        <p>Skin, taper or blended fades built clean from the guard up. The core of the shop.</p>
+      </article>
+      <!-- 2 -->
+      <article class="svc reveal d1">
+        <span class="idx">02</span>
+        <svg class="svc-art" viewBox="0 0 200 96" fill="none" aria-hidden="true">
+          <rect x="46" y="30" width="108" height="34" rx="4" stroke="#C6923E" stroke-width="2.2"/>
+          <path d="M46 47 H154" stroke="#E9B872" stroke-width="2.6" stroke-dasharray="2 5" stroke-linecap="round"/>
+          <path d="M40 47 H30 M170 47 H160" stroke="#C6923E" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+        <h3>Sharp Line Ups</h3>
+        <p>Crisp, exact edges on the hairline and temples. The finish reviewers keep calling out.</p>
+      </article>
+      <!-- 3 -->
+      <article class="svc reveal d2">
+        <span class="idx">03</span>
+        <svg class="svc-art" viewBox="0 0 200 96" fill="none" aria-hidden="true">
+          <path d="M60 20c-6 14-6 30 0 44 8 18 32 18 40 0 6-14 6-30 0-44" stroke="#C6923E" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M72 40c4 8 12 8 16 0" stroke="#E9B872" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M120 30c10 6 10 30 20 34" stroke="#3A3128" stroke-width="2"/>
+        </svg>
+        <h3>Mullets & Statement Cuts</h3>
+        <p>Business up top, party in the back, or whatever shape you are chasing. Built to hold.</p>
+      </article>
+      <!-- 4 -->
+      <article class="svc reveal">
+        <span class="idx">04</span>
+        <svg class="svc-art" viewBox="0 0 200 96" fill="none" aria-hidden="true">
+          <path d="M70 24c-14 0-20 12-20 24s10 24 24 24 24-12 24-24" stroke="#C6923E" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M60 30c4 4 4 10 0 14M78 22c4 5 4 11 0 16M96 30c4 4 4 10 0 14" stroke="#E9B872" stroke-width="2.2" stroke-linecap="round"/>
+          <circle cx="140" cy="42" r="4" stroke="#3A3128" stroke-width="2"/>
+          <circle cx="150" cy="56" r="3" stroke="#3A3128" stroke-width="2"/>
+        </svg>
+        <h3>Curly Hair Cuts</h3>
+        <p>Every curl pattern and texture, shaped to the way your hair actually grows.</p>
+      </article>
+      <!-- 5 -->
+      <article class="svc reveal d1">
+        <span class="idx">05</span>
+        <svg class="svc-art" viewBox="0 0 200 96" fill="none" aria-hidden="true">
+          <path d="M70 22c-8 0-14 6-14 16 0 14 8 30 24 30s24-16 24-30c0-10-6-16-14-16" stroke="#C6923E" stroke-width="2.4"/>
+          <path d="M62 44c4 10 8 18 18 18s14-8 18-18" stroke="#E9B872" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M132 34 l22 0 M132 44 l16 0 M132 54 l20 0" stroke="#C6923E" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+        <h3>Beard Grooming & Trims</h3>
+        <p>Shaped, edged and trimmed to your face. Detailed beard consultation included.</p>
+      </article>
+      <!-- 6 -->
+      <article class="svc reveal d2">
+        <span class="idx">06</span>
+        <svg class="svc-art" viewBox="0 0 200 96" fill="none" aria-hidden="true">
+          <rect x="70" y="34" width="60" height="26" rx="13" stroke="#C6923E" stroke-width="2.4"/>
+          <path d="M84 28c0-4 2-6 0-10M100 26c0-4 2-6 0-10M116 28c0-4 2-6 0-10" stroke="#E9B872" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M78 66c2 4 6 6 10 6M112 66c-2 4-6 6-10 6" stroke="#3A3128" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <h3>Hot Towel Finish</h3>
+        <p>A warm towel close-out that, in one review, almost put the client to sleep.</p>
+      </article>
+      <!-- 7 -->
+      <article class="svc reveal">
+        <span class="idx">07</span>
+        <svg class="svc-art" viewBox="0 0 200 96" fill="none" aria-hidden="true">
+          <path d="M100 20c-16 0-28 12-28 28 0 12 8 24 28 28 20-4 28-16 28-28 0-16-12-28-28-28z" stroke="#C6923E" stroke-width="2.2"/>
+          <path d="M86 40c4-2 8-2 14-2M86 50c6-2 14-2 22 0" stroke="#E9B872" stroke-width="2.2" stroke-linecap="round"/>
+          <circle cx="120" cy="34" r="2.5" fill="#E9B872"/>
+          <circle cx="128" cy="46" r="2" fill="#E9B872"/>
+        </svg>
+        <h3>Wash, Shampoo & Condition</h3>
+        <p>A full hair wash with shampoo and conditioner before the finish. The reset button.</p>
+      </article>
+      <!-- 8 -->
+      <article class="svc reveal d1">
+        <span class="idx">08</span>
+        <svg class="svc-art" viewBox="0 0 200 96" fill="none" aria-hidden="true">
+          <circle cx="82" cy="40" r="12" stroke="#C6923E" stroke-width="2.4"/>
+          <path d="M70 66c0-8 5-12 12-12s12 4 12 12" stroke="#C6923E" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M118 34 h34 M118 44 h26 M118 54 h30" stroke="#E9B872" stroke-width="2.2" stroke-linecap="round"/>
+          <circle cx="112" cy="34" r="2.2" fill="#E9B872"/><circle cx="112" cy="44" r="2.2" fill="#E9B872"/><circle cx="112" cy="54" r="2.2" fill="#E9B872"/>
+        </svg>
+        <h3>Hair & Beard Consultation</h3>
+        <p>A detailed sit-down before the clippers move, so the result matches your idea.</p>
+      </article>
+      <!-- 9 -->
+      <article class="svc reveal d2">
+        <span class="idx">09</span>
+        <svg class="svc-art" viewBox="0 0 200 96" fill="none" aria-hidden="true">
+          <rect x="60" y="26" width="80" height="44" rx="6" stroke="#C6923E" stroke-width="2.2"/>
+          <path d="M60 40 H140" stroke="#3A3128" stroke-width="2"/>
+          <path d="M76 54 h12 M96 54 h28" stroke="#E9B872" stroke-width="2.4" stroke-linecap="round"/>
+          <circle cx="72" cy="33" r="2.4" fill="#E9B872"/>
+        </svg>
+        <h3>Book on Booksy or Walk In</h3>
+        <p>Reserve a chair online to skip the wait, or drop by. Walk-ins are always welcome.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY / ABOUT ============ -->
+<section class="block about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-visual reveal">
+      <div class="chair-glow" aria-hidden="true"></div>
+      <svg viewBox="0 0 200 250" fill="none" aria-hidden="true">
+        <!-- barber chair line-art -->
+        <path d="M60 70 h80 a10 10 0 0 1 10 10 v30 a10 10 0 0 1 -10 10 h-80 a10 10 0 0 1 -10 -10 v-30 a10 10 0 0 1 10 -10z" stroke="currentColor" stroke-width="2.4"/>
+        <path d="M62 70 v-24 a8 8 0 0 1 8 -8 h60 a8 8 0 0 1 8 8 v24" stroke="currentColor" stroke-width="2.4"/>
+        <path d="M50 118 v40 M150 118 v40" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M40 120 h30 M130 120 h30" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M70 160 h60 v10 a12 12 0 0 1 -12 12 h-36 a12 12 0 0 1 -12 -12z" stroke="currentColor" stroke-width="2.4"/>
+        <path d="M100 182 v34" stroke="currentColor" stroke-width="3"/>
+        <path d="M74 216 h52" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="100" cy="54" r="4" fill="currentColor" opacity=".6"/>
+      </svg>
+      <div class="about-badge">
+        <span class="bnum">7</span>
+        <span class="btxt">days a week<br>the chair is open</span>
+      </div>
+    </div>
+    <div class="about-copy reveal d1">
+      <span class="eyebrow">Inside Phenix Salons</span>
+      <h2>Master barber <em>artistry</em>,<br>a lounge that feels like home.</h2>
+      <p>Clippers ATL is an upscale-casual barber lounge in Atlanta, led by <strong>Master Barber BJ</strong>. The reputation is built on two things at once: cuts that are genuinely precise, and a room that is genuinely welcoming.</p>
+      <p>BJ is known for crispy line ups and fades that hold, and he takes his time to get there. The vibe around the chair stays chill and clean, the kind of place regulars call cool and welcoming, where kids get nailed haircuts and every hair texture is at home.</p>
+      <p>Vintage-meets-modern decor, lounge seating, complimentary snacks and drinks, and parking on site. Not a chop-shop. A shop you plan your week around.</p>
+      <div class="chips">
+        <span class="chip">Master Barber BJ</span>
+        <span class="chip">Kid-friendly (5+)</span>
+        <span class="chip">All hair types</span>
+        <span class="chip">Snacks & drinks</span>
+        <span class="chip">Parking available</span>
+        <span class="chip">Booksy + walk-ins</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="block reviews" id="reviews">
+  <div class="wrap">
+    <div class="rev-top reveal">
+      <div>
+        <span class="eyebrow">The Word on the Chair</span>
+        <h2 class="section-label" style="margin-top:1rem">What Atlanta<br>is saying.</h2>
+      </div>
+      <div class="rev-score">
+        <span class="big">5.0</span>
+        <div class="meta">
+          <div class="stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg>
+          </div>
+          <span>223+ reviews · consistently 5.0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <figure class="review reveal">
+        <span class="qmark" aria-hidden="true">&ldquo;</span>
+        <div class="stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg>
+        </div>
+        <blockquote>Shout-out to Julian best barber out here and outstanding customer service. The hair wash with shampoo &amp; conditioner service plus hot towel almost put me to sleep, great work. My hair and beard never looked this good.</blockquote>
+        <cite><b>Omar Castro</b> · Google review</cite>
+      </figure>
+
+      <figure class="review reveal d1">
+        <span class="qmark" aria-hidden="true">&ldquo;</span>
+        <div class="stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg>
+        </div>
+        <blockquote>Just started coming here! Great vibe and a great cut!</blockquote>
+        <cite><b>Manny Terrero</b> · Google review</cite>
+      </figure>
+
+      <figure class="review reveal d2">
+        <span class="qmark" aria-hidden="true">&ldquo;</span>
+        <div class="stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg>
+        </div>
+        <blockquote>We receive an AWESOME experience every appointment!</blockquote>
+        <cite><b>Ranesia Johnson</b> · Google review</cite>
+      </figure>
+
+      <figure class="review reveal">
+        <span class="qmark" aria-hidden="true">&ldquo;</span>
+        <div class="stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg>
+        </div>
+        <blockquote>Great atmosphere. Julian really takes his time and does amazing work!</blockquote>
+        <cite><b>Michael A.</b> · Google review</cite>
+      </figure>
+
+      <figure class="review reveal d1">
+        <span class="qmark" aria-hidden="true">&ldquo;</span>
+        <div class="stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg>
+        </div>
+        <blockquote>Great barbershop with a chill atmosphere and really clean, professional cuts. If you go, make sure to ask for Danial.</blockquote>
+        <cite><b>Ramish Omari</b> · Google review</cite>
+      </figure>
+
+      <figure class="review reveal d2">
+        <span class="qmark" aria-hidden="true">&ldquo;</span>
+        <div class="stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#E9B872"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg>
+        </div>
+        <blockquote>BJ gives crispy lineups and fades at this barbershop. The vibe here is so cool and welcoming, and it is so kid friendly the barbers nail my son's haircuts.</blockquote>
+        <cite><b>Community members</b> · Atly</cite>
+      </figure>
+    </div>
+    <p class="rev-note">Quotes are real, verbatim guest reviews from Google (via poyst) and the Atly community. Once your site is live, your live Google review feed drops in here automatically.</p>
+  </div>
+</section>
+
+<!-- ============ VISIT / LOCATION ============ -->
+<section class="block" id="visit">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Find the Chair</span>
+      <h2 class="section-label">Visit Clippers ATL.</h2>
+      <p class="lede">Tucked inside Phenix Salons on Cheshire Bridge Road. Parking on site, walk-ins welcome, appointments recommended to cut the wait.</p>
+    </div>
+
+    <div class="loc-grid">
+      <div class="loc-card reveal">
+        <div class="loc-row">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.6" stroke="currentColor" stroke-width="1.8"/></svg>
+          <div>
+            <h4>Location</h4>
+            <p>Inside Phenix Salons, 2329 Cheshire Bridge Rd NE, Suite 123, Atlanta, GA 30324</p>
+            <p class="loc-note"><a href="https://maps.google.com/?q=2329+Cheshire+Bridge+Rd+NE+Suite+123+Atlanta+GA+30324" target="_blank" rel="noopener">Get directions on Google Maps</a></p>
+          </div>
+        </div>
+        <div class="loc-row">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <div>
+            <h4>Hours</h4>
+            <ul class="hours-list">
+              <li><span>Monday</span><span>10 AM to 9 PM</span></li>
+              <li><span>Tuesday</span><span>10 AM to 9 PM</span></li>
+              <li><span>Wednesday</span><span>10 AM to 9 PM</span></li>
+              <li><span>Thursday</span><span>10 AM to 9 PM</span></li>
+              <li><span>Friday</span><span>10 AM to 9 PM</span></li>
+              <li><span>Saturday</span><span>10 AM to 9 PM</span></li>
+              <li><span>Sunday</span><span>10 AM to 9 PM</span></li>
+            </ul>
+            <p class="loc-note">Open 7 days a week, last customers accepted at 8:30 PM. Full day-by-day schedule is not publicly posted, so please confirm exact hours with the shop.</p>
+          </div>
+        </div>
+        <div class="loc-row">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          <div>
+            <h4>Call or book</h4>
+            <p><a href="tel:+14047481810">(404) 748-1810</a></p>
+            <p class="loc-note">Booking online through Booksy is the fastest way to lock a chair.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="loc-map reveal d1" aria-label="Approximate location map illustration">
+        <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="400" height="400" fill="#1c1812"/>
+          <!-- roads -->
+          <path d="M0 150 H400 M0 270 H400 M120 0 V400 M280 0 V400" stroke="#2B241C" stroke-width="18"/>
+          <path d="M0 150 H400 M0 270 H400 M120 0 V400 M280 0 V400" stroke="#3A3128" stroke-width="2" stroke-dasharray="8 10"/>
+          <path d="M40 40 L360 360" stroke="#2B241C" stroke-width="10"/>
+          <!-- blocks -->
+          <rect x="150" y="180" width="100" height="60" fill="#221D17" stroke="#3A3128" stroke-width="1.5"/>
+          <rect x="30" y="30" width="70" height="90" fill="#201b15" stroke="#332b22" stroke-width="1"/>
+          <rect x="300" y="290" width="70" height="80" fill="#201b15" stroke="#332b22" stroke-width="1"/>
+          <rect x="300" y="30" width="70" height="80" fill="#201b15" stroke="#332b22" stroke-width="1"/>
+        </svg>
+        <div class="loc-pin float">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 4.8 7 13 7 13s7-8.2 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+        </div>
+        <span class="maplabel">Cheshire Bridge Rd NE · Atlanta</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="finalcta">
+  <div class="finalcta-haze" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow" style="justify-content:center">Your next cut is a call away</span>
+      <h2 style="margin-top:1.2rem">Time for a <span class="accent">clean</span> one.</h2>
+      <p>Book a chair with BJ or the team, or just walk in. Precision fades, crisp line ups, and a room that is glad you came.</p>
+      <div class="hero-actions">
+        <a href="tel:+14047481810" class="btn btn-primary btn-call">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z" fill="currentColor"/></svg>
+          Call (404) 748-1810
+        </a>
+        <button class="btn btn-disabled" disabled aria-disabled="true">
+          Book Online <span class="soon">Coming Soon</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="brand">
+          <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect x="18" y="4" width="12" height="6" rx="2" fill="#E9B872"/>
+            <rect x="18" y="38" width="12" height="6" rx="2" fill="#E9B872"/>
+            <rect x="19" y="10" width="10" height="28" rx="3" fill="#221D17" stroke="#C6923E" stroke-width="1.4"/>
+            <path d="M20 12 L28 20 M20 20 L28 28 M20 28 L28 36" stroke="#C6923E" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+          <span class="brand-name">Clippers<span> ATL</span></span>
+        </a>
+        <p>Master barber artistry, precise fades, and welcoming vibes. An upscale barber lounge inside Phenix Salons, Atlanta.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Explore</h5>
+        <a href="#services">Services</a>
+        <a href="#about">The Shop</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#visit">Visit &amp; Hours</a>
+      </div>
+      <div class="foot-col">
+        <h5>Visit</h5>
+        <p>2329 Cheshire Bridge Rd NE, Suite 123<br>Atlanta, GA 30324</p>
+        <a href="tel:+14047481810">(404) 748-1810</a>
+        <p>Open 7 days · walk-ins welcome</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>&copy; <span id="yr">2026</span> Clippers ATL Barbershop. All rights reserved.</p>
+      <p>Atlanta, GA · 5.0 stars across 200+ reviews</p>
+    </div>
+    <!-- Contact form posts to FormSubmit once live. Swap the email below with the client's real inbox: -->
+    <!-- <form action="https://formsubmit.co/REPLACE-WITH-CLIENT-EMAIL" method="POST"> ... </form> -->
+    <p class="disclaimer">Concept preview built by DNA Agency, not affiliated with Clippers ATL Barbershop. Content is drawn from public listings and guest reviews; hours and details should be confirmed with the shop.</p>
+  </div>
+</footer>
+
+<script>
+  // year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // nav shadow on scroll
+  var nav = document.getElementById('nav');
+  var onScroll = function(){ nav.classList.toggle('scrolled', window.scrollY > 8); };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // scroll-reveal (respects reduced motion)
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items = document.querySelectorAll('.reveal');
+  if (reduce || !('IntersectionObserver' in window)) {
+    items.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    items.forEach(function(el){ io.observe(el); });
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunbusters Window Tinting | Austin Auto Tint &amp; Paint Protection Since 1994</title>
+<meta name="description" content="Sunbusters Window Tinting, Austin's award-winning FormulaOne by LLumar Select Pro dealer since 1994. Ceramic auto tint, paint protection film, and precision CNC-cut installs trusted by luxury dealers.">
+<style>
+  /* ============ TOKENS ============ */
+  :root{
+    --glass:#0B0E12;        /* near-black glass charcoal */
+    --surface:#14181F;      /* raised panel */
+    --surface-2:#1B212B;    /* higher panel */
+    --line:#232A35;         /* hairline */
+    --amber:#E8A62B;        /* warm Texas-sun gold */
+    --amber-hot:#F6C24A;    /* brighter amber for glow */
+    --blue:#2E5C8A;         /* deep signal blue, sparing */
+    --blue-soft:#3E74A8;
+    --text:#F2F4F7;         /* near-white */
+    --muted:#8A94A3;        /* cool slate */
+    --muted-dim:#5C6675;
+
+    --display:"Helvetica Neue","Arial Narrow",Arial,sans-serif;
+    --body:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,monospace;
+
+    --maxw:1200px;
+    --pad:clamp(1.25rem,5vw,2.5rem);
+    --radius:14px;
+
+    --ease:cubic-bezier(.2,.7,.2,1);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--glass);
+    color:var(--text);
+    font-family:var(--body);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:var(--amber);color:#0B0E12}
+
+  .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
+
+  .label{
+    font-family:var(--display);
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.22em;
+    font-size:clamp(.66rem,1.4vw,.74rem);
+    color:var(--amber);
+    display:inline-flex;align-items:center;gap:.6rem;
+  }
+  .label::before{
+    content:"";width:26px;height:1px;background:var(--amber);display:inline-block;
+  }
+
+  h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-.02em;line-height:1.02}
+  h2{font-size:clamp(1.9rem,5vw,3.2rem);text-transform:uppercase}
+  p{color:var(--muted)}
+  .amber{color:var(--amber)}
+
+  /* mono spec chip */
+  .chip{
+    font-family:var(--mono);
+    font-size:clamp(.62rem,1.3vw,.72rem);
+    letter-spacing:.02em;
+    text-transform:uppercase;
+    color:var(--text);
+    background:rgba(232,166,43,.07);
+    border:1px solid rgba(232,166,43,.28);
+    padding:.5rem .8rem;
+    border-radius:999px;
+    display:inline-flex;align-items:center;gap:.5rem;
+    white-space:nowrap;
+  }
+  .chip b{color:var(--amber);font-weight:600}
+
+  /* ============ NAV ============ */
+  header.nav{
+    position:sticky;top:0;z-index:60;
+    background:rgba(11,14,18,.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .brand{display:flex;align-items:center;gap:.7rem;font-family:var(--display);font-weight:800;letter-spacing:-.01em;font-size:1.12rem;text-transform:uppercase}
+  .brand svg{flex:none}
+  .brand .sun{color:var(--amber)}
+  .nav-links{display:flex;gap:2rem;align-items:center}
+  .nav-links a{font-size:.86rem;color:var(--muted);letter-spacing:.02em;transition:color .2s}
+  .nav-links a:hover{color:var(--text)}
+  .nav-call{
+    font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.04em;
+    font-size:.82rem;background:var(--amber);color:#0B0E12;
+    padding:.7rem 1.15rem;border-radius:10px;display:inline-flex;align-items:center;gap:.5rem;
+    transition:transform .2s var(--ease),box-shadow .2s;
+  }
+  .nav-call:hover{transform:translateY(-1px);box-shadow:0 8px 24px -8px rgba(232,166,43,.6)}
+  @media(max-width:860px){.nav-links{display:none}}
+
+  /* ============ UTILITY BAR ============ */
+  .util{
+    background:linear-gradient(90deg,#14181F,#191f29 55%,#14181F);
+    border-bottom:1px solid var(--line);
+    font-size:.76rem;
+  }
+  .util-inner{display:flex;align-items:center;justify-content:center;gap:1.4rem;height:38px;flex-wrap:wrap;color:var(--muted)}
+  .util b{color:var(--text);font-weight:600}
+  .util .dot{width:5px;height:5px;border-radius:50%;background:var(--amber);display:inline-block}
+  .util .live{color:var(--amber);font-family:var(--mono);font-size:.72rem;letter-spacing:.04em}
+  @media(max-width:620px){.util-inner span.hide-sm{display:none}}
+
+  /* ============ HERO ============ */
+  .hero{position:relative;overflow:hidden;padding:clamp(3rem,7vw,5.5rem) 0 clamp(3.5rem,8vw,6rem);isolation:isolate}
+  .hero-sun{
+    position:absolute;top:-18%;right:-10%;width:min(760px,85vw);height:min(760px,85vw);
+    background:radial-gradient(circle at center,rgba(246,194,74,.34) 0%,rgba(232,166,43,.14) 34%,rgba(232,166,43,0) 66%);
+    z-index:-2;pointer-events:none;
+    animation:sunPulse 9s ease-in-out infinite;
+  }
+  .hero-grid-bg{
+    position:absolute;inset:0;z-index:-3;pointer-events:none;opacity:.5;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(circle at 70% 15%,#000 0%,transparent 62%);
+            mask-image:radial-gradient(circle at 70% 15%,#000 0%,transparent 62%);
+  }
+  @keyframes sunPulse{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:1;transform:scale(1.06)}}
+
+  .hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+  @media(max-width:940px){.hero-inner{grid-template-columns:1fr;gap:2.6rem}}
+
+  .hero-badge{
+    display:inline-flex;align-items:center;gap:.6rem;
+    border:1px solid rgba(232,166,43,.3);border-radius:999px;
+    padding:.4rem .9rem .4rem .55rem;font-size:.74rem;color:var(--muted);
+    margin-bottom:1.6rem;background:rgba(232,166,43,.05);
+  }
+  .hero-badge .star{color:var(--amber)}
+  .hero-badge b{color:var(--text)}
+
+  .hero h1{
+    font-size:clamp(2.6rem,7.5vw,5rem);
+    text-transform:uppercase;line-height:.94;margin-bottom:1.3rem;
+  }
+  .hero h1 .u{
+    position:relative;display:inline-block;
+  }
+  .hero h1 .u::after{
+    content:"";position:absolute;left:0;bottom:-.06em;height:.09em;width:100%;
+    background:linear-gradient(90deg,var(--amber),var(--amber-hot));
+    transform:scaleX(0);transform-origin:left;
+    animation:drawLine 1s var(--ease) .5s forwards;border-radius:2px;
+  }
+  @keyframes drawLine{to{transform:scaleX(1)}}
+  .hero-sub{font-size:clamp(1rem,2.2vw,1.18rem);max-width:44ch;margin-bottom:1.7rem;color:var(--muted)}
+  .hero-sub strong{color:var(--text);font-weight:600}
+
+  .spec-row{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:2rem}
+
+  .hero-cta{display:flex;flex-wrap:wrap;gap:.9rem;align-items:center}
+  .btn{
+    font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.05em;
+    font-size:.92rem;padding:1rem 1.5rem;border-radius:12px;
+    display:inline-flex;align-items:center;gap:.65rem;cursor:pointer;border:none;
+    transition:transform .2s var(--ease),box-shadow .25s,background .2s;
+  }
+  .btn-amber{background:var(--amber);color:#0B0E12;box-shadow:0 10px 30px -12px rgba(232,166,43,.7)}
+  .btn-amber:hover{transform:translateY(-2px);box-shadow:0 16px 40px -12px rgba(232,166,43,.85);background:var(--amber-hot)}
+  .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
+  .btn-ghost.disabled{opacity:.42;cursor:not-allowed;pointer-events:none}
+  .btn small{display:block;font-family:var(--body);font-weight:400;letter-spacing:0;text-transform:none;font-size:.68rem;opacity:.8;margin-top:1px}
+
+  /* ---- HERO STAGE (car + tint sweep) ---- */
+  .stage{
+    position:relative;aspect-ratio:5/4;width:100%;
+    background:radial-gradient(ellipse at 60% 40%,#1a212c 0%,#0d1116 70%);
+    border:1px solid var(--line);border-radius:20px;overflow:hidden;
+    box-shadow:0 40px 80px -30px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.03);
+  }
+  .stage-floor{position:absolute;inset:auto 0 0 0;height:38%;background:linear-gradient(180deg,transparent,rgba(0,0,0,.55));z-index:1}
+  .stage-glow{
+    position:absolute;top:8%;right:6%;width:44%;height:44%;
+    background:radial-gradient(circle,rgba(246,194,74,.5),transparent 65%);
+    filter:blur(6px);z-index:0;
+    animation:glarePulse 3.5s var(--ease) infinite;
+  }
+  @keyframes glarePulse{0%,15%{opacity:1}55%{opacity:.12}85%,100%{opacity:1}}
+
+  .car-svg{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);width:88%;z-index:2}
+
+  /* heat shimmer over hood */
+  .shimmer{position:absolute;left:14%;top:30%;width:40%;height:14%;z-index:3;pointer-events:none;opacity:.55}
+  .shimmer span{
+    position:absolute;bottom:0;width:2px;height:100%;
+    background:linear-gradient(180deg,transparent,rgba(246,194,74,.5));
+    filter:blur(1.4px);border-radius:2px;
+    animation:rise 2.4s ease-in-out infinite;
+  }
+  .shimmer span:nth-child(1){left:12%;animation-delay:0s}
+  .shimmer span:nth-child(2){left:34%;animation-delay:.5s}
+  .shimmer span:nth-child(3){left:56%;animation-delay:1s}
+  .shimmer span:nth-child(4){left:78%;animation-delay:1.5s}
+  @keyframes rise{0%{transform:translateY(6px) scaleY(.7);opacity:0}40%{opacity:.7}100%{transform:translateY(-16px) scaleY(1.2);opacity:0}}
+
+  /* the tint sweep across the window rect */
+  .glass-window{position:absolute;z-index:4;overflow:hidden;border-radius:3px 10px 2px 2px}
+  .tint-sweep{
+    position:absolute;inset:0;
+    background:linear-gradient(90deg,rgba(11,14,18,0) 0%,rgba(11,14,18,.82) 42%,rgba(11,14,18,.92) 100%);
+    transform:translateX(-104%);
+    animation:sweep 3.5s var(--ease) infinite;
+  }
+  .scanline{
+    position:absolute;top:0;bottom:0;width:2px;left:0;
+    background:linear-gradient(180deg,transparent,var(--amber-hot),transparent);
+    box-shadow:0 0 12px 2px rgba(246,194,74,.8);
+    transform:translateX(-104%);
+    animation:sweepLine 3.5s var(--ease) infinite;
+  }
+  @keyframes sweep{0%{transform:translateX(-104%)}55%{transform:translateX(0)}100%{transform:translateX(0)}}
+  @keyframes sweepLine{0%{transform:translateX(-4px);opacity:0}6%{opacity:1}55%{transform:translateX(var(--sweep-w,240px));opacity:1}62%{opacity:0}100%{opacity:0}}
+
+  .stage-tag{
+    position:absolute;left:16px;bottom:16px;z-index:6;
+    font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;color:var(--muted);
+    background:rgba(11,14,18,.6);border:1px solid var(--line);padding:.35rem .6rem;border-radius:7px;
+  }
+  .stage-tag b{color:var(--amber)}
+
+  /* floating award badge */
+  .award{
+    position:absolute;right:14px;top:14px;z-index:6;
+    display:flex;align-items:center;gap:.6rem;
+    background:rgba(20,24,31,.86);border:1px solid rgba(232,166,43,.4);
+    border-radius:12px;padding:.6rem .8rem;backdrop-filter:blur(6px);
+    box-shadow:0 8px 24px -10px rgba(0,0,0,.7);
+    animation:float 5s ease-in-out infinite;
+  }
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+  .award svg{flex:none}
+  .award .t{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:.66rem;letter-spacing:.04em;line-height:1.25}
+  .award .t span{color:var(--amber);display:block;font-size:.58rem;letter-spacing:.1em}
+
+  /* ============ BENEFIT STRIP ============ */
+  .benefits{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface)}
+  .benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  @media(max-width:900px){.benefit-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.benefit-grid{grid-template-columns:1fr}}
+  .benefit{padding:clamp(1.8rem,3.5vw,2.6rem) clamp(1.4rem,3vw,2rem);border-right:1px solid var(--line);position:relative}
+  .benefit:last-child{border-right:none}
+  @media(max-width:900px){.benefit:nth-child(2){border-right:none}.benefit:nth-child(1),.benefit:nth-child(2){border-bottom:1px solid var(--line)}}
+  @media(max-width:520px){.benefit{border-right:none;border-bottom:1px solid var(--line)}.benefit:last-child{border-bottom:none}}
+  .benefit .ic{width:44px;height:44px;margin-bottom:1rem;color:var(--amber)}
+  .benefit h3{font-size:1.05rem;text-transform:uppercase;letter-spacing:.01em;margin-bottom:.5rem}
+  .benefit p{font-size:.9rem;line-height:1.55}
+
+  /* ============ SECTION SHELL ============ */
+  section.blk{padding:clamp(3.5rem,8vw,6.5rem) 0}
+  .sec-head{max-width:640px;margin-bottom:clamp(2rem,4vw,3rem)}
+  .sec-head h2{margin:.9rem 0 .8rem}
+  .sec-head p{font-size:1.02rem}
+
+  /* ============ STATS ============ */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1rem,3vw,2rem);margin-top:2.4rem}
+  @media(max-width:700px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stat{border-left:2px solid rgba(232,166,43,.5);padding-left:1.1rem}
+  .stat .n{font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,5vw,3.1rem);color:var(--amber);line-height:1;letter-spacing:-.03em}
+  .stat .l{font-size:.82rem;color:var(--muted);margin-top:.4rem;text-transform:uppercase;letter-spacing:.06em}
+
+  /* ============ SERVICES GRID ============ */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+  @media(max-width:900px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:600px){.svc-grid{grid-template-columns:1fr}}
+  .svc{
+    background:linear-gradient(160deg,var(--surface),#10141b);
+    border:1px solid var(--line);border-radius:var(--radius);
+    padding:1.6rem 1.5rem;position:relative;overflow:hidden;
+    transition:transform .3s var(--ease),border-color .3s,box-shadow .3s;
+  }
+  .svc::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 100% 0%,rgba(232,166,43,.1),transparent 55%);
+    opacity:0;transition:opacity .3s;
+  }
+  .svc:hover{transform:translateY(-5px);border-color:rgba(232,166,43,.4);box-shadow:0 24px 48px -24px rgba(0,0,0,.8)}
+  .svc:hover::before{opacity:1}
+  .svc-illus{height:96px;margin-bottom:1.1rem;position:relative;z-index:1}
+  .svc-illus svg{width:100%;height:100%}
+  .svc h3{font-size:1.12rem;text-transform:uppercase;margin-bottom:.5rem;position:relative;z-index:1}
+  .svc p{font-size:.9rem;line-height:1.55;position:relative;z-index:1}
+  .svc .tag{
+    display:inline-block;margin-top:.9rem;font-family:var(--mono);font-size:.64rem;
+    text-transform:uppercase;letter-spacing:.05em;color:var(--amber);
+    border-top:1px solid var(--line);padding-top:.7rem;position:relative;z-index:1;
+  }
+
+  /* ============ STORY ============ */
+  .story{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+  @media(max-width:880px){.story{grid-template-columns:1fr}}
+  .story-visual{
+    position:relative;aspect-ratio:4/5;border:1px solid var(--line);border-radius:18px;overflow:hidden;
+    background:radial-gradient(ellipse at 30% 20%,#1a212c,#0c1015);
+  }
+  .story-visual svg{position:absolute;inset:0;width:100%;height:100%}
+  .story-year{
+    position:absolute;left:22px;bottom:20px;font-family:var(--display);font-weight:800;
+    font-size:clamp(3rem,9vw,5rem);color:var(--amber);line-height:.85;letter-spacing:-.04em;z-index:2;
+  }
+  .story-year span{display:block;font-size:.8rem;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;margin-top:.4rem}
+  .story-body p{margin-bottom:1.1rem;font-size:1rem;color:var(--muted)}
+  .story-body p strong{color:var(--text);font-weight:600}
+  .story-quote{
+    border-left:2px solid var(--amber);padding:.4rem 0 .4rem 1.2rem;margin:1.6rem 0;
+    font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:-.01em;
+    font-size:clamp(1.05rem,2.4vw,1.4rem);color:var(--text);line-height:1.2;
+  }
+  .creds{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.4rem}
+
+  /* ============ REVIEWS ============ */
+  .reviews{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+  @media(max-width:900px){.rev-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:600px){.rev-grid{grid-template-columns:1fr}}
+  .rev{
+    background:var(--glass);border:1px solid var(--line);border-radius:var(--radius);
+    padding:1.5rem;display:flex;flex-direction:column;gap:.9rem;
+  }
+  .rev .stars{display:flex;gap:2px;color:var(--amber)}
+  .rev q{font-size:.98rem;line-height:1.55;color:var(--text);quotes:none;font-style:normal}
+  .rev q::before{content:"";}
+  .rev .src{font-size:.78rem;color:var(--muted);margin-top:auto;font-family:var(--mono);letter-spacing:.01em}
+  .rev.placeholder{
+    border-style:dashed;border-color:rgba(232,166,43,.3);
+    align-items:center;justify-content:center;text-align:center;gap:.5rem;min-height:150px;
+  }
+  .rev.placeholder .ph-ic{color:var(--amber);opacity:.7}
+  .rev.placeholder p{font-size:.86rem}
+  .rev.placeholder b{color:var(--text);font-family:var(--display);text-transform:uppercase;letter-spacing:.02em;font-size:.9rem}
+
+  .rev-banner{
+    display:flex;align-items:center;gap:1rem;flex-wrap:wrap;justify-content:center;
+    margin-top:2.4rem;padding:1.1rem 1.4rem;border:1px solid rgba(232,166,43,.3);
+    border-radius:12px;background:rgba(232,166,43,.04);
+  }
+  .rev-banner .big{font-family:var(--display);font-weight:800;font-size:1.8rem;color:var(--amber);letter-spacing:-.02em}
+  .rev-banner .txt{font-size:.9rem;color:var(--muted)}
+  .rev-banner .txt b{color:var(--text)}
+
+  /* ============ LOCATIONS ============ */
+  .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+  @media(max-width:760px){.loc-grid{grid-template-columns:1fr}}
+  .loc{
+    background:linear-gradient(160deg,var(--surface),#10141b);
+    border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;
+    display:flex;flex-direction:column;gap:.7rem;
+  }
+  .loc .pin{width:40px;height:40px;color:var(--amber)}
+  .loc h3{font-size:1.05rem;text-transform:uppercase}
+  .loc .addr{color:var(--muted);font-size:.94rem;line-height:1.5}
+  .loc .area{font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--amber)}
+  .loc a.dir{
+    margin-top:.4rem;align-self:flex-start;font-size:.82rem;color:var(--text);
+    border:1px solid var(--line);padding:.55rem .9rem;border-radius:9px;
+    display:inline-flex;align-items:center;gap:.5rem;transition:border-color .2s,color .2s;
+  }
+  .loc a.dir:hover{border-color:var(--amber);color:var(--amber)}
+  .hours{
+    margin-top:1.4rem;display:flex;flex-wrap:wrap;gap:1.6rem 2.6rem;
+    padding:1.3rem 1.5rem;border:1px solid var(--line);border-radius:12px;background:var(--surface);
+  }
+  .hours .h{display:flex;flex-direction:column;gap:.15rem}
+  .hours .h .d{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+  .hours .h .t{font-family:var(--display);font-weight:800;font-size:1.05rem}
+  .hours .h.closed .t{color:var(--muted-dim)}
+
+  /* ============ FINAL CTA ============ */
+  .cta-blk{position:relative;overflow:hidden;text-align:center;isolation:isolate}
+  .cta-blk::before{
+    content:"";position:absolute;inset:0;z-index:-1;
+    background:radial-gradient(ellipse at 50% -10%,rgba(232,166,43,.2),transparent 60%),
+               linear-gradient(180deg,#0d1116,#0B0E12);
+  }
+  .cta-blk .wrap{padding-top:clamp(3.5rem,8vw,6rem);padding-bottom:clamp(3.5rem,8vw,6rem)}
+  .cta-blk h2{font-size:clamp(2.2rem,6vw,4rem);margin:.9rem auto 1rem;max-width:16ch}
+  .cta-blk p{max-width:52ch;margin:0 auto 2rem;font-size:1.05rem}
+  .cta-actions{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}
+  .cta-phone{font-family:var(--mono);color:var(--muted);font-size:.9rem;margin-top:1.4rem;letter-spacing:.04em}
+  .cta-phone b{color:var(--text)}
+
+  /* ============ FOOTER ============ */
+  footer{background:var(--surface);border-top:1px solid var(--line);padding:3rem 0 2rem}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem;margin-bottom:2.4rem}
+  @media(max-width:760px){.foot-top{grid-template-columns:1fr}}
+  .foot-col h4{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.78rem;color:var(--muted);margin-bottom:1rem}
+  .foot-col a,.foot-col p{display:block;color:var(--muted);font-size:.9rem;margin-bottom:.5rem;transition:color .2s}
+  .foot-col a:hover{color:var(--amber)}
+  .foot-brand{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:1.3rem;margin-bottom:.7rem}
+  .foot-brand .sun{color:var(--amber)}
+  .foot-bar{border-top:1px solid var(--line);padding-top:1.4rem;display:flex;flex-wrap:wrap;gap:.6rem;justify-content:space-between;align-items:center}
+  .foot-bar p{font-size:.78rem;color:var(--muted-dim)}
+  .disclaimer{font-size:.76rem;color:var(--muted-dim);margin-top:1rem;font-family:var(--mono);letter-spacing:.01em}
+
+  /* ============ REVEAL ============ */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+
+  a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:6px}
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none !important;transition:none !important}
+    .reveal{opacity:1;transform:none}
+    .hero h1 .u::after{transform:scaleX(1)}
+    .tint-sweep{transform:translateX(0)}
+    .stage-glow{opacity:.12}
+    .scanline{opacity:0}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ UTILITY BAR ============ -->
+<div class="util">
+  <div class="wrap util-inner">
+    <span><span class="dot"></span> <b>Austin, TX</b> since 1994</span>
+    <span class="hide-sm"><b>FormulaOne</b> by LLumar Select Pro Dealer</span>
+    <span class="live">MON to FRI 8am to 6pm &nbsp;/&nbsp; SAT 8am to 3pm</span>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="Sunbusters Window Tinting home">
+      <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <circle cx="16" cy="16" r="6.5" fill="var(--amber)"/>
+        <g stroke="var(--amber)" stroke-width="2" stroke-linecap="round">
+          <path d="M16 2v4M16 26v4M2 16h4M26 16h4M6 6l2.8 2.8M23.2 23.2 26 26M26 6l-2.8 2.8M8.8 23.2 6 26"/>
+        </g>
+      </svg>
+      <span>Sun<span class="sun">busters</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#story">Our Story</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#locations">Locations</a>
+    </nav>
+    <a class="nav-call" href="tel:+15127948468" aria-label="Call Sunbusters at 512 794 8468">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+      (512) 794-8468
+    </a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<main id="top">
+<section class="hero">
+  <div class="hero-sun"></div>
+  <div class="hero-grid-bg"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <div class="hero-badge">
+        <span class="star">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        </span>
+        <b>4.9</b>&nbsp;from&nbsp;<b>589+</b>&nbsp;reviews&nbsp;<span style="color:var(--muted-dim)">/</span>&nbsp;Austin's award-winning tint shop
+      </div>
+      <h1>Surgical<br>precision.<br><span class="u">Since 1994.</span></h1>
+      <p class="hero-sub">Austin's <strong>FormulaOne by LLumar Select Pro dealer</strong> for ceramic auto tint and paint protection. The precision the city's luxury dealers trust, cut to your exact vehicle and warrantied for life.</p>
+      <div class="spec-row">
+        <span class="chip"><b>99%</b> UV rejected</span>
+        <span class="chip"><b>CNC</b> computer-cut</span>
+        <span class="chip"><b>&#8734;</b> lifetime warranty</span>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-amber" href="tel:+15127948468">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+          Call for a quote
+        </a>
+        <a class="btn btn-ghost" href="#services">
+          View services
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- ANIMATED STAGE -->
+    <div class="stage" aria-hidden="true">
+      <div class="stage-glow"></div>
+      <div class="award">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="9" r="6" fill="none" stroke="var(--amber)" stroke-width="1.6"/>
+          <path d="M12 6.2l1.1 2.2 2.4.3-1.8 1.7.5 2.4-2.2-1.2-2.2 1.2.5-2.4-1.8-1.7 2.4-.3z" fill="var(--amber)"/>
+          <path d="M9 14l-2 7 5-2.6L17 21l-2-7" fill="none" stroke="var(--blue-soft)" stroke-width="1.6" stroke-linejoin="round"/>
+        </svg>
+        <div class="t">LLumar Select Pro<span>TX Dealer of the Year &times;4</span></div>
+      </div>
+
+      <!-- pure-CSS/SVG luxury coupe -->
+      <svg class="car-svg" viewBox="0 0 520 240" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#2b3340"/>
+            <stop offset="1" stop-color="#12161d"/>
+          </linearGradient>
+          <linearGradient id="bodyHi" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#3c4757"/>
+            <stop offset="1" stop-color="#1b212b"/>
+          </linearGradient>
+          <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#4a5a6e"/>
+            <stop offset="1" stop-color="#232c39"/>
+          </linearGradient>
+          <radialGradient id="wheel" cx="50%" cy="50%" r="50%">
+            <stop offset="0" stop-color="#3a444f"/>
+            <stop offset="1" stop-color="#0d1016"/>
+          </radialGradient>
+        </defs>
+        <!-- ground shadow -->
+        <ellipse cx="260" cy="205" rx="220" ry="14" fill="#000" opacity=".5"/>
+        <!-- lower body -->
+        <path d="M40 168 C60 150 110 146 150 145 L360 143 C405 143 452 150 486 168 L486 178 C486 184 480 188 474 188 L52 188 C45 188 40 183 40 176 Z" fill="url(#bodyHi)"/>
+        <!-- cabin / roofline (low coupe) -->
+        <path d="M132 146 C160 96 205 78 262 78 C320 78 360 100 392 146 Z" fill="url(#body)"/>
+        <!-- hood + trunk sculpt line -->
+        <path d="M52 168 L470 168" stroke="#000" stroke-opacity=".35" stroke-width="2"/>
+        <path d="M132 146 C160 100 205 84 262 84 C318 84 358 104 388 146" stroke="var(--amber)" stroke-opacity=".25" stroke-width="1.5" fill="none"/>
+        <!-- side windows (tinted target) -->
+        <path d="M150 143 C172 106 206 92 250 92 L250 143 Z" fill="url(#glass)"/>
+        <path d="M262 92 C310 92 344 108 372 143 L262 143 Z" fill="url(#glass)"/>
+        <path d="M256 90 L256 143" stroke="#0d1016" stroke-width="3"/>
+        <!-- door line + handle -->
+        <path d="M210 148 L210 182 M250 148 L250 182" stroke="#000" stroke-opacity=".3" stroke-width="1.6"/>
+        <rect x="222" y="158" width="20" height="4" rx="2" fill="#000" opacity=".4"/>
+        <!-- headlight glow -->
+        <path d="M470 160 c8 1 14 4 16 8 -6 2 -12 2 -18 1 Z" fill="var(--amber)" opacity=".85"/>
+        <!-- rocker -->
+        <path d="M60 188 L466 188 L466 194 C466 197 463 199 460 199 L66 199 C63 199 60 196 60 193 Z" fill="#0c0f14"/>
+        <!-- wheels -->
+        <circle cx="150" cy="192" r="30" fill="#0b0e12"/>
+        <circle cx="150" cy="192" r="30" fill="url(#wheel)"/>
+        <circle cx="150" cy="192" r="13" fill="#161b23" stroke="#2b3340" stroke-width="2"/>
+        <g stroke="#2b3340" stroke-width="2"><path d="M150 180v-6M150 210v-6M138 192h-6M168 192h-6M142 184l-4-4M162 200l4 4M158 184l4-4M142 200l-4 4"/></g>
+        <circle cx="372" cy="192" r="30" fill="#0b0e12"/>
+        <circle cx="372" cy="192" r="30" fill="url(#wheel)"/>
+        <circle cx="372" cy="192" r="13" fill="#161b23" stroke="#2b3340" stroke-width="2"/>
+        <g stroke="#2b3340" stroke-width="2"><path d="M372 180v-6M372 210v-6M360 192h-6M390 192h-6M364 184l-4-4M384 200l4 4M380 184l4-4M364 200l-4 4"/></g>
+      </svg>
+
+      <!-- heat shimmer over hood -->
+      <div class="shimmer"><span></span><span></span><span></span><span></span></div>
+
+      <!-- tint sweep overlay positioned over the front side window -->
+      <div class="glass-window" style="left:29%;top:39%;width:16%;height:22%;">
+        <div class="tint-sweep"></div>
+        <div class="scanline" style="--sweep-w:100px"></div>
+      </div>
+      <div class="glass-window" style="left:49%;top:39%;width:22%;height:22%;">
+        <div class="tint-sweep" style="animation-delay:.15s"></div>
+        <div class="scanline" style="--sweep-w:150px;animation-delay:.15s"></div>
+      </div>
+
+      <div class="stage-floor"></div>
+      <div class="stage-tag">Ceramic tint applied &middot; <b>UV -99% &middot; IR -blocked</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BENEFIT STRIP ============ -->
+<section class="benefits">
+  <div class="benefit-grid">
+    <div class="benefit reveal">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+      <h3>Beat the Texas sun</h3>
+      <p>Nano-ceramic film rejects more than 99% of UV and blocks the infrared heat that bakes your cabin and fades your interior.</p>
+    </div>
+    <div class="benefit reveal">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l7 3v6c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V5z"/><path d="M9 12l2 2 4-4"/></svg>
+      <h3>Warrantied for life</h3>
+      <p>Ceramic tint is guaranteed for as long as you own the vehicle. Our PPF carries a nationwide limited lifetime warranty on material and labor.</p>
+    </div>
+    <div class="benefit reveal">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 4v14M7 21h10"/></svg>
+      <h3>Cut, not carved</h3>
+      <p>Computer-cut from a 20,000+ vehicle pattern database. No razor ever touches your glass, so the fit lands clean, edge to edge.</p>
+    </div>
+    <div class="benefit reveal">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="4"/><path d="M12 8v8M8 12h8" opacity=".5"/></svg>
+      <h3>Signal-safe by design</h3>
+      <p>Our nano-ceramic films will not interfere with NAV, GPS, radio, satellite, or keyless entry. Full tech, full protection.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="blk" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label">What we do</span>
+      <h2>Film, protection<br>&amp; precision electronics</h2>
+      <p>FormulaOne by LLumar films, SunTek paint protection, and the aftermarket electronics most tint shops do not touch. All of it installed by a tenured team under one roof.</p>
+    </div>
+
+    <div class="svc-grid">
+      <!-- 1 Auto tint -->
+      <div class="svc reveal">
+        <div class="svc-illus">
+          <svg viewBox="0 0 200 96" fill="none" aria-hidden="true">
+            <rect x="0" y="0" width="200" height="96" rx="8" fill="#10141b"/>
+            <path d="M30 74 C40 50 70 42 100 42 C130 42 160 50 170 74 Z" fill="url(#glass)" opacity=".5"/>
+            <path d="M30 74 C40 50 70 42 100 42 C130 42 160 50 170 74 Z" fill="#0B0E12" opacity=".55"/>
+            <path d="M100 42 L100 74" stroke="#0B0E12" stroke-width="3"/>
+            <rect x="30" y="74" width="140" height="6" rx="3" fill="#2b3340"/>
+            <line x1="30" y1="58" x2="170" y2="58" stroke="var(--amber)" stroke-width="1.5" stroke-dasharray="4 5" opacity=".8"/>
+            <circle cx="152" cy="52" r="12" fill="none" stroke="var(--amber)" stroke-width="1.5" opacity=".5"/>
+            <path d="M152 46v6M152 52l4 3" stroke="var(--amber)" stroke-width="1.5" opacity=".7"/>
+          </svg>
+        </div>
+        <h3>Automotive Window Tint</h3>
+        <p>FormulaOne by LLumar films in Ceramic, Stratos, Pinnacle, and High-Performance grades, matched to your look and your heat-rejection goals.</p>
+        <span class="tag">LLumar Ceramic / Stratos / Pinnacle</span>
+      </div>
+
+      <!-- 2 Clear IR ceramic -->
+      <div class="svc reveal">
+        <div class="svc-illus">
+          <svg viewBox="0 0 200 96" fill="none" aria-hidden="true">
+            <rect x="0" y="0" width="200" height="96" rx="8" fill="#10141b"/>
+            <path d="M60 20 C40 40 40 62 60 78" stroke="var(--amber)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M78 26 C64 42 64 58 78 72" stroke="var(--amber)" stroke-width="2" fill="none" stroke-linecap="round" opacity=".6"/>
+            <rect x="104" y="20" width="6" height="58" rx="3" fill="url(#glass)"/>
+            <path d="M118 30 C132 46 132 54 118 68" stroke="#3a444f" stroke-width="2" fill="none"/>
+            <path d="M134 24 C152 44 152 56 134 74" stroke="#2b3340" stroke-width="2" fill="none"/>
+            <circle cx="150" cy="49" r="4" fill="var(--muted)"/>
+          </svg>
+        </div>
+        <h3>Clear IR Ceramic Tint</h3>
+        <p>Serious infrared heat rejection without the dark look. Ideal for front windshields where you want a legal, near-invisible film that still kills the heat.</p>
+        <span class="tag">Heat rejection, minimal darkness</span>
+      </div>
+
+      <!-- 3 Windshield tint -->
+      <div class="svc reveal">
+        <div class="svc-illus">
+          <svg viewBox="0 0 200 96" fill="none" aria-hidden="true">
+            <rect x="0" y="0" width="200" height="96" rx="8" fill="#10141b"/>
+            <path d="M40 72 L60 30 L140 30 L160 72 Z" fill="url(#glass)" opacity=".55"/>
+            <path d="M100 30 L100 72" stroke="#0B0E12" stroke-width="2.5"/>
+            <path d="M40 72 L160 72" stroke="#2b3340" stroke-width="3"/>
+            <rect x="120" y="52" width="26" height="14" rx="3" fill="none" stroke="var(--amber)" stroke-width="1.5"/>
+            <path d="M124 59h18M133 53v12" stroke="var(--amber)" stroke-width="1.2" opacity=".7"/>
+            <text x="60" y="24" font-family="monospace" font-size="8" fill="var(--amber)">TX LEGAL</text>
+          </svg>
+        </div>
+        <h3>Front Windshield Tint</h3>
+        <p>High light-transmission film that keeps you Texas-legal and inspection-compliant while cutting glare and heat on the longest drives.</p>
+        <span class="tag">Inspection-compliant / high VLT</span>
+      </div>
+
+      <!-- 4 PPF -->
+      <div class="svc reveal">
+        <div class="svc-illus">
+          <svg viewBox="0 0 200 96" fill="none" aria-hidden="true">
+            <rect x="0" y="0" width="200" height="96" rx="8" fill="#10141b"/>
+            <path d="M35 66 C50 50 80 46 100 46 C120 46 150 50 165 66 Z" fill="url(#bodyHi)"/>
+            <path d="M35 66 C50 50 80 46 100 46 C120 46 150 50 165 66 Z" fill="none" stroke="var(--amber)" stroke-width="1.5" stroke-dasharray="3 4" opacity=".7"/>
+            <path d="M118 40 l4 4 -4 4 -4 -4z" fill="none" stroke="var(--amber)" stroke-width="1.4"/>
+            <path d="M126 36 l3 3 -3 3 -3 -3z" fill="var(--amber)" opacity=".5"/>
+            <path d="M52 74 h96" stroke="#2b3340" stroke-width="4" stroke-linecap="round"/>
+            <text x="46" y="34" font-family="monospace" font-size="8" fill="var(--amber)">SELF-HEALING</text>
+          </svg>
+        </div>
+        <h3>Paint Protection Film (PPF)</h3>
+        <p>SunTek clear-bra PPF with self-healing technology shrugs off rock chips and swirls. Transferrable nationwide limited lifetime warranty, material and labor.</p>
+        <span class="tag">SunTek / self-healing clear bra</span>
+      </div>
+
+      <!-- 5 Electronics -->
+      <div class="svc reveal">
+        <div class="svc-illus">
+          <svg viewBox="0 0 200 96" fill="none" aria-hidden="true">
+            <rect x="0" y="0" width="200" height="96" rx="8" fill="#10141b"/>
+            <rect x="70" y="30" width="60" height="36" rx="6" fill="#1b212b" stroke="#2b3340" stroke-width="1.5"/>
+            <circle cx="100" cy="48" r="7" fill="none" stroke="var(--amber)" stroke-width="1.8"/>
+            <path d="M100 44v4l3 2" stroke="var(--amber)" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M70 48 H44 M130 48 H156" stroke="var(--blue-soft)" stroke-width="1.5"/>
+            <circle cx="40" cy="48" r="3" fill="var(--blue-soft)"/>
+            <circle cx="160" cy="48" r="3" fill="var(--blue-soft)"/>
+            <path d="M100 30 C100 20 100 20 100 14" stroke="var(--amber)" stroke-width="1.5"/>
+            <path d="M92 16 a10 10 0 0116 0" stroke="var(--amber)" stroke-width="1.3" fill="none" opacity=".6"/>
+          </svg>
+        </div>
+        <h3>Automotive Electronics</h3>
+        <p>Alarms, keyless entry, remote start, radar detectors, and full car audio and video from Viper and DEI. A genuine edge most tint shops simply do not offer.</p>
+        <span class="tag">Viper / DEI &middot; remote start &middot; audio</span>
+      </div>
+
+      <!-- 6 Residential / commercial / decorative -->
+      <div class="svc reveal">
+        <div class="svc-illus">
+          <svg viewBox="0 0 200 96" fill="none" aria-hidden="true">
+            <rect x="0" y="0" width="200" height="96" rx="8" fill="#10141b"/>
+            <rect x="52" y="22" width="42" height="52" rx="3" fill="url(#glass)" opacity=".5" stroke="#2b3340" stroke-width="1.5"/>
+            <rect x="106" y="22" width="42" height="52" rx="3" fill="url(#glass)" opacity=".3" stroke="#2b3340" stroke-width="1.5"/>
+            <path d="M73 22v52M52 48h42M127 22v52M106 48h42" stroke="#2b3340" stroke-width="1"/>
+            <path d="M52 30 L94 66 M52 50 L82 74" stroke="var(--amber)" stroke-width="1" opacity=".35"/>
+            <path d="M106 34 h42 M106 44 h42 M106 54 h42" stroke="var(--amber)" stroke-width="1" opacity=".25"/>
+          </svg>
+        </div>
+        <h3>Home &amp; Commercial Film</h3>
+        <p>Residential, commercial, and decorative privacy window film, including Vista Window Film. The same heat and glare control, now for your house or storefront.</p>
+        <span class="tag">Residential / commercial / Vista decorative</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY ============ -->
+<section class="blk" id="story">
+  <div class="wrap story">
+    <div class="story-visual reveal" aria-hidden="true">
+      <svg viewBox="0 0 320 400" fill="none">
+        <defs>
+          <linearGradient id="skg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#1f2833"/><stop offset="1" stop-color="#0c1015"/>
+          </linearGradient>
+        </defs>
+        <rect width="320" height="400" fill="url(#skg)"/>
+        <!-- sun -->
+        <circle cx="240" cy="90" r="46" fill="var(--amber)" opacity=".9"/>
+        <circle cx="240" cy="90" r="70" fill="none" stroke="var(--amber)" stroke-width="1" opacity=".3"/>
+        <circle cx="240" cy="90" r="96" fill="none" stroke="var(--amber)" stroke-width="1" opacity=".15"/>
+        <!-- carport / bay silhouette -->
+        <path d="M30 250 L30 190 L160 150 L290 190 L290 250" fill="none" stroke="#3a444f" stroke-width="3"/>
+        <path d="M30 190 L160 150 L290 190" fill="#161b23"/>
+        <rect x="30" y="250" width="260" height="120" fill="#10141b"/>
+        <rect x="52" y="266" width="60" height="88" fill="#0b0e12" stroke="#2b3340" stroke-width="1.5"/>
+        <rect x="130" y="266" width="60" height="88" fill="#0b0e12" stroke="#2b3340" stroke-width="1.5"/>
+        <rect x="208" y="266" width="60" height="88" fill="#0b0e12" stroke="#2b3340" stroke-width="1.5"/>
+        <!-- car in bay -->
+        <path d="M140 340 C150 322 175 318 195 318 C215 318 240 322 250 340 Z" fill="#232c39"/>
+        <path d="M160 320 C168 306 178 302 195 302 C212 302 222 306 230 320" fill="#2b3340"/>
+        <circle cx="165" cy="344" r="9" fill="#0b0e12" stroke="#3a444f" stroke-width="1.5"/>
+        <circle cx="228" cy="344" r="9" fill="#0b0e12" stroke="#3a444f" stroke-width="1.5"/>
+        <!-- heat lines -->
+        <path d="M70 360 q6 -12 0 -24 M90 360 q6 -12 0 -24" stroke="var(--amber)" stroke-width="1.4" opacity=".35" fill="none"/>
+      </svg>
+      <div class="story-year">1994<span>The carport where it started</span></div>
+    </div>
+
+    <div class="story-body reveal">
+      <span class="label">Our story</span>
+      <h2 style="margin:.9rem 0 1.2rem">From a carport<br>to Austin's best</h2>
+      <p>Sunbusters began in 1994 as a simple enclosed carport at <strong>11655 Research Blvd</strong>. Locally owned and operated ever since, it grew into a nationally recognized and awarded FormulaOne by LLumar Select Pro dealer, serving both the retail market and many of Austin's best car dealerships.</p>
+      <p class="story-quote">A culture of continual improvement, focused on people, process and product.</p>
+      <p>That focus built a team of highly skilled, tenured professionals, efficient operations, and the very best products, the reason luxury dealers keep sending their cars our way.</p>
+      <div class="creds">
+        <span class="chip"><b>30+</b> years owned locally</span>
+        <span class="chip">First in Austin with <b>CNC-cut</b> film (2000)</span>
+        <span class="chip">Wholesale partner to <b>luxury dealers</b></span>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="n">30+</div><div class="l">Years in business</div></div>
+        <div class="stat"><div class="n">4.9</div><div class="l">Review rating</div></div>
+        <div class="stat"><div class="n">&times;4</div><div class="l">TX Dealer of the Year</div></div>
+        <div class="stat"><div class="n">2</div><div class="l">Austin locations</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="reviews blk" id="reviews">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label">In their words</span>
+      <h2>Surgical fit.<br>Warrantied for life.</h2>
+      <p>Real reviews from the Sunbusters testimonials page, Yelp, and local review feeds. Verbatim, with sources.</p>
+    </div>
+
+    <div class="rev-grid">
+      <div class="rev reveal">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        </div>
+        <q>The fit and finish of my ppf and tints are surgical.</q>
+        <span class="src">Greg T &middot; Testimonials page</span>
+      </div>
+
+      <div class="rev reveal">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        </div>
+        <q>There's a reason many high end dealers take their cars here for tinting.</q>
+        <span class="src">Brian R &middot; Testimonials page</span>
+      </div>
+
+      <div class="rev reveal">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        </div>
+        <q>Great work and if you get the ceramic tint, they warranty it for life!</q>
+        <span class="src">James Kwon &middot; Testimonials page</span>
+      </div>
+
+      <div class="rev reveal">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        </div>
+        <q>Super great service. Had the full tint for a year. Rear window started bubbling up. They used the warranty.</q>
+        <span class="src">Samuel F. &middot; Yelp, 12/18/24</span>
+      </div>
+
+      <div class="rev reveal">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        </div>
+        <q>Superb service! They were able to squeeze me in the same week, and had the job done in less than 4 hours.</q>
+        <span class="src">Everett T. &middot; Yelp, 10/04/22</span>
+      </div>
+
+      <div class="rev reveal">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        </div>
+        <q>We've had 7 cars tinted here. One we had for 12 years.</q>
+        <span class="src">Michael D. &middot; Testimonials page</span>
+      </div>
+
+      <div class="rev reveal">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        </div>
+        <q>The professionalism and knowledge of the different types of tint for the vehicles I had done was very much appreciated.</q>
+        <span class="src">Celena S. &middot; Yelp, 12/22/20</span>
+      </div>
+
+      <div class="rev reveal">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        </div>
+        <q>Had them tint both of our cars and they've been fantastic. Quick, high quality work.</q>
+        <span class="src">Michael L. &middot; Yelp, 07/29/23</span>
+      </div>
+
+      <!-- honest placeholder -->
+      <div class="rev placeholder reveal">
+        <span class="ph-ic">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </span>
+        <b>Your live Google reviews</b>
+        <p>This card pulls in your latest Google and Yelp reviews automatically once the site is live.</p>
+      </div>
+    </div>
+
+    <div class="rev-banner reveal">
+      <span class="big">4.9</span>
+      <span class="txt"><b>589+</b> reviews across Google, Yelp, and Birdeye. Plus a 2011 Angie's List Super Service Award and 2013 Yelp Loves Us recognition.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCATIONS ============ -->
+<section class="blk" id="locations">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label">Find us</span>
+      <h2>Two Austin bays,<br>same standard</h2>
+      <p>North Austin on Research Blvd and out toward Lakeway and Bee Cave on Storm Drive. Walk in or call ahead.</p>
+    </div>
+
+    <div class="loc-grid">
+      <div class="loc reveal">
+        <svg class="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.3-7-11a7 7 0 0114 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <span class="area">Main &middot; North Austin</span>
+        <h3>11655 Research Blvd, Ste C</h3>
+        <p class="addr">Austin, TX 78759<br>Where the carport story began in 1994.</p>
+        <a class="dir" href="https://maps.google.com/?q=11655+Research+Blvd+Ste+C+Austin+TX+78759" target="_blank" rel="noopener">
+          Get directions
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </a>
+      </div>
+
+      <div class="loc reveal">
+        <svg class="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.3-7-11a7 7 0 0114 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <span class="area">Second &middot; Lakeway / Bee Cave</span>
+        <h3>15402 Storm Drive</h3>
+        <p class="addr">Austin, TX 78734<br>Serving the west side of the lake.</p>
+        <a class="dir" href="https://maps.google.com/?q=15402+Storm+Drive+Austin+TX+78734" target="_blank" rel="noopener">
+          Get directions
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hours reveal">
+      <div class="h"><span class="d">Mon to Fri</span><span class="t">8am to 6pm</span></div>
+      <div class="h"><span class="d">Saturday</span><span class="t">8am to 3pm</span></div>
+      <div class="h closed"><span class="d">Sunday</span><span class="t">Closed</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="cta-blk">
+  <div class="wrap">
+    <span class="label reveal" style="justify-content:center;display:flex">Cruise with confidence</span>
+    <h2 class="reveal">Ready to bust the Texas sun?</h2>
+    <p class="reveal">Tell us your vehicle and what you are after, darker cabin, invisible heat rejection, or full paint protection. We will match the right film and get you on the schedule.</p>
+    <div class="cta-actions reveal">
+      <a class="btn btn-amber" href="tel:+15127948468">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+        Call (512) 794-8468
+      </a>
+      <button class="btn btn-ghost disabled" disabled aria-disabled="true">
+        Book online
+        <small>Coming soon</small>
+      </button>
+    </div>
+    <p class="cta-phone reveal">Or reach us at <b>(512) 794-8468</b> &middot; Mon to Fri 8am to 6pm, Sat 8am to 3pm</p>
+
+    <!-- Quote request form -->
+    <div class="reveal" style="max-width:560px;margin:2.6rem auto 0;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:clamp(1.4rem,4vw,2rem)">
+      <span class="label" style="margin-bottom:1rem;display:flex">Request a quote</span>
+      <!-- IMPORTANT: replace REPLACE-WITH-CLIENT-EMAIL below with Sunbusters' real inbox before launch -->
+      <form action="https://formsubmit.co/REPLACE-WITH-CLIENT-EMAIL" method="POST">
+        <input type="hidden" name="_subject" value="New quote request from Sunbusters site">
+        <input type="text" name="_honey" style="display:none">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:.8rem">
+          <input required name="name" placeholder="Your name" aria-label="Your name" style="width:100%;background:var(--glass);border:1px solid var(--line);color:var(--text);padding:.85rem 1rem;border-radius:10px;font-family:var(--body);font-size:.92rem">
+          <input required name="phone" type="tel" placeholder="Phone" aria-label="Phone" style="width:100%;background:var(--glass);border:1px solid var(--line);color:var(--text);padding:.85rem 1rem;border-radius:10px;font-family:var(--body);font-size:.92rem">
+        </div>
+        <input name="vehicle" placeholder="Year, make &amp; model" aria-label="Vehicle" style="width:100%;background:var(--glass);border:1px solid var(--line);color:var(--text);padding:.85rem 1rem;border-radius:10px;font-family:var(--body);font-size:.92rem;margin-bottom:.8rem">
+        <textarea name="message" rows="3" placeholder="What are you looking for? (tint, PPF, windshield, electronics)" aria-label="Details" style="width:100%;background:var(--glass);border:1px solid var(--line);color:var(--text);padding:.85rem 1rem;border-radius:10px;font-family:var(--body);font-size:.92rem;resize:vertical;margin-bottom:1rem"></textarea>
+        <button type="submit" class="btn btn-amber" style="width:100%;justify-content:center">Send my request</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-col">
+        <div class="foot-brand">Sun<span class="sun">busters</span></div>
+        <p>Window Tinting &amp; Paint Protection Pros. Locally owned in Austin, Texas since 1994. A FormulaOne by LLumar Select Pro dealer, Vista and SunTek dealer.</p>
+        <p style="margin-top:.6rem">More than 99% UV rejection. Signal-safe nano-ceramic film. Warrantied for life.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Services</h4>
+        <a href="#services">Automotive window tint</a>
+        <a href="#services">Clear IR ceramic tint</a>
+        <a href="#services">Paint protection film</a>
+        <a href="#services">Automotive electronics</a>
+        <a href="#services">Home &amp; commercial film</a>
+      </div>
+      <div class="foot-col">
+        <h4>Visit &amp; call</h4>
+        <a href="tel:+15127948468">(512) 794-8468</a>
+        <p>11655 Research Blvd, Ste C<br>Austin, TX 78759</p>
+        <p>15402 Storm Drive<br>Austin, TX 78734</p>
+        <p>Mon to Fri 8am to 6pm<br>Sat 8am to 3pm &middot; Sun closed</p>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <p>&copy; 1994 to 2026 Sunbusters Window Tinting. All rights reserved.</p>
+      <p>FormulaOne by LLumar Select Pro &middot; SunTek &middot; Vista Window Film</p>
+    </div>
+    <p class="disclaimer">Concept preview built by DNA Agency, not affiliated with Sunbusters Window Tinting.</p>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal, respecting reduced motion
+  (function(){
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els = document.querySelectorAll('.reveal');
+    if(reduce || !('IntersectionObserver' in window)){
+      els.forEach(function(el){el.classList.add('in');});
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    },{threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){io.observe(el);});
+  })();
+</script>
+</body>
+</html>
