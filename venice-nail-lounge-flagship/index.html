@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Venice Nail Lounge · Inspired by Timeless Beauty · Charlotte, NC</title>
+<meta name="description" content="A quiet-luxury nail lounge in Charlotte, NC. Manicures, luxury pedicures, custom nail art, and bridal work. 4.8 stars across 431 Google reviews. Inspired by timeless beauty.">
+<style>
+/* ============================================================
+   VENICE NAIL LOUNGE · Venetian Terrazzo, Quiet-Luxury Lagoon
+   Concept preview by DNA Agency. All content real/scraped.
+   ============================================================ */
+
+:root{
+  /* palette */
+  --plum:#4A2540;
+  --plum-deep:#3A1C32;
+  --plum-soft:#5E3352;
+  --gold:#C9A876;
+  --gold-bright:#DBC095;
+  --rose:#C97C6A;
+  --cream:#F6F1E7;
+  --surface:#FCF9F3;
+  --espresso:#2C2320;
+  --espresso-soft:#5A4E48;
+  --line:rgba(74,37,64,0.14);
+  --line-gold:rgba(201,168,118,0.42);
+
+  /* type */
+  --serif:Didot,'Bodoni MT','Playfair Display',Georgia,'Times New Roman',serif;
+  --sans:'Helvetica Neue','Avenir Next','Segoe UI',system-ui,sans-serif;
+
+  /* fluid scale */
+  --step--1:clamp(0.78rem,0.74rem + 0.2vw,0.9rem);
+  --step-0:clamp(1rem,0.95rem + 0.25vw,1.125rem);
+  --step-1:clamp(1.4rem,1.2rem + 1vw,2rem);
+  --step-2:clamp(2rem,1.5rem + 2.4vw,3.4rem);
+  --step-3:clamp(2.8rem,1.8rem + 5vw,6rem);
+  --step-hero:clamp(3.2rem,1.4rem + 8vw,8.5rem);
+
+  --gutter:clamp(1.25rem,4vw,4.5rem);
+  --maxw:1220px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--sans);
+  font-size:var(--step-0);
+  line-height:1.7;
+  color:var(--espresso);
+  background:var(--cream);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--gold);color:var(--plum-deep)}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter)}
+.eyebrow{
+  font-family:var(--sans);
+  text-transform:uppercase;
+  letter-spacing:0.34em;
+  font-size:var(--step--1);
+  font-weight:600;
+  color:var(--gold);
+}
+.serif{font-family:var(--serif);font-weight:400;letter-spacing:-0.01em;line-height:1.02}
+
+/* ============ NAV ============ */
+.nav{
+  position:sticky;top:0;z-index:60;
+  background:rgba(246,241,231,0.82);
+  backdrop-filter:blur(14px) saturate(1.2);
+  -webkit-backdrop-filter:blur(14px) saturate(1.2);
+  border-bottom:1px solid var(--line);
+  transition:background .4s ease,box-shadow .4s ease;
+}
+.nav.scrolled{background:rgba(246,241,231,0.95);box-shadow:0 6px 30px -18px rgba(74,37,64,0.5)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:clamp(64px,8vw,84px)}
+.brandmark{display:flex;align-items:center;gap:0.6rem;font-family:var(--serif);font-size:clamp(1.15rem,2.2vw,1.5rem);letter-spacing:0.02em;color:var(--plum)}
+.brandmark svg{flex:0 0 auto}
+.nav-links{display:flex;gap:clamp(1.2rem,2.4vw,2.4rem);align-items:center}
+.nav-links a{
+  font-size:var(--step--1);text-transform:uppercase;letter-spacing:0.16em;font-weight:500;color:var(--espresso-soft);
+  position:relative;padding-block:0.4rem;transition:color .3s ease;
+}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .35s ease}
+.nav-links a:hover{color:var(--plum)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{
+  font-family:var(--sans);font-size:var(--step--1);text-transform:uppercase;letter-spacing:0.16em;font-weight:600;
+  background:var(--plum);color:var(--cream);padding:0.65rem 1.35rem;border-radius:2px;
+  transition:background .3s ease,transform .3s ease;
+}
+.nav-cta:hover{background:var(--plum-deep);transform:translateY(-1px)}
+.nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:0.4rem}
+.nav-toggle span{display:block;width:26px;height:2px;background:var(--plum);margin:5px 0;transition:.3s}
+@media(max-width:860px){
+  .nav-links{
+    position:fixed;inset:0 0 0 auto;width:min(78vw,320px);
+    flex-direction:column;justify-content:center;gap:1.6rem;
+    background:var(--plum-deep);padding:2rem;
+    transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1);
+  }
+  .nav-links.open{transform:translateX(0)}
+  .nav-links a{color:var(--cream);font-size:1rem}
+  .nav-links a:hover{color:var(--gold)}
+  .nav-links .nav-cta{color:var(--cream);text-align:center}
+  .nav-toggle{display:block;z-index:61}
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-toggle.open span:nth-child(2){opacity:0}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+}
+
+/* ============ UTILITY BAR ============ */
+.util{
+  background:var(--plum-deep);color:var(--cream);
+  font-size:var(--step--1);letter-spacing:0.14em;text-transform:uppercase;
+}
+.util-inner{display:flex;flex-wrap:wrap;gap:0.4rem 1.6rem;justify-content:center;align-items:center;padding-block:0.62rem}
+.util-inner span{display:inline-flex;align-items:center;gap:0.5rem;opacity:0.92}
+.util-inner .dot{width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:0.9}
+.util svg{opacity:0.85}
+
+/* ============ HERO ============ */
+.hero{position:relative;overflow:hidden;background:var(--cream);isolation:isolate}
+.terrazzo{position:absolute;inset:0;z-index:0;pointer-events:none}
+.terrazzo::before{
+  /* soft radial lagoon glow behind chips */
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(120% 90% at 78% 12%,rgba(201,168,118,0.20),transparent 55%),
+    radial-gradient(90% 80% at 12% 88%,rgba(201,124,106,0.14),transparent 58%),
+    radial-gradient(140% 120% at 50% 40%,rgba(252,249,243,0.6),rgba(246,241,231,0) 70%);
+}
+.chip{
+  position:absolute;
+  opacity:0;
+  transform:scale(0.4) rotate(var(--r,0deg));
+  animation:chip-place .9s cubic-bezier(.16,1,.3,1) forwards;
+  animation-delay:var(--d,0s);
+  will-change:transform,opacity;
+}
+@keyframes chip-place{
+  0%{opacity:0;transform:scale(0.35) rotate(var(--r,0deg))}
+  60%{opacity:var(--op,0.7);transform:scale(1.06) rotate(var(--r,0deg))}
+  100%{opacity:var(--op,0.7);transform:scale(1) rotate(var(--r,0deg))}
+}
+/* diagonal champagne light-sweep */
+.lightsweep{
+  position:absolute;inset:-40% -20%;z-index:1;pointer-events:none;
+  background:linear-gradient(115deg,transparent 38%,rgba(219,192,149,0.0) 44%,rgba(219,192,149,0.55) 50%,rgba(255,250,240,0.75) 52%,rgba(219,192,149,0.5) 54%,transparent 62%);
+  mix-blend-mode:screen;
+  transform:translateX(-120%);
+  animation:sweep 2.4s ease-in-out 1.1s forwards;
+}
+@keyframes sweep{
+  0%{transform:translateX(-120%)}
+  100%{transform:translateX(120%)}
+}
+.hero-inner{position:relative;z-index:2;padding-block:clamp(4.5rem,12vw,9rem) clamp(4rem,10vw,7.5rem);text-align:center}
+.hero .eyebrow{opacity:0;animation:fade-up .9s ease .5s forwards}
+.hero h1{
+  font-family:var(--serif);font-weight:400;
+  font-size:var(--step-hero);line-height:0.94;letter-spacing:-0.02em;
+  color:var(--plum);margin:clamp(1rem,3vw,1.8rem) 0 clamp(1.2rem,3vw,1.6rem);
+  opacity:0;animation:fade-up 1s ease .7s forwards;
+}
+.hero h1 .it{font-style:italic;color:var(--plum-soft)}
+.hero h1 .gold{color:var(--gold);position:relative}
+.hero-sub{
+  max-width:34ch;margin:0 auto clamp(1.8rem,4vw,2.4rem);
+  font-size:clamp(1.02rem,0.9rem + 0.6vw,1.28rem);color:var(--espresso-soft);line-height:1.65;
+  opacity:0;animation:fade-up 1s ease .9s forwards;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:0.9rem;justify-content:center;align-items:center;opacity:0;animation:fade-up 1s ease 1.1s forwards}
+.btn{
+  font-family:var(--sans);font-weight:600;text-transform:uppercase;letter-spacing:0.16em;font-size:var(--step--1);
+  padding:1rem 2rem;border-radius:2px;cursor:pointer;border:1px solid transparent;
+  transition:transform .3s ease,background .3s ease,color .3s ease,box-shadow .3s ease;
+  display:inline-flex;align-items:center;gap:0.6rem;
+}
+.btn-primary{background:var(--plum);color:var(--cream);box-shadow:0 14px 34px -18px rgba(74,37,64,0.9)}
+.btn-primary:hover{background:var(--plum-deep);transform:translateY(-2px);box-shadow:0 20px 40px -18px rgba(74,37,64,0.95)}
+.btn-ghost{background:transparent;color:var(--plum);border-color:var(--line-gold)}
+.btn-ghost:hover{background:rgba(201,168,118,0.12);border-color:var(--gold);transform:translateY(-2px)}
+.btn:disabled,.btn.is-soon{opacity:0.55;cursor:not-allowed}
+.hero-trust{
+  margin-top:clamp(1.8rem,4vw,2.6rem);display:inline-flex;align-items:center;gap:0.7rem;
+  font-size:var(--step--1);letter-spacing:0.1em;text-transform:uppercase;color:var(--espresso-soft);
+  opacity:0;animation:fade-up 1s ease 1.3s forwards;
+}
+.stars{display:inline-flex;gap:1px;color:var(--gold)}
+.hero-scroll{margin-top:clamp(2rem,5vw,3rem);opacity:0;animation:fade-up 1s ease 1.5s forwards}
+.hero-scroll .line{width:1px;height:46px;margin:0 auto;background:linear-gradient(var(--gold),transparent);animation:drop 2.2s ease-in-out infinite}
+@keyframes drop{0%,100%{transform:scaleY(0.4);transform-origin:top;opacity:0.4}50%{transform:scaleY(1);opacity:1}}
+
+@keyframes fade-up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+
+/* ============ REVEAL ============ */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-delay="1"]{transition-delay:.1s}
+.reveal[data-delay="2"]{transition-delay:.2s}
+.reveal[data-delay="3"]{transition-delay:.3s}
+.reveal[data-delay="4"]{transition-delay:.4s}
+
+/* ============ SECTION SHELL ============ */
+.section{padding-block:clamp(4.5rem,10vw,8rem);position:relative}
+.section-head{max-width:640px;margin:0 auto clamp(2.5rem,6vw,4rem);text-align:center}
+.section-head h2{
+  font-family:var(--serif);font-weight:400;font-size:var(--step-2);line-height:1.02;color:var(--plum);
+  margin:0.9rem 0 1rem;letter-spacing:-0.01em;
+}
+.section-head h2 .it{font-style:italic}
+.section-head p{color:var(--espresso-soft);font-size:clamp(1rem,0.95rem + 0.3vw,1.15rem)}
+.rule-orn{display:flex;align-items:center;justify-content:center;gap:0.75rem;margin-bottom:0.4rem}
+.rule-orn .l{width:clamp(30px,8vw,64px);height:1px;background:var(--line-gold)}
+
+/* ============ BENEFITS STRIP ============ */
+.benefits{background:var(--surface);border-block:1px solid var(--line)}
+.benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1.2rem,3vw,2.4rem)}
+@media(max-width:900px){.benefit-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.benefit-grid{grid-template-columns:1fr}}
+.benefit{text-align:center;padding:clamp(1rem,2vw,1.6rem) 0.5rem}
+.benefit .ico{
+  width:66px;height:66px;margin:0 auto 1.1rem;border-radius:50%;
+  display:grid;place-items:center;
+  background:radial-gradient(circle at 32% 28%,rgba(201,168,118,0.22),rgba(74,37,64,0.06));
+  border:1px solid var(--line-gold);
+}
+.benefit h3{font-family:var(--serif);font-weight:500;font-size:1.28rem;color:var(--plum);margin-bottom:0.35rem;letter-spacing:0}
+.benefit p{font-size:var(--step--1);color:var(--espresso-soft);line-height:1.55;text-transform:none;letter-spacing:0}
+
+/* ============ SERVICES / MENU ============ */
+.menu-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.4rem,3vw,2.6rem)}
+@media(max-width:820px){.menu-layout{grid-template-columns:1fr}}
+.menu-card{
+  background:var(--surface);border:1px solid var(--line);border-radius:4px;
+  padding:clamp(1.6rem,3vw,2.4rem);position:relative;overflow:hidden;
+  transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s ease,border-color .5s ease;
+}
+.menu-card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -40px rgba(74,37,64,0.55);border-color:var(--line-gold)}
+.menu-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--gold),var(--rose),transparent)}
+.menu-card .card-top{display:flex;align-items:center;gap:1rem;margin-bottom:1.3rem}
+.menu-card .card-ico{flex:0 0 auto;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:rgba(74,37,64,0.05);border:1px solid var(--line-gold)}
+.menu-card h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.4rem,2.5vw,1.75rem);color:var(--plum);letter-spacing:0}
+.menu-card .cat-note{font-size:var(--step--1);color:var(--espresso-soft);letter-spacing:0;text-transform:none;line-height:1.5}
+.mlist{list-style:none;margin-top:1.2rem;display:flex;flex-direction:column;gap:0.85rem}
+.mlist li{display:flex;gap:0.9rem;align-items:baseline}
+.mlist .mdot{flex:0 0 auto;width:6px;height:6px;margin-top:0.55rem;border-radius:50%;background:var(--gold)}
+.mlist .mname{font-weight:600;color:var(--espresso)}
+.mlist .mdesc{display:block;font-size:var(--step--1);color:var(--espresso-soft);font-weight:400;line-height:1.5;letter-spacing:0}
+.menu-note{
+  text-align:center;margin-top:clamp(2rem,4vw,3rem);font-size:var(--step--1);
+  color:var(--espresso-soft);letter-spacing:0.08em;text-transform:uppercase;
+}
+
+/* ============ GALLERY (CSS/SVG nail-art swatches) ============ */
+.gallery{background:var(--plum);color:var(--cream);position:relative;overflow:hidden}
+.gallery::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 100% at 85% 0,rgba(201,168,118,0.16),transparent 55%),radial-gradient(90% 90% at 0 100%,rgba(201,124,106,0.14),transparent 55%);pointer-events:none}
+.gallery .section-head h2{color:var(--cream)}
+.gallery .section-head p{color:rgba(246,241,231,0.72)}
+.gallery .eyebrow{color:var(--gold-bright)}
+.gallery .rule-orn .l{background:var(--line-gold)}
+.swatch-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(0.9rem,2vw,1.5rem);position:relative;z-index:2}
+@media(max-width:820px){.swatch-grid{grid-template-columns:repeat(2,1fr)}}
+.swatch{
+  border-radius:6px;overflow:hidden;border:1px solid rgba(201,168,118,0.28);
+  background:rgba(252,249,243,0.04);
+  transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s ease,border-color .5s ease;
+}
+.swatch:hover{transform:translateY(-6px) scale(1.015);border-color:var(--gold);box-shadow:0 30px 50px -30px rgba(0,0,0,0.6)}
+.swatch svg{width:100%;height:auto;display:block}
+.swatch .cap{padding:0.75rem 0.9rem 0.95rem}
+.swatch .cap b{display:block;font-family:var(--serif);font-weight:500;font-size:1.12rem;color:var(--cream);letter-spacing:0}
+.swatch .cap span{font-size:var(--step--1);color:rgba(246,241,231,0.62);letter-spacing:0.06em;text-transform:uppercase}
+
+/* ============ STORY / ABOUT ============ */
+.story{background:var(--surface);border-block:1px solid var(--line);position:relative;overflow:hidden}
+.story-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+@media(max-width:820px){.story-grid{grid-template-columns:1fr}}
+.story .eyebrow{color:var(--gold)}
+.story h2{font-family:var(--serif);font-weight:400;font-size:var(--step-2);line-height:1.05;color:var(--plum);margin:0.9rem 0 1.4rem;letter-spacing:-0.01em}
+.story h2 .it{font-style:italic}
+.story p{color:var(--espresso-soft);margin-bottom:1.1rem;max-width:52ch}
+.story .pull{
+  font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.5vw,1.7rem);
+  color:var(--plum-soft);line-height:1.3;border-left:2px solid var(--gold);padding-left:1.2rem;margin:1.6rem 0;
+}
+.story-visual{position:relative;aspect-ratio:4/5;border-radius:6px;overflow:hidden;border:1px solid var(--line-gold);background:var(--cream)}
+.story-visual svg{position:absolute;inset:0;width:100%;height:100%}
+
+/* ============ REVIEWS ============ */
+.reviews{background:var(--cream)}
+.rev-topline{display:flex;flex-wrap:wrap;gap:1.4rem;justify-content:center;align-items:center;margin-bottom:clamp(2.4rem,5vw,3.4rem)}
+.rev-badge{display:flex;align-items:center;gap:0.9rem;background:var(--surface);border:1px solid var(--line-gold);border-radius:100px;padding:0.7rem 1.4rem}
+.rev-badge .big{font-family:var(--serif);font-size:1.9rem;color:var(--plum);line-height:1}
+.rev-badge .meta{font-size:var(--step--1);text-transform:uppercase;letter-spacing:0.1em;color:var(--espresso-soft)}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.2rem,2.5vw,1.8rem)}
+@media(max-width:900px){.rev-grid{grid-template-columns:1fr}}
+.rev-card{
+  background:var(--surface);border:1px solid var(--line);border-radius:5px;padding:clamp(1.5rem,3vw,2rem);
+  display:flex;flex-direction:column;gap:1rem;position:relative;
+  transition:transform .5s ease,box-shadow .5s ease;
+}
+.rev-card:hover{transform:translateY(-4px);box-shadow:0 30px 55px -40px rgba(74,37,64,0.5)}
+.rev-card .quote-mark{font-family:var(--serif);font-size:3.4rem;line-height:0.4;color:var(--gold);height:1.4rem}
+.rev-card p{color:var(--espresso);font-size:1.02rem;line-height:1.65;flex:1}
+.rev-card .src{font-size:var(--step--1);color:var(--espresso-soft);letter-spacing:0.06em;border-top:1px solid var(--line);padding-top:0.85rem}
+.rev-card .src b{color:var(--plum);font-weight:600}
+.rev-card.tall{grid-column:span 1}
+.rev-placeholder{
+  border:1px dashed var(--line-gold);background:rgba(201,168,118,0.05);
+  display:flex;flex-direction:column;justify-content:center;text-align:center;gap:0.5rem;
+}
+.rev-placeholder .stars{justify-content:center;font-size:1.2rem}
+.rev-placeholder b{font-family:var(--serif);font-size:1.25rem;color:var(--plum);font-weight:500}
+.rev-placeholder span{font-size:var(--step--1);color:var(--espresso-soft)}
+
+/* ============ BRIDAL ============ */
+.bridal{background:var(--plum-deep);color:var(--cream);position:relative;overflow:hidden}
+.bridal::before{content:"";position:absolute;inset:0;background:radial-gradient(100% 100% at 100% 0,rgba(201,168,118,0.18),transparent 50%);pointer-events:none}
+.bridal-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:clamp(2rem,5vw,4rem);align-items:center;position:relative;z-index:2}
+@media(max-width:820px){.bridal-grid{grid-template-columns:1fr}}
+.bridal .eyebrow{color:var(--gold-bright)}
+.bridal h2{font-family:var(--serif);font-weight:400;font-size:var(--step-2);line-height:1.04;margin:0.9rem 0 1.3rem;letter-spacing:-0.01em}
+.bridal h2 .it{font-style:italic;color:var(--gold-bright)}
+.bridal p{color:rgba(246,241,231,0.82);margin-bottom:1.2rem;max-width:48ch}
+.bridal .btn-ghost{color:var(--cream);border-color:var(--line-gold)}
+.bridal .btn-ghost:hover{background:rgba(201,168,118,0.14);border-color:var(--gold)}
+.bridal-visual{aspect-ratio:5/4;border-radius:6px;overflow:hidden;border:1px solid var(--line-gold)}
+.bridal-visual svg{width:100%;height:100%;display:block}
+
+/* ============ LOCATION ============ */
+.location{background:var(--surface);border-block:1px solid var(--line)}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,3.5rem)}
+@media(max-width:820px){.loc-grid{grid-template-columns:1fr}}
+.loc-card h3{font-family:var(--serif);font-weight:500;font-size:1.5rem;color:var(--plum);margin-bottom:1rem}
+.loc-row{display:flex;gap:0.9rem;align-items:flex-start;padding:0.9rem 0;border-bottom:1px solid var(--line)}
+.loc-row:last-child{border-bottom:0}
+.loc-row .ic{flex:0 0 auto;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(74,37,64,0.05);border:1px solid var(--line-gold)}
+.loc-row .lbl{font-size:var(--step--1);text-transform:uppercase;letter-spacing:0.12em;color:var(--espresso-soft);margin-bottom:0.15rem}
+.loc-row .val{color:var(--espresso);font-weight:500;line-height:1.5}
+.loc-row .val a{border-bottom:1px solid var(--line-gold)}
+.loc-row .val a:hover{color:var(--plum)}
+.hours-table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.hours-table td{padding:0.7rem 0;border-bottom:1px solid var(--line);font-size:1rem}
+.hours-table tr:last-child td{border-bottom:0}
+.hours-table td:first-child{text-transform:uppercase;letter-spacing:0.1em;font-size:var(--step--1);color:var(--espresso-soft);font-weight:600}
+.hours-table td:last-child{text-align:right;font-weight:500;color:var(--espresso)}
+.hours-table tr.closed td:last-child{color:var(--rose)}
+.hours-table tr.today{background:rgba(201,168,118,0.1)}
+.hours-table tr.today td{color:var(--plum);font-weight:700}
+.map-embed{margin-top:1.4rem;border-radius:5px;overflow:hidden;border:1px solid var(--line-gold);aspect-ratio:16/10;position:relative;background:var(--cream)}
+.map-embed svg{width:100%;height:100%;display:block}
+.map-embed .pin-cta{position:absolute;left:50%;bottom:1rem;transform:translateX(-50%)}
+
+/* ============ FINAL CTA ============ */
+.finale{position:relative;overflow:hidden;text-align:center;background:var(--plum);color:var(--cream)}
+.finale::before{content:"";position:absolute;inset:0;background:radial-gradient(90% 120% at 50% 0,rgba(201,168,118,0.22),transparent 60%),radial-gradient(80% 90% at 20% 100%,rgba(201,124,106,0.16),transparent 55%);pointer-events:none}
+.finale .eyebrow{color:var(--gold-bright)}
+.finale h2{font-family:var(--serif);font-weight:400;font-size:var(--step-3);line-height:0.98;margin:1rem 0 1.2rem;letter-spacing:-0.02em;position:relative;z-index:2}
+.finale h2 .it{font-style:italic;color:var(--gold-bright)}
+.finale p{max-width:46ch;margin:0 auto 2rem;color:rgba(246,241,231,0.82);position:relative;z-index:2}
+.finale-actions{display:flex;flex-wrap:wrap;gap:0.9rem;justify-content:center;position:relative;z-index:2}
+.finale .btn-primary{background:var(--gold);color:var(--plum-deep)}
+.finale .btn-primary:hover{background:var(--gold-bright)}
+.finale .btn-ghost{color:var(--cream);border-color:var(--line-gold)}
+.finale .btn-ghost:hover{background:rgba(246,241,231,0.1);border-color:var(--cream)}
+.verify-tag{display:inline-block;margin-top:1.4rem;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(219,192,149,0.65);position:relative;z-index:2}
+
+/* ============ CONTACT FORM ============ */
+.contact{background:var(--cream)}
+.contact-grid{display:grid;grid-template-columns:0.8fr 1.2fr;gap:clamp(2rem,4vw,3.5rem);align-items:start}
+@media(max-width:820px){.contact-grid{grid-template-columns:1fr}}
+.contact .eyebrow{color:var(--gold)}
+.contact h2{font-family:var(--serif);font-weight:400;font-size:var(--step-1);color:var(--plum);margin:0.7rem 0 1rem;letter-spacing:0}
+.contact p{color:var(--espresso-soft);max-width:40ch}
+.form-card{background:var(--surface);border:1px solid var(--line);border-radius:5px;padding:clamp(1.6rem,3vw,2.2rem)}
+.field{margin-bottom:1.1rem}
+.field label{display:block;font-size:var(--step--1);text-transform:uppercase;letter-spacing:0.12em;color:var(--espresso-soft);margin-bottom:0.45rem;font-weight:600}
+.field input,.field textarea,.field select{
+  width:100%;padding:0.85rem 1rem;border:1px solid var(--line);border-radius:3px;
+  background:var(--cream);font-family:var(--sans);font-size:1rem;color:var(--espresso);
+  transition:border-color .3s ease,box-shadow .3s ease;
+}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,118,0.18)}
+.field textarea{resize:vertical;min-height:110px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:480px){.form-row{grid-template-columns:1fr}}
+.form-card .btn-primary{width:100%;justify-content:center;margin-top:0.4rem}
+.form-fine{font-size:0.78rem;color:var(--espresso-soft);margin-top:0.9rem;text-align:center;letter-spacing:0.03em}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--plum-deep);color:var(--cream);padding-block:clamp(3rem,6vw,4.5rem) 2rem}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(1.5rem,4vw,3rem);margin-bottom:2.5rem}
+@media(max-width:720px){.footer-top{grid-template-columns:1fr;gap:2rem}}
+.footer .brandmark{color:var(--cream);margin-bottom:1rem}
+.footer-blurb{color:rgba(246,241,231,0.68);font-size:var(--step--1);line-height:1.7;max-width:40ch}
+.footer h4{font-family:var(--sans);font-size:var(--step--1);text-transform:uppercase;letter-spacing:0.18em;color:var(--gold-bright);margin-bottom:1rem;font-weight:600}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+.footer ul a,.footer ul li{color:rgba(246,241,231,0.78);font-size:var(--step--1);transition:color .3s ease}
+.footer ul a:hover{color:var(--gold-bright)}
+.footer-bottom{border-top:1px solid rgba(201,168,118,0.22);padding-top:1.6rem;display:flex;flex-wrap:wrap;gap:0.8rem;justify-content:space-between;align-items:center}
+.footer-bottom p{font-size:0.78rem;color:rgba(246,241,231,0.55);letter-spacing:0.04em}
+.disclaimer{font-size:0.78rem;color:rgba(219,192,149,0.7);letter-spacing:0.04em;max-width:52ch;text-align:right}
+@media(max-width:720px){.disclaimer{text-align:left}}
+
+/* ============ REDUCED MOTION ============ */
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:0.001ms !important;animation-iteration-count:1 !important;transition-duration:0.001ms !important;scroll-behavior:auto}
+  .chip{opacity:1 !important;transform:scale(1) rotate(var(--r,0deg)) !important}
+  .lightsweep{display:none}
+  .hero .eyebrow,.hero h1,.hero-sub,.hero-actions,.hero-trust,.hero-scroll{opacity:1 !important;animation:none !important}
+  .reveal{opacity:1 !important;transform:none !important}
+  .hero-scroll .line{animation:none}
+}
+
+/* focus visibility */
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+</style>
+</head>
+<body>
+
+<!-- ===================== UTILITY BAR ===================== -->
+<div class="util">
+  <div class="wrap util-inner">
+    <span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      Mon to Sat · 10AM to 7PM
+    </span>
+    <span class="dot" aria-hidden="true"></span>
+    <span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+      Albemarle Rd · Charlotte, NC
+    </span>
+    <span class="dot" aria-hidden="true"></span>
+    <span>Walk-ins Welcome · Complimentary Drinks</span>
+  </div>
+</div>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brandmark" aria-label="Venice Nail Lounge home">
+      <svg width="26" height="26" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <path d="M20 4C13 12 8 18 8 25a12 12 0 0 0 24 0c0-7-5-13-12-21Z" fill="#4A2540"/>
+        <path d="M20 10c-4 5-7 9-7 14a7 7 0 0 0 14 0c0-5-3-9-7-14Z" fill="#C9A876"/>
+        <path d="M20 16c-2 3-3.5 5-3.5 7.5A3.5 3.5 0 0 0 20 27" stroke="#F6F1E7" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+      </svg>
+      Venice Nail Lounge
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#gallery">Nail Art</a>
+      <a href="#story">Our Story</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#bridal">Bridal</a>
+      <a href="#visit">Visit</a>
+      <a href="#book" class="nav-cta">Book Your Ritual</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="top">
+  <div class="terrazzo" id="terrazzo" aria-hidden="true"></div>
+  <div class="lightsweep" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <p class="eyebrow">Inspired by Timeless Beauty</p>
+    <h1 class="serif">Venice <span class="it">Nail</span><br><span class="gold">Lounge</span></h1>
+    <p class="hero-sub">A quiet palazzo of self-love in Charlotte, where nail care is never rushed or routine. It is a ritual.</p>
+    <div class="hero-actions">
+      <a href="#book" class="btn btn-primary">
+        Book Your Ritual
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="#services" class="btn btn-ghost">View the Menu</a>
+    </div>
+    <div class="hero-trust">
+      <span class="stars" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+      </span>
+      4.8 · 431 Google Reviews
+    </div>
+    <div class="hero-scroll" aria-hidden="true"><div class="line"></div></div>
+  </div>
+</section>
+
+<!-- ===================== BENEFITS ===================== -->
+<section class="section benefits">
+  <div class="wrap">
+    <div class="benefit-grid">
+      <div class="benefit reveal" data-delay="1">
+        <div class="ico">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#4A2540" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.5 5.3 5.8.6-4.3 3.9 1.2 5.7L12 21l-5.2 2.5 1.2-5.7L3.7 8.9l5.8-.6z"/></svg>
+        </div>
+        <h3>Nails That Last</h3>
+        <p>Long-wearing gel and builder gel that reviewers say holds four to six weeks.</p>
+      </div>
+      <div class="benefit reveal" data-delay="2">
+        <div class="ico">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#4A2540" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4Z"/><path d="M6 1v3M10 1v3M14 1v3"/></svg>
+        </div>
+        <h3>A Drink on Us</h3>
+        <p>Every guest is offered a complimentary drink and a calm place to settle in.</p>
+      </div>
+      <div class="benefit reveal" data-delay="3">
+        <div class="ico">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#4A2540" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+        </div>
+        <h3>Bring a Picture</h3>
+        <p>Show the design you love, sit down, and our artists match it exactly.</p>
+      </div>
+      <div class="benefit reveal" data-delay="4">
+        <div class="ico">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#4A2540" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 3 2 5 3 7h8c1-2 3-4 3-7a7 7 0 0 0-7-7Z"/><path d="M9 22h6M10 19h4"/></svg>
+        </div>
+        <h3>Spotless &amp; Serene</h3>
+        <p>A clean, upscale lounge with upbeat music and a genuinely friendly team.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES / MENU ===================== -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="rule-orn"><span class="l"></span><span class="eyebrow">The Menu</span><span class="l"></span></div>
+      <h2>The Art of Care &amp; <span class="it">Craftsmanship</span></h2>
+      <p>A full-service menu of manicures, luxury pedicures, enhancements, and custom design, each one unhurried and finished with care.</p>
+    </div>
+
+    <div class="menu-layout">
+
+      <!-- Manicures -->
+      <div class="menu-card reveal" data-delay="1">
+        <div class="card-top">
+          <div class="card-ico">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4A2540" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v9a6 6 0 0 0 12 0V3"/><path d="M9 3v8M12 3v8M15 3v8"/><path d="M6 21h12"/></svg>
+          </div>
+          <div>
+            <h3>Manicures</h3>
+            <p class="cat-note">Trim, cuticle grooming, massage, polish</p>
+          </div>
+        </div>
+        <ul class="mlist">
+          <li><span class="mdot"></span><span class="mname">Classic Manicure<span class="mdesc">Nail trimming, cuticle grooming, a relaxing massage, and polish.</span></span></li>
+          <li><span class="mdot"></span><span class="mname">Deluxe Manicure<span class="mdesc">Adds an exfoliating scrub, warm towel wrap, and extended massage.</span></span></li>
+          <li><span class="mdot"></span><span class="mname">Gel Manicure Add-on<span class="mdesc">Long-wearing gel finish for weeks of high-shine color.</span></span></li>
+        </ul>
+      </div>
+
+      <!-- Pedicures -->
+      <div class="menu-card reveal" data-delay="2">
+        <div class="card-top">
+          <div class="card-ico">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4A2540" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20c-2-1-3-4-3-8 0-5 3-8 6-8 2 0 3 2 3 4M12 20c2 0 4-3 4-8"/><circle cx="17" cy="5" r="1.4"/><circle cx="19.5" cy="7.5" r="1.1"/><circle cx="20" cy="11" r="1"/></svg>
+          </div>
+          <div>
+            <h3>Pedicures</h3>
+            <p class="cat-note">From classic care to the Venice Luxury ritual</p>
+          </div>
+        </div>
+        <ul class="mlist">
+          <li><span class="mdot"></span><span class="mname">Classic Pedicure<span class="mdesc">Trimming, shaping, cuticle grooming, and an extensive leg and foot massage.</span></span></li>
+          <li><span class="mdot"></span><span class="mname">Deluxe Pedicure<span class="mdesc">Adds hot stones and a soothing hot towel wrap.</span></span></li>
+          <li><span class="mdot"></span><span class="mname">Signature Pedicure<span class="mdesc">Hot stone massage plus a nourishing paraffin wax treatment.</span></span></li>
+          <li><span class="mdot"></span><span class="mname">Venice Luxury Pedicure<span class="mdesc">Everything in the Signature, elevated with full paraffin wax indulgence.</span></span></li>
+        </ul>
+      </div>
+
+      <!-- Enhancements -->
+      <div class="menu-card reveal" data-delay="1">
+        <div class="card-top">
+          <div class="card-ico">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4A2540" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 2.4 5.5L20 8l-4 4 1 6-5-2.8L7 18l1-6-4-4 5.6-.5z"/></svg>
+          </div>
+          <div>
+            <h3>Enhancements</h3>
+            <p class="cat-note">Dip powder, acrylic, Gel-X, and builder gel</p>
+          </div>
+        </div>
+        <ul class="mlist">
+          <li><span class="mdot"></span><span class="mname">Dip Powder<span class="mdesc">On natural nails, with a manicure, over tips, or a soft ombre fade.</span></span></li>
+          <li><span class="mdot"></span><span class="mname">Acrylic · Gel-X · Builder Gel<span class="mdesc">Full sets and fills, including builder gel Kayla is known for.</span></span></li>
+          <li><span class="mdot"></span><span class="mname">Princess Menu<span class="mdesc">Gentle manicures and pedicures made just for the little ones.</span></span></li>
+        </ul>
+      </div>
+
+      <!-- Art & Extras -->
+      <div class="menu-card reveal" data-delay="2">
+        <div class="card-top">
+          <div class="card-ico">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4A2540" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 1 9-9c0 2-1.5 3-3 3h-1.5a1.5 1.5 0 0 0-1 2.6c.4.5.5 1.1.2 1.7A2 2 0 0 1 12 21Z"/><circle cx="7.5" cy="10.5" r="1"/><circle cx="12" cy="7.5" r="1"/><circle cx="16.5" cy="10.5" r="1"/></svg>
+          </div>
+          <div>
+            <h3>Nail Art &amp; Beauty</h3>
+            <p class="cat-note">Custom design, waxing, and bridal work</p>
+          </div>
+        </div>
+        <ul class="mlist">
+          <li><span class="mdot"></span><span class="mname">Custom Nail Art<span class="mdesc">Ombre, French, chrome, cat-eye, and one-of-a-kind designs.</span></span></li>
+          <li><span class="mdot"></span><span class="mname">Waxing &amp; Hair Removal<span class="mdesc">Eyebrows, lip, full face, arms, legs, underarms, back, and chest.</span></span></li>
+          <li><span class="mdot"></span><span class="mname">Bridal &amp; Wedding-Day Nails<span class="mdesc">Camera-ready hands for your day, planned in advance with your artist.</span></span></li>
+        </ul>
+      </div>
+
+    </div>
+    <p class="menu-note reveal">Full service menu and pricing shared in salon and when you book · Ask about combining services</p>
+  </div>
+</section>
+
+<!-- ===================== GALLERY ===================== -->
+<section class="section gallery" id="gallery">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="rule-orn"><span class="l"></span><span class="eyebrow">A New Canvas</span><span class="l"></span></div>
+      <h2>Nails as <span class="it">Inlaid Color</span></h2>
+      <p>Ombre fades, mirror chrome, cat-eye shimmer, French, and rhinestone accents, each set a small work of art placed by hand.</p>
+    </div>
+
+    <div class="swatch-grid">
+      <!-- Ombre -->
+      <div class="swatch reveal" data-delay="1">
+        <svg viewBox="0 0 200 200" role="img" aria-label="Ombre gradient nail art">
+          <defs>
+            <linearGradient id="g-omb" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#4A2540"/><stop offset="0.5" stop-color="#C97C6A"/><stop offset="1" stop-color="#F6F1E7"/>
+            </linearGradient>
+          </defs>
+          <rect width="200" height="200" fill="url(#g-omb)"/>
+          <g fill="rgba(252,249,243,0.9)">
+            <path d="M70 150c0-30 6-58 8-88 1-12 3-22 22-22s21 10 22 22c2 30 8 58 8 88 0 8-6 12-14 12H84c-8 0-14-4-14-12Z" opacity="0.14"/>
+          </g>
+          <ellipse cx="100" cy="55" rx="26" ry="14" fill="rgba(255,255,255,0.28)"/>
+        </svg>
+        <div class="cap"><b>Ombre Fade</b><span>Plum to Rose</span></div>
+      </div>
+      <!-- Chrome -->
+      <div class="swatch reveal" data-delay="2">
+        <svg viewBox="0 0 200 200" role="img" aria-label="Mirror chrome nail art">
+          <defs>
+            <linearGradient id="g-chr" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#DBC095"/><stop offset="0.35" stop-color="#8a7550"/><stop offset="0.55" stop-color="#F6F1E7"/><stop offset="0.75" stop-color="#C9A876"/><stop offset="1" stop-color="#5E3352"/>
+            </linearGradient>
+          </defs>
+          <rect width="200" height="200" fill="url(#g-chr)"/>
+          <g stroke="rgba(255,255,255,0.35)" stroke-width="2" fill="none">
+            <path d="M-10 60 L210 10"/><path d="M-10 120 L210 70"/><path d="M-10 180 L210 130"/>
+          </g>
+        </svg>
+        <div class="cap"><b>Mirror Chrome</b><span>High Shine</span></div>
+      </div>
+      <!-- Cat-eye -->
+      <div class="swatch reveal" data-delay="3">
+        <svg viewBox="0 0 200 200" role="img" aria-label="Cat-eye shimmer nail art">
+          <defs>
+            <radialGradient id="g-cat" cx="0.5" cy="0.5" r="0.7">
+              <stop offset="0" stop-color="#DBC095"/><stop offset="0.35" stop-color="#4A2540"/><stop offset="1" stop-color="#3A1C32"/>
+            </radialGradient>
+          </defs>
+          <rect width="200" height="200" fill="url(#g-cat)"/>
+          <ellipse cx="100" cy="100" rx="90" ry="16" fill="rgba(219,192,149,0.55)"/>
+          <ellipse cx="100" cy="100" rx="70" ry="7" fill="rgba(255,250,240,0.8)"/>
+        </svg>
+        <div class="cap"><b>Cat-Eye</b><span>Magnetic Gel</span></div>
+      </div>
+      <!-- French -->
+      <div class="swatch reveal" data-delay="4">
+        <svg viewBox="0 0 200 200" role="img" aria-label="French tip nail art">
+          <defs>
+            <linearGradient id="g-fr" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FCF9F3"/><stop offset="1" stop-color="#F0E3D6"/>
+            </linearGradient>
+          </defs>
+          <rect width="200" height="200" fill="url(#g-fr)"/>
+          <path d="M0 0 H200 V52 Q100 90 0 52 Z" fill="#FCF9F3"/>
+          <path d="M0 0 H200 V44 Q100 78 0 44 Z" fill="#C9A876" opacity="0.9"/>
+          <circle cx="150" cy="130" r="5" fill="#C9A876"/><circle cx="165" cy="145" r="3" fill="#C97C6A"/>
+        </svg>
+        <div class="cap"><b>Modern French</b><span>Gold-Kissed</span></div>
+      </div>
+      <!-- Rhinestone -->
+      <div class="swatch reveal" data-delay="1">
+        <svg viewBox="0 0 200 200" role="img" aria-label="Rhinestone accent nail art">
+          <rect width="200" height="200" fill="#4A2540"/>
+          <rect width="200" height="200" fill="url(#g-cat)" opacity="0.25"/>
+          <g fill="#DBC095">
+            <path d="m100 60 6 10 12 1-9 8 3 12-12-6-12 6 3-12-9-8 12-1z"/>
+          </g>
+          <g fill="rgba(246,241,231,0.9)">
+            <circle cx="72" cy="110" r="4"/><circle cx="128" cy="112" r="3"/><circle cx="100" cy="132" r="5"/><circle cx="86" cy="146" r="3"/><circle cx="118" cy="140" r="3"/>
+          </g>
+        </svg>
+        <div class="cap"><b>Rhinestone</b><span>Sparkle Accent</span></div>
+      </div>
+      <!-- Marble -->
+      <div class="swatch reveal" data-delay="2">
+        <svg viewBox="0 0 200 200" role="img" aria-label="Venetian marble nail art">
+          <defs>
+            <linearGradient id="g-mar" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#FCF9F3"/><stop offset="1" stop-color="#E8DFD0"/>
+            </linearGradient>
+          </defs>
+          <rect width="200" height="200" fill="url(#g-mar)"/>
+          <g stroke="#4A2540" stroke-width="1.4" fill="none" opacity="0.55">
+            <path d="M10 40 Q60 70 40 120 T90 190"/><path d="M120 10 Q100 60 150 90 T140 200"/><path d="M60 10 Q90 50 70 90"/>
+          </g>
+          <g stroke="#C9A876" stroke-width="1.2" fill="none" opacity="0.8">
+            <path d="M20 60 Q70 80 55 130"/><path d="M130 30 Q115 70 160 100"/>
+          </g>
+        </svg>
+        <div class="cap"><b>Venetian Marble</b><span>Hand-Drawn Veins</span></div>
+      </div>
+      <!-- Solid Plum -->
+      <div class="swatch reveal" data-delay="3">
+        <svg viewBox="0 0 200 200" role="img" aria-label="Glossy plum polish">
+          <defs>
+            <radialGradient id="g-sol" cx="0.35" cy="0.3" r="0.9">
+              <stop offset="0" stop-color="#7A4569"/><stop offset="0.6" stop-color="#4A2540"/><stop offset="1" stop-color="#3A1C32"/>
+            </radialGradient>
+          </defs>
+          <rect width="200" height="200" fill="url(#g-sol)"/>
+          <ellipse cx="72" cy="58" rx="34" ry="18" fill="rgba(255,255,255,0.18)"/>
+        </svg>
+        <div class="cap"><b>Signature Plum</b><span>Glass Gloss</span></div>
+      </div>
+      <!-- Terracotta glitter -->
+      <div class="swatch reveal" data-delay="4">
+        <svg viewBox="0 0 200 200" role="img" aria-label="Terracotta glitter polish">
+          <defs>
+            <linearGradient id="g-gl" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#D98B78"/><stop offset="1" stop-color="#C97C6A"/>
+            </linearGradient>
+          </defs>
+          <rect width="200" height="200" fill="url(#g-gl)"/>
+          <g fill="rgba(255,250,240,0.9)">
+            <circle cx="40" cy="50" r="2"/><circle cx="90" cy="35" r="1.5"/><circle cx="140" cy="60" r="2.5"/><circle cx="170" cy="100" r="1.5"/><circle cx="60" cy="120" r="2"/><circle cx="110" cy="150" r="2.5"/><circle cx="160" cy="160" r="1.5"/><circle cx="30" cy="160" r="2"/><circle cx="120" cy="90" r="1.5"/>
+          </g>
+          <g fill="rgba(201,168,118,0.9)">
+            <circle cx="70" cy="70" r="2"/><circle cx="150" cy="130" r="2"/><circle cx="95" cy="110" r="1.5"/>
+          </g>
+        </svg>
+        <div class="cap"><b>Rose Shimmer</b><span>Fine Glitter</span></div>
+      </div>
+    </div>
+    <p class="menu-note reveal" style="color:rgba(246,241,231,0.6)">Swatches shown are illustrative of our styles · Your design, matched to your reference photo</p>
+  </div>
+</section>
+
+<!-- ===================== STORY ===================== -->
+<section class="section story" id="story">
+  <div class="wrap story-grid">
+    <div class="reveal">
+      <p class="eyebrow">Our Story</p>
+      <h2>A Lounge for <span class="it">the Soul</span></h2>
+      <p>The idea for Venice Nail Lounge began with a simple dream: to create a space where people could unwind, express themselves, and feel proud of their look.</p>
+      <p class="pull">Nail care should never be rushed or routine. It should be a ritual of self-love.</p>
+      <p>Drawing inspiration from Venice, we combine creative design, meticulous technique, and warm service, so every visit feels less like an errand and more like a moment that belongs entirely to you.</p>
+    </div>
+    <div class="story-visual reveal" data-delay="2" aria-hidden="true">
+      <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="s-bg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#F6F1E7"/><stop offset="1" stop-color="#EFE4D4"/>
+          </linearGradient>
+          <linearGradient id="s-water" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#5E3352"/><stop offset="1" stop-color="#4A2540"/>
+          </linearGradient>
+          <radialGradient id="s-sun" cx="0.7" cy="0.28" r="0.5">
+            <stop offset="0" stop-color="#DBC095"/><stop offset="1" stop-color="rgba(219,192,149,0)"/>
+          </radialGradient>
+        </defs>
+        <rect width="400" height="500" fill="url(#s-bg)"/>
+        <rect width="400" height="500" fill="url(#s-sun)"/>
+        <!-- water -->
+        <rect y="360" width="400" height="140" fill="url(#s-water)"/>
+        <!-- reflections -->
+        <g stroke="#C9A876" stroke-width="1.5" opacity="0.4">
+          <line x1="40" y1="390" x2="120" y2="390"/><line x1="200" y1="410" x2="300" y2="410"/><line x1="90" y1="430" x2="180" y2="430"/><line x1="240" y1="450" x2="340" y2="450"/>
+        </g>
+        <!-- palazzo silhouettes -->
+        <g fill="#4A2540" opacity="0.9">
+          <rect x="30" y="180" width="80" height="185" rx="2"/>
+          <rect x="130" y="140" width="70" height="225" rx="2"/>
+          <rect x="220" y="200" width="60" height="165" rx="2"/>
+          <rect x="300" y="160" width="72" height="205" rx="2"/>
+        </g>
+        <!-- domes / gold caps -->
+        <g fill="#C9A876">
+          <path d="M130 140 q35 -46 70 0 Z"/>
+          <path d="M300 160 q36 -40 72 0 Z"/>
+          <circle cx="70" cy="176" r="6"/><circle cx="165" cy="96" r="7"/><circle cx="336" cy="122" r="7"/>
+        </g>
+        <!-- windows -->
+        <g fill="#DBC095" opacity="0.85">
+          <rect x="46" y="210" width="12" height="20" rx="2"/><rect x="70" y="210" width="12" height="20" rx="2"/><rect x="46" y="250" width="12" height="20" rx="2"/><rect x="70" y="250" width="12" height="20" rx="2"/>
+          <rect x="146" y="180" width="12" height="22" rx="2"/><rect x="172" y="180" width="12" height="22" rx="2"/><rect x="146" y="222" width="12" height="22" rx="2"/><rect x="172" y="222" width="12" height="22" rx="2"/>
+          <rect x="316" y="200" width="12" height="20" rx="2"/><rect x="342" y="200" width="12" height="20" rx="2"/>
+        </g>
+        <!-- gondola -->
+        <path d="M120 350 q40 22 160 0 q-18 20 -80 20 q-62 0 -80 -20Z" fill="#2C2320"/>
+        <path d="M118 348 q40 20 164 0" stroke="#C9A876" stroke-width="2" fill="none"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REVIEWS ===================== -->
+<section class="section reviews" id="reviews">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="rule-orn"><span class="l"></span><span class="eyebrow">Loved in Charlotte</span><span class="l"></span></div>
+      <h2>What Our Guests <span class="it">Say</span></h2>
+    </div>
+
+    <div class="rev-topline reveal">
+      <div class="rev-badge">
+        <span class="big">4.8</span>
+        <span class="stars" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        </span>
+        <span class="meta">431 Google Reviews</span>
+      </div>
+    </div>
+
+    <div class="rev-grid">
+      <div class="rev-card reveal" data-delay="1">
+        <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+        <p>Katy always does my nails, she is AMAZING! This salon is clean and everyone is so friendly. They always offer something to drink. 10000/10 recommend. My nails last 4-6 weeks which is unheard of!</p>
+        <div class="src"><b>Katie Paige</b> · Google, 4.8 stars</div>
+      </div>
+      <div class="rev-card reveal" data-delay="2">
+        <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+        <p>First time here, and truly enjoyed my experience. Great customer service, no long wait, friendly and professional. Love the way my nails turned out.</p>
+        <div class="src"><b>T M</b> · Google</div>
+      </div>
+      <div class="rev-card reveal" data-delay="3">
+        <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+        <p>Full set with designs! Affordable and she followed the picture I showed. I didn't even have to pick out my colors. Just showed the picture and sit down. They gave me a drink and they got to work! Fast too. I have seen Katy both times I went!</p>
+        <div class="src"><b>Misty James</b> · Google</div>
+      </div>
+      <div class="rev-card reveal" data-delay="1">
+        <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+        <p>Always professional and friendly, they make everyone feel special. I would highly recommend.</p>
+        <div class="src"><b>Georgia Cannon</b> · Facebook recommendation</div>
+      </div>
+      <div class="rev-card reveal" data-delay="2">
+        <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+        <p>Impeccable service, great atmosphere with upbeat music.</p>
+        <div class="src"><b>Google review</b> · summary snippet</div>
+      </div>
+      <div class="rev-card rev-placeholder reveal" data-delay="3">
+        <span class="stars" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        </span>
+        <b>Your live Google reviews</b>
+        <span>Fresh five-star reviews pull in here automatically once connected.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BRIDAL ===================== -->
+<section class="section bridal" id="bridal">
+  <div class="wrap bridal-grid">
+    <div class="bridal-visual reveal" aria-hidden="true">
+      <svg viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="b-bg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#5E3352"/><stop offset="1" stop-color="#3A1C32"/>
+          </linearGradient>
+          <radialGradient id="b-glow" cx="0.5" cy="0.35" r="0.6">
+            <stop offset="0" stop-color="rgba(219,192,149,0.4)"/><stop offset="1" stop-color="rgba(219,192,149,0)"/>
+          </radialGradient>
+        </defs>
+        <rect width="500" height="400" fill="url(#b-bg)"/>
+        <rect width="500" height="400" fill="url(#b-glow)"/>
+        <!-- ring band -->
+        <circle cx="250" cy="210" r="86" fill="none" stroke="#C9A876" stroke-width="10"/>
+        <circle cx="250" cy="210" r="86" fill="none" stroke="#DBC095" stroke-width="3" opacity="0.7"/>
+        <!-- diamond -->
+        <g transform="translate(250 96)">
+          <path d="M0 -34 L26 -10 L0 34 L-26 -10 Z" fill="#F6F1E7"/>
+          <path d="M0 -34 L26 -10 L0 -6 Z" fill="#DBC095"/>
+          <path d="M0 -34 L-26 -10 L0 -6 Z" fill="#C9A876"/>
+          <path d="M-26 -10 L0 34 L0 -6 Z" fill="#EFE4D4"/>
+          <path d="M26 -10 L0 34 L0 -6 Z" fill="#FCF9F3"/>
+        </g>
+        <!-- sparkles -->
+        <g fill="#F6F1E7">
+          <path d="M120 120 l4 8 8 4 -8 4 -4 8 -4 -8 -8 -4 8 -4z"/>
+          <path d="M390 300 l3 6 6 3 -6 3 -3 6 -3 -6 -6 -3 6 -3z"/>
+          <path d="M110 300 l3 6 6 3 -6 3 -3 6 -3 -6 -6 -3 6 -3z"/>
+          <path d="M380 110 l2.5 5 5 2.5 -5 2.5 -2.5 5 -2.5 -5 -5 -2.5 5 -2.5z"/>
+        </g>
+      </svg>
+    </div>
+    <div class="reveal" data-delay="2">
+      <p class="eyebrow">For the Wedding Day</p>
+      <h2>Bridal Nails, <span class="it">Made for the Aisle</span></h2>
+      <p>Your hands are in every photograph, holding the bouquet, resting on the ring. Our bridal work is planned in advance with your artist, matched to your dress and palette, and finished to last through the rehearsal, the ceremony, and the celebration.</p>
+      <p>Book an early consultation so your wedding-day look is settled long before the morning of.</p>
+      <a href="#book" class="btn btn-ghost">Plan Your Bridal Look</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== VISIT / LOCATION ===================== -->
+<section class="section location" id="visit">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="rule-orn"><span class="l"></span><span class="eyebrow">Visit the Lounge</span><span class="l"></span></div>
+      <h2>Find Us in <span class="it">Charlotte</span></h2>
+    </div>
+    <div class="loc-grid">
+      <div class="loc-card reveal" data-delay="1">
+        <h3>The Details</h3>
+        <div class="loc-row">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4A2540" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
+          <div>
+            <div class="lbl">Address</div>
+            <div class="val"><a href="https://maps.google.com/?q=Venice+Nail+Lounge+12925+Albemarle+Rd+Suite+B+Charlotte+NC+28227" target="_blank" rel="noopener">12925 Albemarle Rd, Suite B<br>Charlotte, NC 28227</a></div>
+          </div>
+        </div>
+        <div class="loc-row">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4A2540" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg></div>
+          <div>
+            <div class="lbl">Call or Text</div>
+            <!-- VERIFY: confirm phone number before publishing -->
+            <div class="val"><a href="tel:+10000000000">(000) 000-0000</a></div>
+          </div>
+        </div>
+        <div class="loc-row">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4A2540" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 3 2 5 3 7h8c1-2 3-4 3-7a7 7 0 0 0-7-7Z"/><path d="M9 22h6"/></svg></div>
+          <div>
+            <div class="lbl">The Feel</div>
+            <div class="val">A clean, upscale lounge with upbeat music, complimentary drinks, and a friendly, professional team.</div>
+          </div>
+        </div>
+        <a href="https://maps.google.com/?q=Venice+Nail+Lounge+12925+Albemarle+Rd+Suite+B+Charlotte+NC+28227" target="_blank" rel="noopener" class="btn btn-ghost" style="margin-top:1.4rem">Get Directions</a>
+      </div>
+
+      <div class="loc-card reveal" data-delay="2">
+        <h3>Hours</h3>
+        <table class="hours-table" id="hours">
+          <tbody>
+            <tr data-day="1"><td>Monday</td><td>10:00 AM to 7:00 PM</td></tr>
+            <tr data-day="2"><td>Tuesday</td><td>10:00 AM to 7:00 PM</td></tr>
+            <tr data-day="3"><td>Wednesday</td><td>10:00 AM to 7:00 PM</td></tr>
+            <tr data-day="4"><td>Thursday</td><td>10:00 AM to 7:00 PM</td></tr>
+            <tr data-day="5"><td>Friday</td><td>10:00 AM to 7:00 PM</td></tr>
+            <tr data-day="6"><td>Saturday</td><td>10:00 AM to 7:00 PM</td></tr>
+            <tr data-day="0" class="closed"><td>Sunday</td><td>Closed</td></tr>
+          </tbody>
+        </table>
+        <div class="map-embed">
+          <svg viewBox="0 0 400 250" role="img" aria-label="Stylized map of the Albemarle Road location">
+            <rect width="400" height="250" fill="#EFE4D4"/>
+            <g stroke="#D8C8B2" stroke-width="8" fill="none">
+              <path d="M-10 70 H410"/><path d="M-10 170 H410"/><path d="M110 -10 V260"/><path d="M280 -10 V260"/>
+            </g>
+            <g stroke="#C9A876" stroke-width="3" fill="none" opacity="0.7">
+              <path d="M-10 120 Q200 100 410 130"/>
+            </g>
+            <rect x="130" y="80" width="60" height="40" rx="3" fill="#E4D6C2"/>
+            <rect x="300" y="180" width="50" height="35" rx="3" fill="#E4D6C2"/>
+            <rect x="40" y="185" width="45" height="30" rx="3" fill="#E4D6C2"/>
+            <!-- pin -->
+            <g transform="translate(200 108)">
+              <path d="M0 30 C-14 10 -18 4 -18 -6 A18 18 0 0 1 18 -6 C18 4 14 10 0 30Z" fill="#4A2540"/>
+              <circle cx="0" cy="-6" r="7" fill="#DBC095"/>
+            </g>
+          </svg>
+          <a href="https://maps.google.com/?q=Venice+Nail+Lounge+12925+Albemarle+Rd+Suite+B+Charlotte+NC+28227" target="_blank" rel="noopener" class="btn btn-primary pin-cta">Open in Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA / BOOK ===================== -->
+<section class="section finale" id="book">
+  <div class="wrap">
+    <p class="eyebrow reveal">Reserve Your Time</p>
+    <h2 class="reveal" data-delay="1">Begin the <span class="it">Ritual</span></h2>
+    <p class="reveal" data-delay="2">Reserve your chair for a manicure, a luxury pedicure, or a custom design. We will have a drink waiting.</p>
+    <div class="finale-actions reveal" data-delay="3">
+      <!-- VERIFY: confirm phone number before publishing -->
+      <a href="tel:+10000000000" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>
+        Call to Book
+      </a>
+      <button class="btn btn-ghost is-soon" disabled aria-disabled="true" title="Online booking coming soon">Book Online · Coming Soon</button>
+    </div>
+    <span class="verify-tag">VERIFY: add real phone and online booking link before launch</span>
+  </div>
+</section>
+
+<!-- ===================== CONTACT FORM ===================== -->
+<section class="section contact">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <p class="eyebrow">Request an Appointment</p>
+      <h2>Tell Us What You Have in Mind</h2>
+      <p>Share your preferred service and a reference photo idea, and the lounge will follow up to confirm a time.</p>
+    </div>
+    <div class="form-card reveal" data-delay="2">
+      <!-- Replace REPLACE-WITH-CLIENT-EMAIL with the salon's real inbox before launch -->
+      <form action="https://formsubmit.co/REPLACE-WITH-CLIENT-EMAIL" method="POST">
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your name">
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required placeholder="Best number">
+          </div>
+        </div>
+        <div class="field">
+          <label for="service">Service of Interest</label>
+          <select id="service" name="service">
+            <option>Manicure</option>
+            <option>Luxury Pedicure</option>
+            <option>Dip Powder</option>
+            <option>Acrylic, Gel-X or Builder Gel</option>
+            <option>Custom Nail Art</option>
+            <option>Bridal or Wedding-Day Nails</option>
+            <option>Waxing</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Anything Else</label>
+          <textarea id="message" name="message" placeholder="Preferred day and time, a design you love, questions..."></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="New appointment request from the website">
+        <input type="text" name="_honey" style="display:none">
+        <button type="submit" class="btn btn-primary">Send Request</button>
+        <p class="form-fine">We will reply to confirm. This form does not book a time on its own.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="brandmark">
+          <svg width="26" height="26" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M20 4C13 12 8 18 8 25a12 12 0 0 0 24 0c0-7-5-13-12-21Z" fill="#C9A876"/>
+            <path d="M20 10c-4 5-7 9-7 14a7 7 0 0 0 14 0c0-5-3-9-7-14Z" fill="#F6F1E7" opacity="0.4"/>
+          </svg>
+          Venice Nail Lounge
+        </div>
+        <p class="footer-blurb">A quiet-luxury nail lounge in Charlotte, NC. Inspired by timeless beauty, devoted to the ritual of self-love.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Nail Art</a></li>
+          <li><a href="#story">Our Story</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#bridal">Bridal</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li>12925 Albemarle Rd, Suite B</li>
+          <li>Charlotte, NC 28227</li>
+          <li>Mon to Sat · 10AM to 7PM</li>
+          <li>Sunday · Closed</li>
+          <!-- VERIFY: confirm phone number before publishing -->
+          <li><a href="tel:+10000000000">Call to Book</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="yr"></span> Venice Nail Lounge. All rights reserved.</p>
+      <p class="disclaimer">Concept preview built by DNA Agency, not affiliated with Venice Nail Lounge.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- terrazzo chips (built in JS so we control count/positions cleanly) ---- */
+  var terr = document.getElementById('terrazzo');
+  if(terr){
+    var colors = ['#4A2540','#C9A876','#C97C6A','#FCF9F3','#5E3352','#DBC095'];
+    // clip-path polygon presets for irregular shards
+    var shapes = [
+      'polygon(50% 0,100% 38%,82% 100%,18% 100%,0 38%)',
+      'polygon(0 0,100% 20%,80% 100%,10% 80%)',
+      'polygon(20% 0,100% 30%,90% 100%,0 70%)',
+      'polygon(50% 0,100% 50%,50% 100%,0 50%)',
+      'polygon(0 20%,80% 0,100% 80%,20% 100%)',
+      'polygon(30% 0,100% 0,70% 100%,0 60%)'
+    ];
+    var count = window.innerWidth < 640 ? 26 : 46;
+    var frag = document.createDocumentFragment();
+    for(var i=0;i<count;i++){
+      var c = document.createElement('span');
+      c.className = 'chip';
+      var size = 14 + Math.random()*52;
+      var top = Math.random()*100;
+      var left = Math.random()*100;
+      var col = colors[(Math.random()*colors.length)|0];
+      var shp = shapes[(Math.random()*shapes.length)|0];
+      var rot = (Math.random()*90-45).toFixed(1);
+      var op = 0.35 + Math.random()*0.5;
+      c.style.width = size+'px';
+      c.style.height = size+'px';
+      c.style.top = top+'%';
+      c.style.left = left+'%';
+      c.style.background = col;
+      c.style.clipPath = shp;
+      c.style.webkitClipPath = shp;
+      c.style.opacity = '0';
+      c.style.setProperty('--r', rot+'deg');
+      c.style.setProperty('--op', op.toFixed(2));
+      c.style.setProperty('--d', reduce ? '0s' : (Math.random()*0.9).toFixed(2)+'s');
+      // gold chips keep a soft lasting shimmer
+      if(col === '#C9A876' || col === '#DBC095'){
+        c.style.boxShadow = '0 0 14px rgba(219,192,149,0.5)';
+      }
+      c.style.mixBlendMode = 'multiply';
+      // store target opacity via inline final via animation; set filter
+      c.style.filter = 'saturate(1.05)';
+      c.dataset.op = op;
+      frag.appendChild(c);
+    }
+    terr.appendChild(frag);
+    // ensure final opacity respected after animation for reduced motion
+    if(reduce){
+      var chips = terr.querySelectorAll('.chip');
+      for(var k=0;k<chips.length;k++){ chips[k].style.opacity = chips[k].dataset.op; }
+    }
+  }
+
+  /* ---- nav scroll state + mobile toggle ---- */
+  var nav = document.getElementById('nav');
+  var onScroll = function(){
+    if(window.scrollY > 20){ nav.classList.add('scrolled'); } else { nav.classList.remove('scrolled'); }
+  };
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  if(toggle){
+    toggle.addEventListener('click', function(){
+      var open = links.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    links.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        links.classList.remove('open'); toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+      });
+    });
+  }
+
+  /* ---- scroll reveal ---- */
+  var revealEls = document.querySelectorAll('.reveal');
+  if(reduce || !('IntersectionObserver' in window)){
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.14, rootMargin:'0px 0px -8% 0px'});
+    revealEls.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ---- highlight today's hours row ---- */
+  var today = new Date().getDay();
+  var row = document.querySelector('.hours-table tr[data-day="'+today+'"]');
+  if(row){ row.classList.add('today'); }
+
+  /* ---- year ---- */
+  var yr = document.getElementById('yr');
+  if(yr){ yr.textContent = new Date().getFullYear(); }
+})();
+</script>
+
+</body>
+</html>
