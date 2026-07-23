@@ -1,0 +1,1260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Atlanta Auto Spa · Reflection &amp; Protection | Ceramic Coating, Detailing &amp; Paint Correction</title>
+<meta name="description" content="Buckhead's owner-operated ceramic coating, paint correction, and detailing shop. Mirror-shine finishes, transparent pricing, and 30+ years of hands-on craft.">
+<style>
+/* ============================================================
+   ATLANTA AUTO SPA · "Liquid Gloss" Dark Automotive Luxury
+   Concept preview built by DNA Agency
+   ============================================================ */
+
+:root{
+  --bg:#0A0C10;              /* near-black graphite */
+  --surface:#14181F;         /* layered charcoal */
+  --surface-2:#1B2029;
+  --chrome:#C7CDD6;          /* polished-chrome silver */
+  --chrome-bright:#EDEFF3;
+  --blue:#2E7DFF;            /* ceramic electric-blue */
+  --blue-deep:#1B5FDB;
+  --brass:#E8B04B;           /* brushed-brass, trust marks only */
+  --text:#EDEFF3;
+  --muted:#8A929E;
+  --line:rgba(199,205,214,.12);
+  --line-strong:rgba(199,205,214,.22);
+
+  --font-display:'Bahnschrift','DIN Alternate','Arial Narrow',sans-serif;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+
+  --maxw:1180px;
+  --gutter:clamp(1.25rem,5vw,4rem);
+  --radius:14px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-body);
+  line-height:1.7;
+  font-size:clamp(1rem,.96rem + .3vw,1.12rem);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+body::before{
+  /* ambient graphite depth: two radial pools of cold light */
+  content:"";
+  position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(60% 55% at 18% 0%, rgba(46,125,255,.10), transparent 60%),
+    radial-gradient(70% 60% at 100% 12%, rgba(199,205,214,.06), transparent 55%),
+    linear-gradient(180deg,#0A0C10 0%, #0B0E13 60%, #090B0F 100%);
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+
+/* ---- Display type ---- */
+.display{
+  font-family:var(--font-display);
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  font-weight:600;
+  line-height:.98;
+}
+.eyebrow{
+  font-family:var(--font-display);
+  text-transform:uppercase;
+  letter-spacing:.34em;
+  font-size:clamp(.66rem,.6rem + .3vw,.78rem);
+  color:var(--blue);
+  font-weight:600;
+}
+.eyebrow.chrome{color:var(--chrome)}
+
+/* ---- Buttons ---- */
+.btn{
+  display:inline-flex;align-items:center;gap:.6em;
+  font-family:var(--font-display);
+  text-transform:uppercase;letter-spacing:.14em;font-weight:600;
+  font-size:clamp(.82rem,.78rem + .25vw,.95rem);
+  padding:1.05em 1.9em;
+  border-radius:8px;
+  cursor:pointer;border:1px solid transparent;
+  position:relative;overflow:hidden;
+  transition:transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s, background .3s;
+  will-change:transform;
+}
+.btn:focus-visible{outline:2px solid var(--chrome-bright);outline-offset:3px}
+.btn-primary{
+  background:linear-gradient(180deg,#3A88FF 0%, var(--blue) 55%, var(--blue-deep) 100%);
+  color:#fff;
+  box-shadow:0 10px 30px -12px rgba(46,125,255,.7), inset 0 1px 0 rgba(255,255,255,.28);
+}
+.btn-primary::after{
+  /* animated sheen on hover */
+  content:"";position:absolute;top:0;left:-60%;width:45%;height:100%;
+  background:linear-gradient(105deg,transparent,rgba(255,255,255,.55),transparent);
+  transform:skewX(-18deg);transition:none;
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px -12px rgba(46,125,255,.85), inset 0 1px 0 rgba(255,255,255,.35)}
+.btn-primary:hover::after{animation:sheen 1s ease}
+@keyframes sheen{from{left:-60%}to{left:130%}}
+.btn-ghost{
+  background:rgba(199,205,214,.04);
+  color:var(--chrome-bright);
+  border:1px solid var(--line-strong);
+  backdrop-filter:blur(4px);
+}
+.btn-ghost:hover{background:rgba(199,205,214,.09);border-color:var(--chrome);transform:translateY(-2px)}
+.btn[disabled],.btn.is-disabled{
+  opacity:.5;cursor:not-allowed;pointer-events:none;
+  background:var(--surface-2);color:var(--muted);border:1px solid var(--line);box-shadow:none;
+}
+
+/* =======================================================
+   NAV
+   ======================================================= */
+.nav{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter:blur(14px) saturate(120%);
+  background:rgba(10,12,16,.6);
+  border-bottom:1px solid transparent;
+  transition:background .35s, border-color .35s;
+}
+.nav.scrolled{background:rgba(10,12,16,.86);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:70px}
+.brand{display:flex;align-items:center;gap:.7rem}
+.brand .mark{width:34px;height:34px;flex:none}
+.brand-name{
+  font-family:var(--font-display);text-transform:uppercase;
+  letter-spacing:.18em;font-weight:600;font-size:1.02rem;color:var(--chrome-bright);
+  line-height:1;
+}
+.brand-name small{display:block;font-size:.5rem;letter-spacing:.42em;color:var(--muted);margin-top:.35em}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{
+  font-family:var(--font-display);text-transform:uppercase;letter-spacing:.16em;
+  font-size:.76rem;color:var(--muted);font-weight:600;transition:color .25s;position:relative;
+}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:1px;width:0;background:var(--blue);transition:width .3s}
+.nav-links a:hover{color:var(--chrome-bright)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{display:flex;align-items:center;gap:.75rem}
+.nav-phone{
+  font-family:var(--font-display);letter-spacing:.06em;font-weight:600;font-size:.9rem;
+  color:var(--chrome-bright);white-space:nowrap;
+}
+.nav-toggle{display:none;background:none;border:0;color:var(--chrome);cursor:pointer;padding:.4rem}
+@media(max-width:900px){
+  .nav-links{display:none}
+  .nav-phone{display:none}
+}
+
+/* =======================================================
+   UTILITY / HOURS BAR
+   ======================================================= */
+.util{
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(90deg,rgba(20,24,31,.7),rgba(11,14,19,.3));
+  font-size:.8rem;
+}
+.util-inner{
+  display:flex;align-items:center;justify-content:center;gap:1.3rem;flex-wrap:wrap;
+  padding:.55rem var(--gutter);color:var(--muted);text-align:center;
+}
+.util-inner strong{color:var(--chrome)}
+.util .dot{width:6px;height:6px;border-radius:50%;background:var(--blue);box-shadow:0 0 10px var(--blue);display:inline-block;vertical-align:middle}
+.util .brass{color:var(--brass)}
+
+/* =======================================================
+   HERO
+   ======================================================= */
+.hero{position:relative;overflow:hidden;padding:clamp(3.5rem,7vw,7rem) 0 clamp(3rem,6vw,6rem)}
+/* the glossy coated surface: specular sweep */
+.hero-surface{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero-surface::before{
+  /* chrome-silver light band sweeping left→right */
+  content:"";position:absolute;top:-20%;left:-40%;width:55%;height:140%;
+  background:linear-gradient(105deg,
+     transparent 0%,
+     rgba(199,205,214,.0) 30%,
+     rgba(199,205,214,.16) 47%,
+     rgba(237,239,243,.30) 50%,
+     rgba(199,205,214,.16) 53%,
+     transparent 70%);
+  transform:skewX(-14deg);
+  animation:sweep 7s cubic-bezier(.5,0,.5,1) infinite;
+  mix-blend-mode:screen;
+}
+.hero-surface::after{
+  /* blue ceramic sheen trailing behind */
+  content:"";position:absolute;top:-20%;left:-40%;width:50%;height:140%;
+  background:linear-gradient(105deg,transparent 40%, rgba(46,125,255,.14) 50%, transparent 62%);
+  transform:skewX(-14deg);
+  animation:sweep 7s cubic-bezier(.5,0,.5,1) infinite;
+  animation-delay:.55s;
+  mix-blend-mode:screen;
+}
+@keyframes sweep{
+  0%{left:-45%}
+  55%{left:120%}
+  100%{left:120%}
+}
+.hero-grid-lines{
+  position:absolute;inset:0;z-index:0;opacity:.5;
+  background-image:
+    linear-gradient(rgba(199,205,214,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(199,205,214,.04) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(75% 65% at 50% 35%,#000 40%,transparent 100%);
+}
+.hero-inner{position:relative;z-index:2}
+.hero-top{display:flex;gap:.9rem;align-items:center;margin-bottom:clamp(1.6rem,3vw,2.4rem)}
+.hero-rule{height:1px;flex:1;background:linear-gradient(90deg,var(--chrome),transparent)}
+
+.hero-headline{
+  font-family:var(--font-display);text-transform:uppercase;letter-spacing:.11em;font-weight:600;
+  font-size:clamp(2.8rem,3rem + 6vw,7.6rem);
+  line-height:.92;
+  color:var(--chrome-bright);
+  position:relative;
+  background:linear-gradient(180deg,#F4F6FA 0%, var(--chrome) 55%, #9AA2AD 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero-headline .amp{color:var(--blue);-webkit-text-fill-color:var(--blue);font-weight:400}
+/* mirrored ghost reflection beneath */
+.hero-reflect{
+  font-family:var(--font-display);text-transform:uppercase;letter-spacing:.11em;font-weight:600;
+  font-size:clamp(2.8rem,3rem + 6vw,7.6rem);line-height:.92;
+  transform:scaleY(-1);
+  background:linear-gradient(180deg,rgba(199,205,214,.22),transparent 70%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  color:transparent;
+  margin-top:.06em;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.5),transparent 60%);
+  -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.5),transparent 60%);
+  pointer-events:none;user-select:none;
+  height:1.1em;overflow:hidden;
+}
+.hero-lede{
+  max-width:44ch;margin-top:clamp(1rem,2vw,1.6rem);color:var(--muted);
+  font-size:clamp(1.02rem,.98rem + .4vw,1.22rem);line-height:1.65;
+}
+.hero-lede b{color:var(--text);font-weight:600}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:clamp(1.8rem,3vw,2.6rem)}
+
+/* split-reveal before/after panel */
+.reveal-panel{
+  position:relative;margin-top:clamp(2.6rem,5vw,4rem);
+  border-radius:var(--radius);overflow:hidden;
+  border:1px solid var(--line-strong);
+  aspect-ratio:16/6.4;
+  box-shadow:0 40px 90px -40px rgba(0,0,0,.9), inset 0 1px 0 rgba(199,205,214,.1);
+  isolation:isolate;
+}
+@media(max-width:640px){.reveal-panel{aspect-ratio:16/9.5}}
+.reveal-layer{position:absolute;inset:0}
+/* dull, swirl-marked "before" */
+.reveal-before{
+  background:
+    radial-gradient(120% 120% at 30% 20%, #2a2f37, #191d24 70%);
+}
+.reveal-before .swirls{position:absolute;inset:0;opacity:.5}
+.reveal-label{
+  position:absolute;bottom:1rem;font-family:var(--font-display);text-transform:uppercase;
+  letter-spacing:.24em;font-size:.66rem;font-weight:600;padding:.35em .8em;border-radius:5px;
+  background:rgba(10,12,16,.6);backdrop-filter:blur(4px);border:1px solid var(--line);
+}
+.reveal-before .reveal-label{left:1rem;color:var(--muted)}
+/* glossy "after" clipped by divider */
+.reveal-after{
+  clip-path:inset(0 0 0 var(--split,50%));
+  background:
+    radial-gradient(140% 140% at 70% 10%, #171b22 0%, #0A0C10 55%, #060709 100%);
+}
+.reveal-after .gloss{position:absolute;inset:0}
+.reveal-after .reveal-label{right:1rem;color:var(--blue)}
+.reveal-shine{
+  position:absolute;top:-30%;left:-40%;width:50%;height:160%;
+  background:linear-gradient(105deg,transparent 40%,rgba(237,239,243,.22) 50%,transparent 60%);
+  transform:skewX(-14deg);animation:sweep 7s cubic-bezier(.5,0,.5,1) infinite;mix-blend-mode:screen;
+}
+.reveal-divider{
+  position:absolute;top:0;bottom:0;left:var(--split,50%);width:2px;
+  background:linear-gradient(180deg,transparent,var(--chrome),transparent);
+  transform:translateX(-50%);z-index:4;
+  box-shadow:0 0 18px rgba(199,205,214,.4);
+}
+.reveal-handle{
+  position:absolute;top:50%;left:var(--split,50%);transform:translate(-50%,-50%);
+  width:44px;height:44px;border-radius:50%;z-index:5;cursor:ew-resize;
+  background:linear-gradient(180deg,#20252e,#12161c);
+  border:1px solid var(--chrome);
+  display:grid;place-items:center;
+  box-shadow:0 8px 24px -6px rgba(0,0,0,.8), inset 0 1px 0 rgba(255,255,255,.2);
+}
+.reveal-handle svg{width:22px;height:22px;color:var(--chrome)}
+.reveal-handle:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.reveal-caption{
+  position:absolute;top:1rem;left:1rem;right:1rem;z-index:3;
+  display:flex;justify-content:space-between;gap:1rem;pointer-events:none;
+}
+.reveal-caption .display{font-size:clamp(.7rem,.66rem + .3vw,.86rem);letter-spacing:.2em;color:var(--chrome)}
+
+/* =======================================================
+   SECTION SCAFFOLD
+   ======================================================= */
+section{position:relative}
+.section-pad{padding:clamp(3.6rem,7vw,7rem) 0}
+.section-head{max-width:60ch;margin-bottom:clamp(2rem,4vw,3.2rem)}
+.section-head h2{
+  font-family:var(--font-display);text-transform:uppercase;letter-spacing:.08em;font-weight:600;
+  font-size:clamp(1.9rem,1.6rem + 3vw,3.6rem);line-height:1.02;margin-top:.6rem;
+  color:var(--chrome-bright);
+}
+.section-head p{color:var(--muted);margin-top:1rem;font-size:clamp(1rem,.97rem + .3vw,1.14rem)}
+.hairline{height:1px;background:linear-gradient(90deg,var(--line-strong),transparent);margin:0}
+
+/* =======================================================
+   BENEFIT STRIP
+   ======================================================= */
+.benefits{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+}
+@media(max-width:860px){.benefits{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.benefits{grid-template-columns:1fr}}
+.benefit{
+  background:linear-gradient(180deg,var(--surface),#10141a);
+  padding:clamp(1.6rem,3vw,2.3rem);
+  display:flex;flex-direction:column;gap:.9rem;
+  transition:background .35s;position:relative;
+}
+.benefit:hover{background:linear-gradient(180deg,#181d25,#11151b)}
+.benefit .ico{width:44px;height:44px;color:var(--blue)}
+.benefit h3{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.1em;font-weight:600;font-size:1.05rem;color:var(--chrome-bright)}
+.benefit p{color:var(--muted);font-size:.94rem;line-height:1.6}
+
+/* =======================================================
+   SERVICES GRID
+   ======================================================= */
+.svc-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(1rem,2vw,1.4rem)}
+.card{
+  background:linear-gradient(180deg,var(--surface) 0%, #0F131A 100%);
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:clamp(1.5rem,2.5vw,2.1rem);
+  position:relative;overflow:hidden;
+  transition:transform .4s cubic-bezier(.2,.8,.2,1), border-color .4s, box-shadow .4s;
+}
+.card::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:radial-gradient(120% 80% at 100% 0%, rgba(46,125,255,.08), transparent 55%);
+  opacity:0;transition:opacity .4s;
+}
+.card:hover{transform:translateY(-4px);border-color:var(--line-strong);box-shadow:0 30px 60px -34px rgba(0,0,0,.9)}
+.card:hover::before{opacity:1}
+.card .art{height:120px;margin:-.4rem -.4rem 1.2rem;border-radius:10px;overflow:hidden;background:#0b0e13;border:1px solid var(--line)}
+.card .art svg{width:100%;height:100%;display:block}
+.card .k{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.2em;font-size:.64rem;color:var(--blue);font-weight:600}
+.card h3{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.06em;font-weight:600;font-size:clamp(1.15rem,1.05rem + .5vw,1.45rem);color:var(--chrome-bright);margin:.55rem 0 .5rem;line-height:1.05}
+.card p{color:var(--muted);font-size:.95rem;line-height:1.6}
+.card ul{list-style:none;margin-top:1rem;display:flex;flex-direction:column;gap:.55rem}
+.card li{display:flex;gap:.6rem;align-items:flex-start;font-size:.9rem;color:var(--text)}
+.card li svg{width:16px;height:16px;color:var(--blue);flex:none;margin-top:.28em}
+
+/* the three coating tiers get spotlight treatment; tier 3 (Lifetime) highlighted in blue */
+.tier-row{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2vw,1.4rem);margin-bottom:clamp(1.4rem,2.5vw,1.8rem)}
+@media(max-width:820px){.tier-row{grid-template-columns:1fr}}
+.tier{
+  background:linear-gradient(180deg,#141922 0%, #0D1017 100%);
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:clamp(1.6rem,2.5vw,2.2rem);position:relative;overflow:hidden;
+  transition:transform .4s cubic-bezier(.2,.8,.2,1), border-color .4s;
+}
+.tier:hover{transform:translateY(-4px)}
+.tier .tier-n{font-family:var(--font-display);font-size:3.4rem;font-weight:600;color:rgba(199,205,214,.14);line-height:.8;letter-spacing:.02em}
+.tier h3{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.08em;font-weight:600;font-size:1.35rem;color:var(--chrome-bright);margin:.5rem 0 .3rem}
+.tier .dur{font-family:var(--font-display);letter-spacing:.18em;text-transform:uppercase;font-size:.72rem;color:var(--muted)}
+.tier p{color:var(--muted);font-size:.92rem;margin-top:.9rem;line-height:1.6}
+.tier--top{border-color:rgba(46,125,255,.5);box-shadow:0 0 0 1px rgba(46,125,255,.25), 0 30px 60px -34px rgba(46,125,255,.35)}
+.tier--top::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(100% 60% at 50% 0%, rgba(46,125,255,.16),transparent 60%)}
+.tier--top .badge{
+  position:absolute;top:1.1rem;right:1.1rem;font-family:var(--font-display);text-transform:uppercase;
+  letter-spacing:.16em;font-size:.6rem;font-weight:600;color:#fff;
+  background:var(--blue);padding:.35em .7em;border-radius:5px;
+  box-shadow:0 6px 18px -6px rgba(46,125,255,.8);
+  animation:badge-pulse 3.4s ease-in-out infinite;
+}
+@keyframes badge-pulse{
+  0%,100%{box-shadow:0 6px 18px -6px rgba(46,125,255,.55)}
+  50%{box-shadow:0 6px 26px -4px rgba(46,125,255,1)}
+}
+.tier--top .tier-n{color:rgba(46,125,255,.4)}
+.tier--top .dur{color:var(--blue)}
+
+.svc-full{grid-column:span 4}
+.svc-wide{grid-column:span 6}
+@media(max-width:820px){.svc-full,.svc-wide{grid-column:span 12}}
+
+/* =======================================================
+   STORY
+   ======================================================= */
+.story{position:relative}
+.story-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+@media(max-width:900px){.story-grid{grid-template-columns:1fr}}
+.story-copy p{color:var(--muted);margin-top:1.1rem;font-size:clamp(1.02rem,.98rem + .3vw,1.15rem);line-height:1.75}
+.story-copy p b{color:var(--text)}
+.story-copy .lead{color:var(--text);font-size:clamp(1.15rem,1.05rem + .6vw,1.5rem);line-height:1.5;font-weight:400}
+.story-sign{margin-top:1.8rem;display:flex;align-items:center;gap:1rem}
+.story-sign .line{width:44px;height:1px;background:var(--brass)}
+.story-sign span{font-family:var(--font-display);letter-spacing:.2em;text-transform:uppercase;font-size:.78rem;color:var(--chrome)}
+
+.timeline{display:flex;flex-direction:column;gap:0;border-left:1px solid var(--line-strong);padding-left:1.6rem;margin-left:.4rem}
+.tl{position:relative;padding:1rem 0 1.2rem}
+.tl::before{content:"";position:absolute;left:calc(-1.6rem - 1px);top:1.5rem;width:9px;height:9px;border-radius:50%;background:var(--surface);border:2px solid var(--blue);transform:translateX(-50%)}
+.tl .yr{font-family:var(--font-display);letter-spacing:.14em;font-size:1.5rem;font-weight:600;color:var(--chrome-bright)}
+.tl h4{font-family:var(--font-body);font-size:.82rem;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);margin-top:.15rem}
+.tl p{color:var(--muted);font-size:.94rem;margin-top:.4rem;line-height:1.6}
+.tl:last-child::before{background:var(--blue);box-shadow:0 0 14px var(--blue)}
+
+/* =======================================================
+   REVIEWS
+   ======================================================= */
+.rev-strip{display:flex;align-items:center;gap:clamp(1rem,3vw,2.4rem);flex-wrap:wrap;margin-bottom:clamp(2rem,4vw,3rem);padding-bottom:1.6rem;border-bottom:1px solid var(--line)}
+.rev-score{display:flex;align-items:baseline;gap:.5rem}
+.rev-score .num{font-family:var(--font-display);font-size:clamp(2.4rem,2rem + 3vw,3.6rem);font-weight:600;color:var(--brass);line-height:1}
+.rev-score .stars{
+  color:var(--brass);letter-spacing:.1em;font-size:1.1rem;
+  background:linear-gradient(100deg,var(--brass) 0%, #FFE7B0 50%, var(--brass) 100%);
+  background-size:200% 100%;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  animation:star-shimmer 4.5s linear infinite;
+}
+@keyframes star-shimmer{
+  0%{background-position:200% 0}
+  100%{background-position:-200% 0}
+}
+.rev-score small{color:var(--muted);font-size:.82rem;display:block;letter-spacing:.04em}
+.rev-badges{display:flex;gap:.7rem;flex-wrap:wrap}
+.rev-badge{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.14em;font-size:.68rem;font-weight:600;color:var(--chrome);border:1px solid var(--line-strong);border-radius:6px;padding:.5em .9em;background:rgba(199,205,214,.03)}
+.rev-badge.brass{color:var(--brass);border-color:rgba(232,176,75,.35)}
+
+.rev-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(1rem,2vw,1.4rem)}
+.quote{
+  grid-column:span 3;
+  background:linear-gradient(180deg,var(--surface),#0F131A);
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:clamp(1.5rem,2.5vw,2.1rem);position:relative;
+  transition:transform .4s cubic-bezier(.2,.8,.2,1),border-color .4s;
+}
+.quote:hover{transform:translateY(-3px);border-color:var(--line-strong)}
+.quote .mark{font-family:var(--font-display);font-size:3rem;line-height:.5;color:var(--blue);opacity:.5;height:.5em;display:block}
+.quote p{color:var(--text);font-size:clamp(.96rem,.93rem + .2vw,1.05rem);line-height:1.66;margin:1rem 0 1.3rem}
+.quote .who{display:flex;align-items:center;gap:.7rem;border-top:1px solid var(--line);padding-top:1rem}
+.quote .av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--surface-2),#0b0e13);border:1px solid var(--line-strong);display:grid;place-items:center;font-family:var(--font-display);color:var(--chrome);font-size:.9rem;flex:none}
+.quote .who b{color:var(--chrome-bright);font-weight:600;font-size:.9rem;display:block}
+.quote .who small{color:var(--muted);font-size:.74rem}
+.quote--tall{grid-column:span 6}
+@media(max-width:820px){.quote{grid-column:span 6}.quote--tall{grid-column:span 6}}
+@media(max-width:560px){.rev-grid{grid-template-columns:1fr}.quote,.quote--tall{grid-column:span 1}}
+.rev-placeholder{
+  grid-column:span 6;border:1px dashed var(--line-strong);border-radius:var(--radius);
+  padding:1.3rem 1.6rem;color:var(--muted);font-size:.88rem;text-align:center;background:rgba(199,205,214,.015);
+}
+.rev-placeholder b{color:var(--chrome)}
+
+/* =======================================================
+   LOCATION
+   ======================================================= */
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.4rem,3vw,2.2rem)}
+@media(max-width:860px){.loc-grid{grid-template-columns:1fr}}
+.loc-card{background:linear-gradient(180deg,var(--surface),#0F131A);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(1.6rem,3vw,2.4rem)}
+.loc-card h3{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.1em;font-weight:600;font-size:1.15rem;color:var(--chrome-bright);margin-bottom:1.2rem;display:flex;align-items:center;gap:.6rem}
+.loc-card h3 svg{width:20px;height:20px;color:var(--blue)}
+.loc-row{display:flex;gap:.9rem;padding:.85rem 0;border-bottom:1px solid var(--line)}
+.loc-row:last-child{border-bottom:0;padding-bottom:0}
+.loc-row svg{width:18px;height:18px;color:var(--muted);flex:none;margin-top:.25em}
+.loc-row .lab{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.1em;font-size:.66rem;color:var(--muted)}
+.loc-row .val{color:var(--text);font-size:.96rem;line-height:1.5}
+.loc-row .val a{color:var(--chrome-bright);border-bottom:1px solid var(--line-strong)}
+.hours-list{display:flex;flex-direction:column;gap:.55rem}
+.hours-list .row{display:flex;justify-content:space-between;font-size:.94rem}
+.hours-list .row span:first-child{color:var(--muted)}
+.hours-list .row span:last-child{color:var(--text)}
+.hours-list .row.closed span:last-child{color:var(--muted)}
+.hours-list .row.now{color:var(--chrome-bright)}
+.hours-list .row.now span:first-child{color:var(--chrome-bright);font-weight:600}
+.areas{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+.area{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.1em;font-size:.64rem;color:var(--chrome);border:1px solid var(--line);border-radius:20px;padding:.4em .9em;background:rgba(199,205,214,.03)}
+.map-svg{width:100%;height:100%;min-height:220px;border-radius:10px;border:1px solid var(--line);background:#0b0e13;display:block}
+
+/* =======================================================
+   FINAL CTA
+   ======================================================= */
+.finale{position:relative;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.finale::before{
+  content:"";position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(60% 120% at 50% 120%, rgba(46,125,255,.16), transparent 60%),
+    radial-gradient(50% 80% at 80% -20%, rgba(199,205,214,.06), transparent 60%);
+}
+.finale-shine{position:absolute;top:-30%;left:-40%;width:40%;height:160%;background:linear-gradient(105deg,transparent 40%,rgba(199,205,214,.10) 50%,transparent 60%);transform:skewX(-14deg);animation:sweep 7s cubic-bezier(.5,0,.5,1) infinite;mix-blend-mode:screen;z-index:0}
+.finale-inner{position:relative;z-index:2;text-align:center;padding:clamp(3.5rem,8vw,7rem) 0}
+.finale h2{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.08em;font-weight:600;font-size:clamp(2.2rem,1.8rem + 4vw,5rem);line-height:.98;color:var(--chrome-bright);background:linear-gradient(180deg,#F4F6FA,var(--chrome) 60%,#9AA2AD);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.finale p{color:var(--muted);max-width:52ch;margin:1.3rem auto 0;font-size:clamp(1.02rem,.98rem + .3vw,1.18rem)}
+.finale-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:clamp(2rem,4vw,2.8rem)}
+
+/* contact form */
+.contact{max-width:640px;margin:clamp(2.4rem,5vw,3.4rem) auto 0;text-align:left}
+.contact-fields{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:560px){.contact-fields{grid-template-columns:1fr}}
+.field{display:flex;flex-direction:column;gap:.4rem}
+.field.full{grid-column:1/-1}
+.field label{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.12em;font-size:.66rem;color:var(--muted)}
+.field input,.field textarea,.field select{
+  background:rgba(10,12,16,.6);border:1px solid var(--line-strong);border-radius:8px;
+  padding:.85em 1em;color:var(--text);font-family:var(--font-body);font-size:.96rem;
+  transition:border-color .25s, box-shadow .25s;width:100%;
+}
+.field textarea{resize:vertical;min-height:96px}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(46,125,255,.18)}
+.field input::placeholder,.field textarea::placeholder{color:#5c6470}
+.contact .btn{width:100%;justify-content:center;margin-top:.4rem}
+
+/* =======================================================
+   FOOTER
+   ======================================================= */
+footer{padding:clamp(2.6rem,5vw,4rem) 0 2.4rem}
+.foot-top{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:flex-start}
+.foot-brand{display:flex;align-items:center;gap:.7rem;margin-bottom:1rem}
+.foot-brand .mark{width:30px;height:30px}
+.foot-col h5{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.16em;font-size:.7rem;color:var(--chrome);margin-bottom:.9rem}
+.foot-col a,.foot-col p{color:var(--muted);font-size:.9rem;display:block;margin-bottom:.5rem;transition:color .25s}
+.foot-col a:hover{color:var(--chrome-bright)}
+.foot-cols{display:flex;gap:clamp(2rem,6vw,5rem);flex-wrap:wrap}
+.foot-bottom{margin-top:clamp(2rem,4vw,3rem);padding-top:1.6rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
+.foot-bottom p{color:var(--muted);font-size:.8rem}
+.foot-disclaimer{color:#5c6470;font-size:.78rem;max-width:52ch}
+.foot-disclaimer b{color:var(--muted)}
+
+/* =======================================================
+   SCROLL REVEAL
+   ======================================================= */
+[data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.8,.2,1), transform .8s cubic-bezier(.2,.8,.2,1)}
+[data-reveal].in{opacity:1;transform:none}
+[data-reveal][data-delay="1"]{transition-delay:.08s}
+[data-reveal][data-delay="2"]{transition-delay:.16s}
+[data-reveal][data-delay="3"]{transition-delay:.24s}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
+  [data-reveal]{opacity:1;transform:none}
+  .hero-surface::before,.hero-surface::after,.reveal-shine,.finale-shine{animation:none;opacity:.4}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand" aria-label="Atlanta Auto Spa home">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="markg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#EDEFF3"/><stop offset=".55" stop-color="#C7CDD6"/><stop offset="1" stop-color="#2E7DFF"/>
+          </linearGradient>
+        </defs>
+        <path d="M20 2 L36 11 V29 L20 38 L4 29 V11 Z" stroke="url(#markg)" stroke-width="1.4" fill="rgba(46,125,255,.06)"/>
+        <path d="M12 25 C15 15, 25 15, 28 25" stroke="#C7CDD6" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        <ellipse cx="20" cy="21" rx="5.4" ry="3.4" fill="none" stroke="#2E7DFF" stroke-width="1.4"/>
+        <path d="M15 20.5 Q20 18 25 20.5" stroke="#EDEFF3" stroke-width="1" fill="none" stroke-linecap="round" opacity=".8"/>
+      </svg>
+      <span class="brand-name">Atlanta Auto Spa<small>Buckhead</small></span>
+    </a>
+    <div class="nav-links">
+      <a href="#coatings">Ceramic Coating</a>
+      <a href="#services">Services</a>
+      <a href="#story">The Owner</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit</a>
+    </div>
+    <div class="nav-cta">
+      <a href="tel:+14048123766" class="nav-phone">(404) 812-3766</a>
+      <a href="#book" class="btn btn-primary" style="padding:.75em 1.3em">Book</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== UTILITY BAR ===================== -->
+<div class="util">
+  <div class="util-inner">
+    <span><span class="dot"></span> By appointment only, Mon to Fri, <strong>7:00 AM to 4:00 PM</strong></span>
+    <span aria-hidden="true">·</span>
+    <span>3333 Peachtree Rd NE, <strong>Buckhead, Atlanta</strong></span>
+    <span aria-hidden="true">·</span>
+    <span class="brass">Owner-operated since 1988</span>
+  </div>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero" id="top">
+  <div class="hero-surface" aria-hidden="true"></div>
+  <div class="hero-grid-lines" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-top">
+      <span class="eyebrow">Ceramic Coating · Paint Correction · Detailing</span>
+      <span class="hero-rule" aria-hidden="true"></span>
+    </div>
+
+    <h1 class="hero-headline">Reflection <span class="amp">&amp;</span><br>Protection</h1>
+    <div class="hero-reflect" aria-hidden="true">Reflection &amp; Protection</div>
+
+    <p class="hero-lede">The finish is the luxury. <b>Every vehicle is handled personally by the owner</b>, one car at a time, with the honesty and precision that 200+ five-star reviews were built on.</p>
+
+    <div class="hero-actions">
+      <a href="#book" class="btn btn-primary">Book Your Assessment
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#coatings" class="btn btn-ghost">See the Coatings</a>
+    </div>
+
+    <!-- Interactive split-reveal: dull swirl-marked → deep gloss -->
+    <div class="reveal-panel" data-reveal>
+      <div class="reveal-caption">
+        <span class="display">Before</span>
+        <span class="display">After</span>
+      </div>
+
+      <div class="reveal-layer reveal-before" aria-hidden="true">
+        <svg class="swirls" viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="matrix" values="0 0 0 0 0.5  0 0 0 0 0.53  0 0 0 0 0.58  0 0 0 0.06 0"/></filter>
+          </defs>
+          <rect width="800" height="300" filter="url(#grain)"/>
+          <g stroke="#9aa2ad" stroke-width="0.6" fill="none" opacity="0.28">
+            <path d="M60 40 q30 20 60 0 M120 90 q30 -20 60 0 M220 50 q30 20 60 0 M320 120 q30 -20 60 0 M420 60 q30 20 60 0 M520 140 q30 -20 60 0 M180 200 q30 20 60 0 M400 220 q30 -20 60 0 M600 90 q30 20 60 0 M660 200 q30 -20 60 0 M40 160 q30 20 60 0 M300 250 q30 -20 60 0"/>
+          </g>
+          <g stroke="#8a929e" stroke-width="0.5" fill="none" opacity="0.22">
+            <line x1="40" y1="30" x2="120" y2="70"/><line x1="200" y1="40" x2="300" y2="90"/><line x1="380" y1="30" x2="470" y2="75"/><line x1="540" y1="50" x2="640" y2="100"/><line x1="100" y1="180" x2="200" y2="230"/><line x1="360" y1="190" x2="470" y2="240"/><line x1="600" y1="160" x2="700" y2="210"/>
+          </g>
+        </svg>
+        <span class="reveal-label">Swirled · Dull · Oxidized</span>
+      </div>
+
+      <div class="reveal-layer reveal-after" id="afterLayer" aria-hidden="true">
+        <svg class="gloss" viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <radialGradient id="depth" cx="70%" cy="8%" r="90%">
+              <stop offset="0" stop-color="#1b2634"/><stop offset="45%" stop-color="#0d1017"/><stop offset="100%" stop-color="#060709"/>
+            </radialGradient>
+            <linearGradient id="hl" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#C7CDD6" stop-opacity="0"/><stop offset=".5" stop-color="#C7CDD6" stop-opacity=".5"/><stop offset="1" stop-color="#C7CDD6" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <rect width="800" height="300" fill="url(#depth)"/>
+          <ellipse cx="560" cy="40" rx="360" ry="80" fill="url(#hl)" opacity=".5"/>
+          <path d="M0 210 Q400 150 800 210" stroke="#2E7DFF" stroke-width="1" fill="none" opacity=".4"/>
+          <path d="M0 230 Q400 176 800 230" stroke="#C7CDD6" stroke-width="0.8" fill="none" opacity=".3"/>
+        </svg>
+        <div class="reveal-shine"></div>
+        <span class="reveal-label">Ceramic-Coated · Mirror Shine</span>
+      </div>
+
+      <div class="reveal-divider" id="divider" aria-hidden="true"></div>
+      <button class="reveal-handle" id="handle" type="button"
+              role="slider" aria-label="Drag to compare before and after"
+              aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- ===================== BENEFITS ===================== -->
+<section class="section-pad" id="why">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow chrome">Why the finish lasts</span>
+      <h2>Built by one set of hands</h2>
+    </div>
+    <div class="benefits">
+      <div class="benefit" data-reveal data-delay="0">
+        <svg class="ico" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 6l14 6v9c0 9-6 16-14 21-8-5-14-12-14-21v-9l14-6z" stroke="currentColor" stroke-width="1.6"/><path d="M17 24l5 5 9-11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Owner-Operated</h3>
+        <p>No rotating crew. The owner personally handles every vehicle that comes through the doors, with one dedicated assistant.</p>
+      </div>
+      <div class="benefit" data-reveal data-delay="1">
+        <svg class="ico" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="1.6"/><path d="M24 13v11l7 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>30+ Years In</h3>
+        <p>Hands-on automotive care since 1988, from a Palm Beach high-end shop to a Buckhead cornerstone standing since 1996.</p>
+      </div>
+      <div class="benefit" data-reveal data-delay="2">
+        <svg class="ico" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M8 34c6-14 26-14 32 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><ellipse cx="24" cy="26" rx="8" ry="5" stroke="currentColor" stroke-width="1.6"/><path d="M18 25.5q6-3 12 0" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="24" cy="14" r="2.4" fill="currentColor"/></svg>
+        <h3>Authorized Installer</h3>
+        <p>Exclusive Atlanta installer of C6 Ceramics and ROAR Coatings, whose Tribrid tech layers SiO2, graphene, and polysilazane.</p>
+      </div>
+      <div class="benefit" data-reveal data-delay="3">
+        <svg class="ico" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M12 20h24v16a2 2 0 01-2 2H14a2 2 0 01-2-2V20z" stroke="currentColor" stroke-width="1.6"/><path d="M16 20v-4a8 8 0 0116 0v4" stroke="currentColor" stroke-width="1.6"/><path d="M24 27v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <h3>Honest, Transparent</h3>
+        <p>Published pricing and guidance toward the right service, not the priciest. Licensed, insured, and BBB A+ rated.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CERAMIC COATING TIERS ===================== -->
+<section class="section-pad" id="coatings" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Never wax your car again</span>
+      <h2>Three levels of ceramic protection</h2>
+      <p>A ceramic coating bonds to your clear coat and turns the surface glass-smooth: deeper gloss, easier washing, and years of protection from the Atlanta sun. Choose the depth of protection that fits how long you plan to keep the car.</p>
+    </div>
+
+    <div class="tier-row">
+      <div class="tier" data-reveal data-delay="0">
+        <div class="tier-n">01</div>
+        <div class="dur">3-Year Protection</div>
+        <h3>Level One</h3>
+        <p>A single-step polish to restore clarity, then a durable ceramic layer. The everyday choice for a lasting, low-maintenance shine.</p>
+      </div>
+      <div class="tier" data-reveal data-delay="1">
+        <div class="tier-n">02</div>
+        <div class="dur">5-Year Protection</div>
+        <h3>Level Two</h3>
+        <p>A single-step polish paired with a longer-life coating. More resilience against weather, wash marring, and time.</p>
+      </div>
+      <div class="tier tier--top" data-reveal data-delay="2">
+        <span class="badge">Lifetime</span>
+        <div class="tier-n">03</div>
+        <div class="dur">Lifetime Protection</div>
+        <h3>Level Three</h3>
+        <p>The highest level available. Maximum depth, maximum durability, backed for the life of your vehicle. Our flagship finish.</p>
+      </div>
+    </div>
+
+    <!-- Paint correction pair -->
+    <div class="svc-grid">
+      <article class="card svc-wide" data-reveal data-delay="0">
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 400 120" preserveAspectRatio="none">
+            <defs><linearGradient id="pc1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#171b22"/><stop offset="1" stop-color="#0b0e13"/></linearGradient></defs>
+            <rect width="400" height="120" fill="url(#pc1)"/>
+            <g stroke="#5c6470" stroke-width="0.6" fill="none" opacity=".45"><path d="M40 30q20 14 40 0M120 60q20-14 40 0M200 34q20 14 40 0M280 70q20-14 40 0M60 90q20 12 40 0M240 96q20-12 40 0"/></g>
+            <g stroke="#C7CDD6" stroke-width="0.7" fill="none" opacity=".55"><path d="M300 30q20 14 40 0M340 70q20-14 40 0"/></g>
+            <rect x="210" y="8" width="180" height="104" fill="#2E7DFF" opacity=".05"/>
+            <line x1="210" y1="4" x2="210" y2="116" stroke="#2E7DFF" stroke-width="1.2"/>
+          </svg>
+        </div>
+        <span class="k">Paint Correction</span>
+        <h3>One-Step Polish</h3>
+        <p>A single machine-polishing stage that removes roughly 60% of the swirl marks and light imperfections dulling your paint, the fast route back to depth and clarity.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4 10-11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Removes ~60% of swirls and imperfections</li>
+          <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4 10-11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Ideal prep before a ceramic coating</li>
+        </ul>
+      </article>
+
+      <article class="card svc-wide" data-reveal data-delay="1">
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 400 120" preserveAspectRatio="none">
+            <defs><radialGradient id="pc2" cx="70%" cy="15%" r="90%"><stop offset="0" stop-color="#1b2634"/><stop offset="55%" stop-color="#0d1017"/><stop offset="1" stop-color="#060709"/></radialGradient></defs>
+            <rect width="400" height="120" fill="url(#pc2)"/>
+            <ellipse cx="280" cy="24" rx="180" ry="34" fill="#C7CDD6" opacity=".14"/>
+            <path d="M0 84 Q200 56 400 84" stroke="#2E7DFF" stroke-width="1" fill="none" opacity=".5"/>
+            <path d="M0 96 Q200 70 400 96" stroke="#C7CDD6" stroke-width="0.8" fill="none" opacity=".35"/>
+          </svg>
+        </div>
+        <span class="k">Paint Correction</span>
+        <h3>Multi-Step Polish</h3>
+        <p>A multi-stage correction for serious restoration, cutting through 80 to 95% of imperfections and swirl marks to bring tired or neglected paint back to a near-showroom finish.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4 10-11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Removes 80 to 95% of imperfections</li>
+          <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4 10-11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Also handles overspray and scratch removal</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="hairline"></div></div>
+
+<!-- ===================== DETAILING SERVICES ===================== -->
+<section class="section-pad" id="services">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow chrome">Restore your vehicle's shine</span>
+      <h2>Detailing, inside and out</h2>
+      <p>From a quick refresh to a full interior-and-exterior transformation, every package is machine-applied and finished by hand. Sedan, SUV, and truck options for each.</p>
+    </div>
+
+    <div class="svc-grid">
+      <article class="card svc-full" data-reveal data-delay="0">
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 400 120" preserveAspectRatio="none">
+            <defs><linearGradient id="s1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#151a21"/><stop offset="1" stop-color="#0a0d12"/></linearGradient></defs>
+            <rect width="400" height="120" fill="url(#s1)"/>
+            <ellipse cx="200" cy="30" rx="150" ry="26" fill="#C7CDD6" opacity=".1"/>
+            <g fill="none" stroke="#2E7DFF" stroke-width="1" opacity=".5"><path d="M120 78q80-26 160 0"/></g>
+            <circle cx="150" cy="60" r="2" fill="#EDEFF3" opacity=".7"/><circle cx="250" cy="52" r="1.5" fill="#EDEFF3" opacity=".6"/>
+          </svg>
+        </div>
+        <span class="k">Exterior · Level 1</span>
+        <h3>Ceramic Wax Detail</h3>
+        <p>A hand-finished exterior with a ceramic wax that beads water and holds its shine for three to four months.</p>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4 10-11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Sedan, SUV, and XL options</li></ul>
+      </article>
+
+      <article class="card svc-full" data-reveal data-delay="1">
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 400 120" preserveAspectRatio="none">
+            <defs><radialGradient id="s2" cx="30%" cy="20%" r="100%"><stop offset="0" stop-color="#18222f"/><stop offset="1" stop-color="#080a0e"/></radialGradient></defs>
+            <rect width="400" height="120" fill="url(#s2)"/>
+            <g stroke="#C7CDD6" stroke-width="0.6" fill="none" opacity=".4"><circle cx="90" cy="60" r="34"/><circle cx="90" cy="60" r="22"/></g>
+            <path d="M180 40 h150 M180 60 h120 M180 80 h150" stroke="#2E7DFF" stroke-width="1.4" stroke-linecap="round" opacity=".6"/>
+          </svg>
+        </div>
+        <span class="k">Exterior · Level 2</span>
+        <h3>Clay + Sealant Detail</h3>
+        <p>Clay bar, iron remover, and a machine-applied sealant that decontaminates the surface and protects for six months or more.</p>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4 10-11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Car, SUV, and large SUV / truck</li></ul>
+      </article>
+
+      <article class="card svc-full" data-reveal data-delay="2">
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 400 120" preserveAspectRatio="none">
+            <defs><linearGradient id="s3" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#141922"/><stop offset="1" stop-color="#0a0d12"/></linearGradient></defs>
+            <rect width="400" height="120" fill="url(#s3)"/>
+            <rect x="70" y="34" width="260" height="52" rx="8" fill="none" stroke="#C7CDD6" stroke-width="0.8" opacity=".4"/>
+            <path d="M70 60h260" stroke="#2E7DFF" stroke-width="1" opacity=".5"/>
+            <g fill="#2E7DFF" opacity=".55"><circle cx="110" cy="60" r="2"/><circle cx="200" cy="60" r="2"/><circle cx="290" cy="60" r="2"/></g>
+          </svg>
+        </div>
+        <span class="k">Interior</span>
+        <h3>Interior Detail</h3>
+        <p>A deep clean of every touchpoint, from carpets and upholstery to the console and vents, so the cabin feels new again.</p>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4 10-11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Sedan, SUV, and large SUV / truck</li></ul>
+      </article>
+
+      <article class="card svc-full" data-reveal data-delay="0">
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 400 120" preserveAspectRatio="none">
+            <defs><radialGradient id="s4" cx="60%" cy="30%" r="90%"><stop offset="0" stop-color="#171d26"/><stop offset="1" stop-color="#080a0e"/></radialGradient></defs>
+            <rect width="400" height="120" fill="url(#s4)"/>
+            <path d="M120 84 q80-40 160 0" stroke="#C7CDD6" stroke-width="1" fill="none" opacity=".4"/>
+            <ellipse cx="200" cy="44" rx="120" ry="20" fill="#2E7DFF" opacity=".12"/>
+          </svg>
+        </div>
+        <span class="k">Combination</span>
+        <h3>Mini &amp; Full Detail</h3>
+        <p>Two combined inside-and-out packages: a Mini Detail refresh, or a comprehensive Full Detail for a top-to-bottom reset.</p>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4 10-11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Sized for cars, SUVs, and trucks</li></ul>
+      </article>
+
+      <article class="card svc-full" data-reveal data-delay="1">
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 400 120" preserveAspectRatio="none">
+            <defs><linearGradient id="s5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#151a22"/><stop offset="1" stop-color="#090c11"/></linearGradient></defs>
+            <rect width="400" height="120" fill="url(#s5)"/>
+            <g stroke="#2E7DFF" stroke-width="1" fill="none" opacity=".5"><path d="M150 44q4-10 12 0M175 40q4-10 12 0M200 44q4-10 12 0M225 40q4-10 12 0"/></g>
+            <ellipse cx="200" cy="82" rx="100" ry="16" fill="#C7CDD6" opacity=".1"/>
+          </svg>
+        </div>
+        <span class="k">Upkeep</span>
+        <h3>Maintenance Package</h3>
+        <p>Steam cleaning plus hot-water extraction to keep a freshly detailed car looking its best between full services.</p>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4 10-11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Sedan, SUV, and XL options</li></ul>
+      </article>
+
+      <article class="card svc-full" data-reveal data-delay="2">
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 400 120" preserveAspectRatio="none">
+            <defs><radialGradient id="s6" cx="50%" cy="25%" r="90%"><stop offset="0" stop-color="#1a222c"/><stop offset="1" stop-color="#080a0e"/></radialGradient></defs>
+            <rect width="400" height="120" fill="url(#s6)"/>
+            <ellipse cx="150" cy="56" rx="30" ry="20" fill="none" stroke="#C7CDD6" stroke-width="1" opacity=".5"/>
+            <ellipse cx="150" cy="56" rx="14" ry="9" fill="#2E7DFF" opacity=".4"/>
+            <g stroke="#EDEFF3" stroke-width="1" opacity=".5"><line x1="200" y1="46" x2="230" y2="46"/><line x1="200" y1="56" x2="240" y2="56"/><line x1="200" y1="66" x2="228" y2="66"/></g>
+          </svg>
+        </div>
+        <span class="k">Add-On · 1-Year Warranty</span>
+        <h3>Headlight Restoration</h3>
+        <p>Cloudy, yellowed headlights sanded, polished, and sealed back to clear, then backed by a one-year warranty.</p>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4 10-11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Brighter, safer night driving</li></ul>
+      </article>
+    </div>
+
+    <p style="color:var(--muted);font-size:.9rem;margin-top:1.6rem;text-align:center">
+      Also available: paint overspray and scratch removal, insurance and extended-warranty claim assistance (for example RoadVantage), and gift cards.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== STORY ===================== -->
+<section class="section-pad story" id="story">
+  <div class="wrap story-grid">
+    <div class="story-copy" data-reveal>
+      <span class="eyebrow">Trust your vehicle to the best</span>
+      <h2 class="display" style="font-size:clamp(1.9rem,1.6rem + 3vw,3.4rem);color:var(--chrome-bright);margin:.7rem 0 0;letter-spacing:.06em">A craftsman's<br>whole career</h2>
+      <p class="lead" style="margin-top:1.4rem">For over 30 years, automotive care has been my passion and my livelihood.</p>
+      <p>It began in 1988, washing cars in my neighborhood, then weekends spent on boats at a local marina. In 1993 I gained invaluable experience at a high-end detail shop in Palm Beach, Florida, the work that set the course for everything since.</p>
+      <p>Six years ago I found my home at Atlanta Auto Spa, a cornerstone of Buckhead since 1996. As the owner and operator, <b>I take pride in personally handling every vehicle</b> that comes through the doors. Alongside my dedicated assistant, I put quality and your satisfaction above all else, guiding each client toward the service that truly fits, with honesty, transparency, and a commitment to integrity.</p>
+      <div class="story-sign">
+        <span class="line" aria-hidden="true"></span>
+        <span>The Owner · Atlanta Auto Spa</span>
+      </div>
+    </div>
+
+    <div data-reveal data-delay="1">
+      <div class="timeline">
+        <div class="tl"><div class="yr">1988</div><h4>Where it started</h4><p>Washing cars in the neighborhood, then weekends detailing boats at a local marina.</p></div>
+        <div class="tl"><div class="yr">1993</div><h4>Palm Beach, FL</h4><p>Formative years at a high-end detail shop, learning the craft at the highest level.</p></div>
+        <div class="tl"><div class="yr">1996</div><h4>A Buckhead cornerstone</h4><p>Atlanta Auto Spa opens its doors, and has served the community ever since.</p></div>
+        <div class="tl"><div class="yr">Today</div><h4>Owner-operated</h4><p>Every car handled personally, one dedicated assistant, quality above all.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="hairline"></div></div>
+
+<!-- ===================== REVIEWS ===================== -->
+<section class="section-pad" id="reviews">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow chrome">In their words</span>
+      <h2>Over 200 five-star reviews</h2>
+    </div>
+
+    <div class="rev-strip" data-reveal>
+      <div class="rev-score">
+        <span class="num">4.9</span>
+        <div>
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <small>215+ Google reviews</small>
+        </div>
+      </div>
+      <div class="rev-badges">
+        <span class="rev-badge brass">BBB A+ Rated</span>
+        <span class="rev-badge">Licensed &amp; Insured</span>
+        <span class="rev-badge">Same-Day Turnaround</span>
+        <span class="rev-badge">Claim Assistance</span>
+      </div>
+    </div>
+
+    <div class="rev-grid">
+      <article class="quote quote--tall" data-reveal data-delay="0">
+        <span class="mark" aria-hidden="true">&ldquo;</span>
+        <p>Chris did a phenomenal job with my car. I truly can't rave enough about his transparency, professionalism, and dedication throughout the entire process. My car had previously been through poor detailing jobs that left noticeable swirl marks and scratches. Thanks to his exceptional work, the car now looks brand new, with the paint fully restored. I will only trust Chris with my car's detailing going forward, and I'd confidently recommend him to anyone.</p>
+        <div class="who"><span class="av">Z</span><div><b>Zee</b><small>5 stars · Google</small></div></div>
+      </article>
+
+      <article class="quote" data-reveal data-delay="1">
+        <span class="mark" aria-hidden="true">&ldquo;</span>
+        <p>Had my car done with the lifetime ceramic coating and couldn't be happier. Looks better than when I picked it up new. Paint and windows are so smooth now, some light swirls I had are completely gone, and not one flaw I can find in the paint. Extremely professional working with Chris.</p>
+        <div class="who"><span class="av">B</span><div><b>Brad O'Nan</b><small>5 stars · Google</small></div></div>
+      </article>
+
+      <article class="quote" data-reveal data-delay="2">
+        <span class="mark" aria-hidden="true">&ldquo;</span>
+        <p>Chris is a car magician. He removed paint overspray and scratches and did an amazing job ceramic coating my 2025 BMW. Dropped off at 7am, ready the same day by 3pm. He goes over the process step by step and has a great eye for detail. I trust that he'll take care of my car as if it were his own. Highly recommended.</p>
+        <div class="who"><span class="av">M</span><div><b>Mark Maliniak</b><small>5 stars · Google</small></div></div>
+      </article>
+
+      <article class="quote" data-reveal data-delay="0">
+        <span class="mark" aria-hidden="true">&ldquo;</span>
+        <p>Absolute amazing job sprucing up my Subaru. She is so fresh and clean. They also helped me cover up a scratch on the front bumper, which you can't even see now. Highly recommend Atlanta Auto Spa.</p>
+        <div class="who"><span class="av">M</span><div><b>Morgan Paysour</b><small>5 stars · Google</small></div></div>
+      </article>
+
+      <article class="quote" data-reveal data-delay="1">
+        <span class="mark" aria-hidden="true">&ldquo;</span>
+        <p>Impressed by the professionalism and the follow-through. I had an S550 with a RoadVantage exterior warranty that several companies rejected, so I thought it was worthless. Then I found Atlanta Auto Spa. Chris welcomed the contact with RoadVantage and assisted with filing the claim. End result, the perfect choice. Thanks again Chris for your dedication to the customer.</p>
+        <div class="who"><span class="av">G</span><div><b>Gary Johnson</b><small>5 stars · Google</small></div></div>
+      </article>
+
+      <div class="rev-placeholder" data-reveal>
+        Your live Google reviews would stream in here automatically. <b>This is a concept preview,</b> so a sample of your real 5-star reviews is shown above.
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="hairline"></div></div>
+
+<!-- ===================== VISIT / LOCATION ===================== -->
+<section class="section-pad" id="visit">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">By appointment only</span>
+      <h2>Find us in Buckhead</h2>
+    </div>
+
+    <div class="loc-grid">
+      <div class="loc-card" data-reveal data-delay="0">
+        <h3>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.5 7-11a7 7 0 10-14 0c0 4.5 7 11 7 11z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.6" stroke="currentColor" stroke-width="1.6"/></svg>
+          The Shop
+        </h3>
+        <div class="loc-row">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.5 7-11a7 7 0 10-14 0c0 4.5 7 11 7 11z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.6" stroke="currentColor" stroke-width="1.6"/></svg>
+          <div>
+            <div class="lab">Address</div>
+            <div class="val"><a href="https://maps.google.com/?q=3333+Peachtree+Road+NE+Atlanta+GA+30326" target="_blank" rel="noopener">3333 Peachtree Road NE, Atlanta, GA 30326</a><br>Inside the parking deck, C Level. Appointment only.</div>
+          </div>
+        </div>
+        <div class="loc-row">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 4h3l2 5-2 1a12 12 0 006 6l1-2 5 2v3a2 2 0 01-2 2A17 17 0 014 6a2 2 0 012-2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <div>
+            <div class="lab">Phone</div>
+            <div class="val"><a href="tel:+14048123766">(404) 812-3766</a></div>
+          </div>
+        </div>
+        <div class="loc-row">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8l8 5 8-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/></svg>
+          <div>
+            <div class="lab">Serving</div>
+            <div class="areas">
+              <span class="area">Buckhead</span><span class="area">Vinings</span><span class="area">Sandy Springs</span><span class="area">Midtown</span><span class="area">Brookhaven</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="loc-card" data-reveal data-delay="1">
+        <h3>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Hours
+        </h3>
+        <div class="hours-list" id="hoursList">
+          <div class="row" data-day="1"><span>Monday</span><span>7:00 AM to 4:00 PM</span></div>
+          <div class="row" data-day="2"><span>Tuesday</span><span>7:00 AM to 4:00 PM</span></div>
+          <div class="row" data-day="3"><span>Wednesday</span><span>7:00 AM to 4:00 PM</span></div>
+          <div class="row" data-day="4"><span>Thursday</span><span>7:00 AM to 4:00 PM</span></div>
+          <div class="row" data-day="5"><span>Friday</span><span>7:00 AM to 4:00 PM</span></div>
+          <div class="row closed" data-day="6"><span>Saturday</span><span>Closed</span></div>
+          <div class="row closed" data-day="0"><span>Sunday</span><span>Closed</span></div>
+        </div>
+        <div style="margin-top:1.4rem">
+          <svg class="map-svg" viewBox="0 0 400 220" role="img" aria-label="Stylized map of the Buckhead location">
+            <defs>
+              <linearGradient id="mapbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0e1219"/><stop offset="1" stop-color="#080a0e"/></linearGradient>
+            </defs>
+            <rect width="400" height="220" fill="url(#mapbg)"/>
+            <g stroke="#1e242e" stroke-width="6" fill="none">
+              <path d="M-10 60 L410 90"/><path d="M60 -10 L110 230"/><path d="M-10 160 L410 140"/><path d="M260 -10 L300 230"/>
+            </g>
+            <g stroke="#2a323d" stroke-width="1.4" fill="none">
+              <path d="M-10 60 L410 90"/><path d="M60 -10 L110 230"/><path d="M-10 160 L410 140"/><path d="M260 -10 L300 230"/>
+            </g>
+            <text x="20" y="45" fill="#5c6470" font-family="Bahnschrift,sans-serif" font-size="10" letter-spacing="2">PEACHTREE RD NE</text>
+            <circle cx="200" cy="118" r="20" fill="rgba(46,125,255,.12)"/>
+            <circle cx="200" cy="118" r="9" fill="none" stroke="#2E7DFF" stroke-width="1.4"/>
+            <circle cx="200" cy="118" r="3.5" fill="#2E7DFF"/>
+            <text x="200" y="152" fill="#C7CDD6" font-family="Bahnschrift,sans-serif" font-size="9" letter-spacing="2" text-anchor="middle">ATLANTA AUTO SPA</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA + FORM ===================== -->
+<section class="finale" id="book">
+  <div class="finale-shine" aria-hidden="true"></div>
+  <div class="wrap finale-inner">
+    <div data-reveal>
+      <span class="eyebrow">Book your assessment</span>
+      <h2>Let's see<br>your finish</h2>
+      <p>Start with a no-pressure assessment. Tell us about your vehicle and what you'd like addressed, and we'll walk you through the right service, honestly.</p>
+      <div class="finale-actions">
+        <a href="tel:+14048123766" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 4h3l2 5-2 1a12 12 0 006 6l1-2 5 2v3a2 2 0 01-2 2A17 17 0 014 6a2 2 0 012-2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          Call (404) 812-3766
+        </a>
+        <button class="btn btn-ghost is-disabled" disabled aria-disabled="true" title="Online booking coming soon">Book Online · Coming Soon</button>
+      </div>
+    </div>
+
+    <!-- Lead form. Swap the email below to route submissions. -->
+    <!-- IMPORTANT: replace REPLACE-WITH-CLIENT-EMAIL with the shop's real inbox to receive leads -->
+    <form class="contact" action="https://formsubmit.co/REPLACE-WITH-CLIENT-EMAIL" method="POST" data-reveal>
+      <input type="hidden" name="_subject" value="New assessment request from atlantaautospa.com">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="_template" value="table">
+      <div class="contact-fields">
+        <div class="field">
+          <label for="f-name">Name</label>
+          <input id="f-name" name="name" type="text" placeholder="Your name" required>
+        </div>
+        <div class="field">
+          <label for="f-phone">Phone</label>
+          <input id="f-phone" name="phone" type="tel" placeholder="(404) 000-0000" required>
+        </div>
+        <div class="field full">
+          <label for="f-vehicle">Vehicle</label>
+          <input id="f-vehicle" name="vehicle" type="text" placeholder="Year, make, and model">
+        </div>
+        <div class="field full">
+          <label for="f-service">What are you interested in?</label>
+          <select id="f-service" name="service">
+            <option>Ceramic coating</option>
+            <option>Paint correction</option>
+            <option>Exterior detail</option>
+            <option>Interior detail</option>
+            <option>Full detail</option>
+            <option>Headlight restoration</option>
+            <option>Not sure yet, help me decide</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="f-msg">Anything we should know?</label>
+          <textarea id="f-msg" name="message" placeholder="Swirl marks, scratches, a warranty claim, or a target date"></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Request My Assessment</button>
+    </form>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div style="max-width:320px">
+        <div class="foot-brand">
+          <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M20 2 L36 11 V29 L20 38 L4 29 V11 Z" stroke="url(#markg)" stroke-width="1.4" fill="rgba(46,125,255,.06)"/>
+            <path d="M12 25 C15 15, 25 15, 28 25" stroke="#C7CDD6" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+            <ellipse cx="20" cy="21" rx="5.4" ry="3.4" fill="none" stroke="#2E7DFF" stroke-width="1.4"/>
+          </svg>
+          <span class="brand-name">Atlanta Auto Spa<small>Buckhead</small></span>
+        </div>
+        <p class="foot-disclaimer">Atlanta's expert ceramic coating, detailing, and paint correction shop. Reflection and protection, by one set of hands.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h5>Services</h5>
+          <a href="#coatings">Ceramic Coating</a>
+          <a href="#coatings">Paint Correction</a>
+          <a href="#services">Detailing</a>
+          <a href="#services">Headlight Restoration</a>
+        </div>
+        <div class="foot-col">
+          <h5>Visit</h5>
+          <p>3333 Peachtree Rd NE<br>Atlanta, GA 30326</p>
+          <a href="tel:+14048123766">(404) 812-3766</a>
+          <p>Mon to Fri · 7 AM to 4 PM</p>
+        </div>
+        <div class="foot-col">
+          <h5>Areas</h5>
+          <p>Buckhead · Vinings</p>
+          <p>Sandy Springs</p>
+          <p>Midtown · Brookhaven</p>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p class="foot-disclaimer"><b>Concept preview built by DNA Agency, not affiliated with Atlanta Auto Spa.</b></p>
+      <p>&copy; 2026 Atlanta Auto Spa</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* --- nav shadow on scroll --- */
+  var nav = document.getElementById('nav');
+  var onScroll = function(){ nav.classList.toggle('scrolled', window.scrollY > 12); };
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* --- scroll reveal --- */
+  var items = document.querySelectorAll('[data-reveal]');
+  if (reduce || !('IntersectionObserver' in window)) {
+    items.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    items.forEach(function(el){ io.observe(el); });
+  }
+
+  /* --- highlight today's hours row --- */
+  var today = new Date().getDay();
+  var row = document.querySelector('#hoursList .row[data-day="'+today+'"]');
+  if (row && !row.classList.contains('closed')) { row.classList.add('now'); }
+
+  /* --- before/after split-reveal (drag + keyboard + gentle auto-intro) --- */
+  var panel = document.querySelector('.reveal-panel');
+  if (panel) {
+    var after = document.getElementById('afterLayer');
+    var divider = document.getElementById('divider');
+    var handle = document.getElementById('handle');
+    var dragging = false;
+
+    function setSplit(pct){
+      pct = Math.max(2, Math.min(98, pct));
+      after.style.clipPath = 'inset(0 0 0 ' + pct + '%)';
+      divider.style.left = pct + '%';
+      handle.style.left = pct + '%';
+      handle.setAttribute('aria-valuenow', Math.round(pct));
+    }
+    function pctFromEvent(clientX){
+      var r = panel.getBoundingClientRect();
+      return ((clientX - r.left) / r.width) * 100;
+    }
+    function startDrag(e){ dragging = true; e.preventDefault(); }
+    function moveDrag(e){
+      if(!dragging) return;
+      var x = e.touches ? e.touches[0].clientX : e.clientX;
+      setSplit(pctFromEvent(x));
+    }
+    function endDrag(){ dragging = false; }
+
+    handle.addEventListener('mousedown', startDrag);
+    handle.addEventListener('touchstart', startDrag, {passive:false});
+    window.addEventListener('mousemove', moveDrag);
+    window.addEventListener('touchmove', moveDrag, {passive:false});
+    window.addEventListener('mouseup', endDrag);
+    window.addEventListener('touchend', endDrag);
+    panel.addEventListener('click', function(e){
+      if(e.target === handle || handle.contains(e.target)) return;
+      setSplit(pctFromEvent(e.clientX));
+    });
+    handle.addEventListener('keydown', function(e){
+      var cur = parseFloat(handle.getAttribute('aria-valuenow')) || 50;
+      if(e.key === 'ArrowLeft'){ setSplit(cur - 4); e.preventDefault(); }
+      if(e.key === 'ArrowRight'){ setSplit(cur + 4); e.preventDefault(); }
+    });
+
+    /* gentle auto-intro sweep once, when it scrolls into view */
+    if (!reduce && 'IntersectionObserver' in window) {
+      var played = false;
+      var demo = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(en.isIntersecting && !played){
+            played = true;
+            var seq = [50,64,40,55,48], i = 0;
+            var t = setInterval(function(){
+              setSplit(seq[i]); i++;
+              if(i >= seq.length){ clearInterval(t); }
+            }, 520);
+            demo.unobserve(en.target);
+          }
+        });
+      }, {threshold:0.4});
+      demo.observe(panel);
+    }
+  }
+})();
+</script>
+</body>
+</html>
