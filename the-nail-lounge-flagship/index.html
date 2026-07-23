@@ -131,20 +131,28 @@ h1,h2,h3,.serif{font-family:var(--serif);font-weight:400;letter-spacing:0.005em}
     linear-gradient(160deg,var(--greige-tint),var(--greige-deep));
 }
 .swatch-field{position:absolute;inset:0;z-index:-1;overflow:hidden}
+/* Static graceful-degradation floor: a subtle gradient wash plus a handful of
+   real swatches painted directly in the markup, so the hero is never bare on
+   the no-JS / reduced-motion path. The JS-built living field (.drift) fades in
+   above it when scripting is available. */
+.swatch-floor{
+  position:absolute;inset:-6% -6% -6% -6%;z-index:0;
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(58px,1fr));
+  gap:clamp(8px,1.4vw,16px);padding:2vw;align-content:start;
+  background:
+    radial-gradient(120% 90% at 20% 10%, rgba(233,201,204,.5), transparent 55%),
+    radial-gradient(120% 100% at 85% 90%, rgba(156,174,151,.4), transparent 55%);
+}
+.swatch-floor .swatch{opacity:1;transform:none;animation:none}
 .swatch-field .drift{
-  position:absolute;inset:-6% -6% -6% -6%;
+  position:absolute;inset:-6% -6% -6% -6%;z-index:1;
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(58px,1fr));
   gap:clamp(8px,1.4vw,16px);
   padding:2vw;
   animation:drift 46s ease-in-out infinite alternate;
-  opacity:1;
+  opacity:0;
 }
-/* Static graceful-degradation floor: a handful of real swatches painted
-   directly in the markup so the hero is never bare when JS is disabled.
-   When JS runs it injects the full 120-swatch living field over the top. */
-.swatch-field .drift.static-floor{opacity:1;animation:none}
-.swatch-field .drift.static-floor .swatch{opacity:1;transform:none;animation:none}
 .swatch-field.lit .drift{animation:drift 46s ease-in-out infinite alternate, fieldIn 1.6s ease forwards}
 @keyframes fieldIn{to{opacity:1}}
 @keyframes drift{
@@ -180,16 +188,45 @@ h1,h2,h3,.serif{font-family:var(--serif);font-weight:400;letter-spacing:0.005em}
   position:relative;z-index:2;
   max-width:var(--maxw);margin:0 auto;
   padding:clamp(4rem,11vw,8.5rem) var(--pad) clamp(4.5rem,10vw,8rem);
-  display:flex;justify-content:center;
+  display:grid;grid-template-columns:1fr;justify-items:center;align-items:center;
+  gap:clamp(2rem,4vw,3.4rem);
 }
 .hero-panel{
-  max-width:720px;text-align:center;
+  max-width:640px;text-align:center;position:relative;z-index:2;
   background:linear-gradient(150deg,rgba(251,249,245,.86),rgba(239,234,227,.74));
   backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
   border:1px solid rgba(201,169,106,.35);
   border-radius:4px;
   padding:clamp(2.2rem,5vw,3.6rem) clamp(1.4rem,4vw,3rem);
   box-shadow:0 20px 60px rgba(59,42,56,.14);
+}
+/* Real-photo accent: a soft licensed spa image beside the glass panel.
+   Hidden on small screens (panel leads on mobile), revealed at desktop
+   where it sits to the side as a tall editorial column. */
+.hero-photo{
+  display:none;position:relative;z-index:2;
+  width:100%;max-width:340px;aspect-ratio:3/4;
+  border-radius:6px;overflow:hidden;
+  border:1px solid rgba(201,169,106,.4);
+  box-shadow:0 24px 60px rgba(59,42,56,.22);
+}
+.hero-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.96)}
+.hero-photo::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,transparent 55%,rgba(59,42,56,.22));
+  mix-blend-mode:multiply;
+}
+.hero-photo .cap{
+  position:absolute;left:1rem;bottom:.9rem;z-index:2;
+  font-family:var(--sans);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:600;color:var(--paper);text-shadow:0 1px 6px rgba(42,34,48,.6);
+}
+@media(min-width:960px){
+  .hero-inner{grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);justify-items:start}
+  .hero-panel{text-align:left;margin:0}
+  .hero-panel .hero-actions{justify-content:flex-start}
+  .hero-lead{margin-inline:0}
+  .hero-photo{display:block;justify-self:end}
 }
 .hero-eyebrow{margin-bottom:1.4rem;opacity:0;animation:rise .9s ease .2s forwards}
 .hero h1{
@@ -454,7 +491,11 @@ h1,h2,h3,.serif{font-family:var(--serif);font-weight:400;letter-spacing:0.005em}
 
 <!-- ============ HERO // THE COLOR LIBRARY ============ -->
 <section class="hero" aria-label="The Nail Lounge, Kansas City's best nail salon">
-  <div class="swatch-field" id="swatchField" aria-hidden="true"><div class="drift" id="drift"></div></div>
+  <div class="swatch-field" id="swatchField" aria-hidden="true">
+    <!-- Static floor: renders instantly with zero JS so the hero is never bare -->
+    <div class="swatch-floor" id="swatchFloor"></div>
+    <div class="drift" id="drift"></div>
+  </div>
   <div class="hero-inner">
     <div class="hero-panel">
       <p class="hero-eyebrow eyebrow">700+ gel colors · MMA-free · family-owned since 2014</p>
@@ -473,6 +514,13 @@ h1,h2,h3,.serif{font-family:var(--serif);font-weight:400;letter-spacing:0.005em}
         <a class="btn btn-ghost" href="#services">Explore the menu</a>
       </div>
     </div>
+    <!-- Real licensed spa photo accent (Pexels, see assets/ATTRIBUTION.txt).
+         Swap for the salon's own photography at launch. -->
+    <figure class="hero-photo reveal">
+      <img src="assets/gel-manicure.jpg" width="1200" height="900" loading="eager" decoding="async"
+           alt="Close-up of freshly finished nude gel nails at The Nail Lounge">
+      <figcaption class="cap">Fresh from the chair</figcaption>
+    </figure>
   </div>
 </section>
 
