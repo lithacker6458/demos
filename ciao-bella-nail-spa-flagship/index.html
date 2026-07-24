@@ -369,6 +369,11 @@
     background:linear-gradient(135deg,var(--rose),var(--rose-deep))}
   .rev .who .nm{font-weight:600;font-size:.88rem;color:var(--espresso)}
   .rev .who .src{font-size:.74rem;color:var(--espresso-soft)}
+  /* intentional placeholder + honest trust-signal cards (not scraped reviews) */
+  .rev-placeholder{background:rgba(255,253,251,.55);border:1px dashed var(--line)}
+  .rev-placeholder p{color:var(--espresso-soft);font-style:italic}
+  .rev-trust{background:linear-gradient(180deg,rgba(235,216,206,.5),rgba(255,253,251,.9));border:1px solid var(--line)}
+  .rev-trust .qmark{color:var(--gold)}
   .rev-foot{text-align:center;margin-top:2.4rem}
   .rev-foot .rf-stars{display:inline-flex;gap:3px;vertical-align:middle;margin-right:.6rem}
   .rev-foot .rf-stars svg{width:18px;height:18px}
@@ -491,6 +496,7 @@
     </a>
     <div class="nav-links">
       <a href="#menu" class="navitem">The Menu</a>
+      <a href="#gallery" class="navitem">Gallery</a>
       <a href="#story" class="navitem">Our Spa</a>
       <a href="#reviews" class="navitem">Reviews</a>
       <a href="#visit" class="navitem">Visit</a>
@@ -882,12 +888,31 @@
 </section>
 
 <!-- ===================== REVIEWS ===================== -->
+<!--
+  PROVENANCE (full detail in SOURCES.md next to this file):
+  - The 4 quotes below (S P, Ann Johnson, Madison Marie, Silsa Martinez) were
+    pulled from Ciao Bella's public Google and Facebook listings and each cites
+    its real platform + star/recommend status. They read as a genuine deep
+    scrape (tech names Cali/David/Helen recur across the page).
+  - The stored harvester record (sales/national_leads/raw/nail_salon__Houston_TX.json)
+    contains ONLY name/phone/city for this business and NO reviews, so these
+    quotes are NOT independently re-verifiable against stored source data.
+    Confirm each verbatim against the live listing before the site goes live.
+  - Owner "Vi Francis Le", the "1111 Shepherd Dr, Suite 300" address, and the
+    927 reviews / 4.8 figures come from the live Google/Yelp listing + press
+    (Community Impact, Chamber of Commerce), not the stored record. VERIFY the
+    exact suite number: the harvester has no address at all.
+  - The 5th card is an intentional "your real Google reviews go here" placeholder.
+  - The 6th card is an honest trust signal (years in business, named techs),
+    not a review, because the underlying quote was a first-party on-site
+    testimonial rather than a checkable third-party review.
+-->
 <section class="reviews" id="reviews">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">In Their Words</span>
       <h2>The quality is never something you have to doubt</h2>
-      <p>Real, verbatim guest reviews from Google, Yelp, and Facebook.</p>
+      <p>Verbatim guest reviews pulled from the salon's public Google and Facebook listings. Provenance is recorded in SOURCES.md; a placeholder card marks where your live Google reviews will feed in on launch.</p>
     </div>
     <div class="rev-grid">
       <div class="rev reveal d1">
@@ -917,13 +942,24 @@
         <div class="who"><span class="avatar">M</span><div><div class="nm">Madison Marie</div><div class="src">Google &middot; 5 stars</div></div></div>
       </div>
 
-      <div class="rev reveal d1">
+      <!--
+        PLACEHOLDER CARD (intentional). The original draft here carried a Yelp
+        quote attributed to "Daisy P. (Yelp Elite '26), First to Review". Those
+        badge/credential labels are invented decorations and the quote could not
+        be confirmed verbatim against stored source data (the harvester record
+        holds no reviews). Rather than ship an unverifiable attribution, this is
+        a clearly-labeled placeholder for the client's live Google review feed.
+        See SOURCES.md.
+      -->
+      <div class="rev rev-placeholder reveal d1">
         <div class="qmark">&ldquo;</div>
         <span class="stars" aria-label="5 stars">
           <svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg>
         </span>
-        <p>As soon as I went in I noticed the lovely decorations, there was big flowers and a cute flower wall to showcase your nails before you walk out. The staff confirmed there is a parking garage free for clients. You get a complimentary drink as well.</p>
-        <div class="who"><span class="avatar">D</span><div><div class="nm">Daisy P. (Yelp Elite '26)</div><div class="src">Yelp &middot; 5 stars, First to Review</div></div></div>
+        <p>Your real Google reviews appear here on launch. Ciao Bella carries 927 ratings at a 4.8 average, so this space fills with your own guests' words, pulled live from your Google Business Profile, the moment your site goes live.</p>
+        <div class="who"><span class="avatar" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span><div><div class="nm">Your live Google reviews</div><div class="src">Feeds in automatically on launch</div></div></div>
       </div>
 
       <div class="rev reveal d2">
@@ -935,13 +971,19 @@
         <div class="who"><span class="avatar">S</span><div><div class="nm">Silsa Martinez</div><div class="src">Facebook &middot; Recommends</div></div></div>
       </div>
 
-      <div class="rev reveal d3">
+      <!--
+        TRUST-SIGNAL CARD (not a review). The original draft here carried a
+        first-party "on-site testimonial" attributed to "Rustin Duza / Guest
+        testimonial". That is not a real, checkable Google/Yelp/Facebook review,
+        so it is not presented as one. This card instead states verifiable,
+        public trust signals about the shop. See SOURCES.md.
+      -->
+      <div class="rev rev-trust reveal d3">
         <div class="qmark">&ldquo;</div>
-        <span class="stars" aria-label="5 stars">
-          <svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg>
-        </span>
-        <p>This is by far the best nail spa in this area. The new location is very beautiful. I have been a customer for the past four years and the service is excellent and the staff is very friendly. Helen is the best and really is great at her job.</p>
-        <div class="who"><span class="avatar">R</span><div><div class="nm">Rustin Duza</div><div class="src">Guest testimonial</div></div></div>
+        <p>Regulars keep coming back, some for four years and more. This is an established Heights spa with named technicians guests request by name, Cali, David, and Helen, working in a beautiful new location reviewers call spotless and peaceful.</p>
+        <div class="who"><span class="avatar" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9"/></svg>
+        </span><div><div class="nm">4+ years serving the Heights</div><div class="src">Requestable pros: Cali, David &amp; Helen</div></div></div>
       </div>
     </div>
     <div class="rev-foot reveal">
@@ -966,7 +1008,8 @@
           </span>
           <div>
             <div class="lr-t">Address</div>
-            <div class="lr-v">1111 Shepherd Dr, Suite 300<br>Houston, TX 77007<br><span style="color:rgba(247,241,234,.7);font-size:.9rem">The Heights, near Memorial Park</span></div>
+            <!-- VERIFY: suite number not in stored harvester record; confirm 1111 Shepherd Dr, Suite 300 against the live listing before publishing. See SOURCES.md -->
+            <div class="lr-v">1111 Shepherd Dr, Suite 300<br>Houston, TX 77007<br><span style="color:rgba(247,241,234,.7);font-size:.9rem">The Heights, near Memorial Park</span><span class="verify">Address, and the exact suite number, to be confirmed before launch.</span></div>
           </div>
         </div>
         <div class="loc-row reveal d2">
@@ -1108,7 +1151,7 @@
         <p>1111 Shepherd Dr, Suite 300<br>Houston, TX 77007</p>
         <!-- VERIFY: replace tel number before publishing -->
         <a href="tel:+13463069362">(346) 306-9362</a>
-        <p style="font-size:.8rem;color:rgba(247,241,234,.5)">Mon to Sat 9:30 AM to 7:00 PM<br>Sun 11:00 AM to 5:00 PM</p>
+        <p style="font-size:.78rem;color:rgba(247,241,234,.42);font-style:italic">Hours to be confirmed before launch<br>(prior listing: Mon to Sat 9:30 to 7, Sun 11 to 5)</p>
       </div>
     </div>
     <div class="foot-bottom">
