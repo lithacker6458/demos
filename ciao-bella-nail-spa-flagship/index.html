@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ciao Bella Nail Spa | The Heights, Houston</title>
+<meta name="description" content="Ciao Bella Nail Spa in Houston's Heights. Signature tiered luxury pedicures and manicures, builder gel, dip powder, and Gel-X. Rise, shine, and slay nails.">
+<style>
+  :root{
+    /* Editorial Rose - Italian Beauty Atelier */
+    --rose:#C98E7E;            /* dusty terracotta-rose */
+    --rose-deep:#B4715F;       /* deeper rose for hover/contrast */
+    --gold:#B08A4F;            /* antique gold, hairline foil */
+    --gold-soft:#CBA871;       /* lighter gold for text on dark */
+    --ivory:#F7F1EA;           /* warm ivory background */
+    --petal:#EBD8CE;           /* soft petal section wash */
+    --petal-deep:#E3C9BC;      /* slightly deeper petal */
+    --espresso:#2E2024;        /* deep espresso-plum text/contrast */
+    --espresso-soft:#4A373C;   /* softer espresso for body copy */
+    --line:rgba(176,138,79,.32);/* gold hairline */
+    --line-soft:rgba(46,32,36,.10);
+
+    --serif:'Didot','Bodoni 72','Hoefler Text',Georgia,'Times New Roman',serif;
+    --sans:'Avenir Next','Segoe UI',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+
+    --shadow-sm:0 2px 14px rgba(46,32,36,.06);
+    --shadow-md:0 18px 44px rgba(46,32,36,.12);
+    --shadow-lg:0 34px 80px rgba(46,32,36,.18);
+
+    --radius:20px;
+    --radius-lg:30px;
+    --maxw:1200px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--sans);
+    color:var(--espresso);
+    background:var(--ivory);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    font-size:clamp(1rem,.95rem + .3vw,1.12rem);
+  }
+  ::selection{background:var(--rose);color:var(--ivory)}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.2rem,4vw,2.6rem)}
+
+  .eyebrow{
+    font-family:var(--sans);
+    text-transform:uppercase;
+    letter-spacing:.32em;
+    font-size:clamp(.66rem,.62rem + .2vw,.76rem);
+    font-weight:600;
+    color:var(--gold);
+  }
+  .serif{font-family:var(--serif)}
+  .italic{font-style:italic}
+
+  h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.06;letter-spacing:-.01em}
+  h2{font-size:clamp(2rem,1.4rem + 3vw,3.5rem)}
+  h3{font-size:clamp(1.3rem,1.1rem + 1vw,1.7rem)}
+
+  /* ===================== NAV ===================== */
+  .nav{
+    position:sticky;top:0;z-index:60;
+    background:rgba(247,241,234,.82);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line-soft);
+    transition:box-shadow .4s ease,background .4s ease;
+  }
+  .nav.scrolled{box-shadow:0 6px 30px rgba(46,32,36,.09);background:rgba(247,241,234,.94)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:clamp(64px,8vw,78px)}
+  .brand{display:flex;align-items:baseline;gap:.5rem}
+  .brand .mark{font-family:var(--serif);font-size:clamp(1.4rem,1.2rem + 1vw,1.75rem);letter-spacing:.01em}
+  .brand .mark i{font-style:italic;color:var(--rose-deep)}
+  .brand .sub{font-size:.6rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:600}
+  .nav-links{display:flex;align-items:center;gap:clamp(1.1rem,2vw,2.1rem)}
+  .nav-links a{font-size:.86rem;letter-spacing:.06em;color:var(--espresso-soft);position:relative;padding:.3rem 0;transition:color .25s}
+  .nav-links a::after{content:'';position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--gold);transition:width .3s ease}
+  .nav-links a:hover{color:var(--espresso)}
+  .nav-links a:hover::after{width:100%}
+  .nav-links .navcall{display:none}
+  @media(max-width:860px){
+    .nav-links a.navitem{display:none}
+    .nav-links .navcall{display:inline-flex}
+  }
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+    font-family:var(--sans);font-weight:600;font-size:.9rem;letter-spacing:.02em;
+    padding:.85rem 1.5rem;border-radius:100px;border:1px solid transparent;
+    cursor:pointer;transition:transform .25s ease,box-shadow .3s ease,background .3s ease,color .3s ease;
+    white-space:nowrap;
+  }
+  .btn-solid{background:var(--espresso);color:var(--ivory)}
+  .btn-solid:hover{background:var(--rose-deep);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+  .btn-rose{background:var(--rose);color:#fff}
+  .btn-rose:hover{background:var(--rose-deep);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+  .btn-ghost{background:transparent;color:var(--espresso);border-color:var(--line)}
+  .btn-ghost:hover{border-color:var(--gold);background:rgba(176,138,79,.06);transform:translateY(-2px)}
+  .btn-lg{padding:1.05rem 2rem;font-size:1rem}
+  .btn[disabled]{opacity:.55;cursor:not-allowed}
+  .btn[disabled]:hover{transform:none;box-shadow:none;background:var(--espresso)}
+
+  /* ===================== UTILITY BAR ===================== */
+  .util{
+    background:var(--espresso);color:var(--ivory);
+    font-size:clamp(.72rem,.68rem + .2vw,.82rem);letter-spacing:.04em;
+  }
+  .util-inner{display:flex;align-items:center;justify-content:center;gap:clamp(.8rem,3vw,2.4rem);flex-wrap:wrap;padding:.6rem 1rem;text-align:center}
+  .util-item{display:inline-flex;align-items:center;gap:.5rem;white-space:nowrap}
+  .util-item svg{flex:none}
+  .util .dot{width:4px;height:4px;border-radius:50%;background:var(--gold-soft);opacity:.7}
+  .util-item .g{color:var(--gold-soft)}
+  @media(max-width:620px){.util .dot{display:none}}
+
+  /* ===================== HERO ===================== */
+  .hero{position:relative;overflow:hidden;background:
+      radial-gradient(120% 90% at 12% 8%, #FBF6F0 0%, var(--ivory) 44%, var(--petal) 100%);
+  }
+  .hero::before{content:'';position:absolute;inset:0;
+    background:radial-gradient(60% 50% at 82% 30%, rgba(201,142,126,.14), transparent 70%);
+    pointer-events:none;}
+  .hero-grid{
+    position:relative;z-index:2;
+    display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.5rem,4vw,3.2rem);
+    align-items:center;
+    padding:clamp(3rem,7vw,5.6rem) 0 clamp(3.4rem,7vw,5.6rem);
+  }
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:2.6rem}}
+
+  /* --- flower wall ambient motif (pure CSS) --- */
+  .flowerwall{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.9}
+  .petal-cluster{position:absolute;border-radius:50%;filter:blur(.5px);
+    background:
+      radial-gradient(circle at 50% 50%, rgba(235,216,206,.0) 30%, rgba(201,142,126,.16) 31%, rgba(201,142,126,.0) 60%),
+      radial-gradient(circle at 50% 20%, rgba(227,201,188,.5), transparent 55%),
+      radial-gradient(circle at 20% 70%, rgba(227,201,188,.45), transparent 55%),
+      radial-gradient(circle at 80% 70%, rgba(227,201,188,.45), transparent 55%);
+    animation:drift 22s ease-in-out infinite;
+  }
+  .pc1{width:230px;height:230px;top:-40px;left:-50px;animation-delay:0s}
+  .pc2{width:150px;height:150px;top:38%;left:26%;animation:drift 22s ease-in-out infinite -6s,bloom 9s ease-in-out infinite;opacity:.7}
+  .pc3{width:300px;height:300px;bottom:-70px;left:6%;animation-delay:-11s;opacity:.6}
+  .pc4{width:120px;height:120px;top:12%;left:40%;animation-delay:-3s;opacity:.55}
+  @keyframes drift{
+    0%,100%{transform:translate(0,0) rotate(0deg)}
+    33%{transform:translate(14px,-18px) rotate(6deg)}
+    66%{transform:translate(-10px,12px) rotate(-5deg)}
+  }
+
+  .hero-copy{position:relative}
+  .hero-copy .eyebrow{opacity:0;animation:fadeUp .8s ease .05s forwards}
+  .wordmark{
+    font-family:var(--serif);
+    font-size:clamp(3rem,2rem + 8vw,6.4rem);
+    line-height:.92;letter-spacing:-.02em;
+    margin:.5rem 0 .2rem;color:var(--espresso);
+  }
+  .wordmark .ciao{display:block;opacity:0;animation:fadeUp .9s ease .18s forwards}
+  .wordmark .bella{display:block;font-style:italic;color:var(--rose-deep);opacity:0;animation:fadeUp .9s ease .32s forwards;position:relative;width:max-content;max-width:100%}
+  /* self-drawing gold underline under Bella */
+  .underline-svg{display:block;width:min(360px,72%);height:22px;margin-top:.1rem;overflow:visible}
+  .underline-svg path{
+    fill:none;stroke:var(--gold);stroke-width:2.5;stroke-linecap:round;
+    stroke-dasharray:640;stroke-dashoffset:640;
+    animation:draw 1.5s cubic-bezier(.7,0,.3,1) .9s forwards;
+  }
+  @keyframes draw{to{stroke-dashoffset:0}}
+  /* soft twinkle on the gold star cluster */
+  @keyframes twinkle{0%,100%{opacity:1}50%{opacity:.55}}
+  /* gentle breathing scale for the ambient petals */
+  @keyframes bloom{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+  .hero-trust .stars svg:nth-child(2){animation:twinkle 3.4s ease-in-out infinite .4s}
+  .hero-trust .stars svg:nth-child(4){animation:twinkle 3.4s ease-in-out infinite 1.2s}
+  .pc2{will-change:transform}
+  .tagline{
+    font-family:var(--serif);font-style:italic;
+    font-size:clamp(1.25rem,1.05rem + 1.1vw,1.75rem);
+    color:var(--espresso-soft);margin:1.5rem 0 .4rem;max-width:26ch;
+    opacity:0;animation:fadeUp .9s ease .5s forwards;
+  }
+  .hero-desc{max-width:44ch;color:var(--espresso-soft);font-size:1rem;margin-bottom:1.9rem;opacity:0;animation:fadeUp .9s ease .62s forwards}
+  .hero-cta{display:flex;gap:.9rem;flex-wrap:wrap;opacity:0;animation:fadeUp .9s ease .74s forwards}
+  .hero-trust{display:flex;align-items:center;gap:.6rem;margin-top:1.8rem;opacity:0;animation:fadeUp .9s ease .86s forwards}
+  .stars{display:inline-flex;gap:2px}
+  .stars svg{width:16px;height:16px}
+  .hero-trust .t{font-size:.82rem;color:var(--espresso-soft);letter-spacing:.02em}
+  .hero-trust .t b{color:var(--espresso);font-weight:600}
+
+  /* --- signature pedicure ladder --- */
+  .ladder{position:relative;display:flex;flex-direction:column;gap:clamp(.6rem,1.2vw,.85rem);padding:.4rem 0}
+  .ladder-label{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:.4rem;text-align:right;opacity:0;animation:fadeUp .7s ease .3s forwards}
+  .rung{
+    position:relative;display:flex;align-items:center;gap:1rem;
+    background:linear-gradient(135deg,#FFFDFB 0%,#FBF4EE 100%);
+    border:1px solid var(--line);border-radius:16px;
+    padding:.95rem 1.25rem;box-shadow:var(--shadow-sm);
+    opacity:0;transform:translateY(26px);
+    will-change:transform,opacity;
+  }
+  .rung::before{content:'';position:absolute;inset:0;border-radius:16px;padding:1px;
+    background:linear-gradient(120deg,rgba(176,138,79,.55),transparent 40%,transparent 60%,rgba(176,138,79,.35));
+    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;}
+  .ladder.in .rung{animation:rungUp .7s cubic-bezier(.2,.7,.2,1) forwards}
+  .ladder.in .r1{animation-delay:.05s}
+  .ladder.in .r2{animation-delay:.18s}
+  .ladder.in .r3{animation-delay:.31s}
+  .ladder.in .r4{animation-delay:.44s}
+  .ladder.in .r5{animation-delay:.57s}
+  @keyframes rungUp{to{opacity:1;transform:translateY(0)}}
+  /* staircase climb: each rung nudged right */
+  .r1{margin-right:0}
+  .r2{margin-right:0;margin-left:6%}
+  .r3{margin-left:12%}
+  .r4{margin-left:18%}
+  .r5{margin-left:24%;background:linear-gradient(135deg,var(--espresso) 0%,#3d2b31 100%)}
+  .r5 .rung-name,.r5 .rung-tier{color:var(--ivory)}
+  .r5 .rung-desc{color:rgba(247,241,234,.72)}
+  .r5 .rung-ico circle,.r5 .rung-ico path{stroke:var(--gold-soft)}
+  @media(max-width:900px){
+    .r2,.r3,.r4,.r5{margin-left:0}
+    .ladder{max-width:520px;margin:0 auto}
+  }
+  .rung-ico{flex:none;width:38px;height:38px}
+  .rung-body{flex:1;min-width:0}
+  .rung-name{font-family:var(--serif);font-size:1.08rem;color:var(--espresso);line-height:1.15}
+  .rung-desc{font-size:.76rem;color:var(--espresso-soft);letter-spacing:.01em}
+  .rung-tier{font-family:var(--sans);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700}
+
+  /* ===================== REVEAL ===================== */
+  .reveal{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ===================== BENEFIT STRIP ===================== */
+  .benefits{background:var(--ivory);padding:clamp(3.4rem,7vw,5.5rem) 0;position:relative}
+  .benefits::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--line-soft)}
+  .sec-head{text-align:center;max-width:44rem;margin:0 auto clamp(2.2rem,5vw,3.4rem)}
+  .sec-head .eyebrow{display:inline-block;margin-bottom:1rem}
+  .sec-head p{color:var(--espresso-soft);margin-top:1rem;font-size:1.02rem}
+  .ben-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1rem,2vw,1.6rem)}
+  @media(max-width:900px){.ben-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.ben-grid{grid-template-columns:1fr}}
+  .ben{
+    text-align:center;padding:2rem 1.3rem;border-radius:var(--radius);
+    background:linear-gradient(180deg,#FFFDFB 0%,#FBF4EE 100%);
+    border:1px solid var(--line-soft);transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;
+  }
+  .ben:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--line)}
+  .ben-ico{width:56px;height:56px;margin:0 auto 1.1rem;display:grid;place-items:center;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%,var(--petal),var(--petal-deep));border:1px solid var(--line)}
+  .ben h3{font-size:1.18rem;margin-bottom:.5rem}
+  .ben p{font-size:.9rem;color:var(--espresso-soft)}
+
+  /* ===================== MENU ===================== */
+  .menu{background:
+      linear-gradient(180deg,var(--petal) 0%,#F0E1D8 100%);
+    padding:clamp(3.6rem,8vw,6rem) 0;position:relative;overflow:hidden}
+  .menu::before{content:'';position:absolute;top:-120px;right:-120px;width:340px;height:340px;border-radius:50%;
+    background:radial-gradient(circle,rgba(201,142,126,.22),transparent 70%);pointer-events:none}
+  .menu-cats{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2.2vw,1.8rem);margin-top:1rem}
+  @media(max-width:960px){.menu-cats{grid-template-columns:1fr}}
+  .cat{
+    background:rgba(255,253,251,.9);backdrop-filter:blur(4px);
+    border:1px solid var(--line);border-radius:var(--radius-lg);
+    padding:clamp(1.6rem,3vw,2.3rem);box-shadow:var(--shadow-sm);
+    transition:transform .4s ease,box-shadow .4s ease;
+    display:flex;flex-direction:column;
+  }
+  .cat:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
+  .cat-top{display:flex;align-items:center;gap:.9rem;margin-bottom:1.3rem;padding-bottom:1.1rem;border-bottom:1px solid var(--line)}
+  .cat-ico{flex:none;width:46px;height:46px}
+  .cat-top h3{font-size:1.35rem}
+  .cat-top .ct-sub{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
+  .svc{display:flex;align-items:flex-start;gap:.7rem;padding:.62rem 0;border-bottom:1px dashed var(--line-soft)}
+  .svc:last-child{border-bottom:none}
+  .svc .svc-dot{flex:none;margin-top:.5rem;width:6px;height:6px;border-radius:50%;background:var(--rose);box-shadow:0 0 0 3px rgba(201,142,126,.15)}
+  .svc .svc-name{font-weight:600;color:var(--espresso);font-size:.96rem;line-height:1.35}
+  .svc .svc-note{display:block;font-weight:400;color:var(--espresso-soft);font-size:.82rem;font-style:italic;letter-spacing:.01em}
+  .cat-fav{margin-top:auto;padding-top:1.1rem}
+  .fav-badge{display:inline-flex;align-items:center;gap:.45rem;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
+
+  .addons{margin-top:clamp(1.6rem,3vw,2.4rem);background:rgba(46,32,36,.04);border:1px solid var(--line);border-radius:var(--radius-lg);padding:clamp(1.4rem,3vw,2rem)}
+  .addons h3{font-size:1.15rem;margin-bottom:1rem;display:flex;align-items:center;gap:.6rem}
+  .chip-row{display:flex;flex-wrap:wrap;gap:.6rem}
+  .chip{display:inline-flex;align-items:center;gap:.45rem;background:rgba(255,253,251,.85);border:1px solid var(--line);border-radius:100px;padding:.45rem 1rem;font-size:.84rem;color:var(--espresso-soft);transition:background .25s,color .25s,border-color .25s}
+  .chip:hover{background:var(--rose);color:#fff;border-color:var(--rose)}
+  .chip svg{width:13px;height:13px;flex:none}
+  .menu-note{text-align:center;margin-top:1.8rem;font-size:.86rem;color:var(--espresso-soft);font-style:italic}
+
+  /* ===================== STORY ===================== */
+  .story{background:var(--ivory);padding:clamp(3.6rem,8vw,6rem) 0;position:relative;overflow:hidden}
+  .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+  @media(max-width:900px){.story-grid{grid-template-columns:1fr;gap:2.6rem}}
+  .story-copy .eyebrow{margin-bottom:1rem;display:inline-block}
+  .story-copy h2{margin-bottom:1.2rem}
+  .story-copy p{color:var(--espresso-soft);margin-bottom:1.1rem;max-width:52ch}
+  .story-quote{
+    font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,1rem + 1vw,1.55rem);
+    color:var(--espresso);line-height:1.4;padding:1.2rem 0 1.2rem 1.6rem;border-left:2px solid var(--gold);margin:1.6rem 0}
+  .story-stats{display:flex;flex-wrap:wrap;gap:clamp(1.4rem,4vw,2.6rem);margin-top:1.8rem}
+  .stat .n{font-family:var(--serif);font-size:clamp(1.9rem,1.4rem + 2vw,2.7rem);color:var(--rose-deep);line-height:1}
+  .stat .l{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--espresso-soft);margin-top:.4rem}
+
+  /* story visual - CSS flower wall panel */
+  .story-visual{position:relative;aspect-ratio:4/4.4;border-radius:var(--radius-lg);overflow:hidden;
+    background:linear-gradient(160deg,var(--petal) 0%,var(--petal-deep) 55%,#DEC0B1 100%);
+    border:1px solid var(--line);box-shadow:var(--shadow-lg)}
+  .story-visual .frame{position:absolute;inset:14px;border:1px solid rgba(176,138,79,.5);border-radius:calc(var(--radius-lg) - 8px);z-index:3;pointer-events:none}
+  .sv-svg{position:absolute;inset:0;width:100%;height:100%}
+  .story-visual .plaque{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:4;
+    background:rgba(247,241,234,.94);border:1px solid var(--line);border-radius:14px;padding:.8rem 1.4rem;text-align:center;box-shadow:var(--shadow-md);width:max-content;max-width:80%}
+  .plaque .p1{font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--espresso)}
+  .plaque .p2{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-top:.15rem}
+
+  /* ===================== REVIEWS ===================== */
+  .reviews{background:linear-gradient(180deg,#F0E1D8 0%,var(--petal) 100%);padding:clamp(3.6rem,8vw,6rem) 0;position:relative}
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2vw,1.6rem)}
+  @media(max-width:960px){.rev-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:660px){.rev-grid{grid-template-columns:1fr}}
+  .rev{
+    background:rgba(255,253,251,.94);border:1px solid var(--line-soft);border-radius:var(--radius);
+    padding:1.7rem 1.6rem;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;
+    transition:transform .35s ease,box-shadow .35s ease}
+  .rev:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
+  .rev .qmark{font-family:var(--serif);font-size:2.6rem;line-height:.6;color:var(--rose);opacity:.5;height:1.2rem}
+  .rev .stars{margin:.4rem 0 .9rem}
+  .rev p{font-size:.94rem;color:var(--espresso-soft);flex:1;line-height:1.6}
+  .rev .who{display:flex;align-items:center;gap:.7rem;margin-top:1.3rem;padding-top:1.1rem;border-top:1px solid var(--line-soft)}
+  .rev .avatar{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:1.05rem;color:#fff;
+    background:linear-gradient(135deg,var(--rose),var(--rose-deep))}
+  .rev .who .nm{font-weight:600;font-size:.88rem;color:var(--espresso)}
+  .rev .who .src{font-size:.74rem;color:var(--espresso-soft)}
+  .rev-foot{text-align:center;margin-top:2.4rem}
+  .rev-foot .rf-stars{display:inline-flex;gap:3px;vertical-align:middle;margin-right:.6rem}
+  .rev-foot .rf-stars svg{width:18px;height:18px}
+  .rev-foot span{font-size:.95rem;color:var(--espresso);font-weight:600;letter-spacing:.01em}
+  .rev-foot span b{color:var(--rose-deep)}
+
+  /* ===================== LOCATION ===================== */
+  .location{background:var(--espresso);color:var(--ivory);padding:clamp(3.6rem,8vw,6rem) 0;position:relative;overflow:hidden}
+  .location::before{content:'';position:absolute;top:-140px;left:-100px;width:400px;height:400px;border-radius:50%;
+    background:radial-gradient(circle,rgba(201,142,126,.20),transparent 70%);pointer-events:none}
+  .location::after{content:'';position:absolute;bottom:-160px;right:-120px;width:420px;height:420px;border-radius:50%;
+    background:radial-gradient(circle,rgba(176,138,79,.16),transparent 70%);pointer-events:none}
+  .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center;position:relative;z-index:2}
+  @media(max-width:900px){.loc-grid{grid-template-columns:1fr;gap:2.4rem}}
+  .loc-copy .eyebrow{color:var(--gold-soft)}
+  .loc-copy h2{color:var(--ivory);margin:1rem 0 1.4rem}
+  .loc-rows{display:flex;flex-direction:column;gap:1.3rem;margin-bottom:2rem}
+  .loc-row{display:flex;gap:1rem;align-items:flex-start}
+  .loc-row .ic{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;
+    background:rgba(247,241,234,.06);border:1px solid rgba(203,168,113,.35)}
+  .loc-row .lr-t{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);font-weight:600;margin-bottom:.2rem}
+  .loc-row .lr-v{color:var(--ivory);font-size:1rem;line-height:1.5}
+  .loc-row .lr-v .verify{font-size:.72rem;color:var(--gold-soft);font-style:italic;display:block;margin-top:.2rem}
+  .loc-hours{display:grid;grid-template-columns:1fr auto;gap:.35rem 1rem;font-size:.94rem}
+  .loc-hours .d{color:rgba(247,241,234,.78)}
+  .loc-hours .h{color:var(--ivory);text-align:right}
+  .loc-cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.8rem}
+  .loc-cta .btn-ghost{color:var(--ivory);border-color:rgba(203,168,113,.4)}
+  .loc-cta .btn-ghost:hover{border-color:var(--gold-soft);background:rgba(203,168,113,.1)}
+
+  /* map card */
+  .loc-map{position:relative;aspect-ratio:1/1;border-radius:var(--radius-lg);overflow:hidden;border:1px solid rgba(203,168,113,.35);box-shadow:var(--shadow-lg)}
+  .loc-map .map-svg{position:absolute;inset:0;width:100%;height:100%}
+  .loc-map .pin-card{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;
+    background:rgba(247,241,234,.96);border-radius:14px;padding:.9rem 1.2rem;text-align:center;box-shadow:var(--shadow-md);width:max-content;max-width:82%}
+  .pin-card .pc-n{font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--espresso)}
+  .pin-card .pc-a{font-size:.76rem;color:var(--espresso-soft);margin-top:.15rem}
+
+  /* ===================== FINAL CTA ===================== */
+  .cta{background:
+      radial-gradient(90% 120% at 50% -10%, #FBF4EE 0%, var(--petal) 60%, var(--petal-deep) 100%);
+    padding:clamp(4rem,9vw,6.5rem) 0;text-align:center;position:relative;overflow:hidden}
+  .cta::before{content:'';position:absolute;inset:0;background:radial-gradient(50% 60% at 50% 50%,rgba(201,142,126,.14),transparent 70%);pointer-events:none}
+  .cta-inner{position:relative;z-index:2;max-width:42rem;margin:0 auto}
+  .cta .eyebrow{margin-bottom:1.2rem;display:inline-block}
+  .cta h2{margin-bottom:1.1rem}
+  .cta p{color:var(--espresso-soft);margin-bottom:2.2rem;font-size:1.05rem;max-width:34ch;margin-left:auto;margin-right:auto}
+  .cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+  .cta-fine{margin-top:1.6rem;font-size:.8rem;color:var(--espresso-soft)}
+
+  /* contact form */
+  .contact{max-width:38rem;margin:2.8rem auto 0;text-align:left;background:rgba(255,253,251,.9);border:1px solid var(--line);border-radius:var(--radius-lg);padding:clamp(1.6rem,4vw,2.4rem);box-shadow:var(--shadow-md)}
+  .contact h3{font-size:1.35rem;margin-bottom:.4rem;text-align:center}
+  .contact .c-sub{text-align:center;font-size:.88rem;color:var(--espresso-soft);margin-bottom:1.5rem}
+  .field{margin-bottom:1rem}
+  .field label{display:block;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:.4rem}
+  .field input,.field textarea{width:100%;font-family:var(--sans);font-size:.95rem;color:var(--espresso);
+    background:var(--ivory);border:1px solid var(--line);border-radius:12px;padding:.8rem 1rem;transition:border-color .25s,box-shadow .25s}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--rose);box-shadow:0 0 0 3px rgba(201,142,126,.15)}
+  .field textarea{resize:vertical;min-height:96px}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  @media(max-width:520px){.form-row{grid-template-columns:1fr}}
+  .contact .btn{width:100%;margin-top:.4rem}
+
+  /* ===================== FOOTER ===================== */
+  footer{background:var(--espresso);color:rgba(247,241,234,.72);padding:clamp(2.6rem,6vw,4rem) 0 2rem;font-size:.9rem}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem;padding-bottom:2.2rem;border-bottom:1px solid rgba(203,168,113,.22)}
+  @media(max-width:760px){.foot-top{grid-template-columns:1fr;gap:1.6rem}}
+  .foot-brand .mark{font-family:var(--serif);font-size:1.6rem;color:var(--ivory)}
+  .foot-brand .mark i{font-style:italic;color:var(--gold-soft)}
+  .foot-brand p{margin-top:.8rem;max-width:34ch;color:rgba(247,241,234,.6);font-size:.86rem}
+  .foot-col h4{font-family:var(--sans);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:1rem;font-weight:600}
+  .foot-col a,.foot-col p{display:block;color:rgba(247,241,234,.72);margin-bottom:.55rem;font-size:.9rem;transition:color .2s}
+  .foot-col a:hover{color:var(--ivory)}
+  .foot-bottom{padding-top:1.8rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
+  .foot-bottom .disclaimer{font-size:.78rem;color:rgba(247,241,234,.5);max-width:60ch}
+  .foot-bottom .made{font-size:.78rem;color:rgba(247,241,234,.55)}
+  .foot-bottom .made b{color:var(--gold-soft);font-weight:600}
+
+  /* reduced motion */
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+    .reveal{opacity:1;transform:none}
+    .ladder .rung{opacity:1;transform:none}
+    .wordmark .ciao,.wordmark .bella,.tagline,.hero-desc,.hero-cta,.hero-trust,.hero-copy .eyebrow,.ladder-label{opacity:1;animation:none}
+    .underline-svg path{stroke-dashoffset:0}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== UTILITY BAR ===================== -->
+<div class="util">
+  <div class="util-inner">
+    <span class="util-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.4 5.6L20 8.3l-4 4 1 6-5-3-5 3 1-6-4-4 5.6-.7z" class="g" stroke="var(--gold-soft)"/></svg>
+      <span><b class="g">4.8</b> &nbsp;927 Google reviews</span>
+    </span>
+    <span class="dot"></span>
+    <span class="util-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold-soft)" stroke-width="1.8"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+      <span>Free client parking garage</span>
+    </span>
+    <span class="dot"></span>
+    <span class="util-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold-soft)" stroke-width="1.8"><path d="M18 8h1a3 3 0 010 6h-1M6 8h12v5a5 5 0 01-5 5h-2a5 5 0 01-5-5zM6 1v2M10 1v2M14 1v2"/></svg>
+      <span>Complimentary mimosas &amp; Vietnamese coffee</span>
+    </span>
+  </div>
+</div>
+
+<!-- ===================== NAV ===================== -->
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand" aria-label="Ciao Bella Nail Spa home">
+      <span class="mark">Ciao <i>Bella</i></span>
+      <span class="sub">Nail Spa</span>
+    </a>
+    <div class="nav-links">
+      <a href="#menu" class="navitem">The Menu</a>
+      <a href="#story" class="navitem">Our Spa</a>
+      <a href="#reviews" class="navitem">Reviews</a>
+      <a href="#visit" class="navitem">Visit</a>
+      <!-- VERIFY: replace tel number before publishing -->
+      <a href="tel:+13463069362" class="btn btn-rose navcall" aria-label="Call Ciao Bella">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+        Call
+      </a>
+      <a href="tel:+13463069362" class="btn btn-solid navitem" aria-label="Call Ciao Bella Nail Spa">Book Your Visit</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero" id="top">
+  <!-- ambient flower-wall motif -->
+  <div class="flowerwall" aria-hidden="true">
+    <div class="petal-cluster pc1"></div>
+    <div class="petal-cluster pc2"></div>
+    <div class="petal-cluster pc3"></div>
+    <div class="petal-cluster pc4"></div>
+  </div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">The Heights &middot; Washington Ave &middot; Houston</span>
+      <h1 class="wordmark">
+        <span class="ciao">Ciao</span>
+        <span class="bella">Bella
+          <svg class="underline-svg" viewBox="0 0 360 22" aria-hidden="true"><path d="M4 14 C 70 4, 150 4, 210 11 S 320 20, 356 8"/></svg>
+        </span>
+      </h1>
+      <p class="tagline">Rise, shine, and slay nails.</p>
+      <p class="hero-desc">An upscale nail and spa atelier in Houston's Heights. Signature tiered pedicures, builder gel, dip powder, and Gel-X, delivered in a linen-and-gold room where you are pampered to the fullest.</p>
+      <div class="hero-cta">
+        <!-- VERIFY: replace tel number before publishing -->
+        <a href="tel:+13463069362" class="btn btn-solid btn-lg" aria-label="Tap to call Ciao Bella Nail Spa">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+          Tap to Call
+        </a>
+        <a href="#menu" class="btn btn-ghost btn-lg">Explore the Menu</a>
+      </div>
+      <div class="hero-trust">
+        <span class="stars" aria-label="4.8 out of 5 stars">
+          <svg viewBox="0 0 24 24" fill="var(--gold)"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="var(--gold)"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="var(--gold)"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="var(--gold)"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="var(--gold)"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg>
+        </span>
+        <span class="t"><b>4.8 rating</b> from 927 Google reviews &middot; The Heights, 77007</span>
+      </div>
+    </div>
+
+    <!-- signature pedicure ladder -->
+    <div class="hero-visual">
+      <p class="ladder-label">The Signature Pedicure Ladder</p>
+      <div class="ladder" id="ladder">
+        <div class="rung r1">
+          <svg class="rung-ico" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="17" stroke="var(--gold)" stroke-width="1.2"/><path d="M13 24c2-6 5-9 7-9s5 3 7 9" stroke="var(--rose-deep)" stroke-width="1.6" stroke-linecap="round"/><path d="M15 27h10" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round"/></svg>
+          <div class="rung-body">
+            <span class="rung-tier">Level One</span>
+            <div class="rung-name">Express Pedicure</div>
+            <div class="rung-desc">The quick, clean refresh</div>
+          </div>
+        </div>
+        <div class="rung r2">
+          <svg class="rung-ico" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="17" stroke="var(--gold)" stroke-width="1.2"/><path d="M20 11c4 4 6 7 6 11a6 6 0 11-12 0c0-4 2-7 6-11z" stroke="var(--rose-deep)" stroke-width="1.5"/></svg>
+          <div class="rung-body">
+            <span class="rung-tier">Level Two</span>
+            <div class="rung-name">Detoxing &amp; Treat Myself</div>
+            <div class="rung-desc">Soak, scrub, restore</div>
+          </div>
+        </div>
+        <div class="rung r3">
+          <svg class="rung-ico" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="17" stroke="var(--gold)" stroke-width="1.2"/><path d="M14 22c0-4 3-7 6-7s6 3 6 7" stroke="var(--rose-deep)" stroke-width="1.6"/><path d="M13 24h14M16 27h8" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round"/><circle cx="20" cy="13" r="1.6" fill="var(--gold)"/></svg>
+          <div class="rung-body">
+            <span class="rung-tier">Level Three</span>
+            <div class="rung-name">Milk &amp; Honey Pedicure</div>
+            <div class="rung-desc">Bella's favorite ritual</div>
+          </div>
+        </div>
+        <div class="rung r4">
+          <svg class="rung-ico" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="17" stroke="var(--gold)" stroke-width="1.2"/><path d="M20 10l2.4 5 5.6.8-4 4 1 5.6-5-2.7-5 2.7 1-5.6-4-4 5.6-.8z" stroke="var(--rose-deep)" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          <div class="rung-body">
+            <span class="rung-tier">Level Four</span>
+            <div class="rung-name">Crystal Jelly &amp; Cafe Bella</div>
+            <div class="rung-desc">Jelly soak, coffee scrub</div>
+          </div>
+        </div>
+        <div class="rung r5">
+          <svg class="rung-ico" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="17" stroke="var(--gold-soft)" stroke-width="1.4"/><path d="M20 9l3 6.2 6.8 1-5 4.8 1.2 6.8L20 24.6 14 27.6l1.2-6.8-5-4.8 6.8-1z" stroke="var(--gold-soft)" stroke-width="1.4" stroke-linejoin="round" fill="rgba(203,168,113,.18)"/></svg>
+          <div class="rung-body">
+            <span class="rung-tier">The Summit</span>
+            <div class="rung-name">The Bella Touch</div>
+            <div class="rung-desc">Gold flake massage, collagen socks</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== BENEFIT STRIP ===================== -->
+<section class="benefits">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Why Ciao Bella</span>
+      <h2>Self-care, treated as a small luxury ritual</h2>
+      <p>Not a clinical med-spa, and not a bubblegum nail bar. A beautiful, spotless room where quality is never in doubt.</p>
+    </div>
+    <div class="ben-grid">
+      <div class="ben reveal d1">
+        <div class="ben-ico">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--rose-deep)" stroke-width="1.6"><path d="M12 3l2.9 6.3L22 10.2l-5 4.7L18.2 22 12 18.4 5.8 22 7 14.9l-5-4.7 7.1-.9z"/></svg>
+        </div>
+        <h3>927 Reviews, 4.8&#9733;</h3>
+        <p>A strong, established reputation carried across four-plus years, even after the beautiful new-location rebrand.</p>
+      </div>
+      <div class="ben reveal d2">
+        <div class="ben-ico">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--rose-deep)" stroke-width="1.6"><path d="M4 16l4-9 4 5 4-7 4 11" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8" cy="7" r="1.4" fill="var(--gold)" stroke="none"/><circle cx="16" cy="5" r="1.4" fill="var(--gold)" stroke="none"/></svg>
+        </div>
+        <h3>A True Luxury Ladder</h3>
+        <p>A genuine tiered menu, from an Express refresh up to gold flake, collagen, milk &amp; honey, and crystal jelly.</p>
+      </div>
+      <div class="ben reveal d3">
+        <div class="ben-ico">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--rose-deep)" stroke-width="1.6"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Free Parking &amp; Drinks</h3>
+        <p>A free client parking garage, plus complimentary mimosas and Vietnamese coffee while you are pampered.</p>
+      </div>
+      <div class="ben reveal d4">
+        <div class="ben-ico">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--rose-deep)" stroke-width="1.6"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0112 5a5.5 5.5 0 019.5 7c-2.5 4.5-9.5 9-9.5 9z"/></svg>
+        </div>
+        <h3>A Flower Wall to Show Off</h3>
+        <p>Reviewers photograph their fresh nails against the flower wall before they walk out. Requestable pros: Cali, David &amp; Helen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MENU ===================== -->
+<section class="menu" id="menu">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The Menu</span>
+      <h2>Signature indulgence, from head to toe</h2>
+      <p>Pedicures, manicures, extensions, and art, all leaning hard into the good stuff: gold, collagen, milk &amp; honey, coffee, and crystal jelly.</p>
+    </div>
+
+    <div class="menu-cats">
+      <!-- Pedicures -->
+      <div class="cat reveal d1">
+        <div class="cat-top">
+          <svg class="cat-ico" viewBox="0 0 46 46" fill="none" aria-hidden="true"><circle cx="23" cy="23" r="21" stroke="var(--gold)" stroke-width="1.2"/><path d="M17 27c0-5 3-9 6-9s6 4 6 9" stroke="var(--rose-deep)" stroke-width="1.6"/><path d="M15 30h16M18 33h10" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round"/><circle cx="23" cy="15" r="2" fill="var(--rose)"/></svg>
+          <div>
+            <span class="ct-sub">The Signature Ladder</span>
+            <h3>Pedicures</h3>
+          </div>
+        </div>
+        <div class="svc"><span class="svc-dot"></span><span class="svc-name">Express Pedicure<span class="svc-note">The quick, clean refresh</span></span></div>
+        <div class="svc"><span class="svc-dot"></span><span class="svc-name">Detoxing Pedicure<span class="svc-note">Soak, exfoliate, restore</span></span></div>
+        <div class="svc"><span class="svc-dot"></span><span class="svc-name">Treat Myself Pedicure<span class="svc-note">A well-earned reset</span></span></div>
+        <div class="svc"><span class="svc-dot"></span><span class="svc-name">Milk &amp; Honey Pedicure<span class="svc-note">Bella's favorite</span></span></div>
+        <div class="svc"><span class="svc-dot"></span><span class="svc-name">Crystal Jelly Luxe Pedicure<span class="svc-note">Jelly soak indulgence</span></span></div>
+        <div class="svc"><span class="svc-dot"></span><span class="svc-name">The Cafe Bella Pedicure<span class="svc-note">Warm coffee scrub</span></span></div>
+        <div class="svc"><span class="svc-dot"></span><span class="svc-name">The Bella Touch Pedicure<span class="svc-note">Gold flake massage, collagen socks</span></span></div>
+        <div class="cat-fav">
+          <span class="fav-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg>
+            Most-praised: The Milk &amp; Honey
+          </span>
+        </div>
+      </div>
+
+      <!-- Manicures -->
+      <div class="cat reveal d2">
+        <div class="cat-top">
+          <svg class="cat-ico" viewBox="0 0 46 46" fill="none" aria-hidden="true"><circle cx="23" cy="23" r="21" stroke="var(--gold)" stroke-width="1.2"/><path d="M17 30V18c0-1.5 1-2.5 2.2-2.5S21.5 16.5 21.5 18M21.5 18v-2c0-1.5 1-2.5 2.2-2.5S26 14.5 26 16v2M26 18c0-1.3.9-2.2 2-2.2s2 .9 2 2.2v6c0 4-2.5 7-6.5 7S17 30 17 27" stroke="var(--rose-deep)" stroke-width="1.4" stroke-linecap="round"/></svg>
+          <div>
+            <span class="ct-sub">Hands &amp; Enhancements</span>
+            <h3>Manicures</h3>
+          </div>
+        </div>
+        <div class="svc"><span class="svc-dot"></span><span class="svc-name">Express Manicure<span class="svc-note">Shape, tidy, polish</span></span></div>
+        <div class="svc"><span class="svc-dot"></span><span class="svc-name">Detoxing Manicure<span class="svc-note">Deep cleanse for hands</span></span></div>
+        <div class="svc"><span class="svc-dot"></span><span class="svc-name">The Bella Manicure<span class="svc-note">Gold scrub, paraffin &amp; collagen gloves</span></span></div>
+        <div class="svc"><span class="svc-dot"></span><span class="svc-name">Full Set with Gel Polish<span class="svc-note">Refill available</span></span></div>
+        <div class="svc"><span class="svc-dot"></span><span class="svc-name">Full Set with Colored Powder<span class="svc-note">Rich, lasting color</span></span></div>
+        <div class="svc"><span class="svc-dot"></span><span class="svc-name">Ombre Full Set<span class="svc-note">Blended fade finish</span></span></div>
+        <div class="svc"><span class="svc-dot"></span><span class="svc-name">Kids Menu, ages 10 &amp; under<span class="svc-note">Manicure, pedicure &amp; combo</span></span></div>
+        <div class="cat-fav">
+          <span class="fav-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg>
+            Most-praised: The almond shape
+          </span>
+        </div>
+      </div>
+
+      <!-- Extensions & specialties -->
+      <div class="cat reveal d3">
+        <div class="cat-top">
+          <svg class="cat-ico" viewBox="0 0 46 46" fill="none" aria-hidden="true"><circle cx="23" cy="23" r="21" stroke="var(--gold)" stroke-width="1.2"/><path d="M23 12c3 4 5 7 5 11a5 5 0 01-10 0c0-4 2-7 5-11z" stroke="var(--rose-deep)" stroke-width="1.5"/><path d="M20 24h6" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round"/></svg>
+          <div>
+            <span class="ct-sub">Long-Lasting Wear</span>
+            <h3>Extensions &amp; Dip</h3>
+          </div>
+        </div>
+        <div class="svc"><span class="svc-dot"></span><span class="svc-name">Gel-X Extensions<span class="svc-note">Lightweight soft-gel tips</span></span></div>
+        <div class="svc"><span class="svc-dot"></span><span class="svc-name">Builder Gel Full Set<span class="svc-note">Natural-looking strength</span></span></div>
+        <div class="svc"><span class="svc-dot"></span><span class="svc-name">Dip Powder<span class="svc-note">Durable, chip-resistant</span></span></div>
+        <div class="svc"><span class="svc-dot"></span><span class="svc-name">Dip Ombre<span class="svc-note">Faded dip gradient</span></span></div>
+        <div class="svc"><span class="svc-dot"></span><span class="svc-name">Dip French<span class="svc-note">Classic dipped tip</span></span></div>
+        <div class="svc"><span class="svc-dot"></span><span class="svc-name">Waxing<span class="svc-note">Brows, lip, face, arms &amp; legs</span></span></div>
+        <div class="cat-fav">
+          <span class="fav-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg>
+            Most-praised: Builder gel &amp; dip
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- add-ons -->
+    <div class="addons reveal">
+      <h3>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--rose-deep)" stroke-width="1.7"><path d="M12 3v18M3 12h18" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="var(--gold)" stroke-width="1.2"/></svg>
+        Nail Art &amp; Add-Ons
+      </h3>
+      <div class="chip-row">
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/></svg>Chrome Effect</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>Cat Eye</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20c6-2 10-6 16-16M4 20l4-1M4 20l1-4"/></svg>Air Brush</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18c4-8 8-12 12-12"/><path d="M6 18h4"/></svg>French Tip</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l2 5 5 .5-4 3.5 1.5 5-4.5-3-4.5 3 1.5-5-4-3.5 5-.5z"/></svg>Custom Designs</span>
+      </div>
+    </div>
+    <p class="menu-note reveal">A sampling of the menu. The full service list is reviewed with you when you book.</p>
+  </div>
+</section>
+
+<!-- ===================== STORY ===================== -->
+<section class="story" id="story">
+  <div class="wrap story-grid">
+    <div class="story-copy">
+      <span class="eyebrow reveal">Our Spa</span>
+      <h2 class="reveal d1">Hello beautiful, from the Heights</h2>
+      <p class="reveal d1">Ciao Bella Nail Spa sits in Houston's Heights, near Washington Ave and Memorial Park, in a beautiful new location that reviewers describe as spotless and peaceful. Though the name is new, the shop is well established, with roughly four-plus years of history and a loyal following carried right along with it.</p>
+      <p class="story-quote reveal d2">"While there are many nail salons in the area, we stand out by providing thoughtful services where you'll be pampered to the fullest with the best."</p>
+      <p class="reveal d2">Owned by Vi Francis Le, the spa leans into the good stuff: gold, collagen, milk &amp; honey, and crystal jelly, all served with a complimentary drink in a linen-and-gold room. It is warm and inviting, never clinical.</p>
+      <div class="story-stats reveal d3">
+        <div class="stat"><div class="n">4+</div><div class="l">Years serving the Heights</div></div>
+        <div class="stat"><div class="n">927</div><div class="l">Google reviews</div></div>
+        <div class="stat"><div class="n">4.8&#9733;</div><div class="l">Average rating</div></div>
+      </div>
+    </div>
+
+    <!-- CSS flower-wall visual panel -->
+    <div class="story-visual reveal d2" aria-label="Illustration of the salon flower wall">
+      <div class="frame"></div>
+      <svg class="sv-svg" viewBox="0 0 400 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <radialGradient id="petalG" cx="50%" cy="35%" r="65%">
+            <stop offset="0%" stop-color="#F7F1EA" stop-opacity=".95"/>
+            <stop offset="60%" stop-color="#EBD8CE" stop-opacity=".6"/>
+            <stop offset="100%" stop-color="#DEC0B1" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="leafG" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#C98E7E"/>
+            <stop offset="100%" stop-color="#B4715F"/>
+          </linearGradient>
+        </defs>
+        <!-- scattered CSS-drawn flowers on a wall -->
+        <g opacity=".9">
+          <!-- flower cluster generator: five-petal blooms -->
+          <g transform="translate(70 80)">
+            <g>
+              <ellipse cx="0" cy="-16" rx="10" ry="16" fill="#F3E4DB"/>
+              <ellipse cx="15" cy="-5" rx="10" ry="16" fill="#F3E4DB" transform="rotate(72 0 0)"/>
+              <ellipse cx="9" cy="13" rx="10" ry="16" fill="#F3E4DB" transform="rotate(144 0 0)"/>
+              <ellipse cx="-9" cy="13" rx="10" ry="16" fill="#F3E4DB" transform="rotate(216 0 0)"/>
+              <ellipse cx="-15" cy="-5" rx="10" ry="16" fill="#F3E4DB" transform="rotate(288 0 0)"/>
+              <circle r="8" fill="url(#leafG)"/>
+            </g>
+          </g>
+          <g transform="translate(210 55) scale(1.3)">
+            <ellipse cx="0" cy="-14" rx="9" ry="14" fill="#EFDDD2"/>
+            <ellipse cx="13" cy="-4" rx="9" ry="14" fill="#EFDDD2" transform="rotate(72 0 0)"/>
+            <ellipse cx="8" cy="11" rx="9" ry="14" fill="#EFDDD2" transform="rotate(144 0 0)"/>
+            <ellipse cx="-8" cy="11" rx="9" ry="14" fill="#EFDDD2" transform="rotate(216 0 0)"/>
+            <ellipse cx="-13" cy="-4" rx="9" ry="14" fill="#EFDDD2" transform="rotate(288 0 0)"/>
+            <circle r="7" fill="#B08A4F"/>
+          </g>
+          <g transform="translate(320 150) scale(1.05)">
+            <ellipse cx="0" cy="-15" rx="10" ry="15" fill="#F5E8E0"/>
+            <ellipse cx="14" cy="-5" rx="10" ry="15" fill="#F5E8E0" transform="rotate(72 0 0)"/>
+            <ellipse cx="9" cy="12" rx="10" ry="15" fill="#F5E8E0" transform="rotate(144 0 0)"/>
+            <ellipse cx="-9" cy="12" rx="10" ry="15" fill="#F5E8E0" transform="rotate(216 0 0)"/>
+            <ellipse cx="-14" cy="-5" rx="10" ry="15" fill="#F5E8E0" transform="rotate(288 0 0)"/>
+            <circle r="7.5" fill="url(#leafG)"/>
+          </g>
+          <g transform="translate(110 210) scale(1.5)">
+            <ellipse cx="0" cy="-13" rx="8" ry="13" fill="#F0DFD5"/>
+            <ellipse cx="12" cy="-4" rx="8" ry="13" fill="#F0DFD5" transform="rotate(72 0 0)"/>
+            <ellipse cx="7" cy="10" rx="8" ry="13" fill="#F0DFD5" transform="rotate(144 0 0)"/>
+            <ellipse cx="-7" cy="10" rx="8" ry="13" fill="#F0DFD5" transform="rotate(216 0 0)"/>
+            <ellipse cx="-12" cy="-4" rx="8" ry="13" fill="#F0DFD5" transform="rotate(288 0 0)"/>
+            <circle r="6.5" fill="#B08A4F"/>
+          </g>
+          <g transform="translate(300 280) scale(1.35)">
+            <ellipse cx="0" cy="-14" rx="9" ry="14" fill="#F3E4DB"/>
+            <ellipse cx="13" cy="-4" rx="9" ry="14" fill="#F3E4DB" transform="rotate(72 0 0)"/>
+            <ellipse cx="8" cy="11" rx="9" ry="14" fill="#F3E4DB" transform="rotate(144 0 0)"/>
+            <ellipse cx="-8" cy="11" rx="9" ry="14" fill="#F3E4DB" transform="rotate(216 0 0)"/>
+            <ellipse cx="-13" cy="-4" rx="9" ry="14" fill="#F3E4DB" transform="rotate(288 0 0)"/>
+            <circle r="7" fill="url(#leafG)"/>
+          </g>
+          <g transform="translate(60 330)">
+            <ellipse cx="0" cy="-14" rx="9" ry="14" fill="#EFDDD2"/>
+            <ellipse cx="13" cy="-4" rx="9" ry="14" fill="#EFDDD2" transform="rotate(72 0 0)"/>
+            <ellipse cx="8" cy="11" rx="9" ry="14" fill="#EFDDD2" transform="rotate(144 0 0)"/>
+            <ellipse cx="-8" cy="11" rx="9" ry="14" fill="#EFDDD2" transform="rotate(216 0 0)"/>
+            <ellipse cx="-13" cy="-4" rx="9" ry="14" fill="#EFDDD2" transform="rotate(288 0 0)"/>
+            <circle r="7" fill="#B08A4F"/>
+          </g>
+          <g transform="translate(200 340) scale(1.2)">
+            <ellipse cx="0" cy="-14" rx="9" ry="14" fill="#F5E8E0"/>
+            <ellipse cx="13" cy="-4" rx="9" ry="14" fill="#F5E8E0" transform="rotate(72 0 0)"/>
+            <ellipse cx="8" cy="11" rx="9" ry="14" fill="#F5E8E0" transform="rotate(144 0 0)"/>
+            <ellipse cx="-8" cy="11" rx="9" ry="14" fill="#F5E8E0" transform="rotate(216 0 0)"/>
+            <ellipse cx="-13" cy="-4" rx="9" ry="14" fill="#F5E8E0" transform="rotate(288 0 0)"/>
+            <circle r="7" fill="url(#leafG)"/>
+          </g>
+        </g>
+        <rect x="0" y="0" width="400" height="440" fill="url(#petalG)"/>
+      </svg>
+      <div class="plaque">
+        <div class="p1">The Flower Wall</div>
+        <div class="p2">Show off your nails on the way out</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REVIEWS ===================== -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">In Their Words</span>
+      <h2>The quality is never something you have to doubt</h2>
+      <p>Real, verbatim guest reviews from Google, Yelp, and Facebook.</p>
+    </div>
+    <div class="rev-grid">
+      <div class="rev reveal d1">
+        <div class="qmark">&ldquo;</div>
+        <span class="stars" aria-label="5 stars">
+          <svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg>
+        </span>
+        <p>I had never tried builder gel before, and after visiting Ciao Bella Nail Spa, I'm so glad I did! My nail technician took the time to explain the process and made sure my nails looked natural while still feeling strong and durable.</p>
+        <div class="who"><span class="avatar">S</span><div><div class="nm">S P (Local Guide)</div><div class="src">Google &middot; 5 stars</div></div></div>
+      </div>
+
+      <div class="rev reveal d2">
+        <div class="qmark">&ldquo;</div>
+        <span class="stars" aria-label="5 stars">
+          <svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg>
+        </span>
+        <p>Love this nail salon! My boyfriend and I went here, he had Cali and I had David, they were both phenomenal! Cali did an amazing manicure on him and David's precision was perfect; he made the best almond shape I've ever seen.</p>
+        <div class="who"><span class="avatar">A</span><div><div class="nm">Ann Johnson (Local Guide)</div><div class="src">Google &middot; 5 stars</div></div></div>
+      </div>
+
+      <div class="rev reveal d3">
+        <div class="qmark">&ldquo;</div>
+        <span class="stars" aria-label="5 stars">
+          <svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg>
+        </span>
+        <p>Trust me when I say, you'll want to gatekeep this place!! The salons I've been to in the past have always cared about quantity, and rarely about the quality. The quality here is never something I have to doubt!</p>
+        <div class="who"><span class="avatar">M</span><div><div class="nm">Madison Marie</div><div class="src">Google &middot; 5 stars</div></div></div>
+      </div>
+
+      <div class="rev reveal d1">
+        <div class="qmark">&ldquo;</div>
+        <span class="stars" aria-label="5 stars">
+          <svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg>
+        </span>
+        <p>As soon as I went in I noticed the lovely decorations, there was big flowers and a cute flower wall to showcase your nails before you walk out. The staff confirmed there is a parking garage free for clients. You get a complimentary drink as well.</p>
+        <div class="who"><span class="avatar">D</span><div><div class="nm">Daisy P. (Yelp Elite '26)</div><div class="src">Yelp &middot; 5 stars, First to Review</div></div></div>
+      </div>
+
+      <div class="rev reveal d2">
+        <div class="qmark">&ldquo;</div>
+        <span class="stars" aria-label="5 stars">
+          <svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg>
+        </span>
+        <p>I received the Milk and Honey pedicure, and it was beyond relaxing from start to finish. The salon itself was beautifully decorated, spotless, and had such a peaceful atmosphere. Hands down the best experience I've ever had at a nail spa.</p>
+        <div class="who"><span class="avatar">S</span><div><div class="nm">Silsa Martinez</div><div class="src">Facebook &middot; Recommends</div></div></div>
+      </div>
+
+      <div class="rev reveal d3">
+        <div class="qmark">&ldquo;</div>
+        <span class="stars" aria-label="5 stars">
+          <svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)" width="15" height="15"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg>
+        </span>
+        <p>This is by far the best nail spa in this area. The new location is very beautiful. I have been a customer for the past four years and the service is excellent and the staff is very friendly. Helen is the best and really is great at her job.</p>
+        <div class="who"><span class="avatar">R</span><div><div class="nm">Rustin Duza</div><div class="src">Guest testimonial</div></div></div>
+      </div>
+    </div>
+    <div class="rev-foot reveal">
+      <span class="rf-stars" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="var(--gold)"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg><svg viewBox="0 0 24 24" fill="var(--gold)"><path d="M12 2l2.9 6.3L22 9.2l-5 4.7L18.2 21 12 17.4 5.8 21 7 13.9l-5-4.7 7.1-.9z"/></svg>
+      </span>
+      <span><b>4.8</b> average across <b>927</b> Google reviews</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LOCATION ===================== -->
+<section class="location" id="visit">
+  <div class="wrap loc-grid">
+    <div class="loc-copy">
+      <span class="eyebrow reveal">Visit Us</span>
+      <h2 class="reveal d1">In the heart of the Heights</h2>
+      <div class="loc-rows">
+        <div class="loc-row reveal d1">
+          <span class="ic">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold-soft)" stroke-width="1.7"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          </span>
+          <div>
+            <div class="lr-t">Address</div>
+            <div class="lr-v">1111 Shepherd Dr, Suite 300<br>Houston, TX 77007<br><span style="color:rgba(247,241,234,.7);font-size:.9rem">The Heights, near Memorial Park</span></div>
+          </div>
+        </div>
+        <div class="loc-row reveal d2">
+          <span class="ic">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold-soft)" stroke-width="1.7"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+          </span>
+          <div>
+            <div class="lr-t">Call or Text</div>
+            <!-- VERIFY: replace tel number before publishing -->
+            <div class="lr-v"><a href="tel:+13463069362">(346) 306-9362</a><span class="verify">Please verify this number before publishing.</span></div>
+          </div>
+        </div>
+        <div class="loc-row reveal d3">
+          <span class="ic">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold-soft)" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg>
+          </span>
+          <div>
+            <div class="lr-t">Hours</div>
+            <div class="lr-v">
+              <div class="loc-hours">
+                <span class="d">Monday to Saturday</span><span class="h">9:30 AM to 7:00 PM</span>
+                <span class="d">Sunday</span><span class="h">11:00 AM to 5:00 PM</span>
+              </div>
+              <span class="verify">Hours inherited from prior listings. Please confirm before publishing.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="loc-cta">
+        <!-- VERIFY: replace tel number before publishing -->
+        <a href="tel:+13463069362" class="btn btn-rose btn-lg">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+          Tap to Call
+        </a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Ciao+Bella+Nail+Spa+1111+Shepherd+Dr+Suite+300+Houston+TX+77007" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">Get Directions</a>
+      </div>
+    </div>
+
+    <!-- CSS map card -->
+    <div class="loc-map reveal d2" aria-label="Map illustration of the salon location">
+      <svg class="map-svg" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="mapBg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#3a2b31"/>
+            <stop offset="100%" stop-color="#241a1e"/>
+          </linearGradient>
+        </defs>
+        <rect width="400" height="400" fill="url(#mapBg)"/>
+        <!-- roads -->
+        <g stroke="rgba(203,168,113,.28)" stroke-width="7" fill="none">
+          <path d="M-20 120 L 420 90"/>
+          <path d="M60 -20 L 110 420"/>
+          <path d="M-20 300 L 420 260"/>
+          <path d="M290 -20 L 330 420"/>
+        </g>
+        <g stroke="rgba(247,241,234,.10)" stroke-width="2.5" fill="none">
+          <path d="M-20 200 L 420 175"/>
+          <path d="M200 -20 L 225 420"/>
+          <path d="M-20 60 L 420 40"/>
+        </g>
+        <!-- park block -->
+        <rect x="150" y="150" width="130" height="110" rx="10" fill="rgba(201,142,126,.14)" stroke="rgba(203,168,113,.3)" stroke-width="1.5"/>
+        <text x="215" y="208" fill="rgba(203,168,113,.6)" font-size="12" font-family="serif" font-style="italic" text-anchor="middle">Memorial Park</text>
+      </svg>
+      <!-- pin -->
+      <svg viewBox="0 0 24 24" width="46" height="46" style="position:absolute;left:calc(50% - 23px);top:calc(50% - 62px);z-index:4;filter:drop-shadow(0 6px 10px rgba(0,0,0,.4))" fill="var(--rose)" aria-hidden="true"><path d="M12 22s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z" stroke="var(--gold-soft)" stroke-width="1"/><circle cx="12" cy="11" r="2.6" fill="#fff"/></svg>
+      <div class="pin-card">
+        <div class="pc-n">Ciao Bella Nail Spa</div>
+        <div class="pc-a">1111 Shepherd Dr, Ste 300 &middot; The Heights</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section class="cta">
+  <div class="wrap cta-inner">
+    <span class="eyebrow reveal">Ready When You Are</span>
+    <h2 class="reveal d1">Come rise, shine, and slay nails</h2>
+    <p class="reveal d2">Call to book your seat in the chair, or send a note below and the team will reach out to confirm your appointment.</p>
+    <div class="cta-btns reveal d2">
+      <!-- VERIFY: replace tel number before publishing -->
+      <a href="tel:+13463069362" class="btn btn-solid btn-lg">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+        Tap to Call (346) 306-9362
+      </a>
+      <button class="btn btn-ghost btn-lg" disabled title="Online booking coming soon">Book Online, Coming Soon</button>
+    </div>
+    <p class="cta-fine reveal">Free client parking garage on arrival. Complimentary drinks while you wait.</p>
+
+    <!-- contact form -->
+    <div class="contact reveal">
+      <h3>Request an appointment</h3>
+      <p class="c-sub">Tell us what you would love, and we will confirm a time that works.</p>
+      <!-- To receive leads: replace REPLACE-WITH-CLIENT-EMAIL below with the salon's real inbox -->
+      <form action="https://formsubmit.co/REPLACE-WITH-CLIENT-EMAIL" method="POST">
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="(___) ___-____" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="service">Service of interest</label>
+          <input type="text" id="service" name="service" placeholder="e.g. Milk &amp; Honey Pedicure, builder gel, Gel-X">
+        </div>
+        <div class="field">
+          <label for="msg">Anything else?</label>
+          <textarea id="msg" name="message" placeholder="Preferred day or time, a technician you love (Cali, David, Helen), or a design idea"></textarea>
+        </div>
+        <button type="submit" class="btn btn-rose btn-lg">Send Request</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="mark">Ciao <i>Bella</i> Nail Spa</div>
+        <p>An upscale nail and spa atelier in Houston's Heights. Rise, shine, and slay nails.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="#menu">The Menu</a>
+        <a href="#story">Our Spa</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#visit">Visit Us</a>
+      </div>
+      <div class="foot-col">
+        <h4>Find Us</h4>
+        <p>1111 Shepherd Dr, Suite 300<br>Houston, TX 77007</p>
+        <!-- VERIFY: replace tel number before publishing -->
+        <a href="tel:+13463069362">(346) 306-9362</a>
+        <p style="font-size:.8rem;color:rgba(247,241,234,.5)">Mon to Sat 9:30 AM to 7:00 PM<br>Sun 11:00 AM to 5:00 PM</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p class="disclaimer">Concept preview built by DNA Agency, not affiliated with Ciao Bella Nail Spa. Phone number, hours, and business details shown are for demonstration and must be verified before publishing.</p>
+      <p class="made">Design concept by <b>DNA Agency</b></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // nav shadow on scroll
+  var nav=document.getElementById('nav');
+  var onScroll=function(){ if(window.scrollY>12){nav.classList.add('scrolled');}else{nav.classList.remove('scrolled');} };
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    },{threshold:.14,rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+    // ladder cascade
+    var ladder=document.getElementById('ladder');
+    if(ladder){
+      var lio=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); lio.unobserve(e.target); } });
+      },{threshold:.3});
+      lio.observe(ladder);
+    }
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
+    var l=document.getElementById('ladder'); if(l){l.classList.add('in');}
+  }
+</script>
+</body>
+</html>

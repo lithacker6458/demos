@@ -1,0 +1,27 @@
+IMAGE ATTRIBUTION
+=================
+
+All photos in this directory are sourced from Pexels (https://www.pexels.com)
+under the Pexels License (https://www.pexels.com/license/), which permits free
+use for commercial and non-commercial purposes. Attribution is not legally
+required under the Pexels License, but is provided here as a courtesy and for
+provenance tracking. No photo is a scraped image of the client's actual salon;
+these are licensed stock placeholders for the concept preview only.
+
+Downloaded into the repo (not hotlinked), each optimized to well under 400KB.
+
+FILE                          SOURCE (Pexels photo ID)                                      LICENSE
+----                          ------------------------                                      -------
+manicure-swatches.jpg         https://www.pexels.com/photo/704815/    (ID 704815)           Pexels License
+nail-art-botanical.jpg        https://www.pexels.com/photo/3997379/   (ID 3997379)          Pexels License
+nail-art-glitter-pink.jpg     https://www.pexels.com/photo/332355/    (ID 332355)           Pexels License
+nail-art-love.jpg             https://www.pexels.com/photo/887352/    (ID 887352)           Pexels License
+salon-manicure-service.jpg    https://www.pexels.com/photo/3997391/   (ID 3997391)          Pexels License
+salon-polish-applied.jpg      https://www.pexels.com/photo/3997385/   (ID 3997385)          Pexels License
+
+Usage in the demo:
+- salon-polish-applied.jpg    -> Story / About section visual (real polish work)
+- the other five               -> Nail-Art Gallery responsive grid
+
+If the client engages, these placeholders are replaced with the salon's own
+photography. Concept preview built by DNA Agency, not affiliated with the client.
