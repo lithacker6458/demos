@@ -1,0 +1,32 @@
+IMAGE ATTRIBUTION — Uptown Cuts flagship demo
+==============================================
+
+All photography in the assets/ directory is licensed under the Pexels License
+(https://www.pexels.com/license/): free to use, no attribution required,
+modification allowed, commercial use allowed. Images were downloaded directly
+into this repository (never hotlinked) and resized/compressed to keep each file
+under 400 KB. Attribution is recorded here as a courtesy and for provenance.
+
+These are LICENSED STOCK PLACEHOLDER photos for a concept preview. They are not
+photographs of Uptown Cuts. On a paid build they are replaced with the client's
+own shop and team photography.
+
+File                    Source (Pexels)                                  Photo ID
+----                    ---------------                                  --------
+fade-in-progress.jpg    https://www.pexels.com/photo/1570807/            1570807
+barbershop-chairs.jpg   https://www.pexels.com/photo/1319460/            1319460
+barber-tools.jpg        https://www.pexels.com/photo/3998429/            3998429
+clean-cut.jpg           https://www.pexels.com/photo/2076930/            2076930
+shampoo-station.jpg     https://www.pexels.com/photo/3993449/            3993449
+styling-finish.jpg      https://www.pexels.com/photo/2040189/            2040189
+
+License summary (Pexels License, https://www.pexels.com/license/):
+  - Free for personal and commercial use.
+  - No attribution required (recorded here anyway).
+  - You may modify the photos.
+  - Not permitted: reselling unaltered copies, or implying the depicted people
+    endorse a product. Neither applies here (concept preview, placeholder use).
+
+Removed during curation: pexels-photo-1813272 (warm vintage-Americana barbershop
+interior with barber poles / whiskey signage) — off-brand for the cool executive
+direction, deleted rather than used.

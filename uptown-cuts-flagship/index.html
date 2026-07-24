@@ -96,6 +96,34 @@
   .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:.4rem}
   .nav-toggle span{display:block;width:22px;height:2px;background:#fff;margin:4px 0;transition:.3s}
 
+  /* ---------- UTILITY / HOURS BAR ---------- */
+  .utilbar{
+    background:var(--slate);
+    border-bottom:1px solid rgba(70,80,92,.55);
+    color:#C4CCD6;
+    font-size:.76rem;
+  }
+  .utilbar-inner{
+    max-width:1240px;margin:0 auto;
+    padding:.5rem var(--pad-x);
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  }
+  .utilbar-status{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;letter-spacing:.01em}
+  .utilbar-status .dot{
+    width:7px;height:7px;border-radius:50%;flex:0 0 auto;background:#7BE0A5;
+    box-shadow:0 0 0 0 rgba(123,224,165,.6);animation:pulse 2.4s ease-in-out infinite;
+  }
+  .utilbar-status .dot.closed{background:#93AEC6;animation:none}
+  .utilbar-status .now{color:#fff}
+  .utilbar-meta{display:inline-flex;align-items:center;gap:1.4rem;color:#9BA6B3}
+  .utilbar-meta .u{display:inline-flex;align-items:center;gap:.4rem;font-variant-numeric:tabular-nums}
+  .utilbar-meta svg{flex:0 0 auto;opacity:.85}
+  .utilbar-meta a:hover{color:#fff}
+  @media(max-width:620px){
+    .utilbar-meta .u.hide-sm{display:none}
+    .utilbar-inner{justify-content:center}
+  }
+
   @media(max-width:860px){
     .nav-links{
       position:absolute;top:100%;left:0;right:0;
@@ -120,18 +148,34 @@
     background:var(--ink);
     isolation:isolate;
   }
-  /* the precision fade: near-black top -> light steel bottom */
+  /* real photo backdrop, sitting behind the fade gradient */
+  .hero-photo{
+    position:absolute;inset:0;z-index:-4;
+    background-image:url("assets/fade-in-progress.jpg");
+    background-size:cover;background-position:60% 30%;
+    filter:grayscale(.35) contrast(1.05) brightness(.72);
+    transform:scale(1.06);
+    animation:heroZoom 16s ease-out both;
+  }
+  /* the precision fade: near-black top -> light steel bottom, over the photo */
   .hero-fade{
     position:absolute;inset:0;z-index:-3;
     background:linear-gradient(180deg,
-      #14171C 0%,
-      #191E25 24%,
-      #232B35 45%,
-      #38495A 66%,
-      #647E97 84%,
-      #93AEC6 100%);
+      rgba(20,23,28,.97) 0%,
+      rgba(25,30,37,.93) 24%,
+      rgba(35,43,53,.82) 45%,
+      rgba(56,73,90,.72) 66%,
+      rgba(100,126,151,.66) 84%,
+      rgba(147,174,198,.6) 100%);
     transform-origin:bottom;
     animation:fadeSweep .9s cubic-bezier(.22,.61,.36,1) both;
+  }
+  /* ambient light-sweep drifting across the architectural grid (uses @keyframes drift) */
+  .hero-sweep{
+    position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.5;
+    background:linear-gradient(100deg,transparent 0%,transparent 42%,rgba(147,174,198,.14) 50%,transparent 58%,transparent 100%);
+    background-size:220px 100%;
+    animation:drift 9s linear infinite;
   }
   .hero-glow{
     position:absolute;inset:0;z-index:-2;
@@ -496,7 +540,8 @@
   @keyframes lineUp{to{opacity:1;transform:none}}
   @keyframes riseIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
   @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(123,224,165,.55)}50%{box-shadow:0 0 0 6px rgba(123,224,165,0)}}
-  @keyframes drift{from{background-position:0 0}to{background-position:60px 0}}
+  @keyframes drift{from{background-position:-220px 0}to{background-position:calc(100% + 220px) 0}}
+  @keyframes heroZoom{from{transform:scale(1.14)}to{transform:scale(1.06)}}
 
   @media(prefers-reduced-motion:reduce){
     *,*::before,*::after{animation:none!important;transition:none!important}
