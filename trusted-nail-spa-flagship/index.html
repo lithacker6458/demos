@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trusted Nail Spa | The nails you'll trust, guaranteed. Las Vegas, NV</title>
+<meta name="description" content="Trusted Nail Spa, a premier full-service nail salon and beauty spa in Las Vegas with two locations. Every nail enhancement guaranteed 14 days. Honest pricing, disclosed before we start.">
+<style>
+  :root{
+    /* Desert Luxe palette */
+    --sand:#F6EFE6;
+    --clay:#EFE2D3;
+    --clay-deep:#E7D6C1;
+    --plum:#3E2B4E;
+    --plum-deep:#2E1F3A;
+    --espresso:#2A2018;
+    --cream:#F6EFE6;
+    --rose:#C98A78;
+    --gold-1:#E8C877;
+    --gold-2:#C79A3E;
+    --gold-3:#B8862F;
+    --gold-grad:linear-gradient(135deg,#E8C877 0%,#D8AE55 42%,#B8862F 100%);
+    --line:rgba(62,43,78,0.14);
+    --shadow-sm:0 2px 10px rgba(42,32,24,0.06);
+    --shadow-md:0 18px 50px rgba(42,32,24,0.12);
+    --shadow-plum:0 26px 70px rgba(46,31,58,0.28);
+
+    /* Type roles */
+    --serif:Georgia,"Times New Roman",Times,"Iowan Old Style",serif;
+    --sans:"Avenir Next","Segoe UI",system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    --mono:"SF Mono",ui-monospace,"Courier New",Courier,monospace;
+
+    --maxw:1180px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--sans);
+    color:var(--espresso);
+    background:var(--sand);
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:var(--plum);color:var(--cream)}
+
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.15rem,4vw,2.5rem)}
+
+  .eyebrow{
+    font-family:var(--mono);
+    text-transform:uppercase;
+    letter-spacing:0.34em;
+    font-size:clamp(0.62rem,1.3vw,0.72rem);
+    color:var(--rose);
+    font-weight:600;
+    display:inline-flex;
+    align-items:center;
+    gap:0.6rem;
+  }
+  .eyebrow::before{
+    content:"";
+    width:26px;height:1px;
+    background:var(--gold-grad);
+    display:inline-block;
+  }
+
+  h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.06;letter-spacing:-0.018em;font-feature-settings:"onum" 1,"lnum" 0}
+  .section-head{max-width:640px;margin-bottom:clamp(2.2rem,5vw,3.4rem)}
+  .section-head h2{
+    font-size:clamp(2rem,5.2vw,3.35rem);
+    color:var(--plum);
+    margin:0.85rem 0 0.7rem;
+  }
+  .section-head p{font-size:clamp(1rem,2.2vw,1.13rem);color:rgba(42,32,24,0.74);max-width:55ch}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    font-family:var(--sans);
+    font-weight:600;
+    font-size:0.98rem;
+    padding:1rem 1.7rem;
+    border-radius:999px;
+    display:inline-flex;
+    align-items:center;
+    gap:0.6rem;
+    cursor:pointer;
+    border:1px solid transparent;
+    transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s,background .3s,color .3s;
+    line-height:1;
+  }
+  .btn-primary{
+    background:var(--plum);
+    color:var(--cream);
+    box-shadow:var(--shadow-plum);
+  }
+  .btn-primary:hover{transform:translateY(-3px)}
+  .btn-primary:focus-visible{outline:3px solid var(--gold-2);outline-offset:3px}
+  .btn-gold{
+    background:var(--gold-grad);
+    color:var(--plum-deep);
+    box-shadow:0 16px 40px rgba(184,134,47,0.34);
+    font-weight:700;
+  }
+  .btn-gold:hover{transform:translateY(-3px)}
+  .btn-gold:focus-visible{outline:3px solid var(--plum);outline-offset:3px}
+  .btn-ghost{
+    background:transparent;
+    color:var(--plum);
+    border:1px solid var(--line);
+  }
+  .btn-ghost:hover{border-color:var(--plum);background:rgba(62,43,78,0.04)}
+  .btn[aria-disabled="true"]{opacity:0.5;cursor:not-allowed;pointer-events:none}
+
+  /* Underline-fill CTA link */
+  .cta-underline{
+    position:relative;
+    font-family:var(--sans);
+    font-weight:600;
+    color:var(--plum);
+    padding-bottom:4px;
+    display:inline-block;
+  }
+  .cta-underline::after{
+    content:"";
+    position:absolute;left:0;bottom:0;
+    height:2px;width:100%;
+    background:var(--gold-grad);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .4s cubic-bezier(.2,.8,.2,1);
+  }
+  .cta-underline:hover::after,.cta-underline:focus-visible::after{transform:scaleX(1)}
+
+  /* ---------- Nav ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:60;
+    background:rgba(246,239,230,0.82);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s,box-shadow .3s;
+  }
+  header.nav.scrolled{border-bottom:1px solid var(--line);box-shadow:0 6px 24px rgba(42,32,24,0.05)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{display:flex;align-items:center;gap:0.65rem}
+  .brand-mark{width:34px;height:34px;flex:0 0 auto}
+  .brand-name{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:1.24rem;
+    letter-spacing:-0.02em;
+    color:var(--plum);
+  }
+  .brand-name span{color:var(--gold-3)}
+  .nav-links{display:flex;align-items:center;gap:2rem}
+  .nav-links a{font-size:0.92rem;font-weight:500;color:rgba(42,32,24,0.8);transition:color .25s;position:relative}
+  .nav-links a:hover{color:var(--plum)}
+  .nav-cta{display:flex;align-items:center;gap:0.9rem}
+  .nav-tel{
+    font-family:var(--mono);
+    font-size:0.82rem;
+    letter-spacing:0.04em;
+    font-weight:600;
+    color:var(--plum);
+    display:inline-flex;align-items:center;gap:0.45rem;
+  }
+  @media(max-width:900px){.nav-links{display:none}.nav-tel span.lbl{display:none}}
+
+  /* ---------- Utility / hours bar ---------- */
+  .util-bar{
+    background:var(--plum);
+    color:var(--cream);
+    font-family:var(--mono);
+    font-size:clamp(0.62rem,1.5vw,0.74rem);
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+  }
+  .util-inner{
+    display:flex;align-items:center;justify-content:center;gap:clamp(0.9rem,3vw,2.4rem);
+    padding:0.55rem 1rem;flex-wrap:wrap;text-align:center;
+  }
+  .util-inner .dot{width:5px;height:5px;border-radius:50%;background:var(--gold-2);flex:0 0 auto}
+  .util-inner b{color:var(--gold-1);font-weight:600}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    padding:clamp(3rem,7vw,5.5rem) 0 clamp(3.4rem,8vw,6rem);
+    background:
+      radial-gradient(120% 90% at 82% 8%, rgba(201,138,120,0.20) 0%, rgba(201,138,120,0) 55%),
+      radial-gradient(130% 100% at 10% 100%, rgba(62,43,78,0.16) 0%, rgba(62,43,78,0) 60%),
+      linear-gradient(168deg, #FBF6EF 0%, var(--sand) 40%, var(--clay) 100%);
+  }
+  .hero-particles{position:absolute;inset:0;pointer-events:none;z-index:0}
+  .hero-particles span{
+    position:absolute;
+    width:6px;height:6px;border-radius:50%;
+    background:radial-gradient(circle,#F3DCA0 0%,rgba(199,154,62,0) 70%);
+    opacity:0;
+    animation:drift linear infinite;
+  }
+  @keyframes drift{
+    0%{opacity:0;transform:translateY(24px) scale(0.6)}
+    12%{opacity:0.9}
+    88%{opacity:0.55}
+    100%{opacity:0;transform:translateY(-70px) scale(1.15)}
+  }
+  .hero-inner{
+    position:relative;z-index:2;
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:clamp(2rem,5vw,4rem);
+    align-items:center;
+  }
+  @media(max-width:920px){
+    .hero-inner{grid-template-columns:1fr;text-align:center;gap:2.6rem}
+    .hero-copy{order:2}
+    .hero-seal-col{order:1}
+    .hero-loc-chips,.hero-cta-row{justify-content:center}
+    .hero-copy .eyebrow{justify-content:center}
+  }
+  .hero-copy h1{
+    font-size:clamp(2.55rem,7.2vw,4.7rem);
+    color:var(--plum);
+    margin:1.1rem 0 1.15rem;
+  }
+  .hero-copy h1 em{
+    font-style:italic;
+    color:var(--gold-3);
+    position:relative;
+  }
+  .hero-lede{
+    font-size:clamp(1.02rem,2.4vw,1.22rem);
+    color:rgba(42,32,24,0.78);
+    max-width:44ch;
+    margin-bottom:1.9rem;
+  }
+  @media(max-width:920px){.hero-lede{margin-inline:auto}}
+  .hero-cta-row{display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap;margin-bottom:1.7rem}
+  .hero-loc-chips{display:flex;gap:0.7rem;flex-wrap:wrap}
+  .loc-chip{
+    display:inline-flex;align-items:center;gap:0.55rem;
+    padding:0.6rem 1rem;
+    border-radius:999px;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,0.55);
+    font-family:var(--mono);
+    font-size:0.72rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--plum);
+    font-weight:600;
+    transition:border-color .25s,transform .25s,background .25s;
+  }
+  .loc-chip:hover{border-color:var(--gold-2);transform:translateY(-2px);background:#fff}
+  .loc-chip svg{width:14px;height:14px;flex:0 0 auto}
+  .loc-chip small{display:block;font-size:0.62rem;letter-spacing:0.04em;opacity:0.66;text-transform:none}
+
+  /* Seal medallion */
+  .hero-seal-col{display:flex;justify-content:center;align-items:center}
+  .seal-stage{
+    position:relative;
+    width:min(430px,86vw);
+    aspect-ratio:1;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .seal-glow{
+    position:absolute;inset:6%;
+    border-radius:50%;
+    background:radial-gradient(circle at 50% 42%, rgba(232,200,119,0.42) 0%, rgba(199,154,62,0.10) 45%, rgba(199,154,62,0) 70%);
+    filter:blur(6px);
+    animation:pulseGlow 6s ease-in-out infinite;
+  }
+  @keyframes pulseGlow{0%,100%{opacity:0.7;transform:scale(0.98)}50%{opacity:1;transform:scale(1.03)}}
+  .seal-svg{width:100%;height:100%;position:relative;z-index:2;overflow:visible}
+  .seal-ring-text{
+    animation:orbit 46s linear infinite;
+    transform-origin:250px 250px;
+  }
+  @keyframes orbit{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+  .seal-ring-text text{
+    font-family:var(--mono);
+    font-size:16.5px;
+    letter-spacing:3.4px;
+    fill:var(--plum);
+    font-weight:600;
+    text-transform:uppercase;
+  }
+  /* moving foil sheen on the gold stroke */
+  .foil-sheen stop.hi{animation:sheen 4.2s ease-in-out infinite}
+  @keyframes sheen{
+    0%{stop-color:#B8862F}
+    45%{stop-color:#FBEFC4}
+    55%{stop-color:#FBEFC4}
+    100%{stop-color:#B8862F}
+  }
+  .seal-14{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:150px;
+    fill:var(--plum);
+    letter-spacing:-6px;
+  }
+  .seal-day{
+    font-family:var(--mono);
+    font-size:20px;
+    letter-spacing:8px;
+    fill:var(--gold-3);
+    text-transform:uppercase;
+    font-weight:600;
+  }
+  .seal-sub{
+    font-family:var(--mono);
+    font-size:11.5px;
+    letter-spacing:3px;
+    fill:rgba(42,32,24,0.6);
+    text-transform:uppercase;
+  }
+
+  /* ---------- Benefit strip ---------- */
+  .benefits{
+    background:var(--clay-deep);
+    padding:clamp(2.4rem,5vw,3.4rem) 0;
+    position:relative;
+  }
+  .benefits::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold-grad);opacity:0.85}
+  .benefit-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:clamp(1.1rem,2.6vw,2rem);
+  }
+  @media(max-width:860px){.benefit-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:460px){.benefit-grid{grid-template-columns:1fr}}
+  .benefit{
+    display:flex;flex-direction:column;gap:0.55rem;
+  }
+  .benefit-ic{
+    width:46px;height:46px;
+    border-radius:12px;
+    background:linear-gradient(150deg,#fff, #F6EFE6);
+    border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:var(--shadow-sm);
+  }
+  .benefit-ic svg{width:24px;height:24px}
+  .benefit h3{font-family:var(--sans);font-weight:700;font-size:1.02rem;color:var(--plum);letter-spacing:-0.01em}
+  .benefit p{font-size:0.9rem;color:rgba(42,32,24,0.7);line-height:1.5}
+
+  /* ---------- Sections generic ---------- */
+  .section{padding:clamp(3.6rem,8vw,6.2rem) 0}
+  .section.alt{background:var(--clay)}
+
+  /* ---------- Services grid ---------- */
+  .svc-top{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:clamp(2rem,4vw,3rem)}
+  .price-note{
+    font-family:var(--mono);
+    font-size:0.7rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--plum);
+    border:1px dashed var(--gold-2);
+    border-radius:10px;
+    padding:0.7rem 0.95rem;
+    max-width:320px;
+    line-height:1.55;
+    background:rgba(255,255,255,0.4);
+  }
+  .price-note b{color:var(--gold-3)}
+  .svc-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:clamp(1rem,2.4vw,1.6rem);
+  }
+  @media(max-width:900px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.svc-grid{grid-template-columns:1fr}}
+  .svc-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:1.6rem 1.5rem 1.5rem;
+    display:flex;flex-direction:column;gap:0.85rem;
+    box-shadow:var(--shadow-sm);
+    transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .35s;
+    position:relative;
+    overflow:hidden;
+  }
+  .svc-card::after{
+    content:"";position:absolute;left:0;top:0;height:100%;width:3px;
+    background:var(--gold-grad);transform:scaleY(0);transform-origin:top;transition:transform .4s;
+  }
+  .svc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:transparent}
+  .svc-card:hover::after{transform:scaleY(1)}
+  .svc-illus{width:100%;height:120px;border-radius:12px;overflow:hidden;background:var(--sand)}
+  .svc-illus svg{width:100%;height:100%;display:block}
+  .svc-card h3{font-family:var(--sans);font-weight:700;font-size:1.14rem;color:var(--plum)}
+  .svc-card p{font-size:0.92rem;color:rgba(42,32,24,0.72);line-height:1.55}
+  .svc-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:auto;padding-top:0.4rem}
+  .svc-tag{
+    font-family:var(--mono);
+    font-size:0.63rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--gold-3);
+    background:rgba(199,154,62,0.1);
+    border-radius:6px;
+    padding:0.28rem 0.5rem;
+    font-weight:600;
+  }
+
+  /* ---------- Nail swatch gallery ---------- */
+  .swatch-row{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:clamp(0.6rem,2vw,1.2rem);
+    margin-top:clamp(2rem,4vw,3rem);
+  }
+  @media(max-width:640px){.swatch-row{grid-template-columns:repeat(3,1fr)}}
+  .swatch{
+    text-align:center;
+  }
+  .nail-tip{
+    width:100%;max-width:88px;margin:0 auto 0.6rem;
+    aspect-ratio:0.62;
+    border-radius:44% 44% 46% 46% / 60% 60% 40% 40%;
+    box-shadow:inset 0 -8px 14px rgba(0,0,0,0.12),0 10px 22px rgba(42,32,24,0.14);
+    position:relative;overflow:hidden;
+    border:1px solid rgba(255,255,255,0.4);
+  }
+  .nail-tip::before{
+    content:"";position:absolute;top:6%;left:14%;width:26%;height:44%;
+    background:linear-gradient(180deg,rgba(255,255,255,0.55),rgba(255,255,255,0));
+    border-radius:50%;filter:blur(1px);
+  }
+  .nt-chrome{background:linear-gradient(135deg,#e8e3ea 0%,#b9a9c9 30%,#8a7f9c 55%,#d9cfe0 78%,#9c93ad 100%)}
+  .nt-cateye{background:radial-gradient(120% 60% at 50% 40%,#7d5a8f 0%,#3e2b4e 60%),linear-gradient(180deg,#5a3f6e,#241730)}
+  .nt-cateye::after{content:"";position:absolute;top:0;bottom:0;left:44%;width:10%;background:linear-gradient(180deg,rgba(232,200,119,0.9),rgba(232,200,119,0));filter:blur(2px)}
+  .nt-ombre{background:linear-gradient(180deg,#F6EFE6 0%,#EAC7BB 55%,#C98A78 100%)}
+  .nt-marble{background:linear-gradient(135deg,#F6EFE6 0%,#e7d9c6 40%,#cbb79a 60%,#F6EFE6 100%)}
+  .nt-marble::after{content:"";position:absolute;inset:0;background:
+    radial-gradient(40% 8% at 30% 30%,rgba(62,43,78,0.5),transparent 70%),
+    radial-gradient(50% 6% at 60% 65%,rgba(199,154,62,0.55),transparent 70%);
+    transform:rotate(-18deg)}
+  .nt-french{background:linear-gradient(180deg,#F0C7B6 0%,#F0C7B6 66%,#FBF6EF 66%,#FBF6EF 100%)}
+  .swatch span{font-family:var(--mono);font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(42,32,24,0.66);font-weight:600}
+
+  /* ---------- Story ---------- */
+  .story-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;
+  }
+  @media(max-width:860px){.story-grid{grid-template-columns:1fr;gap:2.6rem}}
+  .story-copy p{font-size:clamp(1rem,2.1vw,1.1rem);color:rgba(42,32,24,0.78);margin-bottom:1.15rem;max-width:52ch}
+  .story-copy p.first::first-letter{
+    font-family:var(--serif);
+    font-size:3.4rem;
+    float:left;
+    line-height:0.8;
+    padding:0.35rem 0.7rem 0 0;
+    color:var(--gold-3);
+    font-weight:700;
+  }
+  .story-quote{
+    border-left:3px solid transparent;
+    border-image:var(--gold-grad) 1;
+    padding-left:1.3rem;
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:clamp(1.15rem,2.6vw,1.4rem);
+    color:var(--plum);
+    margin:1.6rem 0;
+    line-height:1.4;
+  }
+  .story-visual{
+    position:relative;
+    border-radius:22px;
+    overflow:hidden;
+    background:linear-gradient(160deg,var(--plum) 0%,var(--plum-deep) 100%);
+    box-shadow:var(--shadow-plum);
+    aspect-ratio:4/5;
+    display:flex;align-items:center;justify-content:center;
+    padding:2rem;
+  }
+  .story-visual svg{width:100%;height:100%}
+  .story-badge{
+    position:absolute;bottom:1.2rem;left:1.2rem;right:1.2rem;
+    background:rgba(246,239,230,0.94);
+    backdrop-filter:blur(6px);
+    border-radius:14px;
+    padding:1rem 1.2rem;
+    display:flex;align-items:center;gap:0.9rem;
+  }
+  .story-badge .rr{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--plum);line-height:1}
+  .story-badge .rt{font-size:0.82rem;color:rgba(42,32,24,0.72);line-height:1.35}
+  .story-badge .rt b{color:var(--gold-3)}
+
+  /* ---------- Reviews ---------- */
+  .rev-grid{
+    columns:3 300px;
+    column-gap:clamp(1rem,2.4vw,1.6rem);
+  }
+  .rev-card{
+    break-inside:avoid;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:1.5rem 1.5rem 1.35rem;
+    margin-bottom:clamp(1rem,2.4vw,1.6rem);
+    box-shadow:var(--shadow-sm);
+    transition:transform .3s,box-shadow .3s;
+  }
+  .rev-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+  .rev-stars{display:flex;gap:2px;margin-bottom:0.75rem}
+  .rev-stars svg{width:16px;height:16px}
+  .rev-card blockquote{
+    font-family:var(--serif);
+    font-size:1.02rem;
+    line-height:1.5;
+    color:var(--espresso);
+    margin-bottom:0.9rem;
+  }
+  .rev-src{
+    font-family:var(--mono);
+    font-size:0.68rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    color:rgba(42,32,24,0.55);
+    font-weight:600;
+  }
+  .rev-placeholder{
+    border:1px dashed var(--gold-2);
+    background:rgba(255,255,255,0.35);
+    text-align:center;
+  }
+  .rev-placeholder blockquote{font-style:italic;color:rgba(42,32,24,0.6)}
+
+  /* ---------- Locations ---------- */
+  .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.2rem,3vw,2rem)}
+  @media(max-width:800px){.loc-grid{grid-template-columns:1fr}}
+  .loc-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:clamp(1.6rem,3vw,2.2rem);
+    box-shadow:var(--shadow-sm);
+    display:flex;flex-direction:column;gap:1rem;
+    transition:transform .3s,box-shadow .3s;
+  }
+  .loc-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+  .loc-tag{
+    font-family:var(--mono);font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--gold-3);font-weight:700;
+  }
+  .loc-card h3{font-family:var(--serif);font-size:1.5rem;color:var(--plum)}
+  .loc-line{display:flex;gap:0.7rem;align-items:flex-start;font-size:0.95rem;color:rgba(42,32,24,0.78)}
+  .loc-line svg{width:18px;height:18px;flex:0 0 auto;margin-top:2px}
+  .loc-line a{font-family:var(--mono);font-size:0.9rem;letter-spacing:0.02em;color:var(--plum);font-weight:600}
+  .loc-actions{display:flex;gap:0.7rem;flex-wrap:wrap;margin-top:auto;padding-top:0.4rem}
+  .hours-card{
+    grid-column:1/-1;
+    background:var(--plum);
+    color:var(--cream);
+    border-radius:20px;
+    padding:clamp(1.6rem,3vw,2.2rem);
+    display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;
+  }
+  @media(max-width:620px){.hours-card{grid-template-columns:1fr;text-align:center}}
+  .hours-card h3{font-family:var(--serif);font-size:1.6rem;color:var(--cream);margin-bottom:0.4rem}
+  .hours-card p{color:rgba(246,239,230,0.72);font-size:0.95rem}
+  .hours-table{font-family:var(--mono);font-size:0.9rem;letter-spacing:0.03em}
+  .hours-table div{display:flex;justify-content:space-between;gap:2rem;padding:0.35rem 0;border-bottom:1px solid rgba(246,239,230,0.14)}
+  .hours-table div:last-child{border-bottom:none}
+  .hours-table b{color:var(--gold-1);font-weight:600}
+  @media(max-width:620px){.hours-table div{justify-content:center;gap:1rem}}
+
+  /* ---------- Final CTA ---------- */
+  .final{
+    position:relative;overflow:hidden;
+    background:linear-gradient(155deg,var(--plum) 0%,var(--plum-deep) 100%);
+    color:var(--cream);
+    text-align:center;
+    padding:clamp(3.6rem,8vw,6rem) 0;
+  }
+  .final::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(70% 60% at 50% 0%,rgba(199,154,62,0.28),transparent 60%);
+  }
+  .final-inner{position:relative;z-index:2;max-width:640px;margin:0 auto}
+  .final h2{font-size:clamp(2.1rem,6vw,3.6rem);color:var(--cream);margin:1rem 0 1rem}
+  .final h2 em{font-style:italic;color:var(--gold-1)}
+  .final p{color:rgba(246,239,230,0.8);font-size:clamp(1rem,2.3vw,1.16rem);margin-bottom:2rem;max-width:48ch;margin-inline:auto}
+  .final-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+  .final .eyebrow{color:var(--gold-1)}
+  .final .eyebrow::before{background:var(--gold-1)}
+
+  /* ---------- Footer ---------- */
+  footer.ft{background:var(--plum-deep);color:rgba(246,239,230,0.72);padding:clamp(2.6rem,5vw,3.6rem) 0 2rem}
+  .ft-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(246,239,230,0.12)}
+  @media(max-width:760px){.ft-top{grid-template-columns:1fr;gap:1.6rem}}
+  .ft-brand{display:flex;align-items:center;gap:0.6rem;margin-bottom:0.9rem}
+  .ft-brand .brand-name{color:var(--cream)}
+  .ft-brand .brand-name span{color:var(--gold-1)}
+  .ft p.ft-blurb{max-width:36ch;font-size:0.92rem;line-height:1.6}
+  .ft h4{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-1);margin-bottom:0.9rem;font-weight:600}
+  .ft ul{list-style:none}
+  .ft ul li{margin-bottom:0.5rem;font-size:0.9rem}
+  .ft ul li a{transition:color .25s}
+  .ft ul li a:hover{color:var(--cream)}
+  .ft-bottom{padding-top:1.6rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:0.78rem;color:rgba(246,239,230,0.5)}
+  .disclaimer{
+    font-family:var(--mono);
+    font-size:0.72rem;
+    letter-spacing:0.04em;
+    line-height:1.6;
+    color:rgba(246,239,230,0.58);
+    max-width:60ch;
+  }
+
+  /* ---------- Reveal ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none}
+    .seal-ring-text{animation:none}
+  }
+
+  :focus-visible{outline:3px solid var(--gold-2);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<!-- ============ UTILITY BAR ============ -->
+<div class="util-bar" role="region" aria-label="Announcement">
+  <div class="util-inner">
+    <span>Open 7 Days</span>
+    <span class="dot" aria-hidden="true"></span>
+    <span><b>14-Day Guarantee</b> on every set</span>
+    <span class="dot" aria-hidden="true"></span>
+    <span>Two Las Vegas locations</span>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="Trusted Nail Spa home">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <defs><linearGradient id="bmg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#E8C877"/><stop offset="0.5" stop-color="#D8AE55"/><stop offset="1" stop-color="#B8862F"/>
+        </linearGradient></defs>
+        <circle cx="20" cy="20" r="18.5" fill="none" stroke="url(#bmg)" stroke-width="2"/>
+        <path d="M12.5 20.5l4.6 4.6 10-10.4" fill="none" stroke="#3E2B4E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-name">Trusted <span>Nail Spa</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#story">Our Promise</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#locations">Locations</a>
+    </nav>
+    <div class="nav-cta">
+      <!-- VERIFY: confirm Tropicana flagship phone before launch -->
+      <a class="nav-tel" href="tel:+17029989500"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5c0-1 1-2 2-2h2l2 5-2 1c1 2 3 4 5 5l1-2 5 2v2c0 1-1 2-2 2C10 20 4 14 4 5z" fill="#3E2B4E"/></svg><span class="lbl">(702) 998-9500</span></a>
+      <a class="btn btn-gold" href="#book">Book Now</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-particles" id="particles" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow">Sin City's Finest &middot; Las Vegas, NV</span>
+      <h1>The nails you'll <em>trust</em>, guaranteed.</h1>
+      <p class="hero-lede">A premier full-service nail salon and spa where the promise is in the name. Every enhancement is backed for 14 days, and you'll always know the price before we begin.</p>
+      <div class="hero-cta-row">
+        <a class="btn btn-primary" href="#book">Book your appointment
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="cta-underline" href="#services">See the full menu</a>
+      </div>
+      <div class="hero-loc-chips">
+        <!-- VERIFY: Tropicana flagship phone -->
+        <a class="loc-chip" href="tel:+17029989500">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 10-14 0c0 4.7 7 11 7 11z" stroke="#3E2B4E" stroke-width="1.8"/><circle cx="12" cy="10" r="2.4" stroke="#C79A3E" stroke-width="1.8"/></svg>
+          <span>Tropicana<small>Flagship full spa</small></span>
+        </a>
+        <!-- VERIFY: Sahara location phone -->
+        <a class="loc-chip" href="tel:+17027785572">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 10-14 0c0 4.7 7 11 7 11z" stroke="#3E2B4E" stroke-width="1.8"/><circle cx="12" cy="10" r="2.4" stroke="#C79A3E" stroke-width="1.8"/></svg>
+          <span>Sahara<small>Nails focused</small></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-seal-col">
+      <div class="seal-stage">
+        <div class="seal-glow" aria-hidden="true"></div>
+        <svg class="seal-svg" viewBox="0 0 500 500" role="img" aria-label="Guarantee seal: 14-day guarantee at Trusted Nail Spa, Las Vegas">
+          <defs>
+            <linearGradient id="foil" class="foil-sheen" x1="0" y1="0" x2="1" y2="1">
+              <stop class="lo" offset="0" stop-color="#B8862F"/>
+              <stop class="hi" offset="0.5" stop-color="#FBEFC4"/>
+              <stop offset="1" stop-color="#B8862F"/>
+            </linearGradient>
+            <radialGradient id="sealFill" cx="50%" cy="42%" r="60%">
+              <stop offset="0" stop-color="#FBF6EF"/>
+              <stop offset="1" stop-color="#EFE2D3"/>
+            </radialGradient>
+            <path id="circlePath" d="M250,250 m-188,0 a188,188 0 1,1 376,0 a188,188 0 1,1 -376,0"/>
+          </defs>
+
+          <!-- disc -->
+          <circle cx="250" cy="250" r="212" fill="url(#sealFill)" stroke="url(#foil)" stroke-width="3"/>
+          <circle cx="250" cy="250" r="200" fill="none" stroke="url(#foil)" stroke-width="6"/>
+          <circle cx="250" cy="250" r="150" fill="none" stroke="url(#foil)" stroke-width="1.5" opacity="0.7"/>
+
+          <!-- rotating text ring -->
+          <g class="seal-ring-text">
+            <text>
+              <textPath href="#circlePath" startOffset="0">
+                TRUSTED NAIL SPA &middot; GUARANTEED 14 DAYS &middot; LAS VEGAS &middot; TRUSTED NAIL SPA &middot; GUARANTEED 14 DAYS &middot; LAS VEGAS &middot;
+              </textPath>
+            </text>
+          </g>
+
+          <!-- decorative gold stars -->
+          <g fill="url(#foil)">
+            <path d="M250 92 l4 9 10 1 -7 7 2 10 -9 -5 -9 5 2 -10 -7 -7 10 -1z"/>
+          </g>
+
+          <!-- center content -->
+          <text class="seal-day" x="250" y="188" text-anchor="middle">GUARANTEED</text>
+          <text class="seal-14" x="250" y="300" text-anchor="middle">14</text>
+          <text class="seal-sub" x="250" y="342" text-anchor="middle">DAY PROMISE ON EVERY SET</text>
+          <path d="M198 360 l52 0 M302 360 l-52 0" stroke="url(#foil)" stroke-width="1.5"/>
+          <path d="M250 356 l3 6 7 1 -5 5 1 7 -6 -3 -6 3 1 -7 -5 -5 7 -1z" fill="url(#foil)"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BENEFIT STRIP ============ -->
+<section class="benefits" aria-label="Why Trusted Nail Spa">
+  <div class="wrap benefit-grid">
+    <div class="benefit reveal">
+      <div class="benefit-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V5l7-3z" stroke="#3E2B4E" stroke-width="1.7"/><path d="M8.5 12l2.3 2.3L15.5 9.5" stroke="#C79A3E" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>14-Day Guarantee</h3>
+      <p>Every nail enhancement is backed for two full weeks. If something isn't right, we'll make it right.</p>
+    </div>
+    <div class="benefit reveal">
+      <div class="benefit-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2" stroke="#3E2B4E" stroke-width="1.7"/><path d="M8 8h8M8 12h8M8 16h5" stroke="#C79A3E" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+      <h3>Honest Pricing</h3>
+      <p>Our technicians disclose the cost of any design before the service begins. No surprises at the counter.</p>
+    </div>
+    <div class="benefit reveal">
+      <div class="benefit-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3s6 2 6 7c0 4-3 7-6 8-3-1-6-4-6-8 0-5 6-7 6-7z" stroke="#3E2B4E" stroke-width="1.7"/><circle cx="12" cy="10" r="2.2" stroke="#C79A3E" stroke-width="1.7"/></svg></div>
+      <h3>Clean &amp; Sterile</h3>
+      <p>Strict sterilization protocols and regular cleaning of every tool and surface, so you can simply relax.</p>
+    </div>
+    <div class="benefit reveal">
+      <div class="benefit-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 8.5c0 4.7-8 11.5-8 11.5S4 13.2 4 8.5A4.5 4.5 0 0112 6a4.5 4.5 0 018 2.5z" stroke="#3E2B4E" stroke-width="1.7"/><path d="M9.5 8.6l1.6 1.6 3.3-3.4" stroke="#C79A3E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>The Owner Answers</h3>
+      <p>Owner Xuan personally responds to nearly every review, and has turned a one-star day into a lifelong regular.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="svc-top">
+      <div class="section-head reveal" style="margin-bottom:0">
+        <span class="eyebrow">The Menu</span>
+        <h2>More than a manicure.</h2>
+        <p>Nails, lashes, waxing, facials, and wellness treatments, all under one tranquil roof. Nail art is our signature, from custom chrome to hand-painted marble.</p>
+      </div>
+      <div class="price-note reveal">Every design price is <b>disclosed up front</b>, before we ever pick up a brush. Full menu shared at your appointment.</div>
+    </div>
+
+    <div class="svc-grid">
+      <article class="svc-card reveal">
+        <div class="svc-illus"><svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6EFE6"/><stop offset="1" stop-color="#EAD9C4"/></linearGradient></defs><rect width="200" height="120" fill="url(#g1)"/><g transform="translate(60 20)"><ellipse cx="20" cy="60" rx="16" ry="34" fill="#F0C7B6"/><ellipse cx="42" cy="52" rx="15" ry="32" fill="#EEBCA8"/><ellipse cx="63" cy="58" rx="14" ry="30" fill="#F0C7B6"/><ellipse cx="82" cy="66" rx="12" ry="26" fill="#EEBCA8"/><path d="M4 26q16-8 32 0" stroke="#C79A3E" stroke-width="2" fill="none"/></g></svg></div>
+        <h3>Manicures &amp; Pedicures</h3>
+        <p>From a Classic tidy-up to our Deluxe and Premium packages with hot stone, paraffin, and massage. Gel polish available on every tier.</p>
+        <div class="svc-tags"><span class="svc-tag">Classic</span><span class="svc-tag">Deluxe</span><span class="svc-tag">Premium</span></div>
+      </article>
+
+      <article class="svc-card reveal">
+        <div class="svc-illus"><svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EFE2D3"/><stop offset="1" stop-color="#DFC9AE"/></linearGradient></defs><rect width="200" height="120" fill="url(#g2)"/><g transform="translate(50 18)"><path d="M50 6 C30 20 24 60 44 84 C64 60 70 20 50 6z" fill="#3E2B4E" opacity="0.85"/><path d="M50 6 C30 20 24 60 44 84" stroke="#C79A3E" stroke-width="2" fill="none"/><circle cx="90" cy="30" r="3" fill="#C79A3E"/><circle cx="98" cy="46" r="2.4" fill="#E8C877"/><circle cx="86" cy="52" r="2" fill="#C79A3E"/></g></svg></div>
+        <h3>Acrylic, Gel-X &amp; Dip</h3>
+        <p>Full sets, fills, and overlays in hard gel, Luminary, poly gel, and sculpted styles. Strong Gel-X and dip retention is what our regulars come back for.</p>
+        <div class="svc-tags"><span class="svc-tag">Full Set</span><span class="svc-tag">Gel-X</span><span class="svc-tag">Dip</span></div>
+      </article>
+
+      <article class="svc-card reveal">
+        <div class="svc-illus"><svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E8E3EA"/><stop offset="0.5" stop-color="#B9A9C9"/><stop offset="1" stop-color="#8A7F9C"/></linearGradient></defs><rect width="200" height="120" fill="url(#g3)"/><g transform="translate(56 24)"><ellipse cx="18" cy="40" rx="13" ry="30" fill="url(#g3)" stroke="#fff" stroke-width="1"/><ellipse cx="44" cy="34" rx="12" ry="28" fill="#3E2B4E"/><ellipse cx="44" cy="34" rx="4" ry="20" fill="#E8C877" opacity="0.85"/><ellipse cx="68" cy="40" rx="12" ry="27" fill="#C98A78"/><ellipse cx="88" cy="48" rx="10" ry="22" fill="#F6EFE6"/></g></svg></div>
+        <h3>Custom Nail Art</h3>
+        <p>French, chrome, cat eye, gel ombre, marble, charms, and fully custom hand-painted design. Nails that are uniquely you, we love a challenge.</p>
+        <div class="svc-tags"><span class="svc-tag">Chrome</span><span class="svc-tag">Cat Eye</span><span class="svc-tag">Marble</span></div>
+      </article>
+
+      <article class="svc-card reveal">
+        <div class="svc-illus"><svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><radialGradient id="g4" cx="50%" cy="40%" r="70%"><stop offset="0" stop-color="#F6EFE6"/><stop offset="1" stop-color="#E0CBB0"/></radialGradient></defs><rect width="200" height="120" fill="url(#g4)"/><g transform="translate(100 60)"><path d="M0 0 C-40 -6 -70 -2 -88 4 C-70 10 -40 6 0 0z" fill="#3E2B4E"/><path d="M0 0 C40 -6 70 -2 88 4 C70 10 40 6 0 0z" fill="#2E1F3A"/><ellipse cx="0" cy="0" rx="7" ry="9" fill="#C79A3E"/><path d="M-84 3q-6 0 -8 3M84 3q6 0 8 3" stroke="#3E2B4E" stroke-width="1.6" fill="none"/></g></svg></div>
+        <h3>Eyelash Extensions</h3>
+        <p>Classic, Hybrid, Volume, and Mega Volume full sets, plus fills to keep them full between visits. Framed, lifted, and effortless.</p>
+        <div class="svc-tags"><span class="svc-tag">Classic</span><span class="svc-tag">Volume</span><span class="svc-tag">Fills</span></div>
+      </article>
+
+      <article class="svc-card reveal">
+        <div class="svc-illus"><svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="g5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6EFE6"/><stop offset="1" stop-color="#E7D2C7"/></linearGradient></defs><rect width="200" height="120" fill="url(#g5)"/><g transform="translate(100 62)"><circle r="30" fill="none" stroke="#C98A78" stroke-width="2"/><circle r="20" fill="none" stroke="#C79A3E" stroke-width="1.6"/><circle r="8" fill="#3E2B4E"/><g stroke="#C79A3E" stroke-width="1.6"><path d="M0 -44v10M0 34v10M-44 0h10M34 0h10M-31 -31l7 7M24 24l7 7M31 -31l-7 7M-24 24l-7 7"/></g></g></svg></div>
+        <h3>Facials &amp; Skin</h3>
+        <p>Refreshment Glow, Deep Cleansing, and Hydro Dermabrasion facials, plus scalp therapy treatments for a full reset.</p>
+        <div class="svc-tags"><span class="svc-tag">Glow</span><span class="svc-tag">Hydro</span><span class="svc-tag">Scalp</span></div>
+      </article>
+
+      <article class="svc-card reveal">
+        <div class="svc-illus"><svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="g6" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EDE7D9"/><stop offset="1" stop-color="#D9C7AE"/></linearGradient></defs><rect width="200" height="120" fill="url(#g6)"/><g transform="translate(66 30)"><path d="M0 30 C10 10 30 4 40 20 C50 4 70 10 68 30 C66 46 34 62 34 62 C34 62 2 46 0 30z" fill="#C98A78"/><path d="M34 24 v34 M22 34 h24" stroke="#3E2B4E" stroke-width="2" stroke-linecap="round"/><circle cx="34" cy="24" r="3.5" fill="#C79A3E"/></g></svg></div>
+        <h3>Wellness &amp; Pain Relief</h3>
+        <p>Our unusual specialty: Level 5 pain-relief and hemp-extract soak pedicures and manicures, created for muscle, joint, and arthritis comfort.</p>
+        <div class="svc-tags"><span class="svc-tag">Level 5 Relief</span><span class="svc-tag">Hemp Soak</span><span class="svc-tag">Waxing</span></div>
+      </article>
+    </div>
+
+    <!-- Nail-art swatch gallery -->
+    <div class="swatch-row" aria-label="Nail art finishes">
+      <div class="swatch reveal"><div class="nail-tip nt-chrome"></div><span>Chrome</span></div>
+      <div class="swatch reveal"><div class="nail-tip nt-cateye"></div><span>Cat Eye</span></div>
+      <div class="swatch reveal"><div class="nail-tip nt-ombre"></div><span>Gel Ombre</span></div>
+      <div class="swatch reveal"><div class="nail-tip nt-marble"></div><span>Marble</span></div>
+      <div class="swatch reveal"><div class="nail-tip nt-french"></div><span>French</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY ============ -->
+<section class="section alt" id="story">
+  <div class="wrap story-grid">
+    <div class="story-copy reveal">
+      <span class="eyebrow">Our Promise</span>
+      <h2 class="section-head" style="margin:0.8rem 0 1.4rem;font-family:var(--serif);font-size:clamp(2rem,5vw,3.1rem);color:var(--plum);line-height:1.06">Built on a single word.</h2>
+      <p class="first">Trusted Nail Spa was built around one idea, and named for it. When new ownership took over the Tropicana flagship, formerly Crystal Beauty, they invested the time and money to upgrade and modernize the space from the ground up, so the name would actually mean something.</p>
+      <p class="story-quote">"We welcome you to discover and experience the essence of comfort and skill in our open and tranquil venue."</p>
+      <p>Our nail experts come from tight-knit neighborhoods around the city, part of a real Las Vegas tradition where nail art has been passed down through families for generations. The trust promise is concrete, not marketing: a 14-day guarantee, prices disclosed before we start, and strict sterilization on every visit.</p>
+      <p style="font-weight:600;color:var(--plum)">If there is ever a problem, please contact us, and we'll make it right.</p>
+    </div>
+
+    <div class="story-visual reveal">
+      <svg viewBox="0 0 340 420" role="img" aria-label="Trusted Nail Spa monogram" style="max-height:88%">
+        <defs>
+          <linearGradient id="storyGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E8C877"/><stop offset="0.5" stop-color="#D8AE55"/><stop offset="1" stop-color="#B8862F"/></linearGradient>
+        </defs>
+        <circle cx="170" cy="150" r="112" fill="none" stroke="url(#storyGold)" stroke-width="1.4" opacity="0.6"/>
+        <circle cx="170" cy="150" r="92" fill="none" stroke="url(#storyGold)" stroke-width="3"/>
+        <text x="170" y="176" text-anchor="middle" style="font-family:Georgia,serif;font-size:96px;font-weight:700;fill:#F6EFE6;letter-spacing:-4px">TN</text>
+        <text x="170" y="266" text-anchor="middle" style="font-family:'SF Mono',monospace;font-size:13px;letter-spacing:6px;fill:#E8C877">EST. LAS VEGAS</text>
+        <path d="M110 292 h120" stroke="url(#storyGold)" stroke-width="1"/>
+        <text x="170" y="322" text-anchor="middle" style="font-family:'SF Mono',monospace;font-size:11px;letter-spacing:4px;fill:rgba(246,239,230,0.7)">TRUST &middot; SKILL &middot; CARE</text>
+      </svg>
+      <div class="story-badge">
+        <span class="rr">4.6</span>
+        <span class="rt">Rated <b>4.6 on Google</b> across 254 reviews, with a freshly remodeled flagship.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="section" id="reviews">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">In Their Words</span>
+      <h2>Regulars who found their nail person.</h2>
+      <p>Real reviews from Yelp and Google, verbatim. The names below are the technicians our guests ask for by name.</p>
+    </div>
+
+    <div class="rev-grid">
+      <div class="rev-card reveal">
+        <div class="rev-stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+        </div>
+        <blockquote>"First time here and the service was amazing! Xuan, Esme and Deja took great care of me! Very cute establishment with good music and fire massage chairs! 10/10 recommend."</blockquote>
+        <div class="rev-src">Blair C. &middot; Yelp, Tropicana</div>
+      </div>
+
+      <div class="rev-card reveal">
+        <div class="rev-stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+        </div>
+        <blockquote>"Had a negative experience and the owner made every effort to contact me and make it right. Customer service is definitely unmatched! This is my nail salon now."</blockquote>
+        <div class="rev-src">Lindsey S. &middot; Yelp, Tropicana</div>
+      </div>
+
+      <div class="rev-card reveal">
+        <div class="rev-stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+        </div>
+        <blockquote>"5 stars for Diamond as the nail Tech. She is absolutely amazing, she did my nails and my toes and has left me looking and feeling phenomenal. I get so many compliments on how clean and crisp they are. Her retention is top notch."</blockquote>
+        <div class="rev-src">LaToya A. &middot; Yelp, Sahara</div>
+      </div>
+
+      <div class="rev-card reveal">
+        <div class="rev-stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+        </div>
+        <blockquote>"My go to nail girl is Tee, she is theeeee best. From the prep to the application she is top tier, and to top it off her design skills are amazing. She has never let me down. She gets booked up quick for obvious reasons."</blockquote>
+        <div class="rev-src">Laura R. &middot; Yelp, Tropicana</div>
+      </div>
+
+      <div class="rev-card reveal">
+        <div class="rev-stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+        </div>
+        <blockquote>"Every girl I've had do my nails has executed perfectly each time. Lacinda did a beautiful job with my toes! I love the owner as well, so honest with me and helped me grow my natural nails out."</blockquote>
+        <div class="rev-src">Vanessa D. &middot; Yelp, Sahara</div>
+      </div>
+
+      <div class="rev-card reveal">
+        <div class="rev-stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+        </div>
+        <blockquote>"My new favorite place! Great service, ambiance and beautiful work. Pricing is fair and parking is very convenient."</blockquote>
+        <div class="rev-src">Claudia J. &middot; Yelp, Sahara</div>
+      </div>
+
+      <div class="rev-card reveal">
+        <div class="rev-stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#C79A3E"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+        </div>
+        <blockquote>"I want to say thank you to Vee as she really takes time to work on your nails. She lets you choose the colors and would even offer her recommendations. She is not in a hurry and is very precise as to the quality of her work."</blockquote>
+        <div class="rev-src">Noelle R. &middot; Yelp, Tropicana</div>
+      </div>
+
+      <div class="rev-card rev-placeholder reveal">
+        <div class="rev-stars" aria-label="Your reviews">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C79A3E" stroke-width="1.6"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C79A3E" stroke-width="1.6"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C79A3E" stroke-width="1.6"><path d="M12 2l3 6.5 7 .8-5.2 4.7L18.4 21 12 17.3 5.6 21l1.6-7L2 9.3l7-.8z"/></svg>
+        </div>
+        <blockquote>Your live Google and Yelp reviews stream in here automatically once the site is connected.</blockquote>
+        <div class="rev-src">Live review feed &middot; Ready to connect</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCATIONS ============ -->
+<section class="section alt" id="locations">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Two Las Vegas Locations</span>
+      <h2>Come find your chair.</h2>
+      <p>Open seven days a week with popcorn, drinks, massage chairs, and eight TVs. Book a simultaneous mani and pedi with two techs when you're tight on time.</p>
+    </div>
+
+    <div class="loc-grid">
+      <article class="loc-card reveal">
+        <span class="loc-tag">Flagship Full Spa</span>
+        <h3>Tropicana</h3>
+        <div class="loc-line">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 10-14 0c0 4.7 7 11 7 11z" stroke="#3E2B4E" stroke-width="1.6"/><circle cx="12" cy="10" r="2.4" stroke="#C79A3E" stroke-width="1.6"/></svg>
+          <span>9827 W Tropicana Ave, Ste 130<br>Las Vegas, NV 89147</span>
+        </div>
+        <div class="loc-line">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5c0-1 1-2 2-2h2l2 5-2 1c1 2 3 4 5 5l1-2 5 2v2c0 1-1 2-2 2C10 20 4 14 4 5z" stroke="#3E2B4E" stroke-width="1.6"/></svg>
+          <!-- VERIFY: Tropicana flagship phone -->
+          <a href="tel:+17029989500">(702) 998-9500</a>
+        </div>
+        <div class="loc-actions">
+          <a class="btn btn-primary" href="tel:+17029989500" style="padding:0.8rem 1.3rem;font-size:0.9rem">Tap to call</a>
+          <a class="btn btn-ghost" href="https://maps.google.com/?q=9827+W+Tropicana+Ave+Ste+130+Las+Vegas+NV+89147" target="_blank" rel="noopener" style="padding:0.8rem 1.3rem;font-size:0.9rem">Directions</a>
+        </div>
+      </article>
+
+      <article class="loc-card reveal">
+        <span class="loc-tag">Nails Focused</span>
+        <h3>Sahara</h3>
+        <div class="loc-line">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 10-14 0c0 4.7 7 11 7 11z" stroke="#3E2B4E" stroke-width="1.6"/><circle cx="12" cy="10" r="2.4" stroke="#C79A3E" stroke-width="1.6"/></svg>
+          <span>6985 W Sahara Ave, Unit 110<br>Las Vegas, NV 89117</span>
+        </div>
+        <div class="loc-line">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5c0-1 1-2 2-2h2l2 5-2 1c1 2 3 4 5 5l1-2 5 2v2c0 1-1 2-2 2C10 20 4 14 4 5z" stroke="#3E2B4E" stroke-width="1.6"/></svg>
+          <!-- VERIFY: Sahara location phone -->
+          <a href="tel:+17027785572">(702) 778-5572</a>
+        </div>
+        <div class="loc-actions">
+          <a class="btn btn-primary" href="tel:+17027785572" style="padding:0.8rem 1.3rem;font-size:0.9rem">Tap to call</a>
+          <a class="btn btn-ghost" href="https://maps.google.com/?q=6985+W+Sahara+Ave+Unit+110+Las+Vegas+NV+89117" target="_blank" rel="noopener" style="padding:0.8rem 1.3rem;font-size:0.9rem">Directions</a>
+        </div>
+      </article>
+
+      <div class="hours-card reveal">
+        <div>
+          <h3>Open Seven Days</h3>
+          <p>Walk-ins welcome, though we recommend booking your favorite tech ahead.</p>
+        </div>
+        <div class="hours-table">
+          <div><span>Mon to Sat</span><b>9:00 AM to 7:00 PM</b></div>
+          <div><span>Sunday</span><b>10:00 AM to 5:00 PM</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final" id="book">
+  <div class="hero-particles" id="particles2" aria-hidden="true"></div>
+  <div class="wrap final-inner">
+    <span class="eyebrow">Your appointment awaits</span>
+    <h2>The royal treatment you <em>deserve</em>.</h2>
+    <p>Book your visit at either location, or call and we'll get your favorite technician on the schedule. Guaranteed 14 days, priced honestly, every time.</p>
+    <div class="final-ctas">
+      <!-- VERIFY: Tropicana flagship phone -->
+      <a class="btn btn-gold" href="tel:+17029989500">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5c0-1 1-2 2-2h2l2 5-2 1c1 2 3 4 5 5l1-2 5 2v2c0 1-1 2-2 2C10 20 4 14 4 5z" fill="#2E1F3A"/></svg>
+        Call (702) 998-9500
+      </a>
+      <a class="btn btn-primary" aria-disabled="true" href="#" title="Online booking activates when your site goes live" style="background:rgba(246,239,230,0.12);color:var(--cream);border:1px solid rgba(246,239,230,0.3)">Book Online &middot; Coming Soon</a>
+    </div>
+
+    <!-- Optional quick-request form: posts to formsubmit.co once client email is set -->
+    <form action="https://formsubmit.co/REPLACE-WITH-CLIENT-EMAIL" method="POST" style="margin-top:2.4rem;display:flex;gap:0.6rem;flex-wrap:wrap;justify-content:center;max-width:520px;margin-inline:auto">
+      <!-- Replace REPLACE-WITH-CLIENT-EMAIL above with the salon's booking inbox -->
+      <input type="text" name="name" placeholder="Your name" required aria-label="Your name" style="flex:1 1 160px;min-width:150px;padding:0.85rem 1rem;border-radius:999px;border:1px solid rgba(246,239,230,0.3);background:rgba(246,239,230,0.1);color:var(--cream);font-family:var(--sans);font-size:0.92rem">
+      <input type="tel" name="phone" placeholder="Best phone" required aria-label="Best phone" style="flex:1 1 160px;min-width:150px;padding:0.85rem 1rem;border-radius:999px;border:1px solid rgba(246,239,230,0.3);background:rgba(246,239,230,0.1);color:var(--cream);font-family:var(--sans);font-size:0.92rem">
+      <button type="submit" class="btn btn-gold" style="flex:0 0 auto">Request a callback</button>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-top">
+      <div>
+        <div class="ft-brand">
+          <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+            <circle cx="20" cy="20" r="18.5" fill="none" stroke="#E8C877" stroke-width="2"/>
+            <path d="M12.5 20.5l4.6 4.6 10-10.4" fill="none" stroke="#F6EFE6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="brand-name">Trusted <span>Nail Spa</span></span>
+        </div>
+        <p class="ft-blurb">A premier full-service nail salon and beauty spa in Las Vegas. The name is the promise: trust, skill, and honest care.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#story">Our Promise</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#locations">Locations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li>Tropicana Flagship</li>
+          <li><a href="tel:+17029989500">(702) 998-9500</a></li>
+          <li>Sahara Location</li>
+          <li><a href="tel:+17027785572">(702) 778-5572</a></li>
+          <li>Mon to Sat 9 to 7, Sun 10 to 5</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <p class="disclaimer">Concept preview built by DNA Agency, not affiliated with Trusted Nail Spa. Phone numbers, hours, and services shown for demonstration and pending client verification.</p>
+      <p>&copy; 2026 Trusted Nail Spa</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Sticky nav shadow */
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 12) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+  }, {passive:true});
+
+  /* Scroll reveal */
+  var revs = document.querySelectorAll('.reveal');
+  if(reduce || !('IntersectionObserver' in window)){
+    revs.forEach(function(r){r.classList.add('in')});
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+    revs.forEach(function(r, i){ r.style.transitionDelay = (Math.min(i%4,3)*70)+'ms'; io.observe(r); });
+  }
+
+  /* Ambient particles */
+  function seed(id, n){
+    var host = document.getElementById(id);
+    if(!host || reduce) return;
+    for(var i=0;i<n;i++){
+      var s = document.createElement('span');
+      s.style.left = (Math.random()*100)+'%';
+      s.style.bottom = (-10 - Math.random()*20)+'%';
+      var d = 8 + Math.random()*9;
+      s.style.animationDuration = d+'s';
+      s.style.animationDelay = (-Math.random()*d)+'s';
+      var sc = 0.5 + Math.random()*1.2;
+      s.style.transform = 'scale('+sc+')';
+      host.appendChild(s);
+    }
+  }
+  seed('particles', 16);
+  seed('particles2', 10);
+})();
+</script>
+</body>
+</html>

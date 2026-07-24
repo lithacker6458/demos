@@ -1,0 +1,966 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eleven NAIL Bar West Midtown, Kingdom of Nail Art in Atlanta</title>
+<meta name="description" content="Eleven NAIL Bar West Midtown is a premium nail and beauty salon inside the Interlock Tower in West Midtown, Atlanta. Signature champagne pedicures, custom nail art, Gel-X and an in-salon wine bar. Walk-ins welcome, open 7 days a week.">
+<style>
+  :root{
+    /* Champagne Atelier palette */
+    --ink:#241A22;          /* deep aubergine-black, the wine note */
+    --ink-soft:#3A2C36;
+    --gold:#C79A54;         /* champagne gold, foil-thin accent */
+    --gold-deep:#A97F3E;
+    --gold-soft:#E3C98E;
+    --rose:#C9707E;         /* muted rose, not bubblegum */
+    --rose-deep:#B15B69;
+    --bg:#F7F2EB;           /* warm oyster cream */
+    --surface:#FBF8F3;      /* card */
+    --surface-2:#F1E7DA;
+    --on-dark:#F1E9DF;      /* text on aubergine */
+    --on-dark-dim:rgba(241,233,223,.66);
+    --muted:#7A6B72;
+    --line:rgba(36,26,34,.14);
+    --line-gold:rgba(199,154,84,.34);
+    --shadow:0 30px 70px -38px rgba(36,26,34,.5);
+    --shadow-soft:0 16px 40px -26px rgba(36,26,34,.4);
+    --serif:Georgia,'Times New Roman',serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:400;letter-spacing:-.012em;line-height:1.05;margin:0}
+  p{margin:0}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:var(--gold);color:var(--ink)}
+
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem)}
+
+  .eyebrow{
+    font-family:var(--sans);
+    font-size:clamp(.6rem,1.4vw,.72rem);
+    text-transform:uppercase;
+    letter-spacing:.4em;
+    font-weight:600;
+    color:var(--gold-deep);
+  }
+  .cap{
+    font-family:var(--sans);
+    font-size:.7rem;text-transform:uppercase;letter-spacing:.2em;font-weight:600;color:var(--muted);
+  }
+  /* tasting-card price styling: small-caps georgia, reads like a champagne list */
+  .price{
+    font-family:var(--serif);
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    font-size:.82rem;
+    color:var(--gold-deep);
+    white-space:nowrap;
+  }
+
+  /* ---------- signature: champagne-flute divider ---------- */
+  .divider{
+    display:flex;align-items:center;justify-content:center;gap:1.1rem;
+    padding:clamp(2.2rem,5vw,3.6rem) 0;color:var(--gold);
+  }
+  .divider::before,.divider::after{
+    content:"";height:1px;flex:1;max-width:min(30vw,300px);
+    background:linear-gradient(90deg,transparent,var(--line-gold),transparent);
+  }
+  .divider svg{width:22px;height:30px;overflow:visible}
+  .divider .bub{fill:var(--gold);opacity:.5;animation:rise 3.6s ease-in-out infinite}
+  .divider .bub:nth-child(2){animation-delay:.5s}
+  .divider .bub:nth-child(3){animation-delay:1s}
+  @keyframes rise{
+    0%,100%{opacity:.35;transform:translateY(2px)}
+    50%{opacity:1;transform:translateY(-3px)}
+  }
+
+  /* ---------- nav ---------- */
+  .nav{
+    position:sticky;top:0;z-index:60;
+    background:rgba(247,242,235,.82);
+    backdrop-filter:saturate(1.3) blur(14px);
+    -webkit-backdrop-filter:saturate(1.3) blur(14px);
+    border-bottom:1px solid var(--line);
+    transition:box-shadow .3s ease;
+  }
+  .nav.scrolled{box-shadow:0 12px 34px -26px rgba(36,26,34,.6)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:72px}
+  .brand{display:flex;align-items:center;gap:.72rem}
+  .brand-mark{width:40px;height:40px;flex:none}
+  .brand-txt{display:flex;flex-direction:column;line-height:1}
+  .brand-name{font-family:var(--serif);font-size:1.24rem;letter-spacing:.01em;color:var(--ink)}
+  .brand-name b{font-weight:400;font-style:italic;color:var(--gold-deep)}
+  .brand-sub{font-family:var(--sans);font-size:.54rem;letter-spacing:.34em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+  .nav-links{display:flex;gap:2.1rem;align-items:center}
+  .nav-links a{
+    font-family:var(--sans);font-size:.82rem;font-weight:500;color:var(--ink);
+    letter-spacing:.02em;position:relative;padding:.3rem 0;
+  }
+  .nav-links a::after{
+    content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;
+    background:var(--gold);transition:width .3s ease;
+  }
+  .nav-links a:hover::after,.nav-links a:focus-visible::after{width:100%}
+  .nav-call{
+    font-family:var(--sans);font-weight:600;font-size:.82rem;
+    background:var(--ink);color:var(--on-dark);
+    padding:.68rem 1.34rem;border-radius:100px;letter-spacing:.02em;
+    display:inline-flex;align-items:center;gap:.5rem;
+    transition:transform .25s ease,background .25s ease;
+    border:1px solid transparent;
+  }
+  .nav-call:hover{background:var(--gold-deep);transform:translateY(-1px)}
+  .nav-call:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+  .nav-call svg{width:15px;height:15px}
+  @media(max-width:880px){.nav-links{display:none}}
+
+  /* ---------- utility bar ---------- */
+  .util{
+    background:var(--ink);color:var(--on-dark);
+    font-family:var(--sans);font-size:.74rem;letter-spacing:.04em;
+  }
+  .util-inner{
+    display:flex;align-items:center;justify-content:center;gap:.7rem;flex-wrap:wrap;
+    padding:.56rem 1.25rem;text-align:center;
+  }
+  .util b{color:var(--gold-soft);font-weight:600}
+  .util .dot{width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:.7}
+  @media(max-width:560px){.util .hide-sm{display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;overflow:hidden;
+    background:
+      radial-gradient(120% 90% at 82% 8%,rgba(199,154,84,.16),transparent 60%),
+      radial-gradient(110% 80% at 12% 96%,rgba(201,112,126,.14),transparent 58%),
+      linear-gradient(180deg,var(--bg) 0%,var(--surface) 100%);
+  }
+  .hero-inner{
+    display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.5rem,4vw,4rem);
+    align-items:center;padding:clamp(2.6rem,7vw,5.4rem) 0 clamp(2.6rem,6vw,4.4rem);
+  }
+  .hero-tag{display:inline-flex;align-items:center;gap:.6rem;margin-bottom:1.5rem}
+  .hero-tag .rule{width:34px;height:1px;background:var(--gold)}
+  h1.hero-title{
+    font-size:clamp(2.5rem,6.6vw,4.7rem);
+    line-height:1.02;letter-spacing:-.02em;color:var(--ink);
+  }
+  h1.hero-title em{font-style:italic;color:var(--gold-deep)}
+  .hero-lede{
+    margin-top:1.5rem;font-size:clamp(1rem,2vw,1.14rem);color:var(--ink-soft);
+    max-width:34ch;line-height:1.68;
+  }
+  .hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2.1rem;align-items:center}
+  .btn{
+    font-family:var(--sans);font-weight:600;font-size:.9rem;letter-spacing:.02em;
+    padding:.92rem 1.6rem;border-radius:100px;display:inline-flex;align-items:center;gap:.56rem;
+    transition:transform .25s ease,background .25s ease,box-shadow .25s ease,color .25s ease;
+    cursor:pointer;border:1px solid transparent;text-align:center;
+  }
+  .btn svg{width:17px;height:17px;flex:none}
+  .btn-gold{background:var(--ink);color:var(--on-dark);box-shadow:var(--shadow-soft)}
+  .btn-gold:hover{background:var(--gold-deep);transform:translateY(-2px)}
+  .btn-gold:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line-gold)}
+  .btn-ghost:hover{border-color:var(--gold);background:rgba(199,154,84,.08)}
+  .btn-ghost:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+  .btn[aria-disabled="true"]{opacity:.5;cursor:not-allowed;pointer-events:none}
+
+  .hero-meta{display:flex;gap:1.7rem;margin-top:2.4rem;flex-wrap:wrap}
+  .hero-meta .m{display:flex;flex-direction:column;gap:.15rem}
+  .hero-meta .m .big{font-family:var(--serif);font-size:1.5rem;color:var(--ink)}
+  .hero-meta .m .lbl{font-size:.66rem;text-transform:uppercase;letter-spacing:.18em;color:var(--muted);font-weight:600}
+  .hero-stars{display:inline-flex;gap:.12em;color:var(--gold)}
+  .hero-stars svg{width:1em;height:1em}
+
+  /* champagne-coupe hero art */
+  .coupe-frame{
+    position:relative;border-radius:26px;overflow:hidden;
+    background:
+      radial-gradient(90% 70% at 50% 10%,rgba(199,154,84,.2),transparent 62%),
+      linear-gradient(165deg,var(--ink) 0%,#1B131A 100%);
+    box-shadow:var(--shadow);border:1px solid rgba(199,154,84,.28);
+    aspect-ratio:1/1.06;min-height:340px;
+  }
+  .coupe-frame svg{position:absolute;inset:0;width:100%;height:100%}
+  .coupe-badge{
+    position:absolute;left:1.1rem;bottom:1.1rem;z-index:3;
+    background:rgba(36,26,34,.62);border:1px solid var(--line-gold);
+    backdrop-filter:blur(6px);border-radius:14px;padding:.7rem .95rem;
+    display:flex;align-items:center;gap:.7rem;
+  }
+  .coupe-badge .rings{width:34px;height:34px;flex:none}
+  .coupe-badge .t{font-family:var(--sans);color:var(--on-dark);line-height:1.25}
+  .coupe-badge .t b{font-family:var(--serif);font-size:.98rem;color:var(--gold-soft);font-weight:400;font-style:italic}
+  .coupe-badge .t span{display:block;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--on-dark-dim);margin-top:2px}
+
+  /* self-drawing gold nail arc */
+  .nail-arc{fill:none;stroke:var(--gold-soft);stroke-width:2.4;stroke-linecap:round;
+    stroke-dasharray:520;stroke-dashoffset:520;filter:drop-shadow(0 0 6px rgba(227,201,142,.4));}
+  .drawn .nail-arc{animation:draw 2.6s cubic-bezier(.6,.02,.2,1) forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  .nail-fill{opacity:0}
+  .drawn .nail-fill{animation:fadein 1s ease 1.9s forwards}
+  @keyframes fadein{to{opacity:1}}
+
+  /* rising bubbles in the coupe */
+  .bubble{fill:var(--gold-soft);opacity:0}
+  .drawn .bubble{animation:bubblerise linear infinite}
+  @keyframes bubblerise{
+    0%{opacity:0;transform:translateY(0) scale(.6)}
+    12%{opacity:.85}
+    88%{opacity:.7}
+    100%{opacity:0;transform:translateY(-190px) scale(1.05)}
+  }
+
+  @media(max-width:900px){
+    .hero-inner{grid-template-columns:1fr;gap:2.4rem}
+    .coupe-frame{max-width:440px;margin:0 auto;width:100%}
+  }
+
+  /* ---------- section shell ---------- */
+  section{position:relative}
+  .sec-pad{padding:clamp(3.2rem,7vw,5.6rem) 0}
+  .sec-head{max-width:640px;margin:0 auto clamp(2rem,4vw,3rem);text-align:center}
+  .sec-head h2{font-size:clamp(1.9rem,4.6vw,3rem);margin-top:.8rem;color:var(--ink)}
+  .sec-head h2 em{font-style:italic;color:var(--gold-deep)}
+  .sec-head p{margin-top:1rem;color:var(--ink-soft);font-size:1.02rem}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- benefit strip ---------- */
+  .benefits{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .ben-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1rem,2.4vw,1.8rem)}
+  .ben{
+    background:var(--bg);border:1px solid var(--line);border-radius:18px;
+    padding:1.7rem 1.4rem;text-align:center;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
+  }
+  .ben:hover{transform:translateY(-4px);box-shadow:var(--shadow-soft);border-color:var(--line-gold)}
+  .ben-ic{width:52px;height:52px;margin:0 auto 1rem;display:grid;place-items:center;
+    border-radius:50%;background:radial-gradient(circle at 40% 30%,rgba(199,154,84,.2),rgba(201,112,126,.12));
+    border:1px solid var(--line-gold)}
+  .ben-ic svg{width:26px;height:26px}
+  .ben h3{font-size:1.1rem;color:var(--ink);margin-bottom:.4rem}
+  .ben p{font-size:.86rem;color:var(--muted);line-height:1.6}
+  @media(max-width:860px){.ben-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:460px){.ben-grid{grid-template-columns:1fr}}
+
+  /* ---------- menu / services (tasting card) ---------- */
+  .menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.4rem,3vw,2.6rem);align-items:start}
+  .card{
+    background:var(--surface);border:1px solid var(--line);border-radius:20px;
+    padding:clamp(1.5rem,3vw,2.2rem);box-shadow:var(--shadow-soft);position:relative;overflow:hidden;
+  }
+  .card::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg,var(--gold),var(--rose),var(--gold));opacity:.55;
+  }
+  .card-head{display:flex;align-items:center;gap:.9rem;margin-bottom:1.3rem}
+  .card-head .ci{width:46px;height:46px;flex:none}
+  .card-head h3{font-size:1.4rem;color:var(--ink)}
+  .card-head .sub{font-size:.68rem;text-transform:uppercase;letter-spacing:.2em;color:var(--gold-deep);font-weight:600;margin-top:3px}
+  .menu-row{
+    display:grid;grid-template-columns:1fr auto;gap:.6rem 1rem;align-items:baseline;
+    padding:.72rem 0;border-bottom:1px dotted var(--line);
+  }
+  .menu-row:last-child{border-bottom:none}
+  .menu-row .name{font-family:var(--serif);font-size:1.02rem;color:var(--ink)}
+  .menu-row .name em{font-style:italic;color:var(--rose-deep)}
+  .menu-row .desc{grid-column:1/-1;font-size:.8rem;color:var(--muted);line-height:1.55;margin-top:-.35rem}
+  .menu-note{margin-top:1.3rem;font-size:.78rem;color:var(--muted);display:flex;align-items:flex-start;gap:.5rem}
+  .menu-note svg{width:15px;height:15px;flex:none;margin-top:2px}
+
+  .signature-band{
+    grid-column:1/-1;
+    background:
+      radial-gradient(120% 140% at 88% 0%,rgba(199,154,84,.22),transparent 55%),
+      linear-gradient(160deg,var(--ink),#1C141B);
+    color:var(--on-dark);border-radius:20px;padding:clamp(1.8rem,4vw,2.6rem);
+    display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;align-items:center;position:relative;overflow:hidden;
+    border:1px solid rgba(199,154,84,.3);
+  }
+  .signature-band h3{color:var(--on-dark);font-size:clamp(1.5rem,3.4vw,2.2rem)}
+  .signature-band h3 em{font-style:italic;color:var(--gold-soft)}
+  .signature-band p{color:var(--on-dark-dim);margin-top:.8rem;font-size:.92rem;max-width:40ch}
+  .sig-list{display:flex;flex-direction:column;gap:.7rem}
+  .sig-item{display:grid;grid-template-columns:1fr auto;gap:.8rem;align-items:baseline;
+    padding-bottom:.6rem;border-bottom:1px dotted rgba(241,233,223,.2)}
+  .sig-item:last-child{border-bottom:none}
+  .sig-item .n{font-family:var(--serif);font-style:italic;font-size:1.02rem;color:var(--on-dark)}
+  .sig-item .p{color:var(--gold-soft)}
+  @media(max-width:820px){
+    .menu-grid{grid-template-columns:1fr}
+    .signature-band{grid-template-columns:1fr;gap:1.4rem}
+  }
+
+  /* ---------- story ---------- */
+  .story{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .story-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(1.8rem,5vw,4rem);align-items:center}
+  .story-art{
+    position:relative;border-radius:22px;overflow:hidden;aspect-ratio:1/1.05;min-height:320px;
+    background:radial-gradient(80% 70% at 30% 20%,rgba(201,112,126,.2),transparent 60%),
+      linear-gradient(160deg,var(--surface-2),var(--bg));
+    border:1px solid var(--line-gold);box-shadow:var(--shadow-soft);
+  }
+  .story-art svg{position:absolute;inset:0;width:100%;height:100%}
+  .story-copy .eyebrow{margin-bottom:.9rem;display:block}
+  .story-copy h2{font-size:clamp(1.8rem,4.4vw,2.8rem);color:var(--ink)}
+  .story-copy h2 em{font-style:italic;color:var(--gold-deep)}
+  .story-copy p{margin-top:1.15rem;color:var(--ink-soft);font-size:1rem;line-height:1.75}
+  .story-quote{
+    margin-top:1.6rem;padding-left:1.2rem;border-left:2px solid var(--gold);
+    font-family:var(--serif);font-style:italic;font-size:1.14rem;color:var(--ink);line-height:1.5;
+  }
+  @media(max-width:820px){.story-grid{grid-template-columns:1fr;gap:2.2rem}}
+
+  /* ---------- reviews ---------- */
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2.4vw,1.6rem)}
+  .rev{
+    background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.6rem 1.5rem;
+    display:flex;flex-direction:column;gap:.9rem;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
+  }
+  .rev:hover{transform:translateY(-4px);box-shadow:var(--shadow-soft);border-color:var(--line-gold)}
+  .rev .stars{display:inline-flex;gap:.1em;color:var(--gold)}
+  .rev .stars svg{width:16px;height:16px}
+  .rev blockquote{font-family:var(--serif);font-size:1rem;line-height:1.6;color:var(--ink);margin:0}
+  .rev .who{display:flex;align-items:center;gap:.6rem;margin-top:auto}
+  .rev .av{width:34px;height:34px;border-radius:50%;flex:none;display:grid;place-items:center;
+    background:linear-gradient(140deg,var(--rose),var(--gold-deep));color:#fff;font-family:var(--serif);font-size:.9rem}
+  .rev .meta{line-height:1.2}
+  .rev .meta b{font-size:.86rem;font-weight:600;color:var(--ink)}
+  .rev .meta span{display:block;font-size:.68rem;color:var(--muted);letter-spacing:.04em}
+  @media(max-width:860px){.rev-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.rev-grid{grid-template-columns:1fr}}
+
+  /* ---------- location ---------- */
+  .loc{background:var(--surface);border-top:1px solid var(--line)}
+  .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.8rem,4vw,3.4rem);align-items:stretch}
+  .loc-card{background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:clamp(1.6rem,3.4vw,2.4rem)}
+  .loc-card h3{font-size:1.4rem;color:var(--ink);margin-bottom:1.1rem}
+  .loc-line{display:flex;gap:.8rem;align-items:flex-start;padding:.7rem 0;border-bottom:1px solid var(--line)}
+  .loc-line:last-of-type{border-bottom:none}
+  .loc-line svg{width:20px;height:20px;flex:none;margin-top:2px;color:var(--gold-deep)}
+  .loc-line .lt{line-height:1.5}
+  .loc-line .lt b{display:block;font-size:.66rem;text-transform:uppercase;letter-spacing:.16em;color:var(--muted);font-weight:600;margin-bottom:2px}
+  .loc-line .lt span{font-size:.94rem;color:var(--ink)}
+  .hours-table{width:100%;border-collapse:collapse;margin-top:.4rem}
+  .hours-table td{padding:.5rem 0;border-bottom:1px dotted var(--line);font-size:.9rem}
+  .hours-table td:first-child{color:var(--ink);font-weight:500}
+  .hours-table td:last-child{text-align:right;color:var(--muted);font-family:var(--serif);letter-spacing:.02em}
+  .hours-table tr:last-child td{border-bottom:none}
+  .hours-today td{color:var(--gold-deep) !important;font-weight:600}
+  .map-frame{
+    position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line-gold);
+    box-shadow:var(--shadow-soft);min-height:340px;
+    background:linear-gradient(160deg,var(--ink),#1C141B);
+  }
+  .map-frame svg{position:absolute;inset:0;width:100%;height:100%}
+  .map-pin-badge{
+    position:absolute;left:1.1rem;bottom:1.1rem;background:rgba(36,26,34,.66);
+    border:1px solid var(--line-gold);border-radius:12px;padding:.7rem .95rem;backdrop-filter:blur(6px);
+    color:var(--on-dark);font-size:.82rem;line-height:1.4;z-index:2;
+  }
+  .map-pin-badge b{color:var(--gold-soft);font-family:var(--serif);font-weight:400;display:block;font-size:.95rem}
+  .map-frame a.map-link{position:absolute;inset:0;z-index:3}
+  @media(max-width:820px){.loc-grid{grid-template-columns:1fr}.map-frame{min-height:280px}}
+
+  /* ---------- final CTA ---------- */
+  .final{
+    background:
+      radial-gradient(100% 120% at 84% 6%,rgba(199,154,84,.24),transparent 52%),
+      radial-gradient(90% 110% at 10% 100%,rgba(201,112,126,.18),transparent 54%),
+      linear-gradient(165deg,var(--ink),#1A121A);
+    color:var(--on-dark);position:relative;overflow:hidden;
+  }
+  .final-inner{text-align:center;max-width:720px;margin:0 auto;position:relative;z-index:2}
+  .final h2{font-size:clamp(2rem,5vw,3.3rem);color:var(--on-dark)}
+  .final h2 em{font-style:italic;color:var(--gold-soft)}
+  .final p{margin:1.2rem auto 0;color:var(--on-dark-dim);max-width:46ch;font-size:1.04rem}
+  .final .hero-cta{justify-content:center}
+  .final .btn-gold{background:var(--gold);color:var(--ink)}
+  .final .btn-gold:hover{background:var(--gold-soft)}
+  .final .btn-ghost{color:var(--on-dark);border-color:rgba(241,233,223,.3)}
+  .final .btn-ghost:hover{border-color:var(--gold-soft);background:rgba(199,154,84,.12)}
+  .final-form{
+    margin-top:2.4rem;display:grid;grid-template-columns:1fr 1fr auto;gap:.7rem;max-width:620px;
+    margin-inline:auto;text-align:left;
+  }
+  .final-form input{
+    font-family:var(--sans);font-size:.9rem;padding:.85rem 1.05rem;border-radius:100px;
+    border:1px solid rgba(241,233,223,.24);background:rgba(247,242,235,.06);color:var(--on-dark);
+  }
+  .final-form input::placeholder{color:rgba(241,233,223,.5)}
+  .final-form input:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:transparent}
+  .final-form button{
+    font-family:var(--sans);font-weight:600;font-size:.9rem;padding:.85rem 1.5rem;border-radius:100px;
+    background:var(--gold);color:var(--ink);border:none;cursor:pointer;transition:background .25s ease;white-space:nowrap;
+  }
+  .final-form button:hover{background:var(--gold-soft)}
+  .final-form .fnote{grid-column:1/-1;font-size:.72rem;color:var(--on-dark-dim);text-align:center;margin-top:.2rem}
+  @media(max-width:640px){.final-form{grid-template-columns:1fr}}
+
+  /* ---------- footer ---------- */
+  footer{background:#1A121A;color:var(--on-dark-dim);padding:clamp(2.4rem,5vw,3.4rem) 0 2rem}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(241,233,223,.14)}
+  .foot-brand .brand-name{color:var(--on-dark);font-size:1.3rem}
+  .foot-brand .brand-name b{color:var(--gold-soft)}
+  .foot-brand p{margin-top:.8rem;font-size:.85rem;max-width:34ch;line-height:1.7}
+  .foot-col h4{font-family:var(--sans);font-size:.68rem;text-transform:uppercase;letter-spacing:.2em;color:var(--gold-soft);margin-bottom:.9rem;font-weight:600}
+  .foot-col a,.foot-col p{display:block;font-size:.86rem;color:var(--on-dark-dim);padding:.24rem 0;transition:color .2s ease}
+  .foot-col a:hover{color:var(--gold-soft)}
+  .foot-bottom{padding-top:1.5rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.76rem;color:rgba(241,233,223,.5)}
+  .foot-bottom .disclaimer{max-width:60ch;line-height:1.6}
+  @media(max-width:720px){.foot-grid{grid-template-columns:1fr;gap:1.6rem}}
+
+  /* mobile sticky call */
+  .mobile-call{
+    position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;
+    padding:.7rem 1rem calc(.7rem + env(safe-area-inset-bottom));
+    background:rgba(36,26,34,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line-gold);
+  }
+  .mobile-call a{
+    display:flex;align-items:center;justify-content:center;gap:.55rem;
+    background:var(--gold);color:var(--ink);font-family:var(--sans);font-weight:700;font-size:.94rem;
+    padding:.82rem;border-radius:100px;
+  }
+  .mobile-call svg{width:18px;height:18px}
+  @media(max-width:880px){.mobile-call{display:block}body{padding-bottom:4.2rem}}
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
+    .nail-arc{stroke-dashoffset:0}.nail-fill,.bubble{opacity:1}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+
+<!-- ============ UTILITY BAR ============ -->
+<div class="util">
+  <div class="util-inner">
+    <span class="hide-sm"><b>Open 7 days a week</b></span>
+    <span class="dot hide-sm"></span>
+    <span>Walk-ins welcome, often no wait</span>
+    <span class="dot"></span>
+    <span><b>Complimentary wine bar</b> &amp; validated Interlock garage parking</span>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="Eleven NAIL Bar West Midtown home">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="none" stroke="#C79A54" stroke-width="1.2"/>
+        <path d="M20 7 C13 12 12 22 14 30 C16 33 24 33 26 30 C28 22 27 12 20 7 Z" fill="none" stroke="#C79A54" stroke-width="1.3"/>
+        <path d="M14.4 26 C17 27.6 23 27.6 25.6 26" fill="none" stroke="#C9707E" stroke-width="1.2"/>
+        <circle cx="20" cy="14" r="1.4" fill="#C79A54"/>
+      </svg>
+      <span class="brand-txt">
+        <span class="brand-name">Eleven <b>NAIL</b> Bar</span>
+        <span class="brand-sub">West Midtown, Atlanta</span>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="#menu">Menu</a>
+      <a href="#signature">Signature</a>
+      <a href="#story">Our Salon</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit</a>
+    </div>
+    <!-- VERIFY PHONE: (404) 748-9731 -->
+    <a class="nav-call" href="tel:+14047489731">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.5 3h3l1.5 4-2 1.5a11 11 0 005 5l1.5-2 4 1.5v3a2 2 0 01-2 2A16 16 0 014.5 5a2 2 0 012-2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      (404) 748-9731
+    </a>
+  </div>
+</nav>
+
+<span id="top"></span>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-copy reveal">
+      <span class="hero-tag">
+        <span class="rule"></span>
+        <span class="eyebrow">Kingdom of Nail Art</span>
+      </span>
+      <h1 class="hero-title">A nail bar with a <em>champagne</em> list of its own.</h1>
+      <p class="hero-lede">Premium nails, custom art and signature pedicures inside the Interlock Tower, poured with a complimentary glass and a room built to make you linger.</p>
+      <div class="hero-cta">
+        <!-- VERIFY PHONE: (404) 748-9731 -->
+        <a class="btn btn-gold" href="tel:+14047489731">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.5 3h3l1.5 4-2 1.5a11 11 0 005 5l1.5-2 4 1.5v3a2 2 0 01-2 2A16 16 0 014.5 5a2 2 0 012-2z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          Call to reserve a chair
+        </a>
+        <a class="btn btn-ghost" href="#menu">View the menu</a>
+      </div>
+      <div class="hero-meta">
+        <div class="m">
+          <span class="big">4.7<span class="hero-stars" style="font-size:.72rem;margin-left:.3rem"><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg></span></span>
+          <span class="lbl">Google Rating</span>
+        </div>
+        <div class="m">
+          <span class="big">7 days</span>
+          <span class="lbl">Open Every Week</span>
+        </div>
+        <div class="m">
+          <span class="big">Walk-ins</span>
+          <span class="lbl">Welcome Daily</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- champagne-coupe hero art: self-drawing gold nail arc + rising bubbles -->
+    <div class="coupe-frame reveal" id="coupe" aria-hidden="true">
+      <svg viewBox="0 0 380 400" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="liquid" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#E3C98E" stop-opacity=".5"/>
+            <stop offset="1" stop-color="#C79A54" stop-opacity=".18"/>
+          </linearGradient>
+          <radialGradient id="glow" cx="50%" cy="24%" r="60%">
+            <stop offset="0" stop-color="#C79A54" stop-opacity=".35"/>
+            <stop offset="1" stop-color="#C79A54" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="nailg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#E3C98E"/>
+            <stop offset="1" stop-color="#C79A54"/>
+          </linearGradient>
+        </defs>
+        <rect width="380" height="400" fill="url(#glow)"/>
+
+        <!-- champagne coupe bowl -->
+        <path d="M110 150 Q190 236 270 150" fill="url(#liquid)" stroke="#C79A54" stroke-width="1.4"/>
+        <path d="M104 148 Q190 250 276 148" fill="none" stroke="#E3C98E" stroke-width="1.6" opacity=".8"/>
+        <ellipse cx="190" cy="150" rx="86" ry="12" fill="none" stroke="#E3C98E" stroke-width="1.4" opacity=".7"/>
+        <!-- champagne surface shimmer -->
+        <ellipse cx="190" cy="150" rx="70" ry="7" fill="#E3C98E" opacity=".22"/>
+        <!-- stem + base -->
+        <line x1="190" y1="212" x2="190" y2="320" stroke="#C79A54" stroke-width="2"/>
+        <path d="M150 336 Q190 320 230 336" fill="none" stroke="#C79A54" stroke-width="2" stroke-linecap="round"/>
+        <ellipse cx="190" cy="338" rx="42" ry="7" fill="none" stroke="#E3C98E" stroke-width="1.3" opacity=".6"/>
+
+        <!-- rising bubbles -->
+        <circle class="bubble" cx="168" cy="200" r="3" style="animation-duration:5.5s;animation-delay:0s"/>
+        <circle class="bubble" cx="190" cy="205" r="2.4" style="animation-duration:6.4s;animation-delay:1.1s"/>
+        <circle class="bubble" cx="210" cy="198" r="3.2" style="animation-duration:5s;animation-delay:.6s"/>
+        <circle class="bubble" cx="178" cy="203" r="2" style="animation-duration:7s;animation-delay:2.2s"/>
+        <circle class="bubble" cx="202" cy="203" r="2.6" style="animation-duration:6s;animation-delay:3s"/>
+        <circle class="bubble" cx="190" cy="200" r="1.8" style="animation-duration:5.8s;animation-delay:4s"/>
+
+        <!-- self-drawing gold nail (almond) arc, framed above the coupe -->
+        <g transform="translate(190,86)">
+          <path class="nail-fill" d="M-16 -34 C-22 -14 -22 8 -14 30 C-8 40 8 40 14 30 C22 8 22 -14 16 -34 C10 -44 -10 -44 -16 -34 Z" fill="url(#nailg)" opacity=".14"/>
+          <path class="nail-arc" d="M-16 -34 C-22 -14 -22 8 -14 30 C-8 40 8 40 14 30 C22 8 22 -14 16 -34 C10 -44 -10 -44 -16 -34 Z"/>
+          <path class="nail-arc" d="M-13 24 C-6 29 6 29 13 24" style="stroke-dasharray:60;stroke-dashoffset:60;animation-delay:1.6s"/>
+        </g>
+      </svg>
+      <div class="coupe-badge">
+        <svg class="rings" viewBox="0 0 34 34" aria-hidden="true">
+          <circle cx="17" cy="17" r="15" fill="none" stroke="#C79A54" stroke-width="1"/>
+          <path d="M17 5 C12 9 11 17 12 25 C14 27 20 27 22 25 C23 17 22 9 17 5Z" fill="none" stroke="#E3C98E" stroke-width="1"/>
+        </svg>
+        <span class="t"><b>La Vie En Rose</b><span>Champagne Pedicure</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- flute divider -->
+<div class="wrap"><div class="divider" aria-hidden="true">
+  <svg viewBox="0 0 22 30"><circle class="bub" cx="11" cy="8" r="2.2"/><circle class="bub" cx="7" cy="14" r="1.8"/><circle class="bub" cx="15" cy="12" r="1.8"/><path d="M6 2 L16 2 L14 15 Q11 19 8 15 Z" fill="none" stroke="#C79A54" stroke-width="1"/><line x1="11" y1="19" x2="11" y2="27" stroke="#C79A54" stroke-width="1"/><path d="M7 28 Q11 26 15 28" fill="none" stroke="#C79A54" stroke-width="1" stroke-linecap="round"/></svg>
+</div></div>
+
+<!-- ============ BENEFIT STRIP ============ -->
+<section class="benefits sec-pad">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Why West Midtown books here</span>
+      <h2>The details you <em>feel</em> the moment you sit down.</h2>
+    </div>
+    <div class="ben-grid">
+      <div class="ben reveal">
+        <div class="ben-ic"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 4c-3 6-3 12-3 15a3 3 0 006 0c0-3 0-9-3-15z" stroke="#A97F3E" stroke-width="1.5"/><path d="M9 26c4 2 10 2 14 0" stroke="#B15B69" stroke-width="1.5" stroke-linecap="round"/><circle cx="16" cy="10" r="1" fill="#C79A54"/></svg></div>
+        <h3>Spotless &amp; sanitary</h3>
+        <p>Single-use tools and daily disinfection, the cleanliness reviewers call out again and again.</p>
+      </div>
+      <div class="ben reveal">
+        <div class="ben-ic"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M11 6h10l-1.5 8.5a4 4 0 01-7 0z" stroke="#A97F3E" stroke-width="1.5" stroke-linejoin="round"/><line x1="16" y1="19" x2="16" y2="25" stroke="#A97F3E" stroke-width="1.5"/><path d="M12 26h8" stroke="#A97F3E" stroke-width="1.5" stroke-linecap="round"/><circle cx="13" cy="9" r="1" fill="#C9707E"/></svg></div>
+        <h3>In-salon wine bar</h3>
+        <p>A complimentary beverage and a glass of wine while your color sets. A treat, not a chore.</p>
+      </div>
+      <div class="ben reveal">
+        <div class="ben-ic"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="11" stroke="#A97F3E" stroke-width="1.5"/><path d="M16 9v7l5 3" stroke="#B15B69" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <h3>Walk-ins welcome</h3>
+        <p>Fast, detailed service with often no wait, seven days a week. Just come as you are.</p>
+      </div>
+      <div class="ben reveal">
+        <div class="ben-ic"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="6" y="9" width="20" height="14" rx="2" stroke="#A97F3E" stroke-width="1.5"/><path d="M6 13h20" stroke="#A97F3E" stroke-width="1.5"/><path d="M11 6v3M21 6v3" stroke="#C9707E" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <h3>Validated garage parking</h3>
+        <p>Park inside the Interlock Tower garage, validated, in the heart of West Midtown.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MENU / SERVICES ============ -->
+<section class="sec-pad" id="menu">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The Menu</span>
+      <h2>Read it like a <em>tasting card.</em></h2>
+      <p>Manicures, pedicures, enhancements and art, all done with the same attention to detail. Choose a classic pour or a signature treatment.</p>
+    </div>
+
+    <div class="menu-grid">
+      <!-- Manicures -->
+      <div class="card reveal">
+        <div class="card-head">
+          <svg class="ci" viewBox="0 0 46 46" fill="none" aria-hidden="true"><circle cx="23" cy="23" r="21" stroke="#C79A54" stroke-width="1"/><path d="M17 30c-1-6-1-9 1-14M23 32c-1-8-1-12 1-17M29 30c-1-6-1-9 1-14" stroke="#A97F3E" stroke-width="1.4" stroke-linecap="round"/><path d="M15 33c5 2 11 2 16 0" stroke="#C9707E" stroke-width="1.4" stroke-linecap="round"/></svg>
+          <div><h3>Manicures</h3><div class="sub">Hands &amp; Nail Care</div></div>
+        </div>
+        <div class="menu-row"><span class="name">Classic Manicure</span><span class="price">Classic</span></div>
+        <div class="menu-row"><span class="name">Organic Manicure</span><span class="price">Organic</span><span class="desc">Warm hand soak with essential oil, nail shaping and cuticle care.</span></div>
+        <div class="menu-row"><span class="name">Gel / Shellac Manicure</span><span class="price">Long-wear</span></div>
+        <div class="menu-row"><span class="name">SNS / Dip Powder</span><span class="price">Dip</span></div>
+        <div class="menu-row"><span class="name">Kids' Manicure</span><span class="price">Under 5</span></div>
+        <p class="menu-note"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="#A97F3E" stroke-width="1.3"/><path d="M10 6v5M10 14h.01" stroke="#A97F3E" stroke-width="1.4" stroke-linecap="round"/></svg>Huge color selection across regular polish, gel, acrylic and dip.</p>
+      </div>
+
+      <!-- Pedicures -->
+      <div class="card reveal">
+        <div class="card-head">
+          <svg class="ci" viewBox="0 0 46 46" fill="none" aria-hidden="true"><circle cx="23" cy="23" r="21" stroke="#C79A54" stroke-width="1"/><path d="M15 28c0-5 4-9 8-9s8 4 8 9" stroke="#A97F3E" stroke-width="1.4"/><circle cx="16" cy="19" r="1.6" fill="#C9707E"/><circle cx="20" cy="17" r="1.6" fill="#C9707E"/><circle cx="26" cy="17" r="1.6" fill="#C9707E"/><circle cx="30" cy="19" r="1.6" fill="#C9707E"/><path d="M15 31h16" stroke="#A97F3E" stroke-width="1.4" stroke-linecap="round"/></svg>
+          <div><h3>Pedicures</h3><div class="sub">Foot &amp; Sole Care</div></div>
+        </div>
+        <div class="menu-row"><span class="name">Basic Pedicure</span><span class="price">Classic</span></div>
+        <div class="menu-row"><span class="name">Organic Bliss Pedicure</span><span class="price">Organic</span><span class="desc">Rose soak, callus removal, sugar scrub and a hydrating mask.</span></div>
+        <div class="menu-row"><span class="name">Hot Stone Pedicure</span><span class="price">Warm</span></div>
+        <div class="menu-row"><span class="name">Callus Sole Solution</span><span class="price">Restorative</span></div>
+        <div class="menu-row"><span class="name">Jelly Pedicure</span><span class="price">Jelly Soak</span></div>
+        <p class="menu-note"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="#A97F3E" stroke-width="1.3"/><path d="M10 6v5M10 14h.01" stroke="#A97F3E" stroke-width="1.4" stroke-linecap="round"/></svg>Kids' pedicure available for under 5 or under 5 ft.</p>
+      </div>
+
+      <!-- Enhancements + Art -->
+      <div class="card reveal">
+        <div class="card-head">
+          <svg class="ci" viewBox="0 0 46 46" fill="none" aria-hidden="true"><circle cx="23" cy="23" r="21" stroke="#C79A54" stroke-width="1"/><path d="M23 12l2.4 4.9 5.4.8-3.9 3.8.9 5.3-4.8-2.5-4.8 2.5.9-5.3-3.9-3.8 5.4-.8z" fill="none" stroke="#C9707E" stroke-width="1.3" stroke-linejoin="round"/><path d="M14 33c6 2 12 2 18 0" stroke="#A97F3E" stroke-width="1.3" stroke-linecap="round"/></svg>
+          <div><h3>Enhancements &amp; Art</h3><div class="sub">Full Sets &amp; Design</div></div>
+        </div>
+        <div class="menu-row"><span class="name">Acrylic Full Set / Fill</span><span class="price">Full Set</span></div>
+        <div class="menu-row"><span class="name">Ombre Full Set / Fill</span><span class="price">Ombre</span></div>
+        <div class="menu-row"><span class="name">Builder Gel / Fill</span><span class="price">Builder</span></div>
+        <div class="menu-row"><span class="name">Apres Gel-X</span><span class="price">Gel-X</span></div>
+        <div class="menu-row"><span class="name">Acrylic on Toes</span><span class="price">Toes</span></div>
+        <div class="menu-row"><span class="name">Custom Nail Art</span><span class="price">Cat-eye &middot; Chrome &middot; Airbrush</span></div>
+      </div>
+
+      <!-- Waxing -->
+      <div class="card reveal">
+        <div class="card-head">
+          <svg class="ci" viewBox="0 0 46 46" fill="none" aria-hidden="true"><circle cx="23" cy="23" r="21" stroke="#C79A54" stroke-width="1"/><path d="M13 20c4-3 16-3 20 0" stroke="#A97F3E" stroke-width="1.4" stroke-linecap="round"/><path d="M15 26c3-2 13-2 16 0" stroke="#C9707E" stroke-width="1.4" stroke-linecap="round"/><circle cx="23" cy="23" r="1.4" fill="#C79A54"/></svg>
+          <div><h3>Waxing &amp; Brows</h3><div class="sub">Finishing Touches</div></div>
+        </div>
+        <div class="menu-row"><span class="name">Eyebrow Wax</span><span class="price">Brows</span></div>
+        <div class="menu-row"><span class="name">Upper Lip Wax</span><span class="price">Lip</span></div>
+        <div class="menu-row"><span class="name">Chin Wax</span><span class="price">Chin</span></div>
+        <div class="menu-row"><span class="name">Brow Tint</span><span class="price">Tint</span></div>
+        <p class="menu-note"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="#A97F3E" stroke-width="1.3"/><path d="M10 6v5M10 14h.01" stroke="#A97F3E" stroke-width="1.4" stroke-linecap="round"/></svg>Named, requested technicians. Ask for Henry, Alice, Olivia or Kacey.</p>
+      </div>
+
+      <!-- Signature band -->
+      <div class="signature-band reveal" id="signature">
+        <div>
+          <span class="eyebrow" style="color:var(--gold-soft)">The Signature Flight</span>
+          <h3 style="margin-top:.7rem">Poured for the occasion, <em>not the errand.</em></h3>
+          <p>Our specialty pedicures turn a treatment into a ritual. Reserved for date nights, celebrations and the days you simply deserve it.</p>
+        </div>
+        <div class="sig-list">
+          <div class="sig-item"><span class="n">La Vie En Rose Champagne</span><span class="p">Signature</span></div>
+          <div class="sig-item"><span class="n">Milk &amp; Honey</span><span class="p">Signature</span></div>
+          <div class="sig-item"><span class="n">Jelly Pedicure</span><span class="p">Signature</span></div>
+          <div class="sig-item"><span class="n">Hot Stone</span><span class="p">Signature</span></div>
+        </div>
+      </div>
+    </div>
+
+    <p style="text-align:center;margin-top:1.6rem;font-size:.8rem;color:var(--muted)">Full pricing shared in-salon and by phone. Every service starts with a consultation so your quote fits exactly what you want.</p>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider" aria-hidden="true">
+  <svg viewBox="0 0 22 30"><circle class="bub" cx="11" cy="8" r="2.2"/><circle class="bub" cx="7" cy="14" r="1.8"/><circle class="bub" cx="15" cy="12" r="1.8"/><path d="M6 2 L16 2 L14 15 Q11 19 8 15 Z" fill="none" stroke="#C79A54" stroke-width="1"/><line x1="11" y1="19" x2="11" y2="27" stroke="#C79A54" stroke-width="1"/><path d="M7 28 Q11 26 15 28" fill="none" stroke="#C79A54" stroke-width="1" stroke-linecap="round"/></svg>
+</div></div>
+
+<!-- ============ STORY ============ -->
+<section class="story sec-pad" id="story">
+  <div class="wrap story-grid">
+    <div class="story-art reveal" aria-hidden="true">
+      <svg viewBox="0 0 360 380" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <radialGradient id="sg" cx="30%" cy="24%" r="70%"><stop offset="0" stop-color="#C9707E" stop-opacity=".28"/><stop offset="1" stop-color="#C9707E" stop-opacity="0"/></radialGradient>
+          <linearGradient id="sgold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E3C98E"/><stop offset="1" stop-color="#C79A54"/></linearGradient>
+        </defs>
+        <rect width="360" height="380" fill="url(#sg)"/>
+        <!-- interlock-tower motif: stacked arches -->
+        <g stroke="#C79A54" stroke-width="1.2" fill="none" opacity=".8">
+          <path d="M120 300 V150 Q180 90 240 150 V300"/>
+          <path d="M140 300 V165 Q180 120 220 165 V300"/>
+          <path d="M160 300 V180 Q180 150 200 180 V300"/>
+        </g>
+        <line x1="90" y1="300" x2="270" y2="300" stroke="#E3C98E" stroke-width="1.4"/>
+        <!-- rose petals falling -->
+        <g fill="#C9707E" opacity=".5">
+          <ellipse cx="95" cy="90" rx="7" ry="4" transform="rotate(30 95 90)"/>
+          <ellipse cx="270" cy="120" rx="6" ry="3.5" transform="rotate(-24 270 120)"/>
+          <ellipse cx="70" cy="200" rx="6" ry="3.5" transform="rotate(48 70 200)"/>
+          <ellipse cx="290" cy="230" rx="7" ry="4" transform="rotate(-40 290 230)"/>
+        </g>
+        <!-- polish brush stroke -->
+        <path d="M60 340 Q140 320 300 340" stroke="url(#sgold)" stroke-width="4" fill="none" opacity=".7" stroke-linecap="round"/>
+        <!-- eleven "11" mark -->
+        <text x="180" y="70" text-anchor="middle" font-family="Georgia, serif" font-size="40" fill="url(#sgold)" opacity=".85" font-style="italic">11</text>
+      </svg>
+    </div>
+    <div class="story-copy reveal">
+      <span class="eyebrow">Our Salon</span>
+      <h2>West Midtown's <em>Kingdom of Nail Art.</em></h2>
+      <p>Tucked inside the Interlock Tower, moments from Atlantic Station and Georgia Tech, Eleven NAIL Bar was built to be the ultimate destination for premium nail and beauty in West Midtown. Regulars describe a room that is genuinely relaxing, with skilled technicians who pay attention to every detail.</p>
+      <p>From a Classic Manicure to the La Vie En Rose Champagne pedicure, everything is done with a huge color selection, meticulous sanitation and a warm, unhurried welcome. Students get a discount, walk-ins are always welcome, and the wine bar is on us.</p>
+      <blockquote class="story-quote">"It's a truly relaxing spot with skilled staff who pay attention to every detail."</blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="sec-pad" id="reviews">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Loved on Google, 4.7 stars</span>
+      <h2>The regulars say it <em>best.</em></h2>
+    </div>
+    <div class="rev-grid">
+      <div class="rev reveal">
+        <span class="stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg>
+        </span>
+        <blockquote>"Huge shoutout to Eleven Nail Bar! I walked in without an appointment and they were so sweet to fit me in. Henry gave me a fantastic pedicure, and Alice did my GelX nails perfectly."</blockquote>
+        <div class="who"><span class="av">A</span><span class="meta"><b>Andrea</b><span>Google review, 5 stars</span></span></div>
+      </div>
+
+      <div class="rev reveal">
+        <span class="stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg>
+        </span>
+        <blockquote>"I've been going here for 2 to 3 years and I never go anywhere else. I love Eleven and everyone treats you like friends and family."</blockquote>
+        <div class="who"><span class="av">K</span><span class="meta"><b>Kaitlin B.W.</b><span>Google review, 5 stars</span></span></div>
+      </div>
+
+      <div class="rev reveal">
+        <span class="stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg>
+        </span>
+        <blockquote>"Very clean and organized nail bar. They were fast, detailed and provided great customer service."</blockquote>
+        <div class="who"><span class="av">L</span><span class="meta"><b>Leslie Mercedes</b><span>Google review, 5 stars</span></span></div>
+      </div>
+
+      <div class="rev reveal">
+        <span class="stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg>
+        </span>
+        <blockquote>"Olivia did my toes. She did a great job."</blockquote>
+        <div class="who"><span class="av">C</span><span class="meta"><b>Courtney Smith</b><span>Google review, 5 stars</span></span></div>
+      </div>
+
+      <div class="rev reveal">
+        <span class="stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg>
+        </span>
+        <blockquote>"My nails came out looking exactly like the picture."</blockquote>
+        <div class="who"><span class="av">G</span><span class="meta"><b>Verified customer</b><span>Google review</span></span></div>
+      </div>
+
+      <div class="rev reveal">
+        <span class="stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8z"/></svg>
+        </span>
+        <blockquote>"Really nice and clean on the inside. Friendly staff. Very quick service, no wait."</blockquote>
+        <div class="who"><span class="av">G</span><span class="meta"><b>Verified customer</b><span>Google review</span></span></div>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:1.8rem;font-size:.82rem;color:var(--muted)">Reviews shown are real Google reviews. Your live Google feed can stream straight into this section.</p>
+  </div>
+</section>
+
+<!-- ============ VISIT / LOCATION ============ -->
+<section class="loc sec-pad" id="visit">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Visit the Bar</span>
+      <h2>Inside the <em>Interlock Tower.</em></h2>
+      <p>West Midtown / Home Park, near Atlantic Station and Georgia Tech. Validated parking in the tower garage.</p>
+    </div>
+    <div class="loc-grid">
+      <div class="loc-card reveal">
+        <h3>Hours &amp; contact</h3>
+        <table class="hours-table">
+          <tr><td>Monday to Thursday</td><td>10:00 AM to 7:30 PM</td></tr>
+          <tr><td>Friday to Saturday</td><td>9:30 AM to 7:00 PM</td></tr>
+          <tr><td>Sunday</td><td>12:00 PM to 6:00 PM</td></tr>
+        </table>
+        <div style="margin-top:1.4rem">
+          <div class="loc-line">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+            <span class="lt"><b>Address</b><span>1042 Northside Dr NW, Suite P-120, Atlanta, GA 30318</span></span>
+          </div>
+          <div class="loc-line">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.5 3h3l1.5 4-2 1.5a11 11 0 005 5l1.5-2 4 1.5v3a2 2 0 01-2 2A16 16 0 014.5 5a2 2 0 012-2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <!-- VERIFY PHONE: (404) 748-9731 -->
+            <span class="lt"><b>Phone</b><span><a href="tel:+14047489731" style="color:var(--gold-deep);font-weight:600">(404) 748-9731</a></span></span>
+          </div>
+          <div class="loc-line">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="7" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M4 10h16M8 4v3M16 4v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <span class="lt"><b>Good to know</b><span>Open 7 days a week, walk-ins welcome, student discounts, in-salon wine bar.</span></span>
+          </div>
+        </div>
+        <a class="btn btn-gold" style="margin-top:1.6rem" href="https://www.google.com/maps/search/?api=1&amp;query=Eleven+NAIL+Bar+West+Midtown+1042+Northside+Dr+NW+Atlanta+GA+30318" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+          Get directions
+        </a>
+      </div>
+
+      <div class="map-frame reveal" aria-label="Map of Eleven NAIL Bar West Midtown location">
+        <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs><radialGradient id="mg" cx="50%" cy="40%" r="60%"><stop offset="0" stop-color="#C79A54" stop-opacity=".18"/><stop offset="1" stop-color="#C79A54" stop-opacity="0"/></radialGradient></defs>
+          <rect width="400" height="400" fill="url(#mg)"/>
+          <!-- stylized street grid -->
+          <g stroke="#E3C98E" stroke-width="1" opacity=".28">
+            <line x1="0" y1="120" x2="400" y2="90"/><line x1="0" y1="240" x2="400" y2="220"/><line x1="0" y1="340" x2="400" y2="330"/>
+            <line x1="90" y1="0" x2="120" y2="400"/><line x1="220" y1="0" x2="240" y2="400"/><line x1="330" y1="0" x2="340" y2="400"/>
+          </g>
+          <!-- Northside Dr accent -->
+          <path d="M40 30 Q180 200 360 380" stroke="#C9707E" stroke-width="2.4" fill="none" opacity=".5"/>
+          <!-- interlock tower block -->
+          <rect x="176" y="150" width="48" height="70" fill="none" stroke="#E3C98E" stroke-width="1.3" opacity=".7"/>
+          <!-- pin -->
+          <g transform="translate(200,150)">
+            <path d="M0 40 C-14 20 -14 4 0 -12 C14 4 14 20 0 40 Z" fill="#C79A54"/>
+            <circle cx="0" cy="6" r="7" fill="#241A22"/>
+          </g>
+        </svg>
+        <div class="map-pin-badge"><b>Eleven NAIL Bar</b>Interlock Tower, West Midtown</div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Eleven+NAIL+Bar+West+Midtown+1042+Northside+Dr+NW+Atlanta+GA+30318" target="_blank" rel="noopener" aria-label="Open in Google Maps"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final sec-pad">
+  <div class="wrap final-inner">
+    <span class="eyebrow" style="color:var(--gold-soft)">Reserve your chair</span>
+    <h2 style="margin-top:.9rem">Pour yourself a <em>better appointment.</em></h2>
+    <p>Call and we will fit you in, walk-in or booked. Bring an inspiration photo, we will make your nails look exactly like the picture.</p>
+    <div class="hero-cta">
+      <!-- VERIFY PHONE: (404) 748-9731 -->
+      <a class="btn btn-gold" href="tel:+14047489731">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.5 3h3l1.5 4-2 1.5a11 11 0 005 5l1.5-2 4 1.5v3a2 2 0 01-2 2A16 16 0 014.5 5a2 2 0 012-2z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        Call (404) 748-9731
+      </a>
+      <a class="btn btn-ghost" aria-disabled="true" role="link" tabindex="-1">Book Online, Coming Soon</a>
+    </div>
+
+    <!-- Contact form. To receive these leads, swap the action email below. -->
+    <!-- REPLACE-WITH-CLIENT-EMAIL: change formsubmit.co/REPLACE-WITH-CLIENT-EMAIL to the salon's real inbox -->
+    <form class="final-form" action="https://formsubmit.co/REPLACE-WITH-CLIENT-EMAIL" method="POST">
+      <input type="text" name="name" placeholder="Your name" aria-label="Your name" required>
+      <input type="tel" name="phone" placeholder="Phone number" aria-label="Phone number" required>
+      <button type="submit">Request a callback</button>
+      <input type="hidden" name="_subject" value="New callback request from the website">
+      <input type="text" name="_honey" style="display:none">
+      <p class="fnote">We will call to confirm your time. No online payment, just a quick chat.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="brand-name" style="font-family:var(--serif);font-size:1.3rem">Eleven <b style="font-style:italic;color:var(--gold-soft)">NAIL</b> Bar</span>
+        <p>The Kingdom of Nail Art in West Midtown, Atlanta. Premium nails, custom art and signature champagne pedicures inside the Interlock Tower.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="#menu">The Menu</a>
+        <a href="#signature">Signature Flight</a>
+        <a href="#story">Our Salon</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#visit">Visit &amp; Hours</a>
+      </div>
+      <div class="foot-col">
+        <h4>Find us</h4>
+        <p>1042 Northside Dr NW, Suite P-120</p>
+        <p>Atlanta, GA 30318</p>
+        <!-- VERIFY PHONE: (404) 748-9731 -->
+        <a href="tel:+14047489731">(404) 748-9731</a>
+        <p>Open 7 days a week</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Eleven NAIL Bar West Midtown. All rights reserved.</span>
+      <span class="disclaimer">Concept preview built by DNA Agency, not affiliated with Eleven NAIL Bar West Midtown.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- mobile sticky call -->
+<div class="mobile-call">
+  <!-- VERIFY PHONE: (404) 748-9731 -->
+  <a href="tel:+14047489731">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.5 3h3l1.5 4-2 1.5a11 11 0 005 5l1.5-2 4 1.5v3a2 2 0 01-2 2A16 16 0 014.5 5a2 2 0 012-2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+    Call to reserve, (404) 748-9731
+  </a>
+</div>
+
+<script>
+  // nav shadow on scroll
+  var nav=document.getElementById('nav');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>12)nav.classList.add('scrolled');else nav.classList.remove('scrolled');
+  },{passive:true});
+
+  // trigger hero self-drawing art
+  window.addEventListener('load',function(){
+    var c=document.getElementById('coupe');
+    if(c)requestAnimationFrame(function(){c.classList.add('drawn')});
+  });
+
+  // scroll reveal, respecting reduced motion
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items=document.querySelectorAll('.reveal');
+  if(reduce||!('IntersectionObserver' in window)){
+    items.forEach(function(el){el.classList.add('in')});
+  }else{
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+      });
+    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    items.forEach(function(el){io.observe(el)});
+  }
+</script>

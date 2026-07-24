@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uptown Cuts, Modern Grooming in Uptown Charlotte</title>
+<meta name="description" content="Fresh fades, straight shaves, and clean cuts inside the Hilton building on South College Street. Modern grooming for busy Uptown Charlotte professionals.">
+<style>
+  :root{
+    --ink:#14171C;
+    --slate:#2C333D;
+    --steel:#5B7A99;
+    --steel-hi:#93AEC6;
+    --line:#46505C;
+    --white:#FFFFFF;
+    --canvas:#F4F6F8;
+    --canvas-2:#E9EDF1;
+    --text-dim:#5A6472;
+    --font: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --measure: 62ch;
+    --pad-x: clamp(1.25rem, 5vw, 6rem);
+    --shadow-soft: 0 1px 2px rgba(20,23,28,.06), 0 8px 30px rgba(20,23,28,.08);
+    --shadow-lift: 0 2px 4px rgba(20,23,28,.08), 0 18px 50px rgba(20,23,28,.14);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--font);
+    color:var(--ink);
+    background:var(--canvas);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:var(--steel);color:#fff}
+
+  .eyebrow{
+    font-size:clamp(.68rem,.62rem + .3vw,.78rem);
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    font-weight:700;
+    color:var(--steel);
+  }
+  .num{font-variant-numeric:tabular-nums}
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:100;
+    background:rgba(20,23,28,.82);
+    backdrop-filter:saturate(150%) blur(14px);
+    -webkit-backdrop-filter:saturate(150%) blur(14px);
+    border-bottom:1px solid rgba(70,80,92,.5);
+    transition:background .3s ease;
+  }
+  .nav-inner{
+    max-width:1240px;margin:0 auto;
+    padding:.85rem var(--pad-x);
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  }
+  .brand{display:flex;align-items:center;gap:.6rem;color:#fff}
+  .brand-mark{width:30px;height:30px;flex:0 0 auto}
+  .brand-name{
+    font-weight:800;letter-spacing:-.02em;font-size:1.06rem;
+    display:flex;flex-direction:column;line-height:1;
+  }
+  .brand-name small{
+    font-size:.5rem;letter-spacing:.22em;font-weight:600;
+    color:var(--steel-hi);margin-top:3px;text-transform:uppercase;
+  }
+  .nav-links{display:flex;align-items:center;gap:2rem}
+  .nav-links a{
+    color:#C4CCD6;font-size:.86rem;font-weight:500;position:relative;
+    padding:.15rem 0;transition:color .25s ease;
+  }
+  .nav-links a::after{
+    content:"";position:absolute;left:0;bottom:-3px;height:1.5px;width:0;
+    background:var(--steel-hi);transition:width .35s cubic-bezier(.4,0,.2,1);
+  }
+  .nav-links a:hover{color:#fff}
+  .nav-links a:hover::after{width:100%}
+  .nav-links a:focus-visible{outline:2px solid var(--steel-hi);outline-offset:4px;border-radius:2px}
+  .nav-cta{
+    background:var(--white);color:var(--ink);
+    padding:.6rem 1.25rem;border-radius:999px;
+    font-weight:700;font-size:.86rem;letter-spacing:-.01em;
+    box-shadow:var(--shadow-soft);
+    transition:transform .2s ease, box-shadow .25s ease, background .25s ease;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 22px rgba(147,174,198,.35);background:#fff}
+  .nav-cta:focus-visible{outline:2px solid var(--steel-hi);outline-offset:3px}
+  .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:.4rem}
+  .nav-toggle span{display:block;width:22px;height:2px;background:#fff;margin:4px 0;transition:.3s}
+
+  @media(max-width:860px){
+    .nav-links{
+      position:absolute;top:100%;left:0;right:0;
+      flex-direction:column;align-items:stretch;gap:0;
+      background:rgba(20,23,28,.98);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
+      max-height:0;overflow:hidden;transition:max-height .35s ease;
+    }
+    .nav-links.open{max-height:420px}
+    .nav-links a{padding:1rem var(--pad-x);border-top:1px solid rgba(70,80,92,.4)}
+    .nav-links a::after{display:none}
+    .nav-links .nav-cta{margin:1rem var(--pad-x);text-align:center}
+    .nav-toggle{display:block}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;min-height:92vh;
+    display:flex;align-items:flex-end;
+    overflow:hidden;
+    background:var(--ink);
+    isolation:isolate;
+  }
+  /* the precision fade: near-black top -> light steel bottom */
+  .hero-fade{
+    position:absolute;inset:0;z-index:-3;
+    background:linear-gradient(180deg,
+      #14171C 0%,
+      #191E25 24%,
+      #232B35 45%,
+      #38495A 66%,
+      #647E97 84%,
+      #93AEC6 100%);
+    transform-origin:bottom;
+    animation:fadeSweep .9s cubic-bezier(.22,.61,.36,1) both;
+  }
+  .hero-glow{
+    position:absolute;inset:0;z-index:-2;
+    background:
+      radial-gradient(1100px 600px at 78% 12%, rgba(147,174,198,.22), transparent 60%),
+      radial-gradient(700px 500px at 12% 90%, rgba(91,122,153,.28), transparent 65%);
+  }
+  .hero-grid{position:absolute;inset:0;z-index:-1;opacity:.5;pointer-events:none}
+  .hero-noise{
+    position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.04;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .hero-inner{
+    position:relative;max-width:1240px;width:100%;
+    margin:0 auto;padding:clamp(4rem,10vh,8rem) var(--pad-x) clamp(2.5rem,6vh,4rem);
+  }
+  .hero-chip{
+    display:inline-flex;align-items:center;gap:.55rem;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(147,174,198,.4);
+    color:#DCE4EC;
+    padding:.4rem .9rem;border-radius:999px;
+    font-size:.74rem;font-weight:600;letter-spacing:.02em;
+    backdrop-filter:blur(6px);
+    margin-bottom:1.6rem;
+    opacity:0;animation:riseIn .7s ease .55s both;
+  }
+  .hero-chip .dot{
+    width:7px;height:7px;border-radius:50%;background:#7BE0A5;
+    box-shadow:0 0 0 0 rgba(123,224,165,.6);
+    animation:pulse 2.4s ease-in-out infinite;
+  }
+  .hero-chip .num{text-transform:uppercase;letter-spacing:.05em}
+  .hero h1{
+    color:#fff;
+    font-size:clamp(2.5rem,1.4rem + 5.6vw,5.4rem);
+    line-height:1.02;
+    letter-spacing:-.02em;
+    font-weight:800;
+    max-width:16ch;
+    text-wrap:balance;
+  }
+  .hero h1 .l{display:block;opacity:0;transform:translateY(24px);animation:lineUp .8s cubic-bezier(.2,.7,.2,1) both}
+  .hero h1 .l:nth-child(1){animation-delay:.15s}
+  .hero h1 .l:nth-child(2){animation-delay:.28s;color:var(--steel-hi)}
+  .hero h1 .l:nth-child(3){animation-delay:.41s}
+  .hero-sub{
+    color:#C4CCD6;font-size:clamp(1rem,.94rem + .4vw,1.18rem);
+    max-width:46ch;margin-top:1.4rem;line-height:1.55;
+    opacity:0;animation:riseIn .7s ease .7s both;
+  }
+  .hero-actions{
+    display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.2rem;align-items:center;
+    opacity:0;animation:riseIn .7s ease .85s both;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:.6rem;
+    font-weight:700;font-size:.95rem;letter-spacing:-.01em;
+    padding:.95rem 1.7rem;border-radius:999px;cursor:pointer;
+    border:1px solid transparent;transition:transform .2s ease, box-shadow .25s ease, background .25s ease;
+  }
+  .btn-white{background:#fff;color:var(--ink);box-shadow:var(--shadow-lift)}
+  .btn-white:hover{transform:translateY(-2px);box-shadow:0 10px 34px rgba(147,174,198,.4)}
+  .btn-ghost{background:rgba(255,255,255,.06);color:#fff;border-color:rgba(147,174,198,.45)}
+  .btn-ghost:hover{background:rgba(147,174,198,.16);border-color:var(--steel-hi)}
+  .btn:focus-visible{outline:2px solid var(--steel-hi);outline-offset:3px}
+  .btn svg{flex:0 0 auto}
+
+  .hero-meta{
+    display:flex;flex-wrap:wrap;gap:.5rem 2rem;margin-top:2.6rem;
+    opacity:0;animation:riseIn .7s ease 1s both;
+  }
+  .hero-meta .m{display:flex;align-items:center;gap:.55rem;color:#AEB8C4;font-size:.82rem}
+  .hero-meta .m strong{color:#E4EAF0;font-weight:700}
+  .hero-meta svg{flex:0 0 auto;opacity:.85}
+  .hero-rating{display:flex;align-items:center;gap:.4rem}
+  .stars{display:inline-flex}
+  .stars svg{width:15px;height:15px}
+
+  /* ---------- BENEFIT STRIP ---------- */
+  .benefits{
+    background:var(--ink);
+    padding:clamp(3rem,7vw,4.75rem) var(--pad-x);
+    position:relative;
+    border-top:1px solid rgba(70,80,92,.5);
+  }
+  .benefits-inner{max-width:1240px;margin:0 auto}
+  .benefits-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:clamp(1.25rem,3vw,2.5rem);
+  }
+  .benefit{position:relative;padding-left:0}
+  .benefit-ic{
+    width:46px;height:46px;border-radius:12px;
+    background:linear-gradient(150deg,rgba(147,174,198,.18),rgba(91,122,153,.08));
+    border:1px solid rgba(147,174,198,.28);
+    display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;
+  }
+  .benefit-ic svg{width:24px;height:24px}
+  .benefit h3{color:#fff;font-size:1.06rem;font-weight:700;letter-spacing:-.01em;margin-bottom:.4rem}
+  .benefit p{color:#9BA6B3;font-size:.9rem;line-height:1.55}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{position:relative}
+  .wrap{max-width:1240px;margin:0 auto;padding:clamp(4rem,9vw,7rem) var(--pad-x)}
+  .sec-head{max-width:var(--measure);margin-bottom:clamp(2rem,4vw,3.25rem)}
+  .sec-head .eyebrow{display:inline-block;margin-bottom:.85rem}
+  .sec-head h2{
+    font-size:clamp(1.9rem,1.3rem + 2.6vw,3rem);
+    letter-spacing:-.02em;font-weight:800;line-height:1.06;color:var(--ink);
+    text-wrap:balance;
+  }
+  .sec-head p{margin-top:1rem;color:var(--text-dim);font-size:1.02rem;max-width:52ch}
+  .hair{height:1px;background:linear-gradient(90deg,var(--line),transparent);border:0;margin:0}
+
+  /* ---------- SERVICES ---------- */
+  #services{background:var(--white)}
+  .svc-tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.25rem}
+  .svc-tab{
+    font-family:inherit;font-size:.78rem;font-weight:600;letter-spacing:.03em;
+    text-transform:uppercase;
+    padding:.5rem 1rem;border-radius:999px;cursor:pointer;
+    background:var(--canvas);border:1px solid var(--canvas-2);color:var(--text-dim);
+    transition:all .2s ease;
+  }
+  .svc-tab[aria-selected="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .svc-tab:hover{border-color:var(--steel)}
+  .svc-tab:focus-visible{outline:2px solid var(--steel);outline-offset:2px}
+
+  .svc-grid{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+    gap:clamp(1rem,2vw,1.5rem);
+  }
+  .svc-card{
+    position:relative;background:var(--white);
+    border:1px solid var(--canvas-2);border-radius:16px;
+    padding:1.5rem 1.5rem 1.35rem;
+    display:flex;flex-direction:column;gap:.9rem;
+    transition:transform .28s ease, box-shadow .3s ease, border-color .3s ease;
+    overflow:hidden;
+  }
+  .svc-card::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(340px 150px at 100% 0%, rgba(91,122,153,.06), transparent 70%);
+    opacity:0;transition:opacity .3s ease;
+  }
+  .svc-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift);border-color:rgba(91,122,153,.4)}
+  .svc-card:hover::before{opacity:1}
+  .svc-card.hidden{display:none}
+  .svc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
+  .svc-illus{
+    width:56px;height:56px;flex:0 0 auto;border-radius:12px;
+    background:linear-gradient(155deg,var(--canvas),#fff);
+    border:1px solid var(--canvas-2);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .svc-illus svg{width:32px;height:32px}
+  .svc-dur{
+    font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--steel);font-variant-numeric:tabular-nums;
+    background:rgba(91,122,153,.1);padding:.28rem .55rem;border-radius:6px;white-space:nowrap;
+  }
+  .svc-card h3{font-size:1.08rem;font-weight:700;letter-spacing:-.01em;color:var(--ink);line-height:1.25}
+  .svc-card p{font-size:.88rem;color:var(--text-dim);line-height:1.55;flex:1}
+  .svc-foot{display:flex;align-items:center;gap:.55rem;padding-top:.35rem}
+  .svc-foot .tag{
+    font-size:.7rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--slate);display:inline-flex;align-items:center;gap:.35rem;
+  }
+  .svc-foot .tag svg{width:14px;height:14px;color:var(--steel)}
+  .svc-note{
+    margin-top:2rem;font-size:.85rem;color:var(--text-dim);
+    display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  }
+  .svc-note svg{color:var(--steel);flex:0 0 auto}
+
+  /* ---------- STORY ---------- */
+  #story{background:var(--canvas);overflow:hidden}
+  .story-grid{
+    display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;
+  }
+  @media(max-width:900px){.story-grid{grid-template-columns:1fr}}
+  .story-copy p{color:var(--slate);font-size:1.04rem;line-height:1.7;margin-top:1.1rem;max-width:54ch}
+  .story-copy p:first-of-type{margin-top:1.4rem}
+  .story-stats{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;
+    margin-top:2.4rem;
+  }
+  .stat{
+    background:var(--white);border:1px solid var(--canvas-2);border-radius:14px;
+    padding:1.15rem 1rem;box-shadow:var(--shadow-soft);
+  }
+  .stat .n{font-size:clamp(1.5rem,1rem + 1.6vw,2.1rem);font-weight:800;letter-spacing:-.03em;color:var(--ink);font-variant-numeric:tabular-nums}
+  .stat .n .accent{color:var(--steel)}
+  .stat .lbl{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-dim);margin-top:.2rem}
+
+  /* owner portrait built from SVG */
+  .story-visual{position:relative}
+  .portrait-card{
+    position:relative;border-radius:20px;overflow:hidden;
+    box-shadow:var(--shadow-lift);border:1px solid var(--canvas-2);
+    background:var(--ink);aspect-ratio:4/5;
+  }
+  .portrait-card svg{width:100%;height:100%;display:block}
+  .portrait-badge{
+    position:absolute;left:1.1rem;bottom:1.1rem;right:1.1rem;
+    background:rgba(20,23,28,.72);backdrop-filter:blur(10px);
+    border:1px solid rgba(147,174,198,.3);border-radius:14px;
+    padding:.85rem 1rem;color:#fff;
+  }
+  .portrait-badge .names{font-weight:700;letter-spacing:-.01em;font-size:.98rem}
+  .portrait-badge .role{font-size:.74rem;color:var(--steel-hi);letter-spacing:.04em;margin-top:.15rem;text-transform:uppercase}
+
+  /* ---------- REVIEWS ---------- */
+  #reviews{background:var(--ink);position:relative;overflow:hidden}
+  #reviews .hero-grid{opacity:.35}
+  #reviews .sec-head h2{color:#fff}
+  #reviews .sec-head p{color:#9BA6B3}
+  .rev-topline{
+    display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;
+    margin-bottom:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(70,80,92,.5);
+  }
+  .rev-score{display:flex;align-items:baseline;gap:.55rem;color:#fff}
+  .rev-score .big{font-size:3rem;font-weight:800;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+  .rev-score .of{color:#8B96A3;font-size:1rem}
+  .rev-topline .stars svg{width:19px;height:19px}
+  .rev-topline .cnt{color:#AEB8C4;font-size:.9rem}
+  .rev-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+    gap:clamp(1rem,2.2vw,1.6rem);
+  }
+  .rev-card{
+    background:linear-gradient(160deg,rgba(44,51,61,.85),rgba(20,23,28,.6));
+    border:1px solid rgba(70,80,92,.55);border-radius:16px;
+    padding:1.6rem 1.5rem;display:flex;flex-direction:column;gap:1rem;
+    transition:transform .28s ease, border-color .3s ease;
+  }
+  .rev-card:hover{transform:translateY(-3px);border-color:rgba(147,174,198,.5)}
+  .rev-card .stars svg{width:15px;height:15px}
+  .rev-card blockquote{color:#E4EAF0;font-size:1rem;line-height:1.6;font-weight:500}
+  .rev-card .src{display:flex;align-items:center;gap:.7rem;margin-top:auto}
+  .rev-avatar{
+    width:38px;height:38px;border-radius:50%;flex:0 0 auto;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(150deg,var(--steel),var(--slate));
+    color:#fff;font-weight:700;font-size:.9rem;
+  }
+  .rev-src-name{color:#fff;font-size:.86rem;font-weight:600}
+  .rev-src-meta{color:#8B96A3;font-size:.74rem;display:flex;align-items:center;gap:.35rem}
+  .rev-src-meta svg{width:12px;height:12px}
+  .rev-placeholder{
+    border:1px dashed rgba(147,174,198,.4);background:rgba(147,174,198,.04);
+    display:flex;flex-direction:column;gap:.6rem;align-items:flex-start;justify-content:center;
+  }
+  .rev-placeholder .ph-ic{color:var(--steel-hi)}
+  .rev-placeholder h4{color:#DCE4EC;font-size:.98rem;font-weight:700}
+  .rev-placeholder p{color:#8B96A3;font-size:.85rem;line-height:1.5}
+
+  /* ---------- LOCATION ---------- */
+  #visit{background:var(--white)}
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3rem)}
+  @media(max-width:880px){.visit-grid{grid-template-columns:1fr}}
+  .visit-info{display:flex;flex-direction:column;gap:1.5rem}
+  .info-row{display:flex;gap:1rem;align-items:flex-start}
+  .info-ic{
+    width:42px;height:42px;border-radius:11px;flex:0 0 auto;
+    background:var(--canvas);border:1px solid var(--canvas-2);
+    display:flex;align-items:center;justify-content:center;color:var(--steel);
+  }
+  .info-ic svg{width:21px;height:21px}
+  .info-row h3{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-dim);font-weight:700;margin-bottom:.3rem}
+  .info-row p{color:var(--ink);font-size:1rem;line-height:1.55}
+  .info-row .sub{color:var(--text-dim);font-size:.88rem}
+  .hours-table{width:100%;border-collapse:collapse;margin-top:.4rem}
+  .hours-table td{padding:.42rem 0;font-size:.94rem;border-bottom:1px solid var(--canvas-2)}
+  .hours-table td:first-child{color:var(--slate);font-weight:600}
+  .hours-table td:last-child{text-align:right;color:var(--ink);font-variant-numeric:tabular-nums}
+  .hours-table tr.today td{color:var(--steel);font-weight:700}
+  .hours-table tr.today td:first-child{color:var(--steel)}
+  .hours-table td.closed{color:var(--text-dim);font-weight:500}
+
+  .map-card{
+    position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--canvas-2);
+    box-shadow:var(--shadow-soft);min-height:340px;background:var(--slate);
+    display:flex;flex-direction:column;
+  }
+  .map-svg{flex:1;width:100%;display:block}
+  .map-foot{
+    position:absolute;left:1rem;right:1rem;bottom:1rem;
+    background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+    border-radius:12px;padding:.85rem 1rem;box-shadow:var(--shadow-soft);
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  }
+  .map-foot .addr{font-size:.82rem;color:var(--slate);line-height:1.35}
+  .map-foot .addr strong{color:var(--ink);display:block;font-size:.9rem}
+  .map-foot a{
+    background:var(--ink);color:#fff;padding:.55rem 1rem;border-radius:999px;
+    font-size:.8rem;font-weight:700;white-space:nowrap;
+    transition:background .2s ease;
+  }
+  .map-foot a:hover{background:var(--steel)}
+  .map-foot a:focus-visible{outline:2px solid var(--steel);outline-offset:2px}
+
+  /* ---------- FINAL CTA ---------- */
+  #book{
+    background:linear-gradient(180deg,#14171C 0%,#1B2028 55%,#2A3742 100%);
+    position:relative;overflow:hidden;
+  }
+  #book .hero-grid{opacity:.4}
+  .book-inner{
+    max-width:1240px;margin:0 auto;padding:clamp(4rem,9vw,7rem) var(--pad-x);
+    position:relative;text-align:center;
+  }
+  #book .eyebrow{color:var(--steel-hi)}
+  #book h2{
+    color:#fff;font-size:clamp(2rem,1.3rem + 3.2vw,3.4rem);
+    letter-spacing:-.02em;font-weight:800;line-height:1.05;margin:.9rem auto 0;
+    max-width:18ch;text-wrap:balance;
+  }
+  #book p{color:#C4CCD6;max-width:44ch;margin:1.1rem auto 0;font-size:1.06rem}
+  .book-actions{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center;margin-top:2.4rem}
+  .btn-lg{padding:1.1rem 2rem;font-size:1rem}
+  .btn:disabled,.btn.disabled{opacity:.55;cursor:not-allowed;pointer-events:none}
+  .book-soon{
+    display:inline-flex;align-items:center;gap:.5rem;
+    background:rgba(255,255,255,.05);color:#AEB8C4;border:1px solid rgba(147,174,198,.3);
+  }
+  .book-soon .pill{
+    font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    background:rgba(147,174,198,.2);color:var(--steel-hi);padding:.15rem .45rem;border-radius:5px;
+  }
+  .book-fine{color:#7E8996;font-size:.82rem;margin-top:1.5rem}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:#0F1216;color:#8B96A3;padding:clamp(3rem,6vw,4.5rem) var(--pad-x) 2.25rem}
+  .foot-inner{max-width:1240px;margin:0 auto}
+  .foot-top{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem;
+    padding-bottom:2.5rem;border-bottom:1px solid rgba(70,80,92,.4);
+  }
+  @media(max-width:760px){.foot-top{grid-template-columns:1fr;gap:1.75rem}}
+  .foot-brand .brand-name{color:#fff}
+  .foot-brand p{margin-top:1rem;font-size:.9rem;line-height:1.6;max-width:34ch}
+  .foot-tag{color:var(--steel-hi);font-size:.8rem;letter-spacing:.02em;margin-top:1rem;font-weight:600}
+  .foot-col h4{color:#DCE4EC;font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:1rem;font-weight:700}
+  .foot-col a,.foot-col p{display:block;color:#8B96A3;font-size:.9rem;margin-bottom:.6rem;transition:color .2s ease}
+  .foot-col a:hover{color:#fff}
+  .foot-bottom{
+    display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center;
+    padding-top:1.75rem;font-size:.8rem;
+  }
+  .disclaimer{color:#6B7583;max-width:60ch;line-height:1.5}
+  .disclaimer strong{color:#9BA6B3;font-weight:600}
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- KEYFRAMES ---------- */
+  @keyframes fadeSweep{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+  @keyframes lineUp{to{opacity:1;transform:none}}
+  @keyframes riseIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(123,224,165,.55)}50%{box-shadow:0 0 0 6px rgba(123,224,165,0)}}
+  @keyframes drift{from{background-position:0 0}to{background-position:60px 0}}
+
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    .hero-fade{transform:none}
+    .hero-chip,.hero-sub,.hero-actions,.hero-meta,.hero h1 .l{opacity:1;transform:none}
+    .reveal{opacity:1;transform:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top" aria-label="Uptown Cuts home">
+      <svg class="brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect x="1" y="1" width="30" height="30" rx="7" stroke="#93AEC6" stroke-width="1.5"/>
+        <path d="M8 22 L16 8 L24 22" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="8" y1="22" x2="24" y2="22" stroke="#5B7A99" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="16" cy="16.5" r="1.7" fill="#93AEC6"/>
+      </svg>
+      <span class="brand-name">Uptown Cuts<small>Uptown Charlotte</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#story">The Team</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit</a>
+      <a class="nav-cta" href="#book">Book Your Cut</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<main id="top">
+<section class="hero">
+  <div class="hero-fade"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-noise"></div>
+  <svg class="hero-grid" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g stroke="#46505C" stroke-width="1">
+      <line x1="180" y1="0" x2="180" y2="900"/>
+      <line x1="360" y1="0" x2="360" y2="900"/>
+      <line x1="540" y1="0" x2="540" y2="900"/>
+      <line x1="720" y1="0" x2="720" y2="900"/>
+      <line x1="900" y1="0" x2="900" y2="900"/>
+      <line x1="1080" y1="0" x2="1080" y2="900"/>
+      <line x1="1260" y1="0" x2="1260" y2="900"/>
+    </g>
+    <g stroke="#46505C" stroke-width="1" opacity="0.5">
+      <line x1="0" y1="300" x2="1440" y2="300"/>
+      <line x1="0" y1="600" x2="1440" y2="600"/>
+    </g>
+  </svg>
+
+  <div class="hero-inner">
+    <span class="hero-chip">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="num">Open till 7:00 · Uptown Charlotte</span>
+    </span>
+    <h1>
+      <span class="l">Fresh Fades.</span>
+      <span class="l">Straight Shaves.</span>
+      <span class="l">Clean Cuts.</span>
+    </h1>
+    <p class="hero-sub">Modern grooming for busy Uptown professionals, inside the Hilton building on South College Street. Excellent work, elevated service, and out the door on time.</p>
+    <div class="hero-actions">
+      <a class="btn btn-white" href="#book">
+        Book Your Cut
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <!-- VERIFY: replace with the shop's real booking/phone number -->
+      <a class="btn btn-ghost" href="tel:+15555555555">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 2.5h2.2l1 2.6-1.4 1a8 8 0 0 0 3.6 3.6l1-1.4 2.6 1v2.2a1 1 0 0 1-1.1 1A11 11 0 0 1 2.5 3.6a1 1 0 0 1 1-1.1Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        Call the Shop
+      </a>
+    </div>
+    <div class="hero-meta">
+      <span class="m hero-rating">
+        <span class="stars" aria-hidden="true">
+          <svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg>
+          <svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg>
+          <svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg>
+          <svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg>
+          <svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg>
+        </span>
+        <strong class="num">4.9</strong> on Google
+      </span>
+      <span class="m">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1.5C5.2 1.5 3 3.7 3 6.5c0 3.4 5 8 5 8s5-4.6 5-8c0-2.8-2.2-5-5-5Z" stroke="#93AEC6" stroke-width="1.3"/><circle cx="8" cy="6.4" r="1.7" stroke="#93AEC6" stroke-width="1.3"/></svg>
+        <strong>Hilton building</strong>, S College St
+      </span>
+      <span class="m">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.3" stroke="#93AEC6" stroke-width="1.3"/><path d="M8 4.6V8l2.4 1.5" stroke="#93AEC6" stroke-width="1.3" stroke-linecap="round"/></svg>
+        <strong>40+ years</strong> combined experience
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BENEFIT STRIP ============ -->
+<section class="benefits" aria-label="Why Uptown Cuts">
+  <div class="benefits-inner">
+    <div class="benefits-grid">
+      <div class="benefit reveal">
+        <div class="benefit-ic">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="2.4" stroke="#93AEC6" stroke-width="1.5"/><circle cx="6" cy="18" r="2.4" stroke="#93AEC6" stroke-width="1.5"/><path d="M8.1 7.3 20 15M8.1 16.7 20 9" stroke="#5B7A99" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Booked around your day</h3>
+        <p>Pop in between meetings or plan your monthly reset. Efficient grooming for people on the clock, with no cut rushed.</p>
+      </div>
+      <div class="benefit reveal d1">
+        <div class="benefit-ic">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20 18 6" stroke="#93AEC6" stroke-width="1.6" stroke-linecap="round"/><path d="M16 4l4 4-2 2-4-4z" stroke="#5B7A99" stroke-width="1.5" stroke-linejoin="round"/><circle cx="6" cy="18" r="1.4" fill="#93AEC6"/></svg>
+        </div>
+        <h3>Skilled, focused on detail</h3>
+        <p>A team with 40+ years combined experience. Skilled, friendly, and precise, from the fade to the final line-up.</p>
+      </div>
+      <div class="benefit reveal d2">
+        <div class="benefit-ic">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="9" width="16" height="11" rx="2" stroke="#93AEC6" stroke-width="1.5"/><path d="M8 9V6.5A4 4 0 0 1 16 6.5V9" stroke="#5B7A99" stroke-width="1.5"/><path d="M9 14h6" stroke="#93AEC6" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Walkable in Uptown</h3>
+        <p>Inside the Hilton on S College St, steps from the CATS light rail and garage parking. Convenient for office workers.</p>
+      </div>
+      <div class="benefit reveal d3">
+        <div class="benefit-ic">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M7 8c0-2 2-3 5-3s5 1 5 3M7 16c0 2 2 3 5 3s5-1 5-3" stroke="#93AEC6" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="12" r="2" stroke="#5B7A99" stroke-width="1.5"/></svg>
+        </div>
+        <h3>A calm, refined space</h3>
+        <p>Owner-operated by two barbers who both cut hair. Elevated service and a little time to breathe, complimentary drink included.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Services</span>
+      <h2>Everything from a quick buzz to the full chair.</h2>
+      <p>Standard cuts, signature fades, traditional straight-razor shaves, and grooming packages built for the way Uptown works. Any gender welcome.</p>
+    </div>
+
+    <div class="svc-tabs" role="tablist" aria-label="Filter services">
+      <button class="svc-tab" role="tab" aria-selected="true" data-cat="all">All</button>
+      <button class="svc-tab" role="tab" aria-selected="false" data-cat="cuts">Cuts</button>
+      <button class="svc-tab" role="tab" aria-selected="false" data-cat="fades">Fades</button>
+      <button class="svc-tab" role="tab" aria-selected="false" data-cat="beard">Beard &amp; Shave</button>
+      <button class="svc-tab" role="tab" aria-selected="false" data-cat="packages">Packages</button>
+    </div>
+
+    <div class="svc-grid" id="svcGrid">
+
+      <!-- Haircut -->
+      <article class="svc-card reveal" data-cat="cuts">
+        <div class="svc-top">
+          <div class="svc-illus">
+            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="9" cy="10" r="3" stroke="#5B7A99" stroke-width="1.6"/><circle cx="9" cy="22" r="3" stroke="#5B7A99" stroke-width="1.6"/><path d="M11.4 11.6 27 20M11.4 20.4 27 12" stroke="#93AEC6" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <span class="svc-dur">30 min</span>
+        </div>
+        <h3>Haircut</h3>
+        <p>A standard clipper or scissor cut above the shoulders. Consult, cut, and finish, any gender.</p>
+        <div class="svc-foot"><span class="tag"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Most requested</span></div>
+      </article>
+
+      <!-- Cut + Shampoo -->
+      <article class="svc-card reveal d1" data-cat="cuts">
+        <div class="svc-top">
+          <div class="svc-illus">
+            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M8 14c0-5 3.5-8 8-8s8 3 8 8" stroke="#5B7A99" stroke-width="1.6"/><path d="M10 18v2M13 20v2M16 18v2M19 20v2M22 18v2" stroke="#93AEC6" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <span class="svc-dur">30 min</span>
+        </div>
+        <h3>Cut + Shampoo</h3>
+        <p>A traditional haircut finished with a revitalizing shampoo. Walk out clean and styled.</p>
+        <div class="svc-foot"><span class="tag"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2v12M2 8h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Shampoo finish</span></div>
+      </article>
+
+      <!-- Buzz Cut -->
+      <article class="svc-card reveal d2" data-cat="cuts">
+        <div class="svc-top">
+          <div class="svc-illus">
+            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="7" y="8" width="18" height="6" rx="2" stroke="#5B7A99" stroke-width="1.6"/><path d="M10 14v3M13 14v3M16 14v3M19 14v3M22 14v3" stroke="#93AEC6" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <span class="svc-dur">20 min</span>
+        </div>
+        <h3>Buzz Cut</h3>
+        <p>A clean, single-guard clipper cut. Fast, sharp, and low-maintenance. Add a shampoo to finish.</p>
+        <div class="svc-foot"><span class="tag"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.4"/><path d="M8 5v3l2 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>Quickest in the chair</span></div>
+      </article>
+
+      <!-- Bald Fade -->
+      <article class="svc-card reveal" data-cat="fades">
+        <div class="svc-top">
+          <div class="svc-illus">
+            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><defs><linearGradient id="fadeg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#14171C"/><stop offset="1" stop-color="#93AEC6"/></linearGradient></defs><path d="M6 24c0-8 4.5-14 10-14s10 6 10 14" fill="url(#fadeg)" opacity="0.9"/><path d="M6 24c0-8 4.5-14 10-14s10 6 10 14" stroke="#5B7A99" stroke-width="1.4"/></svg>
+          </div>
+          <span class="svc-dur">45 min</span>
+        </div>
+        <h3>Bald Fade</h3>
+        <p>The signature: a classic fade with a clean skin shave on the sides, blended seamlessly into the top.</p>
+        <div class="svc-foot"><span class="tag"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2l1.8 3.7 4 .5-2.9 2.7.8 4L8 11l-3.7 1.9.8-4L2.2 6.2l4-.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>House signature</span></div>
+      </article>
+
+      <!-- Bald Fade + Beard -->
+      <article class="svc-card reveal d1" data-cat="fades">
+        <div class="svc-top">
+          <div class="svc-illus">
+            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M6 22c0-7 4.5-12 10-12s10 5 10 12" stroke="#5B7A99" stroke-width="1.6"/><path d="M11 22c1 3 2.5 4 5 4s4-1 5-4" stroke="#93AEC6" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <span class="svc-dur">50 min</span>
+        </div>
+        <h3>Bald Fade + Quick Beard Trim</h3>
+        <p>Our signature fade paired with a quick beard clean-up. Add a shampoo to finish it off.</p>
+        <div class="svc-foot"><span class="tag"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Fade + beard combo</span></div>
+      </article>
+
+      <!-- Extreme Cut -->
+      <article class="svc-card reveal d2" data-cat="fades">
+        <div class="svc-top">
+          <div class="svc-illus">
+            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 4l3 7 7 .8-5.2 4.8L22 24l-6-3.4L10 24l1.2-7.4L6 11.8 13 11z" stroke="#5B7A99" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="svc-dur">By quote</span>
+        </div>
+        <h3>Extreme Cut</h3>
+        <p>Custom designs, patterns, and statement styles. Bring the idea, priced on request at the chair.</p>
+        <div class="svc-foot"><span class="tag"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2v12M2 8h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Custom work</span></div>
+      </article>
+
+      <!-- Detailed Beard + Straight Razor -->
+      <article class="svc-card reveal" data-cat="beard">
+        <div class="svc-top">
+          <div class="svc-illus">
+            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 7l7 7" stroke="#5B7A99" stroke-width="1.8" stroke-linecap="round"/><path d="M12 14l14 10c1 .7 2-.6 1.3-1.6L18 10z" stroke="#93AEC6" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="svc-dur">30 min</span>
+        </div>
+        <h3>Detailed Beard Trim + Straight Razor Line-Up</h3>
+        <p>A full beard shaping with a straight-razor line-up for crisp, sculpted edges.</p>
+        <div class="svc-foot"><span class="tag"><svg viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Straight razor</span></div>
+      </article>
+
+      <!-- Cut + Detailed Beard -->
+      <article class="svc-card reveal d1" data-cat="beard">
+        <div class="svc-top">
+          <div class="svc-illus">
+            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="12" r="6" stroke="#5B7A99" stroke-width="1.6"/><path d="M10 15c0 5 2.5 9 6 9s6-4 6-9" stroke="#93AEC6" stroke-width="1.6"/></svg>
+          </div>
+          <span class="svc-dur">45 min</span>
+        </div>
+        <h3>Cut + Detailed Beard Trim</h3>
+        <p>A full haircut with a complete beard service, line-up, and shaping, top to jaw.</p>
+        <div class="svc-foot"><span class="tag"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Full grooming</span></div>
+      </article>
+
+      <!-- Hot Lather Shave -->
+      <article class="svc-card reveal d2" data-cat="beard">
+        <div class="svc-top">
+          <div class="svc-illus">
+            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M9 20c-2 0-3.5-1.5-3.5-3.5S7 13 9 13m0 7c1.5 2 3 3 5 3 3 0 5-2.5 5-5.5S17 12 14 12" stroke="#93AEC6" stroke-width="1.5" stroke-linecap="round"/><path d="M14 12l12-6-4 8z" stroke="#5B7A99" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="svc-dur">30 min</span>
+        </div>
+        <h3>Hot Lather Shave</h3>
+        <p>A traditional hot-towel treatment and full straight-razor shave. Two grades for fine or coarse hair.</p>
+        <div class="svc-foot"><span class="tag"><svg viewBox="0 0 16 16" fill="none"><path d="M8 1c2 2.5 3 4.5 3 6.5a3 3 0 1 1-6 0C5 5.5 6 3.5 8 1z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>Hot towel + razor</span></div>
+      </article>
+
+      <!-- Corporate Package -->
+      <article class="svc-card reveal" data-cat="packages">
+        <div class="svc-top">
+          <div class="svc-illus">
+            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="6" y="12" width="20" height="14" rx="2" stroke="#5B7A99" stroke-width="1.6"/><path d="M12 12V9a4 4 0 0 1 8 0v3" stroke="#93AEC6" stroke-width="1.6"/><path d="M16 17v4" stroke="#93AEC6" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <span class="svc-dur">30 min</span>
+        </div>
+        <h3>Corporate Package</h3>
+        <p>A complimentary drink, full face wax or beard trim, neck trim, plus shampoo and style. Built for the workday.</p>
+        <div class="svc-foot"><span class="tag"><svg viewBox="0 0 16 16" fill="none"><path d="M4 3h8l-1 5H5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M6 8v4h4V8M5 13h6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Drink included</span></div>
+      </article>
+
+      <!-- Platinum Package -->
+      <article class="svc-card reveal d1" data-cat="packages">
+        <div class="svc-top">
+          <div class="svc-illus">
+            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M6 12l4-4h12l4 4-10 14z" stroke="#5B7A99" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 8l6 18 6-18M6 12h20" stroke="#93AEC6" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="svc-dur">1 hr 30 min</span>
+        </div>
+        <h3>Platinum Package</h3>
+        <p>The full sit-down: haircut, face shave, shampoo and style, plus a brow and nose wax. The complete reset.</p>
+        <div class="svc-foot"><span class="tag"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2l1.8 3.7 4 .5-2.9 2.7.8 4L8 11l-3.7 1.9.8-4L2.2 6.2l4-.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>Signature package</span></div>
+      </article>
+
+      <!-- Groomsman Package -->
+      <article class="svc-card reveal d2" data-cat="packages">
+        <div class="svc-top">
+          <div class="svc-illus">
+            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="11" cy="10" r="3" stroke="#5B7A99" stroke-width="1.5"/><circle cx="21" cy="10" r="3" stroke="#93AEC6" stroke-width="1.5"/><path d="M5 24c0-4 2.7-6 6-6s6 2 6 6M15 24c0-4 2.7-6 6-6s6 2 6 6" stroke="#5B7A99" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <span class="svc-dur">1 hr</span>
+        </div>
+        <h3>Groomsman Package</h3>
+        <p>Wedding-party service for groups of four or more. Get the whole party sharp before the big day.</p>
+        <div class="svc-foot"><span class="tag"><svg viewBox="0 0 16 16" fill="none"><path d="M8 14s-5-3.3-5-7a3 3 0 0 1 5-2 3 3 0 0 1 5 2c0 3.7-5 7-5 7z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>Parties of 4+</span></div>
+      </article>
+
+    </div>
+
+    <p class="svc-note">
+      <svg width="17" height="17" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/><path d="M8 7.2v4M8 5.2h.01" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      Also available: grey blending, neck trims, brow and nose wax, and women's cuts by phone appointment. The full menu is reviewed with you at the chair.
+    </p>
+  </div>
+</section>
+
+<!-- ============ STORY ============ -->
+<section id="story">
+  <div class="wrap">
+    <div class="story-grid">
+      <div class="story-copy reveal">
+        <span class="eyebrow">The Team</span>
+        <h2 style="font-size:clamp(1.9rem,1.3rem + 2.6vw,3rem);letter-spacing:-.02em;font-weight:800;line-height:1.06;margin-top:.85rem;color:var(--ink)">Rooted in craft. Designed for Uptown.</h2>
+        <p>Uptown Cuts was founded in 2023 by Melanie Shope and Gwen Wilson with a clear idea: a barbershop where modern professionals can expect quality, consistency, and a little time to breathe.</p>
+        <p>Set inside the Hilton on South College Street, surrounded by the pulse of Uptown Charlotte, the shop serves people popping in between meetings or planning their monthly reset. Both owners cut hair, backed by a team that is skilled, friendly, and focused on detail, with 40+ years of combined experience.</p>
+        <div class="story-stats">
+          <div class="stat"><div class="n"><span class="accent">2</span></div><div class="lbl">Owners who cut</div></div>
+          <div class="stat"><div class="n">40<span class="accent">+</span></div><div class="lbl">Years combined</div></div>
+          <div class="stat"><div class="n">4.9<span class="accent">★</span></div><div class="lbl">Google rating</div></div>
+        </div>
+      </div>
+      <div class="story-visual reveal d2">
+        <div class="portrait-card">
+          <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="pg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#14171C"/>
+                <stop offset="0.5" stop-color="#2C333D"/>
+                <stop offset="1" stop-color="#5B7A99"/>
+              </linearGradient>
+              <radialGradient id="pglow" cx="50%" cy="30%" r="70%">
+                <stop offset="0" stop-color="#93AEC6" stop-opacity="0.35"/>
+                <stop offset="1" stop-color="#93AEC6" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <rect width="400" height="500" fill="url(#pg)"/>
+            <rect width="400" height="500" fill="url(#pglow)"/>
+            <!-- architectural grid echoing the tower -->
+            <g stroke="#46505C" stroke-width="1" opacity="0.4">
+              <line x1="80" y1="0" x2="80" y2="500"/>
+              <line x1="160" y1="0" x2="160" y2="500"/>
+              <line x1="240" y1="0" x2="240" y2="500"/>
+              <line x1="320" y1="0" x2="320" y2="500"/>
+              <line x1="0" y1="120" x2="400" y2="120"/>
+              <line x1="0" y1="240" x2="400" y2="240"/>
+              <line x1="0" y1="360" x2="400" y2="360"/>
+            </g>
+            <!-- two barber chairs, minimal line-art -->
+            <g stroke="#93AEC6" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.92">
+              <!-- chair 1 -->
+              <path d="M95 300 v-70 a22 22 0 0 1 22-22 h20 a22 22 0 0 1 22 22 v70"/>
+              <path d="M95 300 h64"/>
+              <path d="M112 300 v40 M142 300 v40"/>
+              <ellipse cx="127" cy="352" rx="34" ry="8"/>
+              <circle cx="127" cy="185" r="18" stroke="#DCE4EC"/>
+            </g>
+            <g stroke="#5B7A99" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.85">
+              <!-- chair 2 -->
+              <path d="M243 320 v-70 a22 22 0 0 1 22-22 h20 a22 22 0 0 1 22 22 v70"/>
+              <path d="M243 320 h64"/>
+              <path d="M260 320 v40 M290 320 v40"/>
+              <ellipse cx="275" cy="372" rx="34" ry="8"/>
+              <circle cx="275" cy="205" r="18" stroke="#93AEC6"/>
+            </g>
+            <!-- razor line, drawn across -->
+            <path d="M60 440 L340 440" stroke="#93AEC6" stroke-width="1.5" opacity="0.6" stroke-dasharray="2 6"/>
+          </svg>
+          <div class="portrait-badge">
+            <div class="names">Melanie Shope &amp; Gwen Wilson</div>
+            <div class="role">Founders · Est. 2023</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section id="reviews">
+  <svg class="hero-grid" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g stroke="#46505C" stroke-width="1">
+      <line x1="240" y1="0" x2="240" y2="900"/>
+      <line x1="480" y1="0" x2="480" y2="900"/>
+      <line x1="720" y1="0" x2="720" y2="900"/>
+      <line x1="960" y1="0" x2="960" y2="900"/>
+      <line x1="1200" y1="0" x2="1200" y2="900"/>
+    </g>
+  </svg>
+  <div class="wrap" style="position:relative">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Reviews</span>
+      <h2>The best cut in Uptown, in their words.</h2>
+      <p>Real reviews from Uptown Cuts clients on Google.</p>
+    </div>
+
+    <div class="rev-topline reveal">
+      <div class="rev-score"><span class="big num">4.9</span><span class="of">/ 5</span></div>
+      <div class="stars" aria-label="4.9 out of 5 stars">
+        <svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg>
+        <svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg>
+        <svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg>
+        <svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg>
+        <svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg>
+      </div>
+      <span class="cnt num">Based on ~109 Google reviews</span>
+    </div>
+
+    <div class="rev-grid">
+      <article class="rev-card reveal">
+        <div class="stars" aria-hidden="true">
+          <svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg><svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg><svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg><svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg><svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg>
+        </div>
+        <blockquote>"Melanie did an amazing job cutting my hair and had great attention to detail!"</blockquote>
+        <div class="src">
+          <div class="rev-avatar">SF</div>
+          <div>
+            <div class="rev-src-name">Sheldon Ferreira</div>
+            <div class="rev-src-meta"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2l1.5 3 3.3.5-2.4 2.3.6 3.3L8 9.6 4.9 11l.6-3.3L3.1 5.5 6.4 5z" fill="#5B7A99"/></svg>Google · May 2026</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="rev-card reveal d1">
+        <div class="stars" aria-hidden="true">
+          <svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg><svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg><svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg><svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg><svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg>
+        </div>
+        <blockquote>"Gwen is fantastic, skilled, attentive, and delivers a consistently great cut."</blockquote>
+        <div class="src">
+          <div class="rev-avatar">JA</div>
+          <div>
+            <div class="rev-src-name">John Allie</div>
+            <div class="rev-src-meta"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2l1.5 3 3.3.5-2.4 2.3.6 3.3L8 9.6 4.9 11l.6-3.3L3.1 5.5 6.4 5z" fill="#5B7A99"/></svg>Google · Mar 2026</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="rev-card reveal d2">
+        <div class="stars" aria-hidden="true">
+          <svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg><svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg><svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg><svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg><svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg>
+        </div>
+        <blockquote>"100% would recommend this place. Melanie gave me good advice on how to style it."</blockquote>
+        <div class="src">
+          <div class="rev-avatar">JZ</div>
+          <div>
+            <div class="rev-src-name">Jack Zabilka</div>
+            <div class="rev-src-meta"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2l1.5 3 3.3.5-2.4 2.3.6 3.3L8 9.6 4.9 11l.6-3.3L3.1 5.5 6.4 5z" fill="#5B7A99"/></svg>Google · Mar 2026</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="rev-card reveal">
+        <div class="stars" aria-hidden="true">
+          <svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg><svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg><svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg><svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg><svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg>
+        </div>
+        <blockquote>"I love the team at Uptown Cuts. I have been a client since they opened."</blockquote>
+        <div class="src">
+          <div class="rev-avatar">SK</div>
+          <div>
+            <div class="rev-src-name">Steven Kanczewski</div>
+            <div class="rev-src-meta"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2l1.5 3 3.3.5-2.4 2.3.6 3.3L8 9.6 4.9 11l.6-3.3L3.1 5.5 6.4 5z" fill="#5B7A99"/></svg>Google · Oct 2025</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="rev-card reveal d1">
+        <div class="stars" aria-hidden="true">
+          <svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg><svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg><svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg><svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg><svg viewBox="0 0 20 20" fill="#93AEC6"><path d="M10 1.5l2.4 5 5.5.5-4.1 3.6 1.2 5.4L10 18.6 5 15l1.2-5.4L2.1 7l5.5-.5z"/></svg>
+        </div>
+        <blockquote>"The best, and the only place in Charlotte that I trust to always leave looking my best."</blockquote>
+        <div class="src">
+          <div class="rev-avatar">JB</div>
+          <div>
+            <div class="rev-src-name">Joel Bruck</div>
+            <div class="rev-src-meta"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2l1.5 3 3.3.5-2.4 2.3.6 3.3L8 9.6 4.9 11l.6-3.3L3.1 5.5 6.4 5z" fill="#5B7A99"/></svg>Google · 2025</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="rev-card rev-placeholder reveal d2">
+        <div class="ph-ic">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16v11H8l-4 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 9h8M8 12h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h4>Your live Google reviews go here</h4>
+        <p>On the finished site, this feed pulls your latest Google reviews automatically, so new 5-star cuts show up on their own.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISIT ============ -->
+<section id="visit">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Visit</span>
+      <h2>In the Hilton, right in the middle of Uptown.</h2>
+      <p>Corner of College and 3rd. Steps from the CATS light rail and Hilton garage parking, walkable for anyone working the towers.</p>
+    </div>
+
+    <div class="visit-grid">
+      <div class="visit-info">
+        <div class="info-row reveal">
+          <div class="info-ic">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+          </div>
+          <div>
+            <h3>Location</h3>
+            <p>301 S College St #130, Charlotte, NC 28202</p>
+            <p class="sub">Inside the Hilton building, corner of College Street and 3rd Street.</p>
+          </div>
+        </div>
+
+        <hr class="hair">
+
+        <div class="info-row reveal d1">
+          <div class="info-ic">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <div style="flex:1">
+            <h3>Hours</h3>
+            <table class="hours-table">
+              <tr class="today"><td>Mon to Fri</td><td>9:00 AM to 7:00 PM</td></tr>
+              <tr><td>Saturday</td><td>9:00 AM to 3:00 PM</td></tr>
+              <tr><td>Sunday</td><td class="closed">Closed</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <hr class="hair">
+
+        <div class="info-row reveal d2">
+          <div class="info-ic">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="8" width="16" height="10" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M6 8l1.5-3h9L18 8M8 18v2M16 18v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8" cy="13" r="1" fill="currentColor"/><circle cx="16" cy="13" r="1" fill="currentColor"/></svg>
+          </div>
+          <div>
+            <h3>Getting here</h3>
+            <p>CATS Light Rail 3rd St / Convention Center station at the Hilton entrance.</p>
+            <p class="sub">Hilton garage parking on site. Please give one hour's notice to cancel; arriving 10+ minutes late may forfeit the appointment.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-card reveal d1">
+        <svg class="map-svg" viewBox="0 0 500 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="500" height="360" fill="#2C333D"/>
+          <!-- blocks -->
+          <g fill="#333B46">
+            <rect x="20" y="20" width="150" height="120" rx="3"/>
+            <rect x="330" y="20" width="150" height="120" rx="3"/>
+            <rect x="20" y="220" width="150" height="120" rx="3"/>
+            <rect x="330" y="220" width="150" height="120" rx="3"/>
+          </g>
+          <!-- streets -->
+          <g stroke="#46505C" stroke-width="18" opacity="0.55">
+            <line x1="250" y1="0" x2="250" y2="360"/>
+            <line x1="0" y1="180" x2="500" y2="180"/>
+          </g>
+          <g stroke="#5B7A99" stroke-width="2" opacity="0.5" stroke-dasharray="6 8">
+            <line x1="250" y1="0" x2="250" y2="360"/>
+            <line x1="0" y1="180" x2="500" y2="180"/>
+          </g>
+          <!-- light rail line -->
+          <path d="M60 360 Q 180 200 250 180 T 470 40" stroke="#93AEC6" stroke-width="2.5" fill="none" opacity="0.55" stroke-dasharray="1 7" stroke-linecap="round"/>
+          <!-- the Hilton block -->
+          <rect x="255" y="115" width="90" height="60" rx="4" fill="#5B7A99" opacity="0.28" stroke="#93AEC6" stroke-width="1.5"/>
+          <!-- pin -->
+          <g transform="translate(300 150)">
+            <circle r="24" fill="#93AEC6" opacity="0.18"/>
+            <path d="M0 -14 C -8 -14 -13 -8 -13 -2 C -13 6 0 18 0 18 C 0 18 13 6 13 -2 C 13 -8 8 -14 0 -14 Z" fill="#fff" stroke="#14171C" stroke-width="1"/>
+            <circle cy="-2" r="4.5" fill="#5B7A99"/>
+          </g>
+        </svg>
+        <div class="map-foot">
+          <div class="addr"><strong>Uptown Cuts</strong>301 S College St #130, Charlotte, NC</div>
+          <a href="https://maps.google.com/?q=Uptown+Cuts+301+S+College+St+Charlotte+NC+28202" target="_blank" rel="noopener">Directions</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section id="book">
+  <svg class="hero-grid" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g stroke="#46505C" stroke-width="1">
+      <line x1="240" y1="0" x2="240" y2="900"/>
+      <line x1="480" y1="0" x2="480" y2="900"/>
+      <line x1="720" y1="0" x2="720" y2="900"/>
+      <line x1="960" y1="0" x2="960" y2="900"/>
+      <line x1="1200" y1="0" x2="1200" y2="900"/>
+    </g>
+  </svg>
+  <div class="book-inner reveal">
+    <span class="eyebrow">Book</span>
+    <h2>Ready when you are. Sharp when you leave.</h2>
+    <p>Grab a chair with Melanie or Gwen and get back to your day looking your best.</p>
+    <div class="book-actions">
+      <!-- VERIFY: replace with the shop's real booking/phone number -->
+      <a class="btn btn-white btn-lg" href="tel:+15555555555">
+        <svg width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 2.5h2.2l1 2.6-1.4 1a8 8 0 0 0 3.6 3.6l1-1.4 2.6 1v2.2a1 1 0 0 1-1.1 1A11 11 0 0 1 2.5 3.6a1 1 0 0 1 1-1.1Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        Call to Book
+      </a>
+      <button class="btn book-soon btn-lg" disabled>
+        <span class="pill">Coming Soon</span>
+        Book Online
+      </button>
+    </div>
+    <p class="book-fine">Women's cuts by phone appointment. Groups of four or more, ask about the groomsman package.</p>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <span class="brand-name" style="font-weight:800;letter-spacing:-.02em;font-size:1.2rem;display:block">Uptown Cuts</span>
+        <p>Modern grooming in Uptown Charlotte. Fresh fades, straight shaves, and clean cuts inside the Hilton on South College Street.</p>
+        <div class="foot-tag">Stay Sharp, Stay Local.</div>
+      </div>
+      <div class="foot-col">
+        <h4>Visit</h4>
+        <p>301 S College St #130<br>Charlotte, NC 28202</p>
+        <p>Mon to Fri, 9 to 7 · Sat 9 to 3</p>
+        <!-- VERIFY: replace with the shop's real phone number -->
+        <a href="tel:+15555555555">Call the shop</a>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="#services">Services</a>
+        <a href="#story">The Team</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#book">Book Your Cut</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p class="disclaimer"><strong>Concept preview built by DNA Agency, not affiliated with Uptown Cuts.</strong> A design concept for demonstration. Content is drawn from public listings and may contain placeholders marked for verification.</p>
+      <p>&copy; 2026 Uptown Cuts</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Mobile nav
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  if(toggle && links){
+    toggle.addEventListener('click', function(){
+      var open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    links.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+      });
+    });
+  }
+
+  // Service filter tabs
+  var tabs = document.querySelectorAll('.svc-tab');
+  var cards = document.querySelectorAll('#svcGrid .svc-card');
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      tabs.forEach(function(t){ t.setAttribute('aria-selected','false'); });
+      tab.setAttribute('aria-selected','true');
+      var cat = tab.getAttribute('data-cat');
+      cards.forEach(function(c){
+        var show = cat === 'all' || c.getAttribute('data-cat') === cat;
+        c.classList.toggle('hidden', !show);
+      });
+    });
+  });
+
+  // Scroll reveal
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revs = document.querySelectorAll('.reveal');
+  if(reduce || !('IntersectionObserver' in window)){
+    revs.forEach(function(r){ r.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    revs.forEach(function(r){ io.observe(r); });
+  }
+})();
+</script>
+</body>
+</html>

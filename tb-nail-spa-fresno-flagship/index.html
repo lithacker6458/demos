@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TB Nail Spa, Fresno | Belong to Luxury. Deserve Excellence.</title>
+<meta name="description" content="TB Nail Spa in Northeast Fresno. Premier nails and spa treatments with medical-grade sterilization, single-use kits, and a free drink with every service. Belong to Luxury. Deserve Excellence.">
+<style>
+  :root {
+    --sage: #5E7355;
+    --sage-deep: #4C5F45;
+    --forest: #33402E;
+    --porcelain: #F7F4EC;
+    --card: #FCFAF4;
+    --rose: #D9A7A0;
+    --rose-deep: #C98F87;
+    --brass: #B08A4F;
+    --ink: #2C2A24;
+    --ink-soft: #5A564C;
+    --hairline: rgba(176, 138, 79, 0.35);
+    --shadow-sage: rgba(51, 64, 46, 0.10);
+    --shadow-deep: rgba(51, 64, 46, 0.18);
+    --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+    --sans: 'Avenir Next', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--porcelain);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection { background: var(--rose); color: var(--forest); }
+
+  a { color: inherit; text-decoration: none; }
+
+  .wrap { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 3rem); }
+
+  .label {
+    font-family: var(--sans);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: clamp(0.68rem, 1.4vw, 0.76rem);
+    font-weight: 600;
+    color: var(--sage);
+  }
+
+  .serif { font-family: var(--serif); font-weight: 400; }
+
+  /* ---------- UTILITY BAR ---------- */
+  .util {
+    background: var(--forest);
+    color: var(--porcelain);
+    font-size: clamp(0.72rem, 1.6vw, 0.82rem);
+    letter-spacing: 0.04em;
+  }
+  .util .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    min-height: 40px;
+    text-align: center;
+    flex-wrap: wrap;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+  }
+  .util span { display: inline-flex; align-items: center; gap: 0.45rem; }
+  .util svg { width: 15px; height: 15px; flex-shrink: 0; }
+  .util .dot { color: var(--brass); font-weight: 700; }
+
+  /* ---------- NAV ---------- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(247, 244, 236, 0.86);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--hairline);
+    transition: box-shadow 0.4s ease;
+  }
+  nav.scrolled { box-shadow: 0 6px 28px var(--shadow-sage); }
+  nav .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 74px;
+  }
+  .brand { display: flex; flex-direction: column; line-height: 1; }
+  .brand .name {
+    font-family: var(--serif);
+    font-size: clamp(1.3rem, 3vw, 1.6rem);
+    font-weight: 400;
+    color: var(--forest);
+    letter-spacing: 0.02em;
+  }
+  .brand .name b { font-weight: 400; color: var(--sage); }
+  .brand .rule {
+    height: 1.5px;
+    width: 52px;
+    background: linear-gradient(90deg, var(--brass), transparent);
+    margin-top: 5px;
+  }
+  .brand .sub {
+    font-size: 0.6rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 5px;
+  }
+  .nav-links { display: flex; align-items: center; gap: clamp(1.2rem, 2.6vw, 2.2rem); }
+  .nav-links a.link {
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    font-weight: 500;
+    position: relative;
+    transition: color 0.25s ease;
+  }
+  .nav-links a.link::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -6px;
+    width: 0; height: 1.5px;
+    background: var(--sage);
+    transition: width 0.3s ease;
+  }
+  .nav-links a.link:hover { color: var(--forest); }
+  .nav-links a.link:hover::after { width: 100%; }
+  .nav-cta {
+    background: var(--sage);
+    color: var(--porcelain) !important;
+    padding: 0.62rem 1.3rem;
+    border-radius: 40px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: background 0.25s ease, transform 0.25s ease;
+  }
+  .nav-cta:hover { background: var(--forest); transform: translateY(-1px); }
+  .nav-toggle { display: none; }
+  @media (max-width: 860px) {
+    .nav-links a.link { display: none; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    position: relative;
+    min-height: clamp(600px, 92vh, 900px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 12%, rgba(255,255,255,0.7), transparent 70%),
+      radial-gradient(ellipse 120% 80% at 50% 120%, rgba(94,115,85,0.16), transparent 60%),
+      linear-gradient(170deg, #FBF9F2 0%, var(--porcelain) 46%, #EFEBDE 100%);
+  }
+  .hero-botanicals {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .hero-botanicals svg { position: absolute; }
+  .sprig-1 { left: -3%; bottom: -6%; width: clamp(220px, 34vw, 480px); transform-origin: 20% 90%; animation: sway 11s ease-in-out infinite; }
+  .sprig-2 { right: -4%; bottom: -8%; width: clamp(240px, 38vw, 520px); transform-origin: 80% 90%; animation: sway2 13s ease-in-out infinite; }
+  .sprig-3 { right: 6%; top: -4%; width: clamp(150px, 22vw, 300px); transform-origin: 70% 10%; animation: sway 9s ease-in-out infinite 1s; opacity: 0.7; }
+  .sprig-4 { left: 4%; top: -2%; width: clamp(120px, 18vw, 240px); transform-origin: 30% 10%; animation: sway2 10.5s ease-in-out infinite 0.5s; opacity: 0.55; }
+
+  .steam { position: absolute; z-index: 2; pointer-events: none; }
+  .steam svg { display: block; }
+  .steam-1 { left: 28%; bottom: 8%; animation: rise 12s ease-in-out infinite; }
+  .steam-2 { left: 52%; bottom: 4%; animation: rise 15s ease-in-out infinite 3s; }
+  .steam-3 { left: 68%; bottom: 12%; animation: rise 13.5s ease-in-out infinite 6s; }
+
+  .hero-inner { position: relative; z-index: 5; padding: 6rem 1.25rem; max-width: 860px; }
+  .hero .eyebrow {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    color: var(--brass);
+    letter-spacing: 0.32em;
+    font-size: clamp(0.64rem, 1.5vw, 0.74rem);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2.6rem, 8vw, 5.4rem);
+    line-height: 1.02;
+    color: var(--forest);
+    letter-spacing: -0.01em;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--sage);
+    display: block;
+  }
+  .hero .lede {
+    font-size: clamp(1rem, 2.2vw, 1.22rem);
+    color: var(--ink-soft);
+    max-width: 560px;
+    margin: 1.6rem auto 0;
+    font-weight: 400;
+  }
+  .trust-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(0.6rem, 2vw, 1.4rem);
+    flex-wrap: wrap;
+    margin: 2rem auto 2.4rem;
+    max-width: 640px;
+  }
+  .trust-strip .ti {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: clamp(0.74rem, 1.7vw, 0.86rem);
+    color: var(--forest);
+    font-weight: 500;
+  }
+  .trust-strip .ti svg { width: 18px; height: 18px; color: var(--sage); }
+  .trust-strip .sep { color: var(--hairline); font-weight: 400; }
+  @media (max-width: 560px) { .trust-strip .sep { display: none; } }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    font-family: var(--sans);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  }
+  .btn-primary {
+    background: var(--rose);
+    color: var(--forest);
+    padding: 1rem 2.3rem;
+    border-radius: 44px;
+    font-size: clamp(0.92rem, 2vw, 1.02rem);
+    box-shadow: 0 10px 30px rgba(217, 167, 160, 0.5);
+  }
+  .btn-primary:hover { background: var(--rose-deep); transform: translateY(-2px); box-shadow: 0 16px 40px rgba(201, 143, 135, 0.55); }
+  .btn-primary svg { width: 18px; height: 18px; }
+  .btn-ghost {
+    background: transparent;
+    color: var(--forest);
+    padding: 1rem 2rem;
+    border-radius: 44px;
+    border: 1.5px solid var(--sage);
+    font-size: clamp(0.92rem, 2vw, 1.02rem);
+  }
+  .btn-ghost:hover { background: var(--sage); color: var(--porcelain); transform: translateY(-2px); }
+  .hero-ctas { display: flex; gap: 0.9rem; justify-content: center; flex-wrap: wrap; }
+
+  .scroll-cue {
+    position: absolute;
+    bottom: 1.5rem; left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    color: var(--sage);
+    animation: bob 2.4s ease-in-out infinite;
+  }
+  .scroll-cue svg { width: 24px; height: 24px; }
+
+  /* ---------- SECTIONS ---------- */
+  section { position: relative; }
+  .sec-pad { padding: clamp(4rem, 9vw, 7rem) 0; }
+  .sec-head { text-align: center; max-width: 660px; margin: 0 auto clamp(2.5rem, 6vw, 4rem); }
+  .sec-head .label { display: inline-block; margin-bottom: 1rem; }
+  .sec-head h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2rem, 5.2vw, 3.2rem);
+    line-height: 1.08;
+    color: var(--forest);
+    letter-spacing: -0.01em;
+  }
+  .sec-head p {
+    margin-top: 1rem;
+    color: var(--ink-soft);
+    font-size: clamp(0.98rem, 2vw, 1.1rem);
+  }
+
+  /* ---------- BENEFITS ---------- */
+  .benefits { background: var(--card); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+  .benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: clamp(1.4rem, 3vw, 2.4rem);
+  }
+  .benefit {
+    text-align: center;
+    padding: 0.5rem;
+  }
+  .benefit .ico {
+    width: 66px; height: 66px;
+    margin: 0 auto 1.2rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: radial-gradient(circle at 35% 30%, #EBF0E4, #DCE5D2);
+    border: 1px solid var(--hairline);
+  }
+  .benefit .ico svg { width: 32px; height: 32px; color: var(--sage-deep); }
+  .benefit h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(1.15rem, 2.4vw, 1.35rem);
+    color: var(--forest);
+    margin-bottom: 0.45rem;
+  }
+  .benefit p { font-size: 0.92rem; color: var(--ink-soft); }
+
+  /* ---------- SERVICES ---------- */
+  .services { background: var(--porcelain); }
+  .svc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: clamp(1.2rem, 2.6vw, 1.8rem);
+  }
+  .svc-card {
+    background: var(--card);
+    border: 1px solid var(--hairline);
+    border-radius: 18px;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  }
+  .svc-card:hover { transform: translateY(-6px); box-shadow: 0 22px 48px var(--shadow-sage); border-color: var(--sage); }
+  .svc-illus {
+    height: 148px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(155deg, #EEF2E8 0%, #E4EBDB 100%);
+    border-bottom: 1px solid var(--hairline);
+    position: relative;
+    overflow: hidden;
+  }
+  .svc-illus::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 70% 20%, rgba(255,255,255,0.6), transparent 55%);
+    pointer-events: none;
+  }
+  .svc-illus svg { width: 92px; height: 92px; position: relative; z-index: 1; }
+  .svc-body { padding: 1.5rem 1.6rem 1.7rem; display: flex; flex-direction: column; flex: 1; }
+  .svc-tag {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--sage);
+    background: #EBF0E4;
+    padding: 0.3rem 0.65rem;
+    border-radius: 30px;
+    margin-bottom: 0.9rem;
+  }
+  .svc-body h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(1.28rem, 2.6vw, 1.5rem);
+    color: var(--forest);
+    line-height: 1.15;
+    margin-bottom: 0.55rem;
+  }
+  .svc-body p { font-size: 0.9rem; color: var(--ink-soft); flex: 1; }
+  .svc-incl {
+    margin-top: 1.1rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--hairline);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .svc-incl span {
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--brass);
+    background: rgba(176, 138, 79, 0.09);
+    padding: 0.28rem 0.55rem;
+    border-radius: 4px;
+  }
+  .svc-note {
+    text-align: center;
+    margin-top: clamp(2.2rem, 5vw, 3rem);
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+  }
+  .svc-note b { color: var(--forest); font-weight: 600; }
+
+  /* ---------- STORY ---------- */
+  .story { background: var(--card); border-top: 1px solid var(--hairline); }
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: center;
+  }
+  @media (max-width: 880px) { .story-grid { grid-template-columns: 1fr; } }
+  .story-copy .label { display: inline-block; margin-bottom: 1rem; }
+  .story-copy h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(1.9rem, 4.6vw, 2.9rem);
+    line-height: 1.1;
+    color: var(--forest);
+    margin-bottom: 1.3rem;
+    letter-spacing: -0.01em;
+  }
+  .story-copy p { color: var(--ink-soft); margin-bottom: 1.1rem; font-size: clamp(0.98rem, 2vw, 1.08rem); }
+  .story-copy .pull {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(1.15rem, 2.6vw, 1.42rem);
+    color: var(--sage-deep);
+    line-height: 1.4;
+    border-left: 2px solid var(--brass);
+    padding-left: 1.2rem;
+    margin: 1.6rem 0;
+  }
+  .story-stats { display: flex; gap: 2rem; margin-top: 2rem; flex-wrap: wrap; }
+  .story-stats .st .n {
+    font-family: var(--serif);
+    font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+    color: var(--sage);
+    line-height: 1;
+  }
+  .story-stats .st .t {
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 0.4rem;
+    font-weight: 600;
+  }
+  .story-art {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    border-radius: 20px;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(255,255,255,0.55), transparent 55%),
+      linear-gradient(160deg, #E7EDDF 0%, #D6E0C9 55%, #C9D6BA 100%);
+    border: 1px solid var(--hairline);
+    box-shadow: 0 24px 60px var(--shadow-deep);
+    display: grid;
+    place-items: center;
+  }
+  .story-art svg { width: 78%; height: 78%; }
+
+  /* ---------- REVIEWS ---------- */
+  .reviews { background: var(--forest); color: var(--porcelain); }
+  .reviews .sec-head h2 { color: var(--porcelain); }
+  .reviews .sec-head .label { color: var(--rose); }
+  .reviews .sec-head p { color: rgba(247,244,236,0.72); }
+  .rev-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: clamp(1.2rem, 2.6vw, 1.8rem);
+  }
+  .rev-card {
+    background: rgba(247, 244, 236, 0.05);
+    border: 1px solid rgba(247, 244, 236, 0.14);
+    border-radius: 16px;
+    padding: 1.7rem 1.7rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .rev-card .stars { display: flex; gap: 3px; margin-bottom: 1rem; }
+  .rev-card .stars svg { width: 17px; height: 17px; color: var(--brass); }
+  .rev-card .quote {
+    font-family: var(--serif);
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    line-height: 1.5;
+    color: var(--porcelain);
+    flex: 1;
+  }
+  .rev-card .meta {
+    margin-top: 1.3rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(247,244,236,0.14);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+  }
+  .rev-card .meta .src { color: var(--rose); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; font-size: 0.68rem; }
+  .rev-card .meta .vp { color: rgba(247,244,236,0.55); }
+  .rev-foot {
+    text-align: center;
+    margin-top: clamp(2.4rem, 5vw, 3.2rem);
+    color: rgba(247,244,236,0.72);
+    font-size: 0.95rem;
+  }
+  .rev-foot b { color: var(--rose); font-weight: 600; }
+
+  /* ---------- BOOKING / CONTACT ---------- */
+  .book { background: var(--porcelain); }
+  .book-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+  @media (max-width: 880px) { .book-grid { grid-template-columns: 1fr; } }
+  .book-info .label { display: inline-block; margin-bottom: 1rem; }
+  .book-info h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(1.9rem, 4.6vw, 2.9rem);
+    line-height: 1.1;
+    color: var(--forest);
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.01em;
+  }
+  .book-info > p { color: var(--ink-soft); margin-bottom: 1.8rem; font-size: clamp(0.98rem, 2vw, 1.08rem); }
+  .info-row { display: flex; gap: 0.9rem; margin-bottom: 1.4rem; align-items: flex-start; }
+  .info-row .ico {
+    width: 42px; height: 42px; flex-shrink: 0;
+    border-radius: 12px;
+    background: radial-gradient(circle at 35% 30%, #EBF0E4, #DCE5D2);
+    border: 1px solid var(--hairline);
+    display: grid; place-items: center;
+  }
+  .info-row .ico svg { width: 20px; height: 20px; color: var(--sage-deep); }
+  .info-row .rt h4 { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); font-weight: 700; margin-bottom: 0.25rem; }
+  .info-row .rt p { color: var(--forest); font-size: 0.98rem; line-height: 1.5; }
+  .info-row .rt a { color: var(--forest); border-bottom: 1px solid var(--hairline); }
+  .info-row .rt a:hover { color: var(--sage); }
+  .hours-tbl { margin-top: 0.3rem; }
+  .hours-tbl div { display: flex; justify-content: space-between; font-size: 0.94rem; padding: 0.28rem 0; color: var(--forest); border-bottom: 1px dotted var(--hairline); }
+  .hours-tbl div span:first-child { color: var(--ink-soft); }
+  .call-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 1.6rem;
+    background: var(--sage);
+    color: var(--porcelain);
+    padding: 0.95rem 1.8rem;
+    border-radius: 44px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    font-size: 1.02rem;
+    transition: background 0.25s ease, transform 0.25s ease;
+  }
+  .call-cta:hover { background: var(--forest); transform: translateY(-2px); }
+  .call-cta svg { width: 19px; height: 19px; }
+
+  .book-form {
+    background: var(--card);
+    border: 1px solid var(--hairline);
+    border-radius: 20px;
+    padding: clamp(1.6rem, 4vw, 2.4rem);
+    box-shadow: 0 22px 54px var(--shadow-sage);
+  }
+  .book-form h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(1.4rem, 3vw, 1.75rem);
+    color: var(--forest);
+    margin-bottom: 0.4rem;
+  }
+  .book-form .fh { font-size: 0.9rem; color: var(--ink-soft); margin-bottom: 1.5rem; }
+  .fld { margin-bottom: 1.1rem; }
+  .fld label { display: block; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--sage); margin-bottom: 0.45rem; }
+  .fld input, .fld select, .fld textarea {
+    width: 100%;
+    font-family: var(--sans);
+    font-size: 0.96rem;
+    color: var(--ink);
+    background: var(--porcelain);
+    border: 1px solid var(--hairline);
+    border-radius: 11px;
+    padding: 0.8rem 1rem;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .fld input:focus, .fld select:focus, .fld textarea:focus {
+    outline: none;
+    border-color: var(--sage);
+    box-shadow: 0 0 0 3px rgba(94, 115, 85, 0.14);
+  }
+  .fld textarea { resize: vertical; min-height: 82px; }
+  .fld-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+  @media (max-width: 440px) { .fld-row { grid-template-columns: 1fr; } }
+  .form-submit {
+    width: 100%;
+    background: var(--rose);
+    color: var(--forest);
+    padding: 1rem;
+    border-radius: 44px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    box-shadow: 0 10px 26px rgba(217, 167, 160, 0.5);
+    margin-top: 0.4rem;
+  }
+  .form-submit:hover { background: var(--rose-deep); transform: translateY(-2px); }
+  .form-fine { font-size: 0.76rem; color: var(--ink-soft); text-align: center; margin-top: 0.9rem; }
+  .form-fine .soon {
+    display: inline-block;
+    margin-top: 0.6rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--brass);
+    background: rgba(176, 138, 79, 0.1);
+    padding: 0.4rem 0.85rem;
+    border-radius: 30px;
+    cursor: not-allowed;
+    opacity: 0.85;
+  }
+
+  /* ---------- FINAL CTA ---------- */
+  .final {
+    position: relative;
+    text-align: center;
+    color: var(--porcelain);
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse 70% 90% at 50% 0%, rgba(94,115,85,0.55), transparent 60%),
+      linear-gradient(160deg, #3C4B34 0%, var(--forest) 60%, #2A3325 100%);
+  }
+  .final .wrap { position: relative; z-index: 3; }
+  .final-botanical { position: absolute; inset: 0; z-index: 1; opacity: 0.16; pointer-events: none; }
+  .final-botanical svg { position: absolute; }
+  .fb-1 { left: -4%; bottom: -8%; width: clamp(200px, 30vw, 420px); animation: sway 12s ease-in-out infinite; transform-origin: 20% 90%; }
+  .fb-2 { right: -5%; top: -6%; width: clamp(180px, 26vw, 360px); animation: sway2 14s ease-in-out infinite; transform-origin: 80% 10%; }
+  .final .eyebrow { color: var(--rose); letter-spacing: 0.3em; font-size: 0.72rem; text-transform: uppercase; font-weight: 600; }
+  .final h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2.1rem, 6vw, 3.8rem);
+    line-height: 1.06;
+    margin: 1.2rem 0 1rem;
+    letter-spacing: -0.01em;
+  }
+  .final h2 em { font-style: italic; color: var(--rose); }
+  .final p { color: rgba(247,244,236,0.78); max-width: 500px; margin: 0 auto 2rem; font-size: clamp(1rem, 2.2vw, 1.15rem); }
+  .final .hero-ctas .btn-ghost { color: var(--porcelain); border-color: rgba(247,244,236,0.5); }
+  .final .hero-ctas .btn-ghost:hover { background: var(--porcelain); color: var(--forest); }
+
+  /* ---------- FOOTER ---------- */
+  footer { background: #2A3325; color: rgba(247,244,236,0.68); padding: clamp(3rem, 6vw, 4rem) 0 2rem; }
+  .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2.5rem; margin-bottom: 2.5rem; }
+  @media (max-width: 720px) { .foot-grid { grid-template-columns: 1fr; gap: 1.8rem; } }
+  .foot-brand .name { font-family: var(--serif); font-size: 1.5rem; color: var(--porcelain); margin-bottom: 0.3rem; }
+  .foot-brand .name b { color: var(--rose); font-weight: 400; }
+  .foot-brand p { font-size: 0.9rem; max-width: 300px; }
+  .foot-brand .rule { height: 1.5px; width: 52px; background: linear-gradient(90deg, var(--brass), transparent); margin: 0.6rem 0 1rem; }
+  .foot-col h4 { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rose); font-weight: 700; margin-bottom: 1rem; }
+  .foot-col a, .foot-col p { display: block; font-size: 0.9rem; color: rgba(247,244,236,0.68); margin-bottom: 0.6rem; transition: color 0.2s ease; }
+  .foot-col a:hover { color: var(--porcelain); }
+  .foot-bottom {
+    border-top: 1px solid rgba(247,244,236,0.14);
+    padding-top: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.8rem;
+  }
+  .foot-disclaimer { color: rgba(247,244,236,0.5); font-size: 0.78rem; max-width: 640px; }
+  .foot-disclaimer b { color: rgba(247,244,236,0.7); font-weight: 600; }
+
+  /* ---------- REVEAL / MOTION ---------- */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  .reveal.d1 { transition-delay: 0.08s; }
+  .reveal.d2 { transition-delay: 0.16s; }
+  .reveal.d3 { transition-delay: 0.24s; }
+  .reveal.d4 { transition-delay: 0.32s; }
+
+  @keyframes sway {
+    0%, 100% { transform: rotate(-2.2deg); }
+    50% { transform: rotate(2.4deg); }
+  }
+  @keyframes sway2 {
+    0%, 100% { transform: rotate(1.8deg); }
+    50% { transform: rotate(-2.6deg); }
+  }
+  @keyframes rise {
+    0% { transform: translateY(20px) scale(0.9); opacity: 0; }
+    18% { opacity: 0.5; }
+    60% { opacity: 0.35; }
+    100% { transform: translateY(-140px) scale(1.25); opacity: 0; }
+  }
+  @keyframes bob {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 8px); }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .sprig-1, .sprig-2, .sprig-3, .sprig-4, .steam-1, .steam-2, .steam-3, .fb-1, .fb-2, .scroll-cue { animation: none !important; }
+    .steam-1, .steam-2, .steam-3 { opacity: 0.25; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ UTILITY BAR ============ -->
+<div class="util">
+  <div class="wrap">
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+      Medical-grade sterilization, single-use kits per guest
+    </span>
+    <span class="dot">&#8226;</span>
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+      A free drink with every service
+    </span>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<nav id="nav">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="TB Nail Spa home">
+      <span class="name">TB Nail <b>Spa</b></span>
+      <span class="rule"></span>
+      <span class="sub">Fresno, California</span>
+    </a>
+    <div class="nav-links">
+      <a href="#services" class="link">Menu</a>
+      <a href="#story" class="link">Our Story</a>
+      <a href="#reviews" class="link">Reviews</a>
+      <a href="#visit" class="link">Visit</a>
+      <a href="#book" class="nav-cta">Book Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="hero-botanicals" aria-hidden="true">
+    <!-- Eucalyptus sprig 1 -->
+    <svg class="sprig-1" viewBox="0 0 300 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M150 380 C140 300 130 220 150 120 C160 70 175 30 200 5" stroke="#5E7355" stroke-width="3" fill="none" opacity="0.65"/>
+      <ellipse cx="120" cy="300" rx="26" ry="15" fill="#6E845F" opacity="0.55" transform="rotate(-30 120 300)"/>
+      <ellipse cx="176" cy="270" rx="26" ry="15" fill="#5E7355" opacity="0.6" transform="rotate(30 176 270)"/>
+      <ellipse cx="118" cy="240" rx="24" ry="14" fill="#7B9169" opacity="0.5" transform="rotate(-28 118 240)"/>
+      <ellipse cx="178" cy="212" rx="24" ry="14" fill="#5E7355" opacity="0.58" transform="rotate(28 178 212)"/>
+      <ellipse cx="128" cy="182" rx="22" ry="13" fill="#6E845F" opacity="0.52" transform="rotate(-26 128 182)"/>
+      <ellipse cx="176" cy="156" rx="21" ry="12" fill="#5E7355" opacity="0.6" transform="rotate(26 176 156)"/>
+      <ellipse cx="150" cy="120" rx="19" ry="11" fill="#7B9169" opacity="0.5" transform="rotate(-8 150 120)"/>
+      <ellipse cx="168" cy="92" rx="17" ry="10" fill="#5E7355" opacity="0.55" transform="rotate(24 168 92)"/>
+      <ellipse cx="184" cy="60" rx="14" ry="8" fill="#6E845F" opacity="0.5" transform="rotate(30 184 60)"/>
+      <ellipse cx="196" cy="32" rx="11" ry="7" fill="#5E7355" opacity="0.6" transform="rotate(34 196 32)"/>
+    </svg>
+    <!-- Olive/eucalyptus sprig 2 -->
+    <svg class="sprig-2" viewBox="0 0 320 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M170 400 C185 320 200 240 175 140 C165 90 140 40 110 8" stroke="#4C5F45" stroke-width="3" fill="none" opacity="0.6"/>
+      <ellipse cx="205" cy="320" rx="28" ry="16" fill="#5E7355" opacity="0.55" transform="rotate(32 205 320)"/>
+      <ellipse cx="145" cy="292" rx="28" ry="16" fill="#4C5F45" opacity="0.6" transform="rotate(-30 145 292)"/>
+      <ellipse cx="203" cy="258" rx="25" ry="15" fill="#6E845F" opacity="0.5" transform="rotate(30 203 258)"/>
+      <ellipse cx="146" cy="228" rx="25" ry="15" fill="#5E7355" opacity="0.58" transform="rotate(-28 146 228)"/>
+      <ellipse cx="192" cy="196" rx="23" ry="13" fill="#4C5F45" opacity="0.52" transform="rotate(28 192 196)"/>
+      <ellipse cx="150" cy="166" rx="21" ry="12" fill="#5E7355" opacity="0.6" transform="rotate(-24 150 166)"/>
+      <ellipse cx="170" cy="132" rx="19" ry="11" fill="#6E845F" opacity="0.5" transform="rotate(10 170 132)"/>
+      <ellipse cx="140" cy="100" rx="16" ry="10" fill="#5E7355" opacity="0.55" transform="rotate(-26 140 100)"/>
+      <ellipse cx="122" cy="66" rx="13" ry="8" fill="#4C5F45" opacity="0.5" transform="rotate(-30 122 66)"/>
+      <ellipse cx="110" cy="36" rx="10" ry="6" fill="#5E7355" opacity="0.6" transform="rotate(-34 110 36)"/>
+    </svg>
+    <!-- Small top-right sprig -->
+    <svg class="sprig-3" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M100 0 C95 60 90 120 105 180 C112 205 120 225 135 240" stroke="#6E845F" stroke-width="2.5" fill="none" opacity="0.6"/>
+      <ellipse cx="75" cy="60" rx="20" ry="11" fill="#6E845F" opacity="0.5" transform="rotate(-28 75 60)"/>
+      <ellipse cx="125" cy="80" rx="20" ry="11" fill="#5E7355" opacity="0.55" transform="rotate(28 125 80)"/>
+      <ellipse cx="80" cy="110" rx="18" ry="10" fill="#7B9169" opacity="0.45" transform="rotate(-26 80 110)"/>
+      <ellipse cx="122" cy="130" rx="17" ry="10" fill="#5E7355" opacity="0.5" transform="rotate(26 122 130)"/>
+      <ellipse cx="92" cy="160" rx="15" ry="9" fill="#6E845F" opacity="0.45" transform="rotate(-14 92 160)"/>
+    </svg>
+    <!-- Small top-left sprig -->
+    <svg class="sprig-4" viewBox="0 0 180 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M80 0 C86 55 92 110 78 165 C70 190 60 205 45 220" stroke="#7B9169" stroke-width="2.5" fill="none" opacity="0.55"/>
+      <ellipse cx="55" cy="55" rx="18" ry="10" fill="#7B9169" opacity="0.45" transform="rotate(28 55 55)"/>
+      <ellipse cx="105" cy="72" rx="18" ry="10" fill="#5E7355" opacity="0.5" transform="rotate(-28 105 72)"/>
+      <ellipse cx="60" cy="102" rx="16" ry="9" fill="#6E845F" opacity="0.4" transform="rotate(26 60 102)"/>
+      <ellipse cx="100" cy="122" rx="15" ry="9" fill="#5E7355" opacity="0.45" transform="rotate(-24 100 122)"/>
+    </svg>
+  </div>
+
+  <!-- Steam wisps -->
+  <div class="steam steam-1" aria-hidden="true">
+    <svg width="70" height="150" viewBox="0 0 70 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M35 150 C20 120 50 100 35 70 C22 45 48 30 35 0" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round" opacity="0.4" fill="none" filter="url(#b1)"/>
+      <defs><filter id="b1" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="7"/></filter></defs>
+    </svg>
+  </div>
+  <div class="steam steam-2" aria-hidden="true">
+    <svg width="80" height="170" viewBox="0 0 80 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M40 170 C25 135 58 115 40 80 C26 52 54 34 40 0" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round" opacity="0.38" fill="none" filter="url(#b2)"/>
+      <defs><filter id="b2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8"/></filter></defs>
+    </svg>
+  </div>
+  <div class="steam steam-3" aria-hidden="true">
+    <svg width="65" height="140" viewBox="0 0 65 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 140 C18 112 46 92 32 62 C20 40 44 26 32 0" stroke="#FFFFFF" stroke-width="15" stroke-linecap="round" opacity="0.36" fill="none" filter="url(#b3)"/>
+      <defs><filter id="b3" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6.5"/></filter></defs>
+    </svg>
+  </div>
+
+  <div class="hero-inner">
+    <span class="eyebrow">Northeast Fresno &#183; Since 2018</span>
+    <h1>Belong to Luxury.<em>Deserve Excellence.</em></h1>
+    <p class="lede">Premier nails and spa treatment in a calm, spotless botanical sanctuary. Where your health is cared for like our own.</p>
+    <div class="trust-strip">
+      <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Medical-grade sterilization</span>
+      <span class="sep">&#183;</span>
+      <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 12l2 2 4-4"/></svg> Single-use kits</span>
+      <span class="sep">&#183;</span>
+      <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg> Free drink with service</span>
+    </div>
+    <div class="hero-ctas">
+      <a href="#book" class="btn btn-primary">
+        Book Now
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="#services" class="btn btn-ghost">View the Menu</a>
+    </div>
+  </div>
+
+  <a href="#benefits" class="scroll-cue" aria-label="Scroll down">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+  </a>
+</header>
+
+<!-- ============ BENEFITS ============ -->
+<section class="benefits sec-pad" id="benefits">
+  <div class="wrap">
+    <div class="benefit-grid">
+      <div class="benefit reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Cared for, Clean</h3>
+        <p>Medical-grade sterilization, disposable pedicure liners, and a fresh single-use kit, file, buffer, and pumice, opened for every guest.</p>
+      </div>
+      <div class="benefit reveal d1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2L12 16.6 5.7 21l2.3-7.2-6-4.4h7.6z"/></svg></div>
+        <h3>13+ Years of Craft</h3>
+        <p>Owner Tammy has done nails for over thirteen years and ran two salons in the Bay Area before opening TB in Fresno.</p>
+      </div>
+      <div class="benefit reveal d2">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 3l1.7 3.9L15 8l-3 2.7.9 4.3L9.5 13 5.6 15l.9-4.3L3.5 8l3.8-1.1z"/><circle cx="18" cy="17" r="3"/><path d="M18 14v-1M18 21v-1M21 17h1M14 17h1"/></svg></div>
+        <h3>In-house 3D Nail Art</h3>
+        <p>Hana is our nail-art specialist, a true artist with hand-drawn detail, chrome, cat eye, and custom 3D designs.</p>
+      </div>
+      <div class="benefit reveal d3">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6"/><path d="M12 3c-1.5 2-3 3.5-3 6a3 3 0 0 0 6 0c0-2.5-1.5-4-3-6z"/></svg></div>
+        <h3>Spa-quiet Comfort</h3>
+        <p>Candle, hot stone, and paraffin rituals in a calm, airy space. Walk-ins welcome, parties and weddings by arrangement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services sec-pad" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label">The Menu</span>
+      <h2>Rituals for hands and feet</h2>
+      <p>A botanical, process-driven menu of pedicures, manicures, and enhancements, each one detailed and unhurried.</p>
+    </div>
+
+    <div class="svc-grid">
+
+      <!-- Organic Pedicure -->
+      <article class="svc-card reveal">
+        <div class="svc-illus">
+          <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="60" cy="94" rx="34" ry="9" fill="#5E7355" opacity="0.16"/>
+            <path d="M40 88 C34 70 40 50 56 44 C72 38 86 48 88 66 C90 82 80 90 68 92 Z" fill="#7B9169" opacity="0.6"/>
+            <path d="M56 44 C60 30 70 22 84 24" stroke="#4C5F45" stroke-width="2.4" fill="none"/>
+            <ellipse cx="70" cy="30" rx="10" ry="5.5" fill="#5E7355" transform="rotate(24 70 30)"/>
+            <ellipse cx="82" cy="26" rx="8" ry="4.5" fill="#6E845F" transform="rotate(30 82 26)"/>
+            <circle cx="46" cy="70" r="3" fill="#FCFAF4"/><circle cx="54" cy="80" r="2.4" fill="#FCFAF4"/><circle cx="64" cy="72" r="2.8" fill="#FCFAF4"/>
+            <path d="M30 96 C24 84 36 82 34 96" stroke="#D9A7A0" stroke-width="2.4" fill="none" opacity="0.7"/>
+          </svg>
+        </div>
+        <div class="svc-body">
+          <span class="svc-tag">Organic &#183; Steam Massage</span>
+          <h3>Organic Pedicure with Candle</h3>
+          <p>Sea salt and sugar scrub, mask, and lotion in your choice of scent, Green Tea, Peppermint, Lavender, Tangerine, or Cucumber, finished with warm paraffin.</p>
+          <div class="svc-incl"><span>Sugar Scrub</span><span>Paraffin</span><span>Candle</span></div>
+        </div>
+      </article>
+
+      <!-- Volcano Pedicure -->
+      <article class="svc-card reveal d1">
+        <div class="svc-illus">
+          <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="60" cy="96" rx="36" ry="9" fill="#5E7355" opacity="0.16"/>
+            <path d="M60 40 L82 92 H38 Z" fill="#5E7355" opacity="0.55"/>
+            <path d="M60 40 C56 52 52 60 46 74" stroke="#FCFAF4" stroke-width="2" opacity="0.6" fill="none"/>
+            <circle cx="60" cy="38" r="7" fill="#D9A7A0" opacity="0.85"/>
+            <path d="M52 34 C50 24 56 20 60 14 C64 20 70 24 68 34" stroke="#B08A4F" stroke-width="2.2" fill="none"/>
+            <circle cx="49" cy="58" r="2.6" fill="#FCFAF4" opacity="0.8"/><circle cx="70" cy="66" r="2.2" fill="#FCFAF4" opacity="0.8"/><circle cx="60" cy="78" r="2.4" fill="#FCFAF4" opacity="0.8"/>
+          </svg>
+        </div>
+        <div class="svc-body">
+          <span class="svc-tag">Detox &#183; Steam Massage</span>
+          <h3>Volcano Pedicure with Candle</h3>
+          <p>Our signature detox. A volcano crystal package with collagen mask, callus removal, and paraffin wax, for feet that feel renewed.</p>
+          <div class="svc-incl"><span>Volcano</span><span>Collagen</span><span>Paraffin</span></div>
+        </div>
+      </article>
+
+      <!-- Butter Pedicure -->
+      <article class="svc-card reveal d2">
+        <div class="svc-illus">
+          <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="60" cy="96" rx="34" ry="9" fill="#5E7355" opacity="0.16"/>
+            <rect x="40" y="52" width="40" height="30" rx="6" fill="#E4EBDB"/>
+            <rect x="40" y="52" width="40" height="12" rx="6" fill="#D9A7A0" opacity="0.55"/>
+            <path d="M44 52 C44 40 54 36 60 36 C66 36 76 40 76 52" stroke="#5E7355" stroke-width="2.4" fill="none"/>
+            <path d="M50 30 C48 22 54 18 52 12" stroke="#B08A4F" stroke-width="2" fill="none" opacity="0.7"/>
+            <path d="M60 28 C58 20 64 16 62 10" stroke="#B08A4F" stroke-width="2" fill="none" opacity="0.7"/>
+            <path d="M70 30 C68 22 74 18 72 12" stroke="#B08A4F" stroke-width="2" fill="none" opacity="0.7"/>
+          </svg>
+        </div>
+        <div class="svc-body">
+          <span class="svc-tag">Butter &#183; Steam Massage</span>
+          <h3>Butter Pedicure with Steam</h3>
+          <p>Callus removal, sugar scrub, paraffin, and mask, closed with a rich butter and hot stone massage that melts tension away.</p>
+          <div class="svc-incl"><span>Hot Stones</span><span>Paraffin</span><span>Mask</span></div>
+        </div>
+      </article>
+
+      <!-- Gel Manicure -->
+      <article class="svc-card reveal">
+        <div class="svc-illus">
+          <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="60" cy="98" rx="30" ry="8" fill="#5E7355" opacity="0.16"/>
+            <path d="M44 88 C42 70 44 54 46 44 C47 40 51 40 52 44 C54 56 56 70 56 88 Z" fill="#EED9D4"/>
+            <path d="M56 86 C55 68 57 52 59 44 C60 40 64 40 65 44 C67 56 68 70 68 86 Z" fill="#E7C9C2"/>
+            <path d="M46 44 C46 40 51 39 52 44" fill="#D9A7A0"/>
+            <path d="M59 44 C60 40 64 39 65 44" fill="#D9A7A0"/>
+            <path d="M30 74 C34 78 40 80 44 80" stroke="#7B9169" stroke-width="2.4" fill="none"/>
+            <ellipse cx="30" cy="70" rx="8" ry="4.5" fill="#7B9169" opacity="0.6" transform="rotate(-30 30 70)"/>
+          </svg>
+        </div>
+        <div class="svc-body">
+          <span class="svc-tag">Gel &#183; LED Cured</span>
+          <h3>Gel Manicure</h3>
+          <p>Gel polish cured under LED light for glossy, long-lasting color that stays flawless for weeks. Candle therapy add-on available.</p>
+          <div class="svc-incl"><span>Long-Lasting</span><span>High Gloss</span><span>OPI &#183; DND</span></div>
+        </div>
+      </article>
+
+      <!-- Cuccio Butter Manicure -->
+      <article class="svc-card reveal d1">
+        <div class="svc-illus">
+          <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="60" cy="98" rx="30" ry="8" fill="#5E7355" opacity="0.16"/>
+            <path d="M50 90 C44 74 48 58 60 54 C72 50 82 60 80 74 C78 86 68 90 60 90 Z" fill="#E4EBDB"/>
+            <ellipse cx="60" cy="70" rx="12" ry="14" fill="#D9A7A0" opacity="0.55"/>
+            <path d="M60 54 C60 42 66 36 60 26 C54 36 60 42 60 54" fill="#B08A4F" opacity="0.5"/>
+            <circle cx="52" cy="70" r="2.4" fill="#FCFAF4"/><circle cx="68" cy="66" r="2" fill="#FCFAF4"/><circle cx="60" cy="80" r="2.2" fill="#FCFAF4"/>
+          </svg>
+        </div>
+        <div class="svc-body">
+          <span class="svc-tag">Cuccio &#183; Hot Stones</span>
+          <h3>Cuccio Butter Manicure</h3>
+          <p>Sugar scrub, paraffin, a nourishing Cuccio butter mask, and hot stones. A restorative treatment for tired, dry hands.</p>
+          <div class="svc-incl"><span>Cuccio Butter</span><span>Paraffin</span><span>Hot Stones</span></div>
+        </div>
+      </article>
+
+      <!-- Enhancements & Nail Art -->
+      <article class="svc-card reveal d2">
+        <div class="svc-illus">
+          <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="60" cy="98" rx="30" ry="8" fill="#5E7355" opacity="0.16"/>
+            <path d="M42 86 L46 46 C46 42 52 42 52 46 L54 86 Z" fill="#D9A7A0"/>
+            <path d="M55 86 L58 42 C58 38 64 38 64 42 L66 86 Z" fill="#EED9D4"/>
+            <path d="M68 86 L72 48 C72 44 78 44 78 48 L80 86 Z" fill="#B08A4F" opacity="0.7"/>
+            <circle cx="49" cy="56" r="2" fill="#FCFAF4"/><circle cx="61" cy="52" r="2" fill="#5E7355"/><circle cx="74" cy="58" r="2" fill="#FCFAF4"/>
+            <path d="M49 62 l1.4 2.6 2.6 .4 -2 1.8 .6 2.8 -2.6 -1.4 -2.6 1.4 .6 -2.8 -2 -1.8 2.6 -.4z" fill="#5E7355" opacity="0.75"/>
+          </svg>
+        </div>
+        <div class="svc-body">
+          <span class="svc-tag">Enhancements &#183; Art</span>
+          <h3>Acrylic, Dip &amp; 3D Nail Art</h3>
+          <p>Acrylic full sets and fills, Pink &amp; White, ombre, dip powder, builder gel, and Gel X, finished with chrome, cat eye, French, or custom 3D designs.</p>
+          <div class="svc-incl"><span>Acrylic</span><span>Dip Powder</span><span>Gel X</span><span>3D Art</span></div>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="svc-note">Also offering <b>classic and deluxe pedicures</b>, <b>kids services</b>, <b>Silk Touch waxing</b>, quick gel color changes, and <b>e-gift certificates</b>. Trusted name-brand products throughout: OPI, DND, Caramia, KUPA, and Cuccio.</p>
+  </div>
+</section>
+
+<!-- ============ STORY ============ -->
+<section class="story sec-pad" id="story">
+  <div class="wrap">
+    <div class="story-grid">
+      <div class="story-copy reveal">
+        <span class="label">Our Story</span>
+        <h2>From the Bay Area, with care</h2>
+        <p>TB Nail Spa opened in November 2018 when owner Tammy relocated from the Bay Area to Northeast Fresno. She had already done nails for over thirteen years and run two salons before, and she brought all of it here.</p>
+        <p class="pull">"We care your health like we care our health."</p>
+        <p>That philosophy shows in every detail: sterilized tools, single-use kits, and unhurried craft, all so your nails last long and look beautiful. Alongside Tammy, nail-art specialist Hana brings the salon its signature hand-drawn and 3D designs.</p>
+        <div class="story-stats">
+          <div class="st"><div class="n">2018</div><div class="t">Serving Fresno</div></div>
+          <div class="st"><div class="n">13+</div><div class="t">Years of Craft</div></div>
+          <div class="st"><div class="n">365+</div><div class="t">Guest Reviews</div></div>
+        </div>
+      </div>
+      <div class="story-art reveal d2" aria-hidden="true">
+        <svg viewBox="0 0 300 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- apothecary bottle -->
+          <rect x="110" y="150" width="80" height="150" rx="16" fill="#FCFAF4" opacity="0.85"/>
+          <rect x="128" y="120" width="44" height="36" rx="8" fill="#B08A4F" opacity="0.55"/>
+          <rect x="120" y="200" width="60" height="90" rx="10" fill="#5E7355" opacity="0.28"/>
+          <path d="M130 250 h40 M130 265 h40" stroke="#FCFAF4" stroke-width="2" opacity="0.6"/>
+          <!-- sprig inside neck -->
+          <path d="M150 120 C148 90 160 70 150 40" stroke="#4C5F45" stroke-width="2.5" fill="none"/>
+          <ellipse cx="132" cy="92" rx="16" ry="8" fill="#5E7355" opacity="0.7" transform="rotate(-30 132 92)"/>
+          <ellipse cx="168" cy="80" rx="16" ry="8" fill="#6E845F" opacity="0.7" transform="rotate(30 168 80)"/>
+          <ellipse cx="138" cy="66" rx="13" ry="7" fill="#5E7355" opacity="0.7" transform="rotate(-26 138 66)"/>
+          <ellipse cx="162" cy="56" rx="12" ry="6" fill="#7B9169" opacity="0.7" transform="rotate(26 162 56)"/>
+          <ellipse cx="150" cy="42" rx="10" ry="5" fill="#5E7355" opacity="0.7"/>
+          <!-- steam -->
+          <path d="M150 40 C142 28 158 22 150 8" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity="0.4" fill="none"/>
+          <!-- accent bloom -->
+          <circle cx="222" cy="250" r="22" fill="#D9A7A0" opacity="0.35"/>
+          <circle cx="78" cy="280" r="15" fill="#B08A4F" opacity="0.3"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="reviews sec-pad" id="reviews">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label">Guest Words</span>
+      <h2>Loved across Fresno</h2>
+      <p>Real reviews from real guests on Google, Yelp, and Facebook. Verbatim, unedited.</p>
+    </div>
+    <div class="rev-grid">
+
+      <div class="rev-card reveal">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg>
+        </div>
+        <p class="quote">"I've been getting my gel nails done at TB Nails Spa for over a year, and I highly recommend them! Tammy is amazing, she is talented, detail-oriented, and always makes my nails look beautiful. My gel nails last for weeks, and I always leave happy with the results. The salon is clean, friendly, and professional."</p>
+        <div class="meta"><span class="src">Yelp</span><span class="vp">Regular guest</span></div>
+      </div>
+
+      <div class="rev-card reveal d1">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg>
+        </div>
+        <p class="quote">"Tammy did a great job on my nails. She is a speeder and knows what is she doing. She carefully files, took care of my cuticles, very gentle, and make sure everything came out perfectly. I love the vibe, the ambiance and their art! Thanks TB Nails."</p>
+        <div class="meta"><span class="src">Yelp</span><span class="vp">5 stars</span></div>
+      </div>
+
+      <div class="rev-card reveal d2">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg>
+        </div>
+        <p class="quote">"Hannah did my nails. She always does a good job. My nails are beautiful! She was ready for me right away and it took less than an hour and she gave each nail special care."</p>
+        <div class="meta"><span class="src">Google / Yelp</span><span class="vp">5 stars</span></div>
+      </div>
+
+      <div class="rev-card reveal">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg>
+        </div>
+        <p class="quote">"Thank you miss Tammy you did a great job. Pleasant experience and great service and friendliness. The vitamin C scrub and massage was heaven."</p>
+        <div class="meta"><span class="src">Yelp</span><span class="vp">5 stars</span></div>
+      </div>
+
+      <div class="rev-card reveal d1">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg>
+        </div>
+        <p class="quote">"My first time here at TB nails, my experience here is great! Customers service is great. My nail tech John took his time with my nails. Nails turn out great and I love it! Would definitely come back!"</p>
+        <div class="meta"><span class="src">Yelp</span><span class="vp">5 stars</span></div>
+      </div>
+
+      <div class="rev-card reveal d2">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21l1.4-7L2 9.3l7-.8z"/></svg>
+        </div>
+        <p class="quote">"I got chrome nails, and Tammy did such a great job on them! The price for a regular gel manicure is great, and the staff are so friendly."</p>
+        <div class="meta"><span class="src">Facebook / Google</span><span class="vp">5 stars</span></div>
+      </div>
+
+    </div>
+    <p class="rev-foot">Featured by <b>ABC30 Fresno</b> and <b>Hoodline</b>, with 365+ reviews and 1,800+ guest photos across Google and Yelp.</p>
+  </div>
+</section>
+
+<!-- ============ BOOKING / VISIT ============ -->
+<section class="book sec-pad" id="book">
+  <div class="wrap">
+    <div class="book-grid" id="visit">
+      <div class="book-info reveal">
+        <span class="label">Visit &amp; Book</span>
+        <h2>Come be cared for</h2>
+        <p>Reserve your ritual, or call and we will find the perfect time. Walk-ins are always welcome, and we book parties and weddings too.</p>
+
+        <div class="info-row">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="rt">
+            <h4>Find Us</h4>
+            <p><a href="https://maps.google.com/?q=6650+N+Blackstone+Ave+Suite+106+Fresno+CA+93710" target="_blank" rel="noopener">6650 N Blackstone Ave, Suite 106<br>Fresno, CA 93710 (Northeast Fresno)</a></p>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div class="rt">
+            <h4>Call or Text</h4>
+            <!-- VERIFY phone number before publish -->
+            <p><a href="tel:+15593745554">(559) 374-5554</a></p>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg></div>
+          <div class="rt">
+            <h4>Hours</h4>
+            <div class="hours-tbl">
+              <div><span>Monday to Saturday</span><span>9:00 AM to 7:00 PM</span></div>
+              <div><span>Sunday</span><span>10:00 AM to 6:00 PM</span></div>
+            </div>
+          </div>
+        </div>
+
+        <a href="tel:+15593745554" class="call-cta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Tap to Call &#183; (559) 374-5554
+        </a>
+      </div>
+
+      <div class="book-form reveal d2">
+        <h3>Request an appointment</h3>
+        <p class="fh">Send your details and we will confirm your time by phone. A free drink is on us, water, Pepsi, Root Beer, or Crush.</p>
+        <!-- Swap the action email below with the client's real inbox before publishing -->
+        <form action="https://formsubmit.co/REPLACE-WITH-CLIENT-EMAIL" method="POST">
+          <div class="fld-row">
+            <div class="fld">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required>
+            </div>
+            <div class="fld">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="(559) 000-0000" required>
+            </div>
+          </div>
+          <div class="fld">
+            <label for="service">Service</label>
+            <select id="service" name="service">
+              <option>Pedicure</option>
+              <option>Manicure</option>
+              <option>Organic or Volcano Spa Pedicure</option>
+              <option>Acrylic, Dip, or Gel X</option>
+              <option>Nail Art or 3D Design</option>
+              <option>Waxing</option>
+              <option>Not sure yet, help me choose</option>
+            </select>
+          </div>
+          <div class="fld">
+            <label for="pref">Preferred day or time</label>
+            <input type="text" id="pref" name="preferred_time" placeholder="e.g. Saturday morning">
+          </div>
+          <div class="fld">
+            <label for="notes">Anything else</label>
+            <textarea id="notes" name="notes" placeholder="Design ideas, group booking, first visit..."></textarea>
+          </div>
+          <button type="submit" class="btn form-submit">Send Request</button>
+          <p class="form-fine">
+            We will call to confirm. No deposit required.
+            <br><span class="soon" role="note">Instant Online Booking &#183; Coming Soon</span>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final sec-pad">
+  <div class="final-botanical" aria-hidden="true">
+    <svg class="fb-1" viewBox="0 0 300 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M150 380 C140 300 130 220 150 120 C160 70 175 30 200 5" stroke="#F7F4EC" stroke-width="3" fill="none"/>
+      <ellipse cx="120" cy="300" rx="26" ry="15" fill="#F7F4EC" transform="rotate(-30 120 300)"/>
+      <ellipse cx="176" cy="270" rx="26" ry="15" fill="#F7F4EC" transform="rotate(30 176 270)"/>
+      <ellipse cx="118" cy="240" rx="24" ry="14" fill="#F7F4EC" transform="rotate(-28 118 240)"/>
+      <ellipse cx="178" cy="212" rx="24" ry="14" fill="#F7F4EC" transform="rotate(28 178 212)"/>
+      <ellipse cx="150" cy="120" rx="19" ry="11" fill="#F7F4EC" transform="rotate(-8 150 120)"/>
+    </svg>
+    <svg class="fb-2" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M100 0 C95 60 90 120 105 180 C112 205 120 225 135 240" stroke="#F7F4EC" stroke-width="2.5" fill="none"/>
+      <ellipse cx="75" cy="60" rx="20" ry="11" fill="#F7F4EC" transform="rotate(-28 75 60)"/>
+      <ellipse cx="125" cy="80" rx="20" ry="11" fill="#F7F4EC" transform="rotate(28 125 80)"/>
+      <ellipse cx="80" cy="110" rx="18" ry="10" fill="#F7F4EC" transform="rotate(-26 80 110)"/>
+      <ellipse cx="122" cy="130" rx="17" ry="10" fill="#F7F4EC" transform="rotate(26 122 130)"/>
+    </svg>
+  </div>
+  <div class="wrap reveal">
+    <span class="eyebrow">Your Sanctuary Awaits</span>
+    <h2>Belong to Luxury.<br><em>Deserve Excellence.</em></h2>
+    <p>Clean, calm, and cared for. Book your ritual at TB Nail Spa in Northeast Fresno today.</p>
+    <div class="hero-ctas">
+      <a href="#book" class="btn btn-primary">Book Your Visit
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="tel:+15593745554" class="btn btn-ghost">Call (559) 374-5554</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="name">TB Nail <b>Spa</b></div>
+        <div class="rule"></div>
+        <p>Premier nails and spa treatment in Northeast Fresno. Clean, calm, and cared for since 2018.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="#services">Menu</a>
+        <a href="#story">Our Story</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#book">Book Now</a>
+      </div>
+      <div class="foot-col">
+        <h4>Visit</h4>
+        <p>6650 N Blackstone Ave, Ste 106<br>Fresno, CA 93710</p>
+        <a href="tel:+15593745554">(559) 374-5554</a>
+        <p>Mon to Sat, 9 to 7 &#183; Sun 10 to 6</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 TB Nail Spa, Fresno. All rights reserved.</span>
+      <span class="foot-disclaimer"><b>Concept preview built by DNA Agency, not affiliated with TB Nail Spa Fresno.</b> A demonstration design proposal. Phone number shown pending verification.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav shadow on scroll
+  (function () {
+    var nav = document.getElementById('nav');
+    var onScroll = function () {
+      if (window.scrollY > 12) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
+  // Scroll reveal (respects reduced motion)
+  (function () {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els = document.querySelectorAll('.reveal');
+    if (reduce || !('IntersectionObserver' in window)) {
+      els.forEach(function (el) { el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+
+</body>
+</html>

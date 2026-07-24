@@ -1,0 +1,967 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deluxe Nails and Spa, Fresno Nail Salon and Spa in Villaggio</title>
+<meta name="description" content="Deluxe Nails and Spa in Fresno, a clean, modern nail salon in the Villaggio Shopping Center. Manicures, pedicures, acrylics, facials, and waxing. Walk-ins welcome, book your appointment today.">
+<meta name="theme-color" content="#9E7B7B">
+<style>
+  :root{
+    --mauve:#9E7B7B;
+    --rose:#C08A83;
+    --blush:#E8CFC9;
+    --blush-soft:#F1DED8;
+    --bg:#FBF7F4;
+    --sand:#F3EAE3;
+    --plum:#3A2E33;
+    --plum-soft:#6A585F;
+    --sage:#8CA08C;
+    --sage-deep:#6F8571;
+    --white:#FFFFFF;
+    --line:rgba(58,46,51,.12);
+    --shadow-sm:0 2px 8px rgba(58,46,51,.06);
+    --shadow-md:0 18px 44px -22px rgba(58,46,51,.32);
+    --shadow-lg:0 40px 90px -40px rgba(158,123,123,.5);
+    --serif:Georgia,'Times New Roman',serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --maxw:1180px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--sans);
+    color:var(--plum);
+    background:var(--bg);
+    line-height:1.7;
+    font-size:17px;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.12;letter-spacing:.01em}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,52px)}
+  .eyebrow{
+    font-family:var(--sans);
+    font-size:.72rem;
+    letter-spacing:.34em;
+    text-transform:uppercase;
+    color:var(--mauve);
+    font-weight:600;
+  }
+
+  /* ---------- utility bar ---------- */
+  .utility{
+    background:var(--plum);
+    color:var(--blush-soft);
+    font-size:.8rem;
+    letter-spacing:.02em;
+  }
+  .utility .wrap{
+    display:flex;flex-wrap:wrap;gap:8px 26px;
+    align-items:center;justify-content:center;
+    padding-top:9px;padding-bottom:9px;text-align:center;
+  }
+  .utility span{display:inline-flex;align-items:center;gap:8px}
+  .utility svg{width:15px;height:15px;flex:none;opacity:.85}
+  .utility a{color:var(--white);font-weight:600;border-bottom:1px solid rgba(232,207,201,.4)}
+
+  /* ---------- nav ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:60;
+    background:rgba(251,247,244,.82);
+    backdrop-filter:blur(14px) saturate(1.2);
+    -webkit-backdrop-filter:blur(14px) saturate(1.2);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s ease,box-shadow .3s ease,background .3s ease;
+  }
+  header.nav.scrolled{border-bottom-color:var(--line);box-shadow:var(--shadow-sm);background:rgba(251,247,244,.94)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding-top:15px;padding-bottom:15px;gap:20px}
+  .brand{display:flex;align-items:center;gap:13px}
+  .brand .mark{width:42px;height:42px;flex:none}
+  .brand .name{display:flex;flex-direction:column;line-height:1.05}
+  .brand .name b{font-family:var(--serif);font-size:1.16rem;font-weight:400;letter-spacing:.06em;color:var(--plum)}
+  .brand .name small{font-family:var(--sans);font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;color:var(--mauve);font-weight:600}
+  .nav-links{display:flex;align-items:center;gap:34px}
+  .nav-links a{font-size:.9rem;font-weight:500;color:var(--plum-soft);position:relative;transition:color .2s}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1.5px;background:var(--mauve);transition:width .28s ease}
+  .nav-links a:hover{color:var(--plum)}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{
+    font-family:var(--sans);font-size:.86rem;font-weight:600;letter-spacing:.02em;
+    background:var(--mauve);color:var(--white);
+    padding:11px 22px;border-radius:999px;
+    box-shadow:0 8px 20px -10px rgba(158,123,123,.9);
+    transition:background .2s ease,transform .2s ease,box-shadow .2s ease;
+  }
+  .nav-cta:hover{background:var(--rose);transform:translateY(-1px);box-shadow:0 12px 26px -10px rgba(192,138,131,.95)}
+  .nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:6px}
+  .nav-toggle svg{width:26px;height:26px;stroke:var(--plum)}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;background:var(--bg);isolation:isolate}
+  .hero .wrap{position:relative;z-index:3;padding-top:clamp(64px,10vw,120px);padding-bottom:clamp(72px,11vw,132px)}
+  .blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.72;z-index:1;pointer-events:none}
+  .blob.b1{width:min(58vw,640px);height:min(58vw,640px);left:-14vw;top:-16vh;
+    background:radial-gradient(circle at 40% 40%,rgba(232,207,201,.95),rgba(232,207,201,0) 68%);
+    animation:drift1 26s ease-in-out infinite}
+  .blob.b2{width:min(50vw,560px);height:min(50vw,560px);right:-12vw;top:6vh;
+    background:radial-gradient(circle at 50% 50%,rgba(158,123,123,.6),rgba(158,123,123,0) 66%);
+    animation:drift2 32s ease-in-out infinite}
+  .blob.b3{width:min(40vw,440px);height:min(40vw,440px);right:14vw;bottom:-20vh;
+    background:radial-gradient(circle at 50% 50%,rgba(192,138,131,.42),rgba(192,138,131,0) 68%);
+    animation:drift1 30s ease-in-out infinite reverse}
+  @keyframes drift1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(5%,7%) scale(1.09)}}
+  @keyframes drift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-6%,5%) scale(1.12)}}
+
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(36px,5vw,72px);align-items:center}
+  .hero-copy{max-width:620px}
+  .status-pill{
+    display:inline-flex;align-items:center;gap:9px;
+    background:rgba(140,160,140,.13);
+    border:1px solid rgba(140,160,140,.4);
+    color:var(--sage-deep);
+    font-size:.8rem;font-weight:600;letter-spacing:.03em;
+    padding:7px 15px 7px 12px;border-radius:999px;margin-bottom:26px;
+  }
+  .status-pill .dot{width:9px;height:9px;border-radius:50%;background:var(--sage);position:relative}
+  .status-pill .dot::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1.5px solid var(--sage);opacity:0;animation:pulse 2.6s ease-out infinite}
+  @keyframes pulse{0%{transform:scale(.6);opacity:.7}80%,100%{transform:scale(1.7);opacity:0}}
+
+  .hero h1{
+    font-size:clamp(2.5rem,6.2vw,4.35rem);
+    letter-spacing:-.005em;line-height:1.06;color:var(--plum);
+    margin-bottom:22px;
+  }
+  .hero h1 .grp{display:inline-block;opacity:0;transform:translateY(22px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+  .hero h1 .grp:nth-child(1){animation-delay:.15s}
+  .hero h1 .grp:nth-child(2){animation-delay:.32s}
+  .hero h1 .grp:nth-child(3){animation-delay:.49s}
+  .hero h1 .em{font-style:italic;color:var(--mauve)}
+  @keyframes rise{to{opacity:1;transform:translateY(0)}}
+
+  .hero p.lede{font-size:clamp(1.05rem,1.7vw,1.22rem);color:var(--plum-soft);max-width:50ch;margin-bottom:32px}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:30px}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;justify-content:center;
+    font-family:var(--sans);font-size:.98rem;font-weight:600;letter-spacing:.01em;
+    padding:15px 30px;border-radius:999px;cursor:pointer;border:1px solid transparent;
+    transition:transform .2s ease,box-shadow .2s ease,background .2s ease,color .2s ease,border-color .2s ease;
+  }
+  .btn svg{width:19px;height:19px;flex:none}
+  .btn-primary{background:var(--mauve);color:var(--white);box-shadow:0 16px 34px -16px rgba(158,123,123,.95)}
+  .btn-primary:hover{background:var(--rose);transform:translateY(-2px);box-shadow:0 22px 42px -16px rgba(192,138,131,1)}
+  .btn-ghost{background:transparent;color:var(--plum);border-color:var(--line)}
+  .btn-ghost:hover{border-color:var(--mauve);color:var(--mauve);background:var(--white)}
+  .btn-block{background:var(--sand);color:var(--plum-soft);border-color:var(--line);cursor:not-allowed}
+
+  .trust-line{display:flex;align-items:center;gap:12px;font-size:.9rem;color:var(--plum-soft)}
+  .stars{display:inline-flex;gap:2px}
+  .stars svg{width:17px;height:17px}
+  .trust-line b{color:var(--plum);font-weight:600}
+
+  /* hero visual: polish drop */
+  .hero-visual{position:relative;display:flex;align-items:center;justify-content:center;min-height:340px}
+  .polish-card{
+    position:relative;width:min(100%,420px);aspect-ratio:1/1.06;
+    background:linear-gradient(160deg,#ffffff 0%,#FBF3EF 60%,#F6E7E1 100%);
+    border-radius:32px;box-shadow:var(--shadow-lg);
+    border:1px solid rgba(255,255,255,.7);
+    overflow:hidden;
+  }
+  .polish-card .ripple{position:absolute;left:50%;top:44%;width:24px;height:24px;border-radius:50%;
+    border:2px solid var(--mauve);transform:translate(-50%,-50%);opacity:0;
+    animation:ripple 4.5s ease-out infinite}
+  .polish-card .ripple:nth-child(2){animation-delay:1.5s}
+  .polish-card .ripple:nth-child(3){animation-delay:3s}
+  @keyframes ripple{0%{opacity:.55;width:24px;height:24px}100%{opacity:0;width:340px;height:340px}}
+  .polish-card svg.drop{position:relative;z-index:2;width:52%;margin:0 auto;display:block;padding-top:22%}
+  .polish-card .cap{position:absolute;bottom:22px;left:0;right:0;text-align:center;z-index:2}
+  .polish-card .cap b{font-family:var(--serif);font-size:1.15rem;color:var(--plum);letter-spacing:.03em}
+  .polish-card .cap span{display:block;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mauve);font-weight:600;margin-top:4px}
+  .float-chip{
+    position:absolute;background:var(--white);border-radius:16px;box-shadow:var(--shadow-md);
+    padding:11px 15px;display:flex;align-items:center;gap:10px;z-index:4;
+    border:1px solid var(--line);font-size:.82rem;font-weight:600;color:var(--plum);
+  }
+  .float-chip svg{width:20px;height:20px;flex:none}
+  .float-chip.c1{top:6%;left:-6%;animation:bob 6s ease-in-out infinite}
+  .float-chip.c2{bottom:12%;right:-8%;animation:bob 7s ease-in-out infinite .8s}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+
+  /* ---------- benefit strip ---------- */
+  .benefits{background:var(--sand);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .benefits .wrap{padding-top:clamp(48px,7vw,74px);padding-bottom:clamp(48px,7vw,74px)}
+  .benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,2.6vw,32px)}
+  .benefit{text-align:left}
+  .benefit .ic{
+    width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(145deg,var(--white),var(--blush-soft));
+    box-shadow:var(--shadow-sm);border:1px solid rgba(255,255,255,.8);margin-bottom:16px;
+  }
+  .benefit .ic svg{width:28px;height:28px}
+  .benefit h3{font-size:1.16rem;color:var(--plum);margin-bottom:7px}
+  .benefit p{font-size:.92rem;color:var(--plum-soft);line-height:1.6}
+
+  /* ---------- section shared ---------- */
+  section.pad{padding-top:clamp(64px,9vw,108px);padding-bottom:clamp(64px,9vw,108px)}
+  .sec-head{max-width:640px;margin-bottom:clamp(38px,5vw,58px)}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .sec-head .eyebrow{display:block;margin-bottom:16px}
+  .sec-head h2{font-size:clamp(2rem,4.4vw,3.15rem);color:var(--plum);letter-spacing:-.01em;margin-bottom:16px}
+  .sec-head p{font-size:1.05rem;color:var(--plum-soft)}
+
+  /* ---------- services ---------- */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,26px)}
+  .svc{
+    background:var(--white);border-radius:22px;border:1px solid var(--line);
+    overflow:hidden;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;
+    transition:transform .32s cubic-bezier(.2,.7,.2,1),box-shadow .32s ease,border-color .32s ease;
+  }
+  .svc:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--blush)}
+  .svc .art{height:158px;position:relative;overflow:hidden;
+    background:linear-gradient(150deg,var(--blush-soft),var(--sand));border-bottom:1px solid var(--line)}
+  .svc .art svg{position:absolute;inset:0;width:100%;height:100%}
+  .svc .body{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1}
+  .svc h3{font-size:1.3rem;color:var(--plum);margin-bottom:8px}
+  .svc p{font-size:.93rem;color:var(--plum-soft);margin-bottom:16px;flex:1}
+  .svc ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .svc li{font-size:.9rem;color:var(--plum);display:flex;align-items:flex-start;gap:9px}
+  .svc li svg{width:16px;height:16px;flex:none;margin-top:4px;color:var(--mauve)}
+  .svc .tag{align-self:flex-start;margin-top:18px;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--mauve);background:var(--blush-soft);padding:6px 12px;border-radius:999px}
+
+  /* ---------- tiers ---------- */
+  .tiers{background:var(--sand)}
+  .tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,26px)}
+  .tier{
+    background:var(--white);border-radius:22px;padding:32px 28px;border:1px solid var(--line);
+    position:relative;box-shadow:var(--shadow-sm);transition:transform .3s ease,box-shadow .3s ease;
+  }
+  .tier:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
+  .tier.feat{background:linear-gradient(165deg,#ffffff,#FBF1ED);border-color:var(--blush)}
+  .tier .badge{position:absolute;top:20px;right:20px;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--white);background:var(--mauve);padding:5px 11px;border-radius:999px}
+  .tier .num{font-family:var(--serif);font-size:2.4rem;color:var(--blush);line-height:1;margin-bottom:14px}
+  .tier.feat .num{color:var(--rose)}
+  .tier h3{font-size:1.5rem;color:var(--plum);margin-bottom:6px}
+  .tier .sub{font-size:.86rem;color:var(--mauve);font-weight:600;letter-spacing:.03em;margin-bottom:18px}
+  .tier ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+  .tier li{display:flex;gap:11px;font-size:.94rem;color:var(--plum-soft);align-items:flex-start}
+  .tier li svg{width:18px;height:18px;flex:none;margin-top:3px;color:var(--sage-deep)}
+
+  /* ---------- story ---------- */
+  .story-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(38px,6vw,80px);align-items:center}
+  .story-visual{position:relative}
+  .story-visual .frame{
+    border-radius:26px;overflow:hidden;box-shadow:var(--shadow-lg);
+    background:linear-gradient(160deg,var(--blush-soft),var(--sand));aspect-ratio:4/5;
+    border:1px solid rgba(255,255,255,.7);position:relative;
+  }
+  .story-visual .frame svg{position:absolute;inset:0;width:100%;height:100%}
+  .story-stat{
+    position:absolute;bottom:-24px;left:50%;transform:translateX(-50%);
+    background:var(--white);border-radius:18px;box-shadow:var(--shadow-md);border:1px solid var(--line);
+    padding:16px 26px;display:flex;gap:26px;text-align:center;white-space:nowrap;
+  }
+  .story-stat .n{font-family:var(--serif);font-size:1.7rem;color:var(--mauve);line-height:1}
+  .story-stat .l{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--plum-soft);margin-top:5px;font-weight:600}
+  .story-copy h2{font-size:clamp(1.9rem,4vw,2.9rem);color:var(--plum);margin-bottom:20px}
+  .story-copy p{color:var(--plum-soft);margin-bottom:16px;font-size:1.04rem}
+  .story-copy .signoff{font-family:var(--serif);font-style:italic;color:var(--mauve);font-size:1.2rem;margin-top:8px}
+
+  /* ---------- reviews ---------- */
+  .reviews{background:var(--plum);color:var(--blush-soft);position:relative;overflow:hidden}
+  .reviews::before{content:"";position:absolute;top:-30%;right:-10%;width:60vw;height:60vw;border-radius:50%;
+    background:radial-gradient(circle,rgba(158,123,123,.4),transparent 66%);pointer-events:none}
+  .reviews .sec-head h2{color:var(--white)}
+  .reviews .sec-head p{color:var(--blush)}
+  .reviews .eyebrow{color:var(--blush)}
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,26px);position:relative;z-index:2}
+  .rev{background:rgba(255,255,255,.055);border:1px solid rgba(232,207,201,.18);border-radius:20px;padding:28px 26px;backdrop-filter:blur(4px);display:flex;flex-direction:column}
+  .rev .stars svg{width:16px;height:16px}
+  .rev .stars{margin-bottom:14px}
+  .rev blockquote{font-size:1.02rem;line-height:1.6;color:#F7EEEA;margin-bottom:20px;flex:1}
+  .rev .who{display:flex;align-items:center;gap:12px}
+  .rev .av{width:42px;height:42px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.05rem;color:var(--white);background:linear-gradient(150deg,var(--mauve),var(--rose))}
+  .rev .who b{display:block;font-size:.92rem;color:var(--white);font-weight:600}
+  .rev .who span{font-size:.78rem;color:var(--blush);opacity:.85}
+  .rev-note{text-align:center;margin-top:36px;font-size:.86rem;color:var(--blush);opacity:.75;position:relative;z-index:2}
+
+  /* ---------- location ---------- */
+  .loc-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,60px);align-items:stretch}
+  .loc-card{background:var(--white);border:1px solid var(--line);border-radius:24px;padding:clamp(28px,4vw,42px);box-shadow:var(--shadow-sm)}
+  .loc-card h3{font-size:1.5rem;color:var(--plum);margin-bottom:6px}
+  .loc-card .addr{color:var(--plum-soft);margin-bottom:24px}
+  .hours-table{width:100%;border-collapse:collapse;margin-bottom:26px}
+  .hours-table td{padding:11px 0;border-bottom:1px solid var(--line);font-size:.96rem}
+  .hours-table tr:last-child td{border-bottom:0}
+  .hours-table td:first-child{color:var(--plum-soft);font-weight:500}
+  .hours-table td:last-child{text-align:right;color:var(--plum);font-weight:600}
+  .hours-table tr.today td{color:var(--sage-deep)}
+  .hours-table tr.today td:last-child{color:var(--sage-deep)}
+  .loc-contact{display:flex;flex-direction:column;gap:12px}
+  .loc-contact a,.loc-contact div{display:flex;align-items:center;gap:13px;font-size:.98rem;color:var(--plum)}
+  .loc-contact svg{width:20px;height:20px;flex:none;color:var(--mauve)}
+  .map-panel{border-radius:24px;overflow:hidden;position:relative;min-height:360px;border:1px solid var(--line);box-shadow:var(--shadow-sm);
+    background:linear-gradient(150deg,var(--blush-soft),var(--sand))}
+  .map-panel svg.mapbg{position:absolute;inset:0;width:100%;height:100%}
+  .map-pin{position:absolute;top:46%;left:50%;transform:translate(-50%,-100%);z-index:3;text-align:center}
+  .map-pin svg{width:46px;height:46px;filter:drop-shadow(0 8px 12px rgba(58,46,51,.3))}
+  .map-panel .map-cta{position:absolute;bottom:18px;left:18px;right:18px;z-index:3}
+  .map-panel .map-cta .btn{width:100%;background:var(--white);color:var(--plum);box-shadow:var(--shadow-md)}
+  .map-panel .map-cta .btn:hover{color:var(--mauve)}
+
+  /* ---------- final CTA ---------- */
+  .final{position:relative;overflow:hidden;background:linear-gradient(160deg,#B08A85 0%,#9E7B7B 55%,#8C6E6E 100%);color:var(--white);text-align:center}
+  .final .blob{opacity:.5}
+  .final .wrap{position:relative;z-index:3;padding-top:clamp(64px,9vw,104px);padding-bottom:clamp(64px,9vw,104px)}
+  .final .eyebrow{color:var(--blush-soft)}
+  .final h2{font-size:clamp(2.1rem,5vw,3.5rem);margin:16px auto 18px;max-width:16ch;color:var(--white)}
+  .final p{max-width:52ch;margin:0 auto 34px;color:#F6E7E1;font-size:1.08rem}
+  .final .hero-actions{justify-content:center}
+  .final .btn-primary{background:var(--white);color:var(--mauve)}
+  .final .btn-primary:hover{background:var(--blush-soft);color:var(--plum)}
+  .final .btn-ghost{border-color:rgba(255,255,255,.5);color:var(--white)}
+  .final .btn-ghost:hover{background:rgba(255,255,255,.12);border-color:var(--white);color:var(--white)}
+
+  /* contact form */
+  .contact-form{max-width:560px;margin:38px auto 0;text-align:left;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);border-radius:22px;padding:clamp(22px,3vw,32px);backdrop-filter:blur(6px)}
+  .contact-form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .contact-form label{display:block;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:#F6E7E1;margin:0 0 6px 2px}
+  .contact-form .fld{margin-bottom:16px}
+  .contact-form input,.contact-form textarea{width:100%;font-family:var(--sans);font-size:.98rem;color:var(--plum);background:rgba(255,255,255,.94);border:1px solid transparent;border-radius:12px;padding:13px 15px;transition:box-shadow .2s ease}
+  .contact-form input:focus,.contact-form textarea:focus{outline:none;box-shadow:0 0 0 3px rgba(255,255,255,.55)}
+  .contact-form textarea{resize:vertical;min-height:92px}
+  .contact-form .btn{width:100%;margin-top:4px;background:var(--white);color:var(--mauve)}
+  .contact-form .btn:hover{background:var(--blush-soft);color:var(--plum)}
+
+  /* ---------- footer ---------- */
+  footer.ft{background:#2C2226;color:var(--blush);font-size:.9rem}
+  footer.ft .wrap{padding-top:clamp(48px,6vw,70px);padding-bottom:36px}
+  .ft-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;padding-bottom:36px;border-bottom:1px solid rgba(232,207,201,.16)}
+  .ft-brand .brand .name b{color:var(--white)}
+  .ft-brand p{margin-top:16px;max-width:38ch;opacity:.8;line-height:1.7}
+  .ft-col h4{font-family:var(--sans);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--blush-soft);margin-bottom:16px;font-weight:600}
+  .ft-col a,.ft-col p{display:block;color:var(--blush);opacity:.82;margin-bottom:10px;transition:opacity .2s,color .2s}
+  .ft-col a:hover{opacity:1;color:var(--white)}
+  .ft-bottom{padding-top:26px;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;font-size:.82rem;opacity:.72}
+  .disclaimer{max-width:60ch}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+
+  /* responsive */
+  @media(max-width:960px){
+    .hero-grid{grid-template-columns:1fr}
+    .hero-visual{order:-1;min-height:280px}
+    .polish-card{width:min(78%,340px)}
+    .benefit-grid{grid-template-columns:repeat(2,1fr)}
+    .svc-grid,.tier-grid,.rev-grid{grid-template-columns:repeat(2,1fr)}
+    .story-grid,.loc-grid{grid-template-columns:1fr}
+    .story-visual{max-width:420px;margin:0 auto 40px}
+    .ft-top{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:640px){
+    .nav-links{display:none}
+    .nav-links.open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 0;box-shadow:var(--shadow-md)}
+    .nav-links.open a{padding:14px clamp(20px,5vw,52px);width:100%}
+    .nav-links.open .nav-cta{margin:8px clamp(20px,5vw,52px)}
+    .nav-toggle{display:block}
+    .benefit-grid,.svc-grid,.tier-grid,.rev-grid{grid-template-columns:1fr}
+    .contact-form .row{grid-template-columns:1fr}
+    .ft-top{grid-template-columns:1fr}
+    .float-chip.c1{left:0}.float-chip.c2{right:0}
+    .story-stat{flex-wrap:wrap;gap:16px 22px;white-space:normal;justify-content:center}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    *,*::after,*::before{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .hero h1 .grp,.reveal{opacity:1;transform:none}
+  }
+</style>
+
+<!-- ============ UTILITY BAR ============ -->
+<div class="utility">
+  <div class="wrap">
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg>Open 7 days &middot; Mon to Fri 9:30 to 7 &middot; Sat 9 to 6 &middot; Sun 10 to 5</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>Call <a href="tel:+15599812171">(559) 981-2171</a> &middot; Villaggio, Fresno</span>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand" aria-label="Deluxe Nails and Spa home">
+      <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="23" fill="#FBF3EF" stroke="#E8CFC9"/>
+        <path d="M24 11c-4.5 5-7 9.2-7 13a7 7 0 0 0 14 0c0-3.8-2.5-8-7-13z" fill="#9E7B7B"/>
+        <path d="M24 15.5c-2.6 3-4.2 5.6-4.2 8a4.2 4.2 0 0 0 8.4 0c0-2.4-1.6-5-4.2-8z" fill="#C08A83"/>
+        <ellipse cx="21.5" cy="21" rx="1.6" ry="2.6" fill="#F1DED8" opacity=".8"/>
+        <path d="M17 34.5c3 1.5 11 1.5 14 0" stroke="#9E7B7B" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <span class="name"><b>Deluxe Nails and Spa</b><small>Fresno &middot; Villaggio</small></span>
+    </a>
+    <nav class="nav-links" id="navlinks">
+      <a href="#services">Services</a>
+      <a href="#experience">The Experience</a>
+      <a href="#story">About</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit</a>
+      <a href="#book" class="nav-cta">Book your appointment</a>
+    </nav>
+    <button class="nav-toggle" id="navtoggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="status-pill"><span class="dot"></span>Open now &middot; Walk-ins welcome</span>
+        <h1>
+          <span class="grp">Beauty doesn't happen</span>
+          <span class="grp">by chance. It happens</span>
+          <span class="grp">by <span class="em">appointment.</span></span>
+        </h1>
+        <p class="lede">A clean, modern nail salon in Fresno's Villaggio Shopping Center. Manicures, pedicures, acrylics, facials, and waxing, done gently and precisely in a calm, relaxing space.</p>
+        <div class="hero-actions">
+          <a href="#book" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18" stroke-linecap="round"/></svg>
+            Book your appointment
+          </a>
+          <a href="tel:+15599812171" class="btn btn-ghost">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Call (559) 981-2171
+          </a>
+        </div>
+        <div class="trust-line">
+          <span class="stars" aria-label="4.6 out of 5 stars">
+            <svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none"><defs><linearGradient id="hg" x1="0" x2="1" y1="0" y2="0"><stop offset="60%" stop-color="#C08A83"/><stop offset="60%" stop-color="#E8CFC9"/></linearGradient></defs><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z" fill="url(#hg)"/></svg>
+          </span>
+          <span><b>4.6 stars</b> &middot; 106 Google reviews</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="float-chip c1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#8CA08C" stroke-width="1.9"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Friendly staff
+        </div>
+        <div class="polish-card">
+          <span class="ripple"></span><span class="ripple"></span><span class="ripple"></span>
+          <svg class="drop" viewBox="0 0 120 130" fill="none" aria-hidden="true">
+            <path d="M60 6C42 30 32 48 32 64a28 28 0 0 0 56 0c0-16-10-34-28-58z" fill="#9E7B7B"/>
+            <path d="M60 20C48 38 41 51 41 62a19 19 0 0 0 38 0c0-11-7-24-19-42z" fill="#C08A83"/>
+            <ellipse cx="52" cy="54" rx="6" ry="11" fill="#F1DED8" opacity=".85"/>
+            <circle cx="60" cy="110" r="14" fill="#E8CFC9" opacity=".6"/>
+          </svg>
+          <div class="cap"><b>Deluxe Nails and Spa</b><span>Fresno &middot; est. Villaggio</span></div>
+        </div>
+        <div class="float-chip c2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#9E7B7B" stroke-width="1.9"><path d="M12 3v18M3 12h18" stroke-linecap="round"/></svg>
+          Clean &amp; modern
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BENEFITS ============ -->
+<section class="benefits" id="experience">
+  <div class="wrap">
+    <div class="benefit-grid">
+      <div class="benefit reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#9E7B7B" stroke-width="1.7"><path d="M12 2a7 7 0 0 0-7 7c0 3 2 5.5 4 7l3 3 3-3c2-1.5 4-4 4-7a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#E8CFC9" stroke="none"/></svg></div>
+        <h3>Clean &amp; modern</h3>
+        <p>A bright, new-feeling salon that reviewers call clean and relaxing, with plenty of pedicure chairs.</p>
+      </div>
+      <div class="benefit reveal d1">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#8CA08C" stroke-width="1.7"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11z"/><path d="M9 11l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Hygiene forward</h3>
+        <p>Medical-level sterilization and disposable, one-time-use supplies for every client we serve.</p>
+      </div>
+      <div class="benefit reveal d2">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#9E7B7B" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5" stroke-linecap="round"/></svg></div>
+        <h3>Techs you ask for</h3>
+        <p>Regulars book Brenda, Vicky, Jimmy, Tina, Lena, and Tiffany by name, and travel back for them.</p>
+      </div>
+      <div class="benefit reveal d3">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#8CA08C" stroke-width="1.7"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z" stroke-linejoin="round"/></svg></div>
+        <h3>Walk-ins welcome</h3>
+        <p>Short on time? We take walk-ins and short-notice calls, and often seat you right away.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="pad" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The menu</span>
+      <h2>Fabulously indulgent nail care, from a quick polish to the full spa.</h2>
+      <p>A complete menu of hands, feet, face, and finish. Everything is done gently and precisely, the way our regulars have come to expect.</p>
+    </div>
+    <div class="svc-grid">
+
+      <article class="svc reveal">
+        <div class="art">
+          <svg viewBox="0 0 320 158" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="320" height="158" fill="#F1DED8"/>
+            <g stroke="#C08A83" stroke-width="6" stroke-linecap="round" fill="none">
+              <path d="M90 130c0-30 5-58 8-70"/><path d="M120 128c0-34 6-64 9-78"/>
+              <path d="M150 128c0-34 6-64 9-78"/><path d="M180 130c0-30 5-56 8-68"/>
+            </g>
+            <g fill="#9E7B7B">
+              <ellipse cx="98" cy="58" rx="9" ry="12"/><ellipse cx="129" cy="48" rx="9" ry="12"/>
+              <ellipse cx="159" cy="48" rx="9" ry="12"/><ellipse cx="188" cy="60" rx="9" ry="12"/>
+            </g>
+            <path d="M70 132c40 14 140 14 180 0" stroke="#9E7B7B" stroke-width="7" fill="none" stroke-linecap="round"/>
+            <circle cx="230" cy="44" r="16" fill="#E8CFC9"/><circle cx="230" cy="44" r="7" fill="#C08A83"/>
+          </svg>
+        </div>
+        <div class="body">
+          <h3>Manicures</h3>
+          <p>From a simple Spa manicure to Deluxe, VIP, and the premium Collagen, Volcano, and Gold treatments.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Spa, Deluxe &amp; VIP manicures</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Collagen and Volcano treatments</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Gel color and gel polish changes</li>
+          </ul>
+          <span class="tag">Hands</span>
+        </div>
+      </article>
+
+      <article class="svc reveal d1">
+        <div class="art">
+          <svg viewBox="0 0 320 158" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="320" height="158" fill="#EFE1DA"/>
+            <path d="M70 118c-6-22 4-44 26-46 18-2 26 10 44 10s30-16 50-10c22 6 24 30 14 46z" fill="#E8CFC9"/>
+            <path d="M96 96c-2-14 8-24 22-24 10 0 14 6 24 6s16-10 28-6c14 5 12 20 6 28" fill="#C08A83" opacity=".55"/>
+            <g fill="#9E7B7B"><circle cx="118" cy="70" r="6"/><circle cx="146" cy="64" r="6"/><circle cx="174" cy="64" r="6"/><circle cx="200" cy="72" r="6"/></g>
+            <path d="M60 122c50 20 150 20 200 0" stroke="#9E7B7B" stroke-width="7" fill="none" stroke-linecap="round"/>
+            <path d="M240 40c8 0 12 6 12 14" stroke="#C08A83" stroke-width="5" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="body">
+          <h3>Pedicures</h3>
+          <p>The customer-favorite Deluxe pedicure with callus remover, plus Spa, VIP, and premium CBD, Collagen, and Gold options.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Deluxe pedicure with callus remover</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Volcano CBD and Collagen pedicures</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Massage chairs and a wide color wall</li>
+          </ul>
+          <span class="tag">Feet</span>
+        </div>
+      </article>
+
+      <article class="svc reveal d2">
+        <div class="art">
+          <svg viewBox="0 0 320 158" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="320" height="158" fill="#F1DED8"/>
+            <g stroke="#9E7B7B" stroke-width="5" fill="none" stroke-linecap="round">
+              <path d="M120 128c0-28 4-52 6-64"/><path d="M144 126c0-32 5-60 7-72"/>
+              <path d="M168 126c0-32 5-60 7-72"/><path d="M192 128c0-28 4-50 6-60"/>
+            </g>
+            <g fill="#C08A83"><path d="M124 60l3-16 4 16z"/><path d="M149 50l3-16 4 16z"/><path d="M174 50l3-16 4 16z"/><path d="M197 64l3-14 4 14z"/></g>
+            <g fill="#9E7B7B"><ellipse cx="127" cy="60" rx="7" ry="10"/><ellipse cx="152" cy="50" rx="7" ry="10"/><ellipse cx="177" cy="50" rx="7" ry="10"/><ellipse cx="201" cy="64" rx="7" ry="10"/></g>
+            <path d="M226 42l3 7 7 .6-5 4.6 1.5 7-6.5-3.6-6.5 3.6 1.5-7-5-4.6 7-.6z" fill="#E8CFC9"/>
+          </svg>
+        </div>
+        <div class="body">
+          <h3>Nail enhancement</h3>
+          <p>Acrylic full sets and fill-ins, done well and precise. Reviewers ask for Brenda by name for their acrylics.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Full sets and fill-ins</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Pink &amp; white, ombre, and glitter</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Gel extensions and press-ons</li>
+          </ul>
+          <span class="tag">Acrylics</span>
+        </div>
+      </article>
+
+      <article class="svc reveal">
+        <div class="art">
+          <svg viewBox="0 0 320 158" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="320" height="158" fill="#EFE1DA"/>
+            <circle cx="160" cy="72" r="46" fill="#E8CFC9"/>
+            <circle cx="145" cy="66" r="4" fill="#9E7B7B"/><circle cx="175" cy="66" r="4" fill="#9E7B7B"/>
+            <path d="M146 88c8 8 20 8 28 0" stroke="#C08A83" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <g stroke="#C08A83" stroke-width="3" stroke-linecap="round"><path d="M118 50c-8-4-16-4-22 2"/><path d="M202 50c8-4 16-4 22 2"/></g>
+            <path d="M160 26c26 0 46 20 46 46" stroke="#9E7B7B" stroke-width="4" fill="none" stroke-linecap="round" opacity=".5"/>
+            <g fill="#9E7B7B" opacity=".7"><circle cx="120" cy="118" r="3"/><circle cx="200" cy="118" r="3"/><circle cx="160" cy="128" r="3"/></g>
+          </svg>
+        </div>
+        <div class="body">
+          <h3>Facials &amp; waxing</h3>
+          <p>Relaxing one-hour and ninety-minute facials, plus brow, lip, face, and full-body waxing services.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>One-hour and ninety-minute facials</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Brow, lip, and face waxing</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Arms, legs, bikini and Brazilian</li>
+          </ul>
+          <span class="tag">Face &amp; body</span>
+        </div>
+      </article>
+
+      <article class="svc reveal d1">
+        <div class="art">
+          <svg viewBox="0 0 320 158" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="320" height="158" fill="#F1DED8"/>
+            <g fill="#C08A83"><circle cx="110" cy="66" r="13"/><circle cx="160" cy="58" r="15"/><circle cx="210" cy="66" r="13"/></g>
+            <g fill="#9E7B7B" opacity=".6"><circle cx="132" cy="94" r="10"/><circle cx="188" cy="94" r="10"/></g>
+            <g fill="#E8CFC9"><circle cx="110" cy="66" r="5"/><circle cx="160" cy="58" r="6"/><circle cx="210" cy="66" r="5"/></g>
+            <path d="M70 128c50 16 130 16 180 0" stroke="#9E7B7B" stroke-width="6" fill="none" stroke-linecap="round"/>
+            <path d="M160 24l3 8 8 .5-6 5 2 8-7-4-7 4 2-8-6-5 8-.5z" fill="#9E7B7B" opacity=".7"/>
+          </svg>
+        </div>
+        <div class="body">
+          <h3>Add-ons &amp; nail art</h3>
+          <p>Finish your look with hand-painted nail art, French, gel color, and quick polish changes.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Custom nail art and French tips</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Gel color and polish changes</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Kids manicure, pedicure and polish</li>
+          </ul>
+          <span class="tag">Extras</span>
+        </div>
+      </article>
+
+      <article class="svc reveal d2">
+        <div class="art">
+          <svg viewBox="0 0 320 158" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="320" height="158" fill="#EFE1DA"/>
+            <path d="M120 118V70c0-8 6-14 14-14h52c8 0 14 6 14 14v48" fill="#E8CFC9"/>
+            <path d="M120 74h80" stroke="#C08A83" stroke-width="4"/>
+            <circle cx="160" cy="46" r="12" fill="#C08A83"/>
+            <path d="M148 46c0-14 24-14 24 0" stroke="#9E7B7B" stroke-width="4" fill="none"/>
+            <g fill="#9E7B7B"><rect x="136" y="86" width="20" height="8" rx="4"/><rect x="164" y="86" width="20" height="8" rx="4"/><rect x="150" y="102" width="20" height="8" rx="4"/></g>
+            <path d="M100 128c40 12 120 12 160 0" stroke="#9E7B7B" stroke-width="6" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="body">
+          <h3>Events &amp; parties</h3>
+          <p>Booking for a bridal party, birthday, or a girls' day out? We host special events and private parties.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Special event and party packages</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Group discounts available</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Call ahead to reserve your group</li>
+          </ul>
+          <span class="tag">Groups</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIERS ============ -->
+<section class="pad tiers">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Good, better, best</span>
+      <h2>Choose the level of pampering.</h2>
+      <p>Every service comes in tiers, so you can pop in for a refresh or settle in for the full ritual. Ask your technician which is right for you.</p>
+    </div>
+    <div class="tier-grid">
+      <div class="tier reveal">
+        <div class="num">I</div>
+        <h3>Spa</h3>
+        <div class="sub">The classic refresh</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Soak, shape, and cuticle care</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Relaxing hand or foot massage</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Polish in the color of your choice</li>
+        </ul>
+      </div>
+      <div class="tier feat reveal d1">
+        <span class="badge">Most loved</span>
+        <div class="num">II</div>
+        <h3>Deluxe &amp; VIP</h3>
+        <div class="sub">The customer favorite</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in Spa, elevated</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Deluxe pedicure with callus remover</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Extended massage and warm care</li>
+        </ul>
+      </div>
+      <div class="tier reveal d2">
+        <div class="num">III</div>
+        <h3>Premium ritual</h3>
+        <div class="sub">Volcano CBD, Collagen &amp; Gold</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Volcano CBD and Collagen treatments</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Signature Gold manicure and pedicure</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Our most indulgent, top to toe</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY ============ -->
+<section class="pad" id="story">
+  <div class="wrap">
+    <div class="story-grid">
+      <div class="story-visual reveal">
+        <div class="frame">
+          <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="500" fill="#F1DED8"/>
+            <circle cx="200" cy="150" r="120" fill="#E8CFC9" opacity=".7"/>
+            <circle cx="120" cy="360" r="90" fill="#9E7B7B" opacity=".18"/>
+            <circle cx="300" cy="400" r="70" fill="#C08A83" opacity=".25"/>
+            <path d="M200 60C160 130 140 175 140 215a60 60 0 0 0 120 0c0-40-20-85-60-155z" fill="#9E7B7B"/>
+            <path d="M200 105C172 155 158 187 158 213a42 42 0 0 0 84 0c0-26-14-58-42-108z" fill="#C08A83"/>
+            <ellipse cx="182" cy="188" rx="13" ry="24" fill="#F1DED8" opacity=".85"/>
+            <g stroke="#9E7B7B" stroke-width="4" fill="none" stroke-linecap="round" opacity=".55">
+              <path d="M110 300c30-10 60-10 90 0"/><path d="M200 300c30-10 60-10 90 0"/>
+            </g>
+          </svg>
+        </div>
+        <div class="story-stat">
+          <div><div class="n">106</div><div class="l">Google reviews</div></div>
+          <div><div class="n">7 days</div><div class="l">Open weekly</div></div>
+          <div><div class="n">4.6&#9733;</div><div class="l">Average rating</div></div>
+        </div>
+      </div>
+      <div class="story-copy reveal d1">
+        <span class="eyebrow">Our promise</span>
+        <h2>Always make room for a little beauty in your life.</h2>
+        <p>Tucked into Fresno's Villaggio Shopping Center, Deluxe Nails and Spa is the calm, comfortable place to land after a long day. Soft music, gentle hands, and a color wall that goes on for days.</p>
+        <p>Guests notice the difference the moment they walk in: a clean, modern space with plenty of pedicure chairs, and technicians who take their time and ask your opinion before they start. It's why so many keep coming back, some driving in from out of town just for their favorite tech.</p>
+        <p>Hygiene is not an afterthought here. We use medical-level sterilization and fresh, disposable, one-time-use supplies for every single guest, standards we hold above the usual salon routine.</p>
+        <p class="signoff">Beauty does not happen by chance. It happens by appointment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="pad reviews" id="reviews">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">In their words</span>
+      <h2>Friendly staff, a relaxing visit.</h2>
+      <p>The two things guests mention most are the friendly staff and the relaxing atmosphere. Here is what a few of them wrote, in their own words.</p>
+    </div>
+    <div class="rev-grid">
+
+      <figure class="rev reveal">
+        <span class="stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg></span>
+        <blockquote>First class! Excellent service and people, very professional and friendly. Nice through and precise pedicure. Highly recommend!</blockquote>
+        <figcaption class="who"><span class="av">T</span><span><b>Terrance B.</b><span>Yelp &middot; Jun 9, 2026</span></span></figcaption>
+      </figure>
+
+      <figure class="rev reveal d1">
+        <span class="stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg></span>
+        <blockquote>Walked in on Sunday morning and they took me in right away. Had a regular pedicure and callus remover. Friendly staff, no issues. Very chill music as well so it was a relaxing experience.</blockquote>
+        <figcaption class="who"><span class="av">G</span><span><b>Grace G.</b><span>Yelp &middot; Everett, WA &middot; Apr 26, 2026</span></span></figcaption>
+      </figure>
+
+      <figure class="rev reveal d2">
+        <span class="stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg></span>
+        <blockquote>It is so clean and modern, very new feeling. Lots of pedicure chairs and colors to choose from. The ladies doing our pedis were gentle and kind. My toes look perfect and evenly trimmed.</blockquote>
+        <figcaption class="who"><span class="av">L</span><span><b>Lila G.</b><span>Yelp Elite &middot; Fresno &middot; Jun 14, 2024</span></span></figcaption>
+      </figure>
+
+      <figure class="rev reveal">
+        <span class="stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg></span>
+        <blockquote>This is my favorite place to get a pedicure and full set. I love Brenda for my acrylics! I go out of my way to come here for my fingers and toes while I'm in town from SF.</blockquote>
+        <figcaption class="who"><span class="av">S</span><span><b>Sam M.</b><span>Yelp &middot; Fresno &middot; Aug 12, 2025</span></span></figcaption>
+      </figure>
+
+      <figure class="rev reveal d1">
+        <span class="stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg></span>
+        <blockquote>I just had the most amazing pedicure from Tina. Will definitely be returning.</blockquote>
+        <figcaption class="who"><span class="av">C</span><span><b>Christine L.</b><span>Yelp &middot; Long Beach, CA &middot; May 25, 2025</span></span></figcaption>
+      </figure>
+
+      <figure class="rev reveal d2">
+        <span class="stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><svg viewBox="0 0 24 24" fill="#C08A83"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg></span>
+        <blockquote>Came in as a walk in and had no problem sitting me in a massage chair while I waited. She took her time and asked my opinion on a French tip to make sure I liked the undertone. Did amazing and I was able to relax.</blockquote>
+        <figcaption class="who"><span class="av">O</span><span><b>Olivia C.</b><span>Yelp &middot; Marina, CA &middot; Dec 22, 2024</span></span></figcaption>
+      </figure>
+
+    </div>
+    <p class="rev-note">Verbatim guest reviews from Yelp. Your live Google and Yelp reviews would sync here on the finished site.</p>
+  </div>
+</section>
+
+<!-- ============ VISIT ============ -->
+<section class="pad" id="visit">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Find us</span>
+      <h2>In the Villaggio Shopping Center.</h2>
+      <p>One location, open seven days a week. Free parking, easy to find, and always happy to see a walk-in.</p>
+    </div>
+    <div class="loc-grid">
+      <div class="loc-card reveal">
+        <h3>Deluxe Nails and Spa</h3>
+        <p class="addr">7895 N Blackstone Ave, Fresno, CA 93720 &middot; Villaggio Shopping Center</p>
+        <table class="hours-table" id="hours">
+          <tr data-day="1 2 3 4 5"><td>Monday to Friday</td><td>9:30 AM to 7:00 PM</td></tr>
+          <tr data-day="6"><td>Saturday</td><td>9:00 AM to 6:00 PM</td></tr>
+          <tr data-day="0"><td>Sunday</td><td>10:00 AM to 5:00 PM</td></tr>
+        </table>
+        <div class="loc-contact">
+          <a href="tel:+15599812171"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>(559) 981-2171 <span style="color:var(--mauve);font-weight:600;font-size:.8rem;margin-left:6px">&larr; verify</span></a>
+          <a href="mailto:deluxenailfresno@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6" stroke-linecap="round" stroke-linejoin="round"/></svg>deluxenailfresno@gmail.com</a>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>@deluxenailfresno</div>
+        </div>
+      </div>
+      <div class="map-panel reveal d1">
+        <svg class="mapbg" viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="500" height="400" fill="#F3EAE3"/>
+          <g stroke="#E0CDC5" stroke-width="14" fill="none"><path d="M-20 120h540"/><path d="M-20 280h540"/><path d="M140 -20v440"/><path d="M360 -20v440"/></g>
+          <g stroke="#E8CFC9" stroke-width="6" fill="none"><path d="M-20 200h540"/><path d="M250 -20v440"/></g>
+          <rect x="30" y="140" width="80" height="60" rx="6" fill="#EDDDD6"/>
+          <rect x="390" y="300" width="80" height="70" rx="6" fill="#EDDDD6"/>
+          <rect x="170" y="310" width="60" height="50" rx="6" fill="#EDDDD6"/>
+          <circle cx="250" cy="200" r="46" fill="#E8CFC9" opacity=".55"/>
+        </svg>
+        <div class="map-pin">
+          <svg viewBox="0 0 24 24" fill="#9E7B7B"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#FBF7F4"/></svg>
+        </div>
+        <div class="map-cta">
+          <a class="btn" href="https://maps.google.com/?q=Deluxe+Nails+and+Spa+7895+N+Blackstone+Ave+Fresno+CA+93720" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M9 20l-6 3V6l6-3 6 3 6-3v17l-6 3-6-3z"/><path d="M9 3v17M15 6v17" stroke-linecap="round"/></svg>
+            Get directions
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final" id="book">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Ready when you are</span>
+      <h2>Make room for a little beauty today.</h2>
+      <p>Call to reserve your chair, or send a note below and we will confirm your appointment. Walk-ins are always welcome too.</p>
+      <div class="hero-actions">
+        <a href="tel:+15599812171" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Call (559) 981-2171
+        </a>
+        <button class="btn btn-block" disabled title="Online booking coming soon on the finished site">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18" stroke-linecap="round"/></svg>
+          Book Online, coming soon
+        </button>
+      </div>
+
+      <!-- Contact form posts to FormSubmit. Swap the email below with the client's real inbox to go live. -->
+      <form class="contact-form" action="https://formsubmit.co/REPLACE-WITH-CLIENT-EMAIL" method="POST">
+        <div class="row">
+          <div class="fld"><label for="cf-name">Your name</label><input id="cf-name" name="name" type="text" placeholder="First and last" required></div>
+          <div class="fld"><label for="cf-phone">Phone</label><input id="cf-phone" name="phone" type="tel" placeholder="(559) 000-0000" required></div>
+        </div>
+        <div class="fld"><label for="cf-service">Service you'd like</label><input id="cf-service" name="service" type="text" placeholder="e.g. Deluxe pedicure, full set, facial"></div>
+        <div class="fld"><label for="cf-msg">Preferred day and time</label><textarea id="cf-msg" name="message" placeholder="Tell us when works best and any technician you'd like to request"></textarea></div>
+        <button class="btn" type="submit">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Request my appointment
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="brand">
+          <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true" style="width:38px;height:38px">
+            <circle cx="24" cy="24" r="23" fill="#3A2E33" stroke="#9E7B7B"/>
+            <path d="M24 11c-4.5 5-7 9.2-7 13a7 7 0 0 0 14 0c0-3.8-2.5-8-7-13z" fill="#9E7B7B"/>
+            <path d="M24 15.5c-2.6 3-4.2 5.6-4.2 8a4.2 4.2 0 0 0 8.4 0c0-2.4-1.6-5-4.2-8z" fill="#C08A83"/>
+          </svg>
+          <span class="name"><b>Deluxe Nails and Spa</b><small>Fresno &middot; Villaggio</small></span>
+        </div>
+        <p>A clean, modern nail salon and spa in Fresno's Villaggio Shopping Center. Manicures, pedicures, acrylics, facials, and waxing, seven days a week.</p>
+      </div>
+      <div class="ft-col">
+        <h4>Explore</h4>
+        <a href="#services">Services</a>
+        <a href="#experience">The experience</a>
+        <a href="#story">About us</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#visit">Visit us</a>
+      </div>
+      <div class="ft-col">
+        <h4>Visit &amp; book</h4>
+        <a href="tel:+15599812171">(559) 981-2171</a>
+        <a href="mailto:deluxenailfresno@gmail.com">deluxenailfresno@gmail.com</a>
+        <p>7895 N Blackstone Ave<br>Fresno, CA 93720</p>
+        <p>Open 7 days a week</p>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>&copy; <span id="yr"></span> Deluxe Nails and Spa. All rights reserved.</span>
+      <span class="disclaimer">Concept preview built by DNA Agency, not affiliated with Deluxe Nails and Spa.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // nav shadow on scroll
+  var nav = document.getElementById('nav');
+  var onScroll = function(){ nav.classList.toggle('scrolled', window.scrollY > 8); };
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  // mobile menu
+  var toggle = document.getElementById('navtoggle');
+  var links = document.getElementById('navlinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){ links.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); }
+  });
+
+  // highlight today's hours
+  (function(){
+    var today = new Date().getDay();
+    var rows = document.querySelectorAll('#hours tr');
+    rows.forEach(function(r){
+      var days = (r.getAttribute('data-day')||'').split(' ');
+      if(days.indexOf(String(today)) !== -1){ r.classList.add('today'); }
+    });
+  })();
+
+  // scroll reveal
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items = document.querySelectorAll('.reveal');
+  if(reduce || !('IntersectionObserver' in window)){
+    items.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {threshold:.14, rootMargin:'0px 0px -8% 0px'});
+    items.forEach(function(el){ io.observe(el); });
+  }
+</script>

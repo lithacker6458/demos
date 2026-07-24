@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Riverfront Nail Lounge · Nails by the River, Kansas City</title>
+<meta name="description" content="Riverfront Nail Lounge on the Berkley Riverfront in Kansas City. A full-service nail lounge with a Missouri River view and a complimentary drinks bar. Book your visit.">
+<style>
+  :root{
+    --riverstone:#2E4034;
+    --riverstone-deep:#23322A;
+    --gold:#C9A66B;
+    --gold-soft:#DCC195;
+    --blush:#E7D0C4;
+    --blush-wash:#F1E2DA;
+    --ivory:#FBF7F2;
+    --ivory-deep:#F4ECE2;
+    --ink:#33302B;
+    --ink-soft:#5C564D;
+    --sage-mist:#DDE4DA;
+    --line:rgba(46,64,52,0.14);
+
+    --serif:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+    --sans:"Optima", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+    --wrap:1180px;
+    --gutter:clamp(1.15rem, 5vw, 4rem);
+    --radius:18px;
+    --shadow-soft:0 18px 50px -28px rgba(46,64,52,0.42);
+    --shadow-card:0 20px 46px -30px rgba(46,64,52,0.55);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--ivory);
+    line-height:1.72;
+    font-size:clamp(1rem, 0.96rem + 0.2vw, 1.09rem);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.05;color:var(--riverstone);letter-spacing:0.005em}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:var(--gold-soft);color:var(--riverstone-deep)}
+
+  .wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+  .eyebrow{
+    font-family:var(--sans);
+    text-transform:uppercase;
+    letter-spacing:0.34em;
+    font-size:clamp(0.62rem,0.58rem + 0.2vw,0.72rem);
+    font-weight:600;
+    color:var(--gold);
+  }
+  .eyebrow.on-dark{color:var(--gold-soft)}
+
+  a:focus-visible,button:focus-visible,.btn:focus-visible{
+    outline:2.5px solid var(--gold);
+    outline-offset:3px;
+    border-radius:6px;
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:0.55em;
+    font-family:var(--sans);font-weight:600;
+    font-size:0.95rem;letter-spacing:0.02em;
+    padding:0.92em 1.7em;border-radius:100px;
+    cursor:pointer;border:1.5px solid transparent;
+    transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s, background .35s, color .35s;
+    line-height:1;white-space:nowrap;
+  }
+  .btn-gold{background:var(--gold);color:var(--riverstone-deep);box-shadow:0 12px 30px -14px rgba(201,166,107,0.9)}
+  .btn-gold:hover{transform:translateY(-3px);box-shadow:0 18px 38px -14px rgba(201,166,107,1)}
+  .btn-ghost{background:transparent;border-color:currentColor;color:var(--ivory)}
+  .btn-ghost.on-light{color:var(--riverstone)}
+  .btn-ghost:hover{transform:translateY(-3px);background:rgba(251,247,242,0.08)}
+  .btn-ghost.on-light:hover{background:rgba(46,64,52,0.06)}
+  .btn-outline-gold{background:transparent;border-color:var(--gold);color:var(--riverstone)}
+  .btn-outline-gold:hover{transform:translateY(-3px);background:var(--gold);color:var(--riverstone-deep)}
+  .btn[aria-disabled="true"]{opacity:.5;cursor:not-allowed}
+  .btn[aria-disabled="true"]:hover{transform:none;box-shadow:none}
+
+  /* ---------- Utility bar ---------- */
+  .utility{
+    background:var(--riverstone-deep);
+    color:var(--ivory);
+    font-size:clamp(0.72rem,0.68rem + 0.2vw,0.82rem);
+    letter-spacing:0.04em;
+  }
+  .utility .wrap{display:flex;align-items:center;justify-content:center;gap:0.9rem;padding-block:0.5rem;flex-wrap:wrap;text-align:center}
+  .utility svg{flex:none}
+  .utility strong{color:var(--gold-soft);font-weight:600}
+  .util-dot{width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:.7;flex:none}
+
+  /* ---------- Nav ---------- */
+  .nav{
+    position:sticky;top:0;z-index:60;
+    background:rgba(251,247,242,0.82);
+    backdrop-filter:saturate(140%) blur(14px);
+    -webkit-backdrop-filter:saturate(140%) blur(14px);
+    border-bottom:1px solid transparent;
+    transition:border-color .4s, box-shadow .4s, background .4s;
+  }
+  .nav.scrolled{border-bottom-color:var(--line);box-shadow:0 8px 30px -24px rgba(46,64,52,0.6)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-block:0.85rem;gap:1rem}
+  .brand{display:flex;align-items:center;gap:0.7rem;flex:none}
+  .brand-mark{width:38px;height:38px;flex:none}
+  .brand-txt{display:flex;flex-direction:column;line-height:1}
+  .brand-name{font-family:var(--serif);font-size:1.32rem;font-weight:600;color:var(--riverstone);letter-spacing:0.01em}
+  .brand-sub{font-family:var(--sans);font-size:0.56rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-top:3px}
+  .nav-links{display:flex;align-items:center;gap:2rem}
+  .nav-links a{font-size:0.88rem;font-weight:600;letter-spacing:0.02em;color:var(--ink-soft);position:relative;transition:color .3s}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1.5px;background:var(--gold);transition:width .35s ease}
+  .nav-links a:hover{color:var(--riverstone)}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{display:flex;align-items:center;gap:0.7rem;flex:none}
+  .nav-cta .btn{padding:0.7em 1.3em;font-size:0.85rem}
+  .nav-toggle{display:none}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;overflow:hidden;isolation:isolate;background:var(--riverstone-deep)}
+  .hero-scene{position:absolute;inset:0;z-index:0}
+  .hero-scene svg{position:absolute;inset:0;width:100%;height:100%}
+  .sun-glow{
+    position:absolute;left:50%;bottom:-6%;transform:translateX(-50%);
+    width:min(120vw,1100px);height:min(70vh,620px);
+    background:radial-gradient(ellipse at center bottom,
+      rgba(201,166,107,0.55) 0%,
+      rgba(220,193,149,0.28) 32%,
+      rgba(231,208,196,0.12) 55%,
+      transparent 74%);
+    z-index:0;pointer-events:none;
+  }
+  .water-band{will-change:transform}
+  .band-1{animation:drift-a 26s linear infinite}
+  .band-2{animation:drift-b 34s linear infinite}
+  .band-3{animation:drift-a 44s linear infinite}
+  .shimmer{
+    position:absolute;top:52%;left:-40%;width:55%;height:12%;
+    background:linear-gradient(100deg,transparent 0%,rgba(255,247,232,0.55) 48%,rgba(201,166,107,0.35) 52%,transparent 100%);
+    filter:blur(9px);transform:skewX(-14deg);
+    animation:sweep 12s ease-in-out infinite;
+    z-index:1;pointer-events:none;mix-blend-mode:screen;
+  }
+  .hero-grain{
+    position:absolute;inset:0;z-index:2;pointer-events:none;opacity:0.5;
+    background:radial-gradient(circle at 20% 18%,rgba(35,50,42,0.55),transparent 42%),
+               radial-gradient(circle at 82% 8%,rgba(35,50,42,0.4),transparent 40%),
+               linear-gradient(180deg,rgba(35,50,42,0.55) 0%,transparent 30%,transparent 62%,rgba(35,50,42,0.35) 100%);
+  }
+  .hero-inner{position:relative;z-index:5;display:grid;grid-template-columns:1.35fr 0.85fr;gap:2rem;align-items:center;
+    min-height:clamp(560px,88vh,860px);padding-block:clamp(3.5rem,9vh,7rem)}
+  .hero-copy{max-width:640px}
+  .hero .eyebrow{opacity:0;animation:rise .9s ease .15s forwards}
+  .hero h1{
+    color:var(--ivory);
+    font-size:clamp(2.9rem,2rem + 6.4vw,6rem);
+    line-height:0.98;font-weight:600;
+    margin:0.5rem 0 0.4rem;letter-spacing:-0.01em;
+    text-shadow:0 2px 40px rgba(0,0,0,0.35);
+  }
+  .hero h1 .l1{display:block;opacity:0;animation:rise 1s ease .3s forwards}
+  .hero h1 .l2{display:block;color:var(--gold-soft);font-style:italic;opacity:0;animation:rise 1s ease .48s forwards}
+  .hero-lede{
+    color:rgba(251,247,242,0.9);font-size:clamp(1.05rem,1rem + 0.5vw,1.25rem);
+    max-width:36ch;margin-top:0.4rem;opacity:0;animation:rise 1s ease .66s forwards;
+  }
+  .hero-actions{display:flex;gap:0.9rem;margin-top:2rem;flex-wrap:wrap;opacity:0;animation:rise 1s ease .82s forwards}
+  .hero-trust{display:flex;gap:1.6rem;margin-top:2.2rem;flex-wrap:wrap;opacity:0;animation:rise 1s ease .98s forwards}
+  .hero-trust .t{display:flex;flex-direction:column;gap:2px}
+  .hero-trust .t b{font-family:var(--serif);font-size:1.7rem;color:var(--gold-soft);line-height:1;font-weight:600}
+  .hero-trust .t span{font-size:0.74rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(251,247,242,0.66)}
+  .hero-trust .rule{width:1px;background:rgba(251,247,242,0.22)}
+
+  /* coupe glass */
+  .hero-glass{position:relative;justify-self:center;align-self:center;opacity:0;animation:rise 1.2s ease .6s forwards}
+  .hero-glass svg{width:clamp(180px,26vw,300px);height:auto;filter:drop-shadow(0 20px 30px rgba(0,0,0,0.35))}
+  .spark{transform-origin:center;transform-box:fill-box}
+  .s1{animation:sparkle 3.4s ease-in-out infinite}
+  .s2{animation:sparkle 3.4s ease-in-out .5s infinite}
+  .s3{animation:sparkle 3.4s ease-in-out 1s infinite}
+  .s4{animation:sparkle 3.4s ease-in-out 1.5s infinite}
+  .s5{animation:sparkle 3.4s ease-in-out 2s infinite}
+  .s6{animation:sparkle 3.4s ease-in-out 2.6s infinite}
+
+  /* ---------- Section shell ---------- */
+  section{position:relative}
+  .band{padding-block:clamp(3.6rem,8vw,6.5rem)}
+  .band-blush{background:linear-gradient(180deg,var(--ivory) 0%,var(--blush-wash) 55%,var(--ivory) 100%)}
+  .band-ivory{background:var(--ivory)}
+  .band-sage{background:linear-gradient(165deg,var(--sage-mist) 0%,var(--ivory-deep) 100%)}
+  .sec-head{max-width:44ch;margin-bottom:clamp(2rem,4vw,3.2rem)}
+  .sec-head.center{margin-inline:auto;text-align:center}
+  .sec-head h2{font-size:clamp(2rem,1.5rem + 2.6vw,3.4rem);margin-top:0.55rem}
+  .sec-head p{color:var(--ink-soft);margin-top:0.9rem;font-size:clamp(1rem,0.96rem + 0.3vw,1.14rem)}
+
+  /* ---------- Benefit strip ---------- */
+  .benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(0.9rem,2vw,1.5rem)}
+  .benefit{
+    background:var(--ivory);border:1px solid var(--line);border-radius:var(--radius);
+    padding:1.9rem 1.5rem;box-shadow:var(--shadow-soft);
+    display:flex;flex-direction:column;gap:0.85rem;
+    transition:transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .5s;
+  }
+  .benefit:hover{transform:translateY(-6px);box-shadow:var(--shadow-card)}
+  .benefit-ico{width:52px;height:52px;border-radius:14px;background:var(--sage-mist);
+    display:grid;place-items:center;color:var(--riverstone);flex:none}
+  .benefit h3{font-size:1.32rem;color:var(--riverstone)}
+  .benefit p{font-size:0.94rem;color:var(--ink-soft);line-height:1.6}
+
+  /* ---------- Services ---------- */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.1rem,2.2vw,1.7rem)}
+  .svc-card{
+    position:relative;background:var(--ivory);border:1px solid var(--line);
+    border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-soft);
+    display:flex;flex-direction:column;
+    transition:transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .5s, border-color .5s;
+  }
+  .svc-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-card);border-color:var(--gold-soft)}
+  .svc-art{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--sage-mist)}
+  .svc-art svg{position:absolute;inset:0;width:100%;height:100%}
+  .svc-body{padding:1.5rem 1.5rem 1.7rem;display:flex;flex-direction:column;gap:0.5rem;flex:1}
+  .svc-kicker{font-size:0.66rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);font-weight:600}
+  .svc-body h3{font-size:1.5rem;color:var(--riverstone)}
+  .svc-body p{font-size:0.92rem;color:var(--ink-soft);line-height:1.62;flex:1}
+  .svc-list{list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin-top:0.4rem}
+  .svc-list li{display:flex;align-items:flex-start;gap:0.55rem;font-size:0.9rem;color:var(--ink)}
+  .svc-list li svg{margin-top:3px;flex:none;color:var(--gold)}
+  .svc-note{margin-top:2.6rem;text-align:center;color:var(--ink-soft);font-size:0.95rem}
+  .svc-note b{color:var(--riverstone);font-family:var(--serif);font-size:1.05rem}
+
+  /* ---------- Gallery ---------- */
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(0.8rem,1.6vw,1.2rem)}
+  .tile{position:relative;aspect-ratio:3/4;border-radius:16px;overflow:hidden;box-shadow:var(--shadow-soft);
+    transition:transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .5s}
+  .tile:hover{transform:translateY(-6px) rotate(-0.6deg);box-shadow:var(--shadow-card)}
+  .tile svg{position:absolute;inset:0;width:100%;height:100%}
+  .tile-label{position:absolute;left:0;right:0;bottom:0;padding:0.9rem 1rem 0.8rem;
+    background:linear-gradient(0deg,rgba(35,50,42,0.82),transparent);
+    color:var(--ivory);font-family:var(--serif);font-size:1.05rem;letter-spacing:0.01em}
+  .tile-label span{display:block;font-family:var(--sans);font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:2px}
+
+  /* ---------- Story / About ---------- */
+  .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+  .story-visual{position:relative;border-radius:22px;overflow:hidden;box-shadow:var(--shadow-card);aspect-ratio:4/5}
+  .story-visual svg{position:absolute;inset:0;width:100%;height:100%}
+  .story-badge{position:absolute;bottom:1.3rem;left:1.3rem;background:rgba(251,247,242,0.94);
+    backdrop-filter:blur(6px);border-radius:14px;padding:0.85rem 1.1rem;box-shadow:var(--shadow-soft);
+    display:flex;align-items:center;gap:0.7rem}
+  .story-badge b{font-family:var(--serif);font-size:1.9rem;color:var(--riverstone);line-height:1}
+  .story-badge span{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-soft);line-height:1.3}
+  .story-copy h2{font-size:clamp(2rem,1.5rem + 2.6vw,3.2rem);margin:0.5rem 0 1rem}
+  .story-copy p{color:var(--ink-soft);margin-bottom:1.1rem;font-size:clamp(1rem,0.96rem + 0.3vw,1.12rem)}
+  .story-values{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0.9rem 1.4rem;margin-top:1.6rem}
+  .story-values li{display:flex;gap:0.65rem;align-items:flex-start;font-size:0.94rem;color:var(--ink)}
+  .story-values li svg{margin-top:2px;flex:none;color:var(--gold)}
+
+  /* ---------- Reviews ---------- */
+  .reviews-head{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-bottom:2.4rem}
+  .stars{display:inline-flex;gap:3px;color:var(--gold)}
+  .rating-line{display:flex;align-items:center;gap:0.7rem;margin-top:0.8rem;color:var(--ink-soft);font-size:0.92rem}
+  .rating-line b{font-family:var(--serif);font-size:1.6rem;color:var(--riverstone);line-height:1}
+  .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.1rem,2.2vw,1.6rem)}
+  .review{
+    background:var(--ivory);border:1px solid var(--line);border-radius:var(--radius);
+    padding:1.7rem 1.6rem;box-shadow:var(--shadow-soft);display:flex;flex-direction:column;gap:1rem;
+    transition:transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .5s;
+  }
+  .review:hover{transform:translateY(-5px);box-shadow:var(--shadow-card)}
+  .review .mark{font-family:var(--serif);font-size:3rem;line-height:0.5;color:var(--gold-soft);height:1rem}
+  .review p{font-size:0.98rem;color:var(--ink);line-height:1.66;flex:1}
+  .review .who{display:flex;align-items:center;gap:0.7rem;border-top:1px solid var(--line);padding-top:0.95rem}
+  .review .avatar{width:38px;height:38px;border-radius:50%;background:var(--sage-mist);display:grid;place-items:center;
+    font-family:var(--serif);font-size:1.15rem;color:var(--riverstone);font-weight:600;flex:none}
+  .review .who b{display:block;font-size:0.92rem;color:var(--riverstone);font-weight:600}
+  .review .who span{font-size:0.74rem;color:var(--ink-soft);letter-spacing:0.02em}
+  .review-cta-card{
+    grid-column:1/-1;margin-top:0.6rem;text-align:center;
+    background:linear-gradient(135deg,var(--sage-mist),var(--blush-wash));
+    border:1px dashed var(--gold);border-radius:var(--radius);padding:1.6rem;
+    color:var(--ink-soft);font-size:0.95rem;
+  }
+  .review-cta-card b{color:var(--riverstone);font-family:var(--serif);font-size:1.1rem}
+
+  /* ---------- Location ---------- */
+  .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,4vw,3.5rem);align-items:stretch}
+  .loc-card{background:var(--ivory);border:1px solid var(--line);border-radius:22px;padding:clamp(1.8rem,3vw,2.6rem);
+    box-shadow:var(--shadow-soft);display:flex;flex-direction:column;gap:1.4rem}
+  .loc-row{display:flex;gap:1rem;align-items:flex-start}
+  .loc-row .ico{width:44px;height:44px;border-radius:12px;background:var(--sage-mist);display:grid;place-items:center;
+    color:var(--riverstone);flex:none}
+  .loc-row h4{font-size:1.2rem;color:var(--riverstone);margin-bottom:0.25rem}
+  .loc-row p{font-size:0.94rem;color:var(--ink-soft);line-height:1.55}
+  .loc-row a{color:var(--riverstone);border-bottom:1px solid var(--gold-soft);transition:color .3s}
+  .loc-row a:hover{color:var(--gold)}
+  .hours-table{list-style:none;display:flex;flex-direction:column;gap:0.1rem;width:100%}
+  .hours-table li{display:flex;justify-content:space-between;gap:1rem;padding:0.5rem 0;border-bottom:1px dashed var(--line);font-size:0.94rem}
+  .hours-table li:last-child{border-bottom:none}
+  .hours-table li span:first-child{color:var(--ink);font-weight:600}
+  .hours-table li span:last-child{color:var(--ink-soft)}
+  .hours-table li.today{color:var(--riverstone)}
+  .hours-table li.today span{color:var(--riverstone);font-weight:600}
+  .hours-table li.today::after{content:"Open today";font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--riverstone-deep);background:var(--gold-soft);border-radius:20px;padding:2px 9px;align-self:center}
+  .loc-map{position:relative;border-radius:22px;overflow:hidden;box-shadow:var(--shadow-card);min-height:340px}
+  .loc-map svg{position:absolute;inset:0;width:100%;height:100%}
+  .map-pin{position:absolute;top:44%;left:50%;transform:translate(-50%,-100%);animation:bob 3s ease-in-out infinite}
+  .map-chip{position:absolute;left:1.2rem;bottom:1.2rem;right:1.2rem;background:rgba(251,247,242,0.94);
+    backdrop-filter:blur(6px);border-radius:14px;padding:0.9rem 1.1rem;display:flex;align-items:center;justify-content:space-between;
+    gap:1rem;box-shadow:var(--shadow-soft);flex-wrap:wrap}
+  .map-chip b{font-family:var(--serif);color:var(--riverstone);font-size:1.05rem}
+  .map-chip span{font-size:0.82rem;color:var(--ink-soft)}
+
+  /* ---------- Final CTA ---------- */
+  .cta{position:relative;overflow:hidden;background:var(--riverstone-deep);color:var(--ivory);isolation:isolate}
+  .cta-scene{position:absolute;inset:0;z-index:0}
+  .cta-scene svg{position:absolute;inset:0;width:100%;height:100%}
+  .cta-glow{position:absolute;inset:0;z-index:0;
+    background:radial-gradient(ellipse at 50% 120%,rgba(201,166,107,0.4),transparent 60%),
+               radial-gradient(ellipse at 15% 10%,rgba(231,208,196,0.14),transparent 45%)}
+  .cta .wrap{position:relative;z-index:3;text-align:center;padding-block:clamp(3.6rem,8vw,6rem)}
+  .cta h2{color:var(--ivory);font-size:clamp(2.2rem,1.6rem + 3.2vw,4rem);margin:0.6rem 0 0.6rem}
+  .cta h2 em{color:var(--gold-soft);font-style:italic}
+  .cta p{color:rgba(251,247,242,0.85);max-width:46ch;margin:0 auto 2rem;font-size:clamp(1.02rem,1rem + 0.4vw,1.2rem)}
+  .cta-actions{display:flex;gap:0.9rem;justify-content:center;flex-wrap:wrap}
+  .cta-phone{margin-top:1.6rem;font-size:0.9rem;color:rgba(251,247,242,0.7);letter-spacing:0.04em}
+  .cta-phone a{color:var(--gold-soft);border-bottom:1px solid rgba(201,166,107,0.5)}
+
+  /* ---------- Booking form ---------- */
+  .book{background:var(--blush-wash)}
+  .book-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:clamp(2rem,4vw,4rem);align-items:center}
+  .book-copy h2{font-size:clamp(2rem,1.5rem + 2.6vw,3.2rem);margin:0.5rem 0 1rem}
+  .book-copy p{color:var(--ink-soft);font-size:clamp(1rem,0.96rem + 0.3vw,1.12rem);margin-bottom:1.4rem}
+  .book-copy ul{list-style:none;display:flex;flex-direction:column;gap:0.7rem}
+  .book-copy li{display:flex;gap:0.6rem;align-items:flex-start;font-size:0.96rem;color:var(--ink)}
+  .book-copy li svg{margin-top:3px;flex:none;color:var(--gold)}
+  form.book-form{background:var(--ivory);border:1px solid var(--line);border-radius:22px;padding:clamp(1.6rem,3vw,2.4rem);
+    box-shadow:var(--shadow-card);display:flex;flex-direction:column;gap:1rem}
+  form.book-form .row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .field{display:flex;flex-direction:column;gap:0.35rem}
+  .field label{font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+  .field input,.field select,.field textarea{
+    font-family:var(--sans);font-size:0.96rem;color:var(--ink);
+    background:var(--ivory-deep);border:1.5px solid var(--line);border-radius:12px;
+    padding:0.8em 0.9em;transition:border-color .3s, box-shadow .3s;width:100%;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{
+    outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,166,107,0.2)}
+  .field textarea{resize:vertical;min-height:88px}
+  .form-foot{display:flex;flex-direction:column;gap:0.7rem;margin-top:0.4rem}
+  .form-note{font-size:0.76rem;color:var(--ink-soft);text-align:center;line-height:1.5}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--riverstone-deep);color:rgba(251,247,242,0.82)}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:2rem;padding-block:clamp(3rem,5vw,4.2rem)}
+  .foot-brand .brand-name{color:var(--ivory)}
+  .foot-brand p{font-size:0.9rem;margin-top:1rem;max-width:34ch;color:rgba(251,247,242,0.7);line-height:1.7}
+  .foot-col h4{font-family:var(--sans);font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:1rem;font-weight:600}
+  .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+  .foot-col a,.foot-col li{font-size:0.9rem;color:rgba(251,247,242,0.78);transition:color .3s}
+  .foot-col a:hover{color:var(--gold-soft)}
+  .foot-bottom{border-top:1px solid rgba(251,247,242,0.14);padding-block:1.5rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
+  .foot-bottom p{font-size:0.78rem;color:rgba(251,247,242,0.6);line-height:1.6}
+  .disclaimer{font-size:0.74rem;color:rgba(251,247,242,0.5);max-width:60ch}
+
+  /* ---------- Reveal ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.8,.2,1), transform .9s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}
+  .reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- Keyframes ---------- */
+  @keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+  @keyframes drift-a{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @keyframes drift-b{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+  @keyframes sweep{0%{left:-40%;opacity:0}20%{opacity:0.9}60%{opacity:0.9}100%{left:120%;opacity:0}}
+  @keyframes sparkle{0%,100%{opacity:0;transform:translateY(6px) scale(0.6)}40%{opacity:1;transform:translateY(-10px) scale(1)}70%{opacity:0.6;transform:translateY(-22px) scale(0.85)}}
+  @keyframes bob{0%,100%{transform:translate(-50%,-100%)}50%{transform:translate(-50%,-114%)}}
+  @keyframes float-dot{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:1024px){
+    .hero-inner{grid-template-columns:1fr;text-align:left}
+    .hero-glass{display:none}
+    .benefits{grid-template-columns:repeat(2,1fr)}
+    .svc-grid{grid-template-columns:repeat(2,1fr)}
+    .gallery{grid-template-columns:repeat(3,1fr)}
+    .story-grid{grid-template-columns:1fr;gap:2.4rem}
+    .story-visual{max-width:460px;order:-1}
+    .reviews-grid{grid-template-columns:repeat(2,1fr)}
+    .book-grid{grid-template-columns:1fr;gap:2rem}
+    .foot-top{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:760px){
+    .nav-links{display:none}
+    .nav-cta .btn-ghost{display:none}
+    .loc-grid{grid-template-columns:1fr}
+    .reviews-grid{grid-template-columns:1fr}
+    .svc-grid{grid-template-columns:1fr}
+    .gallery{grid-template-columns:repeat(2,1fr)}
+    .benefits{grid-template-columns:1fr 1fr}
+    .story-values{grid-template-columns:1fr}
+    form.book-form .row{grid-template-columns:1fr}
+    .foot-top{grid-template-columns:1fr}
+    .hero-trust{gap:1.1rem}
+  }
+  @media (max-width:420px){
+    .benefits{grid-template-columns:1fr}
+    .gallery{grid-template-columns:1fr 1fr}
+    .hero-actions .btn{width:100%;justify-content:center}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation-duration:0.001ms !important;animation-iteration-count:1 !important;transition-duration:0.001ms !important}
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none}
+    .hero .eyebrow,.hero h1 .l1,.hero h1 .l2,.hero-lede,.hero-actions,.hero-trust,.hero-glass{opacity:1;animation:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ UTILITY BAR ============ -->
+<div class="utility">
+  <div class="wrap">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7Z"/><circle cx="12" cy="9" r="2.4"/></svg>
+    <span>On the Berkley Riverfront, Kansas City</span>
+    <span class="util-dot"></span>
+    <span><strong>Walk-ins welcome</strong> and appointments available</span>
+    <span class="util-dot"></span>
+    <span>Free parking &middot; Complimentary drinks bar</span>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Riverfront Nail Lounge home">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="23" fill="#2E4034"/>
+        <path d="M6 30c5-4 8 2 13-1s8-5 13-2 5 3 10 1" stroke="#C9A66B" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        <path d="M6 35c5-4 8 2 13-1s8-5 13-2 5 3 10 1" stroke="#DCC195" stroke-width="1.3" fill="none" stroke-linecap="round" opacity="0.7"/>
+        <path d="M24 11c3.6 0 6.6 3 6.6 6.7 0 4.6-6.6 9.3-6.6 9.3s-6.6-4.7-6.6-9.3C17.4 14 20.4 11 24 11Z" fill="#E7D0C4"/>
+        <ellipse cx="24" cy="17.4" rx="2.2" ry="2.6" fill="#FBF7F2"/>
+      </svg>
+      <span class="brand-txt">
+        <span class="brand-name">Riverfront Nail Lounge</span>
+        <span class="brand-sub">Kansas City &middot; MO</span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#experience">Experience</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#story">Our Lounge</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost on-light" href="tel:+18168357521"><!-- VERIFY phone -->
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L20 13l1 4v3a1 1 0 0 1-1 1A16 16 0 0 1 3 5a1 1 0 0 1 1-1Z"/></svg>
+        (816) 835-7521
+      </a>
+      <a class="btn btn-gold" href="#book">Book Your Visit</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-scene" aria-hidden="true">
+    <!-- river bands: each path drawn 2x width for seamless translateX loop -->
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#23322A"/>
+          <stop offset="0.5" stop-color="#2E4034"/>
+          <stop offset="0.78" stop-color="#3C4E3F"/>
+          <stop offset="1" stop-color="#5B5B47"/>
+        </linearGradient>
+        <linearGradient id="w1" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#4E5A44"/><stop offset="1" stop-color="#38473A"/>
+        </linearGradient>
+        <linearGradient id="w2" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#6E7051"/><stop offset="1" stop-color="#4A5340"/>
+        </linearGradient>
+        <linearGradient id="w3" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#C9A66B"/><stop offset="1" stop-color="#8C7C4E"/>
+        </linearGradient>
+      </defs>
+      <rect width="1440" height="900" fill="url(#sky)"/>
+      <!-- distant tree/skyline silhouette -->
+      <path d="M0 470 q60 -22 120 -6 q40 -30 90 -14 q70 -34 150 -8 q60 -26 130 -6 q80 -28 170 -4 q70 -22 150 -6 q80 -24 160 -2 q90 -20 200 -6 v460 H0 Z" fill="#2A382E" opacity="0.85"/>
+      <!-- water band 3 (far) -->
+      <g class="water-band band-3">
+        <path d="M0 560 q120 -20 240 0 t240 0 t240 0 t240 0 t240 0 t240 0 v340 H0 Z" fill="url(#w1)" opacity="0.9"/>
+      </g>
+      <!-- water band 2 (mid, gold shimmer line) -->
+      <g class="water-band band-2">
+        <path d="M0 640 q120 22 240 0 t240 0 t240 0 t240 0 t240 0 t240 0 v260 H0 Z" fill="url(#w2)" opacity="0.85"/>
+        <path d="M0 636 q120 22 240 0 t240 0 t240 0 t240 0 t240 0 t240 0" fill="none" stroke="url(#w3)" stroke-width="2.5" opacity="0.5"/>
+      </g>
+      <!-- water band 1 (near) -->
+      <g class="water-band band-1">
+        <path d="M0 740 q120 -26 240 0 t240 0 t240 0 t240 0 t240 0 t240 0 v160 H0 Z" fill="url(#w1)"/>
+        <path d="M0 736 q120 -26 240 0 t240 0 t240 0 t240 0 t240 0 t240 0" fill="none" stroke="#C9A66B" stroke-width="1.5" opacity="0.28"/>
+      </g>
+    </svg>
+    <div class="sun-glow"></div>
+    <div class="shimmer"></div>
+    <div class="hero-grain"></div>
+  </div>
+
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow on-dark">Berkley Riverfront &middot; Kansas City</p>
+        <h1><span class="l1">Nails by the river.</span><span class="l2">A drink in your hand.</span></h1>
+        <p class="hero-lede">A full-service nail lounge on the Missouri River, with a complimentary drinks bar and the kind of care that keeps people driving across the city.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#book">Book Your Visit</a>
+          <a class="btn btn-ghost" href="tel:+18168357521"><!-- VERIFY phone -->
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L20 13l1 4v3a1 1 0 0 1-1 1A16 16 0 0 1 3 5a1 1 0 0 1 1-1Z"/></svg>
+            Call (816) 835-7521
+          </a>
+        </div>
+        <div class="hero-trust">
+          <div class="t"><b>4.4&#9733;</b><span>420+ Google reviews</span></div>
+          <div class="rule"></div>
+          <div class="t"><b>2019</b><span>Serving KC since</span></div>
+          <div class="rule"></div>
+          <div class="t"><b>River</b><span>view from the chair</span></div>
+        </div>
+      </div>
+
+      <!-- coupe cocktail glass with rising gold sparkles -->
+      <div class="hero-glass" aria-hidden="true">
+        <svg viewBox="0 0 200 300" fill="none">
+          <defs>
+            <linearGradient id="glassFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#E7D0C4"/><stop offset="1" stop-color="#C9A66B"/>
+            </linearGradient>
+            <radialGradient id="glassShine" cx="0.35" cy="0.3" r="0.7">
+              <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.5"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <!-- sparkles -->
+          <circle class="spark s1" cx="88" cy="40" r="3" fill="#DCC195"/>
+          <circle class="spark s2" cx="104" cy="34" r="2.4" fill="#E7D0C4"/>
+          <circle class="spark s3" cx="96" cy="24" r="3.4" fill="#C9A66B"/>
+          <circle class="spark s4" cx="80" cy="30" r="2" fill="#DCC195"/>
+          <circle class="spark s5" cx="112" cy="46" r="2.6" fill="#E7D0C4"/>
+          <circle class="spark s6" cx="98" cy="52" r="2" fill="#DCC195"/>
+          <!-- liquid -->
+          <path d="M56 70 L144 70 L100 132 Z" fill="url(#glassFill)"/>
+          <path d="M56 70 L144 70 L138 78 L62 78 Z" fill="#FBF7F2" opacity="0.55"/>
+          <!-- bowl outline -->
+          <path d="M50 66 L150 66 L100 138 Z" fill="none" stroke="#FBF7F2" stroke-width="2.4" stroke-linejoin="round"/>
+          <path d="M50 66 L150 66" stroke="#FBF7F2" stroke-width="2.4" stroke-linecap="round"/>
+          <!-- shine -->
+          <path d="M66 72 L96 72 L80 96 Z" fill="url(#glassShine)"/>
+          <!-- garnish -->
+          <line x1="118" y1="58" x2="130" y2="42" stroke="#DCC195" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="132" cy="40" r="6" fill="none" stroke="#DCC195" stroke-width="2"/>
+          <!-- stem -->
+          <line x1="100" y1="138" x2="100" y2="238" stroke="#FBF7F2" stroke-width="2.6" stroke-linecap="round"/>
+          <!-- base -->
+          <path d="M66 242 q34 12 68 0" fill="none" stroke="#FBF7F2" stroke-width="2.6" stroke-linecap="round"/>
+          <ellipse cx="100" cy="242" rx="34" ry="7" fill="none" stroke="#FBF7F2" stroke-width="2.6"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BENEFIT STRIP ============ -->
+<section class="band band-blush" id="experience">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <p class="eyebrow">Why the drive is worth it</p>
+      <h2>A nail salon that feels like a riverside retreat</h2>
+      <p>The details our guests come back for, most of which you would never guess from a typical nail-salon website.</p>
+    </div>
+    <div class="benefits">
+      <article class="benefit reveal d1">
+        <div class="benefit-ico">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 15c3-2 5 1 8-1s5-3 8-1 2 2 4 1"/><path d="M2 19c3-2 5 1 8-1s5-3 8-1 2 2 4 1"/><path d="M6 11 8 5l3 3 3-5 3 6"/></svg>
+        </div>
+        <h3>A river view</h3>
+        <p>Sit back with the Missouri River right outside the window. It is the setting no other nail lounge in the city can offer.</p>
+      </article>
+      <article class="benefit reveal d2">
+        <div class="benefit-ico">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 3h8l-1 7a3 3 0 0 1-6 0Z"/><path d="M12 10v8"/><path d="M8 21h8"/><path d="M16 5c2 0 3 1 3 3s-1 3-3 3"/></svg>
+        </div>
+        <h3>Drinks on the house</h3>
+        <p>Water, fresh coffee, wine, or a cocktail while you relax. A complimentary bar our regulars mention again and again.</p>
+      </article>
+      <article class="benefit reveal d3">
+        <div class="benefit-ico">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6Z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <h3>Nails that stay healthy</h3>
+        <p>Guests leave salons of ten years and more for us because their natural nails never get damaged, and the shape stays right.</p>
+      </article>
+      <article class="benefit reveal d4">
+        <div class="benefit-ico">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M7 8V6a5 5 0 0 1 10 0v2"/><circle cx="12" cy="14" r="1.6"/></svg>
+        </div>
+        <h3>Spotless and easy</h3>
+        <p>Disinfected tools, modern chairs, free parking, and free Wi-Fi. Clean and calm is a value here, not an afterthought.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="band band-ivory" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The menu</p>
+      <h2>Full-service care, from a quick polish to a spa pedicure</h2>
+      <p>Manicures, acrylics, dipping powder, luxury pedicures, and waxing, all under one riverside roof. Kids under ten always get a little something off.</p>
+    </div>
+
+    <div class="svc-grid">
+      <!-- Card 1: Manicures -->
+      <article class="svc-card reveal d1">
+        <div class="svc-art">
+          <svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><linearGradient id="mg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F1E2DA"/><stop offset="1" stop-color="#E7D0C4"/></linearGradient></defs>
+            <rect width="320" height="200" fill="url(#mg1)"/>
+            <circle cx="250" cy="46" r="46" fill="#DDE4DA" opacity="0.6"/>
+            <!-- hand with polished nails -->
+            <g transform="translate(60 40)">
+              <path d="M40 120 q-4 -70 8 -92 q6 -10 12 0 l2 40 4 -46 q4 -10 10 -2 l1 46 5 -42 q5 -9 10 0 l1 44 6 -34 q6 -8 10 2 q6 20 2 50 q-4 30 -30 42 Z" fill="#E9C9B8"/>
+              <ellipse cx="60" cy="30" rx="6" ry="8" fill="#C9A66B"/>
+              <ellipse cx="76" cy="26" rx="6" ry="8" fill="#C9A66B"/>
+              <ellipse cx="92" cy="30" rx="6" ry="8" fill="#C9A66B"/>
+              <ellipse cx="107" cy="42" rx="5.5" ry="7.5" fill="#C9A66B"/>
+            </g>
+          </svg>
+        </div>
+        <div class="svc-body">
+          <span class="svc-kicker">Hands</span>
+          <h3>Manicures</h3>
+          <p>From a clean basic manicure to a deluxe treatment with mask, sugar scrub, lotion, and hot towel.</p>
+          <ul class="svc-list">
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m5 12 5 5 9-11"/></svg>Basic Manicure</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m5 12 5 5 9-11"/></svg>Gel Color Manicure</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m5 12 5 5 9-11"/></svg>Deluxe Manicure with hot-towel finish</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Card 2: Full Sets -->
+      <article class="svc-card reveal d2">
+        <div class="svc-art">
+          <svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><linearGradient id="mg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#DDE4DA"/><stop offset="1" stop-color="#F1E2DA"/></linearGradient></defs>
+            <rect width="320" height="200" fill="url(#mg2)"/>
+            <circle cx="70" cy="150" r="52" fill="#E7D0C4" opacity="0.55"/>
+            <!-- ombre nail set -->
+            <g transform="translate(96 44)">
+              <rect x="0" y="20" width="22" height="70" rx="11" fill="#E7D0C4"/>
+              <rect x="30" y="8" width="22" height="82" rx="11" fill="#DCC195"/>
+              <rect x="60" y="0" width="22" height="90" rx="11" fill="#C9A66B"/>
+              <rect x="90" y="8" width="22" height="82" rx="11" fill="#DCC195"/>
+              <rect x="120" y="20" width="22" height="70" rx="11" fill="#E7D0C4"/>
+              <circle cx="11" cy="30" r="3" fill="#FBF7F2" opacity="0.6"/>
+              <circle cx="71" cy="12" r="3.4" fill="#FBF7F2" opacity="0.7"/>
+              <circle cx="131" cy="30" r="3" fill="#FBF7F2" opacity="0.6"/>
+            </g>
+          </svg>
+        </div>
+        <div class="svc-body">
+          <span class="svc-kicker">Enhancements</span>
+          <h3>Full Sets &amp; Dip</h3>
+          <p>Acrylic, gel, and dipping powder, including our soft ombre fades. Built to last and gentle on your natural nail.</p>
+          <ul class="svc-list">
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m5 12 5 5 9-11"/></svg>Regular &amp; Gel Acrylic Full Set</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m5 12 5 5 9-11"/></svg>Ombre Full Set</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m5 12 5 5 9-11"/></svg>Dipping Powder &amp; Ombre Dip</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Card 3: Pedicures -->
+      <article class="svc-card reveal d3">
+        <div class="svc-art">
+          <svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><linearGradient id="mg3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F1E2DA"/><stop offset="1" stop-color="#DDE4DA"/></linearGradient></defs>
+            <rect width="320" height="200" fill="url(#mg3)"/>
+            <!-- spa bowl with water + petals -->
+            <path d="M70 96 h180 a90 60 0 0 1 -180 0 Z" fill="#DCC195" opacity="0.35"/>
+            <ellipse cx="160" cy="96" rx="90" ry="20" fill="#C9A66B" opacity="0.4"/>
+            <ellipse cx="160" cy="96" rx="90" ry="20" fill="none" stroke="#C9A66B" stroke-width="2"/>
+            <path d="M70 96 q-6 40 26 58 h128 q32 -18 26 -58" fill="none" stroke="#2E4034" stroke-width="2.4" opacity="0.5"/>
+            <!-- floating petals -->
+            <path d="M120 92 q8 -6 16 0 q-8 8 -16 0" fill="#E7D0C4"/>
+            <path d="M175 100 q9 -7 18 0 q-9 8 -18 0" fill="#E7D0C4"/>
+            <path d="M148 88 q7 -5 14 0 q-7 7 -14 0" fill="#F1E2DA"/>
+            <!-- steam -->
+            <path d="M130 78 q6 -10 0 -20" fill="none" stroke="#FBF7F2" stroke-width="2" opacity="0.6" stroke-linecap="round"/>
+            <path d="M190 78 q-6 -10 0 -20" fill="none" stroke="#FBF7F2" stroke-width="2" opacity="0.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="svc-body">
+          <span class="svc-kicker">Feet</span>
+          <h3>Spa Pedicures</h3>
+          <p>From a classic pedicure to indulgent collagen, milk and honey, and volcano treatments in a modern spa chair.</p>
+          <ul class="svc-list">
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m5 12 5 5 9-11"/></svg>Classic &amp; Deluxe Pedicure</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m5 12 5 5 9-11"/></svg>Collagen Spa Luxury &amp; Milk &amp; Honey</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m5 12 5 5 9-11"/></svg>Volcano &amp; Callus-Smoothing Pedicure</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Card 4: Waxing -->
+      <article class="svc-card reveal d1">
+        <div class="svc-art">
+          <svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><linearGradient id="mg4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E7D0C4"/><stop offset="1" stop-color="#F1E2DA"/></linearGradient></defs>
+            <rect width="320" height="200" fill="url(#mg4)"/>
+            <circle cx="240" cy="150" r="60" fill="#DDE4DA" opacity="0.5"/>
+            <!-- serene face profile -->
+            <g transform="translate(96 34)" fill="none" stroke="#2E4034" stroke-width="2.4" stroke-linecap="round">
+              <path d="M40 20 q40 -6 46 40 q4 34 -18 66 q-16 22 -44 20"/>
+              <path d="M46 68 q10 -6 20 0"/>
+              <path d="M42 58 q6 -8 16 -4"/>
+              <path d="M24 96 q10 8 22 4"/>
+            </g>
+            <circle cx="150" cy="98" r="3.4" fill="#C9A66B"/>
+          </svg>
+        </div>
+        <div class="svc-body">
+          <span class="svc-kicker">Finishing touches</span>
+          <h3>Waxing &amp; Extras</h3>
+          <p>Brow shaping, facial and body waxing, polish changes, and nail art, French, repair, and removal add-ons.</p>
+          <ul class="svc-list">
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m5 12 5 5 9-11"/></svg>Eyebrow, lip, and full-face waxing</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m5 12 5 5 9-11"/></svg>Underarm and leg waxing</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m5 12 5 5 9-11"/></svg>Polish change, French, design &amp; removal</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Card 5: Drinks bar (differentiator as a service) -->
+      <article class="svc-card reveal d2">
+        <div class="svc-art">
+          <svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><linearGradient id="mg5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2E4034"/><stop offset="1" stop-color="#3C4E3F"/></linearGradient></defs>
+            <rect width="320" height="200" fill="url(#mg5)"/>
+            <circle cx="160" cy="100" r="80" fill="#C9A66B" opacity="0.14"/>
+            <!-- wine glass -->
+            <g transform="translate(96 30)" stroke="#DCC195" stroke-width="2.4" fill="none" stroke-linecap="round">
+              <path d="M30 8 q0 42 26 42 q26 0 26 -42 Z" fill="#C9A66B" fill-opacity="0.5"/>
+              <line x1="56" y1="50" x2="56" y2="112"/>
+              <path d="M36 116 q20 8 40 0"/>
+            </g>
+            <!-- coffee cup -->
+            <g transform="translate(150 96)" stroke="#DCC195" stroke-width="2.4" fill="none" stroke-linecap="round">
+              <path d="M6 12 h44 v22 a22 22 0 0 1 -44 0 Z" fill="#C9A66B" fill-opacity="0.4"/>
+              <path d="M50 16 q14 0 14 12 t-14 12"/>
+              <path d="M18 6 q4 -8 0 -14 M30 6 q4 -8 0 -14"/>
+            </g>
+          </svg>
+        </div>
+        <div class="svc-body">
+          <span class="svc-kicker">On the house</span>
+          <h3>The Drinks Bar</h3>
+          <p>While you wait or while you are pampered, enjoy a complimentary drink. From a martini to a morning coffee, it is part of the visit.</p>
+          <ul class="svc-list">
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m5 12 5 5 9-11"/></svg>Water &amp; freshly brewed coffee</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m5 12 5 5 9-11"/></svg>Wine &amp; cocktails</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m5 12 5 5 9-11"/></svg>Always complimentary</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Card 6: Book / consult CTA card -->
+      <article class="svc-card reveal d3" style="background:linear-gradient(160deg,var(--sage-mist),var(--blush-wash));border-color:var(--gold-soft)">
+        <div class="svc-body" style="justify-content:center;text-align:center;gap:1rem;padding-block:2.4rem">
+          <span class="svc-kicker">Not sure what to pick?</span>
+          <h3 style="font-size:1.7rem">We will help you choose</h3>
+          <p style="flex:none">Tell us the look you are after and we will match you to the right service. Walk in or reserve a time that suits you.</p>
+          <div style="display:flex;gap:0.6rem;justify-content:center;flex-wrap:wrap">
+            <a class="btn btn-gold" href="#book">Book Your Visit</a>
+            <a class="btn btn-outline-gold" href="tel:+18168357521">Call us</a><!-- VERIFY phone -->
+          </div>
+        </div>
+      </article>
+    </div>
+    <p class="svc-note reveal"><b>Bringing the little ones?</b> &nbsp;Kids under ten receive a special discount, and walk-ins are always welcome alongside appointments.</p>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="band band-sage" id="gallery">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <p class="eyebrow">Our best design</p>
+      <h2>A look at the work</h2>
+      <p>Soft ombre fades, clean French, and quiet gold accents. Timeless, refined, and effortlessly stylish, in the words of our own guests.</p>
+    </div>
+    <div class="gallery">
+      <div class="tile reveal d1">
+        <svg viewBox="0 0 240 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs><linearGradient id="ga1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E7D0C4"/><stop offset="1" stop-color="#C9A66B"/></linearGradient></defs>
+          <rect width="240" height="320" fill="url(#ga1)"/>
+          <g transform="translate(50 70)">
+            <rect x="0" y="30" width="26" height="90" rx="13" fill="#FBF7F2"/>
+            <rect x="36" y="14" width="26" height="106" rx="13" fill="#F1E2DA"/>
+            <rect x="72" y="4" width="26" height="116" rx="13" fill="#FBF7F2"/>
+            <rect x="108" y="14" width="26" height="106" rx="13" fill="#F1E2DA"/>
+            <path d="M13 44 h13 M49 30 h13 M85 20 h13 M121 30 h13" stroke="#C9A66B" stroke-width="3" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <div class="tile-label"><span>Classic French</span>Soft ivory tips</div>
+      </div>
+      <div class="tile reveal d2">
+        <svg viewBox="0 0 240 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs><linearGradient id="ga2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F1E2DA"/><stop offset="1" stop-color="#DDE4DA"/></linearGradient></defs>
+          <rect width="240" height="320" fill="url(#ga2)"/>
+          <g transform="translate(52 60)">
+            <rect x="0" y="24" width="26" height="96" rx="13" fill="#E7D0C4"/>
+            <rect x="36" y="10" width="26" height="110" rx="13" fill="#DCC195"/>
+            <rect x="72" y="0" width="26" height="120" rx="13" fill="#C9A66B"/>
+            <rect x="108" y="10" width="26" height="110" rx="13" fill="#DCC195"/>
+            <circle cx="85" cy="14" r="4" fill="#FBF7F2" opacity="0.8"/>
+          </g>
+        </svg>
+        <div class="tile-label"><span>Ombre Fade</span>Blush to gold</div>
+      </div>
+      <div class="tile reveal d3">
+        <svg viewBox="0 0 240 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs><linearGradient id="ga3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2E4034"/><stop offset="1" stop-color="#4A5340"/></linearGradient></defs>
+          <rect width="240" height="320" fill="url(#ga3)"/>
+          <g transform="translate(50 66)">
+            <rect x="0" y="28" width="26" height="92" rx="13" fill="#DDE4DA"/>
+            <rect x="36" y="12" width="26" height="108" rx="13" fill="#DDE4DA"/>
+            <rect x="72" y="2" width="26" height="118" rx="13" fill="#C9A66B"/>
+            <rect x="108" y="12" width="26" height="108" rx="13" fill="#DDE4DA"/>
+            <path d="M85 20 l3 6 6 1 -4.5 4.5 1 6.5 -5.5 -3 -5.5 3 1 -6.5 -4.5 -4.5 6 -1 Z" fill="#FBF7F2"/>
+          </g>
+        </svg>
+        <div class="tile-label"><span>Accent Nail</span>Sage &amp; gold star</div>
+      </div>
+      <div class="tile reveal d4">
+        <svg viewBox="0 0 240 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs><linearGradient id="ga4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C9A66B"/><stop offset="1" stop-color="#E7D0C4"/></linearGradient></defs>
+          <rect width="240" height="320" fill="url(#ga4)"/>
+          <g transform="translate(52 64)">
+            <rect x="0" y="26" width="26" height="94" rx="13" fill="#FBF7F2"/>
+            <rect x="36" y="12" width="26" height="108" rx="13" fill="#FBF7F2"/>
+            <rect x="72" y="2" width="26" height="118" rx="13" fill="#FBF7F2"/>
+            <rect x="108" y="12" width="26" height="108" rx="13" fill="#FBF7F2"/>
+            <circle cx="13" cy="40" r="3" fill="#C9A66B"/><circle cx="49" cy="26" r="3" fill="#C9A66B"/>
+            <circle cx="85" cy="16" r="3" fill="#C9A66B"/><circle cx="121" cy="26" r="3" fill="#C9A66B"/>
+          </g>
+        </svg>
+        <div class="tile-label"><span>Clean Set</span>Nude &amp; healthy</div>
+      </div>
+    </div>
+    <p class="svc-note reveal" style="margin-top:2rem">Your finished set could be the next one featured here. These are illustrative previews; on your live site we will feature real photos of your work.</p>
+  </div>
+</section>
+
+<!-- ============ STORY / ABOUT ============ -->
+<section class="band band-ivory" id="story">
+  <div class="wrap">
+    <div class="story-grid">
+      <div class="story-visual reveal">
+        <svg viewBox="0 0 480 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <linearGradient id="lounge" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#3C4E3F"/><stop offset="0.55" stop-color="#2E4034"/><stop offset="1" stop-color="#23322A"/>
+            </linearGradient>
+            <linearGradient id="window" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#DCC195"/><stop offset="0.5" stop-color="#C9A66B"/><stop offset="1" stop-color="#6E7051"/>
+            </linearGradient>
+          </defs>
+          <rect width="480" height="600" fill="url(#lounge)"/>
+          <!-- big window with river golden hour -->
+          <rect x="52" y="60" width="376" height="300" rx="10" fill="url(#window)"/>
+          <circle cx="240" cy="250" r="46" fill="#FBF7F2" opacity="0.7"/>
+          <path d="M52 300 q94 -18 188 0 t188 0 v60 H52 Z" fill="#4A5340" opacity="0.8"/>
+          <path d="M52 320 q94 -14 188 0 t188 0 v40 H52 Z" fill="#38473A" opacity="0.9"/>
+          <rect x="52" y="60" width="376" height="300" rx="10" fill="none" stroke="#FBF7F2" stroke-width="3" opacity="0.5"/>
+          <line x1="240" y1="60" x2="240" y2="360" stroke="#FBF7F2" stroke-width="3" opacity="0.4"/>
+          <!-- pedicure chairs silhouette -->
+          <g fill="#23322A">
+            <rect x="70" y="400" width="150" height="120" rx="18"/>
+            <rect x="260" y="400" width="150" height="120" rx="18"/>
+          </g>
+          <g fill="#3C4E3F">
+            <rect x="82" y="420" width="126" height="60" rx="14"/>
+            <rect x="272" y="420" width="126" height="60" rx="14"/>
+          </g>
+          <!-- gold accent line -->
+          <path d="M70 540 h340" stroke="#C9A66B" stroke-width="3" opacity="0.6"/>
+          <!-- little cocktail on side table -->
+          <g transform="translate(220 470)" stroke="#DCC195" stroke-width="2" fill="none">
+            <path d="M0 0 l24 0 -12 16 Z" fill="#C9A66B" fill-opacity="0.6"/><line x1="12" y1="16" x2="12" y2="34"/><line x1="4" y1="34" x2="20" y2="34"/>
+          </g>
+        </svg>
+        <div class="story-badge">
+          <b>5</b>
+          <span>years strong<br>and counting</span>
+        </div>
+      </div>
+
+      <div class="story-copy reveal d1">
+        <p class="eyebrow">Our lounge</p>
+        <h2>Elevated care, right on the riverfront</h2>
+        <p>Riverfront Nail Lounge has been the Berkley Riverfront's full-service nail destination since 2019. What sets the visit apart is simple: a genuine river view, a complimentary drinks bar, and a team that treats your time and your nails with real care.</p>
+        <p>In the lounge's own words, we always strive to provide the highest quality and customer experience. A clean working environment is vital, so before any tool touches your hands, it is disinfected, and we invest in the latest nail-chair designs so every visit feels relaxed and comfortable. You should leave more confident and beautiful than you arrived.</p>
+        <ul class="story-values">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6Z"/><path d="m9 12 2 2 4-4"/></svg>Disinfected tools, every time</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Modern, comfortable chairs</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V8a5 5 0 0 1 10 0"/></svg>Wheelchair accessible &amp; free Wi-Fi</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-4.5-9-10a5 5 0 0 1 9-2 5 5 0 0 1 9 2c-2 5.5-9 10-9 10Z"/></svg>Loved by repeat guests</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="band band-blush" id="reviews">
+  <div class="wrap">
+    <div class="reviews-head reveal">
+      <div class="sec-head" style="margin-bottom:0">
+        <p class="eyebrow">In their words</p>
+        <h2>Worth the drive, once a month</h2>
+        <div class="rating-line">
+          <span class="stars" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 .8-5 4.8 1.3 7L12 17.8 5.4 21l1.3-7-5-4.8 7-.8Z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 .8-5 4.8 1.3 7L12 17.8 5.4 21l1.3-7-5-4.8 7-.8Z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 .8-5 4.8 1.3 7L12 17.8 5.4 21l1.3-7-5-4.8 7-.8Z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 .8-5 4.8 1.3 7L12 17.8 5.4 21l1.3-7-5-4.8 7-.8Z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 .8-5 4.8 1.3 7L12 17.8 5.4 21l1.3-7-5-4.8 7-.8Z"/></svg>
+          </span>
+          <b>4.4</b><span>from 420+ Google reviews</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <figure class="review reveal d1">
+        <div class="mark" aria-hidden="true">&ldquo;</div>
+        <blockquote><p>Wow. WOW. I get pedis often, like so many people do. Sometimes they're good. Sometimes they could have been better, but today? THE BEST AND MOST THOROUGH I've ever experienced. The atmosphere. Service. People. THE CARE and attention to detail. 5 stars though this is not located near my home, for me, it's worth the drive once a month for this!</p></blockquote>
+        <figcaption class="who"><span class="avatar">B</span><span><b>BestProsInTown review</b><span>April 2026</span></span></figcaption>
+      </figure>
+
+      <figure class="review reveal d2">
+        <div class="mark" aria-hidden="true">&ldquo;</div>
+        <blockquote><p>I love it here. I would not dear go anywhere else. 5 years strong!!! Not to mention the complementary drinks. I have gone from martini to now coffee over the years. My mom, sister and friends all come here.</p></blockquote>
+        <figcaption class="who"><span class="avatar">D</span><span><b>De'Jauna Brown</b><span>On-site testimonial</span></span></figcaption>
+      </figure>
+
+      <figure class="review reveal d3">
+        <div class="mark" aria-hidden="true">&ldquo;</div>
+        <blockquote><p>My favorite nail salon currently. My old nail salon of 10+ years always seemed to damage my real nails with acrylics or the nails wouldn't be the same shape/length. This nail salon has been getting it right every time I have come so far. My nails are never damaged and the service and atmosphere are nice.</p></blockquote>
+        <figcaption class="who"><span class="avatar">Q</span><span><b>Queen Star</b><span>Google review</span></span></figcaption>
+      </figure>
+
+      <figure class="review reveal d1">
+        <div class="mark" aria-hidden="true">&ldquo;</div>
+        <blockquote><p>It was a great experience overall, everyone was very patient and really friendly. My nails came out very nice exactly how I wanted them. Laura was the one who did them, she was so sweet and understanding! Definitely recommend</p></blockquote>
+        <figcaption class="who"><span class="avatar">S</span><span><b>sarah moncada</b><span>Google review</span></span></figcaption>
+      </figure>
+
+      <figure class="review reveal d2">
+        <div class="mark" aria-hidden="true">&ldquo;</div>
+        <blockquote><p>Very friendly staff. Accommodating to our needs. Gentle while cutting nails and filing feet. Massages were the right amount of pressure and relaxing. I will definitely come back!</p></blockquote>
+        <figcaption class="who"><span class="avatar">S</span><span><b>Susanna Segura</b><span>On-site testimonial</span></span></figcaption>
+      </figure>
+
+      <figure class="review reveal d3">
+        <div class="mark" aria-hidden="true">&ldquo;</div>
+        <blockquote><p>The owner and team were extremely friendly, attentive and great custumer service. I am very happy with the results. Recommended!</p></blockquote>
+        <figcaption class="who"><span class="avatar">S</span><span><b>Sergio Orozco</b><span>On-site testimonial</span></span></figcaption>
+      </figure>
+
+      <div class="review-cta-card reveal">
+        <b>Your real Google reviews belong here.</b><br>
+        On your live site we connect this straight to your Google profile so your latest five-star reviews appear automatically, always fresh.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISIT / LOCATION ============ -->
+<section class="band band-ivory" id="visit">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Find us</p>
+      <h2>On the Berkley Riverfront, with free parking</h2>
+      <p>You will find us in the Columbus Park and Berkley Riverfront area, right by the Missouri River. Street and private-lot parking are free.</p>
+    </div>
+
+    <div class="loc-grid">
+      <div class="loc-card reveal d1">
+        <div class="loc-row">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7Z"/><circle cx="12" cy="9" r="2.4"/></svg></div>
+          <div>
+            <h4>Address</h4>
+            <p>150 Berkley Plz, Kansas City, MO 64120<br>
+            <a href="https://maps.google.com/?q=150+Berkley+Plz+Kansas+City+MO+64120" target="_blank" rel="noopener">Get directions</a></p>
+          </div>
+        </div>
+        <div class="loc-row">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L18 13l1 4v3a1 1 0 0 1-1 1A16 16 0 0 1 3 5a1 1 0 0 1 1-1Z"/></svg></div>
+          <div>
+            <h4>Call or text</h4>
+            <p><a href="tel:+18168357521">(816) 835-7521</a> &nbsp;<!-- VERIFY phone --><br>Walk-ins welcome, appointments available</p>
+          </div>
+        </div>
+        <div class="loc-row">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="12" width="18" height="8" rx="1.5"/><path d="M6 12V8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4"/><circle cx="7.5" cy="16" r="1"/><circle cx="16.5" cy="16" r="1"/></svg></div>
+          <div>
+            <h4>Parking</h4>
+            <p>Free street parking plus a private lot. No meters, no fuss, just pull up and relax.</p>
+          </div>
+        </div>
+        <div class="loc-row" style="border-top:1px solid var(--line);padding-top:1.2rem">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <div style="width:100%">
+            <h4>Hours</h4>
+            <ul class="hours-table" id="hours">
+              <li data-day="1"><span>Monday</span><span>10:00 AM to 7:00 PM</span></li>
+              <li data-day="2"><span>Tuesday</span><span>10:00 AM to 7:00 PM</span></li>
+              <li data-day="3"><span>Wednesday</span><span>10:00 AM to 7:00 PM</span></li>
+              <li data-day="4"><span>Thursday</span><span>10:00 AM to 7:00 PM</span></li>
+              <li data-day="5"><span>Friday</span><span>10:00 AM to 7:00 PM</span></li>
+              <li data-day="6"><span>Saturday</span><span>9:30 AM to 6:00 PM</span></li>
+              <li data-day="0"><span>Sunday</span><span>12:00 PM to 5:00 PM</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="loc-map reveal d2" aria-label="Illustrative map of the riverfront location">
+        <svg viewBox="0 0 500 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <linearGradient id="mapbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#DDE4DA"/><stop offset="1" stop-color="#F1E2DA"/></linearGradient>
+            <linearGradient id="river" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6E7051"/><stop offset="0.5" stop-color="#C9A66B"/><stop offset="1" stop-color="#6E7051"/></linearGradient>
+          </defs>
+          <rect width="500" height="420" fill="url(#mapbg)"/>
+          <!-- river -->
+          <path d="M-20 150 q120 40 250 20 t290 -10 v90 q-160 30 -300 10 t-260 20 Z" fill="url(#river)" opacity="0.85"/>
+          <path d="M-20 165 q120 40 250 20 t290 -10" fill="none" stroke="#FBF7F2" stroke-width="2" opacity="0.4"/>
+          <!-- roads -->
+          <path d="M0 320 h500 M250 300 v120 M120 300 l40 120 M380 300 l-30 120" stroke="#FBF7F2" stroke-width="6" opacity="0.7"/>
+          <path d="M0 320 h500" stroke="#C9A66B" stroke-width="1.5" opacity="0.5" stroke-dasharray="8 8"/>
+          <!-- blocks -->
+          <g fill="#FBF7F2" opacity="0.55">
+            <rect x="40" y="336" width="60" height="44" rx="4"/><rect x="120" y="336" width="70" height="44" rx="4"/>
+            <rect x="300" y="336" width="66" height="44" rx="4"/><rect x="386" y="336" width="60" height="44" rx="4"/>
+          </g>
+          <!-- trees -->
+          <g fill="#2E4034" opacity="0.5"><circle cx="70" cy="290" r="10"/><circle cx="430" cy="288" r="9"/><circle cx="200" cy="285" r="8"/></g>
+        </svg>
+        <div class="map-pin" aria-hidden="true">
+          <svg width="46" height="58" viewBox="0 0 46 58" fill="none"><path d="M23 2C12 2 3 11 3 22c0 14 20 34 20 34s20-20 20-34C43 11 34 2 23 2Z" fill="#2E4034" stroke="#C9A66B" stroke-width="2.5"/><circle cx="23" cy="22" r="8" fill="#C9A66B"/></svg>
+        </div>
+        <div class="map-chip">
+          <div><b>Riverfront Nail Lounge</b><br><span>150 Berkley Plz &middot; by the Missouri River</span></div>
+          <a class="btn btn-outline-gold" href="https://maps.google.com/?q=150+Berkley+Plz+Kansas+City+MO+64120" target="_blank" rel="noopener" style="padding:0.6em 1.1em;font-size:0.82rem">Open in Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOKING ============ -->
+<section class="band book" id="book">
+  <div class="wrap">
+    <div class="book-grid">
+      <div class="book-copy reveal">
+        <p class="eyebrow">Reserve your chair</p>
+        <h2>Book your visit by the river</h2>
+        <p>Skip the phone tag. Send us the service you have in mind and a time that works, and we will confirm your spot. Prefer to talk it through? Call us any time.</p>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="m5 12 5 5 9-11"/></svg>A complimentary drink is waiting when you arrive</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="m5 12 5 5 9-11"/></svg>Walk-ins welcome, but a reservation saves your time</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="m5 12 5 5 9-11"/></svg>Free parking right at the door</li>
+        </ul>
+      </div>
+
+      <!-- Form posts to FormSubmit. Swap the email below with the client's inbox. -->
+      <!-- ACTION: replace REPLACE-WITH-CLIENT-EMAIL with the client's real inbox before launch -->
+      <form class="book-form reveal d1" action="https://formsubmit.co/REPLACE-WITH-CLIENT-EMAIL" method="POST">
+        <div class="row">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" placeholder="(816) 000-0000" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="service">Service</label>
+          <select id="service" name="service">
+            <option>Manicure</option>
+            <option>Full Set or Dipping Powder</option>
+            <option>Spa Pedicure</option>
+            <option>Waxing</option>
+            <option>Nail art or design</option>
+            <option>Not sure yet, help me choose</option>
+          </select>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="date">Preferred day</label>
+            <input id="date" name="preferred_day" type="text" placeholder="e.g. Saturday morning">
+          </div>
+          <div class="field">
+            <label for="guests">Guests</label>
+            <select id="guests" name="guests">
+              <option>Just me</option>
+              <option>2 of us</option>
+              <option>3 or more</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="notes">Anything else</label>
+          <textarea id="notes" name="notes" placeholder="A look you love, a special occasion, or a question"></textarea>
+        </div>
+        <div class="form-foot">
+          <button class="btn btn-gold" type="submit" style="width:100%;justify-content:center">Request my visit</button>
+          <a class="btn btn-outline-gold" href="tel:+18168357521" style="width:100%;justify-content:center"><!-- VERIFY phone -->
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L20 13l1 4v3a1 1 0 0 1-1 1A16 16 0 0 1 3 5a1 1 0 0 1 1-1Z"/></svg>
+            Or call (816) 835-7521
+          </a>
+          <p class="form-note">We reply during lounge hours. This request does not charge you anything.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="cta" id="finalcta">
+  <div class="cta-scene" aria-hidden="true">
+    <svg viewBox="0 0 1440 500" preserveAspectRatio="xMidYMax slice">
+      <defs><linearGradient id="ctaw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3C4E3F"/><stop offset="1" stop-color="#23322A"/></linearGradient></defs>
+      <rect width="1440" height="500" fill="url(#ctaw)"/>
+      <path d="M0 360 q120 -22 240 0 t240 0 t240 0 t240 0 t240 0 t240 0 v140 H0 Z" fill="#2E4034"/>
+      <path d="M0 400 q120 20 240 0 t240 0 t240 0 t240 0 t240 0 t240 0 v100 H0 Z" fill="#38473A"/>
+      <path d="M0 358 q120 -22 240 0 t240 0 t240 0 t240 0 t240 0 t240 0" fill="none" stroke="#C9A66B" stroke-width="2" opacity="0.4"/>
+    </svg>
+  </div>
+  <div class="cta-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow on-dark">Berkley Riverfront &middot; Kansas City</p>
+    <h2>Come sit by the river.<br><em>Your drink is on us.</em></h2>
+    <p>Book a chair at Kansas City's riverside nail lounge and see why guests happily drive across town, once a month, for the view, the drinks, and nails that stay healthy.</p>
+    <div class="cta-actions">
+      <a class="btn btn-gold" href="#book">Book Your Visit</a>
+      <a class="btn btn-ghost" href="tel:+18168357521"><!-- VERIFY phone -->
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L20 13l1 4v3a1 1 0 0 1-1 1A16 16 0 0 1 3 5a1 1 0 0 1 1-1Z"/></svg>
+        Call (816) 835-7521
+      </a>
+      <button class="btn btn-ghost" aria-disabled="true" disabled title="Online booking is coming soon">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        Book Online &middot; Coming Soon
+      </button>
+    </div>
+    <p class="cta-phone">Walk-ins welcome &middot; Appointments available &middot; <a href="tel:+18168357521">(816) 835-7521</a></p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="#top" aria-label="Riverfront Nail Lounge home">
+          <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <circle cx="24" cy="24" r="23" fill="#3C4E3F"/>
+            <path d="M6 30c5-4 8 2 13-1s8-5 13-2 5 3 10 1" stroke="#C9A66B" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+            <path d="M24 11c3.6 0 6.6 3 6.6 6.7 0 4.6-6.6 9.3-6.6 9.3s-6.6-4.7-6.6-9.3C17.4 14 20.4 11 24 11Z" fill="#E7D0C4"/>
+            <ellipse cx="24" cy="17.4" rx="2.2" ry="2.6" fill="#FBF7F2"/>
+          </svg>
+          <span class="brand-txt"><span class="brand-name">Riverfront Nail Lounge</span><span class="brand-sub">Kansas City &middot; MO</span></span>
+        </a>
+        <p>Top nails salon in Missouri 64120. A full-service nail lounge on the Berkley Riverfront, with a river view and a complimentary drinks bar.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#experience">The experience</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#book">Book a visit</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Hours</h4>
+        <ul>
+          <li>Mon to Fri &middot; 10a to 7p</li>
+          <li>Saturday &middot; 9:30a to 6p</li>
+          <li>Sunday &middot; 12p to 5p</li>
+          <li>Walk-ins welcome</li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Visit</h4>
+        <ul>
+          <li>150 Berkley Plz</li>
+          <li>Kansas City, MO 64120</li>
+          <li><a href="tel:+18168357521">(816) 835-7521</a></li><!-- VERIFY phone -->
+          <li>Free parking on site</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>&copy; <span id="year">2026</span> Riverfront Nail Lounge. All rights reserved.</p>
+      <p class="disclaimer">Concept preview built by DNA Agency, not affiliated with Riverfront Nail Lounge. Illustrations are placeholders; real photography and live booking added on launch.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav shadow on scroll
+  (function(){
+    var nav = document.getElementById('nav');
+    var onScroll = function(){ nav.classList.toggle('scrolled', window.scrollY > 12); };
+    window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  })();
+
+  // Current year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Highlight today's hours
+  (function(){
+    var today = new Date().getDay(); // 0 Sun .. 6 Sat
+    var li = document.querySelector('#hours li[data-day="'+today+'"]');
+    if(li){ li.classList.add('today'); }
+  })();
+
+  // Scroll reveal (respects reduced motion)
+  (function(){
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els = document.querySelectorAll('.reveal');
+    if(reduce || !('IntersectionObserver' in window)){
+      els.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  })();
+</script>
+</body>
+</html>
